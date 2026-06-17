@@ -10,6 +10,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteWorkforcemanagementBusinessunitActivitycode**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitActivitycode) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId} | Deletes an activity code
 [**deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocationshistory | Delete staffing group allocations history created for a capacity plan before the given date
 [**deleteWorkforcemanagementBusinessunitPlanninggroup**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitPlanninggroup) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId} | Deletes the planning group
+[**deleteWorkforcemanagementBusinessunitSchedulebid**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitSchedulebid) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId} | Delete a schedule bid
+[**deleteWorkforcemanagementBusinessunitSchedulebidGroup**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitSchedulebidGroup) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/{bidGroupId} | Delete a schedule bid group by bid group Id
 [**deleteWorkforcemanagementBusinessunitSchedulingRun**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitSchedulingRun) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId} | Cancel a scheduling run
 [**deleteWorkforcemanagementBusinessunitServicegoaltemplate**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitServicegoaltemplate) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId} | Delete a service goal template
 [**deleteWorkforcemanagementBusinessunitStaffinggroup**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitStaffinggroup) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId} | Deletes a staffing group
@@ -65,6 +67,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getWorkforcemanagementBusinessunitOpportunity**](WorkforceManagementApi#getWorkforcemanagementBusinessunitOpportunity) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities/{opportunityId} | Get opportunity details
 [**getWorkforcemanagementBusinessunitPlanninggroup**](WorkforceManagementApi#getWorkforcemanagementBusinessunitPlanninggroup) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId} | Get a planning group
 [**getWorkforcemanagementBusinessunitPlanninggroups**](WorkforceManagementApi#getWorkforcemanagementBusinessunitPlanninggroups) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups | Gets list of planning groups
+[**getWorkforcemanagementBusinessunitSchedulebid**](WorkforceManagementApi#getWorkforcemanagementBusinessunitSchedulebid) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId} | Get a schedule bid
+[**getWorkforcemanagementBusinessunitSchedulebidGroup**](WorkforceManagementApi#getWorkforcemanagementBusinessunitSchedulebidGroup) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/{bidGroupId} | Get a schedule bid group
+[**getWorkforcemanagementBusinessunitSchedulebidGroupPreferences**](WorkforceManagementApi#getWorkforcemanagementBusinessunitSchedulebidGroupPreferences) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/{bidGroupId}/preferences | Get agents schedule bid preferences for a bid group
+[**getWorkforcemanagementBusinessunitSchedulebidGroupsSummary**](WorkforceManagementApi#getWorkforcemanagementBusinessunitSchedulebidGroupsSummary) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/summary | Get summary of bid groups that belong to a schedule bid
+[**getWorkforcemanagementBusinessunitSchedulebids**](WorkforceManagementApi#getWorkforcemanagementBusinessunitSchedulebids) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids | Get list of schedule bids
 [**getWorkforcemanagementBusinessunitSchedulerSettings**](WorkforceManagementApi#getWorkforcemanagementBusinessunitSchedulerSettings) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduler/settings | Get scheduler settings for a business unit
 [**getWorkforcemanagementBusinessunitSchedulingRun**](WorkforceManagementApi#getWorkforcemanagementBusinessunitSchedulingRun) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId} | Get a scheduling run
 [**getWorkforcemanagementBusinessunitSchedulingRunResult**](WorkforceManagementApi#getWorkforcemanagementBusinessunitSchedulingRunResult) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}/result | Get the result of a rescheduling operation
@@ -137,6 +144,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getWorkforcemanagementManagementunits**](WorkforceManagementApi#getWorkforcemanagementManagementunits) | **GET** /api/v2/workforcemanagement/managementunits | Get management units
 [**getWorkforcemanagementManagementunitsDivisionviews**](WorkforceManagementApi#getWorkforcemanagementManagementunitsDivisionviews) | **GET** /api/v2/workforcemanagement/managementunits/divisionviews | Get management units across divisions
 [**getWorkforcemanagementNotifications**](WorkforceManagementApi#getWorkforcemanagementNotifications) | **GET** /api/v2/workforcemanagement/notifications | Get a list of notifications for the current user
+[**getWorkforcemanagementSchedulebidPreference**](WorkforceManagementApi#getWorkforcemanagementSchedulebidPreference) | **GET** /api/v2/workforcemanagement/schedulebids/{bidId}/preference | Gets an agent's schedule bidding preference
+[**getWorkforcemanagementSchedulebidSchedulesets**](WorkforceManagementApi#getWorkforcemanagementSchedulebidSchedulesets) | **GET** /api/v2/workforcemanagement/schedulebids/{bidId}/schedulesets | Gets an agent's schedule sets for a bid
+[**getWorkforcemanagementSchedulebids**](WorkforceManagementApi#getWorkforcemanagementSchedulebids) | **GET** /api/v2/workforcemanagement/schedulebids | Gets the list of schedule bids that belong to an agent. It will fetch an open bid or upcoming bid or a bid that is closed recently
 [**getWorkforcemanagementSchedulingjob**](WorkforceManagementApi#getWorkforcemanagementSchedulingjob) | **GET** /api/v2/workforcemanagement/schedulingjobs/{jobId} | Get status of the scheduling job
 [**getWorkforcemanagementShifttrades**](WorkforceManagementApi#getWorkforcemanagementShifttrades) | **GET** /api/v2/workforcemanagement/shifttrades | Gets all of my shift trades
 [**getWorkforcemanagementShifttradingTradeJob**](WorkforceManagementApi#getWorkforcemanagementShifttradingTradeJob) | **GET** /api/v2/workforcemanagement/shifttrading/trades/{tradeId}/jobs/{jobId} | View result of update trade operation. Only the user who started the operation can query the status
@@ -167,6 +177,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchWorkforcemanagementBusinessunitMinimumstaffingSettings**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitMinimumstaffingSettings) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/minimumstaffing/settings | Update minimum staffing settings for a business unit
 [**patchWorkforcemanagementBusinessunitOpportunity**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitOpportunity) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities/{opportunityId} | Update the opportunity
 [**patchWorkforcemanagementBusinessunitPlanninggroup**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitPlanninggroup) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId} | Updates the planning group
+[**patchWorkforcemanagementBusinessunitSchedulebid**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitSchedulebid) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId} | Update a schedule bid
+[**patchWorkforcemanagementBusinessunitSchedulebidGroup**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitSchedulebidGroup) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/{bidGroupId} | Update a schedule bid group by bid group Id
+[**patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/{bidGroupId}/preferences | Overrides the assigned schedule bid for the specified agents
 [**patchWorkforcemanagementBusinessunitSchedulerSettings**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitSchedulerSettings) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduler/settings | Update scheduler settings for a business unit
 [**patchWorkforcemanagementBusinessunitSchedulingRun**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitSchedulingRun) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId} | Mark a schedule run as applied
 [**patchWorkforcemanagementBusinessunitServicegoaltemplate**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitServicegoaltemplate) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId} | Updates a service goal template
@@ -232,6 +245,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postWorkforcemanagementBusinessunitOpportunitiesExternalactivitiesQuery**](WorkforceManagementApi#postWorkforcemanagementBusinessunitOpportunitiesExternalactivitiesQuery) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities/externalactivities/query | Query opportunities by external activity IDs
 [**postWorkforcemanagementBusinessunitOpportunitiesQuery**](WorkforceManagementApi#postWorkforcemanagementBusinessunitOpportunitiesQuery) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities/query | Query opportunities within the specified date range
 [**postWorkforcemanagementBusinessunitPlanninggroups**](WorkforceManagementApi#postWorkforcemanagementBusinessunitPlanninggroups) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups | Adds a new planning group
+[**postWorkforcemanagementBusinessunitSchedulebidCopy**](WorkforceManagementApi#postWorkforcemanagementBusinessunitSchedulebidCopy) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/copy | Copy a schedule bid
+[**postWorkforcemanagementBusinessunitSchedulebidGroups**](WorkforceManagementApi#postWorkforcemanagementBusinessunitSchedulebidGroups) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups | Add a bid group in a given schedule bid
+[**postWorkforcemanagementBusinessunitSchedulebids**](WorkforceManagementApi#postWorkforcemanagementBusinessunitSchedulebids) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids | Create a new schedule bid
+[**postWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesets**](WorkforceManagementApi#postWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesets) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/effectiveschedulesets | Fetch all the agents with effective schedule set for the given BU
 [**postWorkforcemanagementBusinessunitServicegoaltemplates**](WorkforceManagementApi#postWorkforcemanagementBusinessunitServicegoaltemplates) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates | Adds a new service goal template
 [**postWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs**](WorkforceManagementApi#postWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/evaluate/jobs | Queries and evaluates against shift trade configuration shift trades in a management unit per week
 [**postWorkforcemanagementBusinessunitShifttradingTradesQueryJobs**](WorkforceManagementApi#postWorkforcemanagementBusinessunitShifttradingTradesQueryJobs) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/query/jobs | Queries shift trades in a management unit per user
@@ -314,6 +331,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putWorkforcemanagementAgentIntegrationsHris**](WorkforceManagementApi#putWorkforcemanagementAgentIntegrationsHris) | **PUT** /api/v2/workforcemanagement/agents/{agentId}/integrations/hris | Update integrations for agent
 [**putWorkforcemanagementBusinessunitTimeofflimitValues**](WorkforceManagementApi#putWorkforcemanagementBusinessunitTimeofflimitValues) | **PUT** /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values | Sets daily values for a date range of time-off limit object
 [**putWorkforcemanagementManagementunitTimeofflimitValues**](WorkforceManagementApi#putWorkforcemanagementManagementunitTimeofflimitValues) | **PUT** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}/values | Sets daily values for a date range of time off limit object
+[**putWorkforcemanagementSchedulebidPreference**](WorkforceManagementApi#putWorkforcemanagementSchedulebidPreference) | **PUT** /api/v2/workforcemanagement/schedulebids/{bidId}/preference | Update an agent's schedule set preference
 
 
 
@@ -548,6 +566,126 @@ apiInstance.deleteWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, p
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit. |  |
  **planningGroupId** | **String** | The ID of a planning group to delete |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+void (no response body)
+
+
+## deleteWorkforcemanagementBusinessunitSchedulebid
+
+> void deleteWorkforcemanagementBusinessunitSchedulebid(businessUnitId, bidId, opts)
+
+
+DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}
+
+Delete a schedule bid
+
+Requires ANY permissions:
+
+* wfm:scheduleBid:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let bidId = "bidId_example"; // String | The ID of the schedule bid
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.deleteWorkforcemanagementBusinessunitSchedulebid(businessUnitId, bidId, opts)
+  .then(() => {
+    console.log('deleteWorkforcemanagementBusinessunitSchedulebid returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteWorkforcemanagementBusinessunitSchedulebid');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **bidId** | **String** | The ID of the schedule bid |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+void (no response body)
+
+
+## deleteWorkforcemanagementBusinessunitSchedulebidGroup
+
+> void deleteWorkforcemanagementBusinessunitSchedulebidGroup(businessUnitId, bidId, bidGroupId, opts)
+
+
+DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/{bidGroupId}
+
+Delete a schedule bid group by bid group Id
+
+Requires ANY permissions:
+
+* wfm:scheduleBidGroup:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let bidId = "bidId_example"; // String | The ID of the schedule bid associated with the bid groups
+let bidGroupId = "bidGroupId_example"; // String | Schedule Bid Group id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.deleteWorkforcemanagementBusinessunitSchedulebidGroup(businessUnitId, bidId, bidGroupId, opts)
+  .then(() => {
+    console.log('deleteWorkforcemanagementBusinessunitSchedulebidGroup returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteWorkforcemanagementBusinessunitSchedulebidGroup');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **bidId** | **String** | The ID of the schedule bid associated with the bid groups |  |
+ **bidGroupId** | **String** | Schedule Bid Group id |  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -3999,6 +4137,307 @@ apiInstance.getWorkforcemanagementBusinessunitPlanninggroups(businessUnitId, opt
 ### Return type
 
 **PlanningGroupList**
+
+
+## getWorkforcemanagementBusinessunitSchedulebid
+
+> ScheduleBid getWorkforcemanagementBusinessunitSchedulebid(businessUnitId, bidId, opts)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}
+
+Get a schedule bid
+
+Requires ANY permissions:
+
+* wfm:scheduleBid:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let bidId = "bidId_example"; // String | The ID of the schedule bid
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getWorkforcemanagementBusinessunitSchedulebid(businessUnitId, bidId, opts)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitSchedulebid success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitSchedulebid');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **bidId** | **String** | The ID of the schedule bid |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ScheduleBid**
+
+
+## getWorkforcemanagementBusinessunitSchedulebidGroup
+
+> ScheduleBidGroupResponse getWorkforcemanagementBusinessunitSchedulebidGroup(businessUnitId, bidId, bidGroupId, opts)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/{bidGroupId}
+
+Get a schedule bid group
+
+Requires ANY permissions:
+
+* wfm:scheduleBidGroup:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let bidId = "bidId_example"; // String | The ID of the schedule bid associated with the bid groups
+let bidGroupId = "bidGroupId_example"; // String | Schedule Bid Group id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getWorkforcemanagementBusinessunitSchedulebidGroup(businessUnitId, bidId, bidGroupId, opts)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitSchedulebidGroup success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitSchedulebidGroup');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **bidId** | **String** | The ID of the schedule bid associated with the bid groups |  |
+ **bidGroupId** | **String** | Schedule Bid Group id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ScheduleBidGroupResponse**
+
+
+## getWorkforcemanagementBusinessunitSchedulebidGroupPreferences
+
+> AdminAgentScheduleBidPreferenceResponse getWorkforcemanagementBusinessunitSchedulebidGroupPreferences(businessUnitId, bidId, bidGroupId, opts)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/{bidGroupId}/preferences
+
+Get agents schedule bid preferences for a bid group
+
+Requires ANY permissions:
+
+* wfm:scheduleBidGroup:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let bidId = "bidId_example"; // String | The ID of the schedule bid associated with the bid groups
+let bidGroupId = "bidGroupId_example"; // String | The ID of the schedule bid group
+let opts = { 
+  'forceDownloadService': true, // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+  'expand': ["expand_example"], // [String] | Include to fetch agents' preferences with priorities
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getWorkforcemanagementBusinessunitSchedulebidGroupPreferences(businessUnitId, bidId, bidGroupId, opts)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitSchedulebidGroupPreferences success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitSchedulebidGroupPreferences');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **bidId** | **String** | The ID of the schedule bid associated with the bid groups |  |
+ **bidGroupId** | **String** | The ID of the schedule bid group |  |
+ **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+ **expand** | **[String]** | Include to fetch agents' preferences with priorities | [optional] <br />**Values**: agentsScheduleBidPreferences.agentScheduleBidPreferencePriorities |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AdminAgentScheduleBidPreferenceResponse**
+
+
+## getWorkforcemanagementBusinessunitSchedulebidGroupsSummary
+
+> ScheduleBidGroupSummaryList getWorkforcemanagementBusinessunitSchedulebidGroupsSummary(businessUnitId, bidId, opts)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/summary
+
+Get summary of bid groups that belong to a schedule bid
+
+Requires ANY permissions:
+
+* wfm:scheduleBidGroup:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let bidId = "bidId_example"; // String | The ID of the schedule bid associated with the bid groups
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getWorkforcemanagementBusinessunitSchedulebidGroupsSummary(businessUnitId, bidId, opts)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitSchedulebidGroupsSummary success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitSchedulebidGroupsSummary');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **bidId** | **String** | The ID of the schedule bid associated with the bid groups |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ScheduleBidGroupSummaryList**
+
+
+## getWorkforcemanagementBusinessunitSchedulebids
+
+> ScheduleBidListResponse getWorkforcemanagementBusinessunitSchedulebids(businessUnitId, opts)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids
+
+Get list of schedule bids
+
+Requires ANY permissions:
+
+* wfm:scheduleBid:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getWorkforcemanagementBusinessunitSchedulebids(businessUnitId, opts)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitSchedulebids success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitSchedulebids');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ScheduleBidListResponse**
 
 
 ## getWorkforcemanagementBusinessunitSchedulerSettings
@@ -8496,6 +8935,174 @@ apiInstance.getWorkforcemanagementNotifications(opts)
 **NotificationsResponse**
 
 
+## getWorkforcemanagementSchedulebidPreference
+
+> AgentScheduleBiddingPreferenceResponse getWorkforcemanagementSchedulebidPreference(bidId, opts)
+
+
+GET /api/v2/workforcemanagement/schedulebids/{bidId}/preference
+
+Gets an agent's schedule bidding preference
+
+Requires ANY permissions:
+
+* wfm:agentScheduleBid:submit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let bidId = "bidId_example"; // String | The ID of the schedule bid
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getWorkforcemanagementSchedulebidPreference(bidId, opts)
+  .then((data) => {
+    console.log(`getWorkforcemanagementSchedulebidPreference success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementSchedulebidPreference');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **bidId** | **String** | The ID of the schedule bid |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AgentScheduleBiddingPreferenceResponse**
+
+
+## getWorkforcemanagementSchedulebidSchedulesets
+
+> AgentScheduleBidScheduleSetResponse getWorkforcemanagementSchedulebidSchedulesets(bidId, opts)
+
+
+GET /api/v2/workforcemanagement/schedulebids/{bidId}/schedulesets
+
+Gets an agent's schedule sets for a bid
+
+Requires ANY permissions:
+
+* wfm:agentScheduleBid:submit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let bidId = "bidId_example"; // String | The ID of the schedule bid
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getWorkforcemanagementSchedulebidSchedulesets(bidId, opts)
+  .then((data) => {
+    console.log(`getWorkforcemanagementSchedulebidSchedulesets success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementSchedulebidSchedulesets');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **bidId** | **String** | The ID of the schedule bid |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AgentScheduleBidScheduleSetResponse**
+
+
+## getWorkforcemanagementSchedulebids
+
+> AgentScheduleBids getWorkforcemanagementSchedulebids(opts)
+
+
+GET /api/v2/workforcemanagement/schedulebids
+
+Gets the list of schedule bids that belong to an agent. It will fetch an open bid or upcoming bid or a bid that is closed recently
+
+Requires ANY permissions:
+
+* wfm:agentScheduleBid:submit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getWorkforcemanagementSchedulebids(opts)
+  .then((data) => {
+    console.log(`getWorkforcemanagementSchedulebids success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementSchedulebids');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AgentScheduleBids**
+
+
 ## getWorkforcemanagementSchedulingjob
 
 > SchedulingStatusResponse getWorkforcemanagementSchedulingjob(jobId, opts)
@@ -10254,6 +10861,193 @@ apiInstance.patchWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, pl
 ### Return type
 
 **PlanningGroup**
+
+
+## patchWorkforcemanagementBusinessunitSchedulebid
+
+> ScheduleBid patchWorkforcemanagementBusinessunitSchedulebid(businessUnitId, bidId, body, opts)
+
+
+PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}
+
+Update a schedule bid
+
+Requires ANY permissions:
+
+* wfm:scheduleBid:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let bidId = "bidId_example"; // String | The ID of the schedule bid
+let body = {}; // Object | The schedule bid to be updated
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchWorkforcemanagementBusinessunitSchedulebid(businessUnitId, bidId, body, opts)
+  .then((data) => {
+    console.log(`patchWorkforcemanagementBusinessunitSchedulebid success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchWorkforcemanagementBusinessunitSchedulebid');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **bidId** | **String** | The ID of the schedule bid |  |
+ **body** | **Object** | The schedule bid to be updated |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ScheduleBid**
+
+
+## patchWorkforcemanagementBusinessunitSchedulebidGroup
+
+> ScheduleBidGroupResponse patchWorkforcemanagementBusinessunitSchedulebidGroup(businessUnitId, bidId, bidGroupId, body, opts)
+
+
+PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/{bidGroupId}
+
+Update a schedule bid group by bid group Id
+
+Requires ANY permissions:
+
+* wfm:scheduleBidGroup:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let bidId = "bidId_example"; // String | The ID of the schedule bid associated with the bid groups
+let bidGroupId = "bidGroupId_example"; // String | Schedule Bid Group id
+let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchWorkforcemanagementBusinessunitSchedulebidGroup(businessUnitId, bidId, bidGroupId, body, opts)
+  .then((data) => {
+    console.log(`patchWorkforcemanagementBusinessunitSchedulebidGroup success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchWorkforcemanagementBusinessunitSchedulebidGroup');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **bidId** | **String** | The ID of the schedule bid associated with the bid groups |  |
+ **bidGroupId** | **String** | Schedule Bid Group id |  |
+ **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ScheduleBidGroupResponse**
+
+
+## patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences
+
+> AdminAgentScheduleBidPreferenceResponse patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences(businessUnitId, bidId, bidGroupId, body, opts)
+
+
+PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/{bidGroupId}/preferences
+
+Overrides the assigned schedule bid for the specified agents
+
+Requires ANY permissions:
+
+* wfm:scheduleBidGroup:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let bidId = "bidId_example"; // String | The ID of the schedule bid associated with the bid groups
+let bidGroupId = "bidGroupId_example"; // String | The ID of the schedule bid group
+let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences(businessUnitId, bidId, bidGroupId, body, opts)
+  .then((data) => {
+    console.log(`patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **bidId** | **String** | The ID of the schedule bid associated with the bid groups |  |
+ **bidGroupId** | **String** | The ID of the schedule bid group |  |
+ **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AdminAgentScheduleBidPreferenceResponse**
 
 
 ## patchWorkforcemanagementBusinessunitSchedulerSettings
@@ -14171,6 +14965,246 @@ apiInstance.postWorkforcemanagementBusinessunitPlanninggroups(businessUnitId, bo
 ### Return type
 
 **PlanningGroup**
+
+
+## postWorkforcemanagementBusinessunitSchedulebidCopy
+
+> ScheduleBid postWorkforcemanagementBusinessunitSchedulebidCopy(businessUnitId, bidId, body, opts)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/copy
+
+Copy a schedule bid
+
+Requires ANY permissions:
+
+* wfm:scheduleBid:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let bidId = "bidId_example"; // String | The ID of the schedule bid to copy
+let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postWorkforcemanagementBusinessunitSchedulebidCopy(businessUnitId, bidId, body, opts)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitSchedulebidCopy success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitSchedulebidCopy');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **bidId** | **String** | The ID of the schedule bid to copy |  |
+ **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ScheduleBid**
+
+
+## postWorkforcemanagementBusinessunitSchedulebidGroups
+
+> ScheduleBidGroupResponse postWorkforcemanagementBusinessunitSchedulebidGroups(businessUnitId, bidId, body, opts)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups
+
+Add a bid group in a given schedule bid
+
+Requires ANY permissions:
+
+* wfm:scheduleBidGroup:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let bidId = "bidId_example"; // String | The ID of the schedule bid associated with the bid groups
+let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postWorkforcemanagementBusinessunitSchedulebidGroups(businessUnitId, bidId, body, opts)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitSchedulebidGroups success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitSchedulebidGroups');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **bidId** | **String** | The ID of the schedule bid associated with the bid groups |  |
+ **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ScheduleBidGroupResponse**
+
+
+## postWorkforcemanagementBusinessunitSchedulebids
+
+> ScheduleBid postWorkforcemanagementBusinessunitSchedulebids(businessUnitId, body, opts)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids
+
+Create a new schedule bid
+
+Requires ANY permissions:
+
+* wfm:scheduleBid:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let body = {}; // Object | The schedule bid to be created
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postWorkforcemanagementBusinessunitSchedulebids(businessUnitId, body, opts)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitSchedulebids success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitSchedulebids');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **body** | **Object** | The schedule bid to be created |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ScheduleBid**
+
+
+## postWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesets
+
+> AgentsEffectiveScheduleSetResponse postWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesets(businessUnitId, body, opts)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/effectiveschedulesets
+
+Fetch all the agents with effective schedule set for the given BU
+
+Requires ANY permissions:
+
+* wfm:scheduleBid:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesets(businessUnitId, body, opts)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesets success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesets');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AgentsEffectiveScheduleSetResponse**
 
 
 ## postWorkforcemanagementBusinessunitServicegoaltemplates
@@ -19182,4 +20216,63 @@ apiInstance.putWorkforcemanagementManagementunitTimeofflimitValues(managementUni
 **TimeOffLimit**
 
 
-_purecloud-platform-client-v2@254.0.0_
+## putWorkforcemanagementSchedulebidPreference
+
+> AgentScheduleBiddingPreferenceResponse putWorkforcemanagementSchedulebidPreference(bidId, body, opts)
+
+
+PUT /api/v2/workforcemanagement/schedulebids/{bidId}/preference
+
+Update an agent's schedule set preference
+
+Requires ANY permissions:
+
+* wfm:agentScheduleBid:submit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let bidId = "bidId_example"; // String | The ID of the schedule bid
+let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.putWorkforcemanagementSchedulebidPreference(bidId, body, opts)
+  .then((data) => {
+    console.log(`putWorkforcemanagementSchedulebidPreference success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putWorkforcemanagementSchedulebidPreference');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **bidId** | **String** | The ID of the schedule bid |  |
+ **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AgentScheduleBiddingPreferenceResponse**
+
+
+_purecloud-platform-client-v2@255.0.0_

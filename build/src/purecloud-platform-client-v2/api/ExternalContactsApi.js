@@ -5,7 +5,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -619,7 +619,7 @@ class ExternalContactsApi {
 	}
 
 	/**
-	 * List exports for organization
+	 * List contact exports for organization
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.divisionIds Division IDs of entities

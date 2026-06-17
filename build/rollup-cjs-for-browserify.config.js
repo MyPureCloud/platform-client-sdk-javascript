@@ -29,8 +29,7 @@ export default {
 			'https',
 			'url',
 			'zlib',
-			'axios',
-			'qs'
+			'axios'
 		]
 	},
 	plugins: [
@@ -107,7 +106,6 @@ export default {
 		'querystring',
 		'tty',
 		'crypto',
-		'os',
-		'qs'
+		'os'
 	]
 };

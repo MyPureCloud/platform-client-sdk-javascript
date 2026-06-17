@@ -2,11 +2,10 @@ import Configuration from './configuration.js';
 import DefaultHttpClient from './DefaultHttpClient.js';
 import AbstractHttpClient from './AbstractHttpClient.js';
 import HttpRequestOptions from './HttpRequestOptions.js';
-import { default as qs } from 'qs';
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 254.0.0
+ * @version 255.0.0
  */
 class ApiClient {
 	/**
@@ -636,11 +635,11 @@ class ApiClient {
             var headers = {
                 'Content-Type': 'application/x-www-form-urlencoded'
             };
-            var data = qs.stringify({ grant_type: 'authorization_code',
+            var data = new URLSearchParams({ grant_type: 'authorization_code',
                 code: authCode,
                 code_verifier: codeVerifier,
                 client_id: clientId,
-                redirect_uri: redirectUri });
+                redirect_uri: redirectUri }).toString();
 
 			var requestOptions = new HttpRequestOptions(`${loginBasePath}/oauth/token`, `POST`, headers, null, data, this.timeout);
             const httpClient = this.getHttpClient();
@@ -1091,7 +1090,8 @@ class ApiClient {
 			'Authorization': 'Basic ' + encodedData,
 			'Content-Type': 'application/x-www-form-urlencoded'
 		};
-		var requestOptions = new HttpRequestOptions(`${loginBasePath}/oauth/token`, `POST`, headers, null, qs.stringify(data), this.timeout);
+		var queryData = new URLSearchParams(data).toString();
+		var requestOptions = new HttpRequestOptions(`${loginBasePath}/oauth/token`, `POST`, headers, null, queryData, this.timeout);
 		const httpClient = this.getHttpClient();
 		return httpClient.request(requestOptions);
 	}

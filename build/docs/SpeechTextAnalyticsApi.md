@@ -980,7 +980,7 @@ let opts = {
   'dialect': en-US, // String | The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
   'transcriptionEngine': "transcriptionEngine_example", // String | Filter by transcription engine, If not provided, all transcription engines will be considered
   'nextPage': "nextPage_example", // String | The key for listing the next page
-  'pageSize': 500, // Number | The page size for the listing
+  'pageSize': 500, // Number | The page size for the listing. Default is 500 per page. Note: organizations may store up to 1000 dictionary terms per dialect; use nextPage to paginate beyond the first page when listing a full dialect vocabulary.
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
     'X-Request-ID': 'req-12345'
@@ -1005,7 +1005,7 @@ apiInstance.getSpeechandtextanalyticsDictionaryfeedback(opts)
  **dialect** | **String** | The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard | [optional]  |
  **transcriptionEngine** | **String** | Filter by transcription engine, If not provided, all transcription engines will be considered | [optional] <br />**Values**: Genesys, GenesysExtended |
  **nextPage** | **String** | The key for listing the next page | [optional]  |
- **pageSize** | **Number** | The page size for the listing | [optional] [default to 500] |
+ **pageSize** | **Number** | The page size for the listing. Default is 500 per page. Note: organizations may store up to 1000 dictionary terms per dialect; use nextPage to paginate beyond the first page when listing a full dialect vocabulary. | [optional] [default to 500] |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -3809,4 +3809,4 @@ apiInstance.putSpeechandtextanalyticsTopic(topicId, body, opts)
 **Topic**
 
 
-_purecloud-platform-client-v2@254.0.0_
+_purecloud-platform-client-v2@255.0.0_

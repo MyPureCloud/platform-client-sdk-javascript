@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -3035,6 +3035,38 @@ class ArchitectApi {
 	}
 
 	/**
+	 * Fetch Architect Validate Job Status
+	 * 
+	 * @param {String} jobId Job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * getFlowsValidateJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getFlowsValidateJob(jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getFlowsValidateJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/validate/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Updates a grammar
 	 * 
 	 * @param {String} grammarId grammar ID
@@ -4326,6 +4358,37 @@ class ArchitectApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Register Architect Validate Job
+	 * 
+	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * postFlowsValidateJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postFlowsValidateJobs(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postFlowsValidateJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/validate/jobs', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json'],

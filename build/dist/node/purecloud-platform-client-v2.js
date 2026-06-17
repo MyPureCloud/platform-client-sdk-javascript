@@ -1,12 +1,10 @@
 'use strict';
 
 var axios = require('axios');
-var qs = require('qs');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
 var axios__default = /*#__PURE__*/_interopDefaultLegacy(axios);
-var qs__default = /*#__PURE__*/_interopDefaultLegacy(qs);
 
 var PureCloudRegionHosts = {
 	us_east_1: 'mypurecloud.com',
@@ -26,6 +24,7 @@ var PureCloudRegionHosts = {
 	eu_central_2: 'euc2.pure.cloud',
 	mx_central_1: 'mxc1.pure.cloud',
 	ap_southeast_1: 'apse1.pure.cloud',
+	eusc_de_east_1: 'edee1.eusc-pure.cloud',
 };
 
 class AbstractHttpClient {
@@ -748,7 +747,7 @@ class Configuration {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 254.0.0
+ * @version 255.0.0
  */
 class ApiClient {
 	/**
@@ -1378,11 +1377,11 @@ class ApiClient {
             var headers = {
                 'Content-Type': 'application/x-www-form-urlencoded'
             };
-            var data = qs__default["default"].stringify({ grant_type: 'authorization_code',
+            var data = new URLSearchParams({ grant_type: 'authorization_code',
                 code: authCode,
                 code_verifier: codeVerifier,
                 client_id: clientId,
-                redirect_uri: redirectUri });
+                redirect_uri: redirectUri }).toString();
 
 			var requestOptions = new HttpRequestOptions(`${loginBasePath}/oauth/token`, `POST`, headers, null, data, this.timeout);
             const httpClient = this.getHttpClient();
@@ -1833,7 +1832,8 @@ class ApiClient {
 			'Authorization': 'Basic ' + encodedData,
 			'Content-Type': 'application/x-www-form-urlencoded'
 		};
-		var requestOptions = new HttpRequestOptions(`${loginBasePath}/oauth/token`, `POST`, headers, null, qs__default["default"].stringify(data), this.timeout);
+		var queryData = new URLSearchParams(data).toString();
+		var requestOptions = new HttpRequestOptions(`${loginBasePath}/oauth/token`, `POST`, headers, null, queryData, this.timeout);
 		const httpClient = this.getHttpClient();
 		return httpClient.request(requestOptions);
 	}
@@ -2439,7 +2439,7 @@ class AIStudioApi {
 	/**
 	 * AIStudio service.
 	 * @module purecloud-platform-client-v2/api/AIStudioApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -3154,7 +3154,7 @@ class AgentAssistantsApi {
 	/**
 	 * AgentAssistants service.
 	 * @module purecloud-platform-client-v2/api/AgentAssistantsApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -3959,7 +3959,7 @@ class AgentCopilotApi {
 	/**
 	 * AgentCopilot service.
 	 * @module purecloud-platform-client-v2/api/AgentCopilotApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -4071,7 +4071,7 @@ class AgentUIApi {
 	/**
 	 * AgentUI service.
 	 * @module purecloud-platform-client-v2/api/AgentUIApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -4222,7 +4222,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -4683,7 +4683,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -8908,7 +8908,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -11938,6 +11938,38 @@ class ArchitectApi {
 	}
 
 	/**
+	 * Fetch Architect Validate Job Status
+	 * 
+	 * @param {String} jobId Job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * getFlowsValidateJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getFlowsValidateJob(jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getFlowsValidateJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/validate/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Updates a grammar
 	 * 
 	 * @param {String} grammarId grammar ID
@@ -13237,6 +13269,37 @@ class ArchitectApi {
 	}
 
 	/**
+	 * Register Architect Validate Job
+	 * 
+	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * postFlowsValidateJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postFlowsValidateJobs(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postFlowsValidateJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/validate/jobs', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Updates a emergency group by ID
 	 * 
 	 * @param {String} emergencyGroupId Emergency group ID
@@ -13768,7 +13831,7 @@ class AssistantCopilotVariationsApi {
 	/**
 	 * AssistantCopilotVariations service.
 	 * @module purecloud-platform-client-v2/api/AssistantCopilotVariationsApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -13964,7 +14027,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -14191,7 +14254,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -16116,7 +16179,7 @@ class BackgroundAssistantApi {
 	/**
 	 * BackgroundAssistant service.
 	 * @module purecloud-platform-client-v2/api/BackgroundAssistantApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -16190,7 +16253,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -16474,7 +16537,7 @@ class BusinessRulesApi {
 	/**
 	 * BusinessRules service.
 	 * @module purecloud-platform-client-v2/api/BusinessRulesApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -17922,7 +17985,7 @@ class CarrierServicesApi {
 	/**
 	 * CarrierServices service.
 	 * @module purecloud-platform-client-v2/api/CarrierServicesApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -17999,7 +18062,7 @@ class CaseManagementApi {
 	/**
 	 * CaseManagement service.
 	 * @module purecloud-platform-client-v2/api/CaseManagementApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -19374,7 +19437,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -20513,7 +20576,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -21227,7 +21290,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -22422,7 +22485,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -33524,7 +33587,7 @@ class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -33625,7 +33688,7 @@ class DataPrivacyApi {
 	/**
 	 * DataPrivacy service.
 	 * @module purecloud-platform-client-v2/api/DataPrivacyApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -33822,7 +33885,7 @@ class DownloadsApi {
 	/**
 	 * Downloads service.
 	 * @module purecloud-platform-client-v2/api/DownloadsApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -33876,7 +33939,7 @@ class EmailsApi {
 	/**
 	 * Emails service.
 	 * @module purecloud-platform-client-v2/api/EmailsApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -34024,7 +34087,7 @@ class EmployeeEngagementApi {
 	/**
 	 * EmployeeEngagement service.
 	 * @module purecloud-platform-client-v2/api/EmployeeEngagementApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -34228,7 +34291,7 @@ class EventsApi {
 	/**
 	 * Events service.
 	 * @module purecloud-platform-client-v2/api/EventsApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -34370,7 +34433,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -34984,7 +35047,7 @@ class ExternalContactsApi {
 	}
 
 	/**
-	 * List exports for organization
+	 * List contact exports for organization
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.divisionIds Division IDs of entities
@@ -38141,7 +38204,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -38390,7 +38453,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -38624,7 +38687,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -41476,7 +41539,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -41620,7 +41683,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -41771,7 +41834,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -42387,7 +42450,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -42978,7 +43041,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -44029,7 +44092,7 @@ class InfrastructureAsCodeApi {
 	/**
 	 * InfrastructureAsCode service.
 	 * @module purecloud-platform-client-v2/api/InfrastructureAsCodeApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -44209,7 +44272,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -47181,7 +47244,7 @@ class IntentsApi {
 	/**
 	 * Intents service.
 	 * @module purecloud-platform-client-v2/api/IntentsApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -47713,7 +47776,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -50689,7 +50752,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -54940,7 +55003,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -56314,7 +56377,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -56573,7 +56636,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -57821,7 +57884,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -58119,7 +58182,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -58386,7 +58449,7 @@ class LogCaptureApi {
 	/**
 	 * LogCapture service.
 	 * @module purecloud-platform-client-v2/api/LogCaptureApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -58608,7 +58671,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -59026,7 +59089,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -59196,7 +59259,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -59457,7 +59520,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -59873,7 +59936,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -60237,7 +60300,7 @@ class OperationalEventsApi {
 	/**
 	 * OperationalEvents service.
 	 * @module purecloud-platform-client-v2/api/OperationalEventsApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -60368,7 +60431,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -60929,7 +60992,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -62533,7 +62596,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -68120,7 +68183,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -68978,7 +69041,7 @@ class ProcessAutomationApi {
 	/**
 	 * ProcessAutomation service.
 	 * @module purecloud-platform-client-v2/api/ProcessAutomationApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -69399,7 +69462,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -71749,7 +71812,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -73597,7 +73660,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -74241,7 +74304,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -79803,7 +79866,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -80764,7 +80827,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -81273,7 +81336,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -82089,7 +82152,7 @@ class SettingsApi {
 	/**
 	 * Settings service.
 	 * @module purecloud-platform-client-v2/api/SettingsApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -82498,7 +82561,7 @@ class SocialMediaApi {
 	/**
 	 * SocialMedia service.
 	 * @module purecloud-platform-client-v2/api/SocialMediaApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -84483,7 +84546,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -84965,7 +85028,7 @@ class SpeechTextAnalyticsApi {
 	 * @param {String} opts.dialect The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
 	 * @param {Object} opts.transcriptionEngine Filter by transcription engine, If not provided, all transcription engines will be considered
 	 * @param {String} opts.nextPage The key for listing the next page
-	 * @param {Number} opts.pageSize The page size for the listing (default to 500)
+	 * @param {Number} opts.pageSize The page size for the listing. Default is 500 per page. Note: organizations may store up to 1000 dictionary terms per dialect; use nextPage to paginate beyond the first page when listing a full dialect vocabulary. (default to 500)
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getSpeechandtextanalyticsDictionaryfeedback(opts) { 
@@ -86435,7 +86498,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -86549,7 +86612,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -86696,7 +86759,7 @@ class TaskManagementApi {
 	/**
 	 * TaskManagement service.
 	 * @module purecloud-platform-client-v2/api/TaskManagementApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -89192,7 +89255,7 @@ class TeamsApi {
 	/**
 	 * Teams service.
 	 * @module purecloud-platform-client-v2/api/TeamsApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -89535,7 +89598,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -90209,7 +90272,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -94187,7 +94250,7 @@ class TextbotsApi {
 	/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -94333,7 +94396,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -94511,7 +94574,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -94882,7 +94945,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -95260,7 +95323,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -95462,7 +95525,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -99477,7 +99540,7 @@ class UsersRulesApi {
 	/**
 	 * UsersRules service.
 	 * @module purecloud-platform-client-v2/api/UsersRulesApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -99794,7 +99857,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -99922,7 +99985,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -100752,7 +100815,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -101404,7 +101467,7 @@ class WebDeploymentsApi {
 	/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -102082,7 +102145,7 @@ class WebMessagingApi {
 	/**
 	 * WebMessaging service.
 	 * @module purecloud-platform-client-v2/api/WebMessagingApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -102245,7 +102308,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -102421,7 +102484,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -102561,6 +102624,81 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}', 
 			'DELETE', 
 			{ 'businessUnitId': businessUnitId,'planningGroupId': planningGroupId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Delete a schedule bid
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The ID of the schedule bid
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	deleteWorkforcemanagementBusinessunitSchedulebid(businessUnitId, bidId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitSchedulebid';
+		}
+		// verify the required parameter 'bidId' is set
+		if (bidId === undefined || bidId === null || bidId === '') {
+			throw 'Missing the required parameter "bidId" when calling deleteWorkforcemanagementBusinessunitSchedulebid';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}', 
+			'DELETE', 
+			{ 'businessUnitId': businessUnitId,'bidId': bidId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Delete a schedule bid group by bid group Id
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The ID of the schedule bid associated with the bid groups
+	 * @param {String} bidGroupId Schedule Bid Group id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	deleteWorkforcemanagementBusinessunitSchedulebidGroup(businessUnitId, bidId, bidGroupId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitSchedulebidGroup';
+		}
+		// verify the required parameter 'bidId' is set
+		if (bidId === undefined || bidId === null || bidId === '') {
+			throw 'Missing the required parameter "bidId" when calling deleteWorkforcemanagementBusinessunitSchedulebidGroup';
+		}
+		// verify the required parameter 'bidGroupId' is set
+		if (bidGroupId === undefined || bidGroupId === null || bidGroupId === '') {
+			throw 'Missing the required parameter "bidGroupId" when calling deleteWorkforcemanagementBusinessunitSchedulebidGroup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/{bidGroupId}', 
+			'DELETE', 
+			{ 'businessUnitId': businessUnitId,'bidId': bidId,'bidGroupId': bidGroupId },
 			{  },
 			{  },
 			{  },
@@ -104372,6 +104510,188 @@ class WorkforceManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get a schedule bid
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The ID of the schedule bid
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementBusinessunitSchedulebid(businessUnitId, bidId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitSchedulebid';
+		}
+		// verify the required parameter 'bidId' is set
+		if (bidId === undefined || bidId === null || bidId === '') {
+			throw 'Missing the required parameter "bidId" when calling getWorkforcemanagementBusinessunitSchedulebid';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'bidId': bidId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get a schedule bid group
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The ID of the schedule bid associated with the bid groups
+	 * @param {String} bidGroupId Schedule Bid Group id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementBusinessunitSchedulebidGroup(businessUnitId, bidId, bidGroupId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitSchedulebidGroup';
+		}
+		// verify the required parameter 'bidId' is set
+		if (bidId === undefined || bidId === null || bidId === '') {
+			throw 'Missing the required parameter "bidId" when calling getWorkforcemanagementBusinessunitSchedulebidGroup';
+		}
+		// verify the required parameter 'bidGroupId' is set
+		if (bidGroupId === undefined || bidGroupId === null || bidGroupId === '') {
+			throw 'Missing the required parameter "bidGroupId" when calling getWorkforcemanagementBusinessunitSchedulebidGroup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/{bidGroupId}', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'bidId': bidId,'bidGroupId': bidGroupId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get agents schedule bid preferences for a bid group
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The ID of the schedule bid associated with the bid groups
+	 * @param {String} bidGroupId The ID of the schedule bid group
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Array.<String>} opts.expand Include to fetch agents' preferences with priorities
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementBusinessunitSchedulebidGroupPreferences(businessUnitId, bidId, bidGroupId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitSchedulebidGroupPreferences';
+		}
+		// verify the required parameter 'bidId' is set
+		if (bidId === undefined || bidId === null || bidId === '') {
+			throw 'Missing the required parameter "bidId" when calling getWorkforcemanagementBusinessunitSchedulebidGroupPreferences';
+		}
+		// verify the required parameter 'bidGroupId' is set
+		if (bidGroupId === undefined || bidGroupId === null || bidGroupId === '') {
+			throw 'Missing the required parameter "bidGroupId" when calling getWorkforcemanagementBusinessunitSchedulebidGroupPreferences';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/{bidGroupId}/preferences', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'bidId': bidId,'bidGroupId': bidGroupId },
+			{ 'forceDownloadService': opts['forceDownloadService'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get summary of bid groups that belong to a schedule bid
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The ID of the schedule bid associated with the bid groups
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementBusinessunitSchedulebidGroupsSummary(businessUnitId, bidId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitSchedulebidGroupsSummary';
+		}
+		// verify the required parameter 'bidId' is set
+		if (bidId === undefined || bidId === null || bidId === '') {
+			throw 'Missing the required parameter "bidId" when calling getWorkforcemanagementBusinessunitSchedulebidGroupsSummary';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/summary', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'bidId': bidId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get list of schedule bids
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementBusinessunitSchedulebids(businessUnitId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitSchedulebids';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids', 
 			'GET', 
 			{ 'businessUnitId': businessUnitId },
 			{  },
@@ -106863,6 +107183,91 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Gets an agent's schedule bidding preference
+	 * 
+	 * @param {String} bidId The ID of the schedule bid
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementSchedulebidPreference(bidId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'bidId' is set
+		if (bidId === undefined || bidId === null || bidId === '') {
+			throw 'Missing the required parameter "bidId" when calling getWorkforcemanagementSchedulebidPreference';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/schedulebids/{bidId}/preference', 
+			'GET', 
+			{ 'bidId': bidId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Gets an agent's schedule sets for a bid
+	 * 
+	 * @param {String} bidId The ID of the schedule bid
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementSchedulebidSchedulesets(bidId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'bidId' is set
+		if (bidId === undefined || bidId === null || bidId === '') {
+			throw 'Missing the required parameter "bidId" when calling getWorkforcemanagementSchedulebidSchedulesets';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/schedulebids/{bidId}/schedulesets', 
+			'GET', 
+			{ 'bidId': bidId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Gets the list of schedule bids that belong to an agent. It will fetch an open bid or upcoming bid or a bid that is closed recently
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementSchedulebids(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/schedulebids', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Get status of the scheduling job
 	 * 
 	 * @param {String} jobId The id of the scheduling job
@@ -107828,6 +108233,136 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}', 
 			'PATCH', 
 			{ 'businessUnitId': businessUnitId,'planningGroupId': planningGroupId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update a schedule bid
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The ID of the schedule bid
+	 * @param {Object} body The schedule bid to be updated
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	patchWorkforcemanagementBusinessunitSchedulebid(businessUnitId, bidId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitSchedulebid';
+		}
+		// verify the required parameter 'bidId' is set
+		if (bidId === undefined || bidId === null || bidId === '') {
+			throw 'Missing the required parameter "bidId" when calling patchWorkforcemanagementBusinessunitSchedulebid';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitSchedulebid';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}', 
+			'PATCH', 
+			{ 'businessUnitId': businessUnitId,'bidId': bidId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update a schedule bid group by bid group Id
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The ID of the schedule bid associated with the bid groups
+	 * @param {String} bidGroupId Schedule Bid Group id
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	patchWorkforcemanagementBusinessunitSchedulebidGroup(businessUnitId, bidId, bidGroupId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitSchedulebidGroup';
+		}
+		// verify the required parameter 'bidId' is set
+		if (bidId === undefined || bidId === null || bidId === '') {
+			throw 'Missing the required parameter "bidId" when calling patchWorkforcemanagementBusinessunitSchedulebidGroup';
+		}
+		// verify the required parameter 'bidGroupId' is set
+		if (bidGroupId === undefined || bidGroupId === null || bidGroupId === '') {
+			throw 'Missing the required parameter "bidGroupId" when calling patchWorkforcemanagementBusinessunitSchedulebidGroup';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitSchedulebidGroup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/{bidGroupId}', 
+			'PATCH', 
+			{ 'businessUnitId': businessUnitId,'bidId': bidId,'bidGroupId': bidGroupId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Overrides the assigned schedule bid for the specified agents
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The ID of the schedule bid associated with the bid groups
+	 * @param {String} bidGroupId The ID of the schedule bid group
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences(businessUnitId, bidId, bidGroupId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences';
+		}
+		// verify the required parameter 'bidId' is set
+		if (bidId === undefined || bidId === null || bidId === '') {
+			throw 'Missing the required parameter "bidId" when calling patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences';
+		}
+		// verify the required parameter 'bidGroupId' is set
+		if (bidGroupId === undefined || bidGroupId === null || bidGroupId === '') {
+			throw 'Missing the required parameter "bidGroupId" when calling patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/{bidGroupId}/preferences', 
+			'PATCH', 
+			{ 'businessUnitId': businessUnitId,'bidId': bidId,'bidGroupId': bidGroupId },
 			{  },
 			{  },
 			{  },
@@ -110147,6 +110682,156 @@ class WorkforceManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Copy a schedule bid
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The ID of the schedule bid to copy
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementBusinessunitSchedulebidCopy(businessUnitId, bidId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitSchedulebidCopy';
+		}
+		// verify the required parameter 'bidId' is set
+		if (bidId === undefined || bidId === null || bidId === '') {
+			throw 'Missing the required parameter "bidId" when calling postWorkforcemanagementBusinessunitSchedulebidCopy';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitSchedulebidCopy';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/copy', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId,'bidId': bidId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Add a bid group in a given schedule bid
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The ID of the schedule bid associated with the bid groups
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementBusinessunitSchedulebidGroups(businessUnitId, bidId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitSchedulebidGroups';
+		}
+		// verify the required parameter 'bidId' is set
+		if (bidId === undefined || bidId === null || bidId === '') {
+			throw 'Missing the required parameter "bidId" when calling postWorkforcemanagementBusinessunitSchedulebidGroups';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitSchedulebidGroups';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId,'bidId': bidId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Create a new schedule bid
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body The schedule bid to be created
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementBusinessunitSchedulebids(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitSchedulebids';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitSchedulebids';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Fetch all the agents with effective schedule set for the given BU
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesets(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesets';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesets';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/effectiveschedulesets', 
 			'POST', 
 			{ 'businessUnitId': businessUnitId },
 			{  },
@@ -113164,6 +113849,41 @@ class WorkforceManagementApi {
 		);
 	}
 
+	/**
+	 * Update an agent's schedule set preference
+	 * 
+	 * @param {String} bidId The ID of the schedule bid
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	putWorkforcemanagementSchedulebidPreference(bidId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'bidId' is set
+		if (bidId === undefined || bidId === null || bidId === '') {
+			throw 'Missing the required parameter "bidId" when calling putWorkforcemanagementSchedulebidPreference';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putWorkforcemanagementSchedulebidPreference';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/schedulebids/{bidId}/preference', 
+			'PUT', 
+			{ 'bidId': bidId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
 }
 
 /**
@@ -113195,7 +113915,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 254.0.0
+ * @version 255.0.0
  */
 class platformClient {
 	constructor() {

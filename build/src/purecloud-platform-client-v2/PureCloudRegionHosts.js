@@ -16,4 +16,5 @@ export default {
 	eu_central_2: 'euc2.pure.cloud',
 	mx_central_1: 'mxc1.pure.cloud',
 	ap_southeast_1: 'apse1.pure.cloud',
+	eusc_de_east_1: 'edee1.eusc-pure.cloud',
 };

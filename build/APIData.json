@@ -6068,6 +6068,25 @@
     "return": "FlowOutcomeDivisionViewEntityListing",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ArchitectApi();\n\nlet opts = { \n  \"pageNumber\": 1, // Number | Page number\n  \"pageSize\": 25, // Number | Page size\n  \"sortBy\": \"id\", // String | Sort by\n  \"sortOrder\": \"asc\", // String | Sort order\n  \"id\": [\"id_example\"], // [String] | ID\n  \"name\": \"name_example\", // String | Name\n  \"divisionId\": [\"divisionId_example\"], // [String] | division ID(s)\n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Get a pageable list of basic flow outcome information objects filterable by query parameters.\napiInstance.getFlowsOutcomesDivisionviews(opts)\n  .then((data) => {\n    console.log(`getFlowsOutcomesDivisionviews success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getFlowsOutcomesDivisionviews\");\n    console.error(err);\n  });"
   },
+  "getflowsvalidatejob": {
+    "operationId": "getflowsvalidatejob",
+    "functionName": "getFlowsValidateJob",
+    "signature": "getFlowsValidateJob(jobId, expand)",
+    "parameters": [
+      {
+        "name": "jobId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "expand",
+        "type": "[String]",
+        "required": "false"
+      }
+    ],
+    "return": "ArchitectValidateJobStateResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ArchitectApi();\n\nlet jobId = \"jobId_example\"; // String | Job ID\nlet opts = { \n  \"expand\": [\"expand_example\"], // [String] | Which fields, if any, to expand.\n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Fetch Architect Validate Job Status\napiInstance.getFlowsValidateJob(jobId, opts)\n  .then((data) => {\n    console.log(`getFlowsValidateJob success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getFlowsValidateJob\");\n    console.error(err);\n  });"
+  },
   "patcharchitectgrammar": {
     "operationId": "patcharchitectgrammar",
     "functionName": "patchArchitectGrammar",
@@ -6748,6 +6767,20 @@
     ],
     "return": "FlowOutcome",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ArchitectApi();\n\nlet opts = { \n  \"body\": {}, // Object | \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Create a flow outcome\napiInstance.postFlowsOutcomes(opts)\n  .then((data) => {\n    console.log(`postFlowsOutcomes success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postFlowsOutcomes\");\n    console.error(err);\n  });"
+  },
+  "postflowsvalidatejobs": {
+    "operationId": "postflowsvalidatejobs",
+    "functionName": "postFlowsValidateJobs",
+    "signature": "postFlowsValidateJobs(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "RegisterArchitectValidateJobResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ArchitectApi();\n\nlet body = {}; // Object | \nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Register Architect Validate Job\napiInstance.postFlowsValidateJobs(body, opts)\n  .then((data) => {\n    console.log(`postFlowsValidateJobs success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postFlowsValidateJobs\");\n    console.error(err);\n  });"
   },
   "putarchitectemergencygroup": {
     "operationId": "putarchitectemergencygroup",
@@ -19046,7 +19079,7 @@
       }
     ],
     "return": "ContactsExportListing",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ExternalContactsApi();\n\nlet opts = { \n  \"divisionIds\": [\"divisionIds_example\"], // [String] | Division IDs of entities\n  \"after\": \"after_example\", // String | The cursor that points to the end of the set of entities\n  \"pageSize\": 3.4, // Number | Number of entities to return\n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// List exports for organization\napiInstance.getExternalcontactsContactsExports(opts)\n  .then((data) => {\n    console.log(`getExternalcontactsContactsExports success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getExternalcontactsContactsExports\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ExternalContactsApi();\n\nlet opts = { \n  \"divisionIds\": [\"divisionIds_example\"], // [String] | Division IDs of entities\n  \"after\": \"after_example\", // String | The cursor that points to the end of the set of entities\n  \"pageSize\": 3.4, // Number | Number of entities to return\n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// List contact exports for organization\napiInstance.getExternalcontactsContactsExports(opts)\n  .then((data) => {\n    console.log(`getExternalcontactsContactsExports success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getExternalcontactsContactsExports\");\n    console.error(err);\n  });"
   },
   "getexternalcontactscontactsschema": {
     "operationId": "getexternalcontactscontactsschema",
@@ -48718,7 +48751,7 @@
       }
     ],
     "return": "DictionaryFeedbackEntityListing",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SpeechTextAnalyticsApi();\n\nlet opts = { \n  \"dialect\": en-US, // String | The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard\n  \"transcriptionEngine\": \"transcriptionEngine_example\", // String | Filter by transcription engine, If not provided, all transcription engines will be considered\n  \"nextPage\": \"nextPage_example\", // String | The key for listing the next page\n  \"pageSize\": 500, // Number | The page size for the listing\n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Get the list of Speech and Text Analytics dictionary feedbacks\napiInstance.getSpeechandtextanalyticsDictionaryfeedback(opts)\n  .then((data) => {\n    console.log(`getSpeechandtextanalyticsDictionaryfeedback success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getSpeechandtextanalyticsDictionaryfeedback\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SpeechTextAnalyticsApi();\n\nlet opts = { \n  \"dialect\": en-US, // String | The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard\n  \"transcriptionEngine\": \"transcriptionEngine_example\", // String | Filter by transcription engine, If not provided, all transcription engines will be considered\n  \"nextPage\": \"nextPage_example\", // String | The key for listing the next page\n  \"pageSize\": 500, // Number | The page size for the listing. Default is 500 per page. Note: organizations may store up to 1000 dictionary terms per dialect; use nextPage to paginate beyond the first page when listing a full dialect vocabulary.\n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Get the list of Speech and Text Analytics dictionary feedbacks\napiInstance.getSpeechandtextanalyticsDictionaryfeedback(opts)\n  .then((data) => {\n    console.log(`getSpeechandtextanalyticsDictionaryfeedback success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getSpeechandtextanalyticsDictionaryfeedback\");\n    console.error(err);\n  });"
   },
   "getspeechandtextanalyticsdictionaryfeedbackdictionaryfeedbackid": {
     "operationId": "getspeechandtextanalyticsdictionaryfeedbackdictionaryfeedbackid",
@@ -57304,6 +57337,47 @@
     ],
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit.\nlet planningGroupId = \"planningGroupId_example\"; // String | The ID of a planning group to delete\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Deletes the planning group\napiInstance.deleteWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId, opts)\n  .then(() => {\n    console.log(\"deleteWorkforcemanagementBusinessunitPlanninggroup returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteWorkforcemanagementBusinessunitPlanninggroup\");\n    console.error(err);\n  });"
   },
+  "deleteworkforcemanagementbusinessunitschedulebid": {
+    "operationId": "deleteworkforcemanagementbusinessunitschedulebid",
+    "functionName": "deleteWorkforcemanagementBusinessunitSchedulebid",
+    "signature": "deleteWorkforcemanagementBusinessunitSchedulebid(businessUnitId, bidId)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "bidId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nlet bidId = \"bidId_example\"; // String | The ID of the schedule bid\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Delete a schedule bid\napiInstance.deleteWorkforcemanagementBusinessunitSchedulebid(businessUnitId, bidId, opts)\n  .then(() => {\n    console.log(\"deleteWorkforcemanagementBusinessunitSchedulebid returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteWorkforcemanagementBusinessunitSchedulebid\");\n    console.error(err);\n  });"
+  },
+  "deleteworkforcemanagementbusinessunitschedulebidgroup": {
+    "operationId": "deleteworkforcemanagementbusinessunitschedulebidgroup",
+    "functionName": "deleteWorkforcemanagementBusinessunitSchedulebidGroup",
+    "signature": "deleteWorkforcemanagementBusinessunitSchedulebidGroup(businessUnitId, bidId, bidGroupId)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "bidId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "bidGroupId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nlet bidId = \"bidId_example\"; // String | The ID of the schedule bid associated with the bid groups\nlet bidGroupId = \"bidGroupId_example\"; // String | Schedule Bid Group id\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Delete a schedule bid group by bid group Id\napiInstance.deleteWorkforcemanagementBusinessunitSchedulebidGroup(businessUnitId, bidId, bidGroupId, opts)\n  .then(() => {\n    console.log(\"deleteWorkforcemanagementBusinessunitSchedulebidGroup returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteWorkforcemanagementBusinessunitSchedulebidGroup\");\n    console.error(err);\n  });"
+  },
   "deleteworkforcemanagementbusinessunitschedulingrun": {
     "operationId": "deleteworkforcemanagementbusinessunitschedulingrun",
     "functionName": "deleteWorkforcemanagementBusinessunitSchedulingRun",
@@ -58253,6 +58327,116 @@
     ],
     "return": "PlanningGroupList",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit.\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Gets list of planning groups\napiInstance.getWorkforcemanagementBusinessunitPlanninggroups(businessUnitId, opts)\n  .then((data) => {\n    console.log(`getWorkforcemanagementBusinessunitPlanninggroups success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getWorkforcemanagementBusinessunitPlanninggroups\");\n    console.error(err);\n  });"
+  },
+  "getworkforcemanagementbusinessunitschedulebid": {
+    "operationId": "getworkforcemanagementbusinessunitschedulebid",
+    "functionName": "getWorkforcemanagementBusinessunitSchedulebid",
+    "signature": "getWorkforcemanagementBusinessunitSchedulebid(businessUnitId, bidId)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "bidId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "ScheduleBid",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nlet bidId = \"bidId_example\"; // String | The ID of the schedule bid\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Get a schedule bid\napiInstance.getWorkforcemanagementBusinessunitSchedulebid(businessUnitId, bidId, opts)\n  .then((data) => {\n    console.log(`getWorkforcemanagementBusinessunitSchedulebid success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getWorkforcemanagementBusinessunitSchedulebid\");\n    console.error(err);\n  });"
+  },
+  "getworkforcemanagementbusinessunitschedulebidgroup": {
+    "operationId": "getworkforcemanagementbusinessunitschedulebidgroup",
+    "functionName": "getWorkforcemanagementBusinessunitSchedulebidGroup",
+    "signature": "getWorkforcemanagementBusinessunitSchedulebidGroup(businessUnitId, bidId, bidGroupId)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "bidId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "bidGroupId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "ScheduleBidGroupResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nlet bidId = \"bidId_example\"; // String | The ID of the schedule bid associated with the bid groups\nlet bidGroupId = \"bidGroupId_example\"; // String | Schedule Bid Group id\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Get a schedule bid group\napiInstance.getWorkforcemanagementBusinessunitSchedulebidGroup(businessUnitId, bidId, bidGroupId, opts)\n  .then((data) => {\n    console.log(`getWorkforcemanagementBusinessunitSchedulebidGroup success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getWorkforcemanagementBusinessunitSchedulebidGroup\");\n    console.error(err);\n  });"
+  },
+  "getworkforcemanagementbusinessunitschedulebidgrouppreferences": {
+    "operationId": "getworkforcemanagementbusinessunitschedulebidgrouppreferences",
+    "functionName": "getWorkforcemanagementBusinessunitSchedulebidGroupPreferences",
+    "signature": "getWorkforcemanagementBusinessunitSchedulebidGroupPreferences(businessUnitId, bidId, bidGroupId, forceDownloadService, expand)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "bidId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "bidGroupId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "forceDownloadService",
+        "type": "Boolean",
+        "required": "false"
+      },
+      {
+        "name": "expand",
+        "type": "[String]",
+        "required": "false"
+      }
+    ],
+    "return": "AdminAgentScheduleBidPreferenceResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nlet bidId = \"bidId_example\"; // String | The ID of the schedule bid associated with the bid groups\nlet bidGroupId = \"bidGroupId_example\"; // String | The ID of the schedule bid group\nlet opts = { \n  \"forceDownloadService\": true, // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes\n  \"expand\": [\"expand_example\"], // [String] | Include to fetch agents' preferences with priorities\n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Get agents schedule bid preferences for a bid group\napiInstance.getWorkforcemanagementBusinessunitSchedulebidGroupPreferences(businessUnitId, bidId, bidGroupId, opts)\n  .then((data) => {\n    console.log(`getWorkforcemanagementBusinessunitSchedulebidGroupPreferences success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getWorkforcemanagementBusinessunitSchedulebidGroupPreferences\");\n    console.error(err);\n  });"
+  },
+  "getworkforcemanagementbusinessunitschedulebidgroupssummary": {
+    "operationId": "getworkforcemanagementbusinessunitschedulebidgroupssummary",
+    "functionName": "getWorkforcemanagementBusinessunitSchedulebidGroupsSummary",
+    "signature": "getWorkforcemanagementBusinessunitSchedulebidGroupsSummary(businessUnitId, bidId)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "bidId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "ScheduleBidGroupSummaryList",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nlet bidId = \"bidId_example\"; // String | The ID of the schedule bid associated with the bid groups\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Get summary of bid groups that belong to a schedule bid\napiInstance.getWorkforcemanagementBusinessunitSchedulebidGroupsSummary(businessUnitId, bidId, opts)\n  .then((data) => {\n    console.log(`getWorkforcemanagementBusinessunitSchedulebidGroupsSummary success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getWorkforcemanagementBusinessunitSchedulebidGroupsSummary\");\n    console.error(err);\n  });"
+  },
+  "getworkforcemanagementbusinessunitschedulebids": {
+    "operationId": "getworkforcemanagementbusinessunitschedulebids",
+    "functionName": "getWorkforcemanagementBusinessunitSchedulebids",
+    "signature": "getWorkforcemanagementBusinessunitSchedulebids(businessUnitId)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "ScheduleBidListResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Get list of schedule bids\napiInstance.getWorkforcemanagementBusinessunitSchedulebids(businessUnitId, opts)\n  .then((data) => {\n    console.log(`getWorkforcemanagementBusinessunitSchedulebids success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getWorkforcemanagementBusinessunitSchedulebids\");\n    console.error(err);\n  });"
   },
   "getworkforcemanagementbusinessunitschedulersettings": {
     "operationId": "getworkforcemanagementbusinessunitschedulersettings",
@@ -59747,6 +59931,41 @@
     "return": "NotificationsResponse",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Get a list of notifications for the current user\napiInstance.getWorkforcemanagementNotifications(opts)\n  .then((data) => {\n    console.log(`getWorkforcemanagementNotifications success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getWorkforcemanagementNotifications\");\n    console.error(err);\n  });"
   },
+  "getworkforcemanagementschedulebidpreference": {
+    "operationId": "getworkforcemanagementschedulebidpreference",
+    "functionName": "getWorkforcemanagementSchedulebidPreference",
+    "signature": "getWorkforcemanagementSchedulebidPreference(bidId)",
+    "parameters": [
+      {
+        "name": "bidId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "AgentScheduleBiddingPreferenceResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet bidId = \"bidId_example\"; // String | The ID of the schedule bid\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Gets an agent's schedule bidding preference\napiInstance.getWorkforcemanagementSchedulebidPreference(bidId, opts)\n  .then((data) => {\n    console.log(`getWorkforcemanagementSchedulebidPreference success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getWorkforcemanagementSchedulebidPreference\");\n    console.error(err);\n  });"
+  },
+  "getworkforcemanagementschedulebidschedulesets": {
+    "operationId": "getworkforcemanagementschedulebidschedulesets",
+    "functionName": "getWorkforcemanagementSchedulebidSchedulesets",
+    "signature": "getWorkforcemanagementSchedulebidSchedulesets(bidId)",
+    "parameters": [
+      {
+        "name": "bidId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "AgentScheduleBidScheduleSetResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet bidId = \"bidId_example\"; // String | The ID of the schedule bid\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Gets an agent's schedule sets for a bid\napiInstance.getWorkforcemanagementSchedulebidSchedulesets(bidId, opts)\n  .then((data) => {\n    console.log(`getWorkforcemanagementSchedulebidSchedulesets success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getWorkforcemanagementSchedulebidSchedulesets\");\n    console.error(err);\n  });"
+  },
+  "getworkforcemanagementschedulebids": {
+    "operationId": "getworkforcemanagementschedulebids",
+    "functionName": "getWorkforcemanagementSchedulebids",
+    "signature": "getWorkforcemanagementSchedulebids()",
+    "return": "AgentScheduleBids",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Gets the list of schedule bids that belong to an agent. It will fetch an open bid or upcoming bid or a bid that is closed recently\napiInstance.getWorkforcemanagementSchedulebids(opts)\n  .then((data) => {\n    console.log(`getWorkforcemanagementSchedulebids success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getWorkforcemanagementSchedulebids\");\n    console.error(err);\n  });"
+  },
   "getworkforcemanagementschedulingjob": {
     "operationId": "getworkforcemanagementschedulingjob",
     "functionName": "getWorkforcemanagementSchedulingjob",
@@ -60238,6 +60457,88 @@
     ],
     "return": "PlanningGroup",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit.\nlet planningGroupId = \"planningGroupId_example\"; // String | The ID of a planning group to update\nlet body = {}; // Object | body\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Updates the planning group\napiInstance.patchWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId, body, opts)\n  .then((data) => {\n    console.log(`patchWorkforcemanagementBusinessunitPlanninggroup success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchWorkforcemanagementBusinessunitPlanninggroup\");\n    console.error(err);\n  });"
+  },
+  "patchworkforcemanagementbusinessunitschedulebid": {
+    "operationId": "patchworkforcemanagementbusinessunitschedulebid",
+    "functionName": "patchWorkforcemanagementBusinessunitSchedulebid",
+    "signature": "patchWorkforcemanagementBusinessunitSchedulebid(businessUnitId, bidId, body)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "bidId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "ScheduleBid",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nlet bidId = \"bidId_example\"; // String | The ID of the schedule bid\nlet body = {}; // Object | The schedule bid to be updated\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Update a schedule bid\napiInstance.patchWorkforcemanagementBusinessunitSchedulebid(businessUnitId, bidId, body, opts)\n  .then((data) => {\n    console.log(`patchWorkforcemanagementBusinessunitSchedulebid success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchWorkforcemanagementBusinessunitSchedulebid\");\n    console.error(err);\n  });"
+  },
+  "patchworkforcemanagementbusinessunitschedulebidgroup": {
+    "operationId": "patchworkforcemanagementbusinessunitschedulebidgroup",
+    "functionName": "patchWorkforcemanagementBusinessunitSchedulebidGroup",
+    "signature": "patchWorkforcemanagementBusinessunitSchedulebidGroup(businessUnitId, bidId, bidGroupId, body)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "bidId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "bidGroupId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "ScheduleBidGroupResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nlet bidId = \"bidId_example\"; // String | The ID of the schedule bid associated with the bid groups\nlet bidGroupId = \"bidGroupId_example\"; // String | Schedule Bid Group id\nlet body = {}; // Object | body\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Update a schedule bid group by bid group Id\napiInstance.patchWorkforcemanagementBusinessunitSchedulebidGroup(businessUnitId, bidId, bidGroupId, body, opts)\n  .then((data) => {\n    console.log(`patchWorkforcemanagementBusinessunitSchedulebidGroup success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchWorkforcemanagementBusinessunitSchedulebidGroup\");\n    console.error(err);\n  });"
+  },
+  "patchworkforcemanagementbusinessunitschedulebidgrouppreferences": {
+    "operationId": "patchworkforcemanagementbusinessunitschedulebidgrouppreferences",
+    "functionName": "patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences",
+    "signature": "patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences(businessUnitId, bidId, bidGroupId, body)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "bidId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "bidGroupId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "AdminAgentScheduleBidPreferenceResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nlet bidId = \"bidId_example\"; // String | The ID of the schedule bid associated with the bid groups\nlet bidGroupId = \"bidGroupId_example\"; // String | The ID of the schedule bid group\nlet body = {}; // Object | body\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Overrides the assigned schedule bid for the specified agents\napiInstance.patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences(businessUnitId, bidId, bidGroupId, body, opts)\n  .then((data) => {\n    console.log(`patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences\");\n    console.error(err);\n  });"
   },
   "patchworkforcemanagementbusinessunitschedulersettings": {
     "operationId": "patchworkforcemanagementbusinessunitschedulersettings",
@@ -61595,6 +61896,92 @@
     ],
     "return": "PlanningGroup",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit.\nlet body = {}; // Object | body\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Adds a new planning group\napiInstance.postWorkforcemanagementBusinessunitPlanninggroups(businessUnitId, body, opts)\n  .then((data) => {\n    console.log(`postWorkforcemanagementBusinessunitPlanninggroups success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postWorkforcemanagementBusinessunitPlanninggroups\");\n    console.error(err);\n  });"
+  },
+  "postworkforcemanagementbusinessunitschedulebidcopy": {
+    "operationId": "postworkforcemanagementbusinessunitschedulebidcopy",
+    "functionName": "postWorkforcemanagementBusinessunitSchedulebidCopy",
+    "signature": "postWorkforcemanagementBusinessunitSchedulebidCopy(businessUnitId, bidId, body)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "bidId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "ScheduleBid",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nlet bidId = \"bidId_example\"; // String | The ID of the schedule bid to copy\nlet body = {}; // Object | body\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Copy a schedule bid\napiInstance.postWorkforcemanagementBusinessunitSchedulebidCopy(businessUnitId, bidId, body, opts)\n  .then((data) => {\n    console.log(`postWorkforcemanagementBusinessunitSchedulebidCopy success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postWorkforcemanagementBusinessunitSchedulebidCopy\");\n    console.error(err);\n  });"
+  },
+  "postworkforcemanagementbusinessunitschedulebidgroups": {
+    "operationId": "postworkforcemanagementbusinessunitschedulebidgroups",
+    "functionName": "postWorkforcemanagementBusinessunitSchedulebidGroups",
+    "signature": "postWorkforcemanagementBusinessunitSchedulebidGroups(businessUnitId, bidId, body)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "bidId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "ScheduleBidGroupResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nlet bidId = \"bidId_example\"; // String | The ID of the schedule bid associated with the bid groups\nlet body = {}; // Object | body\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Add a bid group in a given schedule bid\napiInstance.postWorkforcemanagementBusinessunitSchedulebidGroups(businessUnitId, bidId, body, opts)\n  .then((data) => {\n    console.log(`postWorkforcemanagementBusinessunitSchedulebidGroups success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postWorkforcemanagementBusinessunitSchedulebidGroups\");\n    console.error(err);\n  });"
+  },
+  "postworkforcemanagementbusinessunitschedulebids": {
+    "operationId": "postworkforcemanagementbusinessunitschedulebids",
+    "functionName": "postWorkforcemanagementBusinessunitSchedulebids",
+    "signature": "postWorkforcemanagementBusinessunitSchedulebids(businessUnitId, body)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "ScheduleBid",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nlet body = {}; // Object | The schedule bid to be created\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Create a new schedule bid\napiInstance.postWorkforcemanagementBusinessunitSchedulebids(businessUnitId, body, opts)\n  .then((data) => {\n    console.log(`postWorkforcemanagementBusinessunitSchedulebids success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postWorkforcemanagementBusinessunitSchedulebids\");\n    console.error(err);\n  });"
+  },
+  "postworkforcemanagementbusinessunitschedulebidseffectiveschedulesets": {
+    "operationId": "postworkforcemanagementbusinessunitschedulebidseffectiveschedulesets",
+    "functionName": "postWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesets",
+    "signature": "postWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesets(businessUnitId, body)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "AgentsEffectiveScheduleSetResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nlet body = {}; // Object | body\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Fetch all the agents with effective schedule set for the given BU\napiInstance.postWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesets(businessUnitId, body, opts)\n  .then((data) => {\n    console.log(`postWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesets success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesets\");\n    console.error(err);\n  });"
   },
   "postworkforcemanagementbusinessunitservicegoaltemplates": {
     "operationId": "postworkforcemanagementbusinessunitservicegoaltemplates",
@@ -63413,5 +63800,24 @@
     ],
     "return": "TimeOffLimit",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet managementUnitId = \"managementUnitId_example\"; // String | The ID of the management unit.\nlet timeOffLimitId = \"timeOffLimitId_example\"; // String | The ID of the time off limit object to set values for\nlet body = {}; // Object | body\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Sets daily values for a date range of time off limit object\napiInstance.putWorkforcemanagementManagementunitTimeofflimitValues(managementUnitId, timeOffLimitId, body, opts)\n  .then((data) => {\n    console.log(`putWorkforcemanagementManagementunitTimeofflimitValues success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putWorkforcemanagementManagementunitTimeofflimitValues\");\n    console.error(err);\n  });"
+  },
+  "putworkforcemanagementschedulebidpreference": {
+    "operationId": "putworkforcemanagementschedulebidpreference",
+    "functionName": "putWorkforcemanagementSchedulebidPreference",
+    "signature": "putWorkforcemanagementSchedulebidPreference(bidId, body)",
+    "parameters": [
+      {
+        "name": "bidId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "AgentScheduleBiddingPreferenceResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet bidId = \"bidId_example\"; // String | The ID of the schedule bid\nlet body = {}; // Object | body\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Update an agent's schedule set preference\napiInstance.putWorkforcemanagementSchedulebidPreference(bidId, body, opts)\n  .then((data) => {\n    console.log(`putWorkforcemanagementSchedulebidPreference success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putWorkforcemanagementSchedulebidPreference\");\n    console.error(err);\n  });"
   }
 }

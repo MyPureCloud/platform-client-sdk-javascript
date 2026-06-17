@@ -98,6 +98,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getFlowsOutcome**](ArchitectApi#getFlowsOutcome) | **GET** /api/v2/flows/outcomes/{flowOutcomeId} | Get a flow outcome
 [**getFlowsOutcomes**](ArchitectApi#getFlowsOutcomes) | **GET** /api/v2/flows/outcomes | Get a pageable list of flow outcomes, filtered by query parameters
 [**getFlowsOutcomesDivisionviews**](ArchitectApi#getFlowsOutcomesDivisionviews) | **GET** /api/v2/flows/outcomes/divisionviews | Get a pageable list of basic flow outcome information objects filterable by query parameters.
+[**getFlowsValidateJob**](ArchitectApi#getFlowsValidateJob) | **GET** /api/v2/flows/validate/jobs/{jobId} | Fetch Architect Validate Job Status
 [**patchArchitectGrammar**](ArchitectApi#patchArchitectGrammar) | **PATCH** /api/v2/architect/grammars/{grammarId} | Updates a grammar
 [**patchArchitectGrammarLanguage**](ArchitectApi#patchArchitectGrammarLanguage) | **PATCH** /api/v2/architect/grammars/{grammarId}/languages/{languageCode} | Updates a grammar language
 [**patchFlowsInstancesSettingsExecutiondata**](ArchitectApi#patchFlowsInstancesSettingsExecutiondata) | **PATCH** /api/v2/flows/instances/settings/executiondata | Edit the execution history enabled setting.
@@ -139,6 +140,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postFlowsJobs**](ArchitectApi#postFlowsJobs) | **POST** /api/v2/flows/jobs | Register Architect Job. Returns a URL where a file, such as an Architect flow YAML file, can be PUT which will then initiate the job.
 [**postFlowsMilestones**](ArchitectApi#postFlowsMilestones) | **POST** /api/v2/flows/milestones | Create a flow milestone
 [**postFlowsOutcomes**](ArchitectApi#postFlowsOutcomes) | **POST** /api/v2/flows/outcomes | Create a flow outcome
+[**postFlowsValidateJobs**](ArchitectApi#postFlowsValidateJobs) | **POST** /api/v2/flows/validate/jobs | Register Architect Validate Job
 [**putArchitectEmergencygroup**](ArchitectApi#putArchitectEmergencygroup) | **PUT** /api/v2/architect/emergencygroups/{emergencyGroupId} | Updates a emergency group by ID
 [**putArchitectIvr**](ArchitectApi#putArchitectIvr) | **PUT** /api/v2/architect/ivrs/{ivrId} | Update an IVR Config.
 [**putArchitectIvrIdentityresolution**](ArchitectApi#putArchitectIvrIdentityresolution) | **PUT** /api/v2/architect/ivrs/{ivrId}/identityresolution | Update an IVR IdentityResolutionConfig.
@@ -5984,6 +5986,67 @@ apiInstance.getFlowsOutcomesDivisionviews(opts)
 **FlowOutcomeDivisionViewEntityListing**
 
 
+## getFlowsValidateJob
+
+> ArchitectValidateJobStateResponse getFlowsValidateJob(jobId, opts)
+
+
+GET /api/v2/flows/validate/jobs/{jobId}
+
+Fetch Architect Validate Job Status
+
+getFlowsValidateJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* architect:jobValidate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let jobId = "jobId_example"; // String | Job ID
+let opts = { 
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getFlowsValidateJob(jobId, opts)
+  .then((data) => {
+    console.log(`getFlowsValidateJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getFlowsValidateJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | Job ID |  |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: messages |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ArchitectValidateJobStateResponse**
+
+
 ## patchArchitectGrammar
 
 > Grammar patchArchitectGrammar(grammarId, opts)
@@ -8413,6 +8476,65 @@ apiInstance.postFlowsOutcomes(opts)
 **FlowOutcome**
 
 
+## postFlowsValidateJobs
+
+> RegisterArchitectValidateJobResponse postFlowsValidateJobs(body, opts)
+
+
+POST /api/v2/flows/validate/jobs
+
+Register Architect Validate Job
+
+postFlowsValidateJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* architect:jobValidate:create
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postFlowsValidateJobs(body, opts)
+  .then((data) => {
+    console.log(`postFlowsValidateJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postFlowsValidateJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**RegisterArchitectValidateJobResponse**
+
+
 ## putArchitectEmergencygroup
 
 > EmergencyGroup putArchitectEmergencygroup(emergencyGroupId, body, opts)
@@ -9320,4 +9442,4 @@ apiInstance.putFlowsOutcome(flowOutcomeId, opts)
 **Operation**
 
 
-_purecloud-platform-client-v2@254.0.0_
+_purecloud-platform-client-v2@255.0.0_

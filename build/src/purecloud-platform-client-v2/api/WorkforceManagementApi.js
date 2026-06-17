@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 254.0.0
+	 * @version 255.0.0
 	 */
 
 	/**
@@ -145,6 +145,81 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}', 
 			'DELETE', 
 			{ 'businessUnitId': businessUnitId,'planningGroupId': planningGroupId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Delete a schedule bid
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The ID of the schedule bid
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	deleteWorkforcemanagementBusinessunitSchedulebid(businessUnitId, bidId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitSchedulebid';
+		}
+		// verify the required parameter 'bidId' is set
+		if (bidId === undefined || bidId === null || bidId === '') {
+			throw 'Missing the required parameter "bidId" when calling deleteWorkforcemanagementBusinessunitSchedulebid';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}', 
+			'DELETE', 
+			{ 'businessUnitId': businessUnitId,'bidId': bidId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Delete a schedule bid group by bid group Id
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The ID of the schedule bid associated with the bid groups
+	 * @param {String} bidGroupId Schedule Bid Group id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	deleteWorkforcemanagementBusinessunitSchedulebidGroup(businessUnitId, bidId, bidGroupId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitSchedulebidGroup';
+		}
+		// verify the required parameter 'bidId' is set
+		if (bidId === undefined || bidId === null || bidId === '') {
+			throw 'Missing the required parameter "bidId" when calling deleteWorkforcemanagementBusinessunitSchedulebidGroup';
+		}
+		// verify the required parameter 'bidGroupId' is set
+		if (bidGroupId === undefined || bidGroupId === null || bidGroupId === '') {
+			throw 'Missing the required parameter "bidGroupId" when calling deleteWorkforcemanagementBusinessunitSchedulebidGroup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/{bidGroupId}', 
+			'DELETE', 
+			{ 'businessUnitId': businessUnitId,'bidId': bidId,'bidGroupId': bidGroupId },
 			{  },
 			{  },
 			{  },
@@ -1956,6 +2031,188 @@ class WorkforceManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get a schedule bid
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The ID of the schedule bid
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementBusinessunitSchedulebid(businessUnitId, bidId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitSchedulebid';
+		}
+		// verify the required parameter 'bidId' is set
+		if (bidId === undefined || bidId === null || bidId === '') {
+			throw 'Missing the required parameter "bidId" when calling getWorkforcemanagementBusinessunitSchedulebid';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'bidId': bidId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get a schedule bid group
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The ID of the schedule bid associated with the bid groups
+	 * @param {String} bidGroupId Schedule Bid Group id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementBusinessunitSchedulebidGroup(businessUnitId, bidId, bidGroupId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitSchedulebidGroup';
+		}
+		// verify the required parameter 'bidId' is set
+		if (bidId === undefined || bidId === null || bidId === '') {
+			throw 'Missing the required parameter "bidId" when calling getWorkforcemanagementBusinessunitSchedulebidGroup';
+		}
+		// verify the required parameter 'bidGroupId' is set
+		if (bidGroupId === undefined || bidGroupId === null || bidGroupId === '') {
+			throw 'Missing the required parameter "bidGroupId" when calling getWorkforcemanagementBusinessunitSchedulebidGroup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/{bidGroupId}', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'bidId': bidId,'bidGroupId': bidGroupId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get agents schedule bid preferences for a bid group
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The ID of the schedule bid associated with the bid groups
+	 * @param {String} bidGroupId The ID of the schedule bid group
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Array.<String>} opts.expand Include to fetch agents' preferences with priorities
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementBusinessunitSchedulebidGroupPreferences(businessUnitId, bidId, bidGroupId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitSchedulebidGroupPreferences';
+		}
+		// verify the required parameter 'bidId' is set
+		if (bidId === undefined || bidId === null || bidId === '') {
+			throw 'Missing the required parameter "bidId" when calling getWorkforcemanagementBusinessunitSchedulebidGroupPreferences';
+		}
+		// verify the required parameter 'bidGroupId' is set
+		if (bidGroupId === undefined || bidGroupId === null || bidGroupId === '') {
+			throw 'Missing the required parameter "bidGroupId" when calling getWorkforcemanagementBusinessunitSchedulebidGroupPreferences';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/{bidGroupId}/preferences', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'bidId': bidId,'bidGroupId': bidGroupId },
+			{ 'forceDownloadService': opts['forceDownloadService'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get summary of bid groups that belong to a schedule bid
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The ID of the schedule bid associated with the bid groups
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementBusinessunitSchedulebidGroupsSummary(businessUnitId, bidId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitSchedulebidGroupsSummary';
+		}
+		// verify the required parameter 'bidId' is set
+		if (bidId === undefined || bidId === null || bidId === '') {
+			throw 'Missing the required parameter "bidId" when calling getWorkforcemanagementBusinessunitSchedulebidGroupsSummary';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/summary', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'bidId': bidId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get list of schedule bids
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementBusinessunitSchedulebids(businessUnitId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitSchedulebids';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids', 
 			'GET', 
 			{ 'businessUnitId': businessUnitId },
 			{  },
@@ -4447,6 +4704,91 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Gets an agent's schedule bidding preference
+	 * 
+	 * @param {String} bidId The ID of the schedule bid
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementSchedulebidPreference(bidId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'bidId' is set
+		if (bidId === undefined || bidId === null || bidId === '') {
+			throw 'Missing the required parameter "bidId" when calling getWorkforcemanagementSchedulebidPreference';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/schedulebids/{bidId}/preference', 
+			'GET', 
+			{ 'bidId': bidId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Gets an agent's schedule sets for a bid
+	 * 
+	 * @param {String} bidId The ID of the schedule bid
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementSchedulebidSchedulesets(bidId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'bidId' is set
+		if (bidId === undefined || bidId === null || bidId === '') {
+			throw 'Missing the required parameter "bidId" when calling getWorkforcemanagementSchedulebidSchedulesets';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/schedulebids/{bidId}/schedulesets', 
+			'GET', 
+			{ 'bidId': bidId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Gets the list of schedule bids that belong to an agent. It will fetch an open bid or upcoming bid or a bid that is closed recently
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementSchedulebids(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/schedulebids', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Get status of the scheduling job
 	 * 
 	 * @param {String} jobId The id of the scheduling job
@@ -5412,6 +5754,136 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}', 
 			'PATCH', 
 			{ 'businessUnitId': businessUnitId,'planningGroupId': planningGroupId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update a schedule bid
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The ID of the schedule bid
+	 * @param {Object} body The schedule bid to be updated
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	patchWorkforcemanagementBusinessunitSchedulebid(businessUnitId, bidId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitSchedulebid';
+		}
+		// verify the required parameter 'bidId' is set
+		if (bidId === undefined || bidId === null || bidId === '') {
+			throw 'Missing the required parameter "bidId" when calling patchWorkforcemanagementBusinessunitSchedulebid';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitSchedulebid';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}', 
+			'PATCH', 
+			{ 'businessUnitId': businessUnitId,'bidId': bidId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update a schedule bid group by bid group Id
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The ID of the schedule bid associated with the bid groups
+	 * @param {String} bidGroupId Schedule Bid Group id
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	patchWorkforcemanagementBusinessunitSchedulebidGroup(businessUnitId, bidId, bidGroupId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitSchedulebidGroup';
+		}
+		// verify the required parameter 'bidId' is set
+		if (bidId === undefined || bidId === null || bidId === '') {
+			throw 'Missing the required parameter "bidId" when calling patchWorkforcemanagementBusinessunitSchedulebidGroup';
+		}
+		// verify the required parameter 'bidGroupId' is set
+		if (bidGroupId === undefined || bidGroupId === null || bidGroupId === '') {
+			throw 'Missing the required parameter "bidGroupId" when calling patchWorkforcemanagementBusinessunitSchedulebidGroup';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitSchedulebidGroup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/{bidGroupId}', 
+			'PATCH', 
+			{ 'businessUnitId': businessUnitId,'bidId': bidId,'bidGroupId': bidGroupId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Overrides the assigned schedule bid for the specified agents
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The ID of the schedule bid associated with the bid groups
+	 * @param {String} bidGroupId The ID of the schedule bid group
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences(businessUnitId, bidId, bidGroupId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences';
+		}
+		// verify the required parameter 'bidId' is set
+		if (bidId === undefined || bidId === null || bidId === '') {
+			throw 'Missing the required parameter "bidId" when calling patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences';
+		}
+		// verify the required parameter 'bidGroupId' is set
+		if (bidGroupId === undefined || bidGroupId === null || bidGroupId === '') {
+			throw 'Missing the required parameter "bidGroupId" when calling patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/{bidGroupId}/preferences', 
+			'PATCH', 
+			{ 'businessUnitId': businessUnitId,'bidId': bidId,'bidGroupId': bidGroupId },
 			{  },
 			{  },
 			{  },
@@ -7731,6 +8203,156 @@ class WorkforceManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Copy a schedule bid
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The ID of the schedule bid to copy
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementBusinessunitSchedulebidCopy(businessUnitId, bidId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitSchedulebidCopy';
+		}
+		// verify the required parameter 'bidId' is set
+		if (bidId === undefined || bidId === null || bidId === '') {
+			throw 'Missing the required parameter "bidId" when calling postWorkforcemanagementBusinessunitSchedulebidCopy';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitSchedulebidCopy';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/copy', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId,'bidId': bidId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Add a bid group in a given schedule bid
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The ID of the schedule bid associated with the bid groups
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementBusinessunitSchedulebidGroups(businessUnitId, bidId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitSchedulebidGroups';
+		}
+		// verify the required parameter 'bidId' is set
+		if (bidId === undefined || bidId === null || bidId === '') {
+			throw 'Missing the required parameter "bidId" when calling postWorkforcemanagementBusinessunitSchedulebidGroups';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitSchedulebidGroups';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId,'bidId': bidId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Create a new schedule bid
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body The schedule bid to be created
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementBusinessunitSchedulebids(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitSchedulebids';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitSchedulebids';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Fetch all the agents with effective schedule set for the given BU
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesets(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesets';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesets';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/effectiveschedulesets', 
 			'POST', 
 			{ 'businessUnitId': businessUnitId },
 			{  },
@@ -10737,6 +11359,41 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}/values', 
 			'PUT', 
 			{ 'managementUnitId': managementUnitId,'timeOffLimitId': timeOffLimitId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update an agent's schedule set preference
+	 * 
+	 * @param {String} bidId The ID of the schedule bid
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	putWorkforcemanagementSchedulebidPreference(bidId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'bidId' is set
+		if (bidId === undefined || bidId === null || bidId === '') {
+			throw 'Missing the required parameter "bidId" when calling putWorkforcemanagementSchedulebidPreference';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putWorkforcemanagementSchedulebidPreference';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/schedulebids/{bidId}/preference', 
+			'PUT', 
+			{ 'bidId': bidId },
 			{  },
 			{  },
 			{  },

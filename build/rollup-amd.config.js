@@ -5,7 +5,6 @@ export default {
 		format: 'amd'
 	},
 	external: [
-		'axios',
-		'qs'
+		'axios'
 	]
 };

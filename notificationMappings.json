@@ -873,6 +873,10 @@
       "class": "V2WfmMainForecastExportSnapshotEventMainForecastExportNotification"
     },
     {
+      "topic": "v2.workforcemanagement.businessunits.{id}.schedulebids.{id}",
+      "class": "ScheduleBiddingAdminNotificationTopicScheduleBiddingNotification"
+    },
+    {
       "topic": "v2.workforcemanagement.businessunits.{id}.schedules",
       "class": "WfmBuScheduleTopicBuScheduleNotification"
     },
@@ -923,6 +927,10 @@
     {
       "topic": "v2.workforcemanagement.managementunits.{id}.agents.sync",
       "class": "WfmUpdateAgentDetailsTopicWfmUpdateAgentDetailsComplete"
+    },
+    {
+      "topic": "v2.workforcemanagement.managementunits.{id}.agentschedules.changed",
+      "class": "WfmAgentManagementUnitScheduleChangedTopicAgentMuScheduleChangedNotification"
     },
     {
       "topic": "v2.workforcemanagement.managementunits.{id}.schedules",
