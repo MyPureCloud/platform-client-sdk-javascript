@@ -488,4 +488,4 @@ apiInstance.postLanguages(body, opts)
 **Language**
 
 
-_purecloud-platform-client-v2@255.0.0_
+_purecloud-platform-client-v2@255.1.0_
