@@ -60,6 +60,7 @@
   "ResponseManagementApi.md",
   "RoutingApi.md",
   "SCIMApi.md",
+  "ScreenMonitoringApi.md",
   "ScriptsApi.md",
   "SearchApi.md",
   "SettingsApi.md",

@@ -947,6 +947,7 @@ Search resources.
 Requires ANY permissions:
 
 * directory:user:view
+* routing:skill:view
 
 ### Example Usage
 
@@ -1515,4 +1516,4 @@ apiInstance.postVoicemailSearch(body, opts)
 **VoicemailsSearchResponse**
 
 
-_purecloud-platform-client-v2@255.1.0_
+_purecloud-platform-client-v2@256.0.0_

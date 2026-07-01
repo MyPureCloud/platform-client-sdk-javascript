@@ -779,7 +779,6 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LearningApi();
 
 let opts = { 
-  'isArchived': false, // Boolean | Archive status
   'types': ["types_example"], // [String] | Specifies the module types. Informational, AssessedContent and Assessment are deprecated
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
@@ -787,7 +786,6 @@ let opts = {
   'sortBy': "name", // String | Sort by
   'searchTerm': "searchTerm_example", // String | Search Term (searchable by name)
   'expand': ["expand_example"], // [String] | Fields to expand in response(case insensitive)
-  'isPublished': "Any", // String | Specifies if only the Unpublished (isPublished is False) or Published (isPublished is True) modules are returned. If isPublished is Any or omitted, both types are returned
   'statuses': ["statuses_example"], // [String] | Specifies the module statuses to filter by
   'externalIds': ["externalIds_example"], // [String] | Specifies the module external IDs to filter by. Only one ID is allowed
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
@@ -811,7 +809,6 @@ apiInstance.getLearningModules(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **isArchived** | **Boolean** | Archive status | [optional] [default to false] |
  **types** | **[String]** | Specifies the module types. Informational, AssessedContent and Assessment are deprecated | [optional] <br />**Values**: Informational, AssessedContent, Assessment, External, Native |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
@@ -819,7 +816,6 @@ apiInstance.getLearningModules(opts)
  **sortBy** | **String** | Sort by | [optional] [default to name]<br />**Values**: name, createddate, percentpassed, averagescore |
  **searchTerm** | **String** | Search Term (searchable by name) | [optional]  |
  **expand** | **[String]** | Fields to expand in response(case insensitive) | [optional] <br />**Values**: rule, summaryData |
- **isPublished** | **String** | Specifies if only the Unpublished (isPublished is False) or Published (isPublished is True) modules are returned. If isPublished is Any or omitted, both types are returned | [optional] [default to Any]<br />**Values**: True, False, Any |
  **statuses** | **[String]** | Specifies the module statuses to filter by | [optional] <br />**Values**: Unpublished, Published, Archived |
  **externalIds** | **[String]** | Specifies the module external IDs to filter by. Only one ID is allowed | [optional]  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
@@ -2372,4 +2368,4 @@ apiInstance.putLearningModuleRule(moduleId, body, opts)
 **LearningModuleRule**
 
 
-_purecloud-platform-client-v2@255.1.0_
+_purecloud-platform-client-v2@256.0.0_

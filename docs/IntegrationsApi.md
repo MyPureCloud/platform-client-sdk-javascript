@@ -491,6 +491,7 @@ let opts = {
   'ids': 7c97172d-b029-490b-a975-ded1d17ce8e4,d21e2369-eb5a-4d5d-8798-61d21bc6a376, // [String] | Comma-separated list of integration IDs to filter by (max 100)
   'integrationType': webhook, // String | Filter integrations by integration type ID
   'reportedState': ACTIVE, // String | Filter integrations by reported state (case-insensitive)
+  'credentialId': a1b2c3d4-e5f6-7890-abcd-ef1234567890, // String | Filter integrations by credential ID
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
     'X-Request-ID': 'req-12345'
@@ -521,6 +522,7 @@ apiInstance.getIntegrations(opts)
  **ids** | **[String]** | Comma-separated list of integration IDs to filter by (max 100) | [optional]  |
  **integrationType** | **String** | Filter integrations by integration type ID | [optional]  |
  **reportedState** | **String** | Filter integrations by reported state (case-insensitive) | [optional] <br />**Values**: ACTIVE, ACTIVATING, INACTIVE, DEACTIVATING, ERROR |
+ **credentialId** | **String** | Filter integrations by credential ID | [optional]  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -5699,4 +5701,4 @@ apiInstance.putIntegrationsUnifiedcommunicationThirdpartypresences(ucIntegration
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@255.1.0_
+_purecloud-platform-client-v2@256.0.0_
