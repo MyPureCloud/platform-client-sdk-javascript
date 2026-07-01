@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 255.1.0
+	 * @version 256.0.0
 	 */
 
 	/**
@@ -1942,7 +1942,7 @@ class OutboundApi {
 
 	/**
 	 * Query a list of contact lists.
-	 * 
+	 * Any ContactList field can be used as a query parameter to filter results. Multiple values can be specified for a field, and filter type prefixes can be used inline. Example: dateCreated=greaterthan:2025-01-01T00:00:00.000Z&dateCreated=lessthan:2027-01-01T00:00:00.000Z. See https://developer.genesys.cloud/routing/outbound/filter-type for available filter types.
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeImportStatus Include import status (default to false)
 	 * @param {Boolean} opts.includeSize Include size (default to false)

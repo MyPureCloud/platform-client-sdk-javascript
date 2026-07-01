@@ -65,6 +65,7 @@ import RecordingApi from './api/RecordingApi.js';
 import ResponseManagementApi from './api/ResponseManagementApi.js';
 import RoutingApi from './api/RoutingApi.js';
 import SCIMApi from './api/SCIMApi.js';
+import ScreenMonitoringApi from './api/ScreenMonitoringApi.js';
 import ScriptsApi from './api/ScriptsApi.js';
 import SearchApi from './api/SearchApi.js';
 import SettingsApi from './api/SettingsApi.js';
@@ -122,7 +123,7 @@ import WorkforceManagementApi from './api/WorkforceManagementApi.js';
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 255.1.0
+ * @version 256.0.0
  */
 class platformClient {
 	constructor() {
@@ -441,6 +442,11 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/SCIMApi}
 		 */
 		this.SCIMApi = SCIMApi;
+		/**
+		 * The ScreenMonitoringApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/ScreenMonitoringApi}
+		 */
+		this.ScreenMonitoringApi = ScreenMonitoringApi;
 		/**
 		 * The ScriptsApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/ScriptsApi}

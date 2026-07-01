@@ -5,7 +5,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 255.1.0
+	 * @version 256.0.0
 	 */
 
 	/**
@@ -219,6 +219,7 @@ class IntegrationsApi {
 	 * @param {Array.<String>} opts.ids Comma-separated list of integration IDs to filter by (max 100)
 	 * @param {String} opts.integrationType Filter integrations by integration type ID
 	 * @param {Object} opts.reportedState Filter integrations by reported state (case-insensitive)
+	 * @param {String} opts.credentialId Filter integrations by credential ID
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getIntegrations(opts) { 
@@ -229,7 +230,7 @@ class IntegrationsApi {
 			'/api/v2/integrations', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'ids': this.apiClient.buildCollectionParam(opts['ids'], 'multi'),'integrationType': opts['integrationType'],'reportedState': opts['reportedState'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'ids': this.apiClient.buildCollectionParam(opts['ids'], 'multi'),'integrationType': opts['integrationType'],'reportedState': opts['reportedState'],'credentialId': opts['credentialId'] },
 			{  },
 			{  },
 			null, 

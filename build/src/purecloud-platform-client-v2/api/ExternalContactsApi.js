@@ -5,7 +5,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 255.1.0
+	 * @version 256.0.0
 	 */
 
 	/**
@@ -1931,6 +1931,81 @@ class ExternalContactsApi {
 	}
 
 	/**
+	 * Update a Contact Note
+	 * 
+	 * @param {String} contactId ExternalContact Id
+	 * @param {String} noteId Note Id
+	 * @param {Object} body Note field to update
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	patchExternalcontactsContactNote(contactId, noteId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'contactId' is set
+		if (contactId === undefined || contactId === null || contactId === '') {
+			throw 'Missing the required parameter "contactId" when calling patchExternalcontactsContactNote';
+		}
+		// verify the required parameter 'noteId' is set
+		if (noteId === undefined || noteId === null || noteId === '') {
+			throw 'Missing the required parameter "noteId" when calling patchExternalcontactsContactNote';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchExternalcontactsContactNote';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}', 
+			'PATCH', 
+			{ 'contactId': contactId,'noteId': noteId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update specific fields of an external organization
+	 * 
+	 * @param {String} externalOrganizationId External Organization ID
+	 * @param {Object} body External Organization fields to update
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	patchExternalcontactsOrganization(externalOrganizationId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'externalOrganizationId' is set
+		if (externalOrganizationId === undefined || externalOrganizationId === null || externalOrganizationId === '') {
+			throw 'Missing the required parameter "externalOrganizationId" when calling patchExternalcontactsOrganization';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchExternalcontactsOrganization';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/organizations/{externalOrganizationId}', 
+			'PATCH', 
+			{ 'externalOrganizationId': externalOrganizationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Claim or release identifiers for an external organization
 	 * 
 	 * @param {String} externalOrganizationId External Organization ID
@@ -1954,6 +2029,81 @@ class ExternalContactsApi {
 			'/api/v2/externalcontacts/organizations/{externalOrganizationId}/identifiers', 
 			'PATCH', 
 			{ 'externalOrganizationId': externalOrganizationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update an External Organization Note
+	 * 
+	 * @param {String} externalOrganizationId External Organization Id
+	 * @param {String} noteId Note Id
+	 * @param {Object} body Note field to update
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	patchExternalcontactsOrganizationNote(externalOrganizationId, noteId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'externalOrganizationId' is set
+		if (externalOrganizationId === undefined || externalOrganizationId === null || externalOrganizationId === '') {
+			throw 'Missing the required parameter "externalOrganizationId" when calling patchExternalcontactsOrganizationNote';
+		}
+		// verify the required parameter 'noteId' is set
+		if (noteId === undefined || noteId === null || noteId === '') {
+			throw 'Missing the required parameter "noteId" when calling patchExternalcontactsOrganizationNote';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchExternalcontactsOrganizationNote';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}', 
+			'PATCH', 
+			{ 'externalOrganizationId': externalOrganizationId,'noteId': noteId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update specific fields of a relationship
+	 * 
+	 * @param {String} relationshipId Relationship Id
+	 * @param {Object} body Relationship fields to update
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	patchExternalcontactsRelationship(relationshipId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'relationshipId' is set
+		if (relationshipId === undefined || relationshipId === null || relationshipId === '') {
+			throw 'Missing the required parameter "relationshipId" when calling patchExternalcontactsRelationship';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchExternalcontactsRelationship';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/relationships/{relationshipId}', 
+			'PATCH', 
+			{ 'relationshipId': relationshipId },
 			{  },
 			{  },
 			{  },

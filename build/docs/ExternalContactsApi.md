@@ -69,7 +69,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getExternalcontactsScanRelationshipsDivisionviewsAll**](ExternalContactsApi#getExternalcontactsScanRelationshipsDivisionviewsAll) | **GET** /api/v2/externalcontacts/scan/relationships/divisionviews/all | Scan for relationships
 [**patchExternalcontactsContact**](ExternalContactsApi#patchExternalcontactsContact) | **PATCH** /api/v2/externalcontacts/contacts/{contactId} | Update specific fields of an external contact
 [**patchExternalcontactsContactIdentifiers**](ExternalContactsApi#patchExternalcontactsContactIdentifiers) | **PATCH** /api/v2/externalcontacts/contacts/{contactId}/identifiers | Claim or release identifiers for a contact
+[**patchExternalcontactsContactNote**](ExternalContactsApi#patchExternalcontactsContactNote) | **PATCH** /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId} | Update a Contact Note
+[**patchExternalcontactsOrganization**](ExternalContactsApi#patchExternalcontactsOrganization) | **PATCH** /api/v2/externalcontacts/organizations/{externalOrganizationId} | Update specific fields of an external organization
 [**patchExternalcontactsOrganizationIdentifiers**](ExternalContactsApi#patchExternalcontactsOrganizationIdentifiers) | **PATCH** /api/v2/externalcontacts/organizations/{externalOrganizationId}/identifiers | Claim or release identifiers for an external organization
+[**patchExternalcontactsOrganizationNote**](ExternalContactsApi#patchExternalcontactsOrganizationNote) | **PATCH** /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId} | Update an External Organization Note
+[**patchExternalcontactsRelationship**](ExternalContactsApi#patchExternalcontactsRelationship) | **PATCH** /api/v2/externalcontacts/relationships/{relationshipId} | Update specific fields of a relationship
 [**postExternalcontactsBulkContacts**](ExternalContactsApi#postExternalcontactsBulkContacts) | **POST** /api/v2/externalcontacts/bulk/contacts | Bulk fetch contacts
 [**postExternalcontactsBulkContactsAdd**](ExternalContactsApi#postExternalcontactsBulkContactsAdd) | **POST** /api/v2/externalcontacts/bulk/contacts/add | Bulk add contacts
 [**postExternalcontactsBulkContactsDivisionviews**](ExternalContactsApi#postExternalcontactsBulkContactsDivisionviews) | **POST** /api/v2/externalcontacts/bulk/contacts/divisionviews | Bulk fetch contacts across divisions
@@ -3885,6 +3889,126 @@ apiInstance.patchExternalcontactsContactIdentifiers(contactId, body, opts)
 **ContactIdentifier**
 
 
+## patchExternalcontactsContactNote
+
+> Note patchExternalcontactsContactNote(contactId, noteId, body, opts)
+
+
+PATCH /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}
+
+Update a Contact Note
+
+Requires ANY permissions:
+
+* externalContacts:contact:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let contactId = "contactId_example"; // String | ExternalContact Id
+let noteId = "noteId_example"; // String | Note Id
+let body = {}; // Object | Note field to update
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchExternalcontactsContactNote(contactId, noteId, body, opts)
+  .then((data) => {
+    console.log(`patchExternalcontactsContactNote success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchExternalcontactsContactNote');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contactId** | **String** | ExternalContact Id |  |
+ **noteId** | **String** | Note Id |  |
+ **body** | **Object** | Note field to update |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**Note**
+
+
+## patchExternalcontactsOrganization
+
+> ExternalOrganization patchExternalcontactsOrganization(externalOrganizationId, body, opts)
+
+
+PATCH /api/v2/externalcontacts/organizations/{externalOrganizationId}
+
+Update specific fields of an external organization
+
+Requires ANY permissions:
+
+* externalContacts:externalOrganization:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
+let body = {}; // Object | External Organization fields to update
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchExternalcontactsOrganization(externalOrganizationId, body, opts)
+  .then((data) => {
+    console.log(`patchExternalcontactsOrganization success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchExternalcontactsOrganization');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **externalOrganizationId** | **String** | External Organization ID |  |
+ **body** | **Object** | External Organization fields to update |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ExternalOrganization**
+
+
 ## patchExternalcontactsOrganizationIdentifiers
 
 > ExternalOrganizationIdentifier patchExternalcontactsOrganizationIdentifiers(externalOrganizationId, body, opts)
@@ -3942,6 +4066,126 @@ apiInstance.patchExternalcontactsOrganizationIdentifiers(externalOrganizationId,
 ### Return type
 
 **ExternalOrganizationIdentifier**
+
+
+## patchExternalcontactsOrganizationNote
+
+> Note patchExternalcontactsOrganizationNote(externalOrganizationId, noteId, body, opts)
+
+
+PATCH /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}
+
+Update an External Organization Note
+
+Requires ANY permissions:
+
+* externalContacts:externalOrganization:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let externalOrganizationId = "externalOrganizationId_example"; // String | External Organization Id
+let noteId = "noteId_example"; // String | Note Id
+let body = {}; // Object | Note field to update
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchExternalcontactsOrganizationNote(externalOrganizationId, noteId, body, opts)
+  .then((data) => {
+    console.log(`patchExternalcontactsOrganizationNote success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchExternalcontactsOrganizationNote');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **externalOrganizationId** | **String** | External Organization Id |  |
+ **noteId** | **String** | Note Id |  |
+ **body** | **Object** | Note field to update |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**Note**
+
+
+## patchExternalcontactsRelationship
+
+> Relationship patchExternalcontactsRelationship(relationshipId, body, opts)
+
+
+PATCH /api/v2/externalcontacts/relationships/{relationshipId}
+
+Update specific fields of a relationship
+
+Requires ANY permissions:
+
+* externalContacts:externalOrganization:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let relationshipId = "relationshipId_example"; // String | Relationship Id
+let body = {}; // Object | Relationship fields to update
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchExternalcontactsRelationship(relationshipId, body, opts)
+  .then((data) => {
+    console.log(`patchExternalcontactsRelationship success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchExternalcontactsRelationship');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **relationshipId** | **String** | Relationship Id |  |
+ **body** | **Object** | Relationship fields to update |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**Relationship**
 
 
 ## postExternalcontactsBulkContacts
@@ -7291,4 +7535,4 @@ apiInstance.putExternalcontactsRelationship(relationshipId, body, opts)
 **Relationship**
 
 
-_purecloud-platform-client-v2@255.1.0_
+_purecloud-platform-client-v2@256.0.0_

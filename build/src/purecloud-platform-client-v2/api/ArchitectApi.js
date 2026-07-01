@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 255.1.0
+	 * @version 256.0.0
 	 */
 
 	/**
@@ -2832,6 +2832,40 @@ class ArchitectApi {
 			'GET', 
 			{ 'jobId': jobId },
 			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Look up flows by ID
+	 * Returns only flows matching the specified ID(s). Returns an empty listing if no flows match the given IDs.
+	 * @param {Array.<String>} id Flow ID(s)
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {String} opts.sortBy Sort by (default to id)
+	 * @param {String} opts.sortOrder Sort order (default to asc)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getFlowsLookup(id, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'id' is set
+		if (id === undefined || id === null) {
+			throw 'Missing the required parameter "id" when calling getFlowsLookup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/lookup', 
+			'GET', 
+			{  },
+			{ 'id': this.apiClient.buildCollectionParam(id, 'multi'),'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
 			{  },
 			{  },
 			null, 

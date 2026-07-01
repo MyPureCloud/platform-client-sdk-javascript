@@ -5844,6 +5844,40 @@
     "return": "ArchitectJobStateResponse",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ArchitectApi();\n\nlet jobId = \"jobId_example\"; // String | Job ID\nlet opts = { \n  \"expand\": [\"expand_example\"], // [String] | Which fields, if any, to expand.\n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Fetch Architect Job Status\napiInstance.getFlowsJob(jobId, opts)\n  .then((data) => {\n    console.log(`getFlowsJob success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getFlowsJob\");\n    console.error(err);\n  });"
   },
+  "getflowslookup": {
+    "operationId": "getflowslookup",
+    "functionName": "getFlowsLookup",
+    "signature": "getFlowsLookup(id, pageNumber, pageSize, sortBy, sortOrder)",
+    "parameters": [
+      {
+        "name": "id",
+        "type": "[String]",
+        "required": "true"
+      },
+      {
+        "name": "pageNumber",
+        "type": "Number",
+        "required": "false"
+      },
+      {
+        "name": "pageSize",
+        "type": "Number",
+        "required": "false"
+      },
+      {
+        "name": "sortBy",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "sortOrder",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "FlowEntityListing",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ArchitectApi();\n\nlet id = [\"id_example\"]; // [String] | Flow ID(s)\nlet opts = { \n  \"pageNumber\": 1, // Number | Page number\n  \"pageSize\": 25, // Number | Page size\n  \"sortBy\": \"id\", // String | Sort by\n  \"sortOrder\": \"asc\", // String | Sort order\n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Look up flows by ID\napiInstance.getFlowsLookup(id, opts)\n  .then((data) => {\n    console.log(`getFlowsLookup success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getFlowsLookup\");\n    console.error(err);\n  });"
+  },
   "getflowsmilestone": {
     "operationId": "getflowsmilestone",
     "functionName": "getFlowsMilestone",
@@ -19921,6 +19955,49 @@
     "return": "ContactIdentifier",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ExternalContactsApi();\n\nlet contactId = \"contactId_example\"; // String | ExternalContact ID\nlet body = {}; // Object | ClaimRequest\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Claim or release identifiers for a contact\napiInstance.patchExternalcontactsContactIdentifiers(contactId, body, opts)\n  .then((data) => {\n    console.log(`patchExternalcontactsContactIdentifiers success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchExternalcontactsContactIdentifiers\");\n    console.error(err);\n  });"
   },
+  "patchexternalcontactscontactnote": {
+    "operationId": "patchexternalcontactscontactnote",
+    "functionName": "patchExternalcontactsContactNote",
+    "signature": "patchExternalcontactsContactNote(contactId, noteId, body)",
+    "parameters": [
+      {
+        "name": "contactId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "noteId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "Note",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ExternalContactsApi();\n\nlet contactId = \"contactId_example\"; // String | ExternalContact Id\nlet noteId = \"noteId_example\"; // String | Note Id\nlet body = {}; // Object | Note field to update\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Update a Contact Note\napiInstance.patchExternalcontactsContactNote(contactId, noteId, body, opts)\n  .then((data) => {\n    console.log(`patchExternalcontactsContactNote success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchExternalcontactsContactNote\");\n    console.error(err);\n  });"
+  },
+  "patchexternalcontactsorganization": {
+    "operationId": "patchexternalcontactsorganization",
+    "functionName": "patchExternalcontactsOrganization",
+    "signature": "patchExternalcontactsOrganization(externalOrganizationId, body)",
+    "parameters": [
+      {
+        "name": "externalOrganizationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "ExternalOrganization",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ExternalContactsApi();\n\nlet externalOrganizationId = \"externalOrganizationId_example\"; // String | External Organization ID\nlet body = {}; // Object | External Organization fields to update\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Update specific fields of an external organization\napiInstance.patchExternalcontactsOrganization(externalOrganizationId, body, opts)\n  .then((data) => {\n    console.log(`patchExternalcontactsOrganization success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchExternalcontactsOrganization\");\n    console.error(err);\n  });"
+  },
   "patchexternalcontactsorganizationidentifiers": {
     "operationId": "patchexternalcontactsorganizationidentifiers",
     "functionName": "patchExternalcontactsOrganizationIdentifiers",
@@ -19939,6 +20016,49 @@
     ],
     "return": "ExternalOrganizationIdentifier",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ExternalContactsApi();\n\nlet externalOrganizationId = \"externalOrganizationId_example\"; // String | External Organization ID\nlet body = {}; // Object | ClaimRequest\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Claim or release identifiers for an external organization\napiInstance.patchExternalcontactsOrganizationIdentifiers(externalOrganizationId, body, opts)\n  .then((data) => {\n    console.log(`patchExternalcontactsOrganizationIdentifiers success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchExternalcontactsOrganizationIdentifiers\");\n    console.error(err);\n  });"
+  },
+  "patchexternalcontactsorganizationnote": {
+    "operationId": "patchexternalcontactsorganizationnote",
+    "functionName": "patchExternalcontactsOrganizationNote",
+    "signature": "patchExternalcontactsOrganizationNote(externalOrganizationId, noteId, body)",
+    "parameters": [
+      {
+        "name": "externalOrganizationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "noteId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "Note",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ExternalContactsApi();\n\nlet externalOrganizationId = \"externalOrganizationId_example\"; // String | External Organization Id\nlet noteId = \"noteId_example\"; // String | Note Id\nlet body = {}; // Object | Note field to update\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Update an External Organization Note\napiInstance.patchExternalcontactsOrganizationNote(externalOrganizationId, noteId, body, opts)\n  .then((data) => {\n    console.log(`patchExternalcontactsOrganizationNote success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchExternalcontactsOrganizationNote\");\n    console.error(err);\n  });"
+  },
+  "patchexternalcontactsrelationship": {
+    "operationId": "patchexternalcontactsrelationship",
+    "functionName": "patchExternalcontactsRelationship",
+    "signature": "patchExternalcontactsRelationship(relationshipId, body)",
+    "parameters": [
+      {
+        "name": "relationshipId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "Relationship",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ExternalContactsApi();\n\nlet relationshipId = \"relationshipId_example\"; // String | Relationship Id\nlet body = {}; // Object | Relationship fields to update\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Update specific fields of a relationship\napiInstance.patchExternalcontactsRelationship(relationshipId, body, opts)\n  .then((data) => {\n    console.log(`patchExternalcontactsRelationship success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchExternalcontactsRelationship\");\n    console.error(err);\n  });"
   },
   "postexternalcontactsbulkcontacts": {
     "operationId": "postexternalcontactsbulkcontacts",
@@ -24268,7 +24388,7 @@
   "getintegrations": {
     "operationId": "getintegrations",
     "functionName": "getIntegrations",
-    "signature": "getIntegrations(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, ids, integrationType, reportedState)",
+    "signature": "getIntegrations(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, ids, integrationType, reportedState, credentialId)",
     "parameters": [
       {
         "name": "pageSize",
@@ -24314,10 +24434,15 @@
         "name": "reportedState",
         "type": "String",
         "required": "false"
+      },
+      {
+        "name": "credentialId",
+        "type": "String",
+        "required": "false"
       }
     ],
     "return": "IntegrationEntityListing",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.IntegrationsApi();\n\nlet opts = { \n  \"pageSize\": 25, // Number | The total page size requested\n  \"pageNumber\": 1, // Number | The page number requested\n  \"sortBy\": \"sortBy_example\", // String | variable name requested to sort by\n  \"expand\": [\"expand_example\"], // [String] | variable name requested by expand list\n  \"nextPage\": \"nextPage_example\", // String | next page token\n  \"previousPage\": \"previousPage_example\", // String | Previous page token\n  \"ids\": 7c97172d-b029-490b-a975-ded1d17ce8e4,d21e2369-eb5a-4d5d-8798-61d21bc6a376, // [String] | Comma-separated list of integration IDs to filter by (max 100)\n  \"integrationType\": webhook, // String | Filter integrations by integration type ID\n  \"reportedState\": ACTIVE, // String | Filter integrations by reported state (case-insensitive)\n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// List integrations\napiInstance.getIntegrations(opts)\n  .then((data) => {\n    console.log(`getIntegrations success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getIntegrations\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.IntegrationsApi();\n\nlet opts = { \n  \"pageSize\": 25, // Number | The total page size requested\n  \"pageNumber\": 1, // Number | The page number requested\n  \"sortBy\": \"sortBy_example\", // String | variable name requested to sort by\n  \"expand\": [\"expand_example\"], // [String] | variable name requested by expand list\n  \"nextPage\": \"nextPage_example\", // String | next page token\n  \"previousPage\": \"previousPage_example\", // String | Previous page token\n  \"ids\": 7c97172d-b029-490b-a975-ded1d17ce8e4,d21e2369-eb5a-4d5d-8798-61d21bc6a376, // [String] | Comma-separated list of integration IDs to filter by (max 100)\n  \"integrationType\": webhook, // String | Filter integrations by integration type ID\n  \"reportedState\": ACTIVE, // String | Filter integrations by reported state (case-insensitive)\n  \"credentialId\": a1b2c3d4-e5f6-7890-abcd-ef1234567890, // String | Filter integrations by credential ID\n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// List integrations\napiInstance.getIntegrations(opts)\n  .then((data) => {\n    console.log(`getIntegrations success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getIntegrations\");\n    console.error(err);\n  });"
   },
   "getintegrationsaction": {
     "operationId": "getintegrationsaction",
@@ -32356,13 +32481,8 @@
   "getlearningmodules": {
     "operationId": "getlearningmodules",
     "functionName": "getLearningModules",
-    "signature": "getLearningModules(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished, statuses, externalIds)",
+    "signature": "getLearningModules(types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, statuses, externalIds)",
     "parameters": [
-      {
-        "name": "isArchived",
-        "type": "Boolean",
-        "required": "false"
-      },
       {
         "name": "types",
         "type": "[String]",
@@ -32399,11 +32519,6 @@
         "required": "false"
       },
       {
-        "name": "isPublished",
-        "type": "String",
-        "required": "false"
-      },
-      {
         "name": "statuses",
         "type": "[String]",
         "required": "false"
@@ -32415,7 +32530,7 @@
       }
     ],
     "return": "LearningModuleList",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.LearningApi();\n\nlet opts = { \n  \"isArchived\": false, // Boolean | Archive status\n  \"types\": [\"types_example\"], // [String] | Specifies the module types. Informational, AssessedContent and Assessment are deprecated\n  \"pageSize\": 25, // Number | Page size\n  \"pageNumber\": 1, // Number | Page number\n  \"sortOrder\": \"ascending\", // String | Sort order\n  \"sortBy\": \"name\", // String | Sort by\n  \"searchTerm\": \"searchTerm_example\", // String | Search Term (searchable by name)\n  \"expand\": [\"expand_example\"], // [String] | Fields to expand in response(case insensitive)\n  \"isPublished\": \"Any\", // String | Specifies if only the Unpublished (isPublished is False) or Published (isPublished is True) modules are returned. If isPublished is Any or omitted, both types are returned\n  \"statuses\": [\"statuses_example\"], // [String] | Specifies the module statuses to filter by\n  \"externalIds\": [\"externalIds_example\"], // [String] | Specifies the module external IDs to filter by. Only one ID is allowed\n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Get all learning modules of an organization\napiInstance.getLearningModules(opts)\n  .then((data) => {\n    console.log(`getLearningModules success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getLearningModules\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.LearningApi();\n\nlet opts = { \n  \"types\": [\"types_example\"], // [String] | Specifies the module types. Informational, AssessedContent and Assessment are deprecated\n  \"pageSize\": 25, // Number | Page size\n  \"pageNumber\": 1, // Number | Page number\n  \"sortOrder\": \"ascending\", // String | Sort order\n  \"sortBy\": \"name\", // String | Sort by\n  \"searchTerm\": \"searchTerm_example\", // String | Search Term (searchable by name)\n  \"expand\": [\"expand_example\"], // [String] | Fields to expand in response(case insensitive)\n  \"statuses\": [\"statuses_example\"], // [String] | Specifies the module statuses to filter by\n  \"externalIds\": [\"externalIds_example\"], // [String] | Specifies the module external IDs to filter by. Only one ID is allowed\n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Get all learning modules of an organization\napiInstance.getLearningModules(opts)\n  .then((data) => {\n    console.log(`getLearningModules success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getLearningModules\");\n    console.error(err);\n  });"
   },
   "getlearningmodulesassignments": {
     "operationId": "getlearningmodulesassignments",
@@ -46338,6 +46453,178 @@
     "return": "ScimV2User",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet userId = \"userId_example\"; // String | The ID of a user. Returned with GET /api/v2/scim/v2/users.\nlet body = {}; // Object | The information used to replace a user.\nlet opts = { \n  \"ifMatch\": \"ifMatch_example\", // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: 42. If the ETag is different from the version on the server, returns 400 with a scimType of invalidVers.\n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Replace a user\napiInstance.putScimV2User(userId, body, opts)\n  .then((data) => {\n    console.log(`putScimV2User success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putScimV2User\");\n    console.error(err);\n  });"
   },
+  "deleteconversationparticipantscreenmonitorssession": {
+    "operationId": "deleteconversationparticipantscreenmonitorssession",
+    "functionName": "deleteConversationParticipantScreenmonitorsSession",
+    "signature": "deleteConversationParticipantScreenmonitorsSession(conversationId, participantId, screenMonitoringId)",
+    "parameters": [
+      {
+        "name": "conversationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "participantId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "screenMonitoringId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ScreenMonitoringApi();\n\nlet conversationId = \"conversationId_example\"; // String | Conversation ID\nlet participantId = \"participantId_example\"; // String | Participant ID\nlet screenMonitoringId = \"screenMonitoringId_example\"; // String | Screen Monitoring ID\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Stop a conversation-level screen monitoring session.\napiInstance.deleteConversationParticipantScreenmonitorsSession(conversationId, participantId, screenMonitoringId, opts)\n  .then(() => {\n    console.log(\"deleteConversationParticipantScreenmonitorsSession returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteConversationParticipantScreenmonitorsSession\");\n    console.error(err);\n  });"
+  },
+  "deleteuserscreenmonitorssession": {
+    "operationId": "deleteuserscreenmonitorssession",
+    "functionName": "deleteUserScreenmonitorsSession",
+    "signature": "deleteUserScreenmonitorsSession(userId, screenMonitoringId)",
+    "parameters": [
+      {
+        "name": "userId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "screenMonitoringId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ScreenMonitoringApi();\n\nlet userId = \"userId_example\"; // String | User ID\nlet screenMonitoringId = \"screenMonitoringId_example\"; // String | Screen Monitoring ID\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Stop an agent-level screen monitoring session.\napiInstance.deleteUserScreenmonitorsSession(userId, screenMonitoringId, opts)\n  .then(() => {\n    console.log(\"deleteUserScreenmonitorsSession returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteUserScreenmonitorsSession\");\n    console.error(err);\n  });"
+  },
+  "getconversationparticipantscreenmonitorssession": {
+    "operationId": "getconversationparticipantscreenmonitorssession",
+    "functionName": "getConversationParticipantScreenmonitorsSession",
+    "signature": "getConversationParticipantScreenmonitorsSession(conversationId, participantId, screenMonitoringId)",
+    "parameters": [
+      {
+        "name": "conversationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "participantId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "screenMonitoringId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "ScreenMonitoringSession",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ScreenMonitoringApi();\n\nlet conversationId = \"conversationId_example\"; // String | Conversation ID\nlet participantId = \"participantId_example\"; // String | Participant ID\nlet screenMonitoringId = \"screenMonitoringId_example\"; // String | Screen Monitoring ID\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Get a conversation-level screen monitoring session object using the supplied screenMonitoringId.\napiInstance.getConversationParticipantScreenmonitorsSession(conversationId, participantId, screenMonitoringId, opts)\n  .then((data) => {\n    console.log(`getConversationParticipantScreenmonitorsSession success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getConversationParticipantScreenmonitorsSession\");\n    console.error(err);\n  });"
+  },
+  "getscreenmonitorssessionsdetails": {
+    "operationId": "getscreenmonitorssessionsdetails",
+    "functionName": "getScreenmonitorsSessionsDetails",
+    "signature": "getScreenmonitorsSessionsDetails()",
+    "return": "ScreenMonitoringDetails",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ScreenMonitoringApi();\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Get the details of all screen monitoring sessions for the current organization.\napiInstance.getScreenmonitorsSessionsDetails(opts)\n  .then((data) => {\n    console.log(`getScreenmonitorsSessionsDetails success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getScreenmonitorsSessionsDetails\");\n    console.error(err);\n  });"
+  },
+  "getscreenmonitorssettings": {
+    "operationId": "getscreenmonitorssettings",
+    "functionName": "getScreenmonitorsSettings",
+    "signature": "getScreenmonitorsSettings()",
+    "return": "ScreenMonitorSettings",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ScreenMonitoringApi();\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Get the Screen Monitor Settings for the Organization\napiInstance.getScreenmonitorsSettings(opts)\n  .then((data) => {\n    console.log(`getScreenmonitorsSettings success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getScreenmonitorsSettings\");\n    console.error(err);\n  });"
+  },
+  "getscreenmonitorsusersessions": {
+    "operationId": "getscreenmonitorsusersessions",
+    "functionName": "getScreenmonitorsUserSessions",
+    "signature": "getScreenmonitorsUserSessions(userId)",
+    "parameters": [
+      {
+        "name": "userId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "ScreenMonitoringSessionEntityListing",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ScreenMonitoringApi();\n\nlet userId = \"userId_example\"; // String | User ID\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Get all screen monitoring sessions for the supplied userId.\napiInstance.getScreenmonitorsUserSessions(userId, opts)\n  .then((data) => {\n    console.log(`getScreenmonitorsUserSessions success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getScreenmonitorsUserSessions\");\n    console.error(err);\n  });"
+  },
+  "getuserscreenmonitorssession": {
+    "operationId": "getuserscreenmonitorssession",
+    "functionName": "getUserScreenmonitorsSession",
+    "signature": "getUserScreenmonitorsSession(userId, screenMonitoringId)",
+    "parameters": [
+      {
+        "name": "userId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "screenMonitoringId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "ScreenMonitoringSession",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ScreenMonitoringApi();\n\nlet userId = \"userId_example\"; // String | User ID\nlet screenMonitoringId = \"screenMonitoringId_example\"; // String | Screen Monitoring ID\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Get an agent-level screen monitoring session object using the supplied screenMonitoringId.\napiInstance.getUserScreenmonitorsSession(userId, screenMonitoringId, opts)\n  .then((data) => {\n    console.log(`getUserScreenmonitorsSession success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getUserScreenmonitorsSession\");\n    console.error(err);\n  });"
+  },
+  "postconversationparticipantscreenmonitorssessions": {
+    "operationId": "postconversationparticipantscreenmonitorssessions",
+    "functionName": "postConversationParticipantScreenmonitorsSessions",
+    "signature": "postConversationParticipantScreenmonitorsSessions(conversationId, participantId)",
+    "parameters": [
+      {
+        "name": "conversationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "participantId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "StartScreenMonitorResponseBody",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ScreenMonitoringApi();\n\nlet conversationId = \"conversationId_example\"; // String | Conversation ID\nlet participantId = \"participantId_example\"; // String | Participant ID\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Start a conversation-level screen monitoring session.\napiInstance.postConversationParticipantScreenmonitorsSessions(conversationId, participantId, opts)\n  .then((data) => {\n    console.log(`postConversationParticipantScreenmonitorsSessions success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postConversationParticipantScreenmonitorsSessions\");\n    console.error(err);\n  });"
+  },
+  "postscreenmonitorssessionsusersdetails": {
+    "operationId": "postscreenmonitorssessionsusersdetails",
+    "functionName": "postScreenmonitorsSessionsUsersDetails",
+    "signature": "postScreenmonitorsSessionsUsersDetails(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "[String]",
+        "required": "true"
+      }
+    ],
+    "return": "ScreenMonitoringUserDetailsEntityListing",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ScreenMonitoringApi();\n\nlet body = [\"body_example\"]; // [String] | List of target user IDs\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Get screen monitor session details for one or more users.\napiInstance.postScreenmonitorsSessionsUsersDetails(body, opts)\n  .then((data) => {\n    console.log(`postScreenmonitorsSessionsUsersDetails success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postScreenmonitorsSessionsUsersDetails\");\n    console.error(err);\n  });"
+  },
+  "postuserscreenmonitorssessions": {
+    "operationId": "postuserscreenmonitorssessions",
+    "functionName": "postUserScreenmonitorsSessions",
+    "signature": "postUserScreenmonitorsSessions(userId)",
+    "parameters": [
+      {
+        "name": "userId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "StartScreenMonitorResponseBody",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ScreenMonitoringApi();\n\nlet userId = \"userId_example\"; // String | User ID\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Start an agent-level screen monitoring session.\napiInstance.postUserScreenmonitorsSessions(userId, opts)\n  .then((data) => {\n    console.log(`postUserScreenmonitorsSessions success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postUserScreenmonitorsSessions\");\n    console.error(err);\n  });"
+  },
+  "putscreenmonitorssettings": {
+    "operationId": "putscreenmonitorssettings",
+    "functionName": "putScreenmonitorsSettings",
+    "signature": "putScreenmonitorsSettings(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ScreenMonitoringApi();\n\nlet body = {}; // Object | Screen Monitor settings\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Update the Screen Monitor Settings for the Organization\napiInstance.putScreenmonitorsSettings(body, opts)\n  .then(() => {\n    console.log(\"putScreenmonitorsSettings returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putScreenmonitorsSettings\");\n    console.error(err);\n  });"
+  },
   "getscript": {
     "operationId": "getscript",
     "functionName": "getScript",
@@ -58070,6 +58357,30 @@
     ],
     "return": "CapacityPlanResponse",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nlet capacityPlanId = \"capacityPlanId_example\"; // String | The ID of the capacity plan\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Get a capacity plan\napiInstance.getWorkforcemanagementBusinessunitCapacityplan(businessUnitId, capacityPlanId, opts)\n  .then((data) => {\n    console.log(`getWorkforcemanagementBusinessunitCapacityplan success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getWorkforcemanagementBusinessunitCapacityplan\");\n    console.error(err);\n  });"
+  },
+  "getworkforcemanagementbusinessunitcapacityplanforecast": {
+    "operationId": "getworkforcemanagementbusinessunitcapacityplanforecast",
+    "functionName": "getWorkforcemanagementBusinessunitCapacityplanForecast",
+    "signature": "getWorkforcemanagementBusinessunitCapacityplanForecast(businessUnitId, capacityPlanId, granularity)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "capacityPlanId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "granularity",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "CapacityPlanForecastInputsResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nlet capacityPlanId = \"capacityPlanId_example\"; // String | The ID of the capacity plan\nlet opts = { \n  \"granularity\": \"granularity_example\", // String | Granularity to access capacity plan forecast data, defaults to weekly\n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Get a capacity plan's forecast inputs\napiInstance.getWorkforcemanagementBusinessunitCapacityplanForecast(businessUnitId, capacityPlanId, opts)\n  .then((data) => {\n    console.log(`getWorkforcemanagementBusinessunitCapacityplanForecast success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getWorkforcemanagementBusinessunitCapacityplanForecast\");\n    console.error(err);\n  });"
   },
   "getworkforcemanagementbusinessunitcapacityplanstaffinggroupallocations": {
     "operationId": "getworkforcemanagementbusinessunitcapacityplanstaffinggroupallocations",

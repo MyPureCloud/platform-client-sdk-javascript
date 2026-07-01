@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 255.1.0
+	 * @version 256.0.0
 	 */
 
 	/**
@@ -1586,6 +1586,42 @@ class WorkforceManagementApi {
 			'GET', 
 			{ 'businessUnitId': businessUnitId,'capacityPlanId': capacityPlanId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get a capacity plan's forecast inputs
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} capacityPlanId The ID of the capacity plan
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.granularity Granularity to access capacity plan forecast data, defaults to weekly
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementBusinessunitCapacityplanForecast(businessUnitId, capacityPlanId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitCapacityplanForecast';
+		}
+		// verify the required parameter 'capacityPlanId' is set
+		if (capacityPlanId === undefined || capacityPlanId === null || capacityPlanId === '') {
+			throw 'Missing the required parameter "capacityPlanId" when calling getWorkforcemanagementBusinessunitCapacityplanForecast';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/forecast', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'capacityPlanId': capacityPlanId },
+			{ 'granularity': opts['granularity'] },
 			{  },
 			{  },
 			null, 

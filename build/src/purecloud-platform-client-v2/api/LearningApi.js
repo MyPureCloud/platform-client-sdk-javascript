@@ -5,7 +5,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 255.1.0
+	 * @version 256.0.0
 	 */
 
 	/**
@@ -394,7 +394,6 @@ class LearningApi {
 	 * Get all learning modules of an organization
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.isArchived Archive status (default to false)
 	 * @param {Array.<String>} opts.types Specifies the module types. Informational, AssessedContent and Assessment are deprecated
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
@@ -402,7 +401,6 @@ class LearningApi {
 	 * @param {Object} opts.sortBy Sort by (default to name)
 	 * @param {String} opts.searchTerm Search Term (searchable by name)
 	 * @param {Array.<String>} opts.expand Fields to expand in response(case insensitive)
-	 * @param {Object} opts.isPublished Specifies if only the Unpublished (isPublished is False) or Published (isPublished is True) modules are returned. If isPublished is Any or omitted, both types are returned (default to Any)
 	 * @param {Array.<String>} opts.statuses Specifies the module statuses to filter by
 	 * @param {Array.<String>} opts.externalIds Specifies the module external IDs to filter by. Only one ID is allowed
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
@@ -415,7 +413,7 @@ class LearningApi {
 			'/api/v2/learning/modules', 
 			'GET', 
 			{  },
-			{ 'isArchived': opts['isArchived'],'types': this.apiClient.buildCollectionParam(opts['types'], 'multi'),'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'sortBy': opts['sortBy'],'searchTerm': opts['searchTerm'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'isPublished': opts['isPublished'],'statuses': this.apiClient.buildCollectionParam(opts['statuses'], 'multi'),'externalIds': this.apiClient.buildCollectionParam(opts['externalIds'], 'multi') },
+			{ 'types': this.apiClient.buildCollectionParam(opts['types'], 'multi'),'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'sortBy': opts['sortBy'],'searchTerm': opts['searchTerm'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'statuses': this.apiClient.buildCollectionParam(opts['statuses'], 'multi'),'externalIds': this.apiClient.buildCollectionParam(opts['externalIds'], 'multi') },
 			{  },
 			{  },
 			null, 

@@ -122,6 +122,8 @@ docs/RoutingApi.json
 docs/RoutingApi.md
 docs/SCIMApi.json
 docs/SCIMApi.md
+docs/ScreenMonitoringApi.json
+docs/ScreenMonitoringApi.md
 docs/ScriptsApi.json
 docs/ScriptsApi.md
 docs/SearchApi.json
@@ -254,6 +256,7 @@ docs/deleteConversation-example.txt
 docs/deleteConversationCustomattribute-example.txt
 docs/deleteConversationParticipantCode-example.txt
 docs/deleteConversationParticipantFlaggedreason-example.txt
+docs/deleteConversationParticipantScreenmonitorsSession-example.txt
 docs/deleteConversationRecordingAnnotation-example.txt
 docs/deleteConversationsCallParticipantCommunicationPostflowaction-example.txt
 docs/deleteConversationsCallParticipantConsult-example.txt
@@ -501,6 +504,7 @@ docs/deleteUserRoutinglanguage-example.txt
 docs/deleteUserRoutinglanguage-example.txt
 docs/deleteUserRoutingskill-example.txt
 docs/deleteUserRoutingskill-example.txt
+docs/deleteUserScreenmonitorsSession-example.txt
 docs/deleteUserStationAssociatedstation-example.txt
 docs/deleteUserStationDefaultstation-example.txt
 docs/deleteUserVerifier-example.txt
@@ -807,6 +811,7 @@ docs/getConversationCommunicationInternalmessage-example.txt
 docs/getConversationCommunicationInternalmessages-example.txt
 docs/getConversationCustomattribute-example.txt
 docs/getConversationCustomattributes-example.txt
+docs/getConversationParticipantScreenmonitorsSession-example.txt
 docs/getConversationParticipantSecureivrsession-example.txt
 docs/getConversationParticipantSecureivrsessions-example.txt
 docs/getConversationParticipantWrapup-example.txt
@@ -1034,6 +1039,7 @@ docs/getFlowsInstancesSettingsLoglevels-example.txt
 docs/getFlowsInstancesSettingsLoglevelsCharacteristics-example.txt
 docs/getFlowsInstancesSettingsLoglevelsDefault-example.txt
 docs/getFlowsJob-example.txt
+docs/getFlowsLookup-example.txt
 docs/getFlowsMilestone-example.txt
 docs/getFlowsMilestones-example.txt
 docs/getFlowsMilestonesDivisionviews-example.txt
@@ -1642,6 +1648,9 @@ docs/getScimV2Schemas-example.txt
 docs/getScimV2Serviceproviderconfig-example.txt
 docs/getScimV2User-example.txt
 docs/getScimV2Users-example.txt
+docs/getScreenmonitorsSessionsDetails-example.txt
+docs/getScreenmonitorsSettings-example.txt
+docs/getScreenmonitorsUserSessions-example.txt
 docs/getScript-example.txt
 docs/getScriptPage-example.txt
 docs/getScriptPages-example.txt
@@ -1884,6 +1893,7 @@ docs/getUserRoutinglanguages-example.txt
 docs/getUserRoutingskills-example.txt
 docs/getUserRoutingskills-example.txt
 docs/getUserRoutingstatus-example.txt
+docs/getUserScreenmonitorsSession-example.txt
 docs/getUserSkillgroups-example.txt
 docs/getUserSkillgroups-example.txt
 docs/getUserState-example.txt
@@ -1987,6 +1997,7 @@ docs/getWorkforcemanagementBusinessunitAlternativeshiftsSettings-example.txt
 docs/getWorkforcemanagementBusinessunitAlternativeshiftsTrade-example.txt
 docs/getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob-example.txt
 docs/getWorkforcemanagementBusinessunitCapacityplan-example.txt
+docs/getWorkforcemanagementBusinessunitCapacityplanForecast-example.txt
 docs/getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations-example.txt
 docs/getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements-example.txt
 docs/getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast-example.txt
@@ -2193,7 +2204,11 @@ docs/patchEmployeeengagementCelebration-example.txt
 docs/patchEmployeeperformanceExternalmetricsDefinition-example.txt
 docs/patchExternalcontactsContact-example.txt
 docs/patchExternalcontactsContactIdentifiers-example.txt
+docs/patchExternalcontactsContactNote-example.txt
+docs/patchExternalcontactsOrganization-example.txt
 docs/patchExternalcontactsOrganizationIdentifiers-example.txt
+docs/patchExternalcontactsOrganizationNote-example.txt
+docs/patchExternalcontactsRelationship-example.txt
 docs/patchFlowsInstancesSettingsExecutiondata-example.txt
 docs/patchGamificationContest-example.txt
 docs/patchGeolocationsSettings-example.txt
@@ -2554,6 +2569,7 @@ docs/postConversationParticipantReplaceAgent-example.txt
 docs/postConversationParticipantReplaceContactExternal-example.txt
 docs/postConversationParticipantReplaceExternal-example.txt
 docs/postConversationParticipantReplaceQueue-example.txt
+docs/postConversationParticipantScreenmonitorsSessions-example.txt
 docs/postConversationParticipantSecureivrsessions-example.txt
 docs/postConversationParticipantTransfer-example.txt
 docs/postConversationRecordingAnnotations-example.txt
@@ -3008,6 +3024,7 @@ docs/postRoutingUtilizationLabels-example.txt
 docs/postRoutingWrapupcodes-example.txt
 docs/postScimUsers-example.txt
 docs/postScimV2Users-example.txt
+docs/postScreenmonitorsSessionsUsersDetails-example.txt
 docs/postScreenrecordingToken-example.txt
 docs/postScriptExport-example.txt
 docs/postScriptsPublished-example.txt
@@ -3113,6 +3130,7 @@ docs/postUserRoutinglanguages-example.txt
 docs/postUserRoutinglanguages-example.txt
 docs/postUserRoutingskills-example.txt
 docs/postUserRoutingskills-example.txt
+docs/postUserScreenmonitorsSessions-example.txt
 docs/postUsers-example.txt
 docs/postUsersCustomattributesSchemas-example.txt
 docs/postUsersDevelopmentActivitiesAggregatesQuery-example.txt
@@ -3479,6 +3497,7 @@ docs/putScimGroup-example.txt
 docs/putScimUser-example.txt
 docs/putScimV2Group-example.txt
 docs/putScimV2User-example.txt
+docs/putScreenmonitorsSettings-example.txt
 docs/putSocialmediaEscalationrule-example.txt
 docs/putSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId-example.txt
 docs/putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId-example.txt
@@ -3616,6 +3635,7 @@ src/purecloud-platform-client-v2/api/RecordingApi.js
 src/purecloud-platform-client-v2/api/ResponseManagementApi.js
 src/purecloud-platform-client-v2/api/RoutingApi.js
 src/purecloud-platform-client-v2/api/SCIMApi.js
+src/purecloud-platform-client-v2/api/ScreenMonitoringApi.js
 src/purecloud-platform-client-v2/api/ScriptsApi.js
 src/purecloud-platform-client-v2/api/SearchApi.js
 src/purecloud-platform-client-v2/api/SettingsApi.js

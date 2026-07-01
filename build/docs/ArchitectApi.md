@@ -92,6 +92,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getFlowsInstancesSettingsLoglevelsCharacteristics**](ArchitectApi#getFlowsInstancesSettingsLoglevelsCharacteristics) | **GET** /api/v2/flows/instances/settings/loglevels/characteristics | Gets the available flow log level characteristics for this organization.
 [**getFlowsInstancesSettingsLoglevelsDefault**](ArchitectApi#getFlowsInstancesSettingsLoglevelsDefault) | **GET** /api/v2/flows/instances/settings/loglevels/default | Returns the flow default log level.
 [**getFlowsJob**](ArchitectApi#getFlowsJob) | **GET** /api/v2/flows/jobs/{jobId} | Fetch Architect Job Status
+[**getFlowsLookup**](ArchitectApi#getFlowsLookup) | **GET** /api/v2/flows/lookup | Look up flows by ID
 [**getFlowsMilestone**](ArchitectApi#getFlowsMilestone) | **GET** /api/v2/flows/milestones/{milestoneId} | Get a flow milestone
 [**getFlowsMilestones**](ArchitectApi#getFlowsMilestones) | **GET** /api/v2/flows/milestones | Get a pageable list of flow milestones, filtered by query parameters
 [**getFlowsMilestonesDivisionviews**](ArchitectApi#getFlowsMilestonesDivisionviews) | **GET** /api/v2/flows/milestones/divisionviews | Get a pageable list of basic flow milestone information objects filterable by query parameters.
@@ -5576,6 +5577,73 @@ apiInstance.getFlowsJob(jobId, opts)
 **ArchitectJobStateResponse**
 
 
+## getFlowsLookup
+
+> FlowEntityListing getFlowsLookup(id, opts)
+
+
+GET /api/v2/flows/lookup
+
+Look up flows by ID
+
+Returns only flows matching the specified ID(s). Returns an empty listing if no flows match the given IDs.
+
+Requires ANY permissions:
+
+* architect:flow:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let id = ["id_example"]; // [String] | Flow ID(s)
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25, // Number | Page size
+  'sortBy': "id", // String | Sort by
+  'sortOrder': "asc", // String | Sort order
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getFlowsLookup(id, opts)
+  .then((data) => {
+    console.log(`getFlowsLookup success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getFlowsLookup');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **id** | **[String]** | Flow ID(s) |  |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **sortBy** | **String** | Sort by | [optional] [default to id] |
+ **sortOrder** | **String** | Sort order | [optional] [default to asc] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**FlowEntityListing**
+
+
 ## getFlowsMilestone
 
 > FlowMilestone getFlowsMilestone(milestoneId, opts)
@@ -9442,4 +9510,4 @@ apiInstance.putFlowsOutcome(flowOutcomeId, opts)
 **Operation**
 
 
-_purecloud-platform-client-v2@255.1.0_
+_purecloud-platform-client-v2@256.0.0_
