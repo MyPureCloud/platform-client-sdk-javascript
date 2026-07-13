@@ -5,7 +5,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 256.0.0
+	 * @version 257.0.0
 	 */
 
 	/**
@@ -1144,6 +1144,64 @@ class ExternalContactsApi {
 	}
 
 	/**
+	 * Get notes export for exportId
+	 * 
+	 * @param {String} exportId Export id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getExternalcontactsNotesExport(exportId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'exportId' is set
+		if (exportId === undefined || exportId === null || exportId === '') {
+			throw 'Missing the required parameter "exportId" when calling getExternalcontactsNotesExport';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/notes/exports/{exportId}', 
+			'GET', 
+			{ 'exportId': exportId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * List note exports for organization
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.divisionIds Division IDs of entities
+	 * @param {String} opts.after The cursor that points to the end of the set of entities
+	 * @param {Number} opts.pageSize Number of entities to return
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getExternalcontactsNotesExports(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/notes/exports', 
+			'GET', 
+			{  },
+			{ 'divisionIds': this.apiClient.buildCollectionParam(opts['divisionIds'], 'multi'),'after': opts['after'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Fetch an external organization
 	 * 
 	 * @param {String} externalOrganizationId External Organization ID
@@ -1378,6 +1436,64 @@ class ExternalContactsApi {
 	}
 
 	/**
+	 * Get organizations export for exportId
+	 * 
+	 * @param {String} exportId Export id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getExternalcontactsOrganizationsExport(exportId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'exportId' is set
+		if (exportId === undefined || exportId === null || exportId === '') {
+			throw 'Missing the required parameter "exportId" when calling getExternalcontactsOrganizationsExport';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/organizations/exports/{exportId}', 
+			'GET', 
+			{ 'exportId': exportId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * List organization exports for organization
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.divisionIds Division IDs of entities
+	 * @param {String} opts.after The cursor that points to the end of the set of entities
+	 * @param {Number} opts.pageSize Number of entities to return
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getExternalcontactsOrganizationsExports(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/organizations/exports', 
+			'GET', 
+			{  },
+			{ 'divisionIds': this.apiClient.buildCollectionParam(opts['divisionIds'], 'multi'),'after': opts['after'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Get a schema
 	 * 
 	 * @param {String} schemaId Schema ID
@@ -1598,6 +1714,64 @@ class ExternalContactsApi {
 			'GET', 
 			{ 'relationshipId': relationshipId },
 			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get relationships export for exportId
+	 * 
+	 * @param {String} exportId Export id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getExternalcontactsRelationshipsExport(exportId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'exportId' is set
+		if (exportId === undefined || exportId === null || exportId === '') {
+			throw 'Missing the required parameter "exportId" when calling getExternalcontactsRelationshipsExport';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/relationships/exports/{exportId}', 
+			'GET', 
+			{ 'exportId': exportId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * List relationship exports for organization
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.divisionIds Division IDs of entities
+	 * @param {String} opts.after The cursor that points to the end of the set of entities
+	 * @param {Number} opts.pageSize Number of entities to return
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getExternalcontactsRelationshipsExports(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/relationships/exports', 
+			'GET', 
+			{  },
+			{ 'divisionIds': this.apiClient.buildCollectionParam(opts['divisionIds'], 'multi'),'after': opts['after'],'pageSize': opts['pageSize'] },
 			{  },
 			{  },
 			null, 
@@ -3300,6 +3474,36 @@ class ExternalContactsApi {
 	}
 
 	/**
+	 * Create notes export
+	 * 
+	 * @param {Object} body Export
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postExternalcontactsNotesExports(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postExternalcontactsNotesExports';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/notes/exports', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Create a note for an external organization
 	 * 
 	 * @param {String} externalOrganizationId External Organization Id
@@ -3396,6 +3600,36 @@ class ExternalContactsApi {
 	}
 
 	/**
+	 * Create organizations export
+	 * 
+	 * @param {Object} body Export
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postExternalcontactsOrganizationsExports(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postExternalcontactsOrganizationsExports';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/organizations/exports', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Create a schema
 	 * 
 	 * @param {Object} body Schema
@@ -3442,6 +3676,36 @@ class ExternalContactsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/relationships', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Create relationships export
+	 * 
+	 * @param {Object} body Export
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postExternalcontactsRelationshipsExports(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postExternalcontactsRelationshipsExports';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/relationships/exports', 
 			'POST', 
 			{  },
 			{  },

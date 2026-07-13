@@ -5,7 +5,7 @@ class CaseManagementApi {
 	/**
 	 * CaseManagement service.
 	 * @module purecloud-platform-client-v2/api/CaseManagementApi
-	 * @version 256.0.0
+	 * @version 257.0.0
 	 */
 
 	/**
@@ -1211,7 +1211,7 @@ class CaseManagementApi {
 
 	/**
 	 * Query for Caseplans.
-	 * 
+	 * This endpoint supports two filtering modes. The recommended approach uses filters (generic filter model) and attributes (field projection). During the migration period, the legacy fields name, nameSearchType, and divisionIds remain available as an alternative.
 	 * @param {Object} body Caseplan query request.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers

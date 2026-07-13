@@ -19,6 +19,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteKnowledgeKnowledgebaseSynchronizeJob**](KnowledgeApi#deleteKnowledgeKnowledgebaseSynchronizeJob) | **DELETE** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId} | Delete synchronization job
 [**deleteKnowledgeSetting**](KnowledgeApi#deleteKnowledgeSetting) | **DELETE** /api/v2/knowledge/settings/{knowledgeSettingId} | Delete Knowledge setting.
 [**deleteKnowledgeSource**](KnowledgeApi#deleteKnowledgeSource) | **DELETE** /api/v2/knowledge/sources/{sourceId} | Delete source
+[**deleteKnowledgeSourceSynchronizationDeletion**](KnowledgeApi#deleteKnowledgeSourceSynchronizationDeletion) | **DELETE** /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/deletions/{fileId} | Remove a deletion entry associated with the synchronization
+[**deleteKnowledgeSourceSynchronizationUpload**](KnowledgeApi#deleteKnowledgeSourceSynchronizationUpload) | **DELETE** /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/uploads/{fileId} | Remove a file upload entry associated with the synchronization
 [**getKnowledgeConnection**](KnowledgeApi#getKnowledgeConnection) | **GET** /api/v2/knowledge/connections/{connectionId} | Get connection
 [**getKnowledgeConnectionOptions**](KnowledgeApi#getKnowledgeConnectionOptions) | **GET** /api/v2/knowledge/connections/{connectionId}/options | Get connection options
 [**getKnowledgeConnections**](KnowledgeApi#getKnowledgeConnections) | **GET** /api/v2/knowledge/connections | Get connections
@@ -60,6 +62,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getKnowledgeSettings**](KnowledgeApi#getKnowledgeSettings) | **GET** /api/v2/knowledge/settings | Get Knowledge settings.
 [**getKnowledgeSource**](KnowledgeApi#getKnowledgeSource) | **GET** /api/v2/knowledge/sources/{sourceId} | Get source
 [**getKnowledgeSourceSynchronization**](KnowledgeApi#getKnowledgeSourceSynchronization) | **GET** /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId} | Get a specific synchronization of a source.
+[**getKnowledgeSourceSynchronizationDeletion**](KnowledgeApi#getKnowledgeSourceSynchronizationDeletion) | **GET** /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/deletions/{fileId} | Get a deletion entry associated with the synchronization
+[**getKnowledgeSourceSynchronizationDeletions**](KnowledgeApi#getKnowledgeSourceSynchronizationDeletions) | **GET** /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/deletions | Get deletion entries associated with the synchronization.
+[**getKnowledgeSourceSynchronizationUpload**](KnowledgeApi#getKnowledgeSourceSynchronizationUpload) | **GET** /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/uploads/{fileId} | Get a file upload entry associated with the synchronization
+[**getKnowledgeSourceSynchronizationUploads**](KnowledgeApi#getKnowledgeSourceSynchronizationUploads) | **GET** /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/uploads | Get file upload entries associated with the synchronization
 [**getKnowledgeSourceSynchronizations**](KnowledgeApi#getKnowledgeSourceSynchronizations) | **GET** /api/v2/knowledge/sources/{sourceId}/synchronizations | Get synchronizations of a source.
 [**getKnowledgeSources**](KnowledgeApi#getKnowledgeSources) | **GET** /api/v2/knowledge/sources | List sources
 [**getKnowledgeSourcesSynchronizations**](KnowledgeApi#getKnowledgeSourcesSynchronizations) | **GET** /api/v2/knowledge/sources/synchronizations | Get synchronizations of all sources of the organization.
@@ -120,6 +126,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postKnowledgeSearch**](KnowledgeApi#postKnowledgeSearch) | **POST** /api/v2/knowledge/search | Get Knowledge Search
 [**postKnowledgeSearchPreview**](KnowledgeApi#postKnowledgeSearchPreview) | **POST** /api/v2/knowledge/search/preview | Get Knowledge Search Preview
 [**postKnowledgeSettings**](KnowledgeApi#postKnowledgeSettings) | **POST** /api/v2/knowledge/settings | Create Knowledge setting.
+[**postKnowledgeSourceSynchronizationDeletions**](KnowledgeApi#postKnowledgeSourceSynchronizationDeletions) | **POST** /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/deletions | Mark a previously synced file for deletion in the synchronization.
 [**postKnowledgeSourceSynchronizationUploads**](KnowledgeApi#postKnowledgeSourceSynchronizationUploads) | **POST** /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/uploads | Create presigned URL for uploading a file in the synchronization.
 [**postKnowledgeSourceSynchronizations**](KnowledgeApi#postKnowledgeSourceSynchronizations) | **POST** /api/v2/knowledge/sources/{sourceId}/synchronizations | Start a manual synchronization from a source.
 [**postKnowledgeSources**](KnowledgeApi#postKnowledgeSources) | **POST** /api/v2/knowledge/sources | Create a new source
@@ -884,6 +891,128 @@ apiInstance.deleteKnowledgeSource(sourceId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **sourceId** | **String** | Source ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+void (no response body)
+
+
+## deleteKnowledgeSourceSynchronizationDeletion
+
+> void deleteKnowledgeSourceSynchronizationDeletion(sourceId, synchronizationId, fileId, opts)
+
+
+DELETE /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/deletions/{fileId}
+
+Remove a deletion entry associated with the synchronization
+
+Requires ALL permissions:
+
+* knowledge:synchronizationFileDeletion:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let sourceId = "sourceId_example"; // String | Source ID
+let synchronizationId = "synchronizationId_example"; // String | Synchronization ID
+let fileId = "fileId_example"; // String | File ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.deleteKnowledgeSourceSynchronizationDeletion(sourceId, synchronizationId, fileId, opts)
+  .then(() => {
+    console.log('deleteKnowledgeSourceSynchronizationDeletion returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteKnowledgeSourceSynchronizationDeletion');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **sourceId** | **String** | Source ID |  |
+ **synchronizationId** | **String** | Synchronization ID |  |
+ **fileId** | **String** | File ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+void (no response body)
+
+
+## deleteKnowledgeSourceSynchronizationUpload
+
+> void deleteKnowledgeSourceSynchronizationUpload(sourceId, synchronizationId, fileId, opts)
+
+
+DELETE /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/uploads/{fileId}
+
+Remove a file upload entry associated with the synchronization
+
+Requires ALL permissions:
+
+* knowledge:synchronizationFileUpload:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let sourceId = "sourceId_example"; // String | Source ID
+let synchronizationId = "synchronizationId_example"; // String | Synchronization ID
+let fileId = "fileId_example"; // String | File ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.deleteKnowledgeSourceSynchronizationUpload(sourceId, synchronizationId, fileId, opts)
+  .then(() => {
+    console.log('deleteKnowledgeSourceSynchronizationUpload returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteKnowledgeSourceSynchronizationUpload');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **sourceId** | **String** | Source ID |  |
+ **synchronizationId** | **String** | Synchronization ID |  |
+ **fileId** | **String** | File ID |  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -3504,6 +3633,258 @@ apiInstance.getKnowledgeSourceSynchronization(sourceId, synchronizationId, opts)
 ### Return type
 
 **V3Synchronization**
+
+
+## getKnowledgeSourceSynchronizationDeletion
+
+> V3SynchronizationDeletion getKnowledgeSourceSynchronizationDeletion(sourceId, synchronizationId, fileId, opts)
+
+
+GET /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/deletions/{fileId}
+
+Get a deletion entry associated with the synchronization
+
+Requires ALL permissions:
+
+* knowledge:synchronizationFileDeletion:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let sourceId = "sourceId_example"; // String | Source ID
+let synchronizationId = "synchronizationId_example"; // String | Synchronization ID
+let fileId = "fileId_example"; // String | File ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getKnowledgeSourceSynchronizationDeletion(sourceId, synchronizationId, fileId, opts)
+  .then((data) => {
+    console.log(`getKnowledgeSourceSynchronizationDeletion success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getKnowledgeSourceSynchronizationDeletion');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **sourceId** | **String** | Source ID |  |
+ **synchronizationId** | **String** | Synchronization ID |  |
+ **fileId** | **String** | File ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**V3SynchronizationDeletion**
+
+
+## getKnowledgeSourceSynchronizationDeletions
+
+> V3SynchronizationDeletionListing getKnowledgeSourceSynchronizationDeletions(sourceId, synchronizationId, opts)
+
+
+GET /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/deletions
+
+Get deletion entries associated with the synchronization.
+
+Requires ALL permissions:
+
+* knowledge:synchronizationFileDeletion:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let sourceId = "sourceId_example"; // String | Source ID
+let synchronizationId = "synchronizationId_example"; // String | Synchronization ID
+let opts = { 
+  'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getKnowledgeSourceSynchronizationDeletions(sourceId, synchronizationId, opts)
+  .then((data) => {
+    console.log(`getKnowledgeSourceSynchronizationDeletions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getKnowledgeSourceSynchronizationDeletions');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **sourceId** | **String** | Source ID |  |
+ **synchronizationId** | **String** | Synchronization ID |  |
+ **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**V3SynchronizationDeletionListing**
+
+
+## getKnowledgeSourceSynchronizationUpload
+
+> V3SynchronizationUpload getKnowledgeSourceSynchronizationUpload(sourceId, synchronizationId, fileId, opts)
+
+
+GET /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/uploads/{fileId}
+
+Get a file upload entry associated with the synchronization
+
+Requires ALL permissions:
+
+* knowledge:synchronizationFileUpload:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let sourceId = "sourceId_example"; // String | Source ID
+let synchronizationId = "synchronizationId_example"; // String | Synchronization ID
+let fileId = "fileId_example"; // String | File ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getKnowledgeSourceSynchronizationUpload(sourceId, synchronizationId, fileId, opts)
+  .then((data) => {
+    console.log(`getKnowledgeSourceSynchronizationUpload success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getKnowledgeSourceSynchronizationUpload');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **sourceId** | **String** | Source ID |  |
+ **synchronizationId** | **String** | Synchronization ID |  |
+ **fileId** | **String** | File ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**V3SynchronizationUpload**
+
+
+## getKnowledgeSourceSynchronizationUploads
+
+> V3SynchronizationUploadListing getKnowledgeSourceSynchronizationUploads(sourceId, synchronizationId, opts)
+
+
+GET /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/uploads
+
+Get file upload entries associated with the synchronization
+
+Requires ALL permissions:
+
+* knowledge:synchronizationFileUpload:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let sourceId = "sourceId_example"; // String | Source ID
+let synchronizationId = "synchronizationId_example"; // String | Synchronization ID
+let opts = { 
+  'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getKnowledgeSourceSynchronizationUploads(sourceId, synchronizationId, opts)
+  .then((data) => {
+    console.log(`getKnowledgeSourceSynchronizationUploads success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getKnowledgeSourceSynchronizationUploads');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **sourceId** | **String** | Source ID |  |
+ **synchronizationId** | **String** | Synchronization ID |  |
+ **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**V3SynchronizationUploadListing**
 
 
 ## getKnowledgeSourceSynchronizations
@@ -7054,6 +7435,67 @@ apiInstance.postKnowledgeSettings(opts)
 **KnowledgeSettingsResponse**
 
 
+## postKnowledgeSourceSynchronizationDeletions
+
+> V3SynchronizationDeletion postKnowledgeSourceSynchronizationDeletions(sourceId, synchronizationId, body, opts)
+
+
+POST /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/deletions
+
+Mark a previously synced file for deletion in the synchronization.
+
+Requires ALL permissions:
+
+* knowledge:synchronization:deleteFile
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let sourceId = "sourceId_example"; // String | Source ID
+let synchronizationId = "synchronizationId_example"; // String | Synchronization ID
+let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postKnowledgeSourceSynchronizationDeletions(sourceId, synchronizationId, body, opts)
+  .then((data) => {
+    console.log(`postKnowledgeSourceSynchronizationDeletions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeSourceSynchronizationDeletions');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **sourceId** | **String** | Source ID |  |
+ **synchronizationId** | **String** | Synchronization ID |  |
+ **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**V3SynchronizationDeletion**
+
+
 ## postKnowledgeSourceSynchronizationUploads
 
 > V3SynchronizationUploadUrlResponse postKnowledgeSourceSynchronizationUploads(sourceId, synchronizationId, body, opts)
@@ -7412,4 +7854,4 @@ apiInstance.putKnowledgeSource(sourceId, body, opts)
 **V3SourceDetailedResponse**
 
 
-_purecloud-platform-client-v2@256.0.0_
+_purecloud-platform-client-v2@257.0.0_

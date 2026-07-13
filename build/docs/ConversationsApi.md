@@ -34,6 +34,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getAnalyticsConversationsDetailsJobResults**](ConversationsApi#getAnalyticsConversationsDetailsJobResults) | **GET** /api/v2/analytics/conversations/details/jobs/{jobId}/results | Fetch a page of results for an async details job
 [**getAnalyticsConversationsDetailsJobsAvailability**](ConversationsApi#getAnalyticsConversationsDetailsJobsAvailability) | **GET** /api/v2/analytics/conversations/details/jobs/availability | Lookup the datalake availability date and time
 [**getConversation**](ConversationsApi#getConversation) | **GET** /api/v2/conversations/{conversationId} | Get conversation
+[**getConversationAccessattributes**](ConversationsApi#getConversationAccessattributes) | **GET** /api/v2/conversations/{conversationId}/accessattributes | Get the access attributes on a conversation.
 [**getConversationAssistantCopilotcontext**](ConversationsApi#getConversationAssistantCopilotcontext) | **GET** /api/v2/conversations/{conversationId}/assistant/copilotcontext | Get copilot context values for a conversation.
 [**getConversationCommunicationAgentchecklist**](ConversationsApi#getConversationCommunicationAgentchecklist) | **GET** /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId} | Get checklist info for a single checklist.
 [**getConversationCommunicationAgentchecklistJob**](ConversationsApi#getConversationCommunicationAgentchecklistJob) | **GET** /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/jobs/{jobId} | Get inference job status
@@ -262,6 +263,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationsEmailInboundmessages**](ConversationsApi#postConversationsEmailInboundmessages) | **POST** /api/v2/conversations/emails/{conversationId}/inboundmessages | Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based. This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
 [**postConversationsEmailMessages**](ConversationsApi#postConversationsEmailMessages) | **POST** /api/v2/conversations/emails/{conversationId}/messages | Send an email reply
 [**postConversationsEmailMessagesDraftAttachmentsCopy**](ConversationsApi#postConversationsEmailMessagesDraftAttachmentsCopy) | **POST** /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/copy | Copy attachments from an email message to the current draft.
+[**postConversationsEmailMessagesDraftAttachmentsUploads**](ConversationsApi#postConversationsEmailMessagesDraftAttachmentsUploads) | **POST** /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/uploads | Create a URL to upload a message attachment file
 [**postConversationsEmailParticipantCommunicationWrapup**](ConversationsApi#postConversationsEmailParticipantCommunicationWrapup) | **POST** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
 [**postConversationsEmailParticipantReplace**](ConversationsApi#postConversationsEmailParticipantReplace) | **POST** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
 [**postConversationsEmailReconnect**](ConversationsApi#postConversationsEmailReconnect) | **POST** /api/v2/conversations/emails/{conversationId}/reconnect | Reconnect the user to the most recently disconnected customer on a fully disconnected email conversation
@@ -303,6 +305,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationsVideoAgentconferenceCommunication**](ConversationsApi#postConversationsVideoAgentconferenceCommunication) | **POST** /api/v2/conversations/videos/{conversationId}/agentconference/communications/{communicationId} | Create an Agent-Type video conference and assign an agent to it
 [**postConversationsVideoParticipantCommunicationWrapup**](ConversationsApi#postConversationsVideoParticipantCommunicationWrapup) | **POST** /api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
 [**postConversationsVideosMeetings**](ConversationsApi#postConversationsVideosMeetings) | **POST** /api/v2/conversations/videos/meetings | Generate a meetingId for a given conferenceId
+[**putConversationAccessattributes**](ConversationsApi#putConversationAccessattributes) | **PUT** /api/v2/conversations/{conversationId}/accessattributes | Set the access attributes on a conversation.
 [**putConversationCustomattributes**](ConversationsApi#putConversationCustomattributes) | **PUT** /api/v2/conversations/{conversationId}/customattributes | Create or update a single custom attributes record. Updating replaces all data with the provided fields.
 [**putConversationCustomattributesBulk**](ConversationsApi#putConversationCustomattributesBulk) | **PUT** /api/v2/conversations/{conversationId}/customattributes/bulk | Create or update a list of custom attributes records. Updating replaces all data with the provided fields.
 [**putConversationParticipantFlaggedreason**](ConversationsApi#putConversationParticipantFlaggedreason) | **PUT** /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason | Set flagged reason on conversation participant to indicate bad conversation quality.
@@ -1948,6 +1951,65 @@ apiInstance.getConversation(conversationId, opts)
 ### Return type
 
 **Conversation**
+
+
+## getConversationAccessattributes
+
+> ConversationAccessAttributesResponse getConversationAccessattributes(conversationId, opts)
+
+
+GET /api/v2/conversations/{conversationId}/accessattributes
+
+Get the access attributes on a conversation.
+
+getConversationAccessattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* conversation:accessAttributes:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversation ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getConversationAccessattributes(conversationId, opts)
+  .then((data) => {
+    console.log(`getConversationAccessattributes success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationAccessattributes');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversation ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ConversationAccessAttributesResponse**
 
 
 ## getConversationAssistantCopilotcontext
@@ -15625,6 +15687,67 @@ apiInstance.postConversationsEmailMessagesDraftAttachmentsCopy(conversationId, b
 **EmailMessage**
 
 
+## postConversationsEmailMessagesDraftAttachmentsUploads
+
+> UploadAttachmentResponse postConversationsEmailMessagesDraftAttachmentsUploads(conversationId, body, opts)
+
+
+POST /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/uploads
+
+Create a URL to upload a message attachment file
+
+See https://developer.genesys.cloud/analyticsdatamanagement/uploads/upload-email-attachment-files for example usage.
+
+Requires ANY permissions:
+
+* conversation:emailAttachment:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let body = {}; // Object | Create attachment pre-signed URL request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postConversationsEmailMessagesDraftAttachmentsUploads(conversationId, body, opts)
+  .then((data) => {
+    console.log(`postConversationsEmailMessagesDraftAttachmentsUploads success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsEmailMessagesDraftAttachmentsUploads');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **body** | **Object** | Create attachment pre-signed URL request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**UploadAttachmentResponse**
+
+
 ## postConversationsEmailParticipantCommunicationWrapup
 
 > void postConversationsEmailParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
@@ -18106,6 +18229,67 @@ apiInstance.postConversationsVideosMeetings(body, opts)
 **MeetingIdRecord**
 
 
+## putConversationAccessattributes
+
+> **&#39;String&#39;** putConversationAccessattributes(conversationId, body, opts)
+
+
+PUT /api/v2/conversations/{conversationId}/accessattributes
+
+Set the access attributes on a conversation.
+
+putConversationAccessattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* conversation:accessAttributes:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversation ID
+let body = {}; // Object | Conversation Access Attributes
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.putConversationAccessattributes(conversationId, body, opts)
+  .then((data) => {
+    console.log(`putConversationAccessattributes success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putConversationAccessattributes');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversation ID |  |
+ **body** | **Object** | Conversation Access Attributes |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**&#39;String&#39;**
+
+
 ## putConversationCustomattributes
 
 > CustomAttributesIdResponse putConversationCustomattributes(conversationId, opts)
@@ -19718,4 +19902,4 @@ apiInstance.putConversationsVideoRecordingstate(conversationId, body, opts)
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@256.0.0_
+_purecloud-platform-client-v2@257.0.0_

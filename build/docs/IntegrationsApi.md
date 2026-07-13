@@ -36,7 +36,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getIntegrationsBotconnectorIntegrationIdBots**](IntegrationsApi#getIntegrationsBotconnectorIntegrationIdBots) | **GET** /api/v2/integrations/botconnector/{integrationId}/bots | Get a list of botConnector bots for this integration
 [**getIntegrationsBotconnectorIntegrationIdBotsSummaries**](IntegrationsApi#getIntegrationsBotconnectorIntegrationIdBotsSummaries) | **GET** /api/v2/integrations/botconnector/{integrationId}/bots/summaries | Get a summary list of botConnector bots for this integration
 [**getIntegrationsClientapps**](IntegrationsApi#getIntegrationsClientapps) | **GET** /api/v2/integrations/clientapps | List permitted client app integrations for the logged in user
-[**getIntegrationsClientappsUnifiedcommunications**](IntegrationsApi#getIntegrationsClientappsUnifiedcommunications) | **GET** /api/v2/integrations/clientapps/unifiedcommunications | UC integration client application configuration.
 [**getIntegrationsCredential**](IntegrationsApi#getIntegrationsCredential) | **GET** /api/v2/integrations/credentials/{credentialId} | Get a single credential with sensitive fields redacted
 [**getIntegrationsCredentials**](IntegrationsApi#getIntegrationsCredentials) | **GET** /api/v2/integrations/credentials | List multiple sets of credentials
 [**getIntegrationsCredentialsListing**](IntegrationsApi#getIntegrationsCredentialsListing) | **GET** /api/v2/integrations/credentials/listing | List multiple sets of credentials using cursor-based paging
@@ -1964,78 +1963,6 @@ apiInstance.getIntegrationsClientapps(opts)
 ### Return type
 
 **ClientAppEntityListing**
-
-
-## getIntegrationsClientappsUnifiedcommunications
-
-> UCIntegrationListing getIntegrationsClientappsUnifiedcommunications(opts)
-
-:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
-This resource has been deprecated
-:::
-
-GET /api/v2/integrations/clientapps/unifiedcommunications
-
-UC integration client application configuration.
-
-Deprecated: Please use GET /integrations/unifiedcommunications/clientapps instead. This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
-
-Requires ANY permissions:
-
-* integration:unifiedCommunications:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.IntegrationsApi();
-
-let opts = { 
-  'pageSize': 25, // Number | The total page size requested
-  'pageNumber': 1, // Number | The page number requested
-  'sortBy': "sortBy_example", // String | variable name requested to sort by
-  'expand': ["expand_example"], // [String] | variable name requested by expand list
-  'nextPage': "nextPage_example", // String | next page token
-  'previousPage': "previousPage_example", // String | Previous page token
-  'customHeaders': {  // Object.<string, string> | Request Custom Headers
-    'X-Service-Name': 'customer-service',
-    'X-Request-ID': 'req-12345'
-  }
-};
-
-apiInstance.getIntegrationsClientappsUnifiedcommunications(opts)
-  .then((data) => {
-    console.log(`getIntegrationsClientappsUnifiedcommunications success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getIntegrationsClientappsUnifiedcommunications');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
- **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
- **sortBy** | **String** | variable name requested to sort by | [optional]  |
- **expand** | **[String]** | variable name requested by expand list | [optional]  |
- **nextPage** | **String** | next page token | [optional]  |
- **previousPage** | **String** | Previous page token | [optional]  |
- **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
-
-### Return type
-
-**UCIntegrationListing**
 
 
 ## getIntegrationsCredential
@@ -5701,4 +5628,4 @@ apiInstance.putIntegrationsUnifiedcommunicationThirdpartypresences(ucIntegration
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@256.0.0_
+_purecloud-platform-client-v2@257.0.0_

@@ -2109,6 +2109,8 @@ POST /api/v2/casemanagement/caseplans/query
 
 Query for Caseplans.
 
+This endpoint supports two filtering modes. The recommended approach uses filters (generic filter model) and attributes (field projection). During the migration period, the legacy fields name, nameSearchType, and divisionIds remain available as an alternative.
+
 Requires ANY permissions:
 
 * caseManagement:caseplan:view
@@ -2391,4 +2393,4 @@ apiInstance.putCasemanagementCaseplanIntakesettings(caseplanId, body, opts)
 **IntakeSettingsListing**
 
 
-_purecloud-platform-client-v2@256.0.0_
+_purecloud-platform-client-v2@257.0.0_

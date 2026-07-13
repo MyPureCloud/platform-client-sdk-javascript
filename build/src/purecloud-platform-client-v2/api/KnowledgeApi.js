@@ -5,7 +5,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 256.0.0
+	 * @version 257.0.0
 	 */
 
 	/**
@@ -449,6 +449,86 @@ class KnowledgeApi {
 			'/api/v2/knowledge/sources/{sourceId}', 
 			'DELETE', 
 			{ 'sourceId': sourceId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Remove a deletion entry associated with the synchronization
+	 * 
+	 * @param {String} sourceId Source ID
+	 * @param {String} synchronizationId Synchronization ID
+	 * @param {String} fileId File ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	deleteKnowledgeSourceSynchronizationDeletion(sourceId, synchronizationId, fileId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'sourceId' is set
+		if (sourceId === undefined || sourceId === null || sourceId === '') {
+			throw 'Missing the required parameter "sourceId" when calling deleteKnowledgeSourceSynchronizationDeletion';
+		}
+		// verify the required parameter 'synchronizationId' is set
+		if (synchronizationId === undefined || synchronizationId === null || synchronizationId === '') {
+			throw 'Missing the required parameter "synchronizationId" when calling deleteKnowledgeSourceSynchronizationDeletion';
+		}
+		// verify the required parameter 'fileId' is set
+		if (fileId === undefined || fileId === null || fileId === '') {
+			throw 'Missing the required parameter "fileId" when calling deleteKnowledgeSourceSynchronizationDeletion';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/deletions/{fileId}', 
+			'DELETE', 
+			{ 'sourceId': sourceId,'synchronizationId': synchronizationId,'fileId': fileId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Remove a file upload entry associated with the synchronization
+	 * 
+	 * @param {String} sourceId Source ID
+	 * @param {String} synchronizationId Synchronization ID
+	 * @param {String} fileId File ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	deleteKnowledgeSourceSynchronizationUpload(sourceId, synchronizationId, fileId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'sourceId' is set
+		if (sourceId === undefined || sourceId === null || sourceId === '') {
+			throw 'Missing the required parameter "sourceId" when calling deleteKnowledgeSourceSynchronizationUpload';
+		}
+		// verify the required parameter 'synchronizationId' is set
+		if (synchronizationId === undefined || synchronizationId === null || synchronizationId === '') {
+			throw 'Missing the required parameter "synchronizationId" when calling deleteKnowledgeSourceSynchronizationUpload';
+		}
+		// verify the required parameter 'fileId' is set
+		if (fileId === undefined || fileId === null || fileId === '') {
+			throw 'Missing the required parameter "fileId" when calling deleteKnowledgeSourceSynchronizationUpload';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/uploads/{fileId}', 
+			'DELETE', 
+			{ 'sourceId': sourceId,'synchronizationId': synchronizationId,'fileId': fileId },
 			{  },
 			{  },
 			{  },
@@ -1931,6 +2011,162 @@ class KnowledgeApi {
 			'GET', 
 			{ 'sourceId': sourceId,'synchronizationId': synchronizationId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get a deletion entry associated with the synchronization
+	 * 
+	 * @param {String} sourceId Source ID
+	 * @param {String} synchronizationId Synchronization ID
+	 * @param {String} fileId File ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getKnowledgeSourceSynchronizationDeletion(sourceId, synchronizationId, fileId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'sourceId' is set
+		if (sourceId === undefined || sourceId === null || sourceId === '') {
+			throw 'Missing the required parameter "sourceId" when calling getKnowledgeSourceSynchronizationDeletion';
+		}
+		// verify the required parameter 'synchronizationId' is set
+		if (synchronizationId === undefined || synchronizationId === null || synchronizationId === '') {
+			throw 'Missing the required parameter "synchronizationId" when calling getKnowledgeSourceSynchronizationDeletion';
+		}
+		// verify the required parameter 'fileId' is set
+		if (fileId === undefined || fileId === null || fileId === '') {
+			throw 'Missing the required parameter "fileId" when calling getKnowledgeSourceSynchronizationDeletion';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/deletions/{fileId}', 
+			'GET', 
+			{ 'sourceId': sourceId,'synchronizationId': synchronizationId,'fileId': fileId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get deletion entries associated with the synchronization.
+	 * 
+	 * @param {String} sourceId Source ID
+	 * @param {String} synchronizationId Synchronization ID
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getKnowledgeSourceSynchronizationDeletions(sourceId, synchronizationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'sourceId' is set
+		if (sourceId === undefined || sourceId === null || sourceId === '') {
+			throw 'Missing the required parameter "sourceId" when calling getKnowledgeSourceSynchronizationDeletions';
+		}
+		// verify the required parameter 'synchronizationId' is set
+		if (synchronizationId === undefined || synchronizationId === null || synchronizationId === '') {
+			throw 'Missing the required parameter "synchronizationId" when calling getKnowledgeSourceSynchronizationDeletions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/deletions', 
+			'GET', 
+			{ 'sourceId': sourceId,'synchronizationId': synchronizationId },
+			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get a file upload entry associated with the synchronization
+	 * 
+	 * @param {String} sourceId Source ID
+	 * @param {String} synchronizationId Synchronization ID
+	 * @param {String} fileId File ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getKnowledgeSourceSynchronizationUpload(sourceId, synchronizationId, fileId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'sourceId' is set
+		if (sourceId === undefined || sourceId === null || sourceId === '') {
+			throw 'Missing the required parameter "sourceId" when calling getKnowledgeSourceSynchronizationUpload';
+		}
+		// verify the required parameter 'synchronizationId' is set
+		if (synchronizationId === undefined || synchronizationId === null || synchronizationId === '') {
+			throw 'Missing the required parameter "synchronizationId" when calling getKnowledgeSourceSynchronizationUpload';
+		}
+		// verify the required parameter 'fileId' is set
+		if (fileId === undefined || fileId === null || fileId === '') {
+			throw 'Missing the required parameter "fileId" when calling getKnowledgeSourceSynchronizationUpload';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/uploads/{fileId}', 
+			'GET', 
+			{ 'sourceId': sourceId,'synchronizationId': synchronizationId,'fileId': fileId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get file upload entries associated with the synchronization
+	 * 
+	 * @param {String} sourceId Source ID
+	 * @param {String} synchronizationId Synchronization ID
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getKnowledgeSourceSynchronizationUploads(sourceId, synchronizationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'sourceId' is set
+		if (sourceId === undefined || sourceId === null || sourceId === '') {
+			throw 'Missing the required parameter "sourceId" when calling getKnowledgeSourceSynchronizationUploads';
+		}
+		// verify the required parameter 'synchronizationId' is set
+		if (synchronizationId === undefined || synchronizationId === null || synchronizationId === '') {
+			throw 'Missing the required parameter "synchronizationId" when calling getKnowledgeSourceSynchronizationUploads';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/uploads', 
+			'GET', 
+			{ 'sourceId': sourceId,'synchronizationId': synchronizationId },
+			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'] },
 			{  },
 			{  },
 			null, 
@@ -4027,6 +4263,46 @@ class KnowledgeApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Mark a previously synced file for deletion in the synchronization.
+	 * 
+	 * @param {String} sourceId Source ID
+	 * @param {String} synchronizationId Synchronization ID
+	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postKnowledgeSourceSynchronizationDeletions(sourceId, synchronizationId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'sourceId' is set
+		if (sourceId === undefined || sourceId === null || sourceId === '') {
+			throw 'Missing the required parameter "sourceId" when calling postKnowledgeSourceSynchronizationDeletions';
+		}
+		// verify the required parameter 'synchronizationId' is set
+		if (synchronizationId === undefined || synchronizationId === null || synchronizationId === '') {
+			throw 'Missing the required parameter "synchronizationId" when calling postKnowledgeSourceSynchronizationDeletions';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postKnowledgeSourceSynchronizationDeletions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/deletions', 
+			'POST', 
+			{ 'sourceId': sourceId,'synchronizationId': synchronizationId },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json'],

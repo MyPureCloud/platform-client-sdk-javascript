@@ -2657,6 +2657,7 @@ declare namespace BusinessRulesApi {
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface postBusinessrulesDecisiontableVersionsOptions { 
+		"body"?: Models.CreateDecisionTableVersionRequest;
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface postBusinessrulesDecisiontablesOptions { 
@@ -3393,6 +3394,7 @@ declare class ConversationsApi {
   	getAnalyticsConversationsDetailsJobResults(jobId: string, opts?: ConversationsApi.getAnalyticsConversationsDetailsJobResultsOptions): Promise<Models.AnalyticsConversationAsyncQueryResponse>;
   	getAnalyticsConversationsDetailsJobsAvailability(opts?: ConversationsApi.getAnalyticsConversationsDetailsJobsAvailabilityOptions): Promise<Models.DataAvailabilityResponse>;
   	getConversation(conversationId: string, opts?: ConversationsApi.getConversationOptions): Promise<Models.Conversation>;
+  	getConversationAccessattributes(conversationId: string, opts?: ConversationsApi.getConversationAccessattributesOptions): Promise<Models.ConversationAccessAttributesResponse>;
   	getConversationAssistantCopilotcontext(conversationId: string, opts?: ConversationsApi.getConversationAssistantCopilotcontextOptions): Promise<Models.CopilotContextValues>;
   	getConversationCommunicationAgentchecklist(conversationId: string, communicationId: string, agentChecklistId: string, opts?: ConversationsApi.getConversationCommunicationAgentchecklistOptions): Promise<Models.AgentChecklistResponse>;
   	getConversationCommunicationAgentchecklistJob(conversationId: string, communicationId: string, agentChecklistId: string, jobId: string, opts?: ConversationsApi.getConversationCommunicationAgentchecklistJobOptions): Promise<Models.ChecklistInferenceJobResponse>;
@@ -3621,6 +3623,7 @@ declare class ConversationsApi {
   	postConversationsEmailInboundmessages(conversationId: string, body: Models.InboundMessageRequest, opts?: ConversationsApi.postConversationsEmailInboundmessagesOptions): Promise<Models.EmailConversation>;
   	postConversationsEmailMessages(conversationId: string, body: Models.EmailMessage, opts?: ConversationsApi.postConversationsEmailMessagesOptions): Promise<Models.EmailMessageReply>;
   	postConversationsEmailMessagesDraftAttachmentsCopy(conversationId: string, body: Models.CopyAttachmentsRequest, opts?: ConversationsApi.postConversationsEmailMessagesDraftAttachmentsCopyOptions): Promise<Models.EmailMessage>;
+  	postConversationsEmailMessagesDraftAttachmentsUploads(conversationId: string, body: Models.UploadAttachmentRequest, opts?: ConversationsApi.postConversationsEmailMessagesDraftAttachmentsUploadsOptions): Promise<Models.UploadAttachmentResponse>;
   	postConversationsEmailParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.postConversationsEmailParticipantCommunicationWrapupOptions): Promise<void>;
   	postConversationsEmailParticipantReplace(conversationId: string, participantId: string, body: Models.TransferRequest, opts?: ConversationsApi.postConversationsEmailParticipantReplaceOptions): Promise<void>;
   	postConversationsEmailReconnect(conversationId: string, opts?: ConversationsApi.postConversationsEmailReconnectOptions): Promise<void>;
@@ -3662,6 +3665,7 @@ declare class ConversationsApi {
   	postConversationsVideoAgentconferenceCommunication(conversationId: string, communicationId: string, opts?: ConversationsApi.postConversationsVideoAgentconferenceCommunicationOptions): Promise<Models.VideoConferenceDetails>;
   	postConversationsVideoParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.postConversationsVideoParticipantCommunicationWrapupOptions): Promise<void>;
   	postConversationsVideosMeetings(body: Models.GenerateMeetingIdRequest, opts?: ConversationsApi.postConversationsVideosMeetingsOptions): Promise<Models.MeetingIdRecord>;
+  	putConversationAccessattributes(conversationId: string, body: Models.ConversationAccessAttributesUpdate, opts?: ConversationsApi.putConversationAccessattributesOptions): Promise<string>;
   	putConversationCustomattributes(conversationId: string, opts?: ConversationsApi.putConversationCustomattributesOptions): Promise<Models.CustomAttributesIdResponse>;
   	putConversationCustomattributesBulk(conversationId: string, opts?: ConversationsApi.putConversationCustomattributesBulkOptions): Promise<Models.CustomAttributesBulkUpdateResponseMap>;
   	putConversationParticipantFlaggedreason(conversationId: string, participantId: string, opts?: ConversationsApi.putConversationParticipantFlaggedreasonOptions): Promise<void>;
@@ -3778,6 +3782,9 @@ declare namespace ConversationsApi {
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface getConversationOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface getConversationAccessattributesOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface getConversationAssistantCopilotcontextOptions { 
@@ -4575,6 +4582,9 @@ declare namespace ConversationsApi {
 	export interface postConversationsEmailMessagesDraftAttachmentsCopyOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
+	export interface postConversationsEmailMessagesDraftAttachmentsUploadsOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
 	export interface postConversationsEmailParticipantCommunicationWrapupOptions { 
 		"body"?: Models.WrapupInput;
 		"customHeaders"?: Record<string, string>;
@@ -4706,6 +4716,9 @@ declare namespace ConversationsApi {
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface postConversationsVideosMeetingsOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface putConversationAccessattributesOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface putConversationCustomattributesOptions { 
@@ -4988,6 +5001,8 @@ declare class ExternalContactsApi {
   	getExternalcontactsImportJobs(opts?: ExternalContactsApi.getExternalcontactsImportJobsOptions): Promise<Models.ContactImportJobEntityListing>;
   	getExternalcontactsImportSetting(settingsId: string, opts?: ExternalContactsApi.getExternalcontactsImportSettingOptions): Promise<Models.ContactImportSettings>;
   	getExternalcontactsImportSettings(opts?: ExternalContactsApi.getExternalcontactsImportSettingsOptions): Promise<Models.ContactImportSettingsEntityListing>;
+  	getExternalcontactsNotesExport(exportId: string, opts?: ExternalContactsApi.getExternalcontactsNotesExportOptions): Promise<Models.NotesExport>;
+  	getExternalcontactsNotesExports(opts?: ExternalContactsApi.getExternalcontactsNotesExportsOptions): Promise<Models.NotesExportListing>;
   	getExternalcontactsOrganization(externalOrganizationId: string, opts?: ExternalContactsApi.getExternalcontactsOrganizationOptions): Promise<Models.ExternalOrganization>;
   	getExternalcontactsOrganizationContacts(externalOrganizationId: string, opts?: ExternalContactsApi.getExternalcontactsOrganizationContactsOptions): Promise<Models.ContactListing>;
   	getExternalcontactsOrganizationIdentifiers(externalOrganizationId: string, opts?: ExternalContactsApi.getExternalcontactsOrganizationIdentifiersOptions): Promise<Models.ExternalOrganizationIdentifierListing>;
@@ -4995,6 +5010,8 @@ declare class ExternalContactsApi {
   	getExternalcontactsOrganizationNotes(externalOrganizationId: string, opts?: ExternalContactsApi.getExternalcontactsOrganizationNotesOptions): Promise<Models.NoteListing>;
   	getExternalcontactsOrganizationRelationships(externalOrganizationId: string, opts?: ExternalContactsApi.getExternalcontactsOrganizationRelationshipsOptions): Promise<Models.RelationshipListing>;
   	getExternalcontactsOrganizations(opts?: ExternalContactsApi.getExternalcontactsOrganizationsOptions): Promise<Models.ExternalOrganizationListing>;
+  	getExternalcontactsOrganizationsExport(exportId: string, opts?: ExternalContactsApi.getExternalcontactsOrganizationsExportOptions): Promise<Models.OrganizationsExport>;
+  	getExternalcontactsOrganizationsExports(opts?: ExternalContactsApi.getExternalcontactsOrganizationsExportsOptions): Promise<Models.OrganizationsExportListing>;
   	getExternalcontactsOrganizationsSchema(schemaId: string, opts?: ExternalContactsApi.getExternalcontactsOrganizationsSchemaOptions): Promise<Models.DataSchema>;
   	getExternalcontactsOrganizationsSchemaVersion(schemaId: string, versionId: string, opts?: ExternalContactsApi.getExternalcontactsOrganizationsSchemaVersionOptions): Promise<Models.DataSchema>;
   	getExternalcontactsOrganizationsSchemaVersions(schemaId: string, opts?: ExternalContactsApi.getExternalcontactsOrganizationsSchemaVersionsOptions): Promise<Models.DataSchemaListing>;
@@ -5003,6 +5020,8 @@ declare class ExternalContactsApi {
   	getExternalcontactsOrganizationsSchemasCoretypes(opts?: ExternalContactsApi.getExternalcontactsOrganizationsSchemasCoretypesOptions): Promise<Models.CoretypeListing>;
   	getExternalcontactsOrganizationsSchemasLimits(opts?: ExternalContactsApi.getExternalcontactsOrganizationsSchemasLimitsOptions): Promise<Models.SchemaQuantityLimits>;
   	getExternalcontactsRelationship(relationshipId: string, opts?: ExternalContactsApi.getExternalcontactsRelationshipOptions): Promise<Models.Relationship>;
+  	getExternalcontactsRelationshipsExport(exportId: string, opts?: ExternalContactsApi.getExternalcontactsRelationshipsExportOptions): Promise<Models.RelationshipsExport>;
+  	getExternalcontactsRelationshipsExports(opts?: ExternalContactsApi.getExternalcontactsRelationshipsExportsOptions): Promise<Models.RelationshipsExportListing>;
   	getExternalcontactsReversewhitepageslookup(lookupVal: string, opts?: ExternalContactsApi.getExternalcontactsReversewhitepageslookupOptions): Promise<Models.ReverseWhitepagesLookupResult>;
   	getExternalcontactsScanContacts(opts?: ExternalContactsApi.getExternalcontactsScanContactsOptions): Promise<Models.CursorContactListing>;
   	getExternalcontactsScanContactsDivisionviewsAll(opts?: ExternalContactsApi.getExternalcontactsScanContactsDivisionviewsAllOptions): Promise<Models.CursorContactListing>;
@@ -5058,11 +5077,14 @@ declare class ExternalContactsApi {
   	postExternalcontactsImportJobs(body: Models.ContactImportJobRequest, opts?: ExternalContactsApi.postExternalcontactsImportJobsOptions): Promise<Models.ContactImportJobResponse>;
   	postExternalcontactsImportSettings(body: Models.ContactImportSettings, opts?: ExternalContactsApi.postExternalcontactsImportSettingsOptions): Promise<Models.ContactImportSettings>;
   	postExternalcontactsMergeContacts(body: Models.MergeRequest, opts?: ExternalContactsApi.postExternalcontactsMergeContactsOptions): Promise<Models.ExternalContact>;
+  	postExternalcontactsNotesExports(body: Models.NotesExport, opts?: ExternalContactsApi.postExternalcontactsNotesExportsOptions): Promise<Models.NotesExport>;
   	postExternalcontactsOrganizationNotes(externalOrganizationId: string, body: Models.Note, opts?: ExternalContactsApi.postExternalcontactsOrganizationNotesOptions): Promise<Models.Note>;
   	postExternalcontactsOrganizations(body: Models.ExternalOrganization, opts?: ExternalContactsApi.postExternalcontactsOrganizationsOptions): Promise<Models.ExternalOrganization>;
   	postExternalcontactsOrganizationsEnrich(body: Models.ExternalOrganizationEnrichRequest, opts?: ExternalContactsApi.postExternalcontactsOrganizationsEnrichOptions): Promise<Models.ExternalOrganization>;
+  	postExternalcontactsOrganizationsExports(body: Models.OrganizationsExport, opts?: ExternalContactsApi.postExternalcontactsOrganizationsExportsOptions): Promise<Models.OrganizationsExport>;
   	postExternalcontactsOrganizationsSchemas(body: Models.DataSchema, opts?: ExternalContactsApi.postExternalcontactsOrganizationsSchemasOptions): Promise<Models.DataSchema>;
   	postExternalcontactsRelationships(body: Models.Relationship, opts?: ExternalContactsApi.postExternalcontactsRelationshipsOptions): Promise<Models.Relationship>;
+  	postExternalcontactsRelationshipsExports(body: Models.RelationshipsExport, opts?: ExternalContactsApi.postExternalcontactsRelationshipsExportsOptions): Promise<Models.RelationshipsExport>;
   	putExternalcontactsContact(contactId: string, body: Models.ExternalContact, opts?: ExternalContactsApi.putExternalcontactsContactOptions): Promise<Models.ExternalContact>;
   	putExternalcontactsContactNote(contactId: string, noteId: string, body: Models.Note, opts?: ExternalContactsApi.putExternalcontactsContactNoteOptions): Promise<Models.Note>;
   	putExternalcontactsContactsSchema(schemaId: string, body: Models.DataSchema, opts?: ExternalContactsApi.putExternalcontactsContactsSchemaOptions): Promise<Models.DataSchema>;
@@ -5228,6 +5250,15 @@ declare namespace ExternalContactsApi {
 		"name"?: string;
 		"customHeaders"?: Record<string, string>;
 	}
+	export interface getExternalcontactsNotesExportOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface getExternalcontactsNotesExportsOptions { 
+		"divisionIds"?: Array<string>;
+		"after"?: string;
+		"pageSize"?: number;
+		"customHeaders"?: Record<string, string>;
+	}
 	export interface getExternalcontactsOrganizationOptions { 
 		"expand"?: Array<string>;
 		"includeTrustors"?: boolean;
@@ -5273,6 +5304,15 @@ declare namespace ExternalContactsApi {
 		"divisionIds"?: Array<string>;
 		"customHeaders"?: Record<string, string>;
 	}
+	export interface getExternalcontactsOrganizationsExportOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface getExternalcontactsOrganizationsExportsOptions { 
+		"divisionIds"?: Array<string>;
+		"after"?: string;
+		"pageSize"?: number;
+		"customHeaders"?: Record<string, string>;
+	}
 	export interface getExternalcontactsOrganizationsSchemaOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
@@ -5296,6 +5336,15 @@ declare namespace ExternalContactsApi {
 	}
 	export interface getExternalcontactsRelationshipOptions { 
 		"expand"?: Array<string>;
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface getExternalcontactsRelationshipsExportOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface getExternalcontactsRelationshipsExportsOptions { 
+		"divisionIds"?: Array<string>;
+		"after"?: string;
+		"pageSize"?: number;
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface getExternalcontactsReversewhitepageslookupOptions { 
@@ -5492,6 +5541,9 @@ declare namespace ExternalContactsApi {
 	export interface postExternalcontactsMergeContactsOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
+	export interface postExternalcontactsNotesExportsOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
 	export interface postExternalcontactsOrganizationNotesOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
@@ -5502,10 +5554,16 @@ declare namespace ExternalContactsApi {
 		"dryRun"?: boolean;
 		"customHeaders"?: Record<string, string>;
 	}
+	export interface postExternalcontactsOrganizationsExportsOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
 	export interface postExternalcontactsOrganizationsSchemasOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface postExternalcontactsRelationshipsOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface postExternalcontactsRelationshipsExportsOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface putExternalcontactsContactOptions { 
@@ -6494,7 +6552,6 @@ declare class IntegrationsApi {
   	getIntegrationsBotconnectorIntegrationIdBots(integrationId: string, opts?: IntegrationsApi.getIntegrationsBotconnectorIntegrationIdBotsOptions): Promise<Models.BotList>;
   	getIntegrationsBotconnectorIntegrationIdBotsSummaries(integrationId: string, opts?: IntegrationsApi.getIntegrationsBotconnectorIntegrationIdBotsSummariesOptions): Promise<Models.BotConnectorBotSummaryEntityListing>;
   	getIntegrationsClientapps(opts?: IntegrationsApi.getIntegrationsClientappsOptions): Promise<Models.ClientAppEntityListing>;
-  	getIntegrationsClientappsUnifiedcommunications(opts?: IntegrationsApi.getIntegrationsClientappsUnifiedcommunicationsOptions): Promise<Models.UCIntegrationListing>;
   	getIntegrationsCredential(credentialId: string, opts?: IntegrationsApi.getIntegrationsCredentialOptions): Promise<Models.Credential>;
   	getIntegrationsCredentials(opts?: IntegrationsApi.getIntegrationsCredentialsOptions): Promise<Models.CredentialInfoListing>;
   	getIntegrationsCredentialsListing(opts?: IntegrationsApi.getIntegrationsCredentialsListingOptions): Promise<Models.CredentialInfoCursorListing>;
@@ -6714,15 +6771,6 @@ declare namespace IntegrationsApi {
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface getIntegrationsClientappsOptions { 
-		"pageSize"?: number;
-		"pageNumber"?: number;
-		"sortBy"?: string;
-		"expand"?: Array<string>;
-		"nextPage"?: string;
-		"previousPage"?: string;
-		"customHeaders"?: Record<string, string>;
-	}
-	export interface getIntegrationsClientappsUnifiedcommunicationsOptions { 
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"sortBy"?: string;
@@ -7569,6 +7617,8 @@ declare class KnowledgeApi {
   	deleteKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId: string, syncJobId: string, opts?: KnowledgeApi.deleteKnowledgeKnowledgebaseSynchronizeJobOptions): Promise<void>;
   	deleteKnowledgeSetting(knowledgeSettingId: string, opts?: KnowledgeApi.deleteKnowledgeSettingOptions): Promise<void>;
   	deleteKnowledgeSource(sourceId: string, opts?: KnowledgeApi.deleteKnowledgeSourceOptions): Promise<void>;
+  	deleteKnowledgeSourceSynchronizationDeletion(sourceId: string, synchronizationId: string, fileId: string, opts?: KnowledgeApi.deleteKnowledgeSourceSynchronizationDeletionOptions): Promise<void>;
+  	deleteKnowledgeSourceSynchronizationUpload(sourceId: string, synchronizationId: string, fileId: string, opts?: KnowledgeApi.deleteKnowledgeSourceSynchronizationUploadOptions): Promise<void>;
   	getKnowledgeConnection(connectionId: string, opts?: KnowledgeApi.getKnowledgeConnectionOptions): Promise<Models.ConnectionResponse>;
   	getKnowledgeConnectionOptions(connectionId: string, opts?: KnowledgeApi.getKnowledgeConnectionOptionsOptions): Promise<Models.ConnectionOptionListing>;
   	getKnowledgeConnections(opts?: KnowledgeApi.getKnowledgeConnectionsOptions): Promise<Models.ConnectionListing>;
@@ -7610,6 +7660,10 @@ declare class KnowledgeApi {
   	getKnowledgeSettings(opts?: KnowledgeApi.getKnowledgeSettingsOptions): Promise<Models.KnowledgeSettingListing>;
   	getKnowledgeSource(sourceId: string, opts?: KnowledgeApi.getKnowledgeSourceOptions): Promise<Models.V3SourceExpandableResponse>;
   	getKnowledgeSourceSynchronization(sourceId: string, synchronizationId: string, opts?: KnowledgeApi.getKnowledgeSourceSynchronizationOptions): Promise<Models.V3Synchronization>;
+  	getKnowledgeSourceSynchronizationDeletion(sourceId: string, synchronizationId: string, fileId: string, opts?: KnowledgeApi.getKnowledgeSourceSynchronizationDeletionOptions): Promise<Models.V3SynchronizationDeletion>;
+  	getKnowledgeSourceSynchronizationDeletions(sourceId: string, synchronizationId: string, opts?: KnowledgeApi.getKnowledgeSourceSynchronizationDeletionsOptions): Promise<Models.V3SynchronizationDeletionListing>;
+  	getKnowledgeSourceSynchronizationUpload(sourceId: string, synchronizationId: string, fileId: string, opts?: KnowledgeApi.getKnowledgeSourceSynchronizationUploadOptions): Promise<Models.V3SynchronizationUpload>;
+  	getKnowledgeSourceSynchronizationUploads(sourceId: string, synchronizationId: string, opts?: KnowledgeApi.getKnowledgeSourceSynchronizationUploadsOptions): Promise<Models.V3SynchronizationUploadListing>;
   	getKnowledgeSourceSynchronizations(sourceId: string, opts?: KnowledgeApi.getKnowledgeSourceSynchronizationsOptions): Promise<Models.V3SynchronizationListing>;
   	getKnowledgeSources(opts?: KnowledgeApi.getKnowledgeSourcesOptions): Promise<Models.V3SourceExpandableListing>;
   	getKnowledgeSourcesSynchronizations(opts?: KnowledgeApi.getKnowledgeSourcesSynchronizationsOptions): Promise<Models.V3SynchronizationListing>;
@@ -7670,6 +7724,7 @@ declare class KnowledgeApi {
   	postKnowledgeSearch(opts?: KnowledgeApi.postKnowledgeSearchOptions): Promise<Models.KnowledgeSourcesSearchResponse>;
   	postKnowledgeSearchPreview(opts?: KnowledgeApi.postKnowledgeSearchPreviewOptions): Promise<Models.KnowledgeSearchPreviewResponse>;
   	postKnowledgeSettings(opts?: KnowledgeApi.postKnowledgeSettingsOptions): Promise<Models.KnowledgeSettingsResponse>;
+  	postKnowledgeSourceSynchronizationDeletions(sourceId: string, synchronizationId: string, body: Models.V3SynchronizationFileDeletionRequest, opts?: KnowledgeApi.postKnowledgeSourceSynchronizationDeletionsOptions): Promise<Models.V3SynchronizationDeletion>;
   	postKnowledgeSourceSynchronizationUploads(sourceId: string, synchronizationId: string, body: Models.V3SynchronizationUploadUrlRequest, opts?: KnowledgeApi.postKnowledgeSourceSynchronizationUploadsOptions): Promise<Models.V3SynchronizationUploadUrlResponse>;
   	postKnowledgeSourceSynchronizations(sourceId: string, opts?: KnowledgeApi.postKnowledgeSourceSynchronizationsOptions): Promise<Models.V3Synchronization>;
   	postKnowledgeSources(body: Models.V3SourceCreateRequest, opts?: KnowledgeApi.postKnowledgeSourcesOptions): Promise<Models.V3SourceDetailedResponse>;
@@ -7716,6 +7771,12 @@ declare namespace KnowledgeApi {
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface deleteKnowledgeSourceOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface deleteKnowledgeSourceSynchronizationDeletionOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface deleteKnowledgeSourceSynchronizationUploadOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface getKnowledgeConnectionOptions { 
@@ -7962,6 +8023,24 @@ declare namespace KnowledgeApi {
 	export interface getKnowledgeSourceSynchronizationOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
+	export interface getKnowledgeSourceSynchronizationDeletionOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface getKnowledgeSourceSynchronizationDeletionsOptions { 
+		"before"?: string;
+		"after"?: string;
+		"pageSize"?: string;
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface getKnowledgeSourceSynchronizationUploadOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface getKnowledgeSourceSynchronizationUploadsOptions { 
+		"before"?: string;
+		"after"?: string;
+		"pageSize"?: string;
+		"customHeaders"?: Record<string, string>;
+	}
 	export interface getKnowledgeSourceSynchronizationsOptions { 
 		"before"?: string;
 		"after"?: string;
@@ -8173,6 +8252,9 @@ declare namespace KnowledgeApi {
 	}
 	export interface postKnowledgeSettingsOptions { 
 		"body"?: Models.KnowledgeSettingsRequest;
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface postKnowledgeSourceSynchronizationDeletionsOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface postKnowledgeSourceSynchronizationUploadsOptions { 
@@ -17880,6 +17962,7 @@ declare namespace Models {
 		"createdBy": Models.UserReference;
 		"modifiedDate": string;
 		"modifiedBy": Models.UserReference;
+		"initialSchedulePeriod"?: Models.SchedulingPeriodBase;
 		"selfUri"?: string;
 	}
 	
@@ -17929,6 +18012,7 @@ declare namespace Models {
 		"modifiedBy": Models.UserReference;
 		"lastRunDate"?: string;
 		"lastRunBy"?: Models.UserReference;
+		"startTimeIncrementMinutes"?: number;
 		"selfUri"?: string;
 	}
 	
@@ -20836,6 +20920,13 @@ declare namespace Models {
 		"lastUri"?: string;
 		"selfUri"?: string;
 		"pageCount"?: number;
+	}
+	
+	export interface AudioFormat { 
+		"channels"?: number;
+		"bitsPerSample"?: number;
+		"sampleRate"?: number;
+		"encoding"?: string;
 	}
 	
 	export interface AudioState { 
@@ -24475,7 +24566,7 @@ declare namespace Models {
 		"reference"?: string;
 		"caseplan"?: Models.CaseplanReference;
 		"summary"?: string;
-		"owner"?: Models.UserReference;
+		"owner"?: Models.CaseUserReference;
 		"status"?: string;
 		"priority"?: string;
 		"dateDue"?: string;
@@ -24483,7 +24574,7 @@ declare namespace Models {
 		"dateClosed"?: string;
 		"dateCreated"?: string;
 		"dateModified"?: string;
-		"modifiedBy"?: Models.UserReference;
+		"modifiedBy"?: Models.CaseUserReference;
 		"externalContact"?: Models.CaseExternalContactReference;
 		"customerIntent"?: Models.CustomerIntentReference;
 		"creationStatus"?: string;
@@ -24548,6 +24639,8 @@ declare namespace Models {
 	
 	export interface CaseExternalContactReference { 
 		"id"?: string;
+		"firstName"?: string;
+		"lastName"?: string;
 		"selfUri"?: string;
 	}
 	
@@ -24641,6 +24734,13 @@ declare namespace Models {
 		"summary": string;
 	}
 	
+	export interface CaseUserReference { 
+		"id"?: string;
+		"name"?: string;
+		"presence"?: Models.UserPresence;
+		"selfUri"?: string;
+	}
+	
 	export interface Caseplan { 
 		"id"?: string;
 		"name": string;
@@ -24709,6 +24809,12 @@ declare namespace Models {
 		"id": string;
 	}
 	
+	export interface CaseplanFilter { 
+		"name": string;
+		"operator": string;
+		"values": Array<string>;
+	}
+	
 	export interface CaseplanListing { 
 		"entities"?: Array<Models.Caseplan>;
 		"nextUri"?: string;
@@ -24727,9 +24833,11 @@ declare namespace Models {
 	export interface CaseplanQueryRequest { 
 		"name"?: string;
 		"nameSearchType"?: string;
+		"divisionIds"?: Array<string>;
+		"filters"?: Array<Models.CaseplanFilter>;
+		"attributes"?: Array<string>;
 		"pageSize"?: number;
 		"after"?: string;
-		"divisionIds"?: Array<string>;
 	}
 	
 	export interface CaseplanReference { 
@@ -27127,6 +27235,14 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface ConversationAccessAttributesResponse { 
+		"accessAttributes"?: Array<string>;
+	}
+	
+	export interface ConversationAccessAttributesUpdate { 
+		"accessAttributes"?: Array<string>;
+	}
+	
 	export interface ConversationActivityData { 
 		"group"?: { [key: string]: string; };
 		"data"?: Array<Models.ConversationActivityMetricValue>;
@@ -27397,6 +27513,7 @@ declare namespace Models {
 		"bargedTime"?: string;
 		"consultParticipantId"?: string;
 		"faxStatus"?: Models.ConversationCallEventTopicFaxStatus;
+		"publicIpAddress"?: string;
 	}
 	
 	export interface ConversationCallEventTopicConversationDivisionMembership { 
@@ -28768,6 +28885,7 @@ declare namespace Models {
 		"queueMediaSettings"?: Models.ConversationEventTopicQueueMediaSettings;
 		"disposition"?: Models.ConversationEventTopicDisposition;
 		"transferSource"?: string;
+		"publicIpAddress"?: string;
 	}
 	
 	export interface ConversationEventTopicCallback { 
@@ -31315,6 +31433,7 @@ declare namespace Models {
 		"state": string;
 		"countsAsPaidTime": boolean;
 		"fixedAvailability"?: Array<Models.FixedAvailability>;
+		"startTimeIncrementMinutes"?: number;
 	}
 	
 	export interface CreateAdminTimeOffRequest { 
@@ -31485,6 +31604,10 @@ declare namespace Models {
 		"rowIndex"?: number;
 		"inputs": { [key: string]: Models.DecisionTableRowParameterValue; };
 		"outputs": { [key: string]: Models.DecisionTableRowParameterValue; };
+	}
+	
+	export interface CreateDecisionTableVersionRequest { 
+		"sourceVersion"?: number;
 	}
 	
 	export interface CreateEmailRequest { 
@@ -32480,6 +32603,7 @@ declare namespace Models {
 	
 	export interface CustomerIntentReference { 
 		"id"?: string;
+		"name"?: string;
 		"selfUri"?: string;
 	}
 	
@@ -33196,6 +33320,13 @@ declare namespace Models {
 	
 	export interface DecisionTableRowParameterValue { 
 		"literal"?: Models.Literal;
+	}
+	
+	export interface DecisionTableSnapshot { 
+		"name"?: string;
+		"notes"?: string;
+		"dateCreated"?: string;
+		"createdBy"?: Models.AddressableEntityRef;
 	}
 	
 	export interface DecisionTableVersion { 
@@ -36962,6 +37093,12 @@ declare namespace Models {
 		"authorizedActions"?: Array<string>;
 		"hasAssistanceFailed"?: boolean;
 		"evaluationSource"?: Models.EvaluationSource;
+		"disputeCount"?: number;
+		"version"?: number;
+		"versionHistory"?: Models.PagelessDomainEntityListingEvaluationVersion;
+		"declinedReview"?: boolean;
+		"evaluationContextId"?: string;
+		"retractedEvaluation"?: Models.EvaluationReference;
 		"aiScoring"?: Models.AiScoring;
 		"selfUri"?: string;
 	}
@@ -37357,6 +37494,12 @@ declare namespace Models {
 		"authorizedActions"?: Array<string>;
 		"hasAssistanceFailed"?: boolean;
 		"evaluationSource"?: Models.EvaluationSource;
+		"disputeCount"?: number;
+		"version"?: number;
+		"versionHistory"?: Models.PagelessDomainEntityListingEvaluationVersion;
+		"declinedReview"?: boolean;
+		"evaluationContextId"?: string;
+		"retractedEvaluation"?: Models.EvaluationReference;
 		"aiScoring"?: Models.AiScoring;
 		"selfUri"?: string;
 	}
@@ -37459,6 +37602,12 @@ declare namespace Models {
 		"authorizedActions"?: Array<string>;
 		"hasAssistanceFailed"?: boolean;
 		"evaluationSource"?: Models.EvaluationSource;
+		"disputeCount"?: number;
+		"version"?: number;
+		"versionHistory"?: Models.PagelessDomainEntityListingEvaluationVersion;
+		"declinedReview"?: boolean;
+		"evaluationContextId"?: string;
+		"retractedEvaluation"?: Models.EvaluationReference;
 		"aiScoring"?: Models.AiScoring;
 		"selfUri"?: string;
 	}
@@ -43605,6 +43754,7 @@ declare namespace Models {
 		"id"?: string;
 		"name"?: string;
 		"version"?: number;
+		"rank"?: number;
 		"groupByTime"?: string;
 		"groupByAttributes"?: Array<Models.JourneyViewChartGroupByAttribute>;
 		"metrics": Array<Models.JourneyViewChartMetric>;
@@ -47021,8 +47171,8 @@ declare namespace Models {
 		"metadata"?: Models.WfmVersionedEntityMetadata;
 		"division"?: Models.DivisionReference;
 		"modifiedBy"?: Models.UserReference;
-		"version"?: number;
 		"dateModified"?: string;
+		"version"?: number;
 		"selfUri"?: string;
 	}
 	
@@ -48694,6 +48844,56 @@ declare namespace Models {
 		"pageCount"?: number;
 	}
 	
+	export interface NotesExport { 
+		"id"?: string;
+		"divisionIds"?: Array<string>;
+		"createdBy"?: Models.DomainEntityRef;
+		"dateCreated"?: string;
+		"dateCompletion"?: string;
+		"status"?: string;
+		"downloadUrl"?: string;
+		"resultRowCount"?: number;
+		"queryConditions"?: Models.NotesExportQueryConditions;
+		"selfUri"?: string;
+	}
+	
+	export interface NotesExportComparisonFieldFilter { 
+		"field": string;
+		"value": string;
+	}
+	
+	export interface NotesExportFieldFilter { 
+		"field": string;
+		"value": string;
+	}
+	
+	export interface NotesExportFieldListFilter { 
+		"field": string;
+		"values": Array<string>;
+	}
+	
+	export interface NotesExportFilter { 
+		"eq"?: Models.NotesExportFieldFilter;
+		"in"?: Models.NotesExportFieldListFilter;
+		"lte"?: Models.NotesExportComparisonFieldFilter;
+		"gte"?: Models.NotesExportComparisonFieldFilter;
+		"and"?: Array<Models.NotesExportFilter>;
+		"or"?: Array<Models.NotesExportFilter>;
+		"not"?: Models.NotesExportFilter;
+	}
+	
+	export interface NotesExportListing { 
+		"entities"?: Array<Models.NotesExport>;
+		"nextUri"?: string;
+		"selfUri"?: string;
+		"previousUri"?: string;
+	}
+	
+	export interface NotesExportQueryConditions { 
+		"filters"?: Models.NotesExportFilter;
+		"limit"?: number;
+	}
+	
 	export interface NotificationsResponse { 
 		"entities"?: Array<Models.WfmUserNotification>;
 	}
@@ -49870,6 +50070,56 @@ declare namespace Models {
 		"name"?: string;
 		"resultsUri"?: string;
 		"selfUri"?: string;
+	}
+	
+	export interface OrganizationsExport { 
+		"id"?: string;
+		"divisionIds"?: Array<string>;
+		"createdBy"?: Models.DomainEntityRef;
+		"dateCreated"?: string;
+		"dateCompletion"?: string;
+		"status"?: string;
+		"downloadUrl"?: string;
+		"resultRowCount"?: number;
+		"queryConditions"?: Models.OrganizationsExportQueryConditions;
+		"selfUri"?: string;
+	}
+	
+	export interface OrganizationsExportComparisonFieldFilter { 
+		"field": string;
+		"value": string;
+	}
+	
+	export interface OrganizationsExportFieldFilter { 
+		"field": string;
+		"value": string;
+	}
+	
+	export interface OrganizationsExportFieldListFilter { 
+		"field": string;
+		"values": Array<string>;
+	}
+	
+	export interface OrganizationsExportFilter { 
+		"eq"?: Models.OrganizationsExportFieldFilter;
+		"in"?: Models.OrganizationsExportFieldListFilter;
+		"lte"?: Models.OrganizationsExportComparisonFieldFilter;
+		"gte"?: Models.OrganizationsExportComparisonFieldFilter;
+		"and"?: Array<Models.OrganizationsExportFilter>;
+		"or"?: Array<Models.OrganizationsExportFilter>;
+		"not"?: Models.OrganizationsExportFilter;
+	}
+	
+	export interface OrganizationsExportListing { 
+		"entities"?: Array<Models.OrganizationsExport>;
+		"nextUri"?: string;
+		"selfUri"?: string;
+		"previousUri"?: string;
+	}
+	
+	export interface OrganizationsExportQueryConditions { 
+		"filters"?: Models.OrganizationsExportFilter;
+		"limit"?: number;
 	}
 	
 	export interface OrphanRecording { 
@@ -52437,6 +52687,7 @@ declare namespace Models {
 		"promptId"?: string;
 		"language"?: string;
 		"mediaUri"?: string;
+		"audioFormat"?: Models.AudioFormat;
 		"ttsString"?: string;
 		"text"?: string;
 		"uploadStatus"?: string;
@@ -52453,6 +52704,7 @@ declare namespace Models {
 		"promptId"?: string;
 		"language": string;
 		"mediaUri"?: string;
+		"audioFormat"?: Models.AudioFormat;
 		"ttsString"?: string;
 		"text"?: string;
 		"uploadStatus"?: string;
@@ -53127,6 +53379,7 @@ declare namespace Models {
 		"bargedTime"?: string;
 		"consultParticipantId"?: string;
 		"faxStatus"?: Models.QueueConversationCallEventTopicFaxStatus;
+		"publicIpAddress"?: string;
 	}
 	
 	export interface QueueConversationCallEventTopicConversationDivisionMembership { 
@@ -54006,6 +54259,7 @@ declare namespace Models {
 		"queueMediaSettings"?: Models.QueueConversationEventTopicQueueMediaSettings;
 		"disposition"?: Models.QueueConversationEventTopicDisposition;
 		"transferSource"?: string;
+		"publicIpAddress"?: string;
 	}
 	
 	export interface QueueConversationEventTopicCallback { 
@@ -54956,6 +55210,7 @@ declare namespace Models {
 		"queueMediaSettings"?: Models.QueueConversationSocialExpressionEventTopicQueueMediaSettings;
 		"disposition"?: Models.QueueConversationSocialExpressionEventTopicDisposition;
 		"transferSource"?: string;
+		"publicIpAddress"?: string;
 	}
 	
 	export interface QueueConversationSocialExpressionEventTopicCallback { 
@@ -55529,6 +55784,7 @@ declare namespace Models {
 		"queueMediaSettings"?: Models.QueueConversationVideoEventTopicQueueMediaSettings;
 		"disposition"?: Models.QueueConversationVideoEventTopicDisposition;
 		"transferSource"?: string;
+		"publicIpAddress"?: string;
 	}
 	
 	export interface QueueConversationVideoEventTopicCallback { 
@@ -56823,6 +57079,7 @@ declare namespace Models {
 		"regionalRecordingStorageEnabled"?: boolean;
 		"recordingPlaybackUrlTtl"?: number;
 		"recordingBatchDownloadUrlTtl"?: number;
+		"stopRecordingWhenOnlyExternalParticipants"?: boolean;
 	}
 	
 	export interface RecordingTemplateBody { 
@@ -56997,6 +57254,56 @@ declare namespace Models {
 		"lastUri"?: string;
 		"selfUri"?: string;
 		"pageCount"?: number;
+	}
+	
+	export interface RelationshipsExport { 
+		"id"?: string;
+		"divisionIds"?: Array<string>;
+		"createdBy"?: Models.DomainEntityRef;
+		"dateCreated"?: string;
+		"dateCompletion"?: string;
+		"status"?: string;
+		"downloadUrl"?: string;
+		"resultRowCount"?: number;
+		"queryConditions"?: Models.RelationshipsExportQueryConditions;
+		"selfUri"?: string;
+	}
+	
+	export interface RelationshipsExportComparisonFieldFilter { 
+		"field": string;
+		"value": string;
+	}
+	
+	export interface RelationshipsExportFieldFilter { 
+		"field": string;
+		"value": string;
+	}
+	
+	export interface RelationshipsExportFieldListFilter { 
+		"field": string;
+		"values": Array<string>;
+	}
+	
+	export interface RelationshipsExportFilter { 
+		"eq"?: Models.RelationshipsExportFieldFilter;
+		"in"?: Models.RelationshipsExportFieldListFilter;
+		"lte"?: Models.RelationshipsExportComparisonFieldFilter;
+		"gte"?: Models.RelationshipsExportComparisonFieldFilter;
+		"and"?: Array<Models.RelationshipsExportFilter>;
+		"or"?: Array<Models.RelationshipsExportFilter>;
+		"not"?: Models.RelationshipsExportFilter;
+	}
+	
+	export interface RelationshipsExportListing { 
+		"entities"?: Array<Models.RelationshipsExport>;
+		"nextUri"?: string;
+		"selfUri"?: string;
+		"previousUri"?: string;
+	}
+	
+	export interface RelationshipsExportQueryConditions { 
+		"filters"?: Models.RelationshipsExportFilter;
+		"limit"?: number;
 	}
 	
 	export interface RemoveEntitiesRequest { 
@@ -61085,6 +61392,7 @@ declare namespace Models {
 		"version"?: number;
 		"status"?: string;
 		"stage"?: Models.StageReference;
+		"workitemActivity"?: Models.WorkitemActivityReference;
 		"selfUri"?: string;
 		"case"?: Models.CaseReference;
 	}
@@ -61881,6 +62189,7 @@ declare namespace Models {
 		"language": string;
 		"durationSeconds"?: number;
 		"mediaUri"?: string;
+		"audioFormat"?: Models.AudioFormat;
 		"ttsString"?: string;
 		"text"?: string;
 		"uploadUri"?: string;
@@ -64014,33 +64323,6 @@ declare namespace Models {
 		"vector": string;
 	}
 	
-	export interface UCIntegration { 
-		"id"?: string;
-		"name"?: string;
-		"ucIntegrationKey": string;
-		"integrationPresenceSource": string;
-		"pbxPermission": string;
-		"icon": Models.UCIcon;
-		"badgeIcons": { [key: string]: Models.UCIcon; };
-		"i10n": { [key: string]: Models.UCI10n; };
-		"polledPresence": boolean;
-		"userPermissions": Array<string>;
-		"selfUri"?: string;
-	}
-	
-	export interface UCIntegrationListing { 
-		"entities"?: Array<Models.UCIntegration>;
-		"pageSize"?: number;
-		"pageNumber"?: number;
-		"total"?: number;
-		"firstUri"?: string;
-		"nextUri"?: string;
-		"previousUri"?: string;
-		"lastUri"?: string;
-		"selfUri"?: string;
-		"pageCount"?: number;
-	}
-	
 	export interface UCThirdPartyPresence { 
 		"email": string;
 		"presence": string;
@@ -64228,6 +64510,11 @@ declare namespace Models {
 		"optimizationObjective"?: string;
 		"state"?: string;
 		"fixedAvailability"?: Models.ListWrapperFixedAvailability;
+		"activityCodeId"?: string;
+		"type"?: string;
+		"lengthMinutes"?: number;
+		"countsAsPaidTime"?: boolean;
+		"recurrenceSettings"?: Models.RecurrenceSettingsBase;
 	}
 	
 	export interface UpdateAdherenceExplanationStatusRequest { 
@@ -64650,6 +64937,21 @@ declare namespace Models {
 		"reason"?: string;
 		"message"?: string;
 		"data"?: { [key: string]: object; };
+	}
+	
+	export interface UploadAttachmentRequest { 
+		"name": string;
+		"contentLengthBytes": number;
+		"contentMd5"?: string;
+		"inlineImage"?: boolean;
+	}
+	
+	export interface UploadAttachmentResponse { 
+		"attachmentId"?: string;
+		"name"?: string;
+		"url"?: string;
+		"headers"?: { [key: string]: string; };
+		"conversationId"?: string;
 	}
 	
 	export interface UploadMediaRequest { 
@@ -66182,6 +66484,8 @@ declare namespace Models {
 		"invokingContext"?: Models.V2FlowExecutionDataFlowidTopicInvokingContextInfo;
 		"startDateTime"?: string;
 		"warnings"?: Array<Models.V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo>;
+		"executionHistoryUri"?: string;
+		"executionHistoryUriTtl"?: number;
 	}
 	
 	export interface V2FlowExecutionDataFlowidTopicFlowExecutionItem { 
@@ -66804,6 +67108,25 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface V3SynchronizationDeletion { 
+		"fileId"?: string;
+		"fileName"?: string;
+		"synchronization"?: Models.V3SynchronizationRef;
+		"selfUri"?: string;
+	}
+	
+	export interface V3SynchronizationDeletionListing { 
+		"entities"?: Array<Models.V3SynchronizationDeletion>;
+		"nextUri"?: string;
+		"selfUri"?: string;
+		"previousUri"?: string;
+	}
+	
+	export interface V3SynchronizationFileDeletionRequest { 
+		"fileId"?: string;
+		"fileName"?: string;
+	}
+	
 	export interface V3SynchronizationListing { 
 		"entities"?: Array<Models.V3Synchronization>;
 		"nextUri"?: string;
@@ -66824,6 +67147,21 @@ declare namespace Models {
 	
 	export interface V3SynchronizationUpdateRequest { 
 		"status"?: string;
+	}
+	
+	export interface V3SynchronizationUpload { 
+		"fileId"?: string;
+		"fileName"?: string;
+		"metadata"?: Models.V3SynchronizationUploadMetadata;
+		"synchronization"?: Models.V3SynchronizationRef;
+		"selfUri"?: string;
+	}
+	
+	export interface V3SynchronizationUploadListing { 
+		"entities"?: Array<Models.V3SynchronizationUpload>;
+		"nextUri"?: string;
+		"selfUri"?: string;
+		"previousUri"?: string;
 	}
 	
 	export interface V3SynchronizationUploadMetadata { 
@@ -67300,6 +67638,7 @@ declare namespace Models {
 		"engagementSources"?: Array<string>;
 		"isSnippetRecorded"?: boolean;
 		"takeover"?: boolean;
+		"socialPostTypes"?: Array<string>;
 	}
 	
 	export interface VisibilityCondition { 
@@ -69357,6 +69696,7 @@ declare namespace Models {
 	export interface WfmShiftTradingJobCompleteEventTradeSide { 
 		"userId"?: string;
 		"shift"?: Models.WfmShiftTradingJobCompleteEventTradeShift;
+		"reviewNote"?: string;
 	}
 	
 	export interface WfmShiftTradingJobCompleteEventWeekSummary { 
@@ -70545,6 +70885,11 @@ declare namespace Models {
 		"autoStatusTransitionDetail"?: Models.AutoStatusTransitionDetail;
 		"scoredAgents"?: Array<Models.WorkitemScoredAgent>;
 		"script"?: Models.WorkitemScriptReference;
+		"selfUri"?: string;
+	}
+	
+	export interface WorkitemActivityReference { 
+		"id"?: string;
 		"selfUri"?: string;
 	}
 	

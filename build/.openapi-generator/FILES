@@ -344,6 +344,8 @@ docs/deleteKnowledgeKnowledgebaseSourcesServicenowSourceId-example.txt
 docs/deleteKnowledgeKnowledgebaseSynchronizeJob-example.txt
 docs/deleteKnowledgeSetting-example.txt
 docs/deleteKnowledgeSource-example.txt
+docs/deleteKnowledgeSourceSynchronizationDeletion-example.txt
+docs/deleteKnowledgeSourceSynchronizationUpload-example.txt
 docs/deleteLanguage-example.txt
 docs/deleteLanguageunderstandingDomain-example.txt
 docs/deleteLanguageunderstandingDomainFeedbackFeedbackId-example.txt
@@ -803,6 +805,7 @@ docs/getContentmanagementWorkspaceTagvalue-example.txt
 docs/getContentmanagementWorkspaceTagvalues-example.txt
 docs/getContentmanagementWorkspaces-example.txt
 docs/getConversation-example.txt
+docs/getConversationAccessattributes-example.txt
 docs/getConversationAssistantCopilotcontext-example.txt
 docs/getConversationCommunicationAgentchecklist-example.txt
 docs/getConversationCommunicationAgentchecklistJob-example.txt
@@ -975,6 +978,8 @@ docs/getExternalcontactsImportJob-example.txt
 docs/getExternalcontactsImportJobs-example.txt
 docs/getExternalcontactsImportSetting-example.txt
 docs/getExternalcontactsImportSettings-example.txt
+docs/getExternalcontactsNotesExport-example.txt
+docs/getExternalcontactsNotesExports-example.txt
 docs/getExternalcontactsOrganization-example.txt
 docs/getExternalcontactsOrganizationContacts-example.txt
 docs/getExternalcontactsOrganizationIdentifiers-example.txt
@@ -982,6 +987,8 @@ docs/getExternalcontactsOrganizationNote-example.txt
 docs/getExternalcontactsOrganizationNotes-example.txt
 docs/getExternalcontactsOrganizationRelationships-example.txt
 docs/getExternalcontactsOrganizations-example.txt
+docs/getExternalcontactsOrganizationsExport-example.txt
+docs/getExternalcontactsOrganizationsExports-example.txt
 docs/getExternalcontactsOrganizationsSchema-example.txt
 docs/getExternalcontactsOrganizationsSchemaVersion-example.txt
 docs/getExternalcontactsOrganizationsSchemaVersions-example.txt
@@ -990,6 +997,8 @@ docs/getExternalcontactsOrganizationsSchemasCoretype-example.txt
 docs/getExternalcontactsOrganizationsSchemasCoretypes-example.txt
 docs/getExternalcontactsOrganizationsSchemasLimits-example.txt
 docs/getExternalcontactsRelationship-example.txt
+docs/getExternalcontactsRelationshipsExport-example.txt
+docs/getExternalcontactsRelationshipsExports-example.txt
 docs/getExternalcontactsReversewhitepageslookup-example.txt
 docs/getExternalcontactsScanContacts-example.txt
 docs/getExternalcontactsScanContactsDivisionviewsAll-example.txt
@@ -1172,7 +1181,6 @@ docs/getIntegrationsBotconnectorIntegrationIdBotVersions-example.txt
 docs/getIntegrationsBotconnectorIntegrationIdBots-example.txt
 docs/getIntegrationsBotconnectorIntegrationIdBotsSummaries-example.txt
 docs/getIntegrationsClientapps-example.txt
-docs/getIntegrationsClientappsUnifiedcommunications-example.txt
 docs/getIntegrationsCredential-example.txt
 docs/getIntegrationsCredentials-example.txt
 docs/getIntegrationsCredentialsListing-example.txt
@@ -1305,6 +1313,10 @@ docs/getKnowledgeSetting-example.txt
 docs/getKnowledgeSettings-example.txt
 docs/getKnowledgeSource-example.txt
 docs/getKnowledgeSourceSynchronization-example.txt
+docs/getKnowledgeSourceSynchronizationDeletion-example.txt
+docs/getKnowledgeSourceSynchronizationDeletions-example.txt
+docs/getKnowledgeSourceSynchronizationUpload-example.txt
+docs/getKnowledgeSourceSynchronizationUploads-example.txt
 docs/getKnowledgeSourceSynchronizations-example.txt
 docs/getKnowledgeSources-example.txt
 docs/getKnowledgeSourcesSynchronizations-example.txt
@@ -2611,6 +2623,7 @@ docs/postConversationsCustomattributesSearch-example.txt
 docs/postConversationsEmailInboundmessages-example.txt
 docs/postConversationsEmailMessages-example.txt
 docs/postConversationsEmailMessagesDraftAttachmentsCopy-example.txt
+docs/postConversationsEmailMessagesDraftAttachmentsUploads-example.txt
 docs/postConversationsEmailParticipantCommunicationWrapup-example.txt
 docs/postConversationsEmailParticipantReplace-example.txt
 docs/postConversationsEmailReconnect-example.txt
@@ -2710,11 +2723,14 @@ docs/postExternalcontactsImportCsvUploads-example.txt
 docs/postExternalcontactsImportJobs-example.txt
 docs/postExternalcontactsImportSettings-example.txt
 docs/postExternalcontactsMergeContacts-example.txt
+docs/postExternalcontactsNotesExports-example.txt
 docs/postExternalcontactsOrganizationNotes-example.txt
 docs/postExternalcontactsOrganizations-example.txt
 docs/postExternalcontactsOrganizationsEnrich-example.txt
+docs/postExternalcontactsOrganizationsExports-example.txt
 docs/postExternalcontactsOrganizationsSchemas-example.txt
 docs/postExternalcontactsRelationships-example.txt
+docs/postExternalcontactsRelationshipsExports-example.txt
 docs/postFlowHistory-example.txt
 docs/postFlowInstancesSettingsLoglevels-example.txt
 docs/postFlowVersions-example.txt
@@ -2851,6 +2867,7 @@ docs/postKnowledgeKnowledgebases-example.txt
 docs/postKnowledgeSearch-example.txt
 docs/postKnowledgeSearchPreview-example.txt
 docs/postKnowledgeSettings-example.txt
+docs/postKnowledgeSourceSynchronizationDeletions-example.txt
 docs/postKnowledgeSourceSynchronizationUploads-example.txt
 docs/postKnowledgeSourceSynchronizations-example.txt
 docs/postKnowledgeSources-example.txt
@@ -3317,6 +3334,7 @@ docs/putChatsSettings-example.txt
 docs/putContentmanagementWorkspace-example.txt
 docs/putContentmanagementWorkspaceMember-example.txt
 docs/putContentmanagementWorkspaceTagvalue-example.txt
+docs/putConversationAccessattributes-example.txt
 docs/putConversationCustomattributes-example.txt
 docs/putConversationCustomattributesBulk-example.txt
 docs/putConversationParticipantFlaggedreason-example.txt

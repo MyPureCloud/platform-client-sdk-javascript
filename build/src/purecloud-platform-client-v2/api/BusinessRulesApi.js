@@ -5,7 +5,7 @@ class BusinessRulesApi {
 	/**
 	 * BusinessRules service.
 	 * @module purecloud-platform-client-v2/api/BusinessRulesApi
-	 * @version 256.0.0
+	 * @version 257.0.0
 	 */
 
 	/**
@@ -1243,10 +1243,11 @@ class BusinessRulesApi {
 	}
 
 	/**
-	 * Create a new decision table version
+	 * Create a new decision table version. When sourceVersion is not provided, the draft is created from the published version.
 	 * 
 	 * @param {String} tableId Table ID
 	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body Decision Table Version
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postBusinessrulesDecisiontableVersions(tableId, opts) { 
@@ -1264,7 +1265,7 @@ class BusinessRulesApi {
 			{  },
 			{  },
 			{  },
-			null, 
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json'],

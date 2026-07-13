@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 256.0.0
+	 * @version 257.0.0
 	 */
 
 	/**
@@ -877,6 +877,37 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}', 
+			'GET', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get the access attributes on a conversation.
+	 * 
+	 * @param {String} conversationId conversation ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * getConversationAccessattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getConversationAccessattributes(conversationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling getConversationAccessattributes';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/accessattributes', 
 			'GET', 
 			{ 'conversationId': conversationId },
 			{  },
@@ -8775,6 +8806,41 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Create a URL to upload a message attachment file
+	 * See https://developer.genesys.cloud/analyticsdatamanagement/uploads/upload-email-attachment-files for example usage.
+	 * @param {String} conversationId conversationId
+	 * @param {Object} body Create attachment pre-signed URL request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postConversationsEmailMessagesDraftAttachmentsUploads(conversationId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling postConversationsEmailMessagesDraftAttachmentsUploads';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsEmailMessagesDraftAttachmentsUploads';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/emails/{conversationId}/messages/draft/attachments/uploads', 
+			'POST', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Apply wrap-up for this conversation communication
 	 * 
 	 * @param {String} conversationId conversationId
@@ -10155,6 +10221,42 @@ class ConversationsApi {
 			'/api/v2/conversations/videos/meetings', 
 			'POST', 
 			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Set the access attributes on a conversation.
+	 * 
+	 * @param {String} conversationId conversation ID
+	 * @param {Object} body Conversation Access Attributes
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * putConversationAccessattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	putConversationAccessattributes(conversationId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling putConversationAccessattributes';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putConversationAccessattributes';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/accessattributes', 
+			'PUT', 
+			{ 'conversationId': conversationId },
 			{  },
 			{  },
 			{  },
