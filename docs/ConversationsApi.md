@@ -154,6 +154,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchConversationParticipantAttributes**](ConversationsApi#patchConversationParticipantAttributes) | **PATCH** /api/v2/conversations/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
 [**patchConversationRecordingstate**](ConversationsApi#patchConversationRecordingstate) | **PATCH** /api/v2/conversations/{conversationId}/recordingstate | Update a conversation by setting its recording state
 [**patchConversationSecureattributes**](ConversationsApi#patchConversationSecureattributes) | **PATCH** /api/v2/conversations/{conversationId}/secureattributes | Update the secure attributes on a conversation.
+[**patchConversationSuggestion**](ConversationsApi#patchConversationSuggestion) | **PATCH** /api/v2/conversations/{conversationId}/suggestions/{suggestionId} | Update a suggestion.
 [**patchConversationSummaryEngagements**](ConversationsApi#patchConversationSummaryEngagements) | **PATCH** /api/v2/conversations/{conversationId}/summaries/{summaryId}/engagements | Update agent's engagement for the summary.
 [**patchConversationSummaryFeedback**](ConversationsApi#patchConversationSummaryFeedback) | **PATCH** /api/v2/conversations/{conversationId}/summaries/{summaryId}/feedback | Update the feedback for the summary.
 [**patchConversationUtilizationlabel**](ConversationsApi#patchConversationUtilizationlabel) | **PATCH** /api/v2/conversations/{conversationId}/utilizationlabel | Update the utilization label on a conversation. When there is no value provided, the system default label is applied
@@ -232,6 +233,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationsCall**](ConversationsApi#postConversationsCall) | **POST** /api/v2/conversations/calls/{conversationId} | Place a new call as part of a callback conversation.
 [**postConversationsCallParticipantBarge**](ConversationsApi#postConversationsCallParticipantBarge) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/barge | Barge a given participant's call creating a barged in conference of connected participants.
 [**postConversationsCallParticipantCoach**](ConversationsApi#postConversationsCallParticipantCoach) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/coach | Listen in on the conversation from the point of view of a given participant while speaking to just the given participant.
+[**postConversationsCallParticipantCommunicationSummaries**](ConversationsApi#postConversationsCallParticipantCommunicationSummaries) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/summaries | Request an on-demand summary for a call communication.
 [**postConversationsCallParticipantCommunicationWrapup**](ConversationsApi#postConversationsCallParticipantCommunicationWrapup) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
 [**postConversationsCallParticipantConsult**](ConversationsApi#postConversationsCallParticipantConsult) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult | Initiate and update consult transfer (Deprecated)
 [**postConversationsCallParticipantConsultAgent**](ConversationsApi#postConversationsCallParticipantConsultAgent) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/agent | Initiate a consult transfer to an agent
@@ -282,6 +284,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationsMessageInboundOpenReceipt**](ConversationsApi#postConversationsMessageInboundOpenReceipt) | **POST** /api/v2/conversations/messages/{integrationId}/inbound/open/receipt | Send an inbound Open Receipt Message
 [**postConversationsMessageInboundOpenStructuredResponse**](ConversationsApi#postConversationsMessageInboundOpenStructuredResponse) | **POST** /api/v2/conversations/messages/{integrationId}/inbound/open/structured/response | Send inbound Open Response
 [**postConversationsMessageMessagesBulk**](ConversationsApi#postConversationsMessageMessagesBulk) | **POST** /api/v2/conversations/messages/{conversationId}/messages/bulk | Get messages in batch
+[**postConversationsMessageParticipantCommunicationSummaries**](ConversationsApi#postConversationsMessageParticipantCommunicationSummaries) | **POST** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/summaries | Request an on-demand summary for a message communication.
 [**postConversationsMessageParticipantCommunicationWrapup**](ConversationsApi#postConversationsMessageParticipantCommunicationWrapup) | **POST** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
 [**postConversationsMessageParticipantMonitor**](ConversationsApi#postConversationsMessageParticipantMonitor) | **POST** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/monitor | Listen in on the conversation from the point of view of a given participant.
 [**postConversationsMessageParticipantReplace**](ConversationsApi#postConversationsMessageParticipantReplace) | **POST** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
@@ -9024,6 +9027,67 @@ apiInstance.patchConversationSecureattributes(conversationId, body, opts)
 **&#39;String&#39;**
 
 
+## patchConversationSuggestion
+
+> Suggestion patchConversationSuggestion(conversationId, suggestionId, body, opts)
+
+
+PATCH /api/v2/conversations/{conversationId}/suggestions/{suggestionId}
+
+Update a suggestion.
+
+Requires ALL permissions:
+
+* conversation:suggestion:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | Conversation ID
+let suggestionId = "suggestionId_example"; // String | Suggestion ID
+let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchConversationSuggestion(conversationId, suggestionId, body, opts)
+  .then((data) => {
+    console.log(`patchConversationSuggestion success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationSuggestion');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Conversation ID |  |
+ **suggestionId** | **String** | Suggestion ID |  |
+ **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**Suggestion**
+
+
 ## patchConversationSummaryEngagements
 
 > void patchConversationSummaryEngagements(conversationId, summaryId, opts)
@@ -13790,6 +13854,69 @@ apiInstance.postConversationsCallParticipantCoach(conversationId, participantId,
 void (no response body)
 
 
+## postConversationsCallParticipantCommunicationSummaries
+
+> OnDemandSummaryAcceptedResponse postConversationsCallParticipantCommunicationSummaries(conversationId, participantId, communicationId, opts)
+
+
+POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/summaries
+
+Request an on-demand summary for a call communication.
+
+Requires ALL permissions:
+
+* conversation:summary:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | Conversation ID
+let participantId = "participantId_example"; // String | Participant ID
+let communicationId = "communicationId_example"; // String | Communication ID
+let opts = { 
+  'body': {}, // Object | On-demand summary request
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postConversationsCallParticipantCommunicationSummaries(conversationId, participantId, communicationId, opts)
+  .then((data) => {
+    console.log(`postConversationsCallParticipantCommunicationSummaries success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsCallParticipantCommunicationSummaries');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Conversation ID |  |
+ **participantId** | **String** | Participant ID |  |
+ **communicationId** | **String** | Communication ID |  |
+ **body** | **Object** | On-demand summary request | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**OnDemandSummaryAcceptedResponse**
+
+
 ## postConversationsCallParticipantCommunicationWrapup
 
 > void postConversationsCallParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
@@ -16851,6 +16978,69 @@ apiInstance.postConversationsMessageMessagesBulk(conversationId, opts)
 **TextMessageListing**
 
 
+## postConversationsMessageParticipantCommunicationSummaries
+
+> OnDemandSummaryAcceptedResponse postConversationsMessageParticipantCommunicationSummaries(conversationId, participantId, communicationId, opts)
+
+
+POST /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/summaries
+
+Request an on-demand summary for a message communication.
+
+Requires ALL permissions:
+
+* conversation:summary:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | Conversation ID
+let participantId = "participantId_example"; // String | Participant ID
+let communicationId = "communicationId_example"; // String | Communication ID
+let opts = { 
+  'body': {}, // Object | On-demand summary request
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postConversationsMessageParticipantCommunicationSummaries(conversationId, participantId, communicationId, opts)
+  .then((data) => {
+    console.log(`postConversationsMessageParticipantCommunicationSummaries success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsMessageParticipantCommunicationSummaries');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Conversation ID |  |
+ **participantId** | **String** | Participant ID |  |
+ **communicationId** | **String** | Communication ID |  |
+ **body** | **Object** | On-demand summary request | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**OnDemandSummaryAcceptedResponse**
+
+
 ## postConversationsMessageParticipantCommunicationWrapup
 
 > void postConversationsMessageParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
@@ -18050,7 +18240,7 @@ void (no response body)
 
 ## postConversationsVideoAgentconferenceCommunication
 
-> VideoConferenceDetails postConversationsVideoAgentconferenceCommunication(conversationId, communicationId, opts)
+> CreateJoinVideoResponse postConversationsVideoAgentconferenceCommunication(conversationId, communicationId, opts)
 
 
 POST /api/v2/conversations/videos/{conversationId}/agentconference/communications/{communicationId}
@@ -18106,7 +18296,7 @@ apiInstance.postConversationsVideoAgentconferenceCommunication(conversationId, c
 
 ### Return type
 
-**VideoConferenceDetails**
+**CreateJoinVideoResponse**
 
 
 ## postConversationsVideoParticipantCommunicationWrapup
@@ -19902,4 +20092,4 @@ apiInstance.putConversationsVideoRecordingstate(conversationId, body, opts)
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@257.0.0_
+_purecloud-platform-client-v2@258.0.0_

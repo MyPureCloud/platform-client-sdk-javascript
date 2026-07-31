@@ -10,11 +10,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteResponsemanagementResponse**](ResponseManagementApi#deleteResponsemanagementResponse) | **DELETE** /api/v2/responsemanagement/responses/{responseId} | Delete an existing response.
 [**deleteResponsemanagementResponseasset**](ResponseManagementApi#deleteResponsemanagementResponseasset) | **DELETE** /api/v2/responsemanagement/responseassets/{responseAssetId} | Delete response asset
 [**getResponsemanagementLibraries**](ResponseManagementApi#getResponsemanagementLibraries) | **GET** /api/v2/responsemanagement/libraries | Gets a list of existing response libraries.
+[**getResponsemanagementLibrariesDivisionview**](ResponseManagementApi#getResponsemanagementLibrariesDivisionview) | **GET** /api/v2/responsemanagement/libraries/divisionviews/{libraryId} | Get details about an existing response library.
+[**getResponsemanagementLibrariesDivisionviews**](ResponseManagementApi#getResponsemanagementLibrariesDivisionviews) | **GET** /api/v2/responsemanagement/libraries/divisionviews | Gets a list of existing response libraries.
 [**getResponsemanagementLibrary**](ResponseManagementApi#getResponsemanagementLibrary) | **GET** /api/v2/responsemanagement/libraries/{libraryId} | Get details about an existing response library.
 [**getResponsemanagementResponse**](ResponseManagementApi#getResponsemanagementResponse) | **GET** /api/v2/responsemanagement/responses/{responseId} | Get details about an existing response.
 [**getResponsemanagementResponseasset**](ResponseManagementApi#getResponsemanagementResponseasset) | **GET** /api/v2/responsemanagement/responseassets/{responseAssetId} | Get response asset information
 [**getResponsemanagementResponseassetsStatusStatusId**](ResponseManagementApi#getResponsemanagementResponseassetsStatusStatusId) | **GET** /api/v2/responsemanagement/responseassets/status/{statusId} | Get response asset upload status
 [**getResponsemanagementResponses**](ResponseManagementApi#getResponsemanagementResponses) | **GET** /api/v2/responsemanagement/responses | Gets a list of existing responses.
+[**getResponsemanagementResponsesDivisionview**](ResponseManagementApi#getResponsemanagementResponsesDivisionview) | **GET** /api/v2/responsemanagement/responses/divisionviews/{responseId} | Get details about an existing response.
 [**postResponsemanagementLibraries**](ResponseManagementApi#postResponsemanagementLibraries) | **POST** /api/v2/responsemanagement/libraries | Create a response library.
 [**postResponsemanagementLibrariesBulk**](ResponseManagementApi#postResponsemanagementLibrariesBulk) | **POST** /api/v2/responsemanagement/libraries/bulk | Get response libraries.
 [**postResponsemanagementLibrariesQuery**](ResponseManagementApi#postResponsemanagementLibrariesQuery) | **POST** /api/v2/responsemanagement/libraries/query | Query libraries using criteria. Users can set DivisionId parameter as '*' to fetch libraries that aren't associated with any divisions.
@@ -22,6 +25,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postResponsemanagementResponseassetsSearch**](ResponseManagementApi#postResponsemanagementResponseassetsSearch) | **POST** /api/v2/responsemanagement/responseassets/search | Search response assets
 [**postResponsemanagementResponseassetsUploads**](ResponseManagementApi#postResponsemanagementResponseassetsUploads) | **POST** /api/v2/responsemanagement/responseassets/uploads | Creates pre-signed url for uploading response asset
 [**postResponsemanagementResponses**](ResponseManagementApi#postResponsemanagementResponses) | **POST** /api/v2/responsemanagement/responses | Create a response.
+[**postResponsemanagementResponsesDivisionviewsQuery**](ResponseManagementApi#postResponsemanagementResponsesDivisionviewsQuery) | **POST** /api/v2/responsemanagement/responses/divisionviews/query | Query responses
 [**postResponsemanagementResponsesQuery**](ResponseManagementApi#postResponsemanagementResponsesQuery) | **POST** /api/v2/responsemanagement/responses/query | Query responses
 [**putResponsemanagementLibrary**](ResponseManagementApi#putResponsemanagementLibrary) | **PUT** /api/v2/responsemanagement/libraries/{libraryId} | Update an existing response library.
 [**putResponsemanagementResponse**](ResponseManagementApi#putResponsemanagementResponse) | **PUT** /api/v2/responsemanagement/responses/{responseId} | Update an existing response.
@@ -265,6 +269,126 @@ apiInstance.getResponsemanagementLibraries(opts)
 ### Return type
 
 **LibraryEntityListing**
+
+
+## getResponsemanagementLibrariesDivisionview
+
+> LibraryDivisionView getResponsemanagementLibrariesDivisionview(libraryId, opts)
+
+
+GET /api/v2/responsemanagement/libraries/divisionviews/{libraryId}
+
+Get details about an existing response library.
+
+Requires ANY permissions:
+
+* responses:library:search
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ResponseManagementApi();
+
+let libraryId = "libraryId_example"; // String | Library ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getResponsemanagementLibrariesDivisionview(libraryId, opts)
+  .then((data) => {
+    console.log(`getResponsemanagementLibrariesDivisionview success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getResponsemanagementLibrariesDivisionview');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **libraryId** | **String** | Library ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**LibraryDivisionView**
+
+
+## getResponsemanagementLibrariesDivisionviews
+
+> LibraryDivisionViewEntityListing getResponsemanagementLibrariesDivisionviews(opts)
+
+
+GET /api/v2/responsemanagement/libraries/divisionviews
+
+Gets a list of existing response libraries.
+
+Requires ANY permissions:
+
+* responses:library:search
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ResponseManagementApi();
+
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25, // Number | Page size
+  'messagingTemplateFilter': "messagingTemplateFilter_example", // String | Returns a list of libraries that contain responses with at least one messaging template defined for a specific message channel
+  'libraryPrefix': "libraryPrefix_example", // String | Returns a list of libraries that contain the prefix provided
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getResponsemanagementLibrariesDivisionviews(opts)
+  .then((data) => {
+    console.log(`getResponsemanagementLibrariesDivisionviews success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getResponsemanagementLibrariesDivisionviews');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **messagingTemplateFilter** | **String** | Returns a list of libraries that contain responses with at least one messaging template defined for a specific message channel | [optional] <br />**Values**: whatsapp |
+ **libraryPrefix** | **String** | Returns a list of libraries that contain the prefix provided | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**LibraryDivisionViewEntityListing**
 
 
 ## getResponsemanagementLibrary
@@ -558,6 +682,63 @@ apiInstance.getResponsemanagementResponses(libraryId, opts)
 ### Return type
 
 **ResponseEntityListing**
+
+
+## getResponsemanagementResponsesDivisionview
+
+> ResponseDivisionView getResponsemanagementResponsesDivisionview(responseId, opts)
+
+
+GET /api/v2/responsemanagement/responses/divisionviews/{responseId}
+
+Get details about an existing response.
+
+Requires ANY permissions:
+
+* responses:response:search
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ResponseManagementApi();
+
+let responseId = "responseId_example"; // String | Response ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getResponsemanagementResponsesDivisionview(responseId, opts)
+  .then((data) => {
+    console.log(`getResponsemanagementResponsesDivisionview success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getResponsemanagementResponsesDivisionview');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **responseId** | **String** | Response ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ResponseDivisionView**
 
 
 ## postResponsemanagementLibraries
@@ -967,6 +1148,63 @@ apiInstance.postResponsemanagementResponses(body, opts)
 **Response**
 
 
+## postResponsemanagementResponsesDivisionviewsQuery
+
+> ResponseDivisionViewQueryResults postResponsemanagementResponsesDivisionviewsQuery(body, opts)
+
+
+POST /api/v2/responsemanagement/responses/divisionviews/query
+
+Query responses
+
+Requires ANY permissions:
+
+* responses:response:search
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ResponseManagementApi();
+
+let body = {}; // Object | Response
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postResponsemanagementResponsesDivisionviewsQuery(body, opts)
+  .then((data) => {
+    console.log(`postResponsemanagementResponsesDivisionviewsQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postResponsemanagementResponsesDivisionviewsQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Response |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ResponseDivisionViewQueryResults**
+
+
 ## postResponsemanagementResponsesQuery
 
 > ResponseQueryResults postResponsemanagementResponsesQuery(body, opts)
@@ -1207,4 +1445,4 @@ apiInstance.putResponsemanagementResponseasset(responseAssetId, body, opts)
 **ResponseAsset**
 
 
-_purecloud-platform-client-v2@257.0.0_
+_purecloud-platform-client-v2@258.0.0_

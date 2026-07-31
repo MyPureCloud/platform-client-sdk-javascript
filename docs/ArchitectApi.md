@@ -4261,7 +4261,7 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'sortBy': "id", // String | Sort by
   'sortOrder': "asc", // String | Sort order
-  'id': ["id_example"], // [String] | ID
+  'id': ["id_example"], // [String] | ID. Deprecated, use GET /api/v2/flows/lookup with the ids parameter instead
   'name': "name_example", // String | Name
   'description': "description_example", // String | Description
   'nameOrDescription': "nameOrDescription_example", // String | Name or description
@@ -4302,7 +4302,7 @@ apiInstance.getFlows(opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **sortBy** | **String** | Sort by | [optional] [default to id] |
  **sortOrder** | **String** | Sort order | [optional] [default to asc] |
- **id** | **[String]** | ID | [optional]  |
+ **id** | **[String]** | ID. Deprecated, use GET /api/v2/flows/lookup with the ids parameter instead | [optional]  |
  **name** | **String** | Name | [optional]  |
  **description** | **String** | Description | [optional]  |
  **nameOrDescription** | **String** | Name or description | [optional]  |
@@ -9510,4 +9510,4 @@ apiInstance.putFlowsOutcome(flowOutcomeId, opts)
 **Operation**
 
 
-_purecloud-platform-client-v2@257.0.0_
+_purecloud-platform-client-v2@258.0.0_

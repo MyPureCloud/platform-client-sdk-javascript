@@ -656,4 +656,4 @@ apiInstance.putScreenmonitorsSettings(body, opts)
 void (no response body)
 
 
-_purecloud-platform-client-v2@257.0.0_
+_purecloud-platform-client-v2@258.0.0_
