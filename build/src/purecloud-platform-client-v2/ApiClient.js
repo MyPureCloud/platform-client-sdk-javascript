@@ -5,7 +5,7 @@ import HttpRequestOptions from './HttpRequestOptions.js';
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 257.0.0
+ * @version 258.0.0
  */
 class ApiClient {
 	/**
@@ -415,6 +415,8 @@ class ApiClient {
 	 * @param {string} opts.state - (optional) An arbitrary string to be passed back with the login response. Used for client apps to associate login responses with a request.
 	 * @param {string} opts.org - (optional) The organization name that would normally used when specifying an organization name when logging in. This is only used when a provider is also specified.
 	 * @param {string} opts.provider - (optional) Authentication provider to log in with e.g. okta, adfs, salesforce, onelogin. This is only used when an org is also specified.
+	 * @param {string} opts.target - (optional) The organization ID of the target organization, when intending to log in to a specific target organization using Authorized Organizations.
+	 * @param {string} opts.login_hint - (optional) The login_hint allows an application to pass the email address and/or the org name values to the authorization server (email:orgName, email, orgName).
 	 * @param {string} opts.prompt - (optional) Use the prompt=login parameter to require that the user be prompted to enter credentials at the Gensys Cloud login screen and ignore any remembered sessions (auth cookies).
 	 */
 	loginImplicitGrant(clientId, redirectUri, opts) {
@@ -457,6 +459,8 @@ class ApiClient {
 					if (opts.state) query.state = encodeURIComponent(opts.state);
 					if (opts.org) query.org = encodeURIComponent(opts.org);
 					if (opts.provider) query.provider = encodeURIComponent(opts.provider);
+					if (opts.target) query.target = encodeURIComponent(opts.target);
+					if (opts.login_hint) query.login_hint = encodeURIComponent(opts.login_hint);
 					if (opts.prompt && opts.prompt == 'login') query.prompt = encodeURIComponent(opts.prompt);
 
 					var url = this._buildAuthUrl('oauth/authorize', query);
@@ -787,6 +791,8 @@ class ApiClient {
     * @param {string} opts.state - (optional) An arbitrary string to be passed back with the login response. Used for client apps to associate login responses with a request.
     * @param {string} opts.org - (optional) The organization name that would normally used when specifying an organization name when logging in. This is only used when a provider is also specified.
     * @param {string} opts.provider - (optional) Authentication provider to log in with e.g. okta, adfs, salesforce, onelogin. This is only used when an org is also specified.
+	* @param {string} opts.target - (optional) The organization ID of the target organization, when intending to log in to a specific target organization using Authorized Organizations.
+	* @param {string} opts.login_hint - (optional) The login_hint allows an application to pass the email address and/or the org name values to the authorization server (email:orgName, email, orgName).
 	* @param {string} opts.prompt - (optional) Use the prompt=login parameter to require that the user be prompted to enter credentials at the Gensys Cloud login screen and ignore any remembered sessions (auth cookies).
     * @param {string} codeVerifier - (optional) code verifier used to generate the code challenge
     */
@@ -892,6 +898,8 @@ class ApiClient {
                       if (opts.state) tokenQuery.state = encodeURIComponent(opts.state);
                       if (opts.org) tokenQuery.org = encodeURIComponent(opts.org);
                       if (opts.provider) tokenQuery.provider = encodeURIComponent(opts.provider);
+					  if (opts.target) tokenQuery.target = encodeURIComponent(opts.target);
+					  if (opts.login_hint) tokenQuery.login_hint = encodeURIComponent(opts.login_hint);
 					  if (opts.prompt && opts.prompt == 'login') tokenQuery.prompt = encodeURIComponent(opts.prompt);
 
                       var url = this._buildAuthUrl('oauth/authorize', tokenQuery);

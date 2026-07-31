@@ -7,11 +7,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 [**deleteCasemanagementCase**](CaseManagementApi#deleteCasemanagementCase) | **DELETE** /api/v2/casemanagement/cases/{caseId} | Delete a Case.
+[**deleteCasemanagementCaseCommentsMeCommentId**](CaseManagementApi#deleteCasemanagementCaseCommentsMeCommentId) | **DELETE** /api/v2/casemanagement/cases/{caseId}/comments/me/{commentId} | Delete my Comment.
 [**deleteCasemanagementCaseplan**](CaseManagementApi#deleteCasemanagementCaseplan) | **DELETE** /api/v2/casemanagement/caseplans/{caseplanId} | Delete a Caseplan.
 [**deleteCasemanagementCaseplanDataschema**](CaseManagementApi#deleteCasemanagementCaseplanDataschema) | **DELETE** /api/v2/casemanagement/caseplans/{caseplanId}/dataschemas/{schemaKeyName} | Remove a data schema from a draft Caseplan.
 [**getCasemanagementCase**](CaseManagementApi#getCasemanagementCase) | **GET** /api/v2/casemanagement/cases/{caseId} | Get a Case.
 [**getCasemanagementCaseAssociation**](CaseManagementApi#getCasemanagementCaseAssociation) | **GET** /api/v2/casemanagement/cases/{caseId}/associations/{associationId} | Get a Case Association.
 [**getCasemanagementCaseAssociations**](CaseManagementApi#getCasemanagementCaseAssociations) | **GET** /api/v2/casemanagement/cases/{caseId}/associations | Get a list of Case associations for the Case.
+[**getCasemanagementCaseComment**](CaseManagementApi#getCasemanagementCaseComment) | **GET** /api/v2/casemanagement/cases/{caseId}/comments/{commentId} | Get a Comment.
+[**getCasemanagementCaseComments**](CaseManagementApi#getCasemanagementCaseComments) | **GET** /api/v2/casemanagement/cases/{caseId}/comments | Get comments for a Case.
 [**getCasemanagementCaseStage**](CaseManagementApi#getCasemanagementCaseStage) | **GET** /api/v2/casemanagement/cases/{caseId}/stages/{stageId} | Get a Stage.
 [**getCasemanagementCaseStageStep**](CaseManagementApi#getCasemanagementCaseStageStep) | **GET** /api/v2/casemanagement/cases/{caseId}/stages/{stageId}/steps/{stepId} | Get a Step.
 [**getCasemanagementCaseStageSteps**](CaseManagementApi#getCasemanagementCaseStageSteps) | **GET** /api/v2/casemanagement/cases/{caseId}/stages/{stageId}/steps | Get a list of Steps.
@@ -35,6 +38,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchCasemanagementCaseplanStageplan**](CaseManagementApi#patchCasemanagementCaseplanStageplan) | **PATCH** /api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId} | Update the attributes of a Stageplan.
 [**patchCasemanagementCaseplanStageplanStepplan**](CaseManagementApi#patchCasemanagementCaseplanStageplanStepplan) | **PATCH** /api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId}/stepplans/{stepplanId} | Update the attributes of a Stepplan.
 [**postCasemanagementCaseAssociations**](CaseManagementApi#postCasemanagementCaseAssociations) | **POST** /api/v2/casemanagement/cases/{caseId}/associations | Create a Case association.
+[**postCasemanagementCaseComments**](CaseManagementApi#postCasemanagementCaseComments) | **POST** /api/v2/casemanagement/cases/{caseId}/comments | Add a comment to a Case.
 [**postCasemanagementCaseTerminateJobs**](CaseManagementApi#postCasemanagementCaseTerminateJobs) | **POST** /api/v2/casemanagement/cases/{caseId}/terminate/jobs | Create a Terminate Job for a Case.
 [**postCasemanagementCaseplanDataschemas**](CaseManagementApi#postCasemanagementCaseplanDataschemas) | **POST** /api/v2/casemanagement/caseplans/{caseplanId}/dataschemas | Add a data schema to a draft Caseplan.
 [**postCasemanagementCaseplanPublish**](CaseManagementApi#postCasemanagementCaseplanPublish) | **POST** /api/v2/casemanagement/caseplans/{caseplanId}/publish | Publish Caseplan.
@@ -98,6 +102,65 @@ apiInstance.deleteCasemanagementCase(caseId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **caseId** | **String** | Case identifier. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**Object**
+
+
+## deleteCasemanagementCaseCommentsMeCommentId
+
+> **Object** deleteCasemanagementCaseCommentsMeCommentId(caseId, commentId, opts)
+
+
+DELETE /api/v2/casemanagement/cases/{caseId}/comments/me/{commentId}
+
+Delete my Comment.
+
+Requires ANY permissions:
+
+* caseManagement:commentSelf:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.CaseManagementApi();
+
+let caseId = "caseId_example"; // String | Case identifier.
+let commentId = "commentId_example"; // String | Comment identifier.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.deleteCasemanagementCaseCommentsMeCommentId(caseId, commentId, opts)
+  .then((data) => {
+    console.log(`deleteCasemanagementCaseCommentsMeCommentId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteCasemanagementCaseCommentsMeCommentId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **caseId** | **String** | Case identifier. |  |
+ **commentId** | **String** | Comment identifier. |  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -249,7 +312,7 @@ let apiInstance = new platformClient.CaseManagementApi();
 
 let caseId = "caseId_example"; // String | Case identifier.
 let opts = { 
-  'expands': "expands_example", // String | Fields to expand.
+  'expands': ["expands_example"], // [String] | Attributes to expand. Comma-separated if more than one.
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
     'X-Request-ID': 'req-12345'
@@ -272,7 +335,7 @@ apiInstance.getCasemanagementCase(caseId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **caseId** | **String** | Case identifier. |  |
- **expands** | **String** | Fields to expand. | [optional] <br />**Values**: caseplan |
+ **expands** | **[String]** | Attributes to expand. Comma-separated if more than one. | [optional] <br />**Values**: caseplan, owner, modifiedBy, externalContact, customerIntent |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -400,6 +463,128 @@ apiInstance.getCasemanagementCaseAssociations(caseId, opts)
 ### Return type
 
 **CaseAssociationListing**
+
+
+## getCasemanagementCaseComment
+
+> Comment getCasemanagementCaseComment(caseId, commentId, opts)
+
+
+GET /api/v2/casemanagement/cases/{caseId}/comments/{commentId}
+
+Get a Comment.
+
+Requires ANY permissions:
+
+* caseManagement:comment:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.CaseManagementApi();
+
+let caseId = "caseId_example"; // String | Case identifier.
+let commentId = "commentId_example"; // String | Comment identifier.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getCasemanagementCaseComment(caseId, commentId, opts)
+  .then((data) => {
+    console.log(`getCasemanagementCaseComment success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getCasemanagementCaseComment');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **caseId** | **String** | Case identifier. |  |
+ **commentId** | **String** | Comment identifier. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**Comment**
+
+
+## getCasemanagementCaseComments
+
+> CommentListing getCasemanagementCaseComments(caseId, opts)
+
+
+GET /api/v2/casemanagement/cases/{caseId}/comments
+
+Get comments for a Case.
+
+Requires ANY permissions:
+
+* caseManagement:comment:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.CaseManagementApi();
+
+let caseId = "caseId_example"; // String | Case identifier.
+let opts = { 
+  'after': "after_example", // String | Cursor pointing to the end of the previously returned page of comments.
+  'pageSize': 3.4, // Number | Number of comments to return. Maximum is 100.
+  'sortOrder': "desc", // String | Ascending or descending sort order.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getCasemanagementCaseComments(caseId, opts)
+  .then((data) => {
+    console.log(`getCasemanagementCaseComments success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getCasemanagementCaseComments');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **caseId** | **String** | Case identifier. |  |
+ **after** | **String** | Cursor pointing to the end of the previously returned page of comments. | [optional]  |
+ **pageSize** | **Number** | Number of comments to return. Maximum is 100. | [optional]  |
+ **sortOrder** | **String** | Ascending or descending sort order. | [optional] [default to desc]<br />**Values**: asc, desc |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**CommentListing**
 
 
 ## getCasemanagementCaseStage
@@ -1363,7 +1548,7 @@ let apiInstance = new platformClient.CaseManagementApi();
 
 let referenceId = "referenceId_example"; // String | Case reference.
 let opts = { 
-  'expands': "expands_example", // String | Fields to expand.
+  'expands': ["expands_example"], // [String] | Attributes to expand. Comma-separated if more than one.
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
     'X-Request-ID': 'req-12345'
@@ -1386,7 +1571,7 @@ apiInstance.getCasemanagementCasesReference(referenceId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **referenceId** | **String** | Case reference. |  |
- **expands** | **String** | Fields to expand. | [optional] <br />**Values**: caseplan |
+ **expands** | **[String]** | Attributes to expand. Comma-separated if more than one. | [optional] <br />**Values**: caseplan, owner, modifiedBy, externalContact, customerIntent |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -1811,6 +1996,65 @@ apiInstance.postCasemanagementCaseAssociations(caseId, body, opts)
 ### Return type
 
 **CaseAssociation**
+
+
+## postCasemanagementCaseComments
+
+> Comment postCasemanagementCaseComments(caseId, body, opts)
+
+
+POST /api/v2/casemanagement/cases/{caseId}/comments
+
+Add a comment to a Case.
+
+Requires ANY permissions:
+
+* caseManagement:comment:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.CaseManagementApi();
+
+let caseId = "caseId_example"; // String | Case identifier.
+let body = {}; // Object | Comment create request.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postCasemanagementCaseComments(caseId, body, opts)
+  .then((data) => {
+    console.log(`postCasemanagementCaseComments success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postCasemanagementCaseComments');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **caseId** | **String** | Case identifier. |  |
+ **body** | **Object** | Comment create request. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**Comment**
 
 
 ## postCasemanagementCaseTerminateJobs
@@ -2393,4 +2637,4 @@ apiInstance.putCasemanagementCaseplanIntakesettings(caseplanId, body, opts)
 **IntakeSettingsListing**
 
 
-_purecloud-platform-client-v2@257.0.0_
+_purecloud-platform-client-v2@258.0.0_

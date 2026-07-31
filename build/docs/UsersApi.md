@@ -21,6 +21,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteUserStationDefaultstation**](UsersApi#deleteUserStationDefaultstation) | **DELETE** /api/v2/users/{userId}/station/defaultstation | Clear default station
 [**deleteUserVerifier**](UsersApi#deleteUserVerifier) | **DELETE** /api/v2/users/{userId}/verifiers/{verifierId} | Delete a verifier
 [**deleteUsersCustomattributesSchema**](UsersApi#deleteUsersCustomattributesSchema) | **DELETE** /api/v2/users/customattributes/schemas/{schemaId} | Delete a schema
+[**deleteUsersMeVerifier**](UsersApi#deleteUsersMeVerifier) | **DELETE** /api/v2/users/me/verifiers/{verifierId} | Delete a verifier
 [**deleteUsersStationsMeAssociatedstation**](UsersApi#deleteUsersStationsMeAssociatedstation) | **DELETE** /api/v2/users/stations/me/associatedstation | Clear self associated station
 [**getAnalyticsUsersAggregatesJob**](UsersApi#getAnalyticsUsersAggregatesJob) | **GET** /api/v2/analytics/users/aggregates/jobs/{jobId} | Get status for async query for user aggregates
 [**getAnalyticsUsersAggregatesJobResults**](UsersApi#getAnalyticsUsersAggregatesJobResults) | **GET** /api/v2/analytics/users/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
@@ -75,6 +76,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getUsersDevelopmentActivity**](UsersApi#getUsersDevelopmentActivity) | **GET** /api/v2/users/development/activities/{activityId} | Get a Development Activity
 [**getUsersExternalidAuthorityNameExternalKey**](UsersApi#getUsersExternalidAuthorityNameExternalKey) | **GET** /api/v2/users/externalid/{authorityName}/{externalKey} | Get the user associated with external identifier.
 [**getUsersMe**](UsersApi#getUsersMe) | **GET** /api/v2/users/me | Get current user details.
+[**getUsersMeVerifiers**](UsersApi#getUsersMeVerifiers) | **GET** /api/v2/users/me/verifiers | Get a list of my verifiers
 [**getUsersQuery**](UsersApi#getUsersQuery) | **GET** /api/v2/users/query | Get list of available users, paged by cursor token, No division filtering available so directory:user:view permission for all divisions is required
 [**getUsersSearch**](UsersApi#getUsersSearch) | **GET** /api/v2/users/search | Search users using the q64 value returned from a previous search
 [**getUsersStationsMe**](UsersApi#getUsersStationsMe) | **GET** /api/v2/users/stations/me | Get station information for self
@@ -108,6 +110,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postUsersCustomattributesSchemas**](UsersApi#postUsersCustomattributesSchemas) | **POST** /api/v2/users/customattributes/schemas | Create a schema
 [**postUsersDevelopmentActivitiesAggregatesQuery**](UsersApi#postUsersDevelopmentActivitiesAggregatesQuery) | **POST** /api/v2/users/development/activities/aggregates/query | Retrieve aggregated development activity data
 [**postUsersMePassword**](UsersApi#postUsersMePassword) | **POST** /api/v2/users/me/password | Change your password
+[**postUsersMeVerifiersTotp**](UsersApi#postUsersMeVerifiersTotp) | **POST** /api/v2/users/me/verifiers/totp | Add a new TOTP verifier
+[**postUsersMeVerifiersTotpVerifierId**](UsersApi#postUsersMeVerifiersTotpVerifierId) | **POST** /api/v2/users/me/verifiers/totp/{verifierId} | Validate a TOTP verifier
+[**postUsersMeVerifiersWebauthnRegister**](UsersApi#postUsersMeVerifiersWebauthnRegister) | **POST** /api/v2/users/me/verifiers/webauthn/register | Finish WebAuthn verifier registration
+[**postUsersMeVerifiersWebauthnRegisterOptions**](UsersApi#postUsersMeVerifiersWebauthnRegisterOptions) | **POST** /api/v2/users/me/verifiers/webauthn/register/options | Begin WebAuthn verifier registration
 [**postUsersSearch**](UsersApi#postUsersSearch) | **POST** /api/v2/users/search | Search users
 [**postUsersSearchConversationTarget**](UsersApi#postUsersSearchConversationTarget) | **POST** /api/v2/users/search/conversation/target | Search users as conversation targets
 [**postUsersSearchQueuemembersManage**](UsersApi#postUsersSearchQueuemembersManage) | **POST** /api/v2/users/search/queuemembers/manage | Search manage queue member
@@ -128,6 +134,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putUserStationDefaultstationStationId**](UsersApi#putUserStationDefaultstationStationId) | **PUT** /api/v2/users/{userId}/station/defaultstation/{stationId} | Set default station
 [**putUserVerifier**](UsersApi#putUserVerifier) | **PUT** /api/v2/users/{userId}/verifiers/{verifierId} | Update a verifier
 [**putUsersCustomattributesSchema**](UsersApi#putUsersCustomattributesSchema) | **PUT** /api/v2/users/customattributes/schemas/{schemaId} | Update a schema
+[**putUsersMeVerifier**](UsersApi#putUsersMeVerifier) | **PUT** /api/v2/users/me/verifiers/{verifierId} | Update a verifier
 [**putUsersStationsMeAssociatedstationStationId**](UsersApi#putUsersStationsMeAssociatedstationStationId) | **PUT** /api/v2/users/stations/me/associatedstation/{stationId} | Set self associated station
 
 
@@ -997,6 +1004,61 @@ apiInstance.deleteUsersCustomattributesSchema(schemaId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **schemaId** | **String** | Schema ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+void (no response body)
+
+
+## deleteUsersMeVerifier
+
+> void deleteUsersMeVerifier(verifierId, opts)
+
+
+DELETE /api/v2/users/me/verifiers/{verifierId}
+
+Delete a verifier
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let verifierId = "verifierId_example"; // String | Verifier ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.deleteUsersMeVerifier(verifierId, opts)
+  .then(() => {
+    console.log('deleteUsersMeVerifier returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteUsersMeVerifier');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **verifierId** | **String** | Verifier ID |  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -4232,6 +4294,58 @@ apiInstance.getUsersMe(opts)
 **UserMe**
 
 
+## getUsersMeVerifiers
+
+> VerifierEntityListing getUsersMeVerifiers(opts)
+
+
+GET /api/v2/users/me/verifiers
+
+Get a list of my verifiers
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getUsersMeVerifiers(opts)
+  .then((data) => {
+    console.log(`getUsersMeVerifiers success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getUsersMeVerifiers');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**VerifierEntityListing**
+
+
 ## getUsersQuery
 
 > UserCursorEntityListing getUsersQuery(opts)
@@ -6204,6 +6318,229 @@ apiInstance.postUsersMePassword(body, opts)
 void (no response body)
 
 
+## postUsersMeVerifiersTotp
+
+> CreateVerifierResponse postUsersMeVerifiersTotp(body, opts)
+
+
+POST /api/v2/users/me/verifiers/totp
+
+Add a new TOTP verifier
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let body = {}; // Object | Verifier
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postUsersMeVerifiersTotp(body, opts)
+  .then((data) => {
+    console.log(`postUsersMeVerifiersTotp success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postUsersMeVerifiersTotp');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Verifier |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**CreateVerifierResponse**
+
+
+## postUsersMeVerifiersTotpVerifierId
+
+> void postUsersMeVerifiersTotpVerifierId(verifierId, body, opts)
+
+
+POST /api/v2/users/me/verifiers/totp/{verifierId}
+
+Validate a TOTP verifier
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let verifierId = "verifierId_example"; // String | Verifier ID
+let body = {}; // Object | Verifier Validate
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postUsersMeVerifiersTotpVerifierId(verifierId, body, opts)
+  .then(() => {
+    console.log('postUsersMeVerifiersTotpVerifierId returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postUsersMeVerifiersTotpVerifierId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **verifierId** | **String** | Verifier ID |  |
+ **body** | **Object** | Verifier Validate |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+void (no response body)
+
+
+## postUsersMeVerifiersWebauthnRegister
+
+> Verifier postUsersMeVerifiersWebauthnRegister(body, opts)
+
+
+POST /api/v2/users/me/verifiers/webauthn/register
+
+Finish WebAuthn verifier registration
+
+Completes registration of a new WebAuthn authenticator by submitting the credential creation response produced by navigator.credentials.create().
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let body = {}; // Object | WebAuthn registration result
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postUsersMeVerifiersWebauthnRegister(body, opts)
+  .then((data) => {
+    console.log(`postUsersMeVerifiersWebauthnRegister success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postUsersMeVerifiersWebauthnRegister');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | WebAuthn registration result |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**Verifier**
+
+
+## postUsersMeVerifiersWebauthnRegisterOptions
+
+> BeginWebAuthnRegistrationResponse postUsersMeVerifiersWebauthnRegisterOptions(opts)
+
+
+POST /api/v2/users/me/verifiers/webauthn/register/options
+
+Begin WebAuthn verifier registration
+
+Returns the public key credential creation options the client passes to navigator.credentials.create() to start registering a new WebAuthn authenticator.
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postUsersMeVerifiersWebauthnRegisterOptions(opts)
+  .then((data) => {
+    console.log(`postUsersMeVerifiersWebauthnRegisterOptions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postUsersMeVerifiersWebauthnRegisterOptions');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**BeginWebAuthnRegistrationResponse**
+
+
 ## postUsersSearch
 
 > UsersSearchResponse postUsersSearch(body, opts)
@@ -7380,6 +7717,63 @@ apiInstance.putUsersCustomattributesSchema(schemaId, body, opts)
 **DataSchema**
 
 
+## putUsersMeVerifier
+
+> Verifier putUsersMeVerifier(verifierId, body, opts)
+
+
+PUT /api/v2/users/me/verifiers/{verifierId}
+
+Update a verifier
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let verifierId = "verifierId_example"; // String | Verifier ID
+let body = {}; // Object | Verifier Update
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.putUsersMeVerifier(verifierId, body, opts)
+  .then((data) => {
+    console.log(`putUsersMeVerifier success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putUsersMeVerifier');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **verifierId** | **String** | Verifier ID |  |
+ **body** | **Object** | Verifier Update |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**Verifier**
+
+
 ## putUsersStationsMeAssociatedstationStationId
 
 > void putUsersStationsMeAssociatedstationStationId(stationId, opts)
@@ -7437,4 +7831,4 @@ apiInstance.putUsersStationsMeAssociatedstationStationId(stationId, opts)
 void (no response body)
 
 
-_purecloud-platform-client-v2@257.0.0_
+_purecloud-platform-client-v2@258.0.0_

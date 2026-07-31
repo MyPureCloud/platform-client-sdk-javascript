@@ -1,430 +1,839 @@
-Platform API version: 10596
+Platform API version: 10662
 
 
 
 
-# Major Changes (6 changes)
+# Major Changes (21 changes)
 
-**/api/v2/integrations/clientapps/unifiedcommunications** (1 change)
+**GET /api/v2/casemanagement/cases/{caseId}** (1 change)
 
-* Path /api/v2/integrations/clientapps/unifiedcommunications was removed
+* Parameter expands was changed from string to array
 
-**POST /api/v2/businessrules/decisiontables/{tableId}/versions** (1 change)
+**GET /api/v2/casemanagement/cases/references/{referenceId}** (1 change)
 
-* Parameter body was added
+* Parameter expands was changed from string to array
 
-**UCIntegration** (1 change)
+**POST /api/v2/conversations/videos/{conversationId}/agentconference/communications/{communicationId}** (1 change)
 
-* Model UCIntegration was removed
+* Response 200 type was changed from VideoConferenceDetails to CreateJoinVideoResponse
 
-**UCIntegrationListing** (1 change)
+**TimeOffRequest** (1 change)
 
-* Model UCIntegrationListing was removed
+* Model TimeOffRequest was removed
 
-**Case** (2 changes)
+**AppleInvitation** (1 change)
 
-* Property owner was changed from UserReference to CaseUserReference
-* Property modifiedBy was changed from UserReference to CaseUserReference
+* Enum value WithoutImage was removed from property templateType
+
+**RatingFilter** (7 changes)
+
+* Property from was removed
+* Property to was removed
+* Enum value GreaterThan was removed from property operator
+* Enum value GreaterThanOrEqualTo was removed from property operator
+* Enum value LessThan was removed from property operator
+* Enum value LessThanOrEqualTo was removed from property operator
+* Enum value Between was removed from property operator
+
+**TimeOffRequestListing** (1 change)
+
+* Property entities was changed from TimeOffRequest[] to TimeOffRequestListItem[]
+
+**Workitem** (2 changes)
+
+* Property language was changed from LanguageReference to WorkitemLanguageReference
+* Property skills was changed from RoutingSkillReference[] to WorkitemRoutingSkillReference[]
+
+**WorkitemVersion** (2 changes)
+
+* Property language was changed from LanguageReference to WorkitemLanguageReference
+* Property skills was changed from RoutingSkillReference[] to WorkitemRoutingSkillReference[]
+
+**Worktype** (2 changes)
+
+* Property defaultLanguage was changed from LanguageReference to WorkitemLanguageReference
+* Property defaultSkills was changed from RoutingSkillReference[] to WorkitemRoutingSkillReference[]
+
+**WorktypeVersion** (2 changes)
+
+* Property defaultLanguage was changed from LanguageReference to WorkitemLanguageReference
+* Property defaultSkills was changed from RoutingSkillReference[] to WorkitemRoutingSkillReference[]
 
 
-# Minor Changes (146 changes)
+# Minor Changes (231 changes)
 
-**/api/v2/externalcontacts/notes/exports/{exportId}** (2 changes)
+**/api/v2/users/me/verifiers** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**/api/v2/externalcontacts/notes/exports** (3 changes)
+**/api/v2/users/me/verifiers/totp** (2 changes)
 
 * Path was added
-* Operation GET was added
 * Operation POST was added
 
-**/api/v2/externalcontacts/organizations/exports/{exportId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/externalcontacts/organizations/exports** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/externalcontacts/relationships/exports/{exportId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/externalcontacts/relationships/exports** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/conversations/emails/{conversationId}/messages/draft/attachments/uploads** (2 changes)
+**/api/v2/users/me/verifiers/webauthn/register/options** (2 changes)
 
 * Path was added
 * Operation POST was added
 
-**/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/deletions/{fileId}** (3 changes)
+**/api/v2/users/me/verifiers/webauthn/register** (2 changes)
 
 * Path was added
-* Operation GET was added
-* Operation DELETE was added
-
-**/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/deletions** (3 changes)
-
-* Path was added
-* Operation GET was added
 * Operation POST was added
 
-**/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/uploads/{fileId}** (3 changes)
+**/api/v2/users/me/verifiers/{verifierId}** (3 changes)
 
 * Path was added
-* Operation GET was added
-* Operation DELETE was added
-
-**/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/uploads** (1 change)
-
-* Operation get was added. Summary: Get file upload entries associated with the synchronization
-
-**/api/v2/conversations/{conversationId}/accessattributes** (3 changes)
-
-* Path was added
-* Operation GET was added
 * Operation PUT was added
+* Operation DELETE was added
+
+**/api/v2/users/me/verifiers/totp/{verifierId}** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/agentic/virtualagents/{virtualAgentId}/jobs** (2 changes)
+
+* Path was added
+* Operation DELETE was added
+
+**/api/v2/agentic/virtualagents/{virtualAgentId}/jobs/{jobId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/agentic/virtualagents/{virtualAgentId}** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation PATCH was added
+
+**/api/v2/agentic/virtualagents/{virtualAgentId}/versions/{versionId}** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation PATCH was added
+
+**/api/v2/agentic/virtualagents/{virtualAgentId}/versions/{versionId}/jobs** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/agentic/virtualagents/{virtualAgentId}/versions/{versionId}/jobs/{jobId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/agentic/virtualagents/{virtualAgentId}/versions** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/agentic/virtualagents** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation POST was added
+
+**POST /api/v2/casemanagement/cases** (1 change)
+
+* Response 422 was added
+
+**/api/v2/casemanagement/cases/{caseId}/comments/me/{commentId}** (2 changes)
+
+* Path was added
+* Operation DELETE was added
+
+**/api/v2/casemanagement/cases/{caseId}/comments/{commentId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/casemanagement/cases/{caseId}/comments** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation POST was added
+
+**/api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/summaries** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/summaries** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/conversations/{conversationId}/suggestions/{suggestionId}** (1 change)
+
+* Operation patch was added. Summary: Update a suggestion.
+
+**/api/v2/quality/publishedforms/evaluations/divisionviews/{evaluationFormId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/quality/publishedforms/evaluations/divisionviews** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/quality/publishedforms/surveys/divisionviews/{surveyFormId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/quality/publishedforms/surveys/divisionviews** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/responsemanagement/libraries/divisionviews** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/responsemanagement/libraries/divisionviews/{libraryId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/responsemanagement/responses/divisionviews/{responseId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/responsemanagement/responses/divisionviews/query** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/bulk** (2 changes)
+
+* Path was added
+* Operation PATCH was added
+
+**/api/v2/workforcemanagement/managementunits/{managementUnitId}/decisionmetrics** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/decisionmetrics/update** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/decisionmetrics/jobs/{jobId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/decisionmetrics/update/uploadurl** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/granularityconversion** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/granularityconversion/jobs/{jobId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/granularityconversion/jobs** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/import/uploadurl** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/import** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**Verifier** (2 changes)
+
+* Optional property type was added
+* Optional property credential was added
+
+**CreateVerifierResponse** (1 change)
+
+* Model was added
+
+**CreateVerifierRequest** (1 change)
+
+* Model was added
+
+**AuthenticatorSelection** (1 change)
+
+* Model was added
+
+**BeginWebAuthnRegistrationResponse** (1 change)
+
+* Model was added
+
+**CredentialDescriptor** (1 change)
+
+* Model was added
+
+**CredentialParameter** (1 change)
+
+* Model was added
+
+**PublicKeyCredentialCreationOptions** (1 change)
+
+* Model was added
+
+**RelyingPartyEntity** (1 change)
+
+* Model was added
+
+**UserEntity** (1 change)
+
+* Model was added
+
+**AuthenticatorAttestationResponse** (1 change)
+
+* Model was added
+
+**FinishWebAuthnRegistrationRequest** (1 change)
+
+* Model was added
+
+**PublicKeyCredentialCreationResponse** (1 change)
+
+* Model was added
+
+**UpdateVerifierRequest** (1 change)
+
+* Optional property credential was added
+
+**ValidateVerifierRequest** (1 change)
+
+* Model was added
+
+**OrgAuthSettings** (1 change)
+
+* Optional property tokenStorageLocation was added
+
+**AgenticVirtualAgentJob** (1 change)
+
+* Model was added
 
 **Limit** (2 changes)
 
-* Enum value mcp.analytics.aggregates was added to property namespace
-* Enum value workforce.management.adherence was added to property namespace
+* Enum value admin.notice was added to property namespace
+* Enum value sda was added to property namespace
 
-**AgentCopilotAggregationSort** (1 change)
+**AgenticVersionAddressableEntity** (1 change)
 
-* Enum value nDistinctConversations was added to property name
+* Model was added
 
-**ConversationAggregationQuery** (1 change)
+**AgenticVirtualAgent** (1 change)
 
-* Enum value tCallbackVirtualWait was added to property metrics
+* Model was added
 
-**ConversationAggregationSort** (1 change)
+**UpdateAgenticVirtualAgent** (1 change)
 
-* Enum value tCallbackVirtualWait was added to property name
+* Model was added
 
-**ConversationAggregationView** (1 change)
+**AgenticVirtualAgentComfortStatementSettings** (1 change)
 
-* Enum value tCallbackVirtualWait was added to property target
+* Model was added
 
-**ConversationAsyncAggregationQuery** (1 change)
+**AgenticVirtualAgentEventSettings** (1 change)
 
-* Enum value tCallbackVirtualWait was added to property metrics
+* Model was added
 
-**ConversationDetailQueryPredicate** (4 changes)
+**AgenticVirtualAgentGuardrailInstruction** (1 change)
 
-* Enum value tCallbackAbandon was added to property metric
-* Enum value tCallbackConnect was added to property metric
-* Enum value tCallbackNotReached was added to property metric
-* Enum value tCallbackVirtualWait was added to property metric
+* Model was added
+
+**AgenticVirtualAgentGuardrails** (1 change)
+
+* Model was added
+
+**AgenticVirtualAgentPropertyDefinition** (1 change)
+
+* Model was added
+
+**AgenticVirtualAgentTool** (1 change)
+
+* Model was added
+
+**AgenticVirtualAgentToolOutputInstruction** (1 change)
+
+* Model was added
+
+**AgenticVirtualAgentTypeDefinition** (1 change)
+
+* Model was added
+
+**AgenticVirtualAgentVersion** (1 change)
+
+* Model was added
+
+**AgenticVirtualAgentVersionDefinition** (1 change)
+
+* Model was added
+
+**AgenticVirtualAgentVersionSettings** (1 change)
+
+* Model was added
+
+**UpdateAgenticVirtualAgentVersion** (1 change)
+
+* Model was added
+
+**AgenticVirtualAgentVersionPublishJob** (1 change)
+
+* Model was added
+
+**AgenticVirtualAgentVersionPublish** (1 change)
+
+* Model was added
+
+**AgenticVirtualAgentVersionPublishJobRequest** (1 change)
+
+* Model was added
+
+**AgenticVirtualAgentVersionJob** (1 change)
+
+* Model was added
+
+**CreateAgenticVirtualAgentVersion** (1 change)
+
+* Model was added
+
+**AgenticVirtualAgentEntityListing** (1 change)
+
+* Model was added
+
+**CreateAgenticVirtualAgent** (1 change)
+
+* Model was added
+
+**KnowledgeSource** (1 change)
+
+* Model was added
 
 **ReportingTurnAction** (1 change)
 
-* Enum value AgenticAskForIntentAction was added to property actionType
+* Enum value AgenticAnythingElseAction was added to property actionType
 
-**ViewFilter** (1 change)
-
-* Optional property socialPostTypes was added
-
-**DecisionTableSnapshot** (1 change)
+**ReportingTurnActionAgentDetails** (1 change)
 
 * Model was added
 
-**CreateDecisionTableVersionRequest** (1 change)
+**ReportingTurnGuardrailEvent** (1 change)
 
 * Model was added
 
-**CustomerIntentReference** (1 change)
-
-* Optional property name was added
-
-**CaseplanFilter** (1 change)
+**ReportingTurnKnowledgeMetadata** (1 change)
 
 * Model was added
 
-**CaseplanQueryRequest** (2 changes)
+**ReportingTurnToolCall** (1 change)
 
-* Optional property filters was added
-* Optional property attributes was added
+* Model was added
 
-**CaseExternalContactReference** (2 changes)
+**EmailRefinementConfig** (1 change)
 
-* Optional property firstName was added
-* Optional property lastName was added
+* Model was added
+
+**RefinementSettingEntity** (1 change)
+
+* Model was added
+
+**SummaryGenerationConfig** (3 changes)
+
+* Optional property retentionSeconds was added
+* Optional property onDemandSummaryConfig was added
+* Optional property modelConfig was added
+
+**BlendingSettings** (1 change)
+
+* Model was added
+
+**DecisionTableVersion** (2 changes)
+
+* Optional property createdBy was added
+* Optional property publishedBy was added
 
 **CaseUserReference** (1 change)
 
-* Model was added
+* Optional property images was added
 
-**Step** (1 change)
-
-* Optional property workitemActivity was added
-
-**WorkitemActivityReference** (1 change)
+**Comment** (1 change)
 
 * Model was added
 
-**ContactsExportFieldFilter** (3 changes)
-
-* Enum value ExternalSourceId was added to property field
-* Enum value SchemaId was added to property field
-* Enum value SchemaVersion was added to property field
-
-**ContactsExportFieldListFilter** (3 changes)
-
-* Enum value ExternalSourceId was added to property field
-* Enum value SchemaId was added to property field
-* Enum value SchemaVersion was added to property field
-
-**NotesExport** (1 change)
+**CommentCreate** (1 change)
 
 * Model was added
 
-**NotesExportComparisonFieldFilter** (1 change)
+**CommentListing** (1 change)
 
 * Model was added
 
-**NotesExportFieldFilter** (1 change)
+**EvaluationForm** (2 changes)
+
+* Optional property division was added
+* Optional property redacted was added
+
+**AiAnswer** (1 change)
+
+* Optional property markedNotApplicable was added
+
+**Call** (1 change)
+
+* Optional property clientIpAddress was added
+
+**CallMediaParticipant** (1 change)
+
+* Optional property clientIpAddress was added
+
+**Campaign** (1 change)
+
+* Optional property preciseDialingEnabled was added
+
+**OnDemandSummaryAcceptedResponse** (1 change)
 
 * Model was added
 
-**NotesExportFieldListFilter** (1 change)
+**OnDemandConversationSummaryRequest** (1 change)
 
 * Model was added
 
-**NotesExportFilter** (1 change)
+**ConversationContentReaction** (2 changes)
+
+* Enum value Repost was added to property reactionType
+* Enum value Save was added to property reactionType
+
+**Suggestion** (1 change)
+
+* Optional property thirdPartySuggestion was added
+
+**SuggestionPatchRequest** (1 change)
 
 * Model was added
 
-**NotesExportQueryConditions** (1 change)
+**CallBasic** (1 change)
 
-* Model was added
+* Optional property clientIpAddress was added
 
-**NotesExportListing** (1 change)
+**PunctualityEvent** (1 change)
 
-* Model was added
+* Optional property activityColor was added
 
-**OrganizationsExport** (1 change)
+**SttEngineEntity** (1 change)
 
-* Model was added
+* Optional property replacedBy was added
 
-**OrganizationsExportComparisonFieldFilter** (1 change)
+**JourneyViewChartMetric** (1 change)
 
-* Model was added
+* Optional property attribute was added
 
-**OrganizationsExportFieldFilter** (1 change)
+**V3SourceLastSynchronization** (1 change)
 
-* Model was added
+* Enum value Throttled was added to property status
 
-**OrganizationsExportFieldListFilter** (1 change)
+**V3Synchronization** (1 change)
 
-* Model was added
-
-**OrganizationsExportFilter** (1 change)
-
-* Model was added
-
-**OrganizationsExportQueryConditions** (1 change)
-
-* Model was added
-
-**OrganizationsExportListing** (1 change)
-
-* Model was added
-
-**RelationshipsExport** (1 change)
-
-* Model was added
-
-**RelationshipsExportComparisonFieldFilter** (1 change)
-
-* Model was added
-
-**RelationshipsExportFieldFilter** (1 change)
-
-* Model was added
-
-**RelationshipsExportFieldListFilter** (1 change)
-
-* Model was added
-
-**RelationshipsExportFilter** (1 change)
-
-* Model was added
-
-**RelationshipsExportQueryConditions** (1 change)
-
-* Model was added
-
-**RelationshipsExportListing** (1 change)
-
-* Model was added
-
-**Evaluation** (6 changes)
-
-* Optional property disputeCount was added
-* Optional property version was added
-* Optional property versionHistory was added
-* Optional property declinedReview was added
-* Optional property evaluationContextId was added
-* Optional property retractedEvaluation was added
-
-**UploadAttachmentResponse** (1 change)
-
-* Model was added
-
-**UploadAttachmentRequest** (1 change)
-
-* Model was added
-
-**EventLog** (1 change)
-
-* Enum value RETENTION_POLICY was added to property category
-
-**EventMessage** (16 changes)
-
-* Enum value IMPORT_INVALID_RETENTION_TYPE was added to property code
-* Enum value IMPORT_INVALID_RETENTION_DAYS_MUST_BE_SET was added to property code
-* Enum value IMPORT_INVALID_RETENTION_DAYS_MUST_NOT_BE_SET was added to property code
-* Enum value IMPORT_INVALID_RETENTION_DAYS_MUST_BE_POSITIVE was added to property code
-* Enum value IMPORT_INVALID_RETENTION_DAYS_EXCEEDS_LIMIT was added to property code
-* Enum value IMPORT_INVALID_RETENTION_EXPIRATION_DATE_MUST_BE_SET was added to property code
-* Enum value IMPORT_INVALID_RETENTION_EXPIRATION_DATE_MUST_NOT_BE_SET was added to property code
-* Enum value IMPORT_INVALID_RETENTION_EXPIRATION_DATE_INVALID_FORMAT was added to property code
-* Enum value IMPORT_INVALID_RETENTION_EXPIRATION_DATE_NO_SECONDS was added to property code
-* Enum value IMPORT_INVALID_RETENTION_EXPIRATION_DATE_EXCEEDS_LIMIT was added to property code
-* Enum value IMPORT_INVALID_RETENTION_MISSING_TYPE was added to property code
-* Enum value IMPORT_INVALID_RETENTION_MISSING_PREFERRED_TIMEZONE was added to property code
-* Enum value IMPORT_INVALID_RETENTION_EXPIRATION_IN_PAST was added to property code
-* Enum value FAILED_TO_DELETE_CONTACT_LIST was added to property code
-* Enum value RESOURCE_NOT_FOUND was added to property code
-* Enum value INVALID_CONTACT_UPDATE was added to property code
-
-**JourneyViewChart** (1 change)
-
-* Optional property rank was added
-
-**V3SynchronizationDeletion** (1 change)
-
-* Model was added
-
-**V3SynchronizationFileDeletionRequest** (1 change)
-
-* Model was added
-
-**V3SynchronizationDeletionListing** (1 change)
-
-* Model was added
-
-**V3SynchronizationUpload** (1 change)
-
-* Model was added
-
-**V3SynchronizationUploadListing** (1 change)
-
-* Model was added
+* Enum value Throttled was added to property status
 
 **ApprovalNamespace** (2 changes)
 
-* Enum value mcp.analytics.aggregates was added to property namespace
-* Enum value workforce.management.adherence was added to property namespace
+* Enum value admin.notice was added to property namespace
+* Enum value sda was added to property namespace
 
 **LimitChangeRequestDetails** (2 changes)
 
-* Enum value mcp.analytics.aggregates was added to property namespace
-* Enum value workforce.management.adherence was added to property namespace
+* Enum value admin.notice was added to property namespace
+* Enum value sda was added to property namespace
 
 **StatusChange** (2 changes)
 
-* Enum value mcp.analytics.aggregates was added to property namespace
-* Enum value workforce.management.adherence was added to property namespace
+* Enum value admin.notice was added to property namespace
+* Enum value sda was added to property namespace
 
-**EvaluationResponse** (6 changes)
+**SurveyForm** (2 changes)
 
-* Optional property disputeCount was added
-* Optional property version was added
-* Optional property versionHistory was added
-* Optional property declinedReview was added
-* Optional property evaluationContextId was added
-* Optional property retractedEvaluation was added
+* Optional property division was added
+* Optional property redacted was added
 
-**EvaluationSearchItemResponse** (6 changes)
+**EvaluationFormResponse** (1 change)
 
-* Optional property disputeCount was added
-* Optional property version was added
-* Optional property versionHistory was added
-* Optional property declinedReview was added
-* Optional property evaluationContextId was added
-* Optional property retractedEvaluation was added
+* Optional property division was added
 
-**RecordingSettings** (1 change)
+**EvaluationFormSearchResponse** (1 change)
 
-* Optional property stopRecordingWhenOnlyExternalParticipants was added
+* Optional property division was added
 
-**TranscriptSearchCriteria** (1 change)
+**EvaluationSearchAggregationDTO** (2 changes)
 
-* Enum value REQUIRED_FIELDS was added to property type
+* Enum value agentId was added to property field
+* Enum value evaluatorId was added to property field
 
-**AudioFormat** (1 change)
+**EvaluationSearchSubAggregationDTO** (2 changes)
+
+* Enum value agentId was added to property field
+* Enum value evaluatorId was added to property field
+
+**EvaluationFormDivisionView** (1 change)
 
 * Model was added
 
-**PromptAsset** (1 change)
-
-* Optional property audioFormat was added
-
-**PromptAssetCreate** (1 change)
-
-* Optional property audioFormat was added
-
-**SystemPromptAsset** (1 change)
-
-* Optional property audioFormat was added
-
-**ActivityPlanListItem** (1 change)
-
-* Optional property initialSchedulePeriod was added
-
-**ActivityPlanResponse** (1 change)
-
-* Optional property startTimeIncrementMinutes was added
-
-**CreateActivityPlanRequest** (1 change)
-
-* Optional property startTimeIncrementMinutes was added
-
-**UpdateActivityPlanRequest** (5 changes)
-
-* Optional property activityCodeId was added
-* Optional property type was added
-* Optional property lengthMinutes was added
-* Optional property countsAsPaidTime was added
-* Optional property recurrenceSettings was added
-
-**ConversationAccessAttributesUpdate** (1 change)
+**EvaluationFormDivisionViewListing** (1 change)
 
 * Model was added
 
-**ConversationAccessAttributesResponse** (1 change)
+**SurveyFormDivisionView** (1 change)
+
+* Model was added
+
+**SurveyFormDivisionViewListing** (1 change)
+
+* Model was added
+
+**LibraryDivisionView** (1 change)
+
+* Model was added
+
+**LibraryDivisionViewEntityListing** (1 change)
+
+* Model was added
+
+**ResponseDivisionView** (1 change)
+
+* Model was added
+
+**DomainEntityListingResponseDivisionView** (1 change)
+
+* Model was added
+
+**ResponseDivisionViewQueryResults** (1 change)
+
+* Model was added
+
+**RoutingSkill** (1 change)
+
+* Optional property division was added
+
+**SocialMediaAsyncAggregationQuery** (1 change)
+
+* Enum value postType was added to property groupBy
+
+**SocialMediaQueryPredicate** (1 change)
+
+* Enum value postType was added to property dimension
+
+**BusinessUnitActivityCode** (1 change)
+
+* Optional property style was added
+
+**CreateActivityCodeRequest** (1 change)
+
+* Optional property style was added
+
+**UpdateActivityCodeRequest** (1 change)
+
+* Optional property style was added
+
+**BulkUpdateActivityCodeResponse** (1 change)
+
+* Model was added
+
+**BulkUpdateActivityCodeRequest** (1 change)
+
+* Model was added
+
+**BulkUpdateActivityCodeRequestItem** (1 change)
+
+* Model was added
+
+**ActivityPlanJobResponse** (3 changes)
+
+* Enum value MaximizeOccurrence was added to property type
+* Enum value CreateSession was added to property type
+* Enum value EditSession was added to property type
+
+**AvailableTimeOffRequest** (1 change)
+
+* Optional property supportedGranularities was added
+
+**DecisionMetricsData** (1 change)
+
+* Model was added
+
+**DecisionMetricsResponse** (1 change)
+
+* Model was added
+
+**WfmEntityMetadata** (1 change)
+
+* Model was added
+
+**DecisionMetricsJobReference** (1 change)
+
+* Model was added
+
+**DecisionMetricsUpdateError** (1 change)
+
+* Model was added
+
+**DecisionMetricsUpdateJobResponse** (1 change)
+
+* Model was added
+
+**DecisionMetricsUpdateJobRequest** (1 change)
+
+* Model was added
+
+**DecisionMetricsUploadData** (1 change)
+
+* Model was added
+
+**DecisionMetricsUploadResponse** (1 change)
+
+* Model was added
+
+**DecisionMetricsUploadSchema** (1 change)
+
+* Model was added
+
+**ValueWrapperInteger** (1 change)
+
+* Model was added
+
+**TimeOffRequestListItem** (1 change)
+
+* Model was added
+
+**BuTimeOffLimitResponse** (2 changes)
+
+* Optional property granularity was added
+* Optional property fullDayTimeOffStartTime was added
+
+**BuCreateTimeOffLimitRequest** (2 changes)
+
+* Optional property granularity was added
+* Optional property fullDayTimeOffStartTime was added
+
+**BuTimeOffLimitRange** (1 change)
+
+* Optional property limitMinutesPerFifteenMinutes was added
+
+**BuTimeOffLimitValues** (1 change)
+
+* Model was added
+
+**BuTimeOffLimitValuesForGranularityResponse** (1 change)
+
+* Model was added
+
+**TimeOffLimitValues** (1 change)
+
+* Model was added
+
+**QueryTimeOffLimitValuesForGranularityRequest** (1 change)
+
+* Model was added
+
+**BuConvertTimeOffLimitGranularityJobProgress** (1 change)
+
+* Model was added
+
+**BuConvertTimeOffLimitGranularityJobResponse** (1 change)
+
+* Model was added
+
+**BuConvertTimeOffLimitGranularityJobRequest** (1 change)
+
+* Model was added
+
+**BuConvertTimeOffGranularityLimitJobListing** (1 change)
+
+* Model was added
+
+**BuImportTimeOffLimitValue** (1 change)
+
+* Model was added
+
+**BuImportTimeOffLimitValuesSchema** (1 change)
+
+* Model was added
+
+**BuImportTimeOffLimitValuesUploadResponse** (1 change)
+
+* Model was added
+
+**BuTimeOffLimitValuesImportUploadUrlRequest** (1 change)
+
+* Model was added
+
+**BuImportTimeOffLimitValuesRequest** (1 change)
+
+* Model was added
+
+**WorkitemLanguageReference** (1 change)
+
+* Model was added
+
+**WorkitemRoutingSkillReference** (1 change)
+
+* Model was added
+
+**BillingCharge** (1 change)
+
+* Optional property name was added
+
+**CreateJoinVideoResponse** (1 change)
 
 * Model was added
 
 
-# Point Changes (2 changes)
+# Point Changes (8 changes)
 
-**POST /api/v2/businessrules/decisiontables/{tableId}/versions** (1 change)
+**POST /api/v2/businessrules/decisiontables/{tableId}/execute** (1 change)
+
+* Description was changed
+
+**POST /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/execute** (1 change)
+
+* Description was changed
+
+**PATCH /api/v2/businessrules/decisiontables/{tableId}/imports/{importJobId}** (2 changes)
+
+* Description was changed
+* Response 200 was changed from successful operation to Import job cancelled, or already cancelled (idempotent no-op)
+
+**GET /api/v2/casemanagement/cases/{caseId}** (1 change)
+
+* Description was changed for parameter expands
+
+**GET /api/v2/casemanagement/cases/references/{referenceId}** (1 change)
+
+* Description was changed for parameter expands
+
+**GET /api/v2/presence/definitions** (1 change)
 
 * Summary was changed
 
-**POST /api/v2/casemanagement/caseplans/query** (1 change)
+**GET /api/v2/flows** (1 change)
 
-* Description was changed
+* Description was changed for parameter id

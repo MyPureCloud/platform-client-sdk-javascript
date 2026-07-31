@@ -5,7 +5,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 257.0.0
+	 * @version 258.0.0
 	 */
 
 	/**
@@ -494,6 +494,36 @@ class UsersApi {
 			'/api/v2/users/customattributes/schemas/{schemaId}', 
 			'DELETE', 
 			{ 'schemaId': schemaId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Delete a verifier
+	 * 
+	 * @param {String} verifierId Verifier ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	deleteUsersMeVerifier(verifierId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'verifierId' is set
+		if (verifierId === undefined || verifierId === null || verifierId === '') {
+			throw 'Missing the required parameter "verifierId" when calling deleteUsersMeVerifier';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/me/verifiers/{verifierId}', 
+			'DELETE', 
+			{ 'verifierId': verifierId },
 			{  },
 			{  },
 			{  },
@@ -2192,6 +2222,31 @@ class UsersApi {
 	}
 
 	/**
+	 * Get a list of my verifiers
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getUsersMeVerifiers(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/users/me/verifiers', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Get list of available users, paged by cursor token, No division filtering available so directory:user:view permission for all divisions is required
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -3298,6 +3353,126 @@ class UsersApi {
 	}
 
 	/**
+	 * Add a new TOTP verifier
+	 * 
+	 * @param {Object} body Verifier
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postUsersMeVerifiersTotp(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postUsersMeVerifiersTotp';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/me/verifiers/totp', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Validate a TOTP verifier
+	 * 
+	 * @param {String} verifierId Verifier ID
+	 * @param {Object} body Verifier Validate
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postUsersMeVerifiersTotpVerifierId(verifierId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'verifierId' is set
+		if (verifierId === undefined || verifierId === null || verifierId === '') {
+			throw 'Missing the required parameter "verifierId" when calling postUsersMeVerifiersTotpVerifierId';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postUsersMeVerifiersTotpVerifierId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/me/verifiers/totp/{verifierId}', 
+			'POST', 
+			{ 'verifierId': verifierId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Finish WebAuthn verifier registration
+	 * Completes registration of a new WebAuthn authenticator by submitting the credential creation response produced by navigator.credentials.create().
+	 * @param {Object} body WebAuthn registration result
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postUsersMeVerifiersWebauthnRegister(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postUsersMeVerifiersWebauthnRegister';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/me/verifiers/webauthn/register', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Begin WebAuthn verifier registration
+	 * Returns the public key credential creation options the client passes to navigator.credentials.create() to start registering a new WebAuthn authenticator.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postUsersMeVerifiersWebauthnRegisterOptions(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/users/me/verifiers/webauthn/register/options', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Search users
 	 * 
 	 * @param {Object} body Search request options
@@ -3973,6 +4148,41 @@ class UsersApi {
 			'/api/v2/users/customattributes/schemas/{schemaId}', 
 			'PUT', 
 			{ 'schemaId': schemaId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update a verifier
+	 * 
+	 * @param {String} verifierId Verifier ID
+	 * @param {Object} body Verifier Update
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	putUsersMeVerifier(verifierId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'verifierId' is set
+		if (verifierId === undefined || verifierId === null || verifierId === '') {
+			throw 'Missing the required parameter "verifierId" when calling putUsersMeVerifier';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putUsersMeVerifier';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/me/verifiers/{verifierId}', 
+			'PUT', 
+			{ 'verifierId': verifierId },
 			{  },
 			{  },
 			{  },

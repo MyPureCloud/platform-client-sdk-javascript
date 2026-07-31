@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 257.0.0
+	 * @version 258.0.0
 	 */
 
 	/**
@@ -4739,6 +4739,46 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Update a suggestion.
+	 * 
+	 * @param {String} conversationId Conversation ID
+	 * @param {String} suggestionId Suggestion ID
+	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	patchConversationSuggestion(conversationId, suggestionId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling patchConversationSuggestion';
+		}
+		// verify the required parameter 'suggestionId' is set
+		if (suggestionId === undefined || suggestionId === null || suggestionId === '') {
+			throw 'Missing the required parameter "suggestionId" when calling patchConversationSuggestion';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchConversationSuggestion';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/suggestions/{suggestionId}', 
+			'PATCH', 
+			{ 'conversationId': conversationId,'suggestionId': suggestionId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Update agent's engagement for the summary.
 	 * 
 	 * @param {String} conversationId Conversation ID
@@ -7662,6 +7702,47 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Request an on-demand summary for a call communication.
+	 * 
+	 * @param {String} conversationId Conversation ID
+	 * @param {String} participantId Participant ID
+	 * @param {String} communicationId Communication ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body On-demand summary request
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postConversationsCallParticipantCommunicationSummaries(conversationId, participantId, communicationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling postConversationsCallParticipantCommunicationSummaries';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null || participantId === '') {
+			throw 'Missing the required parameter "participantId" when calling postConversationsCallParticipantCommunicationSummaries';
+		}
+		// verify the required parameter 'communicationId' is set
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
+			throw 'Missing the required parameter "communicationId" when calling postConversationsCallParticipantCommunicationSummaries';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/summaries', 
+			'POST', 
+			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Apply wrap-up for this conversation communication
 	 * 
 	 * @param {String} conversationId conversationId
@@ -9461,6 +9542,47 @@ class ConversationsApi {
 			'POST', 
 			{ 'conversationId': conversationId },
 			{ 'useNormalizedMessage': opts['useNormalizedMessage'] },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Request an on-demand summary for a message communication.
+	 * 
+	 * @param {String} conversationId Conversation ID
+	 * @param {String} participantId Participant ID
+	 * @param {String} communicationId Communication ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body On-demand summary request
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postConversationsMessageParticipantCommunicationSummaries(conversationId, participantId, communicationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling postConversationsMessageParticipantCommunicationSummaries';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null || participantId === '') {
+			throw 'Missing the required parameter "participantId" when calling postConversationsMessageParticipantCommunicationSummaries';
+		}
+		// verify the required parameter 'communicationId' is set
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
+			throw 'Missing the required parameter "communicationId" when calling postConversationsMessageParticipantCommunicationSummaries';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/summaries', 
+			'POST', 
+			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+			{  },
 			{  },
 			{  },
 			opts['body'], 

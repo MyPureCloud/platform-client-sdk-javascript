@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 257.0.0
+	 * @version 258.0.0
 	 */
 
 	/**
@@ -1775,6 +1775,41 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Gets the status of the given job
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} jobId The ID of the update job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementBusinessunitDecisionmetricsJob(businessUnitId, jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitDecisionmetricsJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitDecisionmetricsJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/decisionmetrics/jobs/{jobId}', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Get intraday planning groups for the given date
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
@@ -2736,6 +2771,82 @@ class WorkforceManagementApi {
 			'GET', 
 			{ 'businessUnitId': businessUnitId,'timeOffLimitId': timeOffLimitId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Query the convert time-off limit granularity job operation. Only the user who started the operation can query the status.
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} timeOffLimitId The ID of the time-off limit
+	 * @param {String} jobId The ID of the convert time off limit granularity job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJob(businessUnitId, timeOffLimitId, jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJob';
+		}
+		// verify the required parameter 'timeOffLimitId' is set
+		if (timeOffLimitId === undefined || timeOffLimitId === null || timeOffLimitId === '') {
+			throw 'Missing the required parameter "timeOffLimitId" when calling getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/granularityconversion/jobs/{jobId}', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'timeOffLimitId': timeOffLimitId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Query the list of convert time-off limit granularity job operation.
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} timeOffLimitId The ID of the time-off limit
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.statuses Status to filter the list of jobs
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobs(businessUnitId, timeOffLimitId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobs';
+		}
+		// verify the required parameter 'timeOffLimitId' is set
+		if (timeOffLimitId === undefined || timeOffLimitId === null || timeOffLimitId === '') {
+			throw 'Missing the required parameter "timeOffLimitId" when calling getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/granularityconversion/jobs', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'timeOffLimitId': timeOffLimitId },
+			{ 'statuses': opts['statuses'] },
 			{  },
 			{  },
 			null, 
@@ -4056,6 +4167,36 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}/shifttrades', 
 			'GET', 
 			{ 'managementUnitId': managementUnitId,'agentId': agentId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Gets the decision metrics of all user in given management unit
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementManagementunitDecisionmetrics(managementUnitId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
+			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitDecisionmetrics';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/decisionmetrics', 
+			'GET', 
+			{ 'managementUnitId': managementUnitId },
 			{  },
 			{  },
 			{  },
@@ -5560,6 +5701,41 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}', 
 			'PATCH', 
 			{ 'businessUnitId': businessUnitId,'activityCodeId': activityCodeId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update multiple activity codes
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	patchWorkforcemanagementBusinessunitActivitycodesBulk(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitActivitycodesBulk';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitActivitycodesBulk';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/bulk', 
+			'PATCH', 
+			{ 'businessUnitId': businessUnitId },
 			{  },
 			{  },
 			{  },
@@ -7899,6 +8075,76 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Initiates the decision metrics update process
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementBusinessunitDecisionmetricsUpdate(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitDecisionmetricsUpdate';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitDecisionmetricsUpdate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/decisionmetrics/update', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Creates a signed upload URL for updating decision metrics
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementBusinessunitDecisionmetricsUpdateUploadurl(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitDecisionmetricsUpdateUploadurl';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitDecisionmetricsUpdateUploadurl';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/decisionmetrics/update/uploadurl', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Get intraday data for the given date for the requested planningGroupIds
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
@@ -8717,6 +8963,166 @@ class WorkforceManagementApi {
 			'POST', 
 			{ 'businessUnitId': businessUnitId },
 			{ 'forceDownloadService': opts['forceDownloadService'] },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Converts existing time-off limit to another granularity.
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} timeOffLimitId The ID of the time-off limit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementBusinessunitTimeofflimitGranularityconversion(businessUnitId, timeOffLimitId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitTimeofflimitGranularityconversion';
+		}
+		// verify the required parameter 'timeOffLimitId' is set
+		if (timeOffLimitId === undefined || timeOffLimitId === null || timeOffLimitId === '') {
+			throw 'Missing the required parameter "timeOffLimitId" when calling postWorkforcemanagementBusinessunitTimeofflimitGranularityconversion';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitTimeofflimitGranularityconversion';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/granularityconversion', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId,'timeOffLimitId': timeOffLimitId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Starts importing the uploaded time-off limit values
+	 * Call after uploading the time-off limit values data to the url supplied by the /import/uploadurl route
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} timeOffLimitId The ID of the time-off limit object to set limit values for
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementBusinessunitTimeofflimitValuesImport(businessUnitId, timeOffLimitId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitTimeofflimitValuesImport';
+		}
+		// verify the required parameter 'timeOffLimitId' is set
+		if (timeOffLimitId === undefined || timeOffLimitId === null || timeOffLimitId === '') {
+			throw 'Missing the required parameter "timeOffLimitId" when calling postWorkforcemanagementBusinessunitTimeofflimitValuesImport';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitTimeofflimitValuesImport';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/import', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId,'timeOffLimitId': timeOffLimitId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Creates a signed upload URL for importing values into time-off limit
+	 * Once the upload is complete, call the /import route to start the import process
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} timeOffLimitId The ID of the time-off limit object to set values for
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementBusinessunitTimeofflimitValuesImportUploadurl(businessUnitId, timeOffLimitId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitTimeofflimitValuesImportUploadurl';
+		}
+		// verify the required parameter 'timeOffLimitId' is set
+		if (timeOffLimitId === undefined || timeOffLimitId === null || timeOffLimitId === '') {
+			throw 'Missing the required parameter "timeOffLimitId" when calling postWorkforcemanagementBusinessunitTimeofflimitValuesImportUploadurl';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitTimeofflimitValuesImportUploadurl';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/import/uploadurl', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId,'timeOffLimitId': timeOffLimitId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Retrieves time-off limit related values based on a given set of filters.
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} timeOffLimitId The ID of the time-off limit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementBusinessunitTimeofflimitValuesQuery(businessUnitId, timeOffLimitId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitTimeofflimitValuesQuery';
+		}
+		// verify the required parameter 'timeOffLimitId' is set
+		if (timeOffLimitId === undefined || timeOffLimitId === null || timeOffLimitId === '') {
+			throw 'Missing the required parameter "timeOffLimitId" when calling postWorkforcemanagementBusinessunitTimeofflimitValuesQuery';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitTimeofflimitValuesQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId,'timeOffLimitId': timeOffLimitId },
+			{  },
 			{  },
 			{  },
 			body, 

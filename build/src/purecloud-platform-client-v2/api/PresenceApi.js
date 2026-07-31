@@ -5,7 +5,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 257.0.0
+	 * @version 258.0.0
 	 */
 
 	/**
@@ -143,7 +143,7 @@ class PresenceApi {
 	}
 
 	/**
-	 * Get a list of Presence Definitions
+	 * Get a list of Presence Definitions. View permission enforcement only applies to presence definitions assigned to a division
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.deactivated Deactivated query can be TRUE or FALSE (default to false)

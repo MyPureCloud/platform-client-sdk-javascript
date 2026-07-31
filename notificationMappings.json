@@ -773,6 +773,10 @@
       "class": "WfmAlternativeShiftJobCompleteEventV3AlternativeShiftJobCompleteNotification"
     },
     {
+      "topic": "v2.users.{id}.workforcemanagement.decisionmetrics.jobs",
+      "class": "DecisionMetricsAdminNotificationTopicDecisionMetricsJobNotification"
+    },
+    {
       "topic": "v2.users.{id}.workforcemanagement.historicaladherencequery",
       "class": "WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice"
     },
@@ -837,6 +841,10 @@
       "class": "WfmMoveAgentsCompleteTopicWfmMoveAgentsComplete"
     },
     {
+      "topic": "v2.workforcemanagement.agents.opportunities",
+      "class": "V2WfmAgentOpportunityTopicAgentOpportunityNotification"
+    },
+    {
       "topic": "v2.workforcemanagement.agents.{id}.adherence.explanations",
       "class": "WfmAgentAdherenceExplanationChangedAgentTopicAdherenceExplanationChangedNotification"
     },
@@ -871,6 +879,10 @@
     {
       "topic": "v2.workforcemanagement.businessunits.{id}.main.forecast.export.snapshot",
       "class": "V2WfmMainForecastExportSnapshotEventMainForecastExportNotification"
+    },
+    {
+      "topic": "v2.workforcemanagement.businessunits.{id}.opportunities",
+      "class": "V2WfmOpportunityTopicOpportunityNotification"
     },
     {
       "topic": "v2.workforcemanagement.businessunits.{id}.schedulebids.{id}",

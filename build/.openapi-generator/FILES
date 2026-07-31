@@ -162,6 +162,8 @@ docs/UsersRulesApi.json
 docs/UsersRulesApi.md
 docs/UtilitiesApi.json
 docs/UtilitiesApi.md
+docs/VirtualAgentsApi.json
+docs/VirtualAgentsApi.md
 docs/VoicemailApi.json
 docs/VoicemailApi.md
 docs/WebChatApi.json
@@ -174,6 +176,8 @@ docs/WidgetsApi.json
 docs/WidgetsApi.md
 docs/WorkforceManagementApi.json
 docs/WorkforceManagementApi.md
+docs/deleteAgenticVirtualagentJobs-example.txt
+docs/deleteAgenticVirtualagentJobs-example.txt
 docs/deleteAlertingAlert-example.txt
 docs/deleteAlertingAlertsAll-example.txt
 docs/deleteAlertingRule-example.txt
@@ -236,6 +240,7 @@ docs/deleteBusinessrulesDecisiontableVersion-example.txt
 docs/deleteBusinessrulesDecisiontableVersionRow-example.txt
 docs/deleteBusinessrulesSchema-example.txt
 docs/deleteCasemanagementCase-example.txt
+docs/deleteCasemanagementCaseCommentsMeCommentId-example.txt
 docs/deleteCasemanagementCaseplan-example.txt
 docs/deleteCasemanagementCaseplanDataschema-example.txt
 docs/deleteChatsRoomMessage-example.txt
@@ -514,6 +519,7 @@ docs/deleteUserrecording-example.txt
 docs/deleteUsersAgentuiAgentsAutoanswerAgentIdSettings-example.txt
 docs/deleteUsersAgentuiAgentsAutoanswerAgentIdSettings-example.txt
 docs/deleteUsersCustomattributesSchema-example.txt
+docs/deleteUsersMeVerifier-example.txt
 docs/deleteUsersRule-example.txt
 docs/deleteUsersStationsMeAssociatedstation-example.txt
 docs/deleteVoicemailMessage-example.txt
@@ -548,6 +554,12 @@ docs/deleteWorkforcemanagementManagementunitTimeofflimit-example.txt
 docs/deleteWorkforcemanagementManagementunitTimeoffplan-example.txt
 docs/deleteWorkforcemanagementManagementunitWorkplan-example.txt
 docs/deleteWorkforcemanagementManagementunitWorkplanrotation-example.txt
+docs/getAgenticVirtualagent-example.txt
+docs/getAgenticVirtualagent-example.txt
+docs/getAgenticVirtualagentJob-example.txt
+docs/getAgenticVirtualagentJob-example.txt
+docs/getAgenticVirtualagents-example.txt
+docs/getAgenticVirtualagents-example.txt
 docs/getAlertingAlert-example.txt
 docs/getAlertingRule-example.txt
 docs/getAnalyticsActionsAggregatesJob-example.txt
@@ -747,6 +759,8 @@ docs/getCarrierservicesIntegrationsEmergencylocationsMe-example.txt
 docs/getCasemanagementCase-example.txt
 docs/getCasemanagementCaseAssociation-example.txt
 docs/getCasemanagementCaseAssociations-example.txt
+docs/getCasemanagementCaseComment-example.txt
+docs/getCasemanagementCaseComments-example.txt
 docs/getCasemanagementCaseStage-example.txt
 docs/getCasemanagementCaseStageStep-example.txt
 docs/getCasemanagementCaseStageSteps-example.txt
@@ -1540,8 +1554,12 @@ docs/getQualityPublishedform-example.txt
 docs/getQualityPublishedforms-example.txt
 docs/getQualityPublishedformsEvaluation-example.txt
 docs/getQualityPublishedformsEvaluations-example.txt
+docs/getQualityPublishedformsEvaluationsDivisionview-example.txt
+docs/getQualityPublishedformsEvaluationsDivisionviews-example.txt
 docs/getQualityPublishedformsSurvey-example.txt
 docs/getQualityPublishedformsSurveys-example.txt
+docs/getQualityPublishedformsSurveysDivisionview-example.txt
+docs/getQualityPublishedformsSurveysDivisionviews-example.txt
 docs/getQualitySurvey-example.txt
 docs/getQualitySurveysScorable-example.txt
 docs/getRecordingBatchrequest-example.txt
@@ -1561,11 +1579,14 @@ docs/getRecordingUploadsReport-example.txt
 docs/getRecordingsRetentionQuery-example.txt
 docs/getRecordingsScreensessionsDetails-example.txt
 docs/getResponsemanagementLibraries-example.txt
+docs/getResponsemanagementLibrariesDivisionview-example.txt
+docs/getResponsemanagementLibrariesDivisionviews-example.txt
 docs/getResponsemanagementLibrary-example.txt
 docs/getResponsemanagementResponse-example.txt
 docs/getResponsemanagementResponseasset-example.txt
 docs/getResponsemanagementResponseassetsStatusStatusId-example.txt
 docs/getResponsemanagementResponses-example.txt
+docs/getResponsemanagementResponsesDivisionview-example.txt
 docs/getRoutingAssessment-example.txt
 docs/getRoutingAssessments-example.txt
 docs/getRoutingAssessmentsJob-example.txt
@@ -1933,6 +1954,7 @@ docs/getUsersDevelopmentActivitiesMe-example.txt
 docs/getUsersDevelopmentActivity-example.txt
 docs/getUsersExternalidAuthorityNameExternalKey-example.txt
 docs/getUsersMe-example.txt
+docs/getUsersMeVerifiers-example.txt
 docs/getUsersPresenceBulk-example.txt
 docs/getUsersPresencesPurecloudBulk-example.txt
 docs/getUsersQuery-example.txt
@@ -2014,6 +2036,7 @@ docs/getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations-exam
 docs/getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements-example.txt
 docs/getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast-example.txt
 docs/getWorkforcemanagementBusinessunitCapacityplans-example.txt
+docs/getWorkforcemanagementBusinessunitDecisionmetricsJob-example.txt
 docs/getWorkforcemanagementBusinessunitIntradayPlanninggroups-example.txt
 docs/getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession-example.txt
 docs/getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId-example.txt
@@ -2042,6 +2065,8 @@ docs/getWorkforcemanagementBusinessunitShifttradingWeeksSummaryJob-example.txt
 docs/getWorkforcemanagementBusinessunitStaffinggroup-example.txt
 docs/getWorkforcemanagementBusinessunitStaffinggroups-example.txt
 docs/getWorkforcemanagementBusinessunitTimeofflimit-example.txt
+docs/getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJob-example.txt
+docs/getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobs-example.txt
 docs/getWorkforcemanagementBusinessunitTimeofflimits-example.txt
 docs/getWorkforcemanagementBusinessunitTimeoffplan-example.txt
 docs/getWorkforcemanagementBusinessunitTimeoffplans-example.txt
@@ -2080,6 +2105,7 @@ docs/getWorkforcemanagementManagementunitActivitycodes-example.txt
 docs/getWorkforcemanagementManagementunitAdherence-example.txt
 docs/getWorkforcemanagementManagementunitAgent-example.txt
 docs/getWorkforcemanagementManagementunitAgentShifttrades-example.txt
+docs/getWorkforcemanagementManagementunitDecisionmetrics-example.txt
 docs/getWorkforcemanagementManagementunitShifttradesMatched-example.txt
 docs/getWorkforcemanagementManagementunitShifttradesUsers-example.txt
 docs/getWorkforcemanagementManagementunitTimeofflimit-example.txt
@@ -2124,6 +2150,8 @@ docs/getWorkforcemanagementWorkplanbidWorkplans-example.txt
 docs/getWorkforcemanagementWorkplanbids-example.txt
 docs/headNotificationsChannel-example.txt
 docs/headTokensMe-example.txt
+docs/patchAgenticVirtualagent-example.txt
+docs/patchAgenticVirtualagent-example.txt
 docs/patchAlertingAlert-example.txt
 docs/patchAlertingAlertsAll-example.txt
 docs/patchAlertingAlertsBulk-example.txt
@@ -2160,6 +2188,7 @@ docs/patchConversationParticipant-example.txt
 docs/patchConversationParticipantAttributes-example.txt
 docs/patchConversationRecordingstate-example.txt
 docs/patchConversationSecureattributes-example.txt
+docs/patchConversationSuggestion-example.txt
 docs/patchConversationSummaryEngagements-example.txt
 docs/patchConversationSummaryFeedback-example.txt
 docs/patchConversationUtilizationlabel-example.txt
@@ -2350,6 +2379,7 @@ docs/patchWorkforcemanagementAlternativeshiftsTrade-example.txt
 docs/patchWorkforcemanagementAlternativeshiftsTradesStateJobs-example.txt
 docs/patchWorkforcemanagementBusinessunit-example.txt
 docs/patchWorkforcemanagementBusinessunitActivitycode-example.txt
+docs/patchWorkforcemanagementBusinessunitActivitycodesBulk-example.txt
 docs/patchWorkforcemanagementBusinessunitActivityplan-example.txt
 docs/patchWorkforcemanagementBusinessunitAlternativeshiftsSettings-example.txt
 docs/patchWorkforcemanagementBusinessunitCapacityplan-example.txt
@@ -2383,6 +2413,10 @@ docs/patchWorkforcemanagementUnavailabletimes-example.txt
 docs/patchWorkforcemanagementUserWorkplanbidranks-example.txt
 docs/patchWorkforcemanagementUsersWorkplanbidranksBulk-example.txt
 docs/patchWorkforcemanagementWorkplanbidPreferences-example.txt
+docs/postAgenticVirtualagentVersionJobs-example.txt
+docs/postAgenticVirtualagentVersionJobs-example.txt
+docs/postAgenticVirtualagents-example.txt
+docs/postAgenticVirtualagents-example.txt
 docs/postAlertingAlertsQuery-example.txt
 docs/postAlertingRules-example.txt
 docs/postAlertingRulesBulkRemove-example.txt
@@ -2534,6 +2568,7 @@ docs/postBusinessrulesDecisiontables-example.txt
 docs/postBusinessrulesSchemas-example.txt
 docs/postCarrierservicesIntegrationsEmergencylocationsMe-example.txt
 docs/postCasemanagementCaseAssociations-example.txt
+docs/postCasemanagementCaseComments-example.txt
 docs/postCasemanagementCaseTerminateJobs-example.txt
 docs/postCasemanagementCaseplanDataschemas-example.txt
 docs/postCasemanagementCaseplanPublish-example.txt
@@ -2591,6 +2626,7 @@ docs/postConversationSummaryFeedback-example.txt
 docs/postConversationsCall-example.txt
 docs/postConversationsCallParticipantBarge-example.txt
 docs/postConversationsCallParticipantCoach-example.txt
+docs/postConversationsCallParticipantCommunicationSummaries-example.txt
 docs/postConversationsCallParticipantCommunicationWrapup-example.txt
 docs/postConversationsCallParticipantConsult-example.txt
 docs/postConversationsCallParticipantConsultAgent-example.txt
@@ -2642,6 +2678,7 @@ docs/postConversationsMessageInboundOpenMessage-example.txt
 docs/postConversationsMessageInboundOpenReceipt-example.txt
 docs/postConversationsMessageInboundOpenStructuredResponse-example.txt
 docs/postConversationsMessageMessagesBulk-example.txt
+docs/postConversationsMessageParticipantCommunicationSummaries-example.txt
 docs/postConversationsMessageParticipantCommunicationWrapup-example.txt
 docs/postConversationsMessageParticipantMonitor-example.txt
 docs/postConversationsMessageParticipantReplace-example.txt
@@ -3009,6 +3046,7 @@ docs/postResponsemanagementResponseassetsBulk-example.txt
 docs/postResponsemanagementResponseassetsSearch-example.txt
 docs/postResponsemanagementResponseassetsUploads-example.txt
 docs/postResponsemanagementResponses-example.txt
+docs/postResponsemanagementResponsesDivisionviewsQuery-example.txt
 docs/postResponsemanagementResponsesQuery-example.txt
 docs/postRoutingAssessments-example.txt
 docs/postRoutingAssessmentsJobs-example.txt
@@ -3152,6 +3190,10 @@ docs/postUsers-example.txt
 docs/postUsersCustomattributesSchemas-example.txt
 docs/postUsersDevelopmentActivitiesAggregatesQuery-example.txt
 docs/postUsersMePassword-example.txt
+docs/postUsersMeVerifiersTotp-example.txt
+docs/postUsersMeVerifiersTotpVerifierId-example.txt
+docs/postUsersMeVerifiersWebauthnRegister-example.txt
+docs/postUsersMeVerifiersWebauthnRegisterOptions-example.txt
 docs/postUsersRules-example.txt
 docs/postUsersRulesQuery-example.txt
 docs/postUsersSearch-example.txt
@@ -3207,6 +3249,8 @@ docs/postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshist
 docs/postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate-example.txt
 docs/postWorkforcemanagementBusinessunitCapacityplans-example.txt
 docs/postWorkforcemanagementBusinessunitCapacityplansBulkRemove-example.txt
+docs/postWorkforcemanagementBusinessunitDecisionmetricsUpdate-example.txt
+docs/postWorkforcemanagementBusinessunitDecisionmetricsUpdateUploadurl-example.txt
 docs/postWorkforcemanagementBusinessunitIntraday-example.txt
 docs/postWorkforcemanagementBusinessunitOpportunitiesBulkAdd-example.txt
 docs/postWorkforcemanagementBusinessunitOpportunitiesBulkPublish-example.txt
@@ -3230,6 +3274,10 @@ docs/postWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobs-example.txt
 docs/postWorkforcemanagementBusinessunitStaffinggroups-example.txt
 docs/postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery-example.txt
 docs/postWorkforcemanagementBusinessunitStaffinggroupsQuery-example.txt
+docs/postWorkforcemanagementBusinessunitTimeofflimitGranularityconversion-example.txt
+docs/postWorkforcemanagementBusinessunitTimeofflimitValuesImport-example.txt
+docs/postWorkforcemanagementBusinessunitTimeofflimitValuesImportUploadurl-example.txt
+docs/postWorkforcemanagementBusinessunitTimeofflimitValuesQuery-example.txt
 docs/postWorkforcemanagementBusinessunitTimeofflimits-example.txt
 docs/postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery-example.txt
 docs/postWorkforcemanagementBusinessunitTimeoffplans-example.txt
@@ -3570,6 +3618,7 @@ docs/putUserrecording-example.txt
 docs/putUsersAgentuiAgentsAutoanswerAgentIdSettings-example.txt
 docs/putUsersAgentuiAgentsAutoanswerAgentIdSettings-example.txt
 docs/putUsersCustomattributesSchema-example.txt
+docs/putUsersMeVerifier-example.txt
 docs/putUsersPresencesBulk-example.txt
 docs/putUsersStationsMeAssociatedstationStationId-example.txt
 docs/putVoicemailMessage-example.txt
@@ -3673,6 +3722,7 @@ src/purecloud-platform-client-v2/api/UserRecordingsApi.js
 src/purecloud-platform-client-v2/api/UsersApi.js
 src/purecloud-platform-client-v2/api/UsersRulesApi.js
 src/purecloud-platform-client-v2/api/UtilitiesApi.js
+src/purecloud-platform-client-v2/api/VirtualAgentsApi.js
 src/purecloud-platform-client-v2/api/VoicemailApi.js
 src/purecloud-platform-client-v2/api/WebChatApi.js
 src/purecloud-platform-client-v2/api/WebDeploymentsApi.js

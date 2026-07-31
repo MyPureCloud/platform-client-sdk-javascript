@@ -5,7 +5,7 @@ class CaseManagementApi {
 	/**
 	 * CaseManagement service.
 	 * @module purecloud-platform-client-v2/api/CaseManagementApi
-	 * @version 257.0.0
+	 * @version 258.0.0
 	 */
 
 	/**
@@ -39,6 +39,41 @@ class CaseManagementApi {
 			'/api/v2/casemanagement/cases/{caseId}', 
 			'DELETE', 
 			{ 'caseId': caseId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Delete my Comment.
+	 * 
+	 * @param {String} caseId Case identifier.
+	 * @param {String} commentId Comment identifier.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	deleteCasemanagementCaseCommentsMeCommentId(caseId, commentId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'caseId' is set
+		if (caseId === undefined || caseId === null || caseId === '') {
+			throw 'Missing the required parameter "caseId" when calling deleteCasemanagementCaseCommentsMeCommentId';
+		}
+		// verify the required parameter 'commentId' is set
+		if (commentId === undefined || commentId === null || commentId === '') {
+			throw 'Missing the required parameter "commentId" when calling deleteCasemanagementCaseCommentsMeCommentId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/casemanagement/cases/{caseId}/comments/me/{commentId}', 
+			'DELETE', 
+			{ 'caseId': caseId,'commentId': commentId },
 			{  },
 			{  },
 			{  },
@@ -120,7 +155,7 @@ class CaseManagementApi {
 	 * 
 	 * @param {String} caseId Case identifier.
 	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.expands Fields to expand.
+	 * @param {Array.<String>} opts.expands Attributes to expand. Comma-separated if more than one.
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getCasemanagementCase(caseId, opts) { 
@@ -135,7 +170,7 @@ class CaseManagementApi {
 			'/api/v2/casemanagement/cases/{caseId}', 
 			'GET', 
 			{ 'caseId': caseId },
-			{ 'expands': opts['expands'] },
+			{ 'expands': this.apiClient.buildCollectionParam(opts['expands'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -204,6 +239,74 @@ class CaseManagementApi {
 			'GET', 
 			{ 'caseId': caseId },
 			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get a Comment.
+	 * 
+	 * @param {String} caseId Case identifier.
+	 * @param {String} commentId Comment identifier.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getCasemanagementCaseComment(caseId, commentId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'caseId' is set
+		if (caseId === undefined || caseId === null || caseId === '') {
+			throw 'Missing the required parameter "caseId" when calling getCasemanagementCaseComment';
+		}
+		// verify the required parameter 'commentId' is set
+		if (commentId === undefined || commentId === null || commentId === '') {
+			throw 'Missing the required parameter "commentId" when calling getCasemanagementCaseComment';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/casemanagement/cases/{caseId}/comments/{commentId}', 
+			'GET', 
+			{ 'caseId': caseId,'commentId': commentId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get comments for a Case.
+	 * 
+	 * @param {String} caseId Case identifier.
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.after Cursor pointing to the end of the previously returned page of comments.
+	 * @param {Number} opts.pageSize Number of comments to return. Maximum is 100.
+	 * @param {Object} opts.sortOrder Ascending or descending sort order. (default to desc)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getCasemanagementCaseComments(caseId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'caseId' is set
+		if (caseId === undefined || caseId === null || caseId === '') {
+			throw 'Missing the required parameter "caseId" when calling getCasemanagementCaseComments';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/casemanagement/cases/{caseId}/comments', 
+			'GET', 
+			{ 'caseId': caseId },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'] },
 			{  },
 			{  },
 			null, 
@@ -768,7 +871,7 @@ class CaseManagementApi {
 	 * 
 	 * @param {String} referenceId Case reference.
 	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.expands Fields to expand.
+	 * @param {Array.<String>} opts.expands Attributes to expand. Comma-separated if more than one.
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getCasemanagementCasesReference(referenceId, opts) { 
@@ -783,7 +886,7 @@ class CaseManagementApi {
 			'/api/v2/casemanagement/cases/references/{referenceId}', 
 			'GET', 
 			{ 'referenceId': referenceId },
-			{ 'expands': opts['expands'] },
+			{ 'expands': this.apiClient.buildCollectionParam(opts['expands'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -1041,6 +1144,41 @@ class CaseManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/casemanagement/cases/{caseId}/associations', 
+			'POST', 
+			{ 'caseId': caseId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Add a comment to a Case.
+	 * 
+	 * @param {String} caseId Case identifier.
+	 * @param {Object} body Comment create request.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postCasemanagementCaseComments(caseId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'caseId' is set
+		if (caseId === undefined || caseId === null || caseId === '') {
+			throw 'Missing the required parameter "caseId" when calling postCasemanagementCaseComments';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postCasemanagementCaseComments';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/casemanagement/cases/{caseId}/comments', 
 			'POST', 
 			{ 'caseId': caseId },
 			{  },

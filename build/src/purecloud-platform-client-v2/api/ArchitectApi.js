@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 257.0.0
+	 * @version 258.0.0
 	 */
 
 	/**
@@ -2188,7 +2188,7 @@ class ArchitectApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {String} opts.sortBy Sort by (default to id)
 	 * @param {String} opts.sortOrder Sort order (default to asc)
-	 * @param {Array.<String>} opts.id ID
+	 * @param {Array.<String>} opts.id ID. Deprecated, use GET /api/v2/flows/lookup with the ids parameter instead
 	 * @param {String} opts.name Name
 	 * @param {String} opts.description Description
 	 * @param {String} opts.nameOrDescription Name or description

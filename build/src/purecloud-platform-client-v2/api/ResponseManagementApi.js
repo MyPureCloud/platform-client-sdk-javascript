@@ -5,7 +5,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 257.0.0
+	 * @version 258.0.0
 	 */
 
 	/**
@@ -126,6 +126,65 @@ class ResponseManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/responsemanagement/libraries', 
+			'GET', 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'messagingTemplateFilter': opts['messagingTemplateFilter'],'libraryPrefix': opts['libraryPrefix'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get details about an existing response library.
+	 * 
+	 * @param {String} libraryId Library ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getResponsemanagementLibrariesDivisionview(libraryId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'libraryId' is set
+		if (libraryId === undefined || libraryId === null || libraryId === '') {
+			throw 'Missing the required parameter "libraryId" when calling getResponsemanagementLibrariesDivisionview';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/responsemanagement/libraries/divisionviews/{libraryId}', 
+			'GET', 
+			{ 'libraryId': libraryId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Gets a list of existing response libraries.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Object} opts.messagingTemplateFilter Returns a list of libraries that contain responses with at least one messaging template defined for a specific message channel
+	 * @param {String} opts.libraryPrefix Returns a list of libraries that contain the prefix provided
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getResponsemanagementLibrariesDivisionviews(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/responsemanagement/libraries/divisionviews', 
 			'GET', 
 			{  },
 			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'messagingTemplateFilter': opts['messagingTemplateFilter'],'libraryPrefix': opts['libraryPrefix'] },
@@ -283,6 +342,36 @@ class ResponseManagementApi {
 			'GET', 
 			{  },
 			{ 'libraryId': libraryId,'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'expand': opts['expand'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get details about an existing response.
+	 * 
+	 * @param {String} responseId Response ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getResponsemanagementResponsesDivisionview(responseId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'responseId' is set
+		if (responseId === undefined || responseId === null || responseId === '') {
+			throw 'Missing the required parameter "responseId" when calling getResponsemanagementResponsesDivisionview';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/responsemanagement/responses/divisionviews/{responseId}', 
+			'GET', 
+			{ 'responseId': responseId },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -497,6 +586,36 @@ class ResponseManagementApi {
 			'POST', 
 			{  },
 			{ 'expand': opts['expand'] },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Query responses
+	 * 
+	 * @param {Object} body Response
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postResponsemanagementResponsesDivisionviewsQuery(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postResponsemanagementResponsesDivisionviewsQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/responsemanagement/responses/divisionviews/query', 
+			'POST', 
+			{  },
+			{  },
 			{  },
 			{  },
 			body, 

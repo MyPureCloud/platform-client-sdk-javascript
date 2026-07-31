@@ -5,7 +5,7 @@ class BusinessRulesApi {
 	/**
 	 * BusinessRules service.
 	 * @module purecloud-platform-client-v2/api/BusinessRulesApi
-	 * @version 257.0.0
+	 * @version 258.0.0
 	 */
 
 	/**
@@ -742,7 +742,7 @@ class BusinessRulesApi {
 
 	/**
 	 * Update decision table row import job
-	 * 
+	 * Cancels an in-progress import job by supplying a status of Cancelled. Cancellation is idempotent: cancelling a job that is already Cancelled returns 200 with the cancelled job. Cancelling a job that is still Uploading or Processing returns 200. A job that has already finished (Complete or Failed) can no longer be cancelled.
 	 * @param {String} tableId Table ID
 	 * @param {String} importJobId Import job ID
 	 * @param {Object} body Import job update request
@@ -822,7 +822,7 @@ class BusinessRulesApi {
 
 	/**
 	 * Execute a published decision table
-	 * 
+	 * Example request payload: {"inputs":{"schemaPropertykey1":"inputValue1","schemaPropertykey2":"inputValue2"}}
 	 * @param {String} tableId Table ID
 	 * @param {Object} body Decision Table
 	 * @param {Object} opts Optional parameters
@@ -967,7 +967,7 @@ class BusinessRulesApi {
 
 	/**
 	 * Execute a decision table version
-	 * 
+	 * Example request payload: {"inputs":{"schemaPropertykey1":"inputValue1","schemaPropertykey2":"inputValue2"}}
 	 * @param {String} tableId Table ID
 	 * @param {Number} tableVersion Table Version
 	 * @param {Object} body Decision Table

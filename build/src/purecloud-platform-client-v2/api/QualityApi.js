@@ -5,7 +5,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 257.0.0
+	 * @version 258.0.0
 	 */
 
 	/**
@@ -1319,6 +1319,70 @@ class QualityApi {
 	}
 
 	/**
+	 * Get the most recent published version of an evaluation form across any division.
+	 * 
+	 * @param {String} evaluationFormId Evaluation Form ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getQualityPublishedformsEvaluationsDivisionview(evaluationFormId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'evaluationFormId' is set
+		if (evaluationFormId === undefined || evaluationFormId === null || evaluationFormId === '') {
+			throw 'Missing the required parameter "evaluationFormId" when calling getQualityPublishedformsEvaluationsDivisionview';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/quality/publishedforms/evaluations/divisionviews/{evaluationFormId}', 
+			'GET', 
+			{ 'evaluationFormId': evaluationFormId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get the published evaluation forms across any division.
+	 * 
+	 * @param {Array.<String>} id A comma-delimited list of valid, published evaluation form ids
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {String} opts.name Name
+	 * @param {String} opts.divisionId divisionId
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getQualityPublishedformsEvaluationsDivisionviews(id, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'id' is set
+		if (id === undefined || id === null) {
+			throw 'Missing the required parameter "id" when calling getQualityPublishedformsEvaluationsDivisionviews';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/quality/publishedforms/evaluations/divisionviews', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'divisionId': opts['divisionId'],'id': this.apiClient.buildCollectionParam(id, 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Get the most recent published version of a survey form.
 	 * 
 	 * @param {String} formId Form ID
@@ -1367,6 +1431,70 @@ class QualityApi {
 			'GET', 
 			{  },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'onlyLatestEnabledPerContext': opts['onlyLatestEnabledPerContext'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get the most recent published version of an enabled survey form across any division.
+	 * 
+	 * @param {String} surveyFormId Survey Form ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getQualityPublishedformsSurveysDivisionview(surveyFormId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'surveyFormId' is set
+		if (surveyFormId === undefined || surveyFormId === null || surveyFormId === '') {
+			throw 'Missing the required parameter "surveyFormId" when calling getQualityPublishedformsSurveysDivisionview';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/quality/publishedforms/surveys/divisionviews/{surveyFormId}', 
+			'GET', 
+			{ 'surveyFormId': surveyFormId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get the published and enabled survey forms across any division.
+	 * 
+	 * @param {Array.<String>} id A comma-delimited list of valid, published evaluation form ids
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {String} opts.name Name
+	 * @param {String} opts.divisionId divisionId
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getQualityPublishedformsSurveysDivisionviews(id, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'id' is set
+		if (id === undefined || id === null) {
+			throw 'Missing the required parameter "id" when calling getQualityPublishedformsSurveysDivisionviews';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/quality/publishedforms/surveys/divisionviews', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'divisionId': opts['divisionId'],'id': this.apiClient.buildCollectionParam(id, 'multi') },
 			{  },
 			{  },
 			null, 

@@ -214,8 +214,6 @@ DELETE /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}
 
 Delete/cancel an async request for agent copilot aggregates
 
-deleteAnalyticsAgentcopilotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:agentCopilotAggregate:view
@@ -1479,8 +1477,6 @@ GET /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}
 
 Get status for async query for agent copilot aggregates
 
-getAnalyticsAgentcopilotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:agentCopilotAggregate:view
@@ -1537,8 +1533,6 @@ apiInstance.getAnalyticsAgentcopilotsAggregatesJob(jobId, opts)
 GET /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}/results
 
 Fetch a page of results for an async aggregates query
-
-getAnalyticsAgentcopilotsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -4927,8 +4921,6 @@ POST /api/v2/analytics/agentcopilots/aggregates/jobs
 
 Query for agent copilot aggregates asynchronously
 
-postAnalyticsAgentcopilotsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:agentCopilotAggregate:view
@@ -8214,4 +8206,4 @@ apiInstance.putAnalyticsDataretentionSettings(body, opts)
 **AnalyticsDataRetentionResponse**
 
 
-_purecloud-platform-client-v2@257.0.0_
+_purecloud-platform-client-v2@258.0.0_
