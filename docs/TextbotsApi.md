@@ -259,4 +259,4 @@ apiInstance.postTextbotsBotsExecute(postTextRequest, opts)
 **PostTextResponse**
 
 
-_purecloud-platform-client-v2@258.0.0_
+_purecloud-platform-client-v2@258.1.0_
