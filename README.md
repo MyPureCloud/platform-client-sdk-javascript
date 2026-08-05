@@ -6,7 +6,7 @@ A JavaScript library to interface with the Genesys Cloud Platform API. View the 
 [![npm](https://img.shields.io/npm/v/purecloud-platform-client-v2.svg)](https://www.npmjs.com/package/purecloud-platform-client-v2)
 [![Release Notes Badge](https://developer-content.genesys.cloud/images/sdk-release-notes.png)](https://github.com/MyPureCloud/platform-client-sdk-javascript/blob/master/releaseNotes.md)
 
-Documentation version purecloud-platform-client-v2@258.0.0
+Documentation version purecloud-platform-client-v2@258.1.0
 
 ## Preview APIs
 
@@ -29,7 +29,7 @@ For direct use in a browser script:
 
 ```html
 <!-- Include the CJS SDK -->
-<script src="https://sdk-cdn.mypurecloud.com/javascript/258.0.0/purecloud-platform-client-v2.min.js"></script>
+<script src="https://sdk-cdn.mypurecloud.com/javascript/258.1.0/purecloud-platform-client-v2.min.js"></script>
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
@@ -46,7 +46,7 @@ For direct use in a browser script:
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
-  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/258.0.0/purecloud-platform-client-v2.min.js'], (platformClient) => {
+  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/258.1.0/purecloud-platform-client-v2.min.js'], (platformClient) => {
     console.log(platformClient);
   });
 </script>
@@ -268,6 +268,271 @@ client.setAccessToken(yourAccessToken);
 ### Authorization Failure
 
 When authenticating in a browser using `loginClientCredentialsGrant(...)`, if the user completes the authentication process but their session is unable to be authorized, they will still be redirected back to the redirect URI. When `loginClientCredentialsGrant(...)` is invoked after the failure redirect, the promise returned will be rejected with an error message built from the `error` and `error_description`. The error information, as well as the state, can be accessed via `platformClient.ApiClient.instance.authData`. The application is expected to identify these login failures and interact with the user in a manner appropriate for the application.
+
+## Popup Authentication
+
+Helpers and logic have been added to the Platform API Client SDK for Javascript (and Typescript) to facilitate a user authentication process through a pop-up window.
+
+### Configuration and Enablement of the Popup Authentication
+
+The configuration for a Popup Authentication is defined using the *AuthPopupConfiguration* interface as follows:
+```json
+interface AuthPopupConfiguration {
+	usePopup?: boolean;
+	popupTimeout?: number;
+	notifyPopup?: boolean;
+	autoClosePopup?: boolean;
+	autoClosePopupDelay?: number;
+	popupTarget?: string;
+	popupWindowFeatures?: string;
+	overridePopupUrl?: string;
+	overridePopupUrlParameters?: [key: string]: string | number | object;
+	overridePopupUrlAuthParameters?: boolean;
+	useWindowReplace?: boolean;
+	overrideWindowReplaceUri?: string;
+}
+```
+
+To facilitate the enablement of Popup Authentication, and limit the impact of its introduction in an existing web app's code, the Popup Authentication can be configured and enabled:
+* at the ApiClient's level (using *getAuthPopupConfiguration()*, *setAuthPopupConfiguration(authPopupConfiguration)* and *updateAuthPopupConfiguration(authPopupConfiguration)*)
+* as an optional parameter in the *loginImplicitGrant* and *loginPKCEGrant* ApiClient's methods (optional *authPopupConfiguration* property defined in *LoginImplicitGrantOptions*/*LoginPKCEGrantOptions*). The *authPopupConfiguration* provided in the *loginImplicitGrant* and *loginPKCEGrant* ApiClient's methods will be merged with the *AuthPopupConfiguration* defined at ApiClient's level.
+
+**The default AuthPopupConfiguration's values are:**
+```json
+{
+  "usePopup": false,
+  "popupTimeout": 120000,
+  "notifyPopup": false,
+  "autoClosePopup": true,
+  "autoClosePopupDelay": 3000,
+  "popupTarget": "_blank",
+  "popupWindowFeatures": "popup=true,width=800,height=700",
+  "overridePopupUrl": undefined,
+  "overridePopupUrlParameters": undefined,
+  "overridePopupUrlAuthParameters": false,
+  "useWindowReplace": false,
+  "overrideWindowReplaceUri": undefined,
+	"waitForLoginPromise": true
+}
+```
+
+### Introduce Popup Authentication in an existing code
+
+You can enable Popup Authentication with one of the two methods described in the following code.
+
+```javascript
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.eu_west_1);
+
+// If Access Token persistence is wanted, uncomment next line
+// client.setPersistSettings(true, 'a_prefix_for_your_web_app');
+
+// OAuth ClientID
+const clientId = 'YOUR_OAUTH_CLIENT_ID';
+// OAuth Redirect URL
+// Before: const redirectUri = 'https://my_web_app_host/web_app.html';
+const redirectUri = 'https://my_pop_up_host/auth_popup.html';
+
+// Method1 - Update ApiClient's AuthPopupConfiguration
+client.updateAuthPopupConfiguration({ usePopup: true, popupTimeout: 60000 })
+
+// Method2 - Pass AuthPopupConfiguration as part of the loginPKCEGrant optional parameter authPopupConfiguration 
+client.loginPKCEGrant(clientId, redirectUri, { state: state, authPopupConfiguration: { usePopup: true, popupTimeout: 60000 } })
+  .then((data) => {
+    console.log(data);
+    // Do authenticated things
+  })
+  .catch((err) => {
+    // Handle failure response
+    console.log(err);
+  });
+```
+
+Setting *usePopup* to *true* triggers the SDK internal logic specific to user authentication through a pop-up window.  
+The other AuthPopupConfiguration's parameters drive one of the several logic implemented in the SDK. Details on the AuthPopupConfiguration's parameters are provided in the next sections below.
+
+### Login Redirect Uri
+
+**The *redirectUri*, used in *loginImplicitGrant* or *loginPKCEGrant* methods, corresponds to the url that you want your pop-up window to be redirected to, at the end of the Authentication process.**.  
+e.g. `https://my_pop_up_host/auth_popup.html`
+
+**This uri MUST be added to the *Authorized redirect URIs* defined in your OAuth Client.**
+
+**If you are triggering an OAuth PKCE Grant flow using the *loginPKCEGrant* method, and if the web app that invokes the *loginPKCEGrant* method is on a different host than the pop-up page, you MUST also add the uri of the web app to the *Authorized redirect URIs* defined in your OAuth Client.**.  
+e.g. 'https://my_web_app_host/web_app.html'
+
+### Popup Progess Status handler and listeners
+
+Status on the Popup Authentication's progress can be received over handler or listeners, available at ApiClient's level.  
+These can be used to update the web app UI when popup authentication starts, times out or completes successfully.
+
+**AuthPopupStatus listeners:**
+```javascript
+// AuthPopupStatus = "INIT" | "ERROR" | "TIMEOUT" | "AUTHENTICATED" | "AUTH_ERROR" | "ABORTED" | "REDIRECTING";
+
+// Define AuthPopupStatus listener function
+function handleAuthPopupStatus(status, msg, identifier) {
+    console.log(`AUTH POPUP STATUS RECEIVED: status=${status}, msg=${msg}, identifier=${identifier}`);
+}
+// Add AuthPopupStatus listener function 
+client.addAuthPopupStatusListener(handleAuthPopupStatus);
+
+// Remove AuthPopupStatus listener function 
+client.removeAuthPopupStatusListener(handleAuthPopupStatus);
+```
+
+**AuthPopupStatus handler:**
+```javascript
+// AuthPopupStatus = "INIT" | "ERROR" | "TIMEOUT" | "AUTHENTICATED" | "AUTH_ERROR" | "ABORTED" | "REDIRECTING";
+
+// Set AuthPopupStatus handler
+client.onAuthPopupStatus = (status, msg, identifier) => {
+    console.log(`AUTH POPUP STATUS RECEIVED: status=${status}, msg=${msg}, identifier=${identifier}`);
+}
+// Reset AuthPopupStatus handler
+client.onAuthPopupStatus = null;
+```
+
+With an example (Single page app):
+```javascript
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.eu_west_1);
+
+// If Access Token persistence is wanted, uncomment next line
+// client.setPersistSettings(true, 'a_prefix_for_your_web_app');
+
+// OAuth ClientID
+const clientId = 'YOUR_OAUTH_CLIENT_ID';
+// OAuth Redirect URL
+// Before: const redirectUri = 'https://my_web_app_host/web_app.html';
+const redirectUri = 'https://my_pop_up_host/auth_popup.html';
+
+// Update ApiClient's AuthPopupConfiguration
+client.updateAuthPopupConfiguration({ usePopup: true, popupTimeout: 60000 })
+
+// Set AuthPopupStatus handler
+client.onAuthPopupStatus = (status, msg, identifier) => {
+    console.log(`AUTH POPUP STATUS RECEIVED: status=${status}, msg=${msg}, identifier=${identifier}`);
+    // status == "INIT": Authentication Popup in progress -> sets UI
+    // status == "ERROR" | "AUTH_ERROR" | "TIMEOUT" : Authentication Error -> sets UI
+    // status == "AUTHENTICATED" : Authentication Error -> sets UI
+    // status == "ABORTED" : Authentication Aborted -> sets UI
+    // status == "REDIRECTING" : About to replace location url -> sets UI
+}
+
+client.loginPKCEGrant(clientId, redirectUri, { state: state })
+  .then((data) => {
+    console.log(data);
+    // Do authenticated things
+  })
+  .catch((err) => {
+    // Handle failure response
+    console.log(err);
+  });
+```
+
+### Popup Authentication Logic
+
+When Popup Authentication is enabled (*usePopup: true*), the ApiClient (invoked using the *loginImplicitGrant* or *loginPKCEGrant* ApiClient's methods) perform the following actions:
+* Standard actions:
+  - It checks if an access token is already set at ApiClient's level, or available in local storage (when *setPersistSettings* is enabled)
+  - If a value is available, it tests if the access token is still valid and successfully exists if it is the case.
+* The ApiClient computes a url to pop-up (with its URL Query parameters).
+  - By default, the url of the regional Genesys Cloud Login Web page is used for the initial pop-up (e.g. `https://login.mypurecloud.ie/oauth/authorize?client_id=...&redirect_uri=...`).
+  - If *overridePopupUrl* is set, it will be the url used for the initial `window.open` pop-up (i.e. if you want to display an intermediate page in the pop-up window, before redirecting to the Genesys Cloud Login Web page)
+* The ApiClient requests to open this url in a separate tab or window using `window.open`.
+  - It waits for a "message" window event, sent from the final pop-up page (i.e. the Login Redirect Uri), with the collected authentication info (from URL Query or Hash parameters: *access_token*, *code*, *error*).
+  - If it does not receive such message within *popupTimeout*, the method throws a Timeout error and exits.
+
+Finishing process:
+* Upon receiving collected authentication info - if *useWindowReplace* is false (DEFAULT BEHAVIOR):
+  - If an *access_token* is received, the ApiClient extracts the access token from the received message, tests its validity and the method successfully returns (i.e. resolves).
+  - If a *code* is received, the ApiClient assumes an OAuth PKCE Grant flow, extracts the code from the received message, invokes the Genesys Cloud `oauth/token` endpoint to obtain an access token from the received code and saved code verifier, tests the validity of the token, and the method successfully returns (i.e. resolves).
+* Upon receiving collected authentication info - if *useWindowReplace* is true:
+  - By default, the ApiClient will use the current windows.location url, add the collected authentication info as URL Query or Hash parameters, and invoke `window.replace` on this url.
+  - If *overrideWindowReplaceUri* is set, the ApiClient will use that url url, add the collected authentication info as URL Query or Hash parameters, and invoke `window.replace` on that url.
+
+### AuthPopupConfiguration parameters
+
+**Available parameters:**
+* *usePopup*:
+  - Description: Determines if the login methods will open a popup window (if set to true), or will redirect to the Genesys Cloud Login Web page (if set to false).
+  - Default: false
+Determines if the login methods will open a popup on login (usePopup: true), or redirect to Genesys Cloud login page (usePopup: false - default).
+* *popupTimeout*:
+  - Description: Maximum time (milliseconds) for the Popup Authentication to complete.
+  - Default: 120000
+*	*autoClosePopup*:
+  - Description: Automatically close the Popup Window (on timeout, on authentication success or error).
+  - Default: true
+* *autoClosePopupDelay*:
+  - Description: Delay (milliseconds) before closing the Popup Window.
+  - Default: 3000
+* *popupTarget* and *popupWindowFeatures*:
+  - Description: Values for *target* and *windowFeatures* parameters used in `window.open(url, target, windowFeatures)` method.
+  - *popupTarget* Default: "_blank"
+  - *popupWindowFeatures* Default: "popup=true,width=800,height=700"
+
+**Popup Window leveraging Auth Popup Notify events:**
+* *notifyPopup*:
+  - Description: The SDK send Auth Popup Notify events to the Popup Window (set to true if using *auth_popup_notify.html* or alike)
+  - Default: false
+* Popup Window javascript when notifyPopup is true
+```javascript
+// Genesys Cloud Auth Popup Message
+let authMessage = {
+  name: "gc_auth_popup",
+  type: "message",
+  hash: "",
+  search: ""
+};
+
+// Collect URL Hash parameters and URL Query parameters (update only if URL parameters are set)
+if (window.location.hash) authMessage.hash = window.location.hash;
+if (window.location.search) authMessage.search = window.location.search;
+
+...
+
+window.addEventListener('message', (event) => {
+  // Verify format and message type
+  if (event.data && typeof event.data === 'object') {
+    const jsonMessage = JSON.parse(JSON.stringify(event.data));
+    // Genesys Cloud Auth Popup Notify event
+    if (jsonMessage && jsonMessage.name === "gc_auth_popup" && jsonMessage.type === "notify") {
+      if (jsonMessage.identifier) authMessage.identifier = jsonMessage.identifier;
+      // ...
+      window.opener.postMessage(authMessage, event.origin);
+      ...
+    } else {
+      // ignore message
+    }
+  }
+});
+```
+
+**Auth Popup Url:**
+* By default, the url to popup will be the one of the Genesys Cloud Login Web page (i.e. .../oauth/authorize).
+* It is possible to popup a different url setting *overridePopupUrl* parameter.
+* *overridePopupUrl* can be used in cunjunction with:
+  - *overridePopupUrlParameters* (object) to pass specific url parameters to the *overridePopupUrl* url.
+  - *overridePopupUrlAuthParameters* (boolean) to pass the Genesys Cloud Login parameters (client_id, redirect_uri, response_type, ...) to the *overridePopupUrl* url.
+
+**Processing On Auth Popup Completed:**
+* *useWindowReplace*:
+  - Description: When Auth Popup is completed, determines if the SDK (in web app) will set the Auth Token at the ApiClient's level (*useWindowReplace: false*) or if it will use `window.replace` with the collected Popup URL Query or Hash parameters so that authentication completes as if it was a legacy redirect (*useWindowReplace: true*).
+  - Default: false
+* *overrideWindowReplaceUri*:
+  - Description: If *overrideWindowReplaceUri* is undefined, the SDK will use the current `window.location` for `window.replace`. If *overrideWindowReplaceUri* is defined, the SDK will use it for `window.replace`.
+  - Default: undefined
+
+### Popup Window Samples
+
+You can find sample code for the popup window in the [samples directory](https://github.com/MyPureCloud/platform-client-sdk-javascript/blob/master/build/samples/).
+
+**Available samples:**
+* *auth_popup_specific.html*: posts a message to a pre-defined target origin.
+* *auth_popup_all.html*: posts a message to any target origin (\*).
+* *auth_popup_notify.html*: posts a message when a popup notify message is received (requires *AuthPopupConfiguration.notifyPopup = true*)
 
 ## SDK Logging
 

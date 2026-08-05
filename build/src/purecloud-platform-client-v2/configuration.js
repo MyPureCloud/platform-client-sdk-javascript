@@ -37,6 +37,8 @@ class Configuration {
 		this.authUrl;
 		this.config;
 		this.gateway = undefined;
+		// Default Values for authPopupConfiguration
+		this.authPopupConfiguration = this._getDefaultAuthPopupConfiguration();
 		this.logger = new Logger();
 		this.setEnvironment();
 		this.liveLoadConfig();
@@ -256,7 +258,107 @@ class Configuration {
 		}
 	}
 
+	// Get AuthPopupConfiguration with default values for the AuthPopupConfiguration properties
+	_getDefaultAuthPopupConfiguration() {
+		return {
+			"usePopup": false,
+			"popupTimeout": 120000,
+			"notifyPopup": false,
+			"autoClosePopup": true,
+			"autoClosePopupDelay": 3000,
+			"popupTarget": "_blank",
+			"popupWindowFeatures": "popup=true,width=800,height=700",
+			"overridePopupUrl": undefined,
+			"overridePopupUrlParameters": undefined,
+			"overridePopupUrlAuthParameters": false,
+  			"useWindowReplace": false,
+			"overrideWindowReplaceUri": undefined,
+			"waitForLoginPromise": true,
+			"usePopupIdentifier": false
+		};
+	}
 
+	// Create copy of this.authPopupConfiguration, merged with authPopupConfiguration
+	mergeWithAuthPopupConfiguration(authPopupConfiguration) {
+		let mergedConfiguration = {};
+		if (!this.authPopupConfiguration) {
+			mergedConfiguration = this._getDefaultAuthPopupConfiguration();
+		} else {
+			// Make a copy
+			mergedConfiguration = JSON.parse(JSON.stringify(this.authPopupConfiguration));
+		}
+
+		if (typeof authPopupConfiguration === "object" && authPopupConfiguration) {
+			if (typeof authPopupConfiguration.usePopup === "boolean" && authPopupConfiguration.usePopup !== null && authPopupConfiguration.usePopup !== undefined) mergedConfiguration.usePopup = authPopupConfiguration.usePopup;
+			if (typeof authPopupConfiguration.popupTimeout === "number" && authPopupConfiguration.popupTimeout !== null && authPopupConfiguration.popupTimeout !== undefined) mergedConfiguration.popupTimeout = authPopupConfiguration.popupTimeout;
+			if (typeof authPopupConfiguration.autoClosePopup === "boolean" && authPopupConfiguration.autoClosePopup !== null && authPopupConfiguration.autoClosePopup !== undefined) mergedConfiguration.autoClosePopup = authPopupConfiguration.autoClosePopup;
+			if (typeof authPopupConfiguration.autoClosePopupDelay === "number" && authPopupConfiguration.autoClosePopupDelay !== null && authPopupConfiguration.autoClosePopupDelay !== undefined) mergedConfiguration.autoClosePopupDelay = authPopupConfiguration.autoClosePopupDelay;
+			if (typeof authPopupConfiguration.popupTarget === "string" && authPopupConfiguration.popupTarget !== null && authPopupConfiguration.popupTarget !== undefined) mergedConfiguration.popupTarget = authPopupConfiguration.popupTarget;
+			if (typeof authPopupConfiguration.popupWindowFeatures === "string" && authPopupConfiguration.popupWindowFeatures !== null && authPopupConfiguration.popupWindowFeatures !== undefined) mergedConfiguration.popupWindowFeatures = authPopupConfiguration.popupWindowFeatures;
+			if (typeof authPopupConfiguration.overridePopupUrl === "string" && authPopupConfiguration.overridePopupUrl !== null && authPopupConfiguration.overridePopupUrl !== undefined) mergedConfiguration.overridePopupUrl = authPopupConfiguration.overridePopupUrl;
+			if (typeof authPopupConfiguration.overridePopupUrlParameters === "object" && authPopupConfiguration.overridePopupUrlParameters !== null && authPopupConfiguration.overridePopupUrlParameters !== undefined) mergedConfiguration.overridePopupUrlParameters = authPopupConfiguration.overridePopupUrlParameters;
+			if (typeof authPopupConfiguration.overridePopupUrlAuthParameters === "boolean" && authPopupConfiguration.overridePopupUrlAuthParameters !== null && authPopupConfiguration.overridePopupUrlAuthParameters !== undefined) mergedConfiguration.overridePopupUrlAuthParameters = authPopupConfiguration.overridePopupUrlAuthParameters;
+			if (typeof authPopupConfiguration.notifyPopup === "boolean" && authPopupConfiguration.notifyPopup !== null && authPopupConfiguration.notifyPopup !== undefined) mergedConfiguration.notifyPopup = authPopupConfiguration.notifyPopup;
+			if (typeof authPopupConfiguration.waitForLoginPromise === "boolean" && authPopupConfiguration.waitForLoginPromise !== null && authPopupConfiguration.waitForLoginPromise !== undefined) mergedConfiguration.waitForLoginPromise = authPopupConfiguration.waitForLoginPromise;
+			if (typeof authPopupConfiguration.useWindowReplace === "boolean" && authPopupConfiguration.useWindowReplace !== null && authPopupConfiguration.useWindowReplace !== undefined) mergedConfiguration.useWindowReplace = authPopupConfiguration.useWindowReplace;
+			if (typeof authPopupConfiguration.overrideWindowReplaceUri === "string" && authPopupConfiguration.overrideWindowReplaceUri !== null && authPopupConfiguration.overrideWindowReplaceUri !== undefined) mergedConfiguration.overrideWindowReplaceUri = authPopupConfiguration.overrideWindowReplaceUri;
+			if (typeof authPopupConfiguration.usePopupIdentifier === "boolean" && authPopupConfiguration.usePopupIdentifier !== null && authPopupConfiguration.usePopupIdentifier !== undefined) mergedConfiguration.usePopupIdentifier = authPopupConfiguration.usePopupIdentifier;
+		}
+
+		return mergedConfiguration;
+	}
+
+	/**
+	 * @description Gets the configuration for Authorization Popup
+	 */
+	getAuthPopupConfiguration() {
+		return this.authPopupConfiguration;
+	}
+
+	/**
+	 * @description Sets the configuration for Authorization Popup
+	 * @param {object} authPopupConfiguration - Authorization Popup Configuration interface
+	 * @param {boolean} authPopupConfiguration.usePopup - (optional) Determines if the login methods will open a popup on login (usePopup: true), or redirect to Genesys Cloud login page (usePopup: false - default).
+	 * @param {number} authPopupConfiguration.popupTimeout - (optional) Maximum time (milliseconds) for the login to complete in popup before timing out (default: 120000).
+	 * @param {boolean} authPopupConfiguration.notifyPopup - (optional) Notify popup window using postMessage (name: "gc_auth_popup", type: "notify")
+	 * @param {boolean} authPopupConfiguration.autoClosePopup - (optional) Determines if the popup window will be closed from this app automatically.
+	 * @param {number} authPopupConfiguration.autoClosePopupDelay - (optional) Delay to wait after receiving message from popup and before automatically closing the window popup.
+	 * @param {string} authPopupConfiguration.popupTarget - (optional) The popup window target
+	 * @param {string} authPopupConfiguration.popupWindowFeatures - (optional) The popup window features
+	 * @param {string} authPopupConfiguration.overridePopupUrl - (optional) The alternative popup url to use - if overridePopupUrl is undefined, Genesys Cloud Login Web url will be used as popup url.
+	 * @param {object} authPopupConfiguration.overridePopupUrlParameters - (optional) URL Parameters to use (if any) with the alternative popup url.
+	 * @param {boolean} authPopupConfiguration.overridePopupUrlAuthParameters - (optional) Use Login Auth Parameters with the alternative popup url.
+	 * @param {boolean} authPopupConfiguration.useWindowReplace - (optional) When the authorization via Popup is successful, determines if Auth Data and Popup Status will be returned to the current page, or if the current page or an alternative will be loaded using window.replace.
+	 * @param {string} authPopupConfiguration.overrideWindowReplaceUri - (optional) Alternative Url to load when useWindowReplace is set to true.
+	 * @param {boolean} authPopupConfiguration.waitForLoginPromise - (optional) Determines if the login method's promise will wait until popup authorization is completed, or if it will immediately return.
+	 * @param {boolean} authPopupConfiguration.usePopupIdentifier - (optional) Determines if an additional identifier will be leveraged during the Authentication via Popup process.
+	 */
+	setAuthPopupConfiguration(authPopupConfiguration) {
+		this.authPopupConfiguration = this._getDefaultAuthPopupConfiguration();
+		this.authPopupConfiguration = this.mergeWithAuthPopupConfiguration(authPopupConfiguration);
+	}
+
+	/**
+	 * @description Updates the configuration for Authorization Popup
+	 * @param {object} authPopupConfiguration - Authorization Popup Configuration interface
+	 * @param {boolean} authPopupConfiguration.usePopup - (optional) Determines if the login methods will open a popup on login (usePopup: true), or redirect to Genesys Cloud login page (usePopup: false - default).
+	 * @param {number} authPopupConfiguration.popupTimeout - (optional) Maximum time (milliseconds) for the login to complete in popup before timing out (default: 120000).
+	 * @param {boolean} authPopupConfiguration.notifyPopup - (optional) Notify popup window using postMessage (name: "gc_auth_popup", type: "notify")
+	 * @param {boolean} authPopupConfiguration.autoClosePopup - (optional) Determines if the popup window will be closed from this app automatically.
+	 * @param {number} authPopupConfiguration.autoClosePopupDelay - (optional) Delay to wait after receiving message from popup and before automatically closing the window popup.
+	 * @param {string} authPopupConfiguration.popupTarget - (optional) The popup window target
+	 * @param {string} authPopupConfiguration.popupWindowFeatures - (optional) The popup window features
+	 * @param {string} authPopupConfiguration.overridePopupUrl - (optional) The alternative popup url to use - if overridePopupUrl is undefined, Genesys Cloud Login Web url will be used as popup url.
+	 * @param {object} authPopupConfiguration.overridePopupUrlParameters - (optional) URL Parameters to use (if any) with the alternative popup url.
+	 * @param {boolean} authPopupConfiguration.overridePopupUrlAuthParameters - (optional) Use Login Auth Parameters with the alternative popup url.
+	 * @param {boolean} authPopupConfiguration.useWindowReplace - (optional) When the authorization via Popup is successful, determines if Auth Data and Popup Status will be returned to the current page, or if the current page or an alternative will be loaded using window.replace.
+	 * @param {string} authPopupConfiguration.overrideWindowReplaceUri - (optional) Alternative Url to load when useWindowReplace is set to true.
+	 * @param {boolean} authPopupConfiguration.waitForLoginPromise - (optional) Determines if the login method's promise will wait until popup authorization is completed, or if it will immediately return.
+	 * @param {boolean} authPopupConfiguration.usePopupIdentifier - (optional) Determines if an additional identifier will be leveraged during the Authentication via Popup process.
+	 */
+	updateAuthPopupConfiguration(authPopupConfiguration) {
+		this.authPopupConfiguration = this.mergeWithAuthPopupConfiguration(authPopupConfiguration);
+	}
 
 	setEnvironment(env) {
 		// Default value

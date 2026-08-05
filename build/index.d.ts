@@ -5,6 +5,26 @@ declare module 'purecloud-platform-client-v2' {
 	export const PureCloudRegionHosts: Record<string, string>;
 }
 
+declare type AuthPopupMsgName = "gc_auth_popup";
+declare type AuthPopupMsgType = "notify" | "message";
+
+declare interface AuthPopupMessage {
+	name: "gc_auth_popup";
+	type: "message";
+	hash?: string;
+    search?: string;
+	auth?: object;
+	identifier?: string;
+}
+
+declare interface AuthPopupNotify {
+	name: "gc_auth_popup";
+	type: "notify";
+	identifier?: string;
+}
+
+declare type AuthPopupStatus = "INIT" | "ERROR" | "TIMEOUT" | "AUTHENTICATED" | "AUTH_ERROR" | "ABORTED" | "REDIRECTING";
+
 declare class ApiClientClass {
 	instance: ApiClientClass;
 	config: Configuration;
@@ -36,6 +56,16 @@ declare class ApiClientClass {
 	getUseLegacyParameterFilter(): boolean;
 	setUseLegacyParameterFilter(useLegacyParameterFilter: boolean): void;
 	buildCollectionParam(param: any, collectionFormat: string): any;
+	setAuthData(authData: AuthData): void;
+	clearAuthData(): void;
+	setAuthPopupConfiguration(authPopupConfiguration: AuthPopupConfiguration): void;
+	updateAuthPopupConfiguration(authPopupConfiguration: AuthPopupConfiguration): void;
+	getAuthPopupConfiguration(): AuthPopupConfiguration;
+
+	onAuthPopupStatus: (status: AuthPopupStatus, msg: string, identifier?: string) => void;
+	addAuthPopupStatusListener(listener: (status: AuthPopupStatus, msg: string, identifier?: string) => void): void;
+	removeAuthPopupStatusListener(listener: (status: AuthPopupStatus, msg: string, identifier?: string) => void): void;
+	removeAllAuthPopupStatusListeners(): void;
 
 	setHttpClient(httpClient: AbstractHttpClient): void;
 	getHttpClient(): AbstractHttpClient;
@@ -50,6 +80,8 @@ declare class LoginImplicitGrantOptions {
 	prompt?: string;
 	target?: string;
 	login_hint?: string;
+	target?: string;
+	authPopupConfiguration?: AuthPopupConfiguration;
 }
 
 declare class LoginPKCEGrantOptions {
@@ -59,6 +91,7 @@ declare class LoginPKCEGrantOptions {
 	prompt?: string;
 	target?: string;
 	login_hint?: string;
+	authPopupConfiguration?: AuthPopupConfiguration;
 }
 
 declare class AuthData {
@@ -84,6 +117,23 @@ declare interface GatewayConfiguration {
 	password?: string;
 }
 
+declare interface AuthPopupConfiguration {
+	usePopup?: boolean;
+	popupTimeout?: number;
+	notifyPopup?: boolean;
+	autoClosePopup?: boolean;
+	autoClosePopupDelay?: number;
+	popupTarget?: string;
+	popupWindowFeatures?: string;
+	overridePopupUrl?: string;
+	overridePopupUrlParameters?: [key: string]: string | number | object;
+	overridePopupUrlAuthParameters?: boolean;
+	useWindowReplace?: boolean;
+	overrideWindowReplaceUri?: string;
+	waitForLoginPromise?: boolean;
+	usePopupIdentifier?: boolean;
+}
+
 declare class Configuration {
 	instance: Configuration;
 	configPath: string;
@@ -101,6 +151,11 @@ declare class Configuration {
 	setGateway(gateway: GatewayConfiguration): void;
 	getConfUrl(pathType: string, regionUrl: string): string;
 	setConfigPath(path: string): void;
+	authPopupConfiguration?: AuthPopupConfiguration;
+	setAuthPopupConfiguration(authPopupConfiguration: AuthPopupConfiguration): void;
+	mergeWithAuthPopupConfiguration(authPopupConfiguration: AuthPopupConfiguration): AuthPopupConfiguration;
+	updateAuthPopupConfiguration(authPopupConfiguration: AuthPopupConfiguration): void;
+	getAuthPopupConfiguration(): AuthPopupConfiguration;
 }
 
 declare class HttpRequestOptions {

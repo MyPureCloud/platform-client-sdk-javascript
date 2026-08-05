@@ -467,6 +467,8 @@ class Configuration {
 		this.authUrl;
 		this.config;
 		this.gateway = undefined;
+		// Default Values for authPopupConfiguration
+		this.authPopupConfiguration = this._getDefaultAuthPopupConfiguration();
 		this.logger = new Logger();
 		this.setEnvironment();
 		this.liveLoadConfig();
@@ -685,7 +687,107 @@ class Configuration {
 		}
 	}
 
+	// Get AuthPopupConfiguration with default values for the AuthPopupConfiguration properties
+	_getDefaultAuthPopupConfiguration() {
+		return {
+			"usePopup": false,
+			"popupTimeout": 120000,
+			"notifyPopup": false,
+			"autoClosePopup": true,
+			"autoClosePopupDelay": 3000,
+			"popupTarget": "_blank",
+			"popupWindowFeatures": "popup=true,width=800,height=700",
+			"overridePopupUrl": undefined,
+			"overridePopupUrlParameters": undefined,
+			"overridePopupUrlAuthParameters": false,
+  			"useWindowReplace": false,
+			"overrideWindowReplaceUri": undefined,
+			"waitForLoginPromise": true,
+			"usePopupIdentifier": false
+		};
+	}
 
+	// Create copy of this.authPopupConfiguration, merged with authPopupConfiguration
+	mergeWithAuthPopupConfiguration(authPopupConfiguration) {
+		let mergedConfiguration = {};
+		if (!this.authPopupConfiguration) {
+			mergedConfiguration = this._getDefaultAuthPopupConfiguration();
+		} else {
+			// Make a copy
+			mergedConfiguration = JSON.parse(JSON.stringify(this.authPopupConfiguration));
+		}
+
+		if (typeof authPopupConfiguration === "object" && authPopupConfiguration) {
+			if (typeof authPopupConfiguration.usePopup === "boolean" && authPopupConfiguration.usePopup !== null && authPopupConfiguration.usePopup !== undefined) mergedConfiguration.usePopup = authPopupConfiguration.usePopup;
+			if (typeof authPopupConfiguration.popupTimeout === "number" && authPopupConfiguration.popupTimeout !== null && authPopupConfiguration.popupTimeout !== undefined) mergedConfiguration.popupTimeout = authPopupConfiguration.popupTimeout;
+			if (typeof authPopupConfiguration.autoClosePopup === "boolean" && authPopupConfiguration.autoClosePopup !== null && authPopupConfiguration.autoClosePopup !== undefined) mergedConfiguration.autoClosePopup = authPopupConfiguration.autoClosePopup;
+			if (typeof authPopupConfiguration.autoClosePopupDelay === "number" && authPopupConfiguration.autoClosePopupDelay !== null && authPopupConfiguration.autoClosePopupDelay !== undefined) mergedConfiguration.autoClosePopupDelay = authPopupConfiguration.autoClosePopupDelay;
+			if (typeof authPopupConfiguration.popupTarget === "string" && authPopupConfiguration.popupTarget !== null && authPopupConfiguration.popupTarget !== undefined) mergedConfiguration.popupTarget = authPopupConfiguration.popupTarget;
+			if (typeof authPopupConfiguration.popupWindowFeatures === "string" && authPopupConfiguration.popupWindowFeatures !== null && authPopupConfiguration.popupWindowFeatures !== undefined) mergedConfiguration.popupWindowFeatures = authPopupConfiguration.popupWindowFeatures;
+			if (typeof authPopupConfiguration.overridePopupUrl === "string" && authPopupConfiguration.overridePopupUrl !== null && authPopupConfiguration.overridePopupUrl !== undefined) mergedConfiguration.overridePopupUrl = authPopupConfiguration.overridePopupUrl;
+			if (typeof authPopupConfiguration.overridePopupUrlParameters === "object" && authPopupConfiguration.overridePopupUrlParameters !== null && authPopupConfiguration.overridePopupUrlParameters !== undefined) mergedConfiguration.overridePopupUrlParameters = authPopupConfiguration.overridePopupUrlParameters;
+			if (typeof authPopupConfiguration.overridePopupUrlAuthParameters === "boolean" && authPopupConfiguration.overridePopupUrlAuthParameters !== null && authPopupConfiguration.overridePopupUrlAuthParameters !== undefined) mergedConfiguration.overridePopupUrlAuthParameters = authPopupConfiguration.overridePopupUrlAuthParameters;
+			if (typeof authPopupConfiguration.notifyPopup === "boolean" && authPopupConfiguration.notifyPopup !== null && authPopupConfiguration.notifyPopup !== undefined) mergedConfiguration.notifyPopup = authPopupConfiguration.notifyPopup;
+			if (typeof authPopupConfiguration.waitForLoginPromise === "boolean" && authPopupConfiguration.waitForLoginPromise !== null && authPopupConfiguration.waitForLoginPromise !== undefined) mergedConfiguration.waitForLoginPromise = authPopupConfiguration.waitForLoginPromise;
+			if (typeof authPopupConfiguration.useWindowReplace === "boolean" && authPopupConfiguration.useWindowReplace !== null && authPopupConfiguration.useWindowReplace !== undefined) mergedConfiguration.useWindowReplace = authPopupConfiguration.useWindowReplace;
+			if (typeof authPopupConfiguration.overrideWindowReplaceUri === "string" && authPopupConfiguration.overrideWindowReplaceUri !== null && authPopupConfiguration.overrideWindowReplaceUri !== undefined) mergedConfiguration.overrideWindowReplaceUri = authPopupConfiguration.overrideWindowReplaceUri;
+			if (typeof authPopupConfiguration.usePopupIdentifier === "boolean" && authPopupConfiguration.usePopupIdentifier !== null && authPopupConfiguration.usePopupIdentifier !== undefined) mergedConfiguration.usePopupIdentifier = authPopupConfiguration.usePopupIdentifier;
+		}
+
+		return mergedConfiguration;
+	}
+
+	/**
+	 * @description Gets the configuration for Authorization Popup
+	 */
+	getAuthPopupConfiguration() {
+		return this.authPopupConfiguration;
+	}
+
+	/**
+	 * @description Sets the configuration for Authorization Popup
+	 * @param {object} authPopupConfiguration - Authorization Popup Configuration interface
+	 * @param {boolean} authPopupConfiguration.usePopup - (optional) Determines if the login methods will open a popup on login (usePopup: true), or redirect to Genesys Cloud login page (usePopup: false - default).
+	 * @param {number} authPopupConfiguration.popupTimeout - (optional) Maximum time (milliseconds) for the login to complete in popup before timing out (default: 120000).
+	 * @param {boolean} authPopupConfiguration.notifyPopup - (optional) Notify popup window using postMessage (name: "gc_auth_popup", type: "notify")
+	 * @param {boolean} authPopupConfiguration.autoClosePopup - (optional) Determines if the popup window will be closed from this app automatically.
+	 * @param {number} authPopupConfiguration.autoClosePopupDelay - (optional) Delay to wait after receiving message from popup and before automatically closing the window popup.
+	 * @param {string} authPopupConfiguration.popupTarget - (optional) The popup window target
+	 * @param {string} authPopupConfiguration.popupWindowFeatures - (optional) The popup window features
+	 * @param {string} authPopupConfiguration.overridePopupUrl - (optional) The alternative popup url to use - if overridePopupUrl is undefined, Genesys Cloud Login Web url will be used as popup url.
+	 * @param {object} authPopupConfiguration.overridePopupUrlParameters - (optional) URL Parameters to use (if any) with the alternative popup url.
+	 * @param {boolean} authPopupConfiguration.overridePopupUrlAuthParameters - (optional) Use Login Auth Parameters with the alternative popup url.
+	 * @param {boolean} authPopupConfiguration.useWindowReplace - (optional) When the authorization via Popup is successful, determines if Auth Data and Popup Status will be returned to the current page, or if the current page or an alternative will be loaded using window.replace.
+	 * @param {string} authPopupConfiguration.overrideWindowReplaceUri - (optional) Alternative Url to load when useWindowReplace is set to true.
+	 * @param {boolean} authPopupConfiguration.waitForLoginPromise - (optional) Determines if the login method's promise will wait until popup authorization is completed, or if it will immediately return.
+	 * @param {boolean} authPopupConfiguration.usePopupIdentifier - (optional) Determines if an additional identifier will be leveraged during the Authentication via Popup process.
+	 */
+	setAuthPopupConfiguration(authPopupConfiguration) {
+		this.authPopupConfiguration = this._getDefaultAuthPopupConfiguration();
+		this.authPopupConfiguration = this.mergeWithAuthPopupConfiguration(authPopupConfiguration);
+	}
+
+	/**
+	 * @description Updates the configuration for Authorization Popup
+	 * @param {object} authPopupConfiguration - Authorization Popup Configuration interface
+	 * @param {boolean} authPopupConfiguration.usePopup - (optional) Determines if the login methods will open a popup on login (usePopup: true), or redirect to Genesys Cloud login page (usePopup: false - default).
+	 * @param {number} authPopupConfiguration.popupTimeout - (optional) Maximum time (milliseconds) for the login to complete in popup before timing out (default: 120000).
+	 * @param {boolean} authPopupConfiguration.notifyPopup - (optional) Notify popup window using postMessage (name: "gc_auth_popup", type: "notify")
+	 * @param {boolean} authPopupConfiguration.autoClosePopup - (optional) Determines if the popup window will be closed from this app automatically.
+	 * @param {number} authPopupConfiguration.autoClosePopupDelay - (optional) Delay to wait after receiving message from popup and before automatically closing the window popup.
+	 * @param {string} authPopupConfiguration.popupTarget - (optional) The popup window target
+	 * @param {string} authPopupConfiguration.popupWindowFeatures - (optional) The popup window features
+	 * @param {string} authPopupConfiguration.overridePopupUrl - (optional) The alternative popup url to use - if overridePopupUrl is undefined, Genesys Cloud Login Web url will be used as popup url.
+	 * @param {object} authPopupConfiguration.overridePopupUrlParameters - (optional) URL Parameters to use (if any) with the alternative popup url.
+	 * @param {boolean} authPopupConfiguration.overridePopupUrlAuthParameters - (optional) Use Login Auth Parameters with the alternative popup url.
+	 * @param {boolean} authPopupConfiguration.useWindowReplace - (optional) When the authorization via Popup is successful, determines if Auth Data and Popup Status will be returned to the current page, or if the current page or an alternative will be loaded using window.replace.
+	 * @param {string} authPopupConfiguration.overrideWindowReplaceUri - (optional) Alternative Url to load when useWindowReplace is set to true.
+	 * @param {boolean} authPopupConfiguration.waitForLoginPromise - (optional) Determines if the login method's promise will wait until popup authorization is completed, or if it will immediately return.
+	 * @param {boolean} authPopupConfiguration.usePopupIdentifier - (optional) Determines if an additional identifier will be leveraged during the Authentication via Popup process.
+	 */
+	updateAuthPopupConfiguration(authPopupConfiguration) {
+		this.authPopupConfiguration = this.mergeWithAuthPopupConfiguration(authPopupConfiguration);
+	}
 
 	setEnvironment(env) {
 		// Default value
@@ -747,7 +849,7 @@ class Configuration {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 258.0.0
+ * @version 258.1.0
  */
 class ApiClient {
 	/**
@@ -814,6 +916,19 @@ class ApiClient {
 		};
 
 		this.useLegacyParameterFilter = false;
+
+		if (typeof window !== 'undefined') {
+			// Browser only
+			this._handleAuthPopupMessage = this._handleAuthPopupMessage.bind(this);
+		}
+		this._listenersAuthPopupStatus = [];
+		this._authPopupWindow = null;
+		this._checkPopupTimeout = null;
+		this._notifyPopupInterval = null;
+		this._popupIdentifier = null;
+
+		this.onAuthPopupStatus = null;
+
 
 		/**
 		 * @description Value is `true` if local storage exists. Otherwise, false.
@@ -986,6 +1101,72 @@ class ApiClient {
 	}
 
 	/**
+	 * @description Sets the authorization data
+	 * @param {object} authData - The authorization data
+	 */
+	setAuthData(authData) {
+		this._saveSettings(authData);
+	}
+
+	/**
+	 * @description Clears the authorization data
+	 */
+	clearAuthData() {
+		this._clearSettings();
+	}
+
+	/**
+	 * @description Gets the configuration for Authorization Popup
+	 */
+	getAuthPopupConfiguration() {
+		return this.config.getAuthPopupConfiguration();
+	}
+
+	/**
+	 * @description Sets the configuration for Authorization Popup
+	 * @param {object} authPopupConfiguration - Authorization Popup Configuration interface
+	 * @param {boolean} authPopupConfiguration.usePopup - (optional) Determines if the login methods will open a popup on login (usePopup: true), or redirect to Genesys Cloud login page (usePopup: false - default).
+	 * @param {number} authPopupConfiguration.popupTimeout - (optional) Maximum time (milliseconds) for the login to complete in popup before timing out (default: 120000).
+	 * @param {boolean} authPopupConfiguration.notifyPopup - (optional) Notify popup window using postMessage (name: "gc_auth_popup", type: "notify")
+	 * @param {boolean} authPopupConfiguration.autoClosePopup - (optional) Determines if the popup window will be closed from this app automatically.
+	 * @param {number} authPopupConfiguration.autoClosePopupDelay - (optional) Delay to wait after receiving message from popup and before automatically closing the window popup.
+	 * @param {string} authPopupConfiguration.popupTarget - (optional) The popup window target
+	 * @param {string} authPopupConfiguration.popupWindowFeatures - (optional) The popup window features
+	 * @param {string} authPopupConfiguration.overridePopupUrl - (optional) The alternative popup url to use - if overridePopupUrl is undefined, Genesys Cloud Login Web url will be used as popup url.
+	 * @param {object} authPopupConfiguration.overridePopupUrlParameters - (optional) URL Parameters to use (if any) with the alternative popup url.
+	 * @param {boolean} authPopupConfiguration.overridePopupUrlAuthParameters - (optional) Use Login Auth Parameters with the alternative popup url.
+	 * @param {boolean} authPopupConfiguration.useWindowReplace - (optional) When the authorization via Popup is successful, determines if Auth Data and Popup Status will be returned to the current page, or if the current page or an alternative will be loaded using window.replace.
+	 * @param {string} authPopupConfiguration.overrideWindowReplaceUri - (optional) Alternative Url to load when useWindowReplace is set to true.
+	 * @param {boolean} authPopupConfiguration.waitForLoginPromise - (optional) Determines if the login method's promise will wait until popup authorization is completed, or if it will immediately return.
+	 * @param {boolean} authPopupConfiguration.usePopupIdentifier - (optional) Determines if an additional identifier will be leveraged during the Authentication via Popup process.
+	 */
+	setAuthPopupConfiguration(authPopupConfiguration) {
+		this.config.setAuthPopupConfiguration(authPopupConfiguration);
+	}
+
+	/**
+	 * @description Updates the configuration for Authorization Popup
+	 * @param {object} authPopupConfiguration - Authorization Popup Configuration interface
+	 * @param {boolean} authPopupConfiguration.usePopup - (optional) Determines if the login methods will open a popup on login (usePopup: true), or redirect to Genesys Cloud login page (usePopup: false - default).
+	 * @param {number} authPopupConfiguration.popupTimeout - (optional) Maximum time (milliseconds) for the login to complete in popup before timing out (default: 120000).
+	 * @param {boolean} authPopupConfiguration.notifyPopup - (optional) Notify popup window using postMessage (name: "gc_auth_popup", type: "notify")
+	 * @param {boolean} authPopupConfiguration.autoClosePopup - (optional) Determines if the popup window will be closed from this app automatically.
+	 * @param {number} authPopupConfiguration.autoClosePopupDelay - (optional) Delay to wait after receiving message from popup and before automatically closing the window popup.
+	 * @param {string} authPopupConfiguration.popupTarget - (optional) The popup window target
+	 * @param {string} authPopupConfiguration.popupWindowFeatures - (optional) The popup window features
+	 * @param {string} authPopupConfiguration.overridePopupUrl - (optional) The alternative popup url to use - if overridePopupUrl is undefined, Genesys Cloud Login Web url will be used as popup url.
+	 * @param {object} authPopupConfiguration.overridePopupUrlParameters - (optional) URL Parameters to use (if any) with the alternative popup url.
+	 * @param {boolean} authPopupConfiguration.overridePopupUrlAuthParameters - (optional) Use Login Auth Parameters with the alternative popup url.
+	 * @param {boolean} authPopupConfiguration.useWindowReplace - (optional) When the authorization via Popup is successful, determines if Auth Data and Popup Status will be returned to the current page, or if the current page or an alternative will be loaded using window.replace.
+	 * @param {string} authPopupConfiguration.overrideWindowReplaceUri - (optional) Alternative Url to load when useWindowReplace is set to true.
+	 * @param {boolean} authPopupConfiguration.waitForLoginPromise - (optional) Determines if the login method's promise will wait until popup authorization is completed, or if it will immediately return.
+	 * @param {boolean} authPopupConfiguration.usePopupIdentifier - (optional) Determines if an additional identifier will be leveraged during the Authentication via Popup process.
+	 */
+	updateAuthPopupConfiguration(authPopupConfiguration) {
+		this.config.updateAuthPopupConfiguration(authPopupConfiguration);
+	}
+
+	/**
      * @description Sets the optional http headers used by the client
      * @param {object} newHeaders - default headers to be used
      */
@@ -1149,6 +1330,381 @@ class ApiClient {
 		this.config.setGateway(gateway);
 	}
 
+	// Authorization Popup
+
+	addAuthPopupStatusListener(listener) {
+		if (typeof listener === 'function' && listener) {
+			if (!this._listenersAuthPopupStatus) this._listenersAuthPopupStatus = [];
+			this._listenersAuthPopupStatus.push(listener);
+		}
+  	}
+
+  	removeAuthPopupStatusListener(listener) {
+		if (listener) {
+			if (!this._listenersAuthPopupStatus || this._listenersAuthPopupStatus.length == 0) return;
+			this._listenersAuthPopupStatus = this._listenersAuthPopupStatus.filter(l => l !== listener);
+		}
+  	}
+
+  	removeAllAuthPopupStatusListeners() {
+    	if (this._listenersAuthPopupStatus) this._listenersAuthPopupStatus = [];
+  	}
+
+  	_emitAuthPopupStatus(status, msg, identifier) {
+		if (this.onAuthPopupStatus) this.onAuthPopupStatus(status, msg, identifier);
+
+		if (!this._listenersAuthPopupStatus || this._listenersAuthPopupStatus.length == 0) return;
+    	this._listenersAuthPopupStatus.forEach(listener => listener(status, msg, identifier));
+  	}
+
+	_generatePopupIdentifier(nChar) {
+		if (nChar < 8 || nChar > 64) {
+			throw new Error(`Popup Identifier (length) must be between 8 and 64 characters`);
+		}
+		// Check for window
+		if (typeof window === 'undefined') {
+			try {
+				const getRandomValues = require('crypto').getRandomValues;
+				const unreservedCharacters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-._~";
+				let randomString = Array.from(getRandomValues(new Uint32Array(nChar)))
+					.map((x) => unreservedCharacters[x % unreservedCharacters.length])
+					.join('');
+				return randomString;
+			} catch (err) {
+				throw new Error(`Crypto module is missing/not supported.`);
+			}
+		} else {
+			const unreservedCharacters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-._~";
+			let randomString = Array.from(crypto.getRandomValues(new Uint32Array(nChar)))
+				.map((x) => unreservedCharacters[x % unreservedCharacters.length])
+				.join('');
+			return randomString;
+		}
+	}
+
+	_startAuthPopup(url, query, loginPopupConfiguration) {
+		try {
+			if (!loginPopupConfiguration) loginPopupConfiguration = {};
+
+			// Stop timers, reset values/variables if necessary
+			if (this._checkPopupTimeout) clearTimeout(this._checkPopupTimeout);
+			this._checkPopupTimeout = null;
+
+			if (this._notifyPopupInterval) clearInterval(this._notifyPopupInterval);
+			this._notifyPopupInterval = null;
+
+			// Remove Event Listener
+			window.removeEventListener('message', this._handleAuthPopupMessage);
+
+			if (this._authPopupWindow) {
+				if (loginPopupConfiguration.autoClosePopup === true && !this._authPopupWindow.closed) {
+					this._authPopupWindow.close();
+				}
+
+				if (this._popupIdentifier) this._emitAuthPopupStatus("ABORTED", "Previous Authorization Popup aborted.", this._popupIdentifier);
+				this._popupIdentifier = null;
+			}
+			this._authPopupWindow = null;
+
+			// Start
+			this._popupIdentifier = this._generatePopupIdentifier(16);
+
+			this._emitAuthPopupStatus("INIT", "Authorization Popup Starting", this._popupIdentifier);
+
+			let popupUrl = url;
+			if (loginPopupConfiguration.overridePopupUrl) {
+				let overrideQuery = null;
+				if (loginPopupConfiguration.overridePopupUrlAuthParameters === true && query) {
+					if (loginPopupConfiguration.overridePopupUrlParameters) {
+						overrideQuery = { ...query, ...loginPopupConfiguration.overridePopupUrlParameters };
+					} else {
+						overrideQuery = query;
+					}
+				} else if (loginPopupConfiguration.overridePopupUrlParameters) {
+					overrideQuery = loginPopupConfiguration.overridePopupUrlParameters;
+				}
+				
+				if (overrideQuery) {
+					popupUrl = `${loginPopupConfiguration.overridePopupUrl}?${new URLSearchParams(overrideQuery).toString()}`;
+				} else {
+					popupUrl = loginPopupConfiguration.overridePopupUrl;
+				}
+			}
+
+			return new Promise((resolve, reject) => {
+				window.addEventListener('message', (event) => this._handleAuthPopupMessage(event, loginPopupConfiguration, resolve, reject));
+
+				this._authPopupWindow = window.open(popupUrl, loginPopupConfiguration.popupTarget, loginPopupConfiguration.popupWindowFeatures);
+
+				if (loginPopupConfiguration.notifyPopup === true) {
+					this._notifyPopupInterval = setInterval(
+						function () {
+							if (this._authPopupWindow) {
+								let popupLocationOrigin = new URL(this.redirectUri);
+								// Genesys Cloud Auth Popup Notify Event
+								let popupNotifyMessage = {
+									name: "gc_auth_popup",
+									type: "notify"
+								};
+								if (loginPopupConfiguration.usePopupIdentifier === true && this._popupIdentifier) popupNotifyMessage.identifier = this._popupIdentifier;
+								this._authPopupWindow.postMessage(popupNotifyMessage, `${popupLocationOrigin.protocol}//${popupLocationOrigin.host}`);
+							} else {
+								clearInterval(this.notifyPopupInterval);
+								this._notifyPopupInterval = null;
+							}
+						}.bind(this),
+						1000
+					);
+				}
+
+				this._checkPopupTimeout = setTimeout(
+					function () {
+						// Authorization Popup Timeout
+						this._emitAuthPopupStatus("TIMEOUT", "Authorization Popup Timeout", this._popupIdentifier);
+						// Remove event listener
+						window.removeEventListener('message', this._handleAuthPopupMessage);
+						// Close popup automatically if requested
+						if (loginPopupConfiguration.autoClosePopup === true && loginPopupConfiguration.autoClosePopupDelay > 0) {
+							setTimeout(
+								function () {
+									if (this._authPopupWindow) {
+										if (!this._authPopupWindow.closed) {
+											this._authPopupWindow.close();
+										}
+										this._authPopupWindow = null;
+									}
+								}.bind(this),
+								loginPopupConfiguration.autoClosePopupDelay
+							);
+						} else {
+							if (loginPopupConfiguration.autoClosePopup === true) {
+								if (this._authPopupWindow) {
+									if (!this._authPopupWindow.closed) {
+										this._authPopupWindow.close();
+									}
+								}
+							}
+							this._authPopupWindow = null;
+						}
+						// Clear timeout
+						this._checkPopupTimeout = null;
+						// Clear Notify Popup
+						if (this._notifyPopupInterval) clearInterval(this._notifyPopupInterval);
+						this._notifyPopupInterval = null;
+						// Raise error/reject
+						return reject(new Error('Authentication Popup Timeout'));
+					}.bind(this),
+					loginPopupConfiguration.popupTimeout
+				);
+			});
+		} catch(error) {
+			console.error(error);
+			throw error;
+		}
+	}
+
+	_extractValuesFromSearchAndHash(search, hash) {
+		let authInfo = {};
+
+		if (search && search !== '?') {
+			let queryParams = new URLSearchParams(search); 
+			let code = queryParams.get('code');
+			if (code) authInfo.code = code;
+			let state = queryParams.get('state');
+			if (state) authInfo.state = state;
+			let error = queryParams.get('error');
+			if (error) authInfo.error = error;
+			let errorDescription = queryParams.get('error_description');
+			if (errorDescription) authInfo.error_description = errorDescription;
+		}
+		if (hash && hash !== '#') {
+			let hashParams = new URLSearchParams(hash.substring(1)); 
+			let accessToken = hashParams.get('access_token');
+			if (accessToken) authInfo.accessToken = accessToken;
+			let expiresIn = hashParams.get('expires_in');
+			if (expiresIn) {
+				authInfo.tokenExpiryTime = (new Date()).getTime() + (parseInt(expiresIn) * 1000);
+				authInfo.tokenExpiryTimeString = (new Date(authInfo.tokenExpiryTime)).toUTCString();
+			}
+			let state = hashParams.get('state');
+			if (state) authInfo.state = state;
+			let error = hashParams.get('error');
+			if (error) authInfo.error = error;
+			let errorDescription = hashParams.get('error_description');
+			if (errorDescription) authInfo.error_description = errorDescription;
+		}
+
+		return authInfo;
+	}
+
+	_handleAuthPopupMessage(event, loginPopupConfiguration, resolve, reject) {
+		// Verify source/origin
+		if (this.redirectUri.startsWith(event.origin)) {
+			// Verify format and message type
+			if (event.data && typeof event.data === 'object') {
+				const jsonMessage = JSON.parse(JSON.stringify(event.data));
+				// Genesys Cloud Auth Popup Message
+				if (jsonMessage && jsonMessage.name === "gc_auth_popup" && jsonMessage.type === "message") {
+					// Clear the _checkPopupTimeout and the _notifyPopupInterval
+					if (this._checkPopupTimeout) clearTimeout(this._checkPopupTimeout);
+					this._checkPopupTimeout = null;
+					if (this._notifyPopupInterval) clearInterval(this._notifyPopupInterval);
+					this._notifyPopupInterval = null;
+					// Remove Event Listener
+					window.removeEventListener('message', this._handleAuthPopupMessage);
+
+					if (loginPopupConfiguration.usePopupIdentifier === true && jsonMessage.identifier) {
+						if (jsonMessage.identifier !== this._popupIdentifier) {
+							// error
+							this._emitAuthPopupStatus("Error", `Invalid Popup Identifier received`, this._popupIdentifier);
+							authResult.accessToken = undefined;
+							this._saveSettings(authResult);
+							return reject(new Error(`Invalid Popup Identifier received`));
+						}
+					}
+
+					// Close the popup after delay if necessary (from app)
+					if (loginPopupConfiguration.autoClosePopup === true && loginPopupConfiguration.autoClosePopupDelay > 0) {
+						setTimeout(
+							function () {
+								if (this._authPopupWindow) {
+									if (!this._authPopupWindow.closed) {
+										this._authPopupWindow.close();
+									}
+									this._authPopupWindow = null;
+								}
+							}.bind(this),
+							loginPopupConfiguration.autoClosePopupDelay
+						);
+					} else {
+						if (loginPopupConfiguration.autoClosePopup === true) {
+							if (this._authPopupWindow) {
+								if (!this._authPopupWindow.closed) {
+									this._authPopupWindow.close();
+								}
+							}
+						}
+						this._authPopupWindow = null;
+					}
+
+					let authResult = {};
+					let popupSearch = null;
+					let popupHash = null;
+
+					if (jsonMessage.auth && typeof jsonMessage.auth === 'object') {
+						authResult = jsonMessage.auth;
+						// Force popup search in case of further window.replace
+						popupSearch = `?${new URLSearchParams(authResult).toString()}`;
+					} else {
+						if (jsonMessage.search && jsonMessage.search !== '?') popupSearch = jsonMessage.search;
+						if (jsonMessage.hash && jsonMessage.hash !== '#') popupHash = jsonMessage.hash;
+
+						// Get the token or the code and other authdata from incoming message
+						authResult = this._extractValuesFromSearchAndHash(popupSearch, popupHash);
+					}
+
+					if (!authResult.error && !authResult.accessToken && !authResult.code) {
+						// Override with error
+						authResult.error = "InvalidAuthParams";
+						authResult.error_description = "Missing Auth Params on URL Redirect";
+					}
+
+					if (authResult.error) {
+						// error
+						this._emitAuthPopupStatus("AUTH_ERROR", `Auth Error: [${authResult.error}] ${authResult.error_description}`, this._popupIdentifier);
+						authResult.accessToken = undefined;
+						this._saveSettings(authResult);
+						return reject(new Error(`Auth Error: [${authResult.error}] ${authResult.error_description}`));
+					}
+
+					// Strategies for auth completion
+					if (loginPopupConfiguration.useWindowReplace === true) {
+						// Access Token received
+						this._emitAuthPopupStatus("REDIRECTING", "Authorization Popup Completed", this._popupIdentifier);
+						this._popupIdentifier = null;
+
+						if (loginPopupConfiguration.overrideWindowReplaceUri) {
+							window.location.replace(`${loginPopupConfiguration.overrideWindowReplaceUri}${popupSearch ? popupSearch : ''}${popupHash ? popupHash : ''}`);
+						} else {
+							window.location.replace(`${window.location.origin}${window.location.pathname}${popupSearch ? popupSearch : ''}${popupHash ? popupHash : ''}`);
+						}
+						resolve(null);
+					} else {
+						if (authResult && authResult.accessToken) {
+							this._saveSettings(authResult);
+							this._testTokenAccess()
+								.then(() => {
+									// Valid Access Token received
+									this._emitAuthPopupStatus("AUTHENTICATED", "Authorization Popup Completed", this._popupIdentifier);
+									this._popupIdentifier = null;
+									resolve(authResult);
+								})
+								.catch((error) => {
+									// Invalid Access Token received
+									this._emitAuthPopupStatus("AUTH_ERROR", `Auth Error: [${error.name}] ${error.message}`, this._popupIdentifier);
+									this._popupIdentifier = null;
+									// Handle failure response
+									this._saveSettings({ accessToken: undefined});
+									return reject(new Error(`[${error.name}] ${error.message}`));
+								});
+						} else if (authResult && authResult.code) {
+							if (!this.codeVerifier) {
+								// load codeVerifier from session storage
+								if (this.hasLocalStorage) {
+									this.codeVerifier = sessionStorage.getItem(`${this.settingsPrefix}_pkce_code_verifier`);
+								}
+							}
+							this.authorizePKCEGrant(this.clientId, this.codeVerifier, authResult.code, this.redirectUri)
+							.then(() => {
+								// Do authenticated things
+								this._testTokenAccess()
+								.then(() => {
+									// Valid Access Token received
+									this._emitAuthPopupStatus("AUTHENTICATED", "Authorization Popup Completed", this._popupIdentifier);
+									this._popupIdentifier = null;
+									if (!this.authData.state && authResult.state)
+									this.authData.state = authResult.state;
+									// remove codeVerifier from session storage
+									if (this.hasLocalStorage) {
+										sessionStorage.removeItem(`genesys_cloud_sdk_pkce_code_verifier`);
+										sessionStorage.removeItem(`${this.settingsPrefix}_pkce_code_verifier`);
+									}
+									resolve(this.authData);
+								})
+								.catch((error) => {
+									// Invalid Access Token received
+									this._emitAuthPopupStatus("AUTH_ERROR", `Auth Error: [${error.name}] ${error.message}`, this._popupIdentifier);
+									this._popupIdentifier = null;
+									// Handle failure response
+									this._saveSettings({ accessToken: undefined});
+									// remove codeVerifier from session storage
+									if (this.hasLocalStorage) {
+										sessionStorage.removeItem(`genesys_cloud_sdk_pkce_code_verifier`);
+										sessionStorage.removeItem(`${this.settingsPrefix}_pkce_code_verifier`);
+									}
+									return reject(new Error(`[${error.name}] ${error.message}`));
+								});
+							})
+							.catch((error) => {
+								// Error in PKCE Token
+								this._emitAuthPopupStatus("AUTH_ERROR", `Auth Error: [${error.name}] ${error.message}`, this._popupIdentifier);
+								this._popupIdentifier = null;
+								// Handle failure response
+								this._saveSettings({ accessToken: undefined});
+								// remove codeVerifier from session storage
+								if (this.hasLocalStorage) {
+									sessionStorage.removeItem(`genesys_cloud_sdk_pkce_code_verifier`);
+									sessionStorage.removeItem(`${this.settingsPrefix}_pkce_code_verifier`);
+								}
+								return reject(new Error(`[${error.name}] ${error.message}`));
+							});
+						}
+					}
+				}
+			}
+		}
+	}
+
 	/**
 	 * @description Initiates the implicit grant login flow. Will attempt to load the token from local storage, if enabled.
 	 * @param {string} clientId - The client ID of an OAuth Implicit Grant client
@@ -1160,6 +1716,7 @@ class ApiClient {
 	 * @param {string} opts.target - (optional) The organization ID of the target organization, when intending to log in to a specific target organization using Authorized Organizations.
 	 * @param {string} opts.login_hint - (optional) The login_hint allows an application to pass the email address and/or the org name values to the authorization server (email:orgName, email, orgName).
 	 * @param {string} opts.prompt - (optional) Use the prompt=login parameter to require that the user be prompted to enter credentials at the Gensys Cloud login screen and ignore any remembered sessions (auth cookies).
+	 * @param {object} opts.authPopupConfiguration - (optional) Overrides Authorization Popup Configuration.
 	 */
 	loginImplicitGrant(clientId, redirectUri, opts) {
 		// Check for auth token in hash
@@ -1194,19 +1751,33 @@ class ApiClient {
 				})
 				.catch((error) => {
 					var query = {
-						client_id: encodeURIComponent(this.clientId),
-						redirect_uri: encodeURIComponent(this.redirectUri),
+						client_id: this.clientId,
+						redirect_uri: this.redirectUri,
 						response_type: 'token'
 					};
-					if (opts.state) query.state = encodeURIComponent(opts.state);
-					if (opts.org) query.org = encodeURIComponent(opts.org);
-					if (opts.provider) query.provider = encodeURIComponent(opts.provider);
-					if (opts.target) query.target = encodeURIComponent(opts.target);
-					if (opts.login_hint) query.login_hint = encodeURIComponent(opts.login_hint);
-					if (opts.prompt && opts.prompt == 'login') query.prompt = encodeURIComponent(opts.prompt);
+					if (opts.state) query.state = opts.state;
+					if (opts.org) query.org = opts.org;
+					if (opts.provider) query.provider = opts.provider;
+					if (opts.target) query.target = opts.target;
+					if (opts.login_hint) query.login_hint = opts.login_hint;
+					if (opts.prompt && opts.prompt == 'login') query.prompt = opts.prompt;
+
+					// Overrides AuthPopupConfiguration locally
+					let loginPopupConfiguration = this.config.mergeWithAuthPopupConfiguration(opts.authPopupConfiguration);
 
 					var url = this._buildAuthUrl('oauth/authorize', query);
-					window.location.replace(url);
+
+					if (loginPopupConfiguration.usePopup === true) {
+						this._startAuthPopup(url, query, loginPopupConfiguration)
+							.then((authData) => {
+								resolve(authData);
+							})
+							.catch((error) => {
+								return reject(new Error(`[${error.name}] ${error.message}`));
+							});
+					} else {
+						window.location.replace(url);
+					}
 				});
 		});
 	}
@@ -1566,6 +2137,7 @@ class ApiClient {
 				// remove codeVerifier from session storage
 				if (this.hasLocalStorage) {
 					sessionStorage.removeItem(`genesys_cloud_sdk_pkce_code_verifier`);
+					sessionStorage.removeItem(`${this.settingsPrefix}_pkce_code_verifier`);
 				}
 				// reset access token if any was stored
 				this._saveSettings({ accessToken: undefined });
@@ -1577,7 +2149,7 @@ class ApiClient {
 				if (!this.codeVerifier) {
 					// load codeVerifier from session storage
 					if (this.hasLocalStorage) {
-						this.codeVerifier = sessionStorage.getItem(`genesys_cloud_sdk_pkce_code_verifier`);
+						this.codeVerifier = sessionStorage.getItem(`${this.settingsPrefix}_pkce_code_verifier`);
 					}
 				}
                 this.authorizePKCEGrant(this.clientId, this.codeVerifier, query.code, this.redirectUri)
@@ -1590,6 +2162,7 @@ class ApiClient {
 						// remove codeVerifier from session storage
 						if (this.hasLocalStorage) {
 							sessionStorage.removeItem(`genesys_cloud_sdk_pkce_code_verifier`);
+							sessionStorage.removeItem(`${this.settingsPrefix}_pkce_code_verifier`);
 						}
                         resolve(this.authData);
                       })
@@ -1599,8 +2172,9 @@ class ApiClient {
 						// remove codeVerifier from session storage
 						if (this.hasLocalStorage) {
 							sessionStorage.removeItem(`genesys_cloud_sdk_pkce_code_verifier`);
+							sessionStorage.removeItem(`${this.settingsPrefix}_pkce_code_verifier`);
 						}
-                        return reject(new Error(`[${error.name}] ${error.msg}`));
+                        return reject(new Error(`[${error.name}] ${error.message}`));
                       });
                   })
                   .catch((error) => {
@@ -1609,8 +2183,9 @@ class ApiClient {
 					// remove codeVerifier from session storage
 					if (this.hasLocalStorage) {
 						sessionStorage.removeItem(`genesys_cloud_sdk_pkce_code_verifier`);
+						sessionStorage.removeItem(`${this.settingsPrefix}_pkce_code_verifier`);
 					}
-                    return reject(new Error(`[${error.name}] ${error.msg}`));
+                    return reject(new Error(`[${error.name}] ${error.message}`));
                   });
             } else {
                 // Test token (if previously stored) and proceed with login
@@ -1626,26 +2201,41 @@ class ApiClient {
 						// save codeVerifier in session storage
 						if (this.hasLocalStorage) {
 							sessionStorage.setItem(`genesys_cloud_sdk_pkce_code_verifier`, this.codeVerifier);
+							sessionStorage.setItem(`${this.settingsPrefix}_pkce_code_verifier`, this.codeVerifier);
 						}
 					}
                     this.computePKCECodeChallenge(this.codeVerifier)
 					.then((codeChallenge) => {
                       var tokenQuery = {
-                        client_id: encodeURIComponent(this.clientId),
-                        redirect_uri: encodeURIComponent(this.redirectUri),
-                        code_challenge: encodeURIComponent(codeChallenge),
+                        client_id: this.clientId,
+                        redirect_uri: this.redirectUri,
+                        code_challenge: codeChallenge,
                         response_type: 'code',
                         code_challenge_method: 'S256'
                       };
-                      if (opts.state) tokenQuery.state = encodeURIComponent(opts.state);
-                      if (opts.org) tokenQuery.org = encodeURIComponent(opts.org);
-                      if (opts.provider) tokenQuery.provider = encodeURIComponent(opts.provider);
-					  if (opts.target) tokenQuery.target = encodeURIComponent(opts.target);
-					  if (opts.login_hint) tokenQuery.login_hint = encodeURIComponent(opts.login_hint);
-					  if (opts.prompt && opts.prompt == 'login') tokenQuery.prompt = encodeURIComponent(opts.prompt);
+                      if (opts.state) tokenQuery.state = opts.state;
+                      if (opts.org) tokenQuery.org = opts.org;
+                      if (opts.provider) tokenQuery.provider = opts.provider;
+					  if (opts.target) tokenQuery.target = opts.target;
+					  if (opts.login_hint) tokenQuery.login_hint = opts.login_hint;
+					  if (opts.prompt && opts.prompt == 'login') tokenQuery.prompt = opts.prompt;
 
-                      var url = this._buildAuthUrl('oauth/authorize', tokenQuery);
-                      window.location.replace(url);
+                      // Overrides AuthPopupConfiguration locally
+					  let loginPopupConfiguration = this.config.mergeWithAuthPopupConfiguration(opts.authPopupConfiguration);
+
+					  var url = this._buildAuthUrl('oauth/authorize', tokenQuery);
+
+					  if (loginPopupConfiguration.usePopup === true) {
+						this._startAuthPopup(url, tokenQuery, loginPopupConfiguration)
+							.then((authData) => {
+								resolve(authData);
+							})
+							.catch((error) => {
+								return reject(new Error(`[${error.name}] ${error.message}`));
+							});
+					  } else {
+						window.location.replace(url);
+					  }
                     })
                     .catch((err) => {
                       return reject(new Error(`[${err.name}]`));
@@ -2014,11 +2604,11 @@ class ApiClient {
 		}
 
 		var query = {
-			client_id: encodeURIComponent(this.clientId)
+			client_id: this.clientId
 		};
 
 		if (logoutRedirectUri)
-			query['redirect_uri'] = encodeURI(logoutRedirectUri);
+			query['redirect_uri'] = logoutRedirectUri;
 
 		var url = this._buildAuthUrl('logout', query);
 		window.location.replace(url);
@@ -2030,9 +2620,9 @@ class ApiClient {
 	 * @param {object} query - An object of key/value pairs to use for querystring keys/values
 	 */
 	_buildAuthUrl(path, query) {
-		if (!query) query = {};
 		var loginBasePath = this.config.getConfUrl('login', this.config.authUrl);
-		return Object.keys(query).reduce((url, key) => !query[key] ? url : `${url}&${key}=${query[key]}`, `${loginBasePath}/${path}?`);
+		if (!query) return `${loginBasePath}/${path}`;
+		else return `${loginBasePath}/${path}?${new URLSearchParams(query).toString()}`;
 	}
 
 	/**
@@ -2447,7 +3037,7 @@ class AIStudioApi {
 	/**
 	 * AIStudio service.
 	 * @module purecloud-platform-client-v2/api/AIStudioApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -3394,7 +3984,7 @@ class AgentAssistantsApi {
 	/**
 	 * AgentAssistants service.
 	 * @module purecloud-platform-client-v2/api/AgentAssistantsApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -4199,7 +4789,7 @@ class AgentCopilotApi {
 	/**
 	 * AgentCopilot service.
 	 * @module purecloud-platform-client-v2/api/AgentCopilotApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -4311,7 +4901,7 @@ class AgentUIApi {
 	/**
 	 * AgentUI service.
 	 * @module purecloud-platform-client-v2/api/AgentUIApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -4462,7 +5052,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -4923,7 +5513,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -9144,7 +9734,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -14101,7 +14691,7 @@ class AssistantCopilotVariationsApi {
 	/**
 	 * AssistantCopilotVariations service.
 	 * @module purecloud-platform-client-v2/api/AssistantCopilotVariationsApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -14297,7 +14887,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -14524,7 +15114,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -16449,7 +17039,7 @@ class BackgroundAssistantApi {
 	/**
 	 * BackgroundAssistant service.
 	 * @module purecloud-platform-client-v2/api/BackgroundAssistantApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -16523,7 +17113,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -16807,7 +17397,7 @@ class BusinessRulesApi {
 	/**
 	 * BusinessRules service.
 	 * @module purecloud-platform-client-v2/api/BusinessRulesApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -18256,7 +18846,7 @@ class CarrierServicesApi {
 	/**
 	 * CarrierServices service.
 	 * @module purecloud-platform-client-v2/api/CarrierServicesApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -18333,7 +18923,7 @@ class CaseManagementApi {
 	/**
 	 * CaseManagement service.
 	 * @module purecloud-platform-client-v2/api/CaseManagementApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -19846,7 +20436,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -20985,7 +21575,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -21699,7 +22289,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -22894,7 +23484,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -34220,7 +34810,7 @@ class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -34321,7 +34911,7 @@ class DataPrivacyApi {
 	/**
 	 * DataPrivacy service.
 	 * @module purecloud-platform-client-v2/api/DataPrivacyApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -34518,7 +35108,7 @@ class DownloadsApi {
 	/**
 	 * Downloads service.
 	 * @module purecloud-platform-client-v2/api/DownloadsApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -34572,7 +35162,7 @@ class EmailsApi {
 	/**
 	 * Emails service.
 	 * @module purecloud-platform-client-v2/api/EmailsApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -34720,7 +35310,7 @@ class EmployeeEngagementApi {
 	/**
 	 * EmployeeEngagement service.
 	 * @module purecloud-platform-client-v2/api/EmployeeEngagementApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -34924,7 +35514,7 @@ class EventsApi {
 	/**
 	 * Events service.
 	 * @module purecloud-platform-client-v2/api/EventsApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -35066,7 +35656,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -39251,7 +39841,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -39500,7 +40090,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -39734,7 +40324,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -42586,7 +43176,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -42730,7 +43320,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -42881,7 +43471,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -43497,7 +44087,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -44088,7 +44678,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -45139,7 +45729,7 @@ class InfrastructureAsCodeApi {
 	/**
 	 * InfrastructureAsCode service.
 	 * @module purecloud-platform-client-v2/api/InfrastructureAsCodeApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -45319,7 +45909,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -48260,7 +48850,7 @@ class IntentsApi {
 	/**
 	 * Intents service.
 	 * @module purecloud-platform-client-v2/api/IntentsApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -48792,7 +49382,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -51768,7 +52358,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -56295,7 +56885,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -57669,7 +58259,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -57928,7 +58518,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -59174,7 +59764,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -59472,7 +60062,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -59739,7 +60329,7 @@ class LogCaptureApi {
 	/**
 	 * LogCapture service.
 	 * @module purecloud-platform-client-v2/api/LogCaptureApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -59961,7 +60551,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -60379,7 +60969,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -60549,7 +61139,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -60810,7 +61400,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -61226,7 +61816,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -61590,7 +62180,7 @@ class OperationalEventsApi {
 	/**
 	 * OperationalEvents service.
 	 * @module purecloud-platform-client-v2/api/OperationalEventsApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -61721,7 +62311,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -62282,7 +62872,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -63886,7 +64476,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -69473,7 +70063,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -70331,7 +70921,7 @@ class ProcessAutomationApi {
 	/**
 	 * ProcessAutomation service.
 	 * @module purecloud-platform-client-v2/api/ProcessAutomationApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -70752,7 +71342,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -73230,7 +73820,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -75078,7 +75668,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -75841,7 +76431,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -81403,7 +81993,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -82364,7 +82954,7 @@ class ScreenMonitoringApi {
 	/**
 	 * ScreenMonitoring service.
 	 * @module purecloud-platform-client-v2/api/ScreenMonitoringApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -82740,7 +83330,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -83249,7 +83839,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -84065,7 +84655,7 @@ class SettingsApi {
 	/**
 	 * Settings service.
 	 * @module purecloud-platform-client-v2/api/SettingsApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -84474,7 +85064,7 @@ class SocialMediaApi {
 	/**
 	 * SocialMedia service.
 	 * @module purecloud-platform-client-v2/api/SocialMediaApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -86459,7 +87049,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -88411,7 +89001,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -88525,7 +89115,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -88672,7 +89262,7 @@ class TaskManagementApi {
 	/**
 	 * TaskManagement service.
 	 * @module purecloud-platform-client-v2/api/TaskManagementApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -91168,7 +91758,7 @@ class TeamsApi {
 	/**
 	 * Teams service.
 	 * @module purecloud-platform-client-v2/api/TeamsApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -91511,7 +92101,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -92185,7 +92775,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -96163,7 +96753,7 @@ class TextbotsApi {
 	/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -96309,7 +96899,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -96487,7 +97077,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -96858,7 +97448,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -97236,7 +97826,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -97438,7 +98028,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -101663,7 +102253,7 @@ class UsersRulesApi {
 	/**
 	 * UsersRules service.
 	 * @module purecloud-platform-client-v2/api/UsersRulesApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -101980,7 +102570,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -102108,7 +102698,7 @@ class VirtualAgentsApi {
 	/**
 	 * VirtualAgents service.
 	 * @module purecloud-platform-client-v2/api/VirtualAgentsApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -102361,7 +102951,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -103191,7 +103781,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -103843,7 +104433,7 @@ class WebDeploymentsApi {
 	/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -104521,7 +105111,7 @@ class WebMessagingApi {
 	/**
 	 * WebMessaging service.
 	 * @module purecloud-platform-client-v2/api/WebMessagingApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -104684,7 +105274,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -104860,7 +105450,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 258.0.0
+	 * @version 258.1.0
 	 */
 
 	/**
@@ -116733,7 +117323,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 258.0.0
+ * @version 258.1.0
  */
 class platformClient {
 	constructor() {

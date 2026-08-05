@@ -5,7 +5,7 @@ import HttpRequestOptions from './HttpRequestOptions.js';
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 258.0.0
+ * @version 258.1.0
  */
 class ApiClient {
 	/**
@@ -72,6 +72,19 @@ class ApiClient {
 		};
 
 		this.useLegacyParameterFilter = false;
+
+		if (typeof window !== 'undefined') {
+			// Browser only
+			this._handleAuthPopupMessage = this._handleAuthPopupMessage.bind(this);
+		}
+		this._listenersAuthPopupStatus = [];
+		this._authPopupWindow = null;
+		this._checkPopupTimeout = null;
+		this._notifyPopupInterval = null;
+		this._popupIdentifier = null;
+
+		this.onAuthPopupStatus = null;
+
 
 		/**
 		 * @description Value is `true` if local storage exists. Otherwise, false.
@@ -244,6 +257,72 @@ class ApiClient {
 	}
 
 	/**
+	 * @description Sets the authorization data
+	 * @param {object} authData - The authorization data
+	 */
+	setAuthData(authData) {
+		this._saveSettings(authData);
+	}
+
+	/**
+	 * @description Clears the authorization data
+	 */
+	clearAuthData() {
+		this._clearSettings();
+	}
+
+	/**
+	 * @description Gets the configuration for Authorization Popup
+	 */
+	getAuthPopupConfiguration() {
+		return this.config.getAuthPopupConfiguration();
+	}
+
+	/**
+	 * @description Sets the configuration for Authorization Popup
+	 * @param {object} authPopupConfiguration - Authorization Popup Configuration interface
+	 * @param {boolean} authPopupConfiguration.usePopup - (optional) Determines if the login methods will open a popup on login (usePopup: true), or redirect to Genesys Cloud login page (usePopup: false - default).
+	 * @param {number} authPopupConfiguration.popupTimeout - (optional) Maximum time (milliseconds) for the login to complete in popup before timing out (default: 120000).
+	 * @param {boolean} authPopupConfiguration.notifyPopup - (optional) Notify popup window using postMessage (name: "gc_auth_popup", type: "notify")
+	 * @param {boolean} authPopupConfiguration.autoClosePopup - (optional) Determines if the popup window will be closed from this app automatically.
+	 * @param {number} authPopupConfiguration.autoClosePopupDelay - (optional) Delay to wait after receiving message from popup and before automatically closing the window popup.
+	 * @param {string} authPopupConfiguration.popupTarget - (optional) The popup window target
+	 * @param {string} authPopupConfiguration.popupWindowFeatures - (optional) The popup window features
+	 * @param {string} authPopupConfiguration.overridePopupUrl - (optional) The alternative popup url to use - if overridePopupUrl is undefined, Genesys Cloud Login Web url will be used as popup url.
+	 * @param {object} authPopupConfiguration.overridePopupUrlParameters - (optional) URL Parameters to use (if any) with the alternative popup url.
+	 * @param {boolean} authPopupConfiguration.overridePopupUrlAuthParameters - (optional) Use Login Auth Parameters with the alternative popup url.
+	 * @param {boolean} authPopupConfiguration.useWindowReplace - (optional) When the authorization via Popup is successful, determines if Auth Data and Popup Status will be returned to the current page, or if the current page or an alternative will be loaded using window.replace.
+	 * @param {string} authPopupConfiguration.overrideWindowReplaceUri - (optional) Alternative Url to load when useWindowReplace is set to true.
+	 * @param {boolean} authPopupConfiguration.waitForLoginPromise - (optional) Determines if the login method's promise will wait until popup authorization is completed, or if it will immediately return.
+	 * @param {boolean} authPopupConfiguration.usePopupIdentifier - (optional) Determines if an additional identifier will be leveraged during the Authentication via Popup process.
+	 */
+	setAuthPopupConfiguration(authPopupConfiguration) {
+		this.config.setAuthPopupConfiguration(authPopupConfiguration);
+	}
+
+	/**
+	 * @description Updates the configuration for Authorization Popup
+	 * @param {object} authPopupConfiguration - Authorization Popup Configuration interface
+	 * @param {boolean} authPopupConfiguration.usePopup - (optional) Determines if the login methods will open a popup on login (usePopup: true), or redirect to Genesys Cloud login page (usePopup: false - default).
+	 * @param {number} authPopupConfiguration.popupTimeout - (optional) Maximum time (milliseconds) for the login to complete in popup before timing out (default: 120000).
+	 * @param {boolean} authPopupConfiguration.notifyPopup - (optional) Notify popup window using postMessage (name: "gc_auth_popup", type: "notify")
+	 * @param {boolean} authPopupConfiguration.autoClosePopup - (optional) Determines if the popup window will be closed from this app automatically.
+	 * @param {number} authPopupConfiguration.autoClosePopupDelay - (optional) Delay to wait after receiving message from popup and before automatically closing the window popup.
+	 * @param {string} authPopupConfiguration.popupTarget - (optional) The popup window target
+	 * @param {string} authPopupConfiguration.popupWindowFeatures - (optional) The popup window features
+	 * @param {string} authPopupConfiguration.overridePopupUrl - (optional) The alternative popup url to use - if overridePopupUrl is undefined, Genesys Cloud Login Web url will be used as popup url.
+	 * @param {object} authPopupConfiguration.overridePopupUrlParameters - (optional) URL Parameters to use (if any) with the alternative popup url.
+	 * @param {boolean} authPopupConfiguration.overridePopupUrlAuthParameters - (optional) Use Login Auth Parameters with the alternative popup url.
+	 * @param {boolean} authPopupConfiguration.useWindowReplace - (optional) When the authorization via Popup is successful, determines if Auth Data and Popup Status will be returned to the current page, or if the current page or an alternative will be loaded using window.replace.
+	 * @param {string} authPopupConfiguration.overrideWindowReplaceUri - (optional) Alternative Url to load when useWindowReplace is set to true.
+	 * @param {boolean} authPopupConfiguration.waitForLoginPromise - (optional) Determines if the login method's promise will wait until popup authorization is completed, or if it will immediately return.
+	 * @param {boolean} authPopupConfiguration.usePopupIdentifier - (optional) Determines if an additional identifier will be leveraged during the Authentication via Popup process.
+	 */
+	updateAuthPopupConfiguration(authPopupConfiguration) {
+		this.config.updateAuthPopupConfiguration(authPopupConfiguration);
+	}
+
+	/**
      * @description Sets the optional http headers used by the client
      * @param {object} newHeaders - default headers to be used
      */
@@ -407,6 +486,381 @@ class ApiClient {
 		this.config.setGateway(gateway);
 	}
 
+	// Authorization Popup
+
+	addAuthPopupStatusListener(listener) {
+		if (typeof listener === 'function' && listener) {
+			if (!this._listenersAuthPopupStatus) this._listenersAuthPopupStatus = [];
+			this._listenersAuthPopupStatus.push(listener);
+		}
+  	}
+
+  	removeAuthPopupStatusListener(listener) {
+		if (listener) {
+			if (!this._listenersAuthPopupStatus || this._listenersAuthPopupStatus.length == 0) return;
+			this._listenersAuthPopupStatus = this._listenersAuthPopupStatus.filter(l => l !== listener);
+		}
+  	}
+
+  	removeAllAuthPopupStatusListeners() {
+    	if (this._listenersAuthPopupStatus) this._listenersAuthPopupStatus = [];
+  	}
+
+  	_emitAuthPopupStatus(status, msg, identifier) {
+		if (this.onAuthPopupStatus) this.onAuthPopupStatus(status, msg, identifier);
+
+		if (!this._listenersAuthPopupStatus || this._listenersAuthPopupStatus.length == 0) return;
+    	this._listenersAuthPopupStatus.forEach(listener => listener(status, msg, identifier));
+  	}
+
+	_generatePopupIdentifier(nChar) {
+		if (nChar < 8 || nChar > 64) {
+			throw new Error(`Popup Identifier (length) must be between 8 and 64 characters`);
+		}
+		// Check for window
+		if (typeof window === 'undefined') {
+			try {
+				const getRandomValues = require('crypto').getRandomValues;
+				const unreservedCharacters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-._~";
+				let randomString = Array.from(getRandomValues(new Uint32Array(nChar)))
+					.map((x) => unreservedCharacters[x % unreservedCharacters.length])
+					.join('');
+				return randomString;
+			} catch (err) {
+				throw new Error(`Crypto module is missing/not supported.`);
+			}
+		} else {
+			const unreservedCharacters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-._~";
+			let randomString = Array.from(crypto.getRandomValues(new Uint32Array(nChar)))
+				.map((x) => unreservedCharacters[x % unreservedCharacters.length])
+				.join('');
+			return randomString;
+		}
+	}
+
+	_startAuthPopup(url, query, loginPopupConfiguration) {
+		try {
+			if (!loginPopupConfiguration) loginPopupConfiguration = {};
+
+			// Stop timers, reset values/variables if necessary
+			if (this._checkPopupTimeout) clearTimeout(this._checkPopupTimeout);
+			this._checkPopupTimeout = null;
+
+			if (this._notifyPopupInterval) clearInterval(this._notifyPopupInterval);
+			this._notifyPopupInterval = null;
+
+			// Remove Event Listener
+			window.removeEventListener('message', this._handleAuthPopupMessage);
+
+			if (this._authPopupWindow) {
+				if (loginPopupConfiguration.autoClosePopup === true && !this._authPopupWindow.closed) {
+					this._authPopupWindow.close();
+				}
+
+				if (this._popupIdentifier) this._emitAuthPopupStatus("ABORTED", "Previous Authorization Popup aborted.", this._popupIdentifier);
+				this._popupIdentifier = null;
+			}
+			this._authPopupWindow = null;
+
+			// Start
+			this._popupIdentifier = this._generatePopupIdentifier(16);
+
+			this._emitAuthPopupStatus("INIT", "Authorization Popup Starting", this._popupIdentifier);
+
+			let popupUrl = url;
+			if (loginPopupConfiguration.overridePopupUrl) {
+				let overrideQuery = null;
+				if (loginPopupConfiguration.overridePopupUrlAuthParameters === true && query) {
+					if (loginPopupConfiguration.overridePopupUrlParameters) {
+						overrideQuery = { ...query, ...loginPopupConfiguration.overridePopupUrlParameters };
+					} else {
+						overrideQuery = query;
+					}
+				} else if (loginPopupConfiguration.overridePopupUrlParameters) {
+					overrideQuery = loginPopupConfiguration.overridePopupUrlParameters;
+				}
+				
+				if (overrideQuery) {
+					popupUrl = `${loginPopupConfiguration.overridePopupUrl}?${new URLSearchParams(overrideQuery).toString()}`;
+				} else {
+					popupUrl = loginPopupConfiguration.overridePopupUrl;
+				}
+			}
+
+			return new Promise((resolve, reject) => {
+				window.addEventListener('message', (event) => this._handleAuthPopupMessage(event, loginPopupConfiguration, resolve, reject));
+
+				this._authPopupWindow = window.open(popupUrl, loginPopupConfiguration.popupTarget, loginPopupConfiguration.popupWindowFeatures);
+
+				if (loginPopupConfiguration.notifyPopup === true) {
+					this._notifyPopupInterval = setInterval(
+						function () {
+							if (this._authPopupWindow) {
+								let popupLocationOrigin = new URL(this.redirectUri);
+								// Genesys Cloud Auth Popup Notify Event
+								let popupNotifyMessage = {
+									name: "gc_auth_popup",
+									type: "notify"
+								};
+								if (loginPopupConfiguration.usePopupIdentifier === true && this._popupIdentifier) popupNotifyMessage.identifier = this._popupIdentifier;
+								this._authPopupWindow.postMessage(popupNotifyMessage, `${popupLocationOrigin.protocol}//${popupLocationOrigin.host}`);
+							} else {
+								clearInterval(this.notifyPopupInterval);
+								this._notifyPopupInterval = null;
+							}
+						}.bind(this),
+						1000
+					);
+				}
+
+				this._checkPopupTimeout = setTimeout(
+					function () {
+						// Authorization Popup Timeout
+						this._emitAuthPopupStatus("TIMEOUT", "Authorization Popup Timeout", this._popupIdentifier);
+						// Remove event listener
+						window.removeEventListener('message', this._handleAuthPopupMessage);
+						// Close popup automatically if requested
+						if (loginPopupConfiguration.autoClosePopup === true && loginPopupConfiguration.autoClosePopupDelay > 0) {
+							setTimeout(
+								function () {
+									if (this._authPopupWindow) {
+										if (!this._authPopupWindow.closed) {
+											this._authPopupWindow.close();
+										}
+										this._authPopupWindow = null;
+									}
+								}.bind(this),
+								loginPopupConfiguration.autoClosePopupDelay
+							);
+						} else {
+							if (loginPopupConfiguration.autoClosePopup === true) {
+								if (this._authPopupWindow) {
+									if (!this._authPopupWindow.closed) {
+										this._authPopupWindow.close();
+									}
+								}
+							}
+							this._authPopupWindow = null;
+						}
+						// Clear timeout
+						this._checkPopupTimeout = null;
+						// Clear Notify Popup
+						if (this._notifyPopupInterval) clearInterval(this._notifyPopupInterval);
+						this._notifyPopupInterval = null;
+						// Raise error/reject
+						return reject(new Error('Authentication Popup Timeout'));
+					}.bind(this),
+					loginPopupConfiguration.popupTimeout
+				);
+			});
+		} catch(error) {
+			console.error(error);
+			throw error;
+		}
+	}
+
+	_extractValuesFromSearchAndHash(search, hash) {
+		let authInfo = {};
+
+		if (search && search !== '?') {
+			let queryParams = new URLSearchParams(search); 
+			let code = queryParams.get('code');
+			if (code) authInfo.code = code;
+			let state = queryParams.get('state');
+			if (state) authInfo.state = state;
+			let error = queryParams.get('error');
+			if (error) authInfo.error = error;
+			let errorDescription = queryParams.get('error_description');
+			if (errorDescription) authInfo.error_description = errorDescription;
+		}
+		if (hash && hash !== '#') {
+			let hashParams = new URLSearchParams(hash.substring(1)); 
+			let accessToken = hashParams.get('access_token');
+			if (accessToken) authInfo.accessToken = accessToken;
+			let expiresIn = hashParams.get('expires_in');
+			if (expiresIn) {
+				authInfo.tokenExpiryTime = (new Date()).getTime() + (parseInt(expiresIn) * 1000);
+				authInfo.tokenExpiryTimeString = (new Date(authInfo.tokenExpiryTime)).toUTCString();
+			}
+			let state = hashParams.get('state');
+			if (state) authInfo.state = state;
+			let error = hashParams.get('error');
+			if (error) authInfo.error = error;
+			let errorDescription = hashParams.get('error_description');
+			if (errorDescription) authInfo.error_description = errorDescription;
+		}
+
+		return authInfo;
+	}
+
+	_handleAuthPopupMessage(event, loginPopupConfiguration, resolve, reject) {
+		// Verify source/origin
+		if (this.redirectUri.startsWith(event.origin)) {
+			// Verify format and message type
+			if (event.data && typeof event.data === 'object') {
+				const jsonMessage = JSON.parse(JSON.stringify(event.data));
+				// Genesys Cloud Auth Popup Message
+				if (jsonMessage && jsonMessage.name === "gc_auth_popup" && jsonMessage.type === "message") {
+					// Clear the _checkPopupTimeout and the _notifyPopupInterval
+					if (this._checkPopupTimeout) clearTimeout(this._checkPopupTimeout);
+					this._checkPopupTimeout = null;
+					if (this._notifyPopupInterval) clearInterval(this._notifyPopupInterval);
+					this._notifyPopupInterval = null;
+					// Remove Event Listener
+					window.removeEventListener('message', this._handleAuthPopupMessage);
+
+					if (loginPopupConfiguration.usePopupIdentifier === true && jsonMessage.identifier) {
+						if (jsonMessage.identifier !== this._popupIdentifier) {
+							// error
+							this._emitAuthPopupStatus("Error", `Invalid Popup Identifier received`, this._popupIdentifier);
+							authResult.accessToken = undefined;
+							this._saveSettings(authResult);
+							return reject(new Error(`Invalid Popup Identifier received`));
+						}
+					}
+
+					// Close the popup after delay if necessary (from app)
+					if (loginPopupConfiguration.autoClosePopup === true && loginPopupConfiguration.autoClosePopupDelay > 0) {
+						setTimeout(
+							function () {
+								if (this._authPopupWindow) {
+									if (!this._authPopupWindow.closed) {
+										this._authPopupWindow.close();
+									}
+									this._authPopupWindow = null;
+								}
+							}.bind(this),
+							loginPopupConfiguration.autoClosePopupDelay
+						);
+					} else {
+						if (loginPopupConfiguration.autoClosePopup === true) {
+							if (this._authPopupWindow) {
+								if (!this._authPopupWindow.closed) {
+									this._authPopupWindow.close();
+								}
+							}
+						}
+						this._authPopupWindow = null;
+					}
+
+					let authResult = {};
+					let popupSearch = null;
+					let popupHash = null;
+
+					if (jsonMessage.auth && typeof jsonMessage.auth === 'object') {
+						authResult = jsonMessage.auth;
+						// Force popup search in case of further window.replace
+						popupSearch = `?${new URLSearchParams(authResult).toString()}`;
+					} else {
+						if (jsonMessage.search && jsonMessage.search !== '?') popupSearch = jsonMessage.search;
+						if (jsonMessage.hash && jsonMessage.hash !== '#') popupHash = jsonMessage.hash;
+
+						// Get the token or the code and other authdata from incoming message
+						authResult = this._extractValuesFromSearchAndHash(popupSearch, popupHash);
+					}
+
+					if (!authResult.error && !authResult.accessToken && !authResult.code) {
+						// Override with error
+						authResult.error = "InvalidAuthParams";
+						authResult.error_description = "Missing Auth Params on URL Redirect";
+					}
+
+					if (authResult.error) {
+						// error
+						this._emitAuthPopupStatus("AUTH_ERROR", `Auth Error: [${authResult.error}] ${authResult.error_description}`, this._popupIdentifier);
+						authResult.accessToken = undefined;
+						this._saveSettings(authResult);
+						return reject(new Error(`Auth Error: [${authResult.error}] ${authResult.error_description}`));
+					}
+
+					// Strategies for auth completion
+					if (loginPopupConfiguration.useWindowReplace === true) {
+						// Access Token received
+						this._emitAuthPopupStatus("REDIRECTING", "Authorization Popup Completed", this._popupIdentifier);
+						this._popupIdentifier = null;
+
+						if (loginPopupConfiguration.overrideWindowReplaceUri) {
+							window.location.replace(`${loginPopupConfiguration.overrideWindowReplaceUri}${popupSearch ? popupSearch : ''}${popupHash ? popupHash : ''}`);
+						} else {
+							window.location.replace(`${window.location.origin}${window.location.pathname}${popupSearch ? popupSearch : ''}${popupHash ? popupHash : ''}`);
+						}
+						resolve(null);
+					} else {
+						if (authResult && authResult.accessToken) {
+							this._saveSettings(authResult);
+							this._testTokenAccess()
+								.then(() => {
+									// Valid Access Token received
+									this._emitAuthPopupStatus("AUTHENTICATED", "Authorization Popup Completed", this._popupIdentifier);
+									this._popupIdentifier = null;
+									resolve(authResult);
+								})
+								.catch((error) => {
+									// Invalid Access Token received
+									this._emitAuthPopupStatus("AUTH_ERROR", `Auth Error: [${error.name}] ${error.message}`, this._popupIdentifier);
+									this._popupIdentifier = null;
+									// Handle failure response
+									this._saveSettings({ accessToken: undefined});
+									return reject(new Error(`[${error.name}] ${error.message}`));
+								});
+						} else if (authResult && authResult.code) {
+							if (!this.codeVerifier) {
+								// load codeVerifier from session storage
+								if (this.hasLocalStorage) {
+									this.codeVerifier = sessionStorage.getItem(`${this.settingsPrefix}_pkce_code_verifier`);
+								}
+							}
+							this.authorizePKCEGrant(this.clientId, this.codeVerifier, authResult.code, this.redirectUri)
+							.then(() => {
+								// Do authenticated things
+								this._testTokenAccess()
+								.then(() => {
+									// Valid Access Token received
+									this._emitAuthPopupStatus("AUTHENTICATED", "Authorization Popup Completed", this._popupIdentifier);
+									this._popupIdentifier = null;
+									if (!this.authData.state && authResult.state)
+									this.authData.state = authResult.state;
+									// remove codeVerifier from session storage
+									if (this.hasLocalStorage) {
+										sessionStorage.removeItem(`genesys_cloud_sdk_pkce_code_verifier`);
+										sessionStorage.removeItem(`${this.settingsPrefix}_pkce_code_verifier`);
+									}
+									resolve(this.authData);
+								})
+								.catch((error) => {
+									// Invalid Access Token received
+									this._emitAuthPopupStatus("AUTH_ERROR", `Auth Error: [${error.name}] ${error.message}`, this._popupIdentifier);
+									this._popupIdentifier = null;
+									// Handle failure response
+									this._saveSettings({ accessToken: undefined});
+									// remove codeVerifier from session storage
+									if (this.hasLocalStorage) {
+										sessionStorage.removeItem(`genesys_cloud_sdk_pkce_code_verifier`);
+										sessionStorage.removeItem(`${this.settingsPrefix}_pkce_code_verifier`);
+									}
+									return reject(new Error(`[${error.name}] ${error.message}`));
+								});
+							})
+							.catch((error) => {
+								// Error in PKCE Token
+								this._emitAuthPopupStatus("AUTH_ERROR", `Auth Error: [${error.name}] ${error.message}`, this._popupIdentifier);
+								this._popupIdentifier = null;
+								// Handle failure response
+								this._saveSettings({ accessToken: undefined});
+								// remove codeVerifier from session storage
+								if (this.hasLocalStorage) {
+									sessionStorage.removeItem(`genesys_cloud_sdk_pkce_code_verifier`);
+									sessionStorage.removeItem(`${this.settingsPrefix}_pkce_code_verifier`);
+								}
+								return reject(new Error(`[${error.name}] ${error.message}`));
+							});
+						}
+					}
+				}
+			}
+		}
+	}
+
 	/**
 	 * @description Initiates the implicit grant login flow. Will attempt to load the token from local storage, if enabled.
 	 * @param {string} clientId - The client ID of an OAuth Implicit Grant client
@@ -418,6 +872,7 @@ class ApiClient {
 	 * @param {string} opts.target - (optional) The organization ID of the target organization, when intending to log in to a specific target organization using Authorized Organizations.
 	 * @param {string} opts.login_hint - (optional) The login_hint allows an application to pass the email address and/or the org name values to the authorization server (email:orgName, email, orgName).
 	 * @param {string} opts.prompt - (optional) Use the prompt=login parameter to require that the user be prompted to enter credentials at the Gensys Cloud login screen and ignore any remembered sessions (auth cookies).
+	 * @param {object} opts.authPopupConfiguration - (optional) Overrides Authorization Popup Configuration.
 	 */
 	loginImplicitGrant(clientId, redirectUri, opts) {
 		// Check for auth token in hash
@@ -452,19 +907,33 @@ class ApiClient {
 				})
 				.catch((error) => {
 					var query = {
-						client_id: encodeURIComponent(this.clientId),
-						redirect_uri: encodeURIComponent(this.redirectUri),
+						client_id: this.clientId,
+						redirect_uri: this.redirectUri,
 						response_type: 'token'
 					};
-					if (opts.state) query.state = encodeURIComponent(opts.state);
-					if (opts.org) query.org = encodeURIComponent(opts.org);
-					if (opts.provider) query.provider = encodeURIComponent(opts.provider);
-					if (opts.target) query.target = encodeURIComponent(opts.target);
-					if (opts.login_hint) query.login_hint = encodeURIComponent(opts.login_hint);
-					if (opts.prompt && opts.prompt == 'login') query.prompt = encodeURIComponent(opts.prompt);
+					if (opts.state) query.state = opts.state;
+					if (opts.org) query.org = opts.org;
+					if (opts.provider) query.provider = opts.provider;
+					if (opts.target) query.target = opts.target;
+					if (opts.login_hint) query.login_hint = opts.login_hint;
+					if (opts.prompt && opts.prompt == 'login') query.prompt = opts.prompt;
+
+					// Overrides AuthPopupConfiguration locally
+					let loginPopupConfiguration = this.config.mergeWithAuthPopupConfiguration(opts.authPopupConfiguration);
 
 					var url = this._buildAuthUrl('oauth/authorize', query);
-					window.location.replace(url);
+
+					if (loginPopupConfiguration.usePopup === true) {
+						this._startAuthPopup(url, query, loginPopupConfiguration)
+							.then((authData) => {
+								resolve(authData);
+							})
+							.catch((error) => {
+								return reject(new Error(`[${error.name}] ${error.message}`));
+							});
+					} else {
+						window.location.replace(url);
+					}
 				});
 		});
 	}
@@ -824,6 +1293,7 @@ class ApiClient {
 				// remove codeVerifier from session storage
 				if (this.hasLocalStorage) {
 					sessionStorage.removeItem(`genesys_cloud_sdk_pkce_code_verifier`);
+					sessionStorage.removeItem(`${this.settingsPrefix}_pkce_code_verifier`);
 				}
 				// reset access token if any was stored
 				this._saveSettings({ accessToken: undefined });
@@ -835,7 +1305,7 @@ class ApiClient {
 				if (!this.codeVerifier) {
 					// load codeVerifier from session storage
 					if (this.hasLocalStorage) {
-						this.codeVerifier = sessionStorage.getItem(`genesys_cloud_sdk_pkce_code_verifier`);
+						this.codeVerifier = sessionStorage.getItem(`${this.settingsPrefix}_pkce_code_verifier`);
 					}
 				}
                 this.authorizePKCEGrant(this.clientId, this.codeVerifier, query.code, this.redirectUri)
@@ -848,6 +1318,7 @@ class ApiClient {
 						// remove codeVerifier from session storage
 						if (this.hasLocalStorage) {
 							sessionStorage.removeItem(`genesys_cloud_sdk_pkce_code_verifier`);
+							sessionStorage.removeItem(`${this.settingsPrefix}_pkce_code_verifier`);
 						}
                         resolve(this.authData);
                       })
@@ -857,8 +1328,9 @@ class ApiClient {
 						// remove codeVerifier from session storage
 						if (this.hasLocalStorage) {
 							sessionStorage.removeItem(`genesys_cloud_sdk_pkce_code_verifier`);
+							sessionStorage.removeItem(`${this.settingsPrefix}_pkce_code_verifier`);
 						}
-                        return reject(new Error(`[${error.name}] ${error.msg}`));
+                        return reject(new Error(`[${error.name}] ${error.message}`));
                       });
                   })
                   .catch((error) => {
@@ -867,8 +1339,9 @@ class ApiClient {
 					// remove codeVerifier from session storage
 					if (this.hasLocalStorage) {
 						sessionStorage.removeItem(`genesys_cloud_sdk_pkce_code_verifier`);
+						sessionStorage.removeItem(`${this.settingsPrefix}_pkce_code_verifier`);
 					}
-                    return reject(new Error(`[${error.name}] ${error.msg}`));
+                    return reject(new Error(`[${error.name}] ${error.message}`));
                   });
             } else {
                 // Test token (if previously stored) and proceed with login
@@ -884,26 +1357,41 @@ class ApiClient {
 						// save codeVerifier in session storage
 						if (this.hasLocalStorage) {
 							sessionStorage.setItem(`genesys_cloud_sdk_pkce_code_verifier`, this.codeVerifier);
+							sessionStorage.setItem(`${this.settingsPrefix}_pkce_code_verifier`, this.codeVerifier);
 						}
 					}
                     this.computePKCECodeChallenge(this.codeVerifier)
 					.then((codeChallenge) => {
                       var tokenQuery = {
-                        client_id: encodeURIComponent(this.clientId),
-                        redirect_uri: encodeURIComponent(this.redirectUri),
-                        code_challenge: encodeURIComponent(codeChallenge),
+                        client_id: this.clientId,
+                        redirect_uri: this.redirectUri,
+                        code_challenge: codeChallenge,
                         response_type: 'code',
                         code_challenge_method: 'S256'
                       };
-                      if (opts.state) tokenQuery.state = encodeURIComponent(opts.state);
-                      if (opts.org) tokenQuery.org = encodeURIComponent(opts.org);
-                      if (opts.provider) tokenQuery.provider = encodeURIComponent(opts.provider);
-					  if (opts.target) tokenQuery.target = encodeURIComponent(opts.target);
-					  if (opts.login_hint) tokenQuery.login_hint = encodeURIComponent(opts.login_hint);
-					  if (opts.prompt && opts.prompt == 'login') tokenQuery.prompt = encodeURIComponent(opts.prompt);
+                      if (opts.state) tokenQuery.state = opts.state;
+                      if (opts.org) tokenQuery.org = opts.org;
+                      if (opts.provider) tokenQuery.provider = opts.provider;
+					  if (opts.target) tokenQuery.target = opts.target;
+					  if (opts.login_hint) tokenQuery.login_hint = opts.login_hint;
+					  if (opts.prompt && opts.prompt == 'login') tokenQuery.prompt = opts.prompt;
 
-                      var url = this._buildAuthUrl('oauth/authorize', tokenQuery);
-                      window.location.replace(url);
+                      // Overrides AuthPopupConfiguration locally
+					  let loginPopupConfiguration = this.config.mergeWithAuthPopupConfiguration(opts.authPopupConfiguration);
+
+					  var url = this._buildAuthUrl('oauth/authorize', tokenQuery);
+
+					  if (loginPopupConfiguration.usePopup === true) {
+						this._startAuthPopup(url, tokenQuery, loginPopupConfiguration)
+							.then((authData) => {
+								resolve(authData);
+							})
+							.catch((error) => {
+								return reject(new Error(`[${error.name}] ${error.message}`));
+							});
+					  } else {
+						window.location.replace(url);
+					  }
                     })
                     .catch((err) => {
                       return reject(new Error(`[${err.name}]`));
@@ -1272,11 +1760,11 @@ class ApiClient {
 		}
 
 		var query = {
-			client_id: encodeURIComponent(this.clientId)
+			client_id: this.clientId
 		};
 
 		if (logoutRedirectUri)
-			query['redirect_uri'] = encodeURI(logoutRedirectUri);
+			query['redirect_uri'] = logoutRedirectUri;
 
 		var url = this._buildAuthUrl('logout', query);
 		window.location.replace(url);
@@ -1288,9 +1776,9 @@ class ApiClient {
 	 * @param {object} query - An object of key/value pairs to use for querystring keys/values
 	 */
 	_buildAuthUrl(path, query) {
-		if (!query) query = {};
 		var loginBasePath = this.config.getConfUrl('login', this.config.authUrl);
-		return Object.keys(query).reduce((url, key) => !query[key] ? url : `${url}&${key}=${query[key]}`, `${loginBasePath}/${path}?`);
+		if (!query) return `${loginBasePath}/${path}`;
+		else return `${loginBasePath}/${path}?${new URLSearchParams(query).toString()}`;
 	}
 
 	/**

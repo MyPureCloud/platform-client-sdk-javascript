@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="robots" content="noindex" />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Genesys Cloud Authentication Status</title>
+  <meta name="Genesys Cloud Authentication Status" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    #popupStatus {
+      width: 360px;
+      height: 140px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      font-weight: bold;
+      border-radius: 10px;
+      box-sizing: border-box;
+      transition: all 0.25s ease;
+      text-align: center;
+    }
+
+    .popupInProgress {
+      border: 3px solid #003366;
+      color: #003366;
+    }
+
+    .popupCompleted {
+      border: 3px solid #059154;
+      color: #059154;
+    }
+
+    .popupError {
+      border: 3px solid #c80139;
+      color: #c80139;
+    }
+
+  </style>
+</head>
+
+<body onload="start()">
+
+  <div id="popupStatus" class="popupInProgress">Authenticating...</div>
+  
+  <script>
+    'use strict' //Enables strict mode is JavaScript
+    // Delay (milliseconds) before automatically closing the current window
+    const autoCloseDelay = 1000;
+
+    async function start() {
+      try {
+        // Genesys Cloud Auth Popup Message
+        let authMessage = {
+          name: "gc_auth_popup",
+          type: "message",
+          hash: "",
+          search: ""
+        };
+
+        // Collect URL Hash parameters and URL Query parameters (update only if URL parameters are set)
+        if (window.location.hash) authMessage.hash = window.location.hash;
+        if (window.location.search) authMessage.search = window.location.search;
+
+        // Wait for a notify message sent from the main web app to the popup page
+        // To determine the expected targetOrigin for the Post Message
+        if (!window.opener) {
+          // Popup was not opened from another window
+          console.log('Error: ', 'Not a popup window');
+          popupStatus.classList.replace("popupInProgress", "popupError");
+          popupStatus.innerHTML = "Error...<br>Not a popup window";
+        } else {
+          window.addEventListener('message', (event) => {
+            // Verify format and message type
+            if (event.data && typeof event.data === 'object') {
+              const jsonMessage = JSON.parse(JSON.stringify(event.data));
+              // Genesys Cloud Auth Popup Notify event
+              if (jsonMessage && jsonMessage.name === "gc_auth_popup" && jsonMessage.type === "notify") {
+                if (jsonMessage.identifier) authMessage.identifier = jsonMessage.identifier;
+                // Posting Message to the frame which sent the gc_popup_notify message
+                // event.source.postMessage(authMessage, event.origin);
+                window.opener.postMessage(authMessage, event.origin);
+                // Force close (only if message could be posted to window opener)
+                let closeTimeout = setTimeout(
+                  function () {
+                    window.close();
+                  },
+                  autoCloseDelay
+                );
+                popupStatus.classList.replace("popupInProgress", "popupCompleted");
+                popupStatus.innerHTML = "Authentication<br>Popup Info Collected...";
+              } else {
+                // ignore message
+              }
+            }
+          });
+        }
+        
+      } catch (err) {
+        console.log('Error: ', err);
+        popupStatus.classList.replace("popupInProgress", "popupError");
+        popupStatus.innerHTML = "Error...<br>" + err.message ? err.message : err.name;
+      }
+    }
+  </script>
+</body>
+
+</html>
