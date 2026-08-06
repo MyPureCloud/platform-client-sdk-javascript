@@ -20092,4 +20092,4 @@ apiInstance.putConversationsVideoRecordingstate(conversationId, body, opts)
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@258.1.0_
+_purecloud-platform-client-v2@258.2.0_

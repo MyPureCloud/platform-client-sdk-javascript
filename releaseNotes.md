@@ -3,8 +3,7 @@ Platform API version: 10662
 
 ## Release Notes
 
-Introducing helpers and logic for Authentication via Pop-up window
-See README for more details: https://github.com/MyPureCloud/platform-client-sdk-javascript/blob/master/build/README.md#popup-authentication
+Fix bug introduced in the typescript interface in version 258.1.0 (duplicate target declaration, ...).
 
 
 # Major Changes (0 changes)

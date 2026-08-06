@@ -6,7 +6,7 @@ A JavaScript library to interface with the Genesys Cloud Platform API. View the 
 [![npm](https://img.shields.io/npm/v/purecloud-platform-client-v2.svg)](https://www.npmjs.com/package/purecloud-platform-client-v2)
 [![Release Notes Badge](https://developer-content.genesys.cloud/images/sdk-release-notes.png)](https://github.com/MyPureCloud/platform-client-sdk-javascript/blob/master/releaseNotes.md)
 
-Documentation version purecloud-platform-client-v2@258.1.0
+Documentation version purecloud-platform-client-v2@258.2.0
 
 ## Preview APIs
 
@@ -29,7 +29,7 @@ For direct use in a browser script:
 
 ```html
 <!-- Include the CJS SDK -->
-<script src="https://sdk-cdn.mypurecloud.com/javascript/258.1.0/purecloud-platform-client-v2.min.js"></script>
+<script src="https://sdk-cdn.mypurecloud.com/javascript/258.2.0/purecloud-platform-client-v2.min.js"></script>
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
@@ -46,7 +46,7 @@ For direct use in a browser script:
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
-  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/258.1.0/purecloud-platform-client-v2.min.js'], (platformClient) => {
+  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/258.2.0/purecloud-platform-client-v2.min.js'], (platformClient) => {
     console.log(platformClient);
   });
 </script>
@@ -286,7 +286,7 @@ interface AuthPopupConfiguration {
 	popupTarget?: string;
 	popupWindowFeatures?: string;
 	overridePopupUrl?: string;
-	overridePopupUrlParameters?: [key: string]: string | number | object;
+	overridePopupUrlParameters?: { [key: string]: string; };
 	overridePopupUrlAuthParameters?: boolean;
 	useWindowReplace?: boolean;
 	overrideWindowReplaceUri?: string;
@@ -339,11 +339,12 @@ client.updateAuthPopupConfiguration({ usePopup: true, popupTimeout: 60000 })
 // Method2 - Pass AuthPopupConfiguration as part of the loginPKCEGrant optional parameter authPopupConfiguration 
 client.loginPKCEGrant(clientId, redirectUri, { state: state, authPopupConfiguration: { usePopup: true, popupTimeout: 60000 } })
   .then((data) => {
+    // The loginPKCEGrant promise is resolved when the popup authentication is completed (user authenticated)
     console.log(data);
     // Do authenticated things
   })
   .catch((err) => {
-    // Handle failure response
+    // Handle failure response (popup timeout, authentication errors, ...)
     console.log(err);
   });
 ```
@@ -411,22 +412,24 @@ const redirectUri = 'https://my_pop_up_host/auth_popup.html';
 client.updateAuthPopupConfiguration({ usePopup: true, popupTimeout: 60000 })
 
 // Set AuthPopupStatus handler
+// Update UI based on status
 client.onAuthPopupStatus = (status, msg, identifier) => {
     console.log(`AUTH POPUP STATUS RECEIVED: status=${status}, msg=${msg}, identifier=${identifier}`);
     // status == "INIT": Authentication Popup in progress -> sets UI
     // status == "ERROR" | "AUTH_ERROR" | "TIMEOUT" : Authentication Error -> sets UI
-    // status == "AUTHENTICATED" : Authentication Error -> sets UI
+    // status == "AUTHENTICATED" : Authentication Success -> sets UI
     // status == "ABORTED" : Authentication Aborted -> sets UI
     // status == "REDIRECTING" : About to replace location url -> sets UI
 }
 
 client.loginPKCEGrant(clientId, redirectUri, { state: state })
   .then((data) => {
+    // The loginPKCEGrant promise is resolved when the popup authentication is completed (user authenticated)
     console.log(data);
     // Do authenticated things
   })
   .catch((err) => {
-    // Handle failure response
+    // Handle failure response (popup timeout, authentication errors, ...)
     console.log(err);
   });
 ```

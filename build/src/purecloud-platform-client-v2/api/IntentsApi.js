@@ -5,7 +5,7 @@ class IntentsApi {
 	/**
 	 * Intents service.
 	 * @module purecloud-platform-client-v2/api/IntentsApi
-	 * @version 258.1.0
+	 * @version 258.2.0
 	 */
 
 	/**

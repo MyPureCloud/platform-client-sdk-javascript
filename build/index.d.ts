@@ -78,7 +78,6 @@ declare class LoginImplicitGrantOptions {
 	org?: string;
 	provider?: string;
 	prompt?: string;
-	target?: string;
 	login_hint?: string;
 	target?: string;
 	authPopupConfiguration?: AuthPopupConfiguration;
@@ -126,7 +125,7 @@ declare interface AuthPopupConfiguration {
 	popupTarget?: string;
 	popupWindowFeatures?: string;
 	overridePopupUrl?: string;
-	overridePopupUrlParameters?: [key: string]: string | number | object;
+	overridePopupUrlParameters?: { [key: string]: string; };
 	overridePopupUrlAuthParameters?: boolean;
 	useWindowReplace?: boolean;
 	overrideWindowReplaceUri?: string;

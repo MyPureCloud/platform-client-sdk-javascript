@@ -5,7 +5,7 @@ import HttpRequestOptions from './HttpRequestOptions.js';
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 258.1.0
+ * @version 258.2.0
  */
 class ApiClient {
 	/**

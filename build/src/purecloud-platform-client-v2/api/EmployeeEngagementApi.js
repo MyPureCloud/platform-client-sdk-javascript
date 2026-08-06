@@ -5,7 +5,7 @@ class EmployeeEngagementApi {
 	/**
 	 * EmployeeEngagement service.
 	 * @module purecloud-platform-client-v2/api/EmployeeEngagementApi
-	 * @version 258.1.0
+	 * @version 258.2.0
 	 */
 
 	/**
