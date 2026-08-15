@@ -22,6 +22,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postIntentsCustomerintentSourceintentsBulkAdd**](IntentsApi#postIntentsCustomerintentSourceintentsBulkAdd) | **POST** /api/v2/intents/customerintents/{customerIntentId}/sourceintents/bulk/add | Bulk add source intents to a customer intent
 [**postIntentsCustomerintentSourceintentsBulkRemove**](IntentsApi#postIntentsCustomerintentSourceintentsBulkRemove) | **POST** /api/v2/intents/customerintents/{customerIntentId}/sourceintents/bulk/remove | Bulk remove source intents mapped to a customer intent
 [**postIntentsCustomerintents**](IntentsApi#postIntentsCustomerintents) | **POST** /api/v2/intents/customerintents | Create customer intents
+[**postIntentsCustomerintentsBulkRetrieve**](IntentsApi#postIntentsCustomerintentsBulkRetrieve) | **POST** /api/v2/intents/customerintents/bulk/retrieve | Get customer intents by IDs
 
 
 
@@ -975,4 +976,63 @@ apiInstance.postIntentsCustomerintents(body, opts)
 **CustomerIntentResponse**
 
 
-_purecloud-platform-client-v2@258.2.0_
+## postIntentsCustomerintentsBulkRetrieve
+
+> [CustomerIntentResponse] postIntentsCustomerintentsBulkRetrieve(body, opts)
+
+
+POST /api/v2/intents/customerintents/bulk/retrieve
+
+Get customer intents by IDs
+
+postIntentsCustomerintentsBulkRetrieve is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* externalContacts:customerIntentTaxonomy:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntentsApi();
+
+let body = {}; // Object | Customer intent IDs to retrieve
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postIntentsCustomerintentsBulkRetrieve(body, opts)
+  .then((data) => {
+    console.log(`postIntentsCustomerintentsBulkRetrieve success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postIntentsCustomerintentsBulkRetrieve');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Customer intent IDs to retrieve |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**[CustomerIntentResponse]**
+
+
+_purecloud-platform-client-v2@259.0.0_

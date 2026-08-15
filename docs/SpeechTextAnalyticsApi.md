@@ -46,6 +46,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getSpeechandtextanalyticsTopicsDialects**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsTopicsDialects) | **GET** /api/v2/speechandtextanalytics/topics/dialects | Get list of supported Speech and Text Analytics topics dialects
 [**getSpeechandtextanalyticsTopicsGeneral**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsTopicsGeneral) | **GET** /api/v2/speechandtextanalytics/topics/general | Get the Speech and Text Analytics general topics for a given dialect
 [**getSpeechandtextanalyticsTopicsGeneralStatus**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsTopicsGeneralStatus) | **GET** /api/v2/speechandtextanalytics/topics/general/status | Get the list of general topics from the org and the system with their current status
+[**getSpeechandtextanalyticsTopicsGeneratedphrasesJob**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsTopicsGeneratedphrasesJob) | **GET** /api/v2/speechandtextanalytics/topics/generatedphrases/jobs/{jobId} | Get a Speech and Text Analytics GenAI phrases job by id
 [**getSpeechandtextanalyticsTopicsPublishjob**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsTopicsPublishjob) | **GET** /api/v2/speechandtextanalytics/topics/publishjobs/{jobId} | Get a Speech and Text Analytics publish topics job by id
 [**getSpeechandtextanalyticsTopicsTestphraseJob**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsTopicsTestphraseJob) | **GET** /api/v2/speechandtextanalytics/topics/testphrase/jobs/{jobId} | Get a Speech and Text Analytics test topics phrase job by id
 [**getSpeechandtextanalyticsTranslationsLanguageConversation**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsTranslationsLanguageConversation) | **GET** /api/v2/speechandtextanalytics/translations/languages/{languageId}/conversations/{conversationId} | Translate a single interaction recording (or an email conversation)
@@ -59,8 +60,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postSpeechandtextanalyticsReprocessingJobs**](SpeechTextAnalyticsApi#postSpeechandtextanalyticsReprocessingJobs) | **POST** /api/v2/speechandtextanalytics/reprocessing/jobs | Create a Speech and Text Analytics reprocess job.
 [**postSpeechandtextanalyticsSentimentfeedback**](SpeechTextAnalyticsApi#postSpeechandtextanalyticsSentimentfeedback) | **POST** /api/v2/speechandtextanalytics/sentimentfeedback | Create a Speech and Text Analytics SentimentFeedback
 [**postSpeechandtextanalyticsTopics**](SpeechTextAnalyticsApi#postSpeechandtextanalyticsTopics) | **POST** /api/v2/speechandtextanalytics/topics | Create new Speech and Text Analytics topic
+[**postSpeechandtextanalyticsTopicsGeneratedphrasesJobs**](SpeechTextAnalyticsApi#postSpeechandtextanalyticsTopicsGeneratedphrasesJobs) | **POST** /api/v2/speechandtextanalytics/topics/generatedphrases/jobs | Create new Speech and Text Analytics GenAI topic phrases generation job
 [**postSpeechandtextanalyticsTopicsPublishjobs**](SpeechTextAnalyticsApi#postSpeechandtextanalyticsTopicsPublishjobs) | **POST** /api/v2/speechandtextanalytics/topics/publishjobs | Create new Speech and Text Analytics publish topics job
-[**postSpeechandtextanalyticsTopicsTestphraseJobs**](SpeechTextAnalyticsApi#postSpeechandtextanalyticsTopicsTestphraseJobs) | **POST** /api/v2/speechandtextanalytics/topics/testphrase/jobs | Create new Speech and Text Analytics publish topics job
+[**postSpeechandtextanalyticsTopicsTestphraseJobs**](SpeechTextAnalyticsApi#postSpeechandtextanalyticsTopicsTestphraseJobs) | **POST** /api/v2/speechandtextanalytics/topics/testphrase/jobs | Create new Speech and Text Analytics test topic phrase job
 [**postSpeechandtextanalyticsTranscriptsSearch**](SpeechTextAnalyticsApi#postSpeechandtextanalyticsTranscriptsSearch) | **POST** /api/v2/speechandtextanalytics/transcripts/search | Search resources.
 [**putSpeechandtextanalyticsCategory**](SpeechTextAnalyticsApi#putSpeechandtextanalyticsCategory) | **PUT** /api/v2/speechandtextanalytics/categories/{categoryId} | Update a Speech and Text Analytics category by ID
 [**putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId**](SpeechTextAnalyticsApi#putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId) | **PUT** /api/v2/speechandtextanalytics/dictionaryfeedback/{dictionaryFeedbackId} | Update existing Speech and Text Analytics dictionary feedback by id
@@ -2416,6 +2418,63 @@ apiInstance.getSpeechandtextanalyticsTopicsGeneralStatus(opts)
 **UnifiedGeneralTopicEntityListing**
 
 
+## getSpeechandtextanalyticsTopicsGeneratedphrasesJob
+
+> GenAIPhrasesJob getSpeechandtextanalyticsTopicsGeneratedphrasesJob(jobId, opts)
+
+
+GET /api/v2/speechandtextanalytics/topics/generatedphrases/jobs/{jobId}
+
+Get a Speech and Text Analytics GenAI phrases job by id
+
+Requires ALL permissions:
+
+* speechAndTextAnalytics:topic:addAIPhrases
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SpeechTextAnalyticsApi();
+
+let jobId = "jobId_example"; // String | the id of the GenAI phrases job
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getSpeechandtextanalyticsTopicsGeneratedphrasesJob(jobId, opts)
+  .then((data) => {
+    console.log(`getSpeechandtextanalyticsTopicsGeneratedphrasesJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getSpeechandtextanalyticsTopicsGeneratedphrasesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | the id of the GenAI phrases job |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**GenAIPhrasesJob**
+
+
 ## getSpeechandtextanalyticsTopicsPublishjob
 
 > TopicJob getSpeechandtextanalyticsTopicsPublishjob(jobId, opts)
@@ -3165,6 +3224,63 @@ apiInstance.postSpeechandtextanalyticsTopics(body, opts)
 **Topic**
 
 
+## postSpeechandtextanalyticsTopicsGeneratedphrasesJobs
+
+> GenAIPhrasesJobs postSpeechandtextanalyticsTopicsGeneratedphrasesJobs(body, opts)
+
+
+POST /api/v2/speechandtextanalytics/topics/generatedphrases/jobs
+
+Create new Speech and Text Analytics GenAI topic phrases generation job
+
+Requires ALL permissions:
+
+* speechAndTextAnalytics:topic:addAIPhrases
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SpeechTextAnalyticsApi();
+
+let body = {}; // Object | The GenAI topic phrases generation job to create
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postSpeechandtextanalyticsTopicsGeneratedphrasesJobs(body, opts)
+  .then((data) => {
+    console.log(`postSpeechandtextanalyticsTopicsGeneratedphrasesJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postSpeechandtextanalyticsTopicsGeneratedphrasesJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | The GenAI topic phrases generation job to create |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**GenAIPhrasesJobs**
+
+
 ## postSpeechandtextanalyticsTopicsPublishjobs
 
 > TopicJob postSpeechandtextanalyticsTopicsPublishjobs(body, opts)
@@ -3229,7 +3345,7 @@ apiInstance.postSpeechandtextanalyticsTopicsPublishjobs(body, opts)
 
 POST /api/v2/speechandtextanalytics/topics/testphrase/jobs
 
-Create new Speech and Text Analytics publish topics job
+Create new Speech and Text Analytics test topic phrase job
 
 Requires ALL permissions:
 
@@ -3809,4 +3925,4 @@ apiInstance.putSpeechandtextanalyticsTopic(topicId, body, opts)
 **Topic**
 
 
-_purecloud-platform-client-v2@258.2.0_
+_purecloud-platform-client-v2@259.0.0_

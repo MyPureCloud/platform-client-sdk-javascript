@@ -23,8 +23,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteWorkforcemanagementBusinessunitWorkplanbidGroup**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitWorkplanbidGroup) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId} | Delete a bid group by bid group Id
 [**deleteWorkforcemanagementCalendarUrlIcs**](WorkforceManagementApi#deleteWorkforcemanagementCalendarUrlIcs) | **DELETE** /api/v2/workforcemanagement/calendar/url/ics | Disable generated calendar link for the current user
 [**deleteWorkforcemanagementManagementunit**](WorkforceManagementApi#deleteWorkforcemanagementManagementunit) | **DELETE** /api/v2/workforcemanagement/managementunits/{managementUnitId} | Delete management unit
-[**deleteWorkforcemanagementManagementunitTimeofflimit**](WorkforceManagementApi#deleteWorkforcemanagementManagementunitTimeofflimit) | **DELETE** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId} | Deletes a time off limit object
-[**deleteWorkforcemanagementManagementunitTimeoffplan**](WorkforceManagementApi#deleteWorkforcemanagementManagementunitTimeoffplan) | **DELETE** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId} | Deletes a time off plan
+[**deleteWorkforcemanagementManagementunitTimeofflimit**](WorkforceManagementApi#deleteWorkforcemanagementManagementunitTimeofflimit) | **DELETE** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId} | Deletes a time off limit object. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId} instead
+[**deleteWorkforcemanagementManagementunitTimeoffplan**](WorkforceManagementApi#deleteWorkforcemanagementManagementunitTimeoffplan) | **DELETE** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId} | Deletes a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
 [**deleteWorkforcemanagementManagementunitWorkplan**](WorkforceManagementApi#deleteWorkforcemanagementManagementunitWorkplan) | **DELETE** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId} | Delete a work plan
 [**deleteWorkforcemanagementManagementunitWorkplanrotation**](WorkforceManagementApi#deleteWorkforcemanagementManagementunitWorkplanrotation) | **DELETE** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId} | Delete a work plan rotation
 [**getWorkforcemanagementAdherence**](WorkforceManagementApi#getWorkforcemanagementAdherence) | **GET** /api/v2/workforcemanagement/adherence | Get a list of UserScheduleAdherence records for the requested users
@@ -62,6 +62,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getWorkforcemanagementBusinessunitDecisionmetricsJob**](WorkforceManagementApi#getWorkforcemanagementBusinessunitDecisionmetricsJob) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/decisionmetrics/jobs/{jobId} | Gets the status of the given job
 [**getWorkforcemanagementBusinessunitIntradayPlanninggroups**](WorkforceManagementApi#getWorkforcemanagementBusinessunitIntradayPlanninggroups) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday/planninggroups | Get intraday planning groups for the given date
 [**getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession**](WorkforceManagementApi#getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session | Get the latest session for the business unit ID
+[**getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJob**](WorkforceManagementApi#getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJob) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/forecast/jobs/{jobId} | Get status of the session export job
+[**getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJob**](WorkforceManagementApi#getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJob) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/historical/jobs/{jobId} | Get status of the historical export job
+[**getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJob**](WorkforceManagementApi#getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJob) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/snapshot/jobs/{jobId} | Get status of the snapshot export job
 [**getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId**](WorkforceManagementApi#getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/{sessionId} | Get the session details for the session ID
 [**getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId**](WorkforceManagementApi#getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/{sessionId}/snapshot/{snapshotId} | Get the snapshot details for the snapshot ID
 [**getWorkforcemanagementBusinessunitManagementunits**](WorkforceManagementApi#getWorkforcemanagementBusinessunitManagementunits) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/managementunits | Get all authorized management units in the business unit
@@ -133,8 +136,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getWorkforcemanagementManagementunitShifttradesUsers**](WorkforceManagementApi#getWorkforcemanagementManagementunitShifttradesUsers) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/users | Gets list of users available for whom you can send direct shift trade requests
 [**getWorkforcemanagementManagementunitTimeofflimit**](WorkforceManagementApi#getWorkforcemanagementManagementunitTimeofflimit) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId} | Gets a time off limit object
 [**getWorkforcemanagementManagementunitTimeofflimits**](WorkforceManagementApi#getWorkforcemanagementManagementunitTimeofflimits) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits | Gets a list of time off limit objects under management unit.
-[**getWorkforcemanagementManagementunitTimeoffplan**](WorkforceManagementApi#getWorkforcemanagementManagementunitTimeoffplan) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId} | Gets a time off plan
-[**getWorkforcemanagementManagementunitTimeoffplans**](WorkforceManagementApi#getWorkforcemanagementManagementunitTimeoffplans) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans | Gets a list of time off plans
+[**getWorkforcemanagementManagementunitTimeoffplan**](WorkforceManagementApi#getWorkforcemanagementManagementunitTimeoffplan) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId} | Gets a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
+[**getWorkforcemanagementManagementunitTimeoffplans**](WorkforceManagementApi#getWorkforcemanagementManagementunitTimeoffplans) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans | Gets a list of time off plans. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans instead
 [**getWorkforcemanagementManagementunitUserTimeoffrequest**](WorkforceManagementApi#getWorkforcemanagementManagementunitUserTimeoffrequest) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId} | Get a time off request
 [**getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits**](WorkforceManagementApi#getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}/timeofflimits | Retrieves time off limit, allocated and waitlisted values according to specific time off request
 [**getWorkforcemanagementManagementunitUserTimeoffrequests**](WorkforceManagementApi#getWorkforcemanagementManagementunitUserTimeoffrequests) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests | Get a list of time off requests for a given user
@@ -198,7 +201,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchWorkforcemanagementManagementunitAgents**](WorkforceManagementApi#patchWorkforcemanagementManagementunitAgents) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents | Update agent configurations
 [**patchWorkforcemanagementManagementunitAgentsWorkplansBulk**](WorkforceManagementApi#patchWorkforcemanagementManagementunitAgentsWorkplansBulk) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/workplans/bulk | Updates agent work plan configuration
 [**patchWorkforcemanagementManagementunitTimeofflimit**](WorkforceManagementApi#patchWorkforcemanagementManagementunitTimeofflimit) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId} | Updates a time off limit object.
-[**patchWorkforcemanagementManagementunitTimeoffplan**](WorkforceManagementApi#patchWorkforcemanagementManagementunitTimeoffplan) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId} | Updates a time off plan
+[**patchWorkforcemanagementManagementunitTimeoffplan**](WorkforceManagementApi#patchWorkforcemanagementManagementunitTimeoffplan) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId} | Updates a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
 [**patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus**](WorkforceManagementApi#patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/{timeOffRequestId}/users/{userId}/integrationstatus | Set integration status for a time off request.
 [**patchWorkforcemanagementManagementunitUnavailabletimesSettings**](WorkforceManagementApi#patchWorkforcemanagementManagementunitUnavailabletimesSettings) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/unavailabletimes/settings | Update management unit availability settings
 [**patchWorkforcemanagementManagementunitUserTimeoffrequest**](WorkforceManagementApi#patchWorkforcemanagementManagementunitUserTimeoffrequest) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId} | Update a time off request
@@ -244,6 +247,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postWorkforcemanagementBusinessunitDecisionmetricsUpdate**](WorkforceManagementApi#postWorkforcemanagementBusinessunitDecisionmetricsUpdate) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/decisionmetrics/update | Initiates the decision metrics update process
 [**postWorkforcemanagementBusinessunitDecisionmetricsUpdateUploadurl**](WorkforceManagementApi#postWorkforcemanagementBusinessunitDecisionmetricsUpdateUploadurl) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/decisionmetrics/update/uploadurl | Creates a signed upload URL for updating decision metrics
 [**postWorkforcemanagementBusinessunitIntraday**](WorkforceManagementApi#postWorkforcemanagementBusinessunitIntraday) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday | Get intraday data for the given date for the requested planningGroupIds
+[**postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobs**](WorkforceManagementApi#postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobs) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/forecast/jobs | Create a session export job
+[**postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobs**](WorkforceManagementApi#postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobs) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/historical/jobs | Create a historical export job
+[**postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobs**](WorkforceManagementApi#postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobs) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/snapshot/jobs | Create a snapshot export job
 [**postWorkforcemanagementBusinessunitOpportunitiesBulkAdd**](WorkforceManagementApi#postWorkforcemanagementBusinessunitOpportunitiesBulkAdd) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities/bulk/add | Bulk add opportunities
 [**postWorkforcemanagementBusinessunitOpportunitiesBulkPublish**](WorkforceManagementApi#postWorkforcemanagementBusinessunitOpportunitiesBulkPublish) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities/bulk/publish | Bulk publish opportunities
 [**postWorkforcemanagementBusinessunitOpportunitiesBulkRemove**](WorkforceManagementApi#postWorkforcemanagementBusinessunitOpportunitiesBulkRemove) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities/bulk/remove | Bulk remove opportunities
@@ -271,7 +277,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postWorkforcemanagementBusinessunitTimeofflimitValuesImportUploadurl**](WorkforceManagementApi#postWorkforcemanagementBusinessunitTimeofflimitValuesImportUploadurl) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/import/uploadurl | Creates a signed upload URL for importing values into time-off limit
 [**postWorkforcemanagementBusinessunitTimeofflimitValuesQuery**](WorkforceManagementApi#postWorkforcemanagementBusinessunitTimeofflimitValuesQuery) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query | Retrieves time-off limit related values based on a given set of filters.
 [**postWorkforcemanagementBusinessunitTimeofflimits**](WorkforceManagementApi#postWorkforcemanagementBusinessunitTimeofflimits) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits | Creates a new time-off limit object
-[**postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery**](WorkforceManagementApi#postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values/query | Retrieves time-off limit related values based on a given set of filters.
+[**postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery**](WorkforceManagementApi#postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values/query | Retrieves time-off limit related values based on a given set of filters. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query instead
 [**postWorkforcemanagementBusinessunitTimeoffplans**](WorkforceManagementApi#postWorkforcemanagementBusinessunitTimeoffplans) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans | Creates a new time-off plan
 [**postWorkforcemanagementBusinessunitUnavailabletimesSchedulesQuery**](WorkforceManagementApi#postWorkforcemanagementBusinessunitUnavailabletimesSchedulesQuery) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/unavailabletimes/schedules/query | Get agent schedule generation unavailable times
 [**postWorkforcemanagementBusinessunitUnavailabletimesSettingsQuery**](WorkforceManagementApi#postWorkforcemanagementBusinessunitUnavailabletimesSettingsQuery) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/unavailabletimes/settings/query | Query availability management units settings
@@ -305,8 +311,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postWorkforcemanagementManagementunitSchedulesSearch**](WorkforceManagementApi#postWorkforcemanagementManagementunitSchedulesSearch) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/schedules/search | Query published schedules for given given time range for set of users
 [**postWorkforcemanagementManagementunitShrinkageJobs**](WorkforceManagementApi#postWorkforcemanagementManagementunitShrinkageJobs) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/shrinkage/jobs | Request a historical shrinkage report
 [**postWorkforcemanagementManagementunitTimeofflimits**](WorkforceManagementApi#postWorkforcemanagementManagementunitTimeofflimits) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits | Creates a new time off limit object under management unit.
-[**postWorkforcemanagementManagementunitTimeofflimitsValuesQuery**](WorkforceManagementApi#postWorkforcemanagementManagementunitTimeofflimitsValuesQuery) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/values/query | Retrieves time off limit related values based on a given set of filters.
-[**postWorkforcemanagementManagementunitTimeoffplans**](WorkforceManagementApi#postWorkforcemanagementManagementunitTimeoffplans) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans | Creates a new time off plan
+[**postWorkforcemanagementManagementunitTimeofflimitsValuesQuery**](WorkforceManagementApi#postWorkforcemanagementManagementunitTimeofflimitsValuesQuery) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/values/query | Retrieves time off limit related values based on a given set of filters. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query instead
+[**postWorkforcemanagementManagementunitTimeoffplans**](WorkforceManagementApi#postWorkforcemanagementManagementunitTimeoffplans) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans | Creates a new time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans instead
 [**postWorkforcemanagementManagementunitTimeoffrequests**](WorkforceManagementApi#postWorkforcemanagementManagementunitTimeoffrequests) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests | Create a new time off request
 [**postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery**](WorkforceManagementApi#postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/integrationstatus/query | Retrieves integration statuses for a list of time off requests
 [**postWorkforcemanagementManagementunitTimeoffrequestsQuery**](WorkforceManagementApi#postWorkforcemanagementManagementunitTimeoffrequestsQuery) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/query | Fetches time off requests matching the conditions specified in the request body
@@ -1359,10 +1365,13 @@ void (no response body)
 
 > void deleteWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId, opts)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}
 
-Deletes a time off limit object
+Deletes a time off limit object. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId} instead
 
 Requires ANY permissions:
 
@@ -1418,10 +1427,13 @@ void (no response body)
 
 > void deleteWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId, opts)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}
 
-Deletes a time off plan
+Deletes a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
 
 Requires ANY permissions:
 
@@ -3849,6 +3861,183 @@ apiInstance.getWorkforcemanagementBusinessunitMainforecastContinuousforecastSess
 **ContinuousForecastGetSessionResponse**
 
 
+## getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJob
+
+> AggregatedSessionExportJobStatus getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJob(businessUnitId, jobId, opts)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/forecast/jobs/{jobId}
+
+Get status of the session export job
+
+Requires ALL permissions:
+
+* wfm:mainForecastExportForecast:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let jobId = "jobId_example"; // String | The job ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJob(businessUnitId, jobId, opts)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **jobId** | **String** | The job ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AggregatedSessionExportJobStatus**
+
+
+## getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJob
+
+> AggregatedHistoricalExportJobStatus getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJob(businessUnitId, jobId, opts)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/historical/jobs/{jobId}
+
+Get status of the historical export job
+
+Requires ALL permissions:
+
+* wfm:mainForecastExportHistorical:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let jobId = "jobId_example"; // String | The job ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJob(businessUnitId, jobId, opts)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **jobId** | **String** | The job ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AggregatedHistoricalExportJobStatus**
+
+
+## getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJob
+
+> AggregatedSnapshotExportJobStatus getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJob(businessUnitId, jobId, opts)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/snapshot/jobs/{jobId}
+
+Get status of the snapshot export job
+
+Requires ALL permissions:
+
+* wfm:mainForecastExportSnapshot:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let jobId = "jobId_example"; // String | The job ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJob(businessUnitId, jobId, opts)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **jobId** | **String** | The job ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AggregatedSnapshotExportJobStatus**
+
+
 ## getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId
 
 > ContinuousForecastSessionResponse getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId(businessUnitId, sessionId, opts)
@@ -4023,7 +4212,7 @@ apiInstance.getWorkforcemanagementBusinessunitManagementunits(businessUnitId, op
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit, or 'mine' for the business unit of the logged-in user. |  |
- **feature** | **String** | If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentAdherenceAdjustments, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AgentShiftTrade, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentSelfScheduleJob, AgentSelfScheduleOffers, AgentSelfScheduleQuery, AgentSelfScheduleActivityMove, SelfScheduleSettings, AgentSelfScheduleSettings, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, AgentSchedulingPreferencesQuery, AgentSchedulingPreferences, AgentSchedulingPreferencesSettings, ActivityCodes, ActivityPlans, AdherenceAdjustmentsSettings, AdherenceAdjustmentsReasonCodes, AdherenceAdjustments, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, CapacityPlanForecastInputs, CapacityPlanPerformancePrediction, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, Opportunities, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses, SchedulingPreferencesQuery, SchedulingPreferencesSettings, DecisionMetrics |
+ **feature** | **String** | If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentAdherenceAdjustments, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AgentShiftTrade, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentSelfScheduleJob, AgentSelfScheduleOffers, AgentSelfScheduleQuery, AgentSelfScheduleActivityMove, SelfScheduleSettings, AgentSelfScheduleSettings, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, AgentSchedulingPreferencesQuery, AgentSchedulingPreferences, AgentSchedulingPreferencesSettings, ActivityCodes, ActivityPlans, AdherenceAdjustmentsSettings, AdherenceAdjustmentsReasonCodes, AdherenceAdjustments, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, CapacityPlanForecastInputs, CapacityPlanPerformancePrediction, ContinuousForecast, PredictionsForecastingScenarioJobs, PredictionsForecastingScenarios, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, Opportunities, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses, SchedulingPreferencesQuery, SchedulingPreferencesSettings, DecisionMetrics |
  **divisionId** | **String** | If specified, the list of management units belonging to the specified division will be returned | [optional]  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
@@ -7026,7 +7215,7 @@ apiInstance.getWorkforcemanagementBusinessunits(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **feature** | **String** | If specified, the list of business units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentAdherenceAdjustments, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AgentShiftTrade, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentSelfScheduleJob, AgentSelfScheduleOffers, AgentSelfScheduleQuery, AgentSelfScheduleActivityMove, SelfScheduleSettings, AgentSelfScheduleSettings, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, AgentSchedulingPreferencesQuery, AgentSchedulingPreferences, AgentSchedulingPreferencesSettings, ActivityCodes, ActivityPlans, AdherenceAdjustmentsSettings, AdherenceAdjustmentsReasonCodes, AdherenceAdjustments, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, CapacityPlanForecastInputs, CapacityPlanPerformancePrediction, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, Opportunities, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses, SchedulingPreferencesQuery, SchedulingPreferencesSettings, DecisionMetrics |
+ **feature** | **String** | If specified, the list of business units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentAdherenceAdjustments, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AgentShiftTrade, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentSelfScheduleJob, AgentSelfScheduleOffers, AgentSelfScheduleQuery, AgentSelfScheduleActivityMove, SelfScheduleSettings, AgentSelfScheduleSettings, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, AgentSchedulingPreferencesQuery, AgentSchedulingPreferences, AgentSchedulingPreferencesSettings, ActivityCodes, ActivityPlans, AdherenceAdjustmentsSettings, AdherenceAdjustmentsReasonCodes, AdherenceAdjustments, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, CapacityPlanForecastInputs, CapacityPlanPerformancePrediction, ContinuousForecast, PredictionsForecastingScenarioJobs, PredictionsForecastingScenarios, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, Opportunities, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses, SchedulingPreferencesQuery, SchedulingPreferencesSettings, DecisionMetrics |
  **divisionId** | **String** | If specified, the list of business units belonging to the specified division will be returned | [optional]  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
@@ -8134,12 +8323,15 @@ apiInstance.getWorkforcemanagementManagementunitShifttradesUsers(managementUnitI
 
 > TimeOffLimit getWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId, opts)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}
 
 Gets a time off limit object
 
-Returns properties of time off limit object, but not daily values.
+Returns properties of time off limit object, but not daily values. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId} instead
 
 Requires ANY permissions:
 
@@ -8195,12 +8387,15 @@ apiInstance.getWorkforcemanagementManagementunitTimeofflimit(managementUnitId, t
 
 > TimeOffLimitListing getWorkforcemanagementManagementunitTimeofflimits(managementUnitId, opts)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits
 
 Gets a list of time off limit objects under management unit.
 
-Currently only one time off limit object is allowed under management unit, so the list contains either 0 or 1 element.
+Currently only one time off limit object is allowed under management unit, so the list contains either 0 or 1 element. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits instead
 
 Requires ANY permissions:
 
@@ -8255,10 +8450,13 @@ apiInstance.getWorkforcemanagementManagementunitTimeofflimits(managementUnitId, 
 
 > TimeOffPlan getWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId, opts)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}
 
-Gets a time off plan
+Gets a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
 
 Requires ANY permissions:
 
@@ -8314,10 +8512,13 @@ apiInstance.getWorkforcemanagementManagementunitTimeoffplan(managementUnitId, ti
 
 > TimeOffPlanListing getWorkforcemanagementManagementunitTimeoffplans(managementUnitId, opts)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans
 
-Gets a list of time off plans
+Gets a list of time off plans. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans instead
 
 Requires ANY permissions:
 
@@ -9126,7 +9327,7 @@ apiInstance.getWorkforcemanagementManagementunits(opts)
  **pageSize** | **Number** | Deprecated, paging is not supported | [optional]  |
  **pageNumber** | **Number** | Deprecated, paging is not supported | [optional]  |
  **expand** | **String** | Deprecated, expand settings on the single MU route | [optional] <br />**Values**: details |
- **feature** | **String** | If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentAdherenceAdjustments, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AgentShiftTrade, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentSelfScheduleJob, AgentSelfScheduleOffers, AgentSelfScheduleQuery, AgentSelfScheduleActivityMove, SelfScheduleSettings, AgentSelfScheduleSettings, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, AgentSchedulingPreferencesQuery, AgentSchedulingPreferences, AgentSchedulingPreferencesSettings, ActivityCodes, ActivityPlans, AdherenceAdjustmentsSettings, AdherenceAdjustmentsReasonCodes, AdherenceAdjustments, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, CapacityPlanForecastInputs, CapacityPlanPerformancePrediction, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, Opportunities, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses, SchedulingPreferencesQuery, SchedulingPreferencesSettings, DecisionMetrics |
+ **feature** | **String** | If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentAdherenceAdjustments, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AgentShiftTrade, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentSelfScheduleJob, AgentSelfScheduleOffers, AgentSelfScheduleQuery, AgentSelfScheduleActivityMove, SelfScheduleSettings, AgentSelfScheduleSettings, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, AgentSchedulingPreferencesQuery, AgentSchedulingPreferences, AgentSchedulingPreferencesSettings, ActivityCodes, ActivityPlans, AdherenceAdjustmentsSettings, AdherenceAdjustmentsReasonCodes, AdherenceAdjustments, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, CapacityPlanForecastInputs, CapacityPlanPerformancePrediction, ContinuousForecast, PredictionsForecastingScenarioJobs, PredictionsForecastingScenarios, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, Opportunities, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses, SchedulingPreferencesQuery, SchedulingPreferencesSettings, DecisionMetrics |
  **divisionId** | **String** | If specified, the list of management units belonging to the specified division will be returned | [optional]  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
@@ -12091,12 +12292,15 @@ apiInstance.patchWorkforcemanagementManagementunitAgentsWorkplansBulk(management
 
 > TimeOffLimit patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId, body, opts)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}
 
 Updates a time off limit object.
 
-Updates time off limit object properties, but not daily values.
+Updates time off limit object properties, but not daily values. Deprecated: Updating defaultLimitMinutes is no longer supported
 
 Requires ANY permissions:
 
@@ -12154,10 +12358,13 @@ apiInstance.patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId,
 
 > TimeOffPlan patchWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId, body, opts)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}
 
-Updates a time off plan
+Updates a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
 
 Requires ANY permissions:
 
@@ -14905,6 +15112,183 @@ apiInstance.postWorkforcemanagementBusinessunitIntraday(businessUnitId, body, op
 **AsyncIntradayResponse**
 
 
+## postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobs
+
+> AggregatedSessionExportJobResponse postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobs(businessUnitId, body, opts)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/forecast/jobs
+
+Create a session export job
+
+Requires ALL permissions:
+
+* wfm:mainForecastExportForecast:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let body = {}; // Object | The request body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobs(businessUnitId, body, opts)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **body** | **Object** | The request body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AggregatedSessionExportJobResponse**
+
+
+## postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobs
+
+> AggregatedHistoricalExportJobResponse postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobs(businessUnitId, body, opts)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/historical/jobs
+
+Create a historical export job
+
+Requires ALL permissions:
+
+* wfm:mainForecastExportHistorical:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let body = {}; // Object | The request body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobs(businessUnitId, body, opts)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **body** | **Object** | The request body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AggregatedHistoricalExportJobResponse**
+
+
+## postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobs
+
+> AggregatedSnapshotExportJobResponse postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobs(businessUnitId, body, opts)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/snapshot/jobs
+
+Create a snapshot export job
+
+Requires ALL permissions:
+
+* wfm:mainForecastExportSnapshot:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let body = {}; // Object | The request body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobs(businessUnitId, body, opts)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **body** | **Object** | The request body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AggregatedSnapshotExportJobResponse**
+
+
 ## postWorkforcemanagementBusinessunitOpportunitiesBulkAdd
 
 > BulkAddOpportunitiesResponse postWorkforcemanagementBusinessunitOpportunitiesBulkAdd(businessUnitId, body, opts)
@@ -16560,10 +16944,13 @@ apiInstance.postWorkforcemanagementBusinessunitTimeofflimits(businessUnitId, bod
 
 > BuTimeOffLimitValuesResponse postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(businessUnitId, body, opts)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values/query
 
-Retrieves time-off limit related values based on a given set of filters.
+Retrieves time-off limit related values based on a given set of filters. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query instead
 
 Requires ANY permissions:
 
@@ -18590,12 +18977,15 @@ apiInstance.postWorkforcemanagementManagementunitShrinkageJobs(managementUnitId,
 
 > TimeOffLimit postWorkforcemanagementManagementunitTimeofflimits(managementUnitId, body, opts)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits
 
 Creates a new time off limit object under management unit.
 
-Only one limit object is allowed under management unit, so an attempt to create second object will fail.
+Only one limit object is allowed under management unit, so an attempt to create second object will fail. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits instead
 
 Requires ANY permissions:
 
@@ -18651,10 +19041,13 @@ apiInstance.postWorkforcemanagementManagementunitTimeofflimits(managementUnitId,
 
 > QueryTimeOffLimitValuesResponse postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(managementUnitId, body, opts)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/values/query
 
-Retrieves time off limit related values based on a given set of filters.
+Retrieves time off limit related values based on a given set of filters. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query instead
 
 Requires ANY permissions:
 
@@ -18710,10 +19103,13 @@ apiInstance.postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(manage
 
 > TimeOffPlan postWorkforcemanagementManagementunitTimeoffplans(managementUnitId, body, opts)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans
 
-Creates a new time off plan
+Creates a new time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans instead
 
 Requires ANY permissions:
 
@@ -20893,12 +21289,15 @@ apiInstance.putWorkforcemanagementBusinessunitTimeofflimitValues(businessUnitId,
 
 > TimeOffLimit putWorkforcemanagementManagementunitTimeofflimitValues(managementUnitId, timeOffLimitId, body, opts)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 PUT /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}/values
 
 Sets daily values for a date range of time off limit object
 
-Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time off limit API
+Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time off limit API. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values instead
 
 Requires ANY permissions:
 
@@ -21011,4 +21410,4 @@ apiInstance.putWorkforcemanagementSchedulebidPreference(bidId, body, opts)
 **AgentScheduleBiddingPreferenceResponse**
 
 
-_purecloud-platform-client-v2@258.2.0_
+_purecloud-platform-client-v2@259.0.0_

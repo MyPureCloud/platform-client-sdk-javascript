@@ -79,8 +79,6 @@ POST /api/v2/events/routing/customkpiattributions
 
 Publish Predictive Routing Custom Kpi Attribution Batch Events
 
-postEventsRoutingCustomkpiattributions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * routing:customKpiAttribution:inject
@@ -243,4 +241,4 @@ apiInstance.postEventsUsersRoutingstatus(body, opts)
 **BatchEventResponse**
 
 
-_purecloud-platform-client-v2@258.2.0_
+_purecloud-platform-client-v2@259.0.0_

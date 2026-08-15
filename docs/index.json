@@ -20,6 +20,7 @@
   "ConversationsApi.md",
   "DataExtensionsApi.md",
   "DataPrivacyApi.md",
+  "DependenciesApi.md",
   "DownloadsApi.md",
   "EmailsApi.md",
   "EmployeeEngagementApi.md",
@@ -82,10 +83,8 @@
   "UtilitiesApi.md",
   "VirtualAgentsApi.md",
   "VoicemailApi.md",
-  "WebChatApi.md",
   "WebDeploymentsApi.md",
   "WebMessagingApi.md",
-  "WidgetsApi.md",
   "WorkforceManagementApi.md",
   "index.md",
   "releaseNotes.md"
