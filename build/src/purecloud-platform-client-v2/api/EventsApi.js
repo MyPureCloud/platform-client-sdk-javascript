@@ -5,7 +5,7 @@ class EventsApi {
 	/**
 	 * Events service.
 	 * @module purecloud-platform-client-v2/api/EventsApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -56,7 +56,6 @@ class EventsApi {
 	 * @param {Object} body batchRequest
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postEventsRoutingCustomkpiattributions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postEventsRoutingCustomkpiattributions(body, opts) { 
 		opts = opts || {};

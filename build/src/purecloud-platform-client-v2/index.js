@@ -25,6 +25,7 @@ import ContentManagementApi from './api/ContentManagementApi.js';
 import ConversationsApi from './api/ConversationsApi.js';
 import DataExtensionsApi from './api/DataExtensionsApi.js';
 import DataPrivacyApi from './api/DataPrivacyApi.js';
+import DependenciesApi from './api/DependenciesApi.js';
 import DownloadsApi from './api/DownloadsApi.js';
 import EmailsApi from './api/EmailsApi.js';
 import EmployeeEngagementApi from './api/EmployeeEngagementApi.js';
@@ -87,10 +88,8 @@ import UsersRulesApi from './api/UsersRulesApi.js';
 import UtilitiesApi from './api/UtilitiesApi.js';
 import VirtualAgentsApi from './api/VirtualAgentsApi.js';
 import VoicemailApi from './api/VoicemailApi.js';
-import WebChatApi from './api/WebChatApi.js';
 import WebDeploymentsApi from './api/WebDeploymentsApi.js';
 import WebMessagingApi from './api/WebMessagingApi.js';
-import WidgetsApi from './api/WidgetsApi.js';
 import WorkforceManagementApi from './api/WorkforceManagementApi.js';
 
 
@@ -124,7 +123,7 @@ import WorkforceManagementApi from './api/WorkforceManagementApi.js';
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 258.2.0
+ * @version 259.0.0
  */
 class platformClient {
 	constructor() {
@@ -243,6 +242,11 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/DataPrivacyApi}
 		 */
 		this.DataPrivacyApi = DataPrivacyApi;
+		/**
+		 * The DependenciesApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/DependenciesApi}
+		 */
+		this.DependenciesApi = DependenciesApi;
 		/**
 		 * The DownloadsApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/DownloadsApi}
@@ -554,11 +558,6 @@ class platformClient {
 		 */
 		this.VoicemailApi = VoicemailApi;
 		/**
-		 * The WebChatApi service constructor.
-		 * @property {module:purecloud-platform-client-v2/api/WebChatApi}
-		 */
-		this.WebChatApi = WebChatApi;
-		/**
 		 * The WebDeploymentsApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/WebDeploymentsApi}
 		 */
@@ -568,11 +567,6 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/WebMessagingApi}
 		 */
 		this.WebMessagingApi = WebMessagingApi;
-		/**
-		 * The WidgetsApi service constructor.
-		 * @property {module:purecloud-platform-client-v2/api/WidgetsApi}
-		 */
-		this.WidgetsApi = WidgetsApi;
 		/**
 		 * The WorkforceManagementApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/WorkforceManagementApi}

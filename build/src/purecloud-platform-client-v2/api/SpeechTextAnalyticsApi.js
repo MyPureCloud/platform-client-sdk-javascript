@@ -5,7 +5,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -1198,6 +1198,36 @@ class SpeechTextAnalyticsApi {
 	}
 
 	/**
+	 * Get a Speech and Text Analytics GenAI phrases job by id
+	 * 
+	 * @param {String} jobId the id of the GenAI phrases job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getSpeechandtextanalyticsTopicsGeneratedphrasesJob(jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getSpeechandtextanalyticsTopicsGeneratedphrasesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/topics/generatedphrases/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Get a Speech and Text Analytics publish topics job by id
 	 * 
 	 * @param {String} jobId The id of the publish topics job
@@ -1591,6 +1621,36 @@ class SpeechTextAnalyticsApi {
 	}
 
 	/**
+	 * Create new Speech and Text Analytics GenAI topic phrases generation job
+	 * 
+	 * @param {Object} body The GenAI topic phrases generation job to create
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postSpeechandtextanalyticsTopicsGeneratedphrasesJobs(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsTopicsGeneratedphrasesJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/topics/generatedphrases/jobs', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Create new Speech and Text Analytics publish topics job
 	 * 
 	 * @param {Object} body The publish topics job to create
@@ -1621,7 +1681,7 @@ class SpeechTextAnalyticsApi {
 	}
 
 	/**
-	 * Create new Speech and Text Analytics publish topics job
+	 * Create new Speech and Text Analytics test topic phrase job
 	 * 
 	 * @param {Object} body The publish test topic phrase job to create
 	 * @param {Object} opts Optional parameters

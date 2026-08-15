@@ -4073,7 +4073,7 @@ if(env)this.environment=env;else this.environment=this.host?this.host:'mypureclo
 this.environment=this.environment.replace(/\/+$/,'');// Strip protocol and subdomain
 if(this.environment.startsWith('https://'))this.environment=this.environment.substring(8);if(this.environment.startsWith('http://'))this.environment=this.environment.substring(7);if(this.environment.startsWith('api.'))this.environment=this.environment.substring(4);this.basePath="https://api.".concat(this.environment);this.authUrl="https://login.".concat(this.environment);}},{key:"getConfUrl",value:function getConfUrl(pathType,regionUrl){if(!this.gateway)return regionUrl;if(!this.gateway.host)return regionUrl;var url=this.gateway.protocol+'://'+this.gateway.host;if(this.gateway.port>-1)url=url+':'+this.gateway.port.toString();if(pathType==='login'){if(this.gateway.path_params_login){if(this.gateway.path_params_login.startsWith('/'))url=url+this.gateway.path_params_login;else url=url+'/'+this.gateway.path_params_login;}}else{if(this.gateway.path_params_api){if(this.gateway.path_params_api.startsWith('/'))url=url+this.gateway.path_params_api;else url=url+'/'+this.gateway.path_params_api;}}return url;}},{key:"getConfigString",value:function getConfigString(section,key){if(this.config._sections[section])return this.config._sections[section][key];}},{key:"getConfigBoolean",value:function getConfigBoolean(section,key){if(this.config._sections[section]&&this.config._sections[section][key]!==undefined){if(typeof this.config._sections[section][key]==='string'){return this.config._sections[section][key]==='true';}else return this.config._sections[section][key];}}},{key:"getConfigInt",value:function getConfigInt(section,key){if(this.config._sections[section]&&this.config._sections[section][key]){if(typeof this.config._sections[section][key]==='string'){return parseInt(this.config._sections[section][key]);}else return this.config._sections[section][key];}}}]);}();/**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 258.2.0
+ * @version 259.0.0
  */var ApiClient=/*#__PURE__*/function(){/**
    * Manages low level client-server communications, parameter marshalling, etc. There should not be any need for an
    * application to use this class directly - the *Api and model classes provide the public API for the service. The
@@ -4529,7 +4529,7 @@ resolve(data);})["catch"](function(error){var data=error;if(error.response&&erro
 that.config.logger.log('error',error.response.status,httpMethod,url,request.headers,error.response.headers,bodyParam,error.response.data);data=that.returnExtended===true?{status:error.response.status,statusText:error.response.statusText,headers:error.response.headers,body:error.response.data,text:error.response.text,error:error}:error.response.data?error.response.data:error.response.text;}reject(data);});}});}}]);}();var AIStudioApi=/*#__PURE__*/function(){/**
    * AIStudio service.
    * @module purecloud-platform-client-v2/api/AIStudioApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new AIStudioApi. 
    * @alias module:purecloud-platform-client-v2/api/AIStudioApi
@@ -4782,7 +4782,7 @@ if(summarySettingId===undefined||summarySettingId===null||summarySettingId==='')
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putConversationsSummariesSetting';}return this.apiClient.callApi('/api/v2/conversations/summaries/settings/{summarySettingId}','PUT',{'summarySettingId':summarySettingId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var AgentAssistantsApi=/*#__PURE__*/function(){/**
    * AgentAssistants service.
    * @module purecloud-platform-client-v2/api/AgentAssistantsApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new AgentAssistantsApi. 
    * @alias module:purecloud-platform-client-v2/api/AgentAssistantsApi
@@ -5008,7 +5008,7 @@ if(agentChecklistId===undefined||agentChecklistId===null||agentChecklistId==='')
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putAssistantsAgentchecklist';}return this.apiClient.callApi('/api/v2/assistants/agentchecklists/{agentChecklistId}','PUT',{'agentChecklistId':agentChecklistId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var AgentCopilotApi=/*#__PURE__*/function(){/**
    * AgentCopilot service.
    * @module purecloud-platform-client-v2/api/AgentCopilotApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new AgentCopilotApi. 
    * @alias module:purecloud-platform-client-v2/api/AgentCopilotApi
@@ -5040,7 +5040,7 @@ if(assistantId===undefined||assistantId===null||assistantId===''){throw'Missing 
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putAssistantCopilot';}return this.apiClient.callApi('/api/v2/assistants/{assistantId}/copilot','PUT',{'assistantId':assistantId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var AgentUIApi=/*#__PURE__*/function(){/**
    * AgentUI service.
    * @module purecloud-platform-client-v2/api/AgentUIApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new AgentUIApi. 
    * @alias module:purecloud-platform-client-v2/api/AgentUIApi
@@ -5082,7 +5082,7 @@ if(agentId===undefined||agentId===null||agentId===''){throw'Missing the required
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putUsersAgentuiAgentsAutoanswerAgentIdSettings';}return this.apiClient.callApi('/api/v2/users/agentui/agents/autoanswer/{agentId}/settings','PUT',{'agentId':agentId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var AlertingApi=/*#__PURE__*/function(){/**
    * Alerting service.
    * @module purecloud-platform-client-v2/api/AlertingApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new AlertingApi. 
    * @alias module:purecloud-platform-client-v2/api/AlertingApi
@@ -5196,7 +5196,7 @@ if(ruleId===undefined||ruleId===null||ruleId===''){throw'Missing the required pa
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putAlertingRule';}return this.apiClient.callApi('/api/v2/alerting/rules/{ruleId}','PUT',{'ruleId':ruleId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var AnalyticsApi=/*#__PURE__*/function(){/**
    * Analytics service.
    * @module purecloud-platform-client-v2/api/AnalyticsApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new AnalyticsApi. 
    * @alias module:purecloud-platform-client-v2/api/AnalyticsApi
@@ -6253,7 +6253,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putAnalyticsDataretentionSettings';}return this.apiClient.callApi('/api/v2/analytics/dataretention/settings','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var ArchitectApi=/*#__PURE__*/function(){/**
    * Architect service.
    * @module purecloud-platform-client-v2/api/ArchitectApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new ArchitectApi. 
    * @alias module:purecloud-platform-client-v2/api/ArchitectApi
@@ -7651,7 +7651,7 @@ if(milestoneId===undefined||milestoneId===null||milestoneId===''){throw'Missing 
 if(flowOutcomeId===undefined||flowOutcomeId===null||flowOutcomeId===''){throw'Missing the required parameter "flowOutcomeId" when calling putFlowsOutcome';}return this.apiClient.callApi('/api/v2/flows/outcomes/{flowOutcomeId}','PUT',{'flowOutcomeId':flowOutcomeId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var AssistantCopilotVariationsApi=/*#__PURE__*/function(){/**
    * AssistantCopilotVariations service.
    * @module purecloud-platform-client-v2/api/AssistantCopilotVariationsApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new AssistantCopilotVariationsApi. 
    * @alias module:purecloud-platform-client-v2/api/AssistantCopilotVariationsApi
@@ -7706,7 +7706,7 @@ if(variationId===undefined||variationId===null||variationId===''){throw'Missing 
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putAssistantVariation';}return this.apiClient.callApi('/api/v2/assistants/{assistantId}/variations/{variationId}','PUT',{'assistantId':assistantId,'variationId':variationId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var AuditApi=/*#__PURE__*/function(){/**
    * Audit service.
    * @module purecloud-platform-client-v2/api/AuditApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new AuditApi. 
    * @alias module:purecloud-platform-client-v2/api/AuditApi
@@ -7767,7 +7767,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postAuditsQueryRealtimeRelated';}return this.apiClient.callApi('/api/v2/audits/query/realtime/related','POST',{},{'expand':this.apiClient.buildCollectionParam(opts['expand'],'multi')},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var AuthorizationApi=/*#__PURE__*/function(){/**
    * Authorization service.
    * @module purecloud-platform-client-v2/api/AuthorizationApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new AuthorizationApi. 
    * @alias module:purecloud-platform-client-v2/api/AuthorizationApi
@@ -8285,7 +8285,7 @@ if(subjectId===undefined||subjectId===null||subjectId===''){throw'Missing the re
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putUserRoles';}return this.apiClient.callApi('/api/v2/users/{subjectId}/roles','PUT',{'subjectId':subjectId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var BackgroundAssistantApi=/*#__PURE__*/function(){/**
    * BackgroundAssistant service.
    * @module purecloud-platform-client-v2/api/BackgroundAssistantApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new BackgroundAssistantApi. 
    * @alias module:purecloud-platform-client-v2/api/BackgroundAssistantApi
@@ -8308,7 +8308,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
    */},{key:"postScreenrecordingToken",value:function postScreenrecordingToken(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/screenrecording/token','POST',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var BillingApi=/*#__PURE__*/function(){/**
    * Billing service.
    * @module purecloud-platform-client-v2/api/BillingApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new BillingApi. 
    * @alias module:purecloud-platform-client-v2/api/BillingApi
@@ -8397,7 +8397,7 @@ if(endDate===undefined||endDate===null){throw'Missing the required parameter "en
 if(trustorOrgId===undefined||trustorOrgId===null||trustorOrgId===''){throw'Missing the required parameter "trustorOrgId" when calling getBillingTrusteebillingoverviewTrustorOrgId';}return this.apiClient.callApi('/api/v2/billing/trusteebillingoverview/{trustorOrgId}','GET',{'trustorOrgId':trustorOrgId},{'billingPeriodIndex':opts['billingPeriodIndex']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var BusinessRulesApi=/*#__PURE__*/function(){/**
    * BusinessRules service.
    * @module purecloud-platform-client-v2/api/BusinessRulesApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new BusinessRulesApi. 
    * @alias module:purecloud-platform-client-v2/api/BusinessRulesApi
@@ -8787,7 +8787,7 @@ if(schemaId===undefined||schemaId===null||schemaId===''){throw'Missing the requi
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putBusinessrulesSchema';}return this.apiClient.callApi('/api/v2/businessrules/schemas/{schemaId}','PUT',{'schemaId':schemaId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var CarrierServicesApi=/*#__PURE__*/function(){/**
    * CarrierServices service.
    * @module purecloud-platform-client-v2/api/CarrierServicesApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new CarrierServicesApi. 
    * @alias module:purecloud-platform-client-v2/api/CarrierServicesApi
@@ -8810,7 +8810,7 @@ if(phoneNumber===undefined||phoneNumber===null){throw'Missing the required param
    */},{key:"postCarrierservicesIntegrationsEmergencylocationsMe",value:function postCarrierservicesIntegrationsEmergencylocationsMe(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/carrierservices/integrations/emergencylocations/me','POST',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var CaseManagementApi=/*#__PURE__*/function(){/**
    * CaseManagement service.
    * @module purecloud-platform-client-v2/api/CaseManagementApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new CaseManagementApi. 
    * @alias module:purecloud-platform-client-v2/api/CaseManagementApi
@@ -9055,6 +9055,22 @@ if(versionId===undefined||versionId===null||versionId===''){throw'Missing the re
    * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
    */},{key:"getCasemanagementCasesExternalcontact",value:function getCasemanagementCasesExternalcontact(externalContactId,opts){opts=opts||{};// verify the required parameter 'externalContactId' is set
 if(externalContactId===undefined||externalContactId===null||externalContactId===''){throw'Missing the required parameter "externalContactId" when calling getCasemanagementCasesExternalcontact';}return this.apiClient.callApi('/api/v2/casemanagement/cases/externalcontacts/{externalContactId}','GET',{'externalContactId':externalContactId},{'after':opts['after'],'pageSize':opts['pageSize'],'divisionIds':opts['divisionIds'],'expands':this.apiClient.buildCollectionParam(opts['expands'],'multi')},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+   * Get a case query job by id
+   * 
+   * @param {String} jobId Job ID
+   * @param {Object} opts Optional parameters
+   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+   * getCasemanagementCasesQueryJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   */},{key:"getCasemanagementCasesQueryJob",value:function getCasemanagementCasesQueryJob(jobId,opts){opts=opts||{};// verify the required parameter 'jobId' is set
+if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required parameter "jobId" when calling getCasemanagementCasesQueryJob';}return this.apiClient.callApi('/api/v2/casemanagement/cases/query/jobs/{jobId}','GET',{'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+   * Get results for a case query job
+   * 
+   * @param {String} jobId Job ID
+   * @param {Object} opts Optional parameters
+   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+   * getCasemanagementCasesQueryJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   */},{key:"getCasemanagementCasesQueryJobResults",value:function getCasemanagementCasesQueryJobResults(jobId,opts){opts=opts||{};// verify the required parameter 'jobId' is set
+if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required parameter "jobId" when calling getCasemanagementCasesQueryJobResults';}return this.apiClient.callApi('/api/v2/casemanagement/cases/query/jobs/{jobId}/results','GET',{'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
    * Get a Case by reference.
    * 
    * @param {String} referenceId Case reference.
@@ -9072,6 +9088,16 @@ if(referenceId===undefined||referenceId===null||referenceId===''){throw'Missing 
    */},{key:"patchCasemanagementCaseDatedue",value:function patchCasemanagementCaseDatedue(caseId,body,opts){opts=opts||{};// verify the required parameter 'caseId' is set
 if(caseId===undefined||caseId===null||caseId===''){throw'Missing the required parameter "caseId" when calling patchCasemanagementCaseDatedue';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchCasemanagementCaseDatedue';}return this.apiClient.callApi('/api/v2/casemanagement/cases/{caseId}/datedue','PATCH',{'caseId':caseId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+   * Update the ownerId of a Case
+   * 
+   * @param {String} caseId Case identifier.
+   * @param {Object} body OwnerId
+   * @param {Object} opts Optional parameters
+   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+   * patchCasemanagementCaseOwner is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   */},{key:"patchCasemanagementCaseOwner",value:function patchCasemanagementCaseOwner(caseId,body,opts){opts=opts||{};// verify the required parameter 'caseId' is set
+if(caseId===undefined||caseId===null||caseId===''){throw'Missing the required parameter "caseId" when calling patchCasemanagementCaseOwner';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchCasemanagementCaseOwner';}return this.apiClient.callApi('/api/v2/casemanagement/cases/{caseId}/owner','PATCH',{'caseId':caseId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
    * Update priority of a Case.
    * 
    * @param {String} caseId Case identifier.
@@ -9199,6 +9225,14 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
    * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
    */},{key:"postCasemanagementCasesAssociationsQuery",value:function postCasemanagementCasesAssociationsQuery(body,opts){opts=opts||{};// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postCasemanagementCasesAssociationsQuery';}return this.apiClient.callApi('/api/v2/casemanagement/cases/associations/query','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+   * Create a Case query job.
+   * 
+   * @param {Object} body Case query job create request.
+   * @param {Object} opts Optional parameters
+   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+   * postCasemanagementCasesQueryJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   */},{key:"postCasemanagementCasesQueryJobs",value:function postCasemanagementCasesQueryJobs(body,opts){opts=opts||{};// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postCasemanagementCasesQueryJobs';}return this.apiClient.callApi('/api/v2/casemanagement/cases/query/jobs','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
    * Update a data schema on a draft Caseplan.
    * 
    * @param {String} caseplanId Caseplan identifier.
@@ -9221,7 +9255,7 @@ if(caseplanId===undefined||caseplanId===null||caseplanId===''){throw'Missing the
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putCasemanagementCaseplanIntakesettings';}return this.apiClient.callApi('/api/v2/casemanagement/caseplans/{caseplanId}/intakesettings','PUT',{'caseplanId':caseplanId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var ChatApi=/*#__PURE__*/function(){/**
    * Chat service.
    * @module purecloud-platform-client-v2/api/ChatApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new ChatApi. 
    * @alias module:purecloud-platform-client-v2/api/ChatApi
@@ -9516,7 +9550,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putChatsSettings';}return this.apiClient.callApi('/api/v2/chats/settings','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var CoachingApi=/*#__PURE__*/function(){/**
    * Coaching service.
    * @module purecloud-platform-client-v2/api/CoachingApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new CoachingApi. 
    * @alias module:purecloud-platform-client-v2/api/CoachingApi
@@ -9715,7 +9749,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postCoachingScheduleslotsQuery';}return this.apiClient.callApi('/api/v2/coaching/scheduleslots/query','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var ContentManagementApi=/*#__PURE__*/function(){/**
    * ContentManagement service.
    * @module purecloud-platform-client-v2/api/ContentManagementApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new ContentManagementApi. 
    * @alias module:purecloud-platform-client-v2/api/ContentManagementApi
@@ -10047,7 +10081,7 @@ if(tagId===undefined||tagId===null||tagId===''){throw'Missing the required param
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putContentmanagementWorkspaceTagvalue';}return this.apiClient.callApi('/api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}','PUT',{'workspaceId':workspaceId,'tagId':tagId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var ConversationsApi=/*#__PURE__*/function(){/**
    * Conversations service.
    * @module purecloud-platform-client-v2/api/ConversationsApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new ConversationsApi. 
    * @alias module:purecloud-platform-client-v2/api/ConversationsApi
@@ -10533,76 +10567,6 @@ if(participantId===undefined||participantId===null||participantId===''){throw'Mi
    * @param {Object} opts Optional parameters
    * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
    */},{key:"getConversationsCallsMaximumconferenceparties",value:function getConversationsCallsMaximumconferenceparties(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/conversations/calls/maximumconferenceparties','GET',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get chat conversation
-   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
-   * @param {String} conversationId conversationId
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"getConversationsChat",value:function getConversationsChat(conversationId,opts){opts=opts||{};// verify the required parameter 'conversationId' is set
-if(conversationId===undefined||conversationId===null||conversationId===''){throw'Missing the required parameter "conversationId" when calling getConversationsChat';}return this.apiClient.callApi('/api/v2/conversations/chats/{conversationId}','GET',{'conversationId':conversationId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get a web chat conversation message
-   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
-   * @param {String} conversationId conversationId
-   * @param {String} messageId messageId
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"getConversationsChatMessage",value:function getConversationsChatMessage(conversationId,messageId,opts){opts=opts||{};// verify the required parameter 'conversationId' is set
-if(conversationId===undefined||conversationId===null||conversationId===''){throw'Missing the required parameter "conversationId" when calling getConversationsChatMessage';}// verify the required parameter 'messageId' is set
-if(messageId===undefined||messageId===null||messageId===''){throw'Missing the required parameter "messageId" when calling getConversationsChatMessage';}return this.apiClient.callApi('/api/v2/conversations/chats/{conversationId}/messages/{messageId}','GET',{'conversationId':conversationId,'messageId':messageId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get the messages of a chat conversation.
-   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
-   * @param {String} conversationId conversationId
-   * @param {Object} opts Optional parameters
-   * @param {String} opts.after If specified, get the messages chronologically after the id of this message
-   * @param {String} opts.before If specified, get the messages chronologically before the id of this message
-   * @param {Object} opts.sortOrder Sort order (default to ascending)
-   * @param {Number} opts.maxResults Limit the returned number of messages, up to a maximum of 100 (default to 100)
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"getConversationsChatMessages",value:function getConversationsChatMessages(conversationId,opts){opts=opts||{};// verify the required parameter 'conversationId' is set
-if(conversationId===undefined||conversationId===null||conversationId===''){throw'Missing the required parameter "conversationId" when calling getConversationsChatMessages';}return this.apiClient.callApi('/api/v2/conversations/chats/{conversationId}/messages','GET',{'conversationId':conversationId},{'after':opts['after'],'before':opts['before'],'sortOrder':opts['sortOrder'],'maxResults':opts['maxResults']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get the wrap-up for this conversation communication. 
-   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
-   * @param {String} conversationId conversationId
-   * @param {String} participantId participantId
-   * @param {String} communicationId communicationId
-   * @param {Object} opts Optional parameters
-   * @param {Boolean} opts.provisional Indicates whether or not to fetch provisional wrap-up code. (default to false)
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"getConversationsChatParticipantCommunicationWrapup",value:function getConversationsChatParticipantCommunicationWrapup(conversationId,participantId,communicationId,opts){opts=opts||{};// verify the required parameter 'conversationId' is set
-if(conversationId===undefined||conversationId===null||conversationId===''){throw'Missing the required parameter "conversationId" when calling getConversationsChatParticipantCommunicationWrapup';}// verify the required parameter 'participantId' is set
-if(participantId===undefined||participantId===null||participantId===''){throw'Missing the required parameter "participantId" when calling getConversationsChatParticipantCommunicationWrapup';}// verify the required parameter 'communicationId' is set
-if(communicationId===undefined||communicationId===null||communicationId===''){throw'Missing the required parameter "communicationId" when calling getConversationsChatParticipantCommunicationWrapup';}return this.apiClient.callApi('/api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup','GET',{'conversationId':conversationId,'participantId':participantId,'communicationId':communicationId},{'provisional':opts['provisional']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get the wrap-up for this conversation participant. 
-   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
-   * @param {String} conversationId conversationId
-   * @param {String} participantId participantId
-   * @param {Object} opts Optional parameters
-   * @param {Boolean} opts.provisional Indicates whether or not to fetch provisional wrap-up code. (default to false)
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"getConversationsChatParticipantWrapup",value:function getConversationsChatParticipantWrapup(conversationId,participantId,opts){opts=opts||{};// verify the required parameter 'conversationId' is set
-if(conversationId===undefined||conversationId===null||conversationId===''){throw'Missing the required parameter "conversationId" when calling getConversationsChatParticipantWrapup';}// verify the required parameter 'participantId' is set
-if(participantId===undefined||participantId===null||participantId===''){throw'Missing the required parameter "participantId" when calling getConversationsChatParticipantWrapup';}return this.apiClient.callApi('/api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapup','GET',{'conversationId':conversationId,'participantId':participantId},{'provisional':opts['provisional']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get list of wrapup codes for this conversation participant
-   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
-   * @param {String} conversationId conversationId
-   * @param {String} participantId participantId
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"getConversationsChatParticipantWrapupcodes",value:function getConversationsChatParticipantWrapupcodes(conversationId,participantId,opts){opts=opts||{};// verify the required parameter 'conversationId' is set
-if(conversationId===undefined||conversationId===null||conversationId===''){throw'Missing the required parameter "conversationId" when calling getConversationsChatParticipantWrapupcodes';}// verify the required parameter 'participantId' is set
-if(participantId===undefined||participantId===null||participantId===''){throw'Missing the required parameter "participantId" when calling getConversationsChatParticipantWrapupcodes';}return this.apiClient.callApi('/api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapupcodes','GET',{'conversationId':conversationId,'participantId':participantId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get active chat conversations for the logged in user
-   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"getConversationsChats",value:function getConversationsChats(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/conversations/chats','GET',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
    * Get cobrowse conversation
    * 
    * @param {String} conversationId conversationId
@@ -11464,54 +11428,6 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
    */},{key:"patchConversationsCallbacks",value:function patchConversationsCallbacks(body,opts){opts=opts||{};// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchConversationsCallbacks';}return this.apiClient.callApi('/api/v2/conversations/callbacks','PATCH',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
    * Update a conversation by disconnecting all of the participants
-   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
-   * @param {String} conversationId conversationId
-   * @param {Object} body Conversation
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"patchConversationsChat",value:function patchConversationsChat(conversationId,body,opts){opts=opts||{};// verify the required parameter 'conversationId' is set
-if(conversationId===undefined||conversationId===null||conversationId===''){throw'Missing the required parameter "conversationId" when calling patchConversationsChat';}// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchConversationsChat';}return this.apiClient.callApi('/api/v2/conversations/chats/{conversationId}','PATCH',{'conversationId':conversationId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Update conversation participant
-   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
-   * @param {String} conversationId conversationId
-   * @param {String} participantId participantId
-   * @param {Object} body Update request
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"patchConversationsChatParticipant",value:function patchConversationsChatParticipant(conversationId,participantId,body,opts){opts=opts||{};// verify the required parameter 'conversationId' is set
-if(conversationId===undefined||conversationId===null||conversationId===''){throw'Missing the required parameter "conversationId" when calling patchConversationsChatParticipant';}// verify the required parameter 'participantId' is set
-if(participantId===undefined||participantId===null||participantId===''){throw'Missing the required parameter "participantId" when calling patchConversationsChatParticipant';}// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchConversationsChatParticipant';}return this.apiClient.callApi('/api/v2/conversations/chats/{conversationId}/participants/{participantId}','PATCH',{'conversationId':conversationId,'participantId':participantId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Update the attributes on a conversation participant.
-   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
-   * @param {String} conversationId conversationId
-   * @param {String} participantId participantId
-   * @param {Object} body Participant attributes
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"patchConversationsChatParticipantAttributes",value:function patchConversationsChatParticipantAttributes(conversationId,participantId,body,opts){opts=opts||{};// verify the required parameter 'conversationId' is set
-if(conversationId===undefined||conversationId===null||conversationId===''){throw'Missing the required parameter "conversationId" when calling patchConversationsChatParticipantAttributes';}// verify the required parameter 'participantId' is set
-if(participantId===undefined||participantId===null||participantId===''){throw'Missing the required parameter "participantId" when calling patchConversationsChatParticipantAttributes';}// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchConversationsChatParticipantAttributes';}return this.apiClient.callApi('/api/v2/conversations/chats/{conversationId}/participants/{participantId}/attributes','PATCH',{'conversationId':conversationId,'participantId':participantId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
-   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
-   * @param {String} conversationId conversationId
-   * @param {String} participantId participantId
-   * @param {String} communicationId communicationId
-   * @param {Object} body Participant
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"patchConversationsChatParticipantCommunication",value:function patchConversationsChatParticipantCommunication(conversationId,participantId,communicationId,body,opts){opts=opts||{};// verify the required parameter 'conversationId' is set
-if(conversationId===undefined||conversationId===null||conversationId===''){throw'Missing the required parameter "conversationId" when calling patchConversationsChatParticipantCommunication';}// verify the required parameter 'participantId' is set
-if(participantId===undefined||participantId===null||participantId===''){throw'Missing the required parameter "participantId" when calling patchConversationsChatParticipantCommunication';}// verify the required parameter 'communicationId' is set
-if(communicationId===undefined||communicationId===null||communicationId===''){throw'Missing the required parameter "communicationId" when calling patchConversationsChatParticipantCommunication';}// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchConversationsChatParticipantCommunication';}return this.apiClient.callApi('/api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}','PATCH',{'conversationId':conversationId,'participantId':participantId,'communicationId':communicationId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Update a conversation by disconnecting all of the participants
    * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param {String} conversationId conversationId
    * @param {Object} body Conversation
@@ -12280,61 +12196,6 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
    */},{key:"postConversationsCallsUserUserId",value:function postConversationsCallsUserUserId(userId,body,opts){opts=opts||{};// verify the required parameter 'userId' is set
 if(userId===undefined||userId===null||userId===''){throw'Missing the required parameter "userId" when calling postConversationsCallsUserUserId';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postConversationsCallsUserUserId';}return this.apiClient.callApi('/api/v2/conversations/calls/user/{userId}','POST',{'userId':userId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Send a message on behalf of a communication in a chat conversation.
-   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
-   * @param {String} conversationId conversationId
-   * @param {String} communicationId communicationId
-   * @param {Object} body Message
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"postConversationsChatCommunicationMessages",value:function postConversationsChatCommunicationMessages(conversationId,communicationId,body,opts){opts=opts||{};// verify the required parameter 'conversationId' is set
-if(conversationId===undefined||conversationId===null||conversationId===''){throw'Missing the required parameter "conversationId" when calling postConversationsChatCommunicationMessages';}// verify the required parameter 'communicationId' is set
-if(communicationId===undefined||communicationId===null||communicationId===''){throw'Missing the required parameter "communicationId" when calling postConversationsChatCommunicationMessages';}// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postConversationsChatCommunicationMessages';}return this.apiClient.callApi('/api/v2/conversations/chats/{conversationId}/communications/{communicationId}/messages','POST',{'conversationId':conversationId,'communicationId':communicationId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Send a typing-indicator on behalf of a communication in a chat conversation.
-   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
-   * @param {String} conversationId conversationId
-   * @param {String} communicationId communicationId
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"postConversationsChatCommunicationTyping",value:function postConversationsChatCommunicationTyping(conversationId,communicationId,opts){opts=opts||{};// verify the required parameter 'conversationId' is set
-if(conversationId===undefined||conversationId===null||conversationId===''){throw'Missing the required parameter "conversationId" when calling postConversationsChatCommunicationTyping';}// verify the required parameter 'communicationId' is set
-if(communicationId===undefined||communicationId===null||communicationId===''){throw'Missing the required parameter "communicationId" when calling postConversationsChatCommunicationTyping';}return this.apiClient.callApi('/api/v2/conversations/chats/{conversationId}/communications/{communicationId}/typing','POST',{'conversationId':conversationId,'communicationId':communicationId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Apply wrap-up for this conversation communication
-   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
-   * @param {String} conversationId conversationId
-   * @param {String} participantId participantId
-   * @param {String} communicationId communicationId
-   * @param {Object} opts Optional parameters
-   * @param {Object} opts.body Wrap-up
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"postConversationsChatParticipantCommunicationWrapup",value:function postConversationsChatParticipantCommunicationWrapup(conversationId,participantId,communicationId,opts){opts=opts||{};// verify the required parameter 'conversationId' is set
-if(conversationId===undefined||conversationId===null||conversationId===''){throw'Missing the required parameter "conversationId" when calling postConversationsChatParticipantCommunicationWrapup';}// verify the required parameter 'participantId' is set
-if(participantId===undefined||participantId===null||participantId===''){throw'Missing the required parameter "participantId" when calling postConversationsChatParticipantCommunicationWrapup';}// verify the required parameter 'communicationId' is set
-if(communicationId===undefined||communicationId===null||communicationId===''){throw'Missing the required parameter "communicationId" when calling postConversationsChatParticipantCommunicationWrapup';}return this.apiClient.callApi('/api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup','POST',{'conversationId':conversationId,'participantId':participantId,'communicationId':communicationId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Replace this participant with the specified user and/or address
-   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
-   * @param {String} conversationId conversationId
-   * @param {String} participantId participantId
-   * @param {Object} body Transfer request
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"postConversationsChatParticipantReplace",value:function postConversationsChatParticipantReplace(conversationId,participantId,body,opts){opts=opts||{};// verify the required parameter 'conversationId' is set
-if(conversationId===undefined||conversationId===null||conversationId===''){throw'Missing the required parameter "conversationId" when calling postConversationsChatParticipantReplace';}// verify the required parameter 'participantId' is set
-if(participantId===undefined||participantId===null||participantId===''){throw'Missing the required parameter "participantId" when calling postConversationsChatParticipantReplace';}// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postConversationsChatParticipantReplace';}return this.apiClient.callApi('/api/v2/conversations/chats/{conversationId}/participants/{participantId}/replace','POST',{'conversationId':conversationId,'participantId':participantId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Create a web chat conversation
-   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
-   * @param {Object} body Create web chat request
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"postConversationsChats",value:function postConversationsChats(body,opts){opts=opts||{};// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postConversationsChats';}return this.apiClient.callApi('/api/v2/conversations/chats','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
    * Apply wrap-up for this conversation communication
    * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param {String} conversationId conversationId
@@ -12868,16 +12729,6 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(conversationId===undefined||conversationId===null||conversationId===''){throw'Missing the required parameter "conversationId" when calling putConversationsCallbackRecordingstate';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putConversationsCallbackRecordingstate';}return this.apiClient.callApi('/api/v2/conversations/callbacks/{conversationId}/recordingstate','PUT',{'conversationId':conversationId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
    * Update a conversation by setting its recording state
-   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
-   * @param {String} conversationId conversationId
-   * @param {Object} body SetRecordingState
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"putConversationsChatRecordingstate",value:function putConversationsChatRecordingstate(conversationId,body,opts){opts=opts||{};// verify the required parameter 'conversationId' is set
-if(conversationId===undefined||conversationId===null||conversationId===''){throw'Missing the required parameter "conversationId" when calling putConversationsChatRecordingstate';}// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putConversationsChatRecordingstate';}return this.apiClient.callApi('/api/v2/conversations/chats/{conversationId}/recordingstate','PUT',{'conversationId':conversationId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Update a conversation by setting its recording state
    * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param {String} conversationId conversationId
    * @param {Object} body SetRecordingState
@@ -13037,7 +12888,7 @@ if(conversationId===undefined||conversationId===null||conversationId===''){throw
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putConversationsVideoRecordingstate';}return this.apiClient.callApi('/api/v2/conversations/videos/{conversationId}/recordingstate','PUT',{'conversationId':conversationId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var DataExtensionsApi=/*#__PURE__*/function(){/**
    * DataExtensions service.
    * @module purecloud-platform-client-v2/api/DataExtensionsApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new DataExtensionsApi. 
    * @alias module:purecloud-platform-client-v2/api/DataExtensionsApi
@@ -13064,7 +12915,7 @@ if(coretypeName===undefined||coretypeName===null||coretypeName===''){throw'Missi
    */},{key:"getDataextensionsLimits",value:function getDataextensionsLimits(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/dataextensions/limits','GET',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var DataPrivacyApi=/*#__PURE__*/function(){/**
    * DataPrivacy service.
    * @module purecloud-platform-client-v2/api/DataPrivacyApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new DataPrivacyApi. 
    * @alias module:purecloud-platform-client-v2/api/DataPrivacyApi
@@ -13112,10 +12963,57 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
    * @param {Object} opts Optional parameters
    * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
    */},{key:"postDataprivacyMaskingrulesValidate",value:function postDataprivacyMaskingrulesValidate(body,opts){opts=opts||{};// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postDataprivacyMaskingrulesValidate';}return this.apiClient.callApi('/api/v2/dataprivacy/maskingrules/validate','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var DownloadsApi=/*#__PURE__*/function(){/**
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postDataprivacyMaskingrulesValidate';}return this.apiClient.callApi('/api/v2/dataprivacy/maskingrules/validate','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var DependenciesApi=/*#__PURE__*/function(){/**
+   * Dependencies service.
+   * @module purecloud-platform-client-v2/api/DependenciesApi
+   * @version 259.0.0
+   *//**
+   * Constructs a new DependenciesApi. 
+   * @alias module:purecloud-platform-client-v2/api/DependenciesApi
+   * @class
+   * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
+   * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
+   */function DependenciesApi(apiClient){_classCallCheck(this,DependenciesApi);this.apiClient=apiClient||ApiClient.instance;}/**
+   * Get entities that require the given entity
+   * 
+   * @param {Object} entityType Entity type
+   * @param {String} entityId Entity ID
+   * @param {Object} opts Optional parameters
+   * @param {String} opts.pageSize Page size (max 100) (default to 25)
+   * @param {String} opts.beforeSourceType Cursor for previous page
+   * @param {String} opts.beforeSourceId Cursor for previous page
+   * @param {String} opts.afterSourceType Cursor for next page
+   * @param {String} opts.afterSourceId Cursor for next page
+   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+   */return _createClass(DependenciesApi,[{key:"getDependenciesTypeEntityTypeIdEntityIdConnectionsRequiredby",value:function getDependenciesTypeEntityTypeIdEntityIdConnectionsRequiredby(entityType,entityId,opts){opts=opts||{};// verify the required parameter 'entityType' is set
+if(entityType===undefined||entityType===null||entityType===''){throw'Missing the required parameter "entityType" when calling getDependenciesTypeEntityTypeIdEntityIdConnectionsRequiredby';}// verify the required parameter 'entityId' is set
+if(entityId===undefined||entityId===null||entityId===''){throw'Missing the required parameter "entityId" when calling getDependenciesTypeEntityTypeIdEntityIdConnectionsRequiredby';}return this.apiClient.callApi('/api/v2/dependencies/type/{entityType}/id/{entityId}/connections/requiredby','GET',{'entityType':entityType,'entityId':entityId},{'pageSize':opts['pageSize'],'beforeSourceType':opts['beforeSourceType'],'beforeSourceId':opts['beforeSourceId'],'afterSourceType':opts['afterSourceType'],'afterSourceId':opts['afterSourceId']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+   * An estimated count of entities that depend on this entity, including indirect dependencies.
+   * 
+   * @param {Object} entityType Entity type
+   * @param {String} entityId Entity ID
+   * @param {Object} opts Optional parameters
+   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+   */},{key:"getDependenciesTypeEntityTypeIdEntityIdConnectionsRequiredbycounts",value:function getDependenciesTypeEntityTypeIdEntityIdConnectionsRequiredbycounts(entityType,entityId,opts){opts=opts||{};// verify the required parameter 'entityType' is set
+if(entityType===undefined||entityType===null||entityType===''){throw'Missing the required parameter "entityType" when calling getDependenciesTypeEntityTypeIdEntityIdConnectionsRequiredbycounts';}// verify the required parameter 'entityId' is set
+if(entityId===undefined||entityId===null||entityId===''){throw'Missing the required parameter "entityId" when calling getDependenciesTypeEntityTypeIdEntityIdConnectionsRequiredbycounts';}return this.apiClient.callApi('/api/v2/dependencies/type/{entityType}/id/{entityId}/connections/requiredbycounts','GET',{'entityType':entityType,'entityId':entityId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+   * Get entities that the given entity requires
+   * 
+   * @param {Object} entityType Entity type
+   * @param {String} entityId Entity ID
+   * @param {Object} opts Optional parameters
+   * @param {String} opts.pageSize Page size (max 100) (default to 25)
+   * @param {String} opts.beforeSourceType Cursor for previous page
+   * @param {String} opts.beforeSourceId Cursor for previous page
+   * @param {String} opts.afterSourceType Cursor for next page
+   * @param {String} opts.afterSourceId Cursor for next page
+   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+   */},{key:"getDependenciesTypeEntityTypeIdEntityIdConnectionsRequires",value:function getDependenciesTypeEntityTypeIdEntityIdConnectionsRequires(entityType,entityId,opts){opts=opts||{};// verify the required parameter 'entityType' is set
+if(entityType===undefined||entityType===null||entityType===''){throw'Missing the required parameter "entityType" when calling getDependenciesTypeEntityTypeIdEntityIdConnectionsRequires';}// verify the required parameter 'entityId' is set
+if(entityId===undefined||entityId===null||entityId===''){throw'Missing the required parameter "entityId" when calling getDependenciesTypeEntityTypeIdEntityIdConnectionsRequires';}return this.apiClient.callApi('/api/v2/dependencies/type/{entityType}/id/{entityId}/connections/requires','GET',{'entityType':entityType,'entityId':entityId},{'pageSize':opts['pageSize'],'beforeSourceType':opts['beforeSourceType'],'beforeSourceId':opts['beforeSourceId'],'afterSourceType':opts['afterSourceType'],'afterSourceId':opts['afterSourceId']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var DownloadsApi=/*#__PURE__*/function(){/**
    * Downloads service.
    * @module purecloud-platform-client-v2/api/DownloadsApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new DownloadsApi. 
    * @alias module:purecloud-platform-client-v2/api/DownloadsApi
@@ -13135,7 +13033,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(downloadId===undefined||downloadId===null||downloadId===''){throw'Missing the required parameter "downloadId" when calling getDownload';}return this.apiClient.callApi('/api/v2/downloads/{downloadId}','GET',{'downloadId':downloadId},{'contentDisposition':opts['contentDisposition'],'issueRedirect':opts['issueRedirect'],'redirectToAuth':opts['redirectToAuth']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var EmailsApi=/*#__PURE__*/function(){/**
    * Emails service.
    * @module purecloud-platform-client-v2/api/EmailsApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new EmailsApi. 
    * @alias module:purecloud-platform-client-v2/api/EmailsApi
@@ -13172,7 +13070,7 @@ if(downloadId===undefined||downloadId===null||downloadId===''){throw'Missing the
    */},{key:"patchEmailsSettingsThreading",value:function patchEmailsSettingsThreading(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/emails/settings/threading','PATCH',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var EmployeeEngagementApi=/*#__PURE__*/function(){/**
    * EmployeeEngagement service.
    * @module purecloud-platform-client-v2/api/EmployeeEngagementApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new EmployeeEngagementApi. 
    * @alias module:purecloud-platform-client-v2/api/EmployeeEngagementApi
@@ -13230,7 +13128,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postEmployeeengagementRecognitions';}return this.apiClient.callApi('/api/v2/employeeengagement/recognitions','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var EventsApi=/*#__PURE__*/function(){/**
    * Events service.
    * @module purecloud-platform-client-v2/api/EventsApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new EventsApi. 
    * @alias module:purecloud-platform-client-v2/api/EventsApi
@@ -13250,7 +13148,6 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
    * @param {Object} body batchRequest
    * @param {Object} opts Optional parameters
    * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * postEventsRoutingCustomkpiattributions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    */},{key:"postEventsRoutingCustomkpiattributions",value:function postEventsRoutingCustomkpiattributions(body,opts){opts=opts||{};// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postEventsRoutingCustomkpiattributions';}return this.apiClient.callApi('/api/v2/events/routing/customkpiattributions','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
    * Publish User Presence Status Batch Events
@@ -13269,7 +13166,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postEventsUsersRoutingstatus';}return this.apiClient.callApi('/api/v2/events/users/routingstatus','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var ExternalContactsApi=/*#__PURE__*/function(){/**
    * ExternalContacts service.
    * @module purecloud-platform-client-v2/api/ExternalContactsApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new ExternalContactsApi. 
    * @alias module:purecloud-platform-client-v2/api/ExternalContactsApi
@@ -14337,7 +14234,7 @@ if(relationshipId===undefined||relationshipId===null||relationshipId===''){throw
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putExternalcontactsRelationship';}return this.apiClient.callApi('/api/v2/externalcontacts/relationships/{relationshipId}','PUT',{'relationshipId':relationshipId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var FaxApi=/*#__PURE__*/function(){/**
    * Fax service.
    * @module purecloud-platform-client-v2/api/FaxApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new FaxApi. 
    * @alias module:purecloud-platform-client-v2/api/FaxApi
@@ -14400,7 +14297,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
    */},{key:"putFaxSettings",value:function putFaxSettings(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/fax/settings','PUT',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var FlowsApi=/*#__PURE__*/function(){/**
    * Flows service.
    * @module purecloud-platform-client-v2/api/FlowsApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new FlowsApi. 
    * @alias module:purecloud-platform-client-v2/api/FlowsApi
@@ -14462,7 +14359,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postAnalyticsFlowsObservationsQuery';}return this.apiClient.callApi('/api/v2/analytics/flows/observations/query','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var GamificationApi=/*#__PURE__*/function(){/**
    * Gamification service.
    * @module purecloud-platform-client-v2/api/GamificationApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new GamificationApi. 
    * @alias module:purecloud-platform-client-v2/api/GamificationApi
@@ -15257,7 +15154,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(status===undefined||status===null){throw'Missing the required parameter "status" when calling putGamificationStatus';}return this.apiClient.callApi('/api/v2/gamification/status','PUT',{},{},{},{},status,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var GeneralDataProtectionRegulationApi=/*#__PURE__*/function(){/**
    * GeneralDataProtectionRegulation service.
    * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new GeneralDataProtectionRegulationApi. 
    * @alias module:purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
@@ -15298,7 +15195,7 @@ if(searchValue===undefined||searchValue===null){throw'Missing the required param
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postGdprRequests';}return this.apiClient.callApi('/api/v2/gdpr/requests','POST',{},{'deleteConfirmed':opts['deleteConfirmed']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var GeolocationApi=/*#__PURE__*/function(){/**
    * Geolocation service.
    * @module purecloud-platform-client-v2/api/GeolocationApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new GeolocationApi. 
    * @alias module:purecloud-platform-client-v2/api/GeolocationApi
@@ -15340,7 +15237,7 @@ if(clientId===undefined||clientId===null||clientId===''){throw'Missing the requi
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchUserGeolocation';}return this.apiClient.callApi('/api/v2/users/{userId}/geolocations/{clientId}','PATCH',{'userId':userId,'clientId':clientId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var GreetingsApi=/*#__PURE__*/function(){/**
    * Greetings service.
    * @module purecloud-platform-client-v2/api/GreetingsApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new GreetingsApi. 
    * @alias module:purecloud-platform-client-v2/api/GreetingsApi
@@ -15499,7 +15396,7 @@ if(userId===undefined||userId===null||userId===''){throw'Missing the required pa
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putUserGreetingsDefaults';}return this.apiClient.callApi('/api/v2/users/{userId}/greetings/defaults','PUT',{'userId':userId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var GroupsApi=/*#__PURE__*/function(){/**
    * Groups service.
    * @module purecloud-platform-client-v2/api/GroupsApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new GroupsApi. 
    * @alias module:purecloud-platform-client-v2/api/GroupsApi
@@ -15662,7 +15559,7 @@ if(groupId===undefined||groupId===null||groupId===''){throw'Missing the required
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putGroupDynamicsettings';}return this.apiClient.callApi('/api/v2/groups/{groupId}/dynamicsettings','PUT',{'groupId':groupId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var IdentityProviderApi=/*#__PURE__*/function(){/**
    * IdentityProvider service.
    * @module purecloud-platform-client-v2/api/IdentityProviderApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new IdentityProviderApi. 
    * @alias module:purecloud-platform-client-v2/api/IdentityProviderApi
@@ -15894,7 +15791,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putIdentityprovidersSalesforce';}return this.apiClient.callApi('/api/v2/identityproviders/salesforce','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var InfrastructureAsCodeApi=/*#__PURE__*/function(){/**
    * InfrastructureAsCode service.
    * @module purecloud-platform-client-v2/api/InfrastructureAsCodeApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new InfrastructureAsCodeApi. 
    * @alias module:purecloud-platform-client-v2/api/InfrastructureAsCodeApi
@@ -15954,7 +15851,7 @@ if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required param
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postInfrastructureascodeJobs';}return this.apiClient.callApi('/api/v2/infrastructureascode/jobs','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var IntegrationsApi=/*#__PURE__*/function(){/**
    * Integrations service.
    * @module purecloud-platform-client-v2/api/IntegrationsApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new IntegrationsApi. 
    * @alias module:purecloud-platform-client-v2/api/IntegrationsApi
@@ -16773,7 +16670,7 @@ if(ucIntegrationId===undefined||ucIntegrationId===null||ucIntegrationId===''){th
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putIntegrationsUnifiedcommunicationThirdpartypresences';}return this.apiClient.callApi('/api/v2/integrations/unifiedcommunications/{ucIntegrationId}/thirdpartypresences','PUT',{'ucIntegrationId':ucIntegrationId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var IntentsApi=/*#__PURE__*/function(){/**
    * Intents service.
    * @module purecloud-platform-client-v2/api/IntentsApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new IntentsApi. 
    * @alias module:purecloud-platform-client-v2/api/IntentsApi
@@ -16914,10 +16811,18 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
    * @param {Object} opts Optional parameters
    * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
    */},{key:"postIntentsCustomerintents",value:function postIntentsCustomerintents(body,opts){opts=opts||{};// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postIntentsCustomerintents';}return this.apiClient.callApi('/api/v2/intents/customerintents','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var JourneyApi=/*#__PURE__*/function(){/**
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postIntentsCustomerintents';}return this.apiClient.callApi('/api/v2/intents/customerintents','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+   * Get customer intents by IDs
+   * 
+   * @param {Object} body Customer intent IDs to retrieve
+   * @param {Object} opts Optional parameters
+   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+   * postIntentsCustomerintentsBulkRetrieve is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   */},{key:"postIntentsCustomerintentsBulkRetrieve",value:function postIntentsCustomerintentsBulkRetrieve(body,opts){opts=opts||{};// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postIntentsCustomerintentsBulkRetrieve';}return this.apiClient.callApi('/api/v2/intents/customerintents/bulk/retrieve','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var JourneyApi=/*#__PURE__*/function(){/**
    * Journey service.
    * @module purecloud-platform-client-v2/api/JourneyApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new JourneyApi. 
    * @alias module:purecloud-platform-client-v2/api/JourneyApi
@@ -17697,7 +17602,7 @@ if(eventDefinitionId===undefined||eventDefinitionId===null||eventDefinitionId===
 if(eventDefinitionId===undefined||eventDefinitionId===null||eventDefinitionId===''){throw'Missing the required parameter "eventDefinitionId" when calling putJourneyViewsEventdefinitionActivate';}return this.apiClient.callApi('/api/v2/journey/views/eventdefinitions/{eventDefinitionId}/activate','PUT',{'eventDefinitionId':eventDefinitionId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var KnowledgeApi=/*#__PURE__*/function(){/**
    * Knowledge service.
    * @module purecloud-platform-client-v2/api/KnowledgeApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new KnowledgeApi. 
    * @alias module:purecloud-platform-client-v2/api/KnowledgeApi
@@ -18971,7 +18876,7 @@ if(sourceId===undefined||sourceId===null||sourceId===''){throw'Missing the requi
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putKnowledgeSource';}return this.apiClient.callApi('/api/v2/knowledge/sources/{sourceId}','PUT',{'sourceId':sourceId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var LanguageUnderstandingApi=/*#__PURE__*/function(){/**
    * LanguageUnderstanding service.
    * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new LanguageUnderstandingApi. 
    * @alias module:purecloud-platform-client-v2/api/LanguageUnderstandingApi
@@ -19345,7 +19250,7 @@ if(domainVersionId===undefined||domainVersionId===null||domainVersionId===''){th
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putLanguageunderstandingDomainVersion';}return this.apiClient.callApi('/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}','PUT',{'domainId':domainId,'domainVersionId':domainVersionId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var LanguagesApi=/*#__PURE__*/function(){/**
    * Languages service.
    * @module purecloud-platform-client-v2/api/LanguagesApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new LanguagesApi. 
    * @alias module:purecloud-platform-client-v2/api/LanguagesApi
@@ -19415,7 +19320,7 @@ if(userId===undefined||userId===null||userId===''){throw'Missing the required pa
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postLanguages';}return this.apiClient.callApi('/api/v2/languages','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var LearningApi=/*#__PURE__*/function(){/**
    * Learning service.
    * @module purecloud-platform-client-v2/api/LearningApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new LearningApi. 
    * @alias module:purecloud-platform-client-v2/api/LearningApi
@@ -19761,7 +19666,7 @@ if(moduleId===undefined||moduleId===null||moduleId===''){throw'Missing the requi
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putLearningModuleRule';}return this.apiClient.callApi('/api/v2/learning/modules/{moduleId}/rule','PUT',{'moduleId':moduleId},{'assign':opts['assign']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var LicenseApi=/*#__PURE__*/function(){/**
    * License service.
    * @module purecloud-platform-client-v2/api/LicenseApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new LicenseApi. 
    * @alias module:purecloud-platform-client-v2/api/LicenseApi
@@ -19836,7 +19741,7 @@ if(featureName===undefined||featureName===null||featureName===''){throw'Missing 
    */},{key:"postLicenseUsers",value:function postLicenseUsers(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/license/users','POST',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var LocationsApi=/*#__PURE__*/function(){/**
    * Locations service.
    * @module purecloud-platform-client-v2/api/LocationsApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new LocationsApi. 
    * @alias module:purecloud-platform-client-v2/api/LocationsApi
@@ -19908,7 +19813,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postLocationsSearch';}return this.apiClient.callApi('/api/v2/locations/search','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var LogCaptureApi=/*#__PURE__*/function(){/**
    * LogCapture service.
    * @module purecloud-platform-client-v2/api/LogCaptureApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new LogCaptureApi. 
    * @alias module:purecloud-platform-client-v2/api/LogCaptureApi
@@ -19967,7 +19872,7 @@ if(userId===undefined||userId===null||userId===''){throw'Missing the required pa
 if(userId===undefined||userId===null||userId===''){throw'Missing the required parameter "userId" when calling postDiagnosticsLogcaptureBrowserUser';}return this.apiClient.callApi('/api/v2/diagnostics/logcapture/browser/users/{userId}','POST',{'userId':userId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var MessagingApi=/*#__PURE__*/function(){/**
    * Messaging service.
    * @module purecloud-platform-client-v2/api/MessagingApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new MessagingApi. 
    * @alias module:purecloud-platform-client-v2/api/MessagingApi
@@ -20081,7 +19986,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putMessagingSettingsDefault';}return this.apiClient.callApi('/api/v2/messaging/settings/default','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var MobileDevicesApi=/*#__PURE__*/function(){/**
    * MobileDevices service.
    * @module purecloud-platform-client-v2/api/MobileDevicesApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new MobileDevicesApi. 
    * @alias module:purecloud-platform-client-v2/api/MobileDevicesApi
@@ -20128,7 +20033,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(deviceId===undefined||deviceId===null||deviceId===''){throw'Missing the required parameter "deviceId" when calling putMobiledevice';}return this.apiClient.callApi('/api/v2/mobiledevices/{deviceId}','PUT',{'deviceId':deviceId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var NotificationsApi=/*#__PURE__*/function(){/**
    * Notifications service.
    * @module purecloud-platform-client-v2/api/NotificationsApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new NotificationsApi. 
    * @alias module:purecloud-platform-client-v2/api/NotificationsApi
@@ -20197,7 +20102,7 @@ if(channelId===undefined||channelId===null||channelId===''){throw'Missing the re
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putNotificationsChannelSubscriptions';}return this.apiClient.callApi('/api/v2/notifications/channels/{channelId}/subscriptions','PUT',{'channelId':channelId},{'ignoreErrors':opts['ignoreErrors']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var OAuthApi=/*#__PURE__*/function(){/**
    * OAuth service.
    * @module purecloud-platform-client-v2/api/OAuthApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new OAuthApi. 
    * @alias module:purecloud-platform-client-v2/api/OAuthApi
@@ -20303,7 +20208,7 @@ if(clientId===undefined||clientId===null||clientId===''){throw'Missing the requi
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putOauthClient';}return this.apiClient.callApi('/api/v2/oauth/clients/{clientId}','PUT',{'clientId':clientId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var ObjectsApi=/*#__PURE__*/function(){/**
    * Objects service.
    * @module purecloud-platform-client-v2/api/ObjectsApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new ObjectsApi. 
    * @alias module:purecloud-platform-client-v2/api/ObjectsApi
@@ -20406,7 +20311,7 @@ if(divisionId===undefined||divisionId===null||divisionId===''){throw'Missing the
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putAuthorizationDivision';}return this.apiClient.callApi('/api/v2/authorization/divisions/{divisionId}','PUT',{'divisionId':divisionId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var OperationalEventsApi=/*#__PURE__*/function(){/**
    * OperationalEvents service.
    * @module purecloud-platform-client-v2/api/OperationalEventsApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new OperationalEventsApi. 
    * @alias module:purecloud-platform-client-v2/api/OperationalEventsApi
@@ -20443,7 +20348,7 @@ if(eventDefinitionId===undefined||eventDefinitionId===null||eventDefinitionId===
    */},{key:"postUsageEventsQuery",value:function postUsageEventsQuery(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/usage/events/query','POST',{},{'before':opts['before'],'after':opts['after'],'pageSize':opts['pageSize']},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var OrganizationApi=/*#__PURE__*/function(){/**
    * Organization service.
    * @module purecloud-platform-client-v2/api/OrganizationApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new OrganizationApi. 
    * @alias module:purecloud-platform-client-v2/api/OrganizationApi
@@ -20583,7 +20488,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putOrganizationsWhitelist';}return this.apiClient.callApi('/api/v2/organizations/whitelist','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var OrganizationAuthorizationApi=/*#__PURE__*/function(){/**
    * OrganizationAuthorization service.
    * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new OrganizationAuthorizationApi. 
    * @alias module:purecloud-platform-client-v2/api/OrganizationAuthorizationApi
@@ -21003,7 +20908,7 @@ if(trustorOrgId===undefined||trustorOrgId===null||trustorOrgId===''){throw'Missi
 if(trusteeUserId===undefined||trusteeUserId===null||trusteeUserId===''){throw'Missing the required parameter "trusteeUserId" when calling putOrgauthorizationTrustorUser';}return this.apiClient.callApi('/api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId}','PUT',{'trustorOrgId':trustorOrgId,'trusteeUserId':trusteeUserId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var OutboundApi=/*#__PURE__*/function(){/**
    * Outbound service.
    * @module purecloud-platform-client-v2/api/OutboundApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new OutboundApi. 
    * @alias module:purecloud-platform-client-v2/api/OutboundApi
@@ -22489,7 +22394,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putOutboundWrapupcodemappings';}return this.apiClient.callApi('/api/v2/outbound/wrapupcodemappings','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var PresenceApi=/*#__PURE__*/function(){/**
    * Presence service.
    * @module purecloud-platform-client-v2/api/PresenceApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new PresenceApi. 
    * @alias module:purecloud-platform-client-v2/api/PresenceApi
@@ -22709,7 +22614,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putUsersPresencesBulk';}return this.apiClient.callApi('/api/v2/users/presences/bulk','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var ProcessAutomationApi=/*#__PURE__*/function(){/**
    * ProcessAutomation service.
    * @module purecloud-platform-client-v2/api/ProcessAutomationApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new ProcessAutomationApi. 
    * @alias module:purecloud-platform-client-v2/api/ProcessAutomationApi
@@ -22823,7 +22728,7 @@ if(triggerId===undefined||triggerId===null||triggerId===''){throw'Missing the re
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putProcessautomationTrigger';}return this.apiClient.callApi('/api/v2/processautomation/triggers/{triggerId}','PUT',{'triggerId':triggerId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var QualityApi=/*#__PURE__*/function(){/**
    * Quality service.
    * @module purecloud-platform-client-v2/api/QualityApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new QualityApi. 
    * @alias module:purecloud-platform-client-v2/api/QualityApi
@@ -23515,7 +23420,7 @@ if(customerSurveyUrl===undefined||customerSurveyUrl===null){throw'Missing the re
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putQualitySurveysScorable';}return this.apiClient.callApi('/api/v2/quality/surveys/scorable','PUT',{},{'customerSurveyUrl':customerSurveyUrl},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var RecordingApi=/*#__PURE__*/function(){/**
    * Recording service.
    * @module purecloud-platform-client-v2/api/RecordingApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new RecordingApi. 
    * @alias module:purecloud-platform-client-v2/api/RecordingApi
@@ -24014,7 +23919,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
    */},{key:"putRecordingsDeletionprotection",value:function putRecordingsDeletionprotection(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/recordings/deletionprotection','PUT',{},{'protect':opts['protect']},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var ResponseManagementApi=/*#__PURE__*/function(){/**
    * ResponseManagement service.
    * @module purecloud-platform-client-v2/api/ResponseManagementApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new ResponseManagementApi. 
    * @alias module:purecloud-platform-client-v2/api/ResponseManagementApi
@@ -24211,7 +24116,7 @@ if(responseAssetId===undefined||responseAssetId===null||responseAssetId===''){th
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putResponsemanagementResponseasset';}return this.apiClient.callApi('/api/v2/responsemanagement/responseassets/{responseAssetId}','PUT',{'responseAssetId':responseAssetId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var RoutingApi=/*#__PURE__*/function(){/**
    * Routing service.
    * @module purecloud-platform-client-v2/api/RoutingApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new RoutingApi. 
    * @alias module:purecloud-platform-client-v2/api/RoutingApi
@@ -24280,7 +24185,6 @@ if(predictorId===undefined||predictorId===null||predictorId===''){throw'Missing 
    * @param {String} kpiId Key Performance Indicator ID
    * @param {Object} opts Optional parameters
    * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * deleteRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    */},{key:"deleteRoutingPredictorsKeyperformanceindicator",value:function deleteRoutingPredictorsKeyperformanceindicator(kpiId,opts){opts=opts||{};// verify the required parameter 'kpiId' is set
 if(kpiId===undefined||kpiId===null||kpiId===''){throw'Missing the required parameter "kpiId" when calling deleteRoutingPredictorsKeyperformanceindicator';}return this.apiClient.callApi('/api/v2/routing/predictors/keyperformanceindicators/{kpiId}','DELETE',{'kpiId':kpiId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
    * Delete a queue
@@ -24643,7 +24547,6 @@ if(predictorId===undefined||predictorId===null||predictorId===''){throw'Missing 
    * @param {Object} opts Optional parameters
    * @param {Array.<String>} opts.expand Parameter to request additional data to return in KPI payload
    * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * getRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    */},{key:"getRoutingPredictorsKeyperformanceindicator",value:function getRoutingPredictorsKeyperformanceindicator(kpiId,opts){opts=opts||{};// verify the required parameter 'kpiId' is set
 if(kpiId===undefined||kpiId===null||kpiId===''){throw'Missing the required parameter "kpiId" when calling getRoutingPredictorsKeyperformanceindicator';}return this.apiClient.callApi('/api/v2/routing/predictors/keyperformanceindicators/{kpiId}','GET',{'kpiId':kpiId},{'expand':this.apiClient.buildCollectionParam(opts['expand'],'multi')},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
    * Get a list of Key Performance Indicators
@@ -24657,7 +24560,6 @@ if(kpiId===undefined||kpiId===null||kpiId===''){throw'Missing the required param
    * 
    * @param {Object} opts Optional parameters
    * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * getRoutingPredictorsKeyperformanceindicatortypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    */},{key:"getRoutingPredictorsKeyperformanceindicatortypes",value:function getRoutingPredictorsKeyperformanceindicatortypes(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/routing/predictors/keyperformanceindicatortypes','GET',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
    * Get details about this queue.
    * 
@@ -25141,7 +25043,6 @@ if(predictorId===undefined||predictorId===null||predictorId===''){throw'Missing 
    * @param {Object} opts Optional parameters
    * @param {Object} opts.body 
    * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * patchRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    */},{key:"patchRoutingPredictorsKeyperformanceindicator",value:function patchRoutingPredictorsKeyperformanceindicator(kpiId,opts){opts=opts||{};// verify the required parameter 'kpiId' is set
 if(kpiId===undefined||kpiId===null||kpiId===''){throw'Missing the required parameter "kpiId" when calling patchRoutingPredictorsKeyperformanceindicator';}return this.apiClient.callApi('/api/v2/routing/predictors/keyperformanceindicators/{kpiId}','PATCH',{'kpiId':kpiId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
    * Update the ring number OR joined status for a queue member.
@@ -25399,7 +25300,6 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
    * @param {Object} body request
    * @param {Object} opts Optional parameters
    * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * postRoutingPredictorsKeyperformanceindicators is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    */},{key:"postRoutingPredictorsKeyperformanceindicators",value:function postRoutingPredictorsKeyperformanceindicators(body,opts){opts=opts||{};// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postRoutingPredictorsKeyperformanceindicators';}return this.apiClient.callApi('/api/v2/routing/predictors/keyperformanceindicators','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
    * Bulk add or delete up to 100 queue members
@@ -25680,7 +25580,7 @@ if(userId===undefined||userId===null||userId===''){throw'Missing the required pa
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putUserRoutingskillsBulk';}return this.apiClient.callApi('/api/v2/users/{userId}/routingskills/bulk','PUT',{'userId':userId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var SCIMApi=/*#__PURE__*/function(){/**
    * SCIM service.
    * @module purecloud-platform-client-v2/api/SCIMApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new SCIMApi. 
    * @alias module:purecloud-platform-client-v2/api/SCIMApi
@@ -25943,7 +25843,7 @@ if(userId===undefined||userId===null||userId===''){throw'Missing the required pa
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putScimV2User';}return this.apiClient.callApi('/api/v2/scim/v2/users/{userId}','PUT',{'userId':userId},{},{'If-Match':opts['ifMatch']},{},body,['PureCloud OAuth'],['application/scim+json','application/json'],['application/scim+json','application/json'],opts['customHeaders']);}}]);}();var ScreenMonitoringApi=/*#__PURE__*/function(){/**
    * ScreenMonitoring service.
    * @module purecloud-platform-client-v2/api/ScreenMonitoringApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new ScreenMonitoringApi. 
    * @alias module:purecloud-platform-client-v2/api/ScreenMonitoringApi
@@ -26040,7 +25940,7 @@ if(userId===undefined||userId===null||userId===''){throw'Missing the required pa
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putScreenmonitorsSettings';}return this.apiClient.callApi('/api/v2/screenmonitors/settings','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var ScriptsApi=/*#__PURE__*/function(){/**
    * Scripts service.
    * @module purecloud-platform-client-v2/api/ScriptsApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new ScriptsApi. 
    * @alias module:purecloud-platform-client-v2/api/ScriptsApi
@@ -26202,7 +26102,7 @@ if(scriptId===undefined||scriptId===null||scriptId===''){throw'Missing the requi
    */},{key:"postScriptsPublished",value:function postScriptsPublished(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/scripts/published','POST',{},{'scriptDataVersion':opts['scriptDataVersion']},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var SearchApi=/*#__PURE__*/function(){/**
    * Search service.
    * @module purecloud-platform-client-v2/api/SearchApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new SearchApi. 
    * @alias module:purecloud-platform-client-v2/api/SearchApi
@@ -26409,7 +26309,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postVoicemailSearch';}return this.apiClient.callApi('/api/v2/voicemail/search','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var SettingsApi=/*#__PURE__*/function(){/**
    * Settings service.
    * @module purecloud-platform-client-v2/api/SettingsApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new SettingsApi. 
    * @alias module:purecloud-platform-client-v2/api/SettingsApi
@@ -26506,7 +26406,7 @@ if(agentId===undefined||agentId===null||agentId===''){throw'Missing the required
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putUsersAgentuiAgentsAutoanswerAgentIdSettings';}return this.apiClient.callApi('/api/v2/users/agentui/agents/autoanswer/{agentId}/settings','PUT',{'agentId':agentId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var SocialMediaApi=/*#__PURE__*/function(){/**
    * SocialMedia service.
    * @module purecloud-platform-client-v2/api/SocialMediaApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new SocialMediaApi. 
    * @alias module:purecloud-platform-client-v2/api/SocialMediaApi
@@ -27061,7 +26961,7 @@ if(topicId===undefined||topicId===null||topicId===''){throw'Missing the required
 if(twitterIngestionRuleId===undefined||twitterIngestionRuleId===null||twitterIngestionRuleId===''){throw'Missing the required parameter "twitterIngestionRuleId" when calling putSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId';}return this.apiClient.callApi('/api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter/{twitterIngestionRuleId}','PUT',{'topicId':topicId,'twitterIngestionRuleId':twitterIngestionRuleId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var SpeechTextAnalyticsApi=/*#__PURE__*/function(){/**
    * SpeechTextAnalytics service.
    * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new SpeechTextAnalyticsApi. 
    * @alias module:purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
@@ -27368,6 +27268,13 @@ if(topicId===undefined||topicId===null||topicId===''){throw'Missing the required
    * @param {Object} opts.dialect The dialect of the general topics, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
    * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
    */},{key:"getSpeechandtextanalyticsTopicsGeneralStatus",value:function getSpeechandtextanalyticsTopicsGeneralStatus(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/speechandtextanalytics/topics/general/status','GET',{},{'dialect':opts['dialect']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+   * Get a Speech and Text Analytics GenAI phrases job by id
+   * 
+   * @param {String} jobId the id of the GenAI phrases job
+   * @param {Object} opts Optional parameters
+   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+   */},{key:"getSpeechandtextanalyticsTopicsGeneratedphrasesJob",value:function getSpeechandtextanalyticsTopicsGeneratedphrasesJob(jobId,opts){opts=opts||{};// verify the required parameter 'jobId' is set
+if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required parameter "jobId" when calling getSpeechandtextanalyticsTopicsGeneratedphrasesJob';}return this.apiClient.callApi('/api/v2/speechandtextanalytics/topics/generatedphrases/jobs/{jobId}','GET',{'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
    * Get a Speech and Text Analytics publish topics job by id
    * 
    * @param {String} jobId The id of the publish topics job
@@ -27462,6 +27369,13 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
    * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
    */},{key:"postSpeechandtextanalyticsTopics",value:function postSpeechandtextanalyticsTopics(body,opts){opts=opts||{};// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postSpeechandtextanalyticsTopics';}return this.apiClient.callApi('/api/v2/speechandtextanalytics/topics','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+   * Create new Speech and Text Analytics GenAI topic phrases generation job
+   * 
+   * @param {Object} body The GenAI topic phrases generation job to create
+   * @param {Object} opts Optional parameters
+   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+   */},{key:"postSpeechandtextanalyticsTopicsGeneratedphrasesJobs",value:function postSpeechandtextanalyticsTopicsGeneratedphrasesJobs(body,opts){opts=opts||{};// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postSpeechandtextanalyticsTopicsGeneratedphrasesJobs';}return this.apiClient.callApi('/api/v2/speechandtextanalytics/topics/generatedphrases/jobs','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
    * Create new Speech and Text Analytics publish topics job
    * 
    * @param {Object} body The publish topics job to create
@@ -27469,7 +27383,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
    * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
    */},{key:"postSpeechandtextanalyticsTopicsPublishjobs",value:function postSpeechandtextanalyticsTopicsPublishjobs(body,opts){opts=opts||{};// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postSpeechandtextanalyticsTopicsPublishjobs';}return this.apiClient.callApi('/api/v2/speechandtextanalytics/topics/publishjobs','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Create new Speech and Text Analytics publish topics job
+   * Create new Speech and Text Analytics test topic phrase job
    * 
    * @param {Object} body The publish test topic phrase job to create
    * @param {Object} opts Optional parameters
@@ -27554,7 +27468,7 @@ if(topicId===undefined||topicId===null||topicId===''){throw'Missing the required
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putSpeechandtextanalyticsTopic';}return this.apiClient.callApi('/api/v2/speechandtextanalytics/topics/{topicId}','PUT',{'topicId':topicId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var StationsApi=/*#__PURE__*/function(){/**
    * Stations service.
    * @module purecloud-platform-client-v2/api/StationsApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new StationsApi. 
    * @alias module:purecloud-platform-client-v2/api/StationsApi
@@ -27591,7 +27505,7 @@ if(stationId===undefined||stationId===null||stationId===''){throw'Missing the re
    */},{key:"getStations",value:function getStations(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/stations','GET',{},{'pageSize':opts['pageSize'],'pageNumber':opts['pageNumber'],'sortBy':opts['sortBy'],'name':opts['name'],'userSelectable':opts['userSelectable'],'webRtcUserId':opts['webRtcUserId'],'id':opts['id'],'lineAppearanceId':opts['lineAppearanceId']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var SuggestApi=/*#__PURE__*/function(){/**
    * Suggest service.
    * @module purecloud-platform-client-v2/api/SuggestApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new SuggestApi. 
    * @alias module:purecloud-platform-client-v2/api/SuggestApi
@@ -27635,7 +27549,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postSearchSuggest';}return this.apiClient.callApi('/api/v2/search/suggest','POST',{},{'profile':opts['profile']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var TaskManagementApi=/*#__PURE__*/function(){/**
    * TaskManagement service.
    * @module purecloud-platform-client-v2/api/TaskManagementApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new TaskManagementApi. 
    * @alias module:purecloud-platform-client-v2/api/TaskManagementApi
@@ -28279,7 +28193,7 @@ if(schemaId===undefined||schemaId===null||schemaId===''){throw'Missing the requi
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putTaskmanagementWorkitemsSchema';}return this.apiClient.callApi('/api/v2/taskmanagement/workitems/schemas/{schemaId}','PUT',{'schemaId':schemaId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var TeamsApi=/*#__PURE__*/function(){/**
    * Teams service.
    * @module purecloud-platform-client-v2/api/TeamsApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new TeamsApi. 
    * @alias module:purecloud-platform-client-v2/api/TeamsApi
@@ -28375,7 +28289,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postTeamsSearch';}return this.apiClient.callApi('/api/v2/teams/search','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var TelephonyApi=/*#__PURE__*/function(){/**
    * Telephony service.
    * @module purecloud-platform-client-v2/api/TelephonyApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new TelephonyApi. 
    * @alias module:purecloud-platform-client-v2/api/TelephonyApi
@@ -28544,7 +28458,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putTelephonySettings';}return this.apiClient.callApi('/api/v2/telephony/settings','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var TelephonyProvidersEdgeApi=/*#__PURE__*/function(){/**
    * TelephonyProvidersEdge service.
    * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new TelephonyProvidersEdgeApi. 
    * @alias module:purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
@@ -29597,7 +29511,7 @@ if(trunkBaseSettingsId===undefined||trunkBaseSettingsId===null||trunkBaseSetting
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putTelephonyProvidersEdgesTrunkbasesetting';}return this.apiClient.callApi('/api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId}','PUT',{'trunkBaseSettingsId':trunkBaseSettingsId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var TextbotsApi=/*#__PURE__*/function(){/**
    * Textbots service.
    * @module purecloud-platform-client-v2/api/TextbotsApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new TextbotsApi. 
    * @alias module:purecloud-platform-client-v2/api/TextbotsApi
@@ -29640,7 +29554,7 @@ if(launchRequest===undefined||launchRequest===null){throw'Missing the required p
 if(postTextRequest===undefined||postTextRequest===null){throw'Missing the required parameter "postTextRequest" when calling postTextbotsBotsExecute';}return this.apiClient.callApi('/api/v2/textbots/bots/execute','POST',{},{},{},{},postTextRequest,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var TokensApi=/*#__PURE__*/function(){/**
    * Tokens service.
    * @module purecloud-platform-client-v2/api/TokensApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new TokensApi. 
    * @alias module:purecloud-platform-client-v2/api/TokensApi
@@ -29684,7 +29598,7 @@ if(userId===undefined||userId===null||userId===''){throw'Missing the required pa
    */},{key:"putTokensTimeout",value:function putTokensTimeout(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/tokens/timeout','PUT',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var UploadsApi=/*#__PURE__*/function(){/**
    * Uploads service.
    * @module purecloud-platform-client-v2/api/UploadsApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new UploadsApi. 
    * @alias module:purecloud-platform-client-v2/api/UploadsApi
@@ -29779,7 +29693,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postUploadsWorkforcemanagementHistoricaldataCsv';}return this.apiClient.callApi('/api/v2/uploads/workforcemanagement/historicaldata/csv','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var UsageApi=/*#__PURE__*/function(){/**
    * Usage service.
    * @module purecloud-platform-client-v2/api/UsageApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new UsageApi. 
    * @alias module:purecloud-platform-client-v2/api/UsageApi
@@ -29881,7 +29795,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postUsageSimplesearch';}return this.apiClient.callApi('/api/v2/usage/simplesearch','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var UserRecordingsApi=/*#__PURE__*/function(){/**
    * UserRecordings service.
    * @module purecloud-platform-client-v2/api/UserRecordingsApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new UserRecordingsApi. 
    * @alias module:purecloud-platform-client-v2/api/UserRecordingsApi
@@ -29937,7 +29851,7 @@ if(recordingId===undefined||recordingId===null||recordingId===''){throw'Missing 
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putUserrecording';}return this.apiClient.callApi('/api/v2/userrecordings/{recordingId}','PUT',{'recordingId':recordingId},{'expand':this.apiClient.buildCollectionParam(opts['expand'],'multi')},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var UsersApi=/*#__PURE__*/function(){/**
    * Users service.
    * @module purecloud-platform-client-v2/api/UsersApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new UsersApi. 
    * @alias module:purecloud-platform-client-v2/api/UsersApi
@@ -30562,7 +30476,7 @@ if(q64===undefined||q64===null){throw'Missing the required parameter "q64" when 
    * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
    */},{key:"getUsersStationsMe",value:function getUsersStationsMe(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/users/stations/me','GET',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
    * Update user
-   * 
+   * Updating some fields, like a users extension, requires the telephony:extension:assign permission for the relevant division. Without it, the request will return 403 Forbidden.
    * @param {String} userId User ID
    * @param {Object} body User
    * @param {Object} opts Optional parameters
@@ -31044,7 +30958,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(stationId===undefined||stationId===null||stationId===''){throw'Missing the required parameter "stationId" when calling putUsersStationsMeAssociatedstationStationId';}return this.apiClient.callApi('/api/v2/users/stations/me/associatedstation/{stationId}','PUT',{'stationId':stationId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var UsersRulesApi=/*#__PURE__*/function(){/**
    * UsersRules service.
    * @module purecloud-platform-client-v2/api/UsersRulesApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new UsersRulesApi. 
    * @alias module:purecloud-platform-client-v2/api/UsersRulesApi
@@ -31134,7 +31048,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postUsersRulesQuery';}return this.apiClient.callApi('/api/v2/users/rules/query','POST',{},{'pageNumber':opts['pageNumber'],'pageSize':opts['pageSize']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var UtilitiesApi=/*#__PURE__*/function(){/**
    * Utilities service.
    * @module purecloud-platform-client-v2/api/UtilitiesApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new UtilitiesApi. 
    * @alias module:purecloud-platform-client-v2/api/UtilitiesApi
@@ -31168,7 +31082,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postCertificateDetails';}return this.apiClient.callApi('/api/v2/certificate/details','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var VirtualAgentsApi=/*#__PURE__*/function(){/**
    * VirtualAgents service.
    * @module purecloud-platform-client-v2/api/VirtualAgentsApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new VirtualAgentsApi. 
    * @alias module:purecloud-platform-client-v2/api/VirtualAgentsApi
@@ -31240,7 +31154,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postAgenticVirtualagents';}return this.apiClient.callApi('/api/v2/agentic/virtualagents','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var VoicemailApi=/*#__PURE__*/function(){/**
    * Voicemail service.
    * @module purecloud-platform-client-v2/api/VoicemailApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new VoicemailApi. 
    * @alias module:purecloud-platform-client-v2/api/VoicemailApi
@@ -31444,193 +31358,10 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
    * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
    */},{key:"putVoicemailUserpolicy",value:function putVoicemailUserpolicy(userId,body,opts){opts=opts||{};// verify the required parameter 'userId' is set
 if(userId===undefined||userId===null||userId===''){throw'Missing the required parameter "userId" when calling putVoicemailUserpolicy';}// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putVoicemailUserpolicy';}return this.apiClient.callApi('/api/v2/voicemail/userpolicies/{userId}','PUT',{'userId':userId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var WebChatApi=/*#__PURE__*/function(){/**
-   * WebChat service.
-   * @module purecloud-platform-client-v2/api/WebChatApi
-   * @version 258.2.0
-   *//**
-   * Constructs a new WebChatApi. 
-   * @alias module:purecloud-platform-client-v2/api/WebChatApi
-   * @class
-   * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
-   * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
-   */function WebChatApi(apiClient){_classCallCheck(this,WebChatApi);this.apiClient=apiClient||ApiClient.instance;}/**
-   * Delete a WebChat deployment
-   * 
-   * @param {String} deploymentId Deployment Id
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */return _createClass(WebChatApi,[{key:"deleteWebchatDeployment",value:function deleteWebchatDeployment(deploymentId,opts){opts=opts||{};// verify the required parameter 'deploymentId' is set
-if(deploymentId===undefined||deploymentId===null||deploymentId===''){throw'Missing the required parameter "deploymentId" when calling deleteWebchatDeployment';}return this.apiClient.callApi('/api/v2/webchat/deployments/{deploymentId}','DELETE',{'deploymentId':deploymentId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Remove a member from a chat conversation
-   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/
-   * @param {String} conversationId conversationId
-   * @param {String} memberId memberId
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"deleteWebchatGuestConversationMember",value:function deleteWebchatGuestConversationMember(conversationId,memberId,opts){opts=opts||{};// verify the required parameter 'conversationId' is set
-if(conversationId===undefined||conversationId===null||conversationId===''){throw'Missing the required parameter "conversationId" when calling deleteWebchatGuestConversationMember';}// verify the required parameter 'memberId' is set
-if(memberId===undefined||memberId===null||memberId===''){throw'Missing the required parameter "memberId" when calling deleteWebchatGuestConversationMember';}return this.apiClient.callApi('/api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}','DELETE',{'conversationId':conversationId,'memberId':memberId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Remove WebChat deployment settings
-   * This endpoint is deprecated. Please see the article https://community.genesys.com/discussion/deprecation-acd-chat-v20-and-resulting-impact-to-apiv2webchatsettings.
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"deleteWebchatSettings",value:function deleteWebchatSettings(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/webchat/settings','DELETE',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get a WebChat deployment
-   * 
-   * @param {String} deploymentId Deployment Id
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"getWebchatDeployment",value:function getWebchatDeployment(deploymentId,opts){opts=opts||{};// verify the required parameter 'deploymentId' is set
-if(deploymentId===undefined||deploymentId===null||deploymentId===''){throw'Missing the required parameter "deploymentId" when calling getWebchatDeployment';}return this.apiClient.callApi('/api/v2/webchat/deployments/{deploymentId}','GET',{'deploymentId':deploymentId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * List WebChat deployments
-   * 
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"getWebchatDeployments",value:function getWebchatDeployments(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/webchat/deployments','GET',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get a media request in the conversation
-   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
-   * @param {String} conversationId conversationId
-   * @param {String} mediaRequestId mediaRequestId
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"getWebchatGuestConversationMediarequest",value:function getWebchatGuestConversationMediarequest(conversationId,mediaRequestId,opts){opts=opts||{};// verify the required parameter 'conversationId' is set
-if(conversationId===undefined||conversationId===null||conversationId===''){throw'Missing the required parameter "conversationId" when calling getWebchatGuestConversationMediarequest';}// verify the required parameter 'mediaRequestId' is set
-if(mediaRequestId===undefined||mediaRequestId===null||mediaRequestId===''){throw'Missing the required parameter "mediaRequestId" when calling getWebchatGuestConversationMediarequest';}return this.apiClient.callApi('/api/v2/webchat/guest/conversations/{conversationId}/mediarequests/{mediaRequestId}','GET',{'conversationId':conversationId,'mediaRequestId':mediaRequestId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get all media requests to the guest in the conversation
-   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/
-   * @param {String} conversationId conversationId
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"getWebchatGuestConversationMediarequests",value:function getWebchatGuestConversationMediarequests(conversationId,opts){opts=opts||{};// verify the required parameter 'conversationId' is set
-if(conversationId===undefined||conversationId===null||conversationId===''){throw'Missing the required parameter "conversationId" when calling getWebchatGuestConversationMediarequests';}return this.apiClient.callApi('/api/v2/webchat/guest/conversations/{conversationId}/mediarequests','GET',{'conversationId':conversationId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get a web chat conversation member
-   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/
-   * @param {String} conversationId conversationId
-   * @param {String} memberId memberId
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"getWebchatGuestConversationMember",value:function getWebchatGuestConversationMember(conversationId,memberId,opts){opts=opts||{};// verify the required parameter 'conversationId' is set
-if(conversationId===undefined||conversationId===null||conversationId===''){throw'Missing the required parameter "conversationId" when calling getWebchatGuestConversationMember';}// verify the required parameter 'memberId' is set
-if(memberId===undefined||memberId===null||memberId===''){throw'Missing the required parameter "memberId" when calling getWebchatGuestConversationMember';}return this.apiClient.callApi('/api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}','GET',{'conversationId':conversationId,'memberId':memberId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get the members of a chat conversation.
-   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/
-   * @param {String} conversationId conversationId
-   * @param {Object} opts Optional parameters
-   * @param {Number} opts.pageSize The number of entries to return per page, or omitted for the default. (default to 25)
-   * @param {Number} opts.pageNumber The page number to return, or omitted for the first page. (default to 1)
-   * @param {Boolean} opts.excludeDisconnectedMembers If true, the results will not contain members who have a DISCONNECTED state. (default to false)
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"getWebchatGuestConversationMembers",value:function getWebchatGuestConversationMembers(conversationId,opts){opts=opts||{};// verify the required parameter 'conversationId' is set
-if(conversationId===undefined||conversationId===null||conversationId===''){throw'Missing the required parameter "conversationId" when calling getWebchatGuestConversationMembers';}return this.apiClient.callApi('/api/v2/webchat/guest/conversations/{conversationId}/members','GET',{'conversationId':conversationId},{'pageSize':opts['pageSize'],'pageNumber':opts['pageNumber'],'excludeDisconnectedMembers':opts['excludeDisconnectedMembers']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get a web chat conversation message
-   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/
-   * @param {String} conversationId conversationId
-   * @param {String} messageId messageId
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"getWebchatGuestConversationMessage",value:function getWebchatGuestConversationMessage(conversationId,messageId,opts){opts=opts||{};// verify the required parameter 'conversationId' is set
-if(conversationId===undefined||conversationId===null||conversationId===''){throw'Missing the required parameter "conversationId" when calling getWebchatGuestConversationMessage';}// verify the required parameter 'messageId' is set
-if(messageId===undefined||messageId===null||messageId===''){throw'Missing the required parameter "messageId" when calling getWebchatGuestConversationMessage';}return this.apiClient.callApi('/api/v2/webchat/guest/conversations/{conversationId}/messages/{messageId}','GET',{'conversationId':conversationId,'messageId':messageId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get the messages of a chat conversation.
-   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/
-   * @param {String} conversationId conversationId
-   * @param {Object} opts Optional parameters
-   * @param {String} opts.after If available, get the messages chronologically after the id of this message
-   * @param {String} opts.before If available, get the messages chronologically before the id of this message
-   * @param {Object} opts.sortOrder Sort order (default to ascending)
-   * @param {Number} opts.maxResults Limit the returned number of messages, up to a maximum of 100 (default to 100)
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"getWebchatGuestConversationMessages",value:function getWebchatGuestConversationMessages(conversationId,opts){opts=opts||{};// verify the required parameter 'conversationId' is set
-if(conversationId===undefined||conversationId===null||conversationId===''){throw'Missing the required parameter "conversationId" when calling getWebchatGuestConversationMessages';}return this.apiClient.callApi('/api/v2/webchat/guest/conversations/{conversationId}/messages','GET',{'conversationId':conversationId},{'after':opts['after'],'before':opts['before'],'sortOrder':opts['sortOrder'],'maxResults':opts['maxResults']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get WebChat deployment settings
-   * This endpoint is deprecated. Please see the article https://community.genesys.com/discussion/deprecation-acd-chat-v20-and-resulting-impact-to-apiv2webchatsettings.
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"getWebchatSettings",value:function getWebchatSettings(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/webchat/settings','GET',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Update a media request in the conversation, setting the state to ACCEPTED/DECLINED/ERRORED
-   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
-   * @param {String} conversationId conversationId
-   * @param {String} mediaRequestId mediaRequestId
-   * @param {Object} body Request
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"patchWebchatGuestConversationMediarequest",value:function patchWebchatGuestConversationMediarequest(conversationId,mediaRequestId,body,opts){opts=opts||{};// verify the required parameter 'conversationId' is set
-if(conversationId===undefined||conversationId===null||conversationId===''){throw'Missing the required parameter "conversationId" when calling patchWebchatGuestConversationMediarequest';}// verify the required parameter 'mediaRequestId' is set
-if(mediaRequestId===undefined||mediaRequestId===null||mediaRequestId===''){throw'Missing the required parameter "mediaRequestId" when calling patchWebchatGuestConversationMediarequest';}// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWebchatGuestConversationMediarequest';}return this.apiClient.callApi('/api/v2/webchat/guest/conversations/{conversationId}/mediarequests/{mediaRequestId}','PATCH',{'conversationId':conversationId,'mediaRequestId':mediaRequestId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Create WebChat deployment
-   * 
-   * @param {Object} body Deployment
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"postWebchatDeployments",value:function postWebchatDeployments(body,opts){opts=opts||{};// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWebchatDeployments';}return this.apiClient.callApi('/api/v2/webchat/deployments','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Send a message in a chat conversation.
-   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/
-   * @param {String} conversationId conversationId
-   * @param {String} memberId memberId
-   * @param {Object} body Message
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"postWebchatGuestConversationMemberMessages",value:function postWebchatGuestConversationMemberMessages(conversationId,memberId,body,opts){opts=opts||{};// verify the required parameter 'conversationId' is set
-if(conversationId===undefined||conversationId===null||conversationId===''){throw'Missing the required parameter "conversationId" when calling postWebchatGuestConversationMemberMessages';}// verify the required parameter 'memberId' is set
-if(memberId===undefined||memberId===null||memberId===''){throw'Missing the required parameter "memberId" when calling postWebchatGuestConversationMemberMessages';}// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWebchatGuestConversationMemberMessages';}return this.apiClient.callApi('/api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}/messages','POST',{'conversationId':conversationId,'memberId':memberId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Send a typing-indicator in a chat conversation.
-   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/
-   * @param {String} conversationId conversationId
-   * @param {String} memberId memberId
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"postWebchatGuestConversationMemberTyping",value:function postWebchatGuestConversationMemberTyping(conversationId,memberId,opts){opts=opts||{};// verify the required parameter 'conversationId' is set
-if(conversationId===undefined||conversationId===null||conversationId===''){throw'Missing the required parameter "conversationId" when calling postWebchatGuestConversationMemberTyping';}// verify the required parameter 'memberId' is set
-if(memberId===undefined||memberId===null||memberId===''){throw'Missing the required parameter "memberId" when calling postWebchatGuestConversationMemberTyping';}return this.apiClient.callApi('/api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}/typing','POST',{'conversationId':conversationId,'memberId':memberId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Create an ACD chat conversation from an external customer.
-   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. This endpoint will create a new ACD Chat conversation under the specified Chat Deployment. The conversation will begin with a guest member in it (with a role=CUSTOMER) according to the customer information that is supplied. If the guest member is authenticated, the memberAuthToken field should include his JWT as generated by the POST /api/v2/signeddata resource; if the guest member is anonymous (and the Deployment permits it) this field can be omitted. The returned data includes the IDs of the conversation created, along with a newly-create JWT token that you can supply to all future endpoints as authentication to perform operations against that conversation. After successfully creating a conversation, you should connect a websocket to the event stream named in the eventStreamUri field of the response; the conversation is not routed until the event stream is attached.
-   * @param {Object} body CreateConversationRequest
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"postWebchatGuestConversations",value:function postWebchatGuestConversations(body,opts){opts=opts||{};// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWebchatGuestConversations';}return this.apiClient.callApi('/api/v2/webchat/guest/conversations','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Update a WebChat deployment
-   * 
-   * @param {String} deploymentId Deployment Id
-   * @param {Object} body Deployment
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"putWebchatDeployment",value:function putWebchatDeployment(deploymentId,body,opts){opts=opts||{};// verify the required parameter 'deploymentId' is set
-if(deploymentId===undefined||deploymentId===null||deploymentId===''){throw'Missing the required parameter "deploymentId" when calling putWebchatDeployment';}// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putWebchatDeployment';}return this.apiClient.callApi('/api/v2/webchat/deployments/{deploymentId}','PUT',{'deploymentId':deploymentId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Update WebChat deployment settings
-   * This endpoint is deprecated. Please see the article https://community.genesys.com/discussion/deprecation-acd-chat-v20-and-resulting-impact-to-apiv2webchatsettings.
-   * @param {Object} body webChatSettings
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"putWebchatSettings",value:function putWebchatSettings(body,opts){opts=opts||{};// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putWebchatSettings';}return this.apiClient.callApi('/api/v2/webchat/settings','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var WebDeploymentsApi=/*#__PURE__*/function(){/**
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putVoicemailUserpolicy';}return this.apiClient.callApi('/api/v2/voicemail/userpolicies/{userId}','PUT',{'userId':userId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var WebDeploymentsApi=/*#__PURE__*/function(){/**
    * WebDeployments service.
    * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new WebDeploymentsApi. 
    * @alias module:purecloud-platform-client-v2/api/WebDeploymentsApi
@@ -31808,7 +31539,7 @@ if(deploymentId===undefined||deploymentId===null||deploymentId===''){throw'Missi
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putWebdeploymentsDeploymentIdentityresolution';}return this.apiClient.callApi('/api/v2/webdeployments/deployments/{deploymentId}/identityresolution','PUT',{'deploymentId':deploymentId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var WebMessagingApi=/*#__PURE__*/function(){/**
    * WebMessaging service.
    * @module purecloud-platform-client-v2/api/WebMessagingApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new WebMessagingApi. 
    * @alias module:purecloud-platform-client-v2/api/WebMessagingApi
@@ -31853,60 +31584,10 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
    */},{key:"postWebmessagingDeploymentPushdevice",value:function postWebmessagingDeploymentPushdevice(deploymentId,tokenId,body,opts){opts=opts||{};// verify the required parameter 'deploymentId' is set
 if(deploymentId===undefined||deploymentId===null||deploymentId===''){throw'Missing the required parameter "deploymentId" when calling postWebmessagingDeploymentPushdevice';}// verify the required parameter 'tokenId' is set
 if(tokenId===undefined||tokenId===null||tokenId===''){throw'Missing the required parameter "tokenId" when calling postWebmessagingDeploymentPushdevice';}// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWebmessagingDeploymentPushdevice';}return this.apiClient.callApi('/api/v2/webmessaging/deployments/{deploymentId}/pushdevices/{tokenId}','POST',{'deploymentId':deploymentId,'tokenId':tokenId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var WidgetsApi=/*#__PURE__*/function(){/**
-   * Widgets service.
-   * @module purecloud-platform-client-v2/api/WidgetsApi
-   * @version 258.2.0
-   *//**
-   * Constructs a new WidgetsApi. 
-   * @alias module:purecloud-platform-client-v2/api/WidgetsApi
-   * @class
-   * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
-   * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
-   */function WidgetsApi(apiClient){_classCallCheck(this,WidgetsApi);this.apiClient=apiClient||ApiClient.instance;}/**
-   * Delete a Widget deployment
-   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-   * @param {String} deploymentId Widget Config Id
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */return _createClass(WidgetsApi,[{key:"deleteWidgetsDeployment",value:function deleteWidgetsDeployment(deploymentId,opts){opts=opts||{};// verify the required parameter 'deploymentId' is set
-if(deploymentId===undefined||deploymentId===null||deploymentId===''){throw'Missing the required parameter "deploymentId" when calling deleteWidgetsDeployment';}return this.apiClient.callApi('/api/v2/widgets/deployments/{deploymentId}','DELETE',{'deploymentId':deploymentId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get a Widget deployment
-   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-   * @param {String} deploymentId Widget Config Id
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"getWidgetsDeployment",value:function getWidgetsDeployment(deploymentId,opts){opts=opts||{};// verify the required parameter 'deploymentId' is set
-if(deploymentId===undefined||deploymentId===null||deploymentId===''){throw'Missing the required parameter "deploymentId" when calling getWidgetsDeployment';}return this.apiClient.callApi('/api/v2/widgets/deployments/{deploymentId}','GET',{'deploymentId':deploymentId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * List Widget deployments
-   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"getWidgetsDeployments",value:function getWidgetsDeployments(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/widgets/deployments','GET',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Create Widget deployment
-   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-   * @param {Object} body Deployment
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"postWidgetsDeployments",value:function postWidgetsDeployments(body,opts){opts=opts||{};// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWidgetsDeployments';}return this.apiClient.callApi('/api/v2/widgets/deployments','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Update a Widget deployment
-   * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-   * @param {String} deploymentId Widget Config Id
-   * @param {Object} body Deployment
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"putWidgetsDeployment",value:function putWidgetsDeployment(deploymentId,body,opts){opts=opts||{};// verify the required parameter 'deploymentId' is set
-if(deploymentId===undefined||deploymentId===null||deploymentId===''){throw'Missing the required parameter "deploymentId" when calling putWidgetsDeployment';}// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putWidgetsDeployment';}return this.apiClient.callApi('/api/v2/widgets/deployments/{deploymentId}','PUT',{'deploymentId':deploymentId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var WorkforceManagementApi=/*#__PURE__*/function(){/**
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWebmessagingDeploymentPushdevice';}return this.apiClient.callApi('/api/v2/webmessaging/deployments/{deploymentId}/pushdevices/{tokenId}','POST',{'deploymentId':deploymentId,'tokenId':tokenId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var WorkforceManagementApi=/*#__PURE__*/function(){/**
    * WorkforceManagement service.
    * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-   * @version 258.2.0
+   * @version 259.0.0
    *//**
    * Constructs a new WorkforceManagementApi. 
    * @alias module:purecloud-platform-client-v2/api/WorkforceManagementApi
@@ -32068,21 +31749,23 @@ if(bidGroupId===undefined||bidGroupId===null||bidGroupId===''){throw'Missing the
    * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
    */},{key:"deleteWorkforcemanagementManagementunit",value:function deleteWorkforcemanagementManagementunit(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling deleteWorkforcemanagementManagementunit';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}','DELETE',{'managementUnitId':managementUnitId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Deletes a time off limit object
+   * Deletes a time off limit object. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId} instead
    * 
    * @param {String} managementUnitId The ID of the management unit.
    * @param {String} timeOffLimitId The ID of the time off limit object to delete
    * @param {Object} opts Optional parameters
    * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+   * @deprecated
    */},{key:"deleteWorkforcemanagementManagementunitTimeofflimit",value:function deleteWorkforcemanagementManagementunitTimeofflimit(managementUnitId,timeOffLimitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling deleteWorkforcemanagementManagementunitTimeofflimit';}// verify the required parameter 'timeOffLimitId' is set
 if(timeOffLimitId===undefined||timeOffLimitId===null||timeOffLimitId===''){throw'Missing the required parameter "timeOffLimitId" when calling deleteWorkforcemanagementManagementunitTimeofflimit';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}','DELETE',{'managementUnitId':managementUnitId,'timeOffLimitId':timeOffLimitId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Deletes a time off plan
+   * Deletes a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
    * 
    * @param {String} managementUnitId The ID of the management unit
    * @param {String} timeOffPlanId The ID of the time off plan to delete
    * @param {Object} opts Optional parameters
    * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+   * @deprecated
    */},{key:"deleteWorkforcemanagementManagementunitTimeoffplan",value:function deleteWorkforcemanagementManagementunitTimeoffplan(managementUnitId,timeOffPlanId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling deleteWorkforcemanagementManagementunitTimeoffplan';}// verify the required parameter 'timeOffPlanId' is set
 if(timeOffPlanId===undefined||timeOffPlanId===null||timeOffPlanId===''){throw'Missing the required parameter "timeOffPlanId" when calling deleteWorkforcemanagementManagementunitTimeoffplan';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}','DELETE',{'managementUnitId':managementUnitId,'timeOffPlanId':timeOffPlanId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
@@ -32382,6 +32065,33 @@ if(_date===undefined||_date===null){throw'Missing the required parameter "_date"
    * getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    */},{key:"getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession",value:function getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session','GET',{'businessUnitId':businessUnitId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+   * Get status of the session export job
+   * 
+   * @param {String} businessUnitId The ID of the business unit
+   * @param {String} jobId The job ID
+   * @param {Object} opts Optional parameters
+   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+   */},{key:"getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJob",value:function getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJob(businessUnitId,jobId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJob';}// verify the required parameter 'jobId' is set
+if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJob';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/forecast/jobs/{jobId}','GET',{'businessUnitId':businessUnitId,'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+   * Get status of the historical export job
+   * 
+   * @param {String} businessUnitId The ID of the business unit
+   * @param {String} jobId The job ID
+   * @param {Object} opts Optional parameters
+   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+   */},{key:"getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJob",value:function getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJob(businessUnitId,jobId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJob';}// verify the required parameter 'jobId' is set
+if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJob';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/historical/jobs/{jobId}','GET',{'businessUnitId':businessUnitId,'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+   * Get status of the snapshot export job
+   * 
+   * @param {String} businessUnitId The ID of the business unit
+   * @param {String} jobId The job ID
+   * @param {Object} opts Optional parameters
+   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+   */},{key:"getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJob",value:function getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJob(businessUnitId,jobId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJob';}// verify the required parameter 'jobId' is set
+if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJob';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/snapshot/jobs/{jobId}','GET',{'businessUnitId':businessUnitId,'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
    * Get the session details for the session ID
    * 
    * @param {String} businessUnitId 
@@ -33019,35 +32729,39 @@ if(managementUnitId===undefined||managementUnitId===null||managementUnitId==='')
    */},{key:"getWorkforcemanagementManagementunitShifttradesUsers",value:function getWorkforcemanagementManagementunitShifttradesUsers(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitShifttradesUsers';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/users','GET',{'managementUnitId':managementUnitId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
    * Gets a time off limit object
-   * Returns properties of time off limit object, but not daily values.
+   * Returns properties of time off limit object, but not daily values. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId} instead
    * @param {String} managementUnitId The ID of the management unit.
    * @param {String} timeOffLimitId The ID of the time off limit to fetch
    * @param {Object} opts Optional parameters
    * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+   * @deprecated
    */},{key:"getWorkforcemanagementManagementunitTimeofflimit",value:function getWorkforcemanagementManagementunitTimeofflimit(managementUnitId,timeOffLimitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitTimeofflimit';}// verify the required parameter 'timeOffLimitId' is set
 if(timeOffLimitId===undefined||timeOffLimitId===null||timeOffLimitId===''){throw'Missing the required parameter "timeOffLimitId" when calling getWorkforcemanagementManagementunitTimeofflimit';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}','GET',{'managementUnitId':managementUnitId,'timeOffLimitId':timeOffLimitId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
    * Gets a list of time off limit objects under management unit.
-   * Currently only one time off limit object is allowed under management unit, so the list contains either 0 or 1 element.
+   * Currently only one time off limit object is allowed under management unit, so the list contains either 0 or 1 element. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits instead
    * @param {String} managementUnitId The ID of the management unit.
    * @param {Object} opts Optional parameters
    * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+   * @deprecated
    */},{key:"getWorkforcemanagementManagementunitTimeofflimits",value:function getWorkforcemanagementManagementunitTimeofflimits(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitTimeofflimits';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits','GET',{'managementUnitId':managementUnitId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Gets a time off plan
+   * Gets a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
    * 
    * @param {String} managementUnitId The ID of the management unit
    * @param {String} timeOffPlanId The ID of the time off plan to fetch
    * @param {Object} opts Optional parameters
    * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+   * @deprecated
    */},{key:"getWorkforcemanagementManagementunitTimeoffplan",value:function getWorkforcemanagementManagementunitTimeoffplan(managementUnitId,timeOffPlanId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitTimeoffplan';}// verify the required parameter 'timeOffPlanId' is set
 if(timeOffPlanId===undefined||timeOffPlanId===null||timeOffPlanId===''){throw'Missing the required parameter "timeOffPlanId" when calling getWorkforcemanagementManagementunitTimeoffplan';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}','GET',{'managementUnitId':managementUnitId,'timeOffPlanId':timeOffPlanId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Gets a list of time off plans
+   * Gets a list of time off plans. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans instead
    * 
    * @param {String} managementUnitId The ID of the management unit
    * @param {Object} opts Optional parameters
    * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+   * @deprecated
    */},{key:"getWorkforcemanagementManagementunitTimeoffplans",value:function getWorkforcemanagementManagementunitTimeoffplans(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitTimeoffplans';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans','GET',{'managementUnitId':managementUnitId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
    * Get a time off request
@@ -33610,23 +33324,25 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitAgentsWorkplansBulk';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementManagementunitAgentsWorkplansBulk';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/workplans/bulk','PATCH',{'managementUnitId':managementUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
    * Updates a time off limit object.
-   * Updates time off limit object properties, but not daily values.
+   * Updates time off limit object properties, but not daily values. Deprecated: Updating defaultLimitMinutes is no longer supported
    * @param {String} managementUnitId The ID of the management unit.
    * @param {String} timeOffLimitId The id of time off limit object to update
    * @param {Object} body body
    * @param {Object} opts Optional parameters
    * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+   * @deprecated
    */},{key:"patchWorkforcemanagementManagementunitTimeofflimit",value:function patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId,timeOffLimitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitTimeofflimit';}// verify the required parameter 'timeOffLimitId' is set
 if(timeOffLimitId===undefined||timeOffLimitId===null||timeOffLimitId===''){throw'Missing the required parameter "timeOffLimitId" when calling patchWorkforcemanagementManagementunitTimeofflimit';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementManagementunitTimeofflimit';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}','PATCH',{'managementUnitId':managementUnitId,'timeOffLimitId':timeOffLimitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Updates a time off plan
+   * Updates a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
    * 
    * @param {String} managementUnitId The ID of the management unit
    * @param {String} timeOffPlanId The ID of the time off plan to update
    * @param {Object} body body
    * @param {Object} opts Optional parameters
    * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+   * @deprecated
    */},{key:"patchWorkforcemanagementManagementunitTimeoffplan",value:function patchWorkforcemanagementManagementunitTimeoffplan(managementUnitId,timeOffPlanId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitTimeoffplan';}// verify the required parameter 'timeOffPlanId' is set
 if(timeOffPlanId===undefined||timeOffPlanId===null||timeOffPlanId===''){throw'Missing the required parameter "timeOffPlanId" when calling patchWorkforcemanagementManagementunitTimeoffplan';}// verify the required parameter 'body' is set
@@ -34042,6 +33758,33 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
    */},{key:"postWorkforcemanagementBusinessunitIntraday",value:function postWorkforcemanagementBusinessunitIntraday(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitIntraday';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitIntraday';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday','POST',{'businessUnitId':businessUnitId},{'forceAsync':opts['forceAsync']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+   * Create a session export job
+   * 
+   * @param {String} businessUnitId The ID of the business unit
+   * @param {Object} body The request body
+   * @param {Object} opts Optional parameters
+   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+   */},{key:"postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobs",value:function postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobs(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobs';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/forecast/jobs','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+   * Create a historical export job
+   * 
+   * @param {String} businessUnitId The ID of the business unit
+   * @param {Object} body The request body
+   * @param {Object} opts Optional parameters
+   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+   */},{key:"postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobs",value:function postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobs(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobs';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/historical/jobs','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+   * Create a snapshot export job
+   * 
+   * @param {String} businessUnitId The ID of the business unit
+   * @param {Object} body The request body
+   * @param {Object} opts Optional parameters
+   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+   */},{key:"postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobs",value:function postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobs(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobs';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/snapshot/jobs','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
    * Bulk add opportunities
    * 
    * @param {String} businessUnitId The ID of the business unit
@@ -34310,12 +34053,13 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
    */},{key:"postWorkforcemanagementBusinessunitTimeofflimits",value:function postWorkforcemanagementBusinessunitTimeofflimits(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitTimeofflimits';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitTimeofflimits';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Retrieves time-off limit related values based on a given set of filters.
+   * Retrieves time-off limit related values based on a given set of filters. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query instead
    * 
    * @param {String} businessUnitId The ID of the business unit
    * @param {Object} body body
    * @param {Object} opts Optional parameters
    * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+   * @deprecated
    */},{key:"postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery",value:function postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values/query','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
@@ -34656,29 +34400,32 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitShrinkageJobs';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitShrinkageJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/shrinkage/jobs','POST',{'managementUnitId':managementUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
    * Creates a new time off limit object under management unit.
-   * Only one limit object is allowed under management unit, so an attempt to create second object will fail.
+   * Only one limit object is allowed under management unit, so an attempt to create second object will fail. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits instead
    * @param {String} managementUnitId The ID of the management unit.
    * @param {Object} body body
    * @param {Object} opts Optional parameters
    * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+   * @deprecated
    */},{key:"postWorkforcemanagementManagementunitTimeofflimits",value:function postWorkforcemanagementManagementunitTimeofflimits(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeofflimits';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitTimeofflimits';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits','POST',{'managementUnitId':managementUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Retrieves time off limit related values based on a given set of filters.
+   * Retrieves time off limit related values based on a given set of filters. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query instead
    * 
    * @param {String} managementUnitId The ID of the management unit.
    * @param {Object} body body
    * @param {Object} opts Optional parameters
    * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+   * @deprecated
    */},{key:"postWorkforcemanagementManagementunitTimeofflimitsValuesQuery",value:function postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeofflimitsValuesQuery';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitTimeofflimitsValuesQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/values/query','POST',{'managementUnitId':managementUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Creates a new time off plan
+   * Creates a new time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans instead
    * 
    * @param {String} managementUnitId The ID of the management unit
    * @param {Object} body body
    * @param {Object} opts Optional parameters
    * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+   * @deprecated
    */},{key:"postWorkforcemanagementManagementunitTimeoffplans",value:function postWorkforcemanagementManagementunitTimeoffplans(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffplans';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitTimeoffplans';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans','POST',{'managementUnitId':managementUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
@@ -35015,12 +34762,13 @@ if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw
 if(timeOffLimitId===undefined||timeOffLimitId===null||timeOffLimitId===''){throw'Missing the required parameter "timeOffLimitId" when calling putWorkforcemanagementBusinessunitTimeofflimitValues';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putWorkforcemanagementBusinessunitTimeofflimitValues';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values','PUT',{'businessUnitId':businessUnitId,'timeOffLimitId':timeOffLimitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
    * Sets daily values for a date range of time off limit object
-   * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time off limit API
+   * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time off limit API. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values instead
    * @param {String} managementUnitId The ID of the management unit.
    * @param {String} timeOffLimitId The ID of the time off limit object to set values for
    * @param {Object} body body
    * @param {Object} opts Optional parameters
    * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+   * @deprecated
    */},{key:"putWorkforcemanagementManagementunitTimeofflimitValues",value:function putWorkforcemanagementManagementunitTimeofflimitValues(managementUnitId,timeOffLimitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling putWorkforcemanagementManagementunitTimeofflimitValues';}// verify the required parameter 'timeOffLimitId' is set
 if(timeOffLimitId===undefined||timeOffLimitId===null||timeOffLimitId===''){throw'Missing the required parameter "timeOffLimitId" when calling putWorkforcemanagementManagementunitTimeofflimitValues';}// verify the required parameter 'body' is set
@@ -35062,7 +34810,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 258.2.0
+ * @version 259.0.0
  */var platformClient=/*#__PURE__*/_createClass(function platformClient(){_classCallCheck(this,platformClient);/**
      * The ApiClient constructor.
      * @property {module:purecloud-platform-client-v2/ApiClient}
@@ -35133,6 +34881,9 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
      * The DataPrivacyApi service constructor.
      * @property {module:purecloud-platform-client-v2/api/DataPrivacyApi}
      */this.DataPrivacyApi=DataPrivacyApi;/**
+     * The DependenciesApi service constructor.
+     * @property {module:purecloud-platform-client-v2/api/DependenciesApi}
+     */this.DependenciesApi=DependenciesApi;/**
      * The DownloadsApi service constructor.
      * @property {module:purecloud-platform-client-v2/api/DownloadsApi}
      */this.DownloadsApi=DownloadsApi;/**
@@ -35319,18 +35070,12 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
      * The VoicemailApi service constructor.
      * @property {module:purecloud-platform-client-v2/api/VoicemailApi}
      */this.VoicemailApi=VoicemailApi;/**
-     * The WebChatApi service constructor.
-     * @property {module:purecloud-platform-client-v2/api/WebChatApi}
-     */this.WebChatApi=WebChatApi;/**
      * The WebDeploymentsApi service constructor.
      * @property {module:purecloud-platform-client-v2/api/WebDeploymentsApi}
      */this.WebDeploymentsApi=WebDeploymentsApi;/**
      * The WebMessagingApi service constructor.
      * @property {module:purecloud-platform-client-v2/api/WebMessagingApi}
      */this.WebMessagingApi=WebMessagingApi;/**
-     * The WidgetsApi service constructor.
-     * @property {module:purecloud-platform-client-v2/api/WidgetsApi}
-     */this.WidgetsApi=WidgetsApi;/**
      * The WorkforceManagementApi service constructor.
      * @property {module:purecloud-platform-client-v2/api/WorkforceManagementApi}
      */this.WorkforceManagementApi=WorkforceManagementApi;/**

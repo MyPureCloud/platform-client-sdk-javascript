@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -617,12 +617,13 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Deletes a time off limit object
+	 * Deletes a time off limit object. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId} instead
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit.
 	 * @param {String} timeOffLimitId The ID of the time off limit object to delete
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	deleteWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId, opts) { 
 		opts = opts || {};
@@ -652,12 +653,13 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Deletes a time off plan
+	 * Deletes a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit
 	 * @param {String} timeOffPlanId The ID of the time off plan to delete
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	deleteWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId, opts) { 
 		opts = opts || {};
@@ -1864,6 +1866,111 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session', 
 			'GET', 
 			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get status of the session export job
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} jobId The job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJob(businessUnitId, jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/forecast/jobs/{jobId}', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get status of the historical export job
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} jobId The job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJob(businessUnitId, jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/historical/jobs/{jobId}', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get status of the snapshot export job
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} jobId The job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJob(businessUnitId, jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/snapshot/jobs/{jobId}', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'jobId': jobId },
 			{  },
 			{  },
 			{  },
@@ -4271,11 +4378,12 @@ class WorkforceManagementApi {
 
 	/**
 	 * Gets a time off limit object
-	 * Returns properties of time off limit object, but not daily values.
+	 * Returns properties of time off limit object, but not daily values. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId} instead
 	 * @param {String} managementUnitId The ID of the management unit.
 	 * @param {String} timeOffLimitId The ID of the time off limit to fetch
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	getWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId, opts) { 
 		opts = opts || {};
@@ -4306,10 +4414,11 @@ class WorkforceManagementApi {
 
 	/**
 	 * Gets a list of time off limit objects under management unit.
-	 * Currently only one time off limit object is allowed under management unit, so the list contains either 0 or 1 element.
+	 * Currently only one time off limit object is allowed under management unit, so the list contains either 0 or 1 element. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits instead
 	 * @param {String} managementUnitId The ID of the management unit.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	getWorkforcemanagementManagementunitTimeofflimits(managementUnitId, opts) { 
 		opts = opts || {};
@@ -4335,12 +4444,13 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Gets a time off plan
+	 * Gets a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit
 	 * @param {String} timeOffPlanId The ID of the time off plan to fetch
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	getWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId, opts) { 
 		opts = opts || {};
@@ -4370,11 +4480,12 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Gets a list of time off plans
+	 * Gets a list of time off plans. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans instead
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	getWorkforcemanagementManagementunitTimeoffplans(managementUnitId, opts) { 
 		opts = opts || {};
@@ -6539,12 +6650,13 @@ class WorkforceManagementApi {
 
 	/**
 	 * Updates a time off limit object.
-	 * Updates time off limit object properties, but not daily values.
+	 * Updates time off limit object properties, but not daily values. Deprecated: Updating defaultLimitMinutes is no longer supported
 	 * @param {String} managementUnitId The ID of the management unit.
 	 * @param {String} timeOffLimitId The id of time off limit object to update
 	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId, body, opts) { 
 		opts = opts || {};
@@ -6578,13 +6690,14 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Updates a time off plan
+	 * Updates a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit
 	 * @param {String} timeOffPlanId The ID of the time off plan to update
 	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	patchWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId, body, opts) { 
 		opts = opts || {};
@@ -8181,6 +8294,111 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Create a session export job
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobs(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobs';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/forecast/jobs', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Create a historical export job
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobs(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobs';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/historical/jobs', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Create a snapshot export job
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobs(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobs';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/snapshot/jobs', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Bulk add opportunities
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
@@ -9169,12 +9387,13 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Retrieves time-off limit related values based on a given set of filters.
+	 * Retrieves time-off limit related values based on a given set of filters. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query instead
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(businessUnitId, body, opts) { 
 		opts = opts || {};
@@ -10430,11 +10649,12 @@ class WorkforceManagementApi {
 
 	/**
 	 * Creates a new time off limit object under management unit.
-	 * Only one limit object is allowed under management unit, so an attempt to create second object will fail.
+	 * Only one limit object is allowed under management unit, so an attempt to create second object will fail. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits instead
 	 * @param {String} managementUnitId The ID of the management unit.
 	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	postWorkforcemanagementManagementunitTimeofflimits(managementUnitId, body, opts) { 
 		opts = opts || {};
@@ -10464,12 +10684,13 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Retrieves time off limit related values based on a given set of filters.
+	 * Retrieves time off limit related values based on a given set of filters. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query instead
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit.
 	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(managementUnitId, body, opts) { 
 		opts = opts || {};
@@ -10499,12 +10720,13 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Creates a new time off plan
+	 * Creates a new time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans instead
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit
 	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	postWorkforcemanagementManagementunitTimeoffplans(managementUnitId, body, opts) { 
 		opts = opts || {};
@@ -11774,12 +11996,13 @@ class WorkforceManagementApi {
 
 	/**
 	 * Sets daily values for a date range of time off limit object
-	 * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time off limit API
+	 * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time off limit API. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values instead
 	 * @param {String} managementUnitId The ID of the management unit.
 	 * @param {String} timeOffLimitId The ID of the time off limit object to set values for
 	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	putWorkforcemanagementManagementunitTimeofflimitValues(managementUnitId, timeOffLimitId, body, opts) { 
 		opts = opts || {};

@@ -655,4 +655,4 @@ apiInstance.postUploadsWorkforcemanagementHistoricaldataCsv(body, opts)
 **UploadUrlResponse**
 
 
-_purecloud-platform-client-v2@258.2.0_
+_purecloud-platform-client-v2@259.0.0_

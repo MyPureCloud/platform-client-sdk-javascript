@@ -5,7 +5,7 @@ class ScreenMonitoringApi {
 	/**
 	 * ScreenMonitoring service.
 	 * @module purecloud-platform-client-v2/api/ScreenMonitoringApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**

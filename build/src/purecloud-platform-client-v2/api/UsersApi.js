@@ -5,7 +5,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -2337,7 +2337,7 @@ class UsersApi {
 
 	/**
 	 * Update user
-	 * 
+	 * Updating some fields, like a users extension, requires the telephony:extension:assign permission for the relevant division. Without it, the request will return 403 Forbidden.
 	 * @param {String} userId User ID
 	 * @param {Object} body User
 	 * @param {Object} opts Optional parameters

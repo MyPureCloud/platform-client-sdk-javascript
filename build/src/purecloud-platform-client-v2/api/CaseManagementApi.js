@@ -5,7 +5,7 @@ class CaseManagementApi {
 	/**
 	 * CaseManagement service.
 	 * @module purecloud-platform-client-v2/api/CaseManagementApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -867,6 +867,68 @@ class CaseManagementApi {
 	}
 
 	/**
+	 * Get a case query job by id
+	 * 
+	 * @param {String} jobId Job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * getCasemanagementCasesQueryJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getCasemanagementCasesQueryJob(jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getCasemanagementCasesQueryJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/casemanagement/cases/query/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get results for a case query job
+	 * 
+	 * @param {String} jobId Job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * getCasemanagementCasesQueryJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getCasemanagementCasesQueryJobResults(jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getCasemanagementCasesQueryJobResults';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/casemanagement/cases/query/jobs/{jobId}/results', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Get a Case by reference.
 	 * 
 	 * @param {String} referenceId Case reference.
@@ -919,6 +981,42 @@ class CaseManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/casemanagement/cases/{caseId}/datedue', 
+			'PATCH', 
+			{ 'caseId': caseId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update the ownerId of a Case
+	 * 
+	 * @param {String} caseId Case identifier.
+	 * @param {Object} body OwnerId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * patchCasemanagementCaseOwner is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	patchCasemanagementCaseOwner(caseId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'caseId' is set
+		if (caseId === undefined || caseId === null || caseId === '') {
+			throw 'Missing the required parameter "caseId" when calling patchCasemanagementCaseOwner';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchCasemanagementCaseOwner';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/casemanagement/cases/{caseId}/owner', 
 			'PATCH', 
 			{ 'caseId': caseId },
 			{  },
@@ -1424,6 +1522,37 @@ class CaseManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/casemanagement/cases/associations/query', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Create a Case query job.
+	 * 
+	 * @param {Object} body Case query job create request.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * postCasemanagementCasesQueryJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postCasemanagementCasesQueryJobs(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postCasemanagementCasesQueryJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/casemanagement/cases/query/jobs', 
 			'POST', 
 			{  },
 			{  },

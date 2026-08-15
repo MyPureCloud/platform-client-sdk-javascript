@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -266,7 +266,6 @@ class RoutingApi {
 	 * @param {String} kpiId Key Performance Indicator ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * deleteRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteRoutingPredictorsKeyperformanceindicator(kpiId, opts) { 
 		opts = opts || {};
@@ -1692,7 +1691,6 @@ class RoutingApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Parameter to request additional data to return in KPI payload
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getRoutingPredictorsKeyperformanceindicator(kpiId, opts) { 
 		opts = opts || {};
@@ -1749,7 +1747,6 @@ class RoutingApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getRoutingPredictorsKeyperformanceindicatortypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getRoutingPredictorsKeyperformanceindicatortypes(opts) { 
 		opts = opts || {};
@@ -3425,7 +3422,6 @@ class RoutingApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * patchRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchRoutingPredictorsKeyperformanceindicator(kpiId, opts) { 
 		opts = opts || {};
@@ -4441,7 +4437,6 @@ class RoutingApi {
 	 * @param {Object} body request
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postRoutingPredictorsKeyperformanceindicators is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postRoutingPredictorsKeyperformanceindicators(body, opts) { 
 		opts = opts || {};

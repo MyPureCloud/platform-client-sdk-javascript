@@ -5,7 +5,7 @@ class UsersRulesApi {
 	/**
 	 * UsersRules service.
 	 * @module purecloud-platform-client-v2/api/UsersRulesApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**

@@ -649,8 +649,6 @@ DELETE /api/v2/routing/predictors/keyperformanceindicators/{kpiId}
 
 Delete a custom Key Performance Indicator.
 
-deleteRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * routing:keyPerformanceIndicator:delete
@@ -3407,8 +3405,6 @@ GET /api/v2/routing/predictors/keyperformanceindicators/{kpiId}
 
 Retrieve a single Key Performance Indicator.
 
-getRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * routing:keyPerformanceIndicator:view
@@ -3526,8 +3522,6 @@ apiInstance.getRoutingPredictorsKeyperformanceindicators(opts)
 GET /api/v2/routing/predictors/keyperformanceindicatortypes
 
 Get a list of Key Performance Indicators Types available.
-
-getRoutingPredictorsKeyperformanceindicatortypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -6795,8 +6789,6 @@ PATCH /api/v2/routing/predictors/keyperformanceindicators/{kpiId}
 
 Update a custom Key Performance Indicator.
 
-patchRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * routing:keyPerformanceIndicator:edit
@@ -8637,8 +8629,6 @@ apiInstance.postRoutingPredictors(opts)
 POST /api/v2/routing/predictors/keyperformanceindicators
 
 Create a custom Key Performance Indicator.
-
-postRoutingPredictorsKeyperformanceindicators is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -10629,4 +10619,4 @@ apiInstance.putUserRoutingskillsBulk(userId, body, opts)
 **UserSkillEntityListing**
 
 
-_purecloud-platform-client-v2@258.2.0_
+_purecloud-platform-client-v2@259.0.0_

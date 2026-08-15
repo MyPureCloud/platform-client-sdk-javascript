@@ -849,7 +849,7 @@ class Configuration {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 258.2.0
+ * @version 259.0.0
  */
 class ApiClient {
 	/**
@@ -3037,7 +3037,7 @@ class AIStudioApi {
 	/**
 	 * AIStudio service.
 	 * @module purecloud-platform-client-v2/api/AIStudioApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -3984,7 +3984,7 @@ class AgentAssistantsApi {
 	/**
 	 * AgentAssistants service.
 	 * @module purecloud-platform-client-v2/api/AgentAssistantsApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -4789,7 +4789,7 @@ class AgentCopilotApi {
 	/**
 	 * AgentCopilot service.
 	 * @module purecloud-platform-client-v2/api/AgentCopilotApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -4901,7 +4901,7 @@ class AgentUIApi {
 	/**
 	 * AgentUI service.
 	 * @module purecloud-platform-client-v2/api/AgentUIApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -5052,7 +5052,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -5513,7 +5513,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -9734,7 +9734,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -14691,7 +14691,7 @@ class AssistantCopilotVariationsApi {
 	/**
 	 * AssistantCopilotVariations service.
 	 * @module purecloud-platform-client-v2/api/AssistantCopilotVariationsApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -14887,7 +14887,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -15114,7 +15114,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -17039,7 +17039,7 @@ class BackgroundAssistantApi {
 	/**
 	 * BackgroundAssistant service.
 	 * @module purecloud-platform-client-v2/api/BackgroundAssistantApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -17113,7 +17113,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -17397,7 +17397,7 @@ class BusinessRulesApi {
 	/**
 	 * BusinessRules service.
 	 * @module purecloud-platform-client-v2/api/BusinessRulesApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -18846,7 +18846,7 @@ class CarrierServicesApi {
 	/**
 	 * CarrierServices service.
 	 * @module purecloud-platform-client-v2/api/CarrierServicesApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -18923,7 +18923,7 @@ class CaseManagementApi {
 	/**
 	 * CaseManagement service.
 	 * @module purecloud-platform-client-v2/api/CaseManagementApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -19785,6 +19785,68 @@ class CaseManagementApi {
 	}
 
 	/**
+	 * Get a case query job by id
+	 * 
+	 * @param {String} jobId Job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * getCasemanagementCasesQueryJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getCasemanagementCasesQueryJob(jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getCasemanagementCasesQueryJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/casemanagement/cases/query/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get results for a case query job
+	 * 
+	 * @param {String} jobId Job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * getCasemanagementCasesQueryJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getCasemanagementCasesQueryJobResults(jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getCasemanagementCasesQueryJobResults';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/casemanagement/cases/query/jobs/{jobId}/results', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Get a Case by reference.
 	 * 
 	 * @param {String} referenceId Case reference.
@@ -19837,6 +19899,42 @@ class CaseManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/casemanagement/cases/{caseId}/datedue', 
+			'PATCH', 
+			{ 'caseId': caseId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update the ownerId of a Case
+	 * 
+	 * @param {String} caseId Case identifier.
+	 * @param {Object} body OwnerId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * patchCasemanagementCaseOwner is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	patchCasemanagementCaseOwner(caseId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'caseId' is set
+		if (caseId === undefined || caseId === null || caseId === '') {
+			throw 'Missing the required parameter "caseId" when calling patchCasemanagementCaseOwner';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchCasemanagementCaseOwner';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/casemanagement/cases/{caseId}/owner', 
 			'PATCH', 
 			{ 'caseId': caseId },
 			{  },
@@ -20356,6 +20454,37 @@ class CaseManagementApi {
 	}
 
 	/**
+	 * Create a Case query job.
+	 * 
+	 * @param {Object} body Case query job create request.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * postCasemanagementCasesQueryJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postCasemanagementCasesQueryJobs(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postCasemanagementCasesQueryJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/casemanagement/cases/query/jobs', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Update a data schema on a draft Caseplan.
 	 * 
 	 * @param {String} caseplanId Caseplan identifier.
@@ -20436,7 +20565,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -21575,7 +21704,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -22289,7 +22418,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -23484,7 +23613,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -25370,249 +25499,6 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls/maximumconferenceparties', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Get chat conversation
-	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
-	 * @param {String} conversationId conversationId
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	getConversationsChat(conversationId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null || conversationId === '') {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsChat';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/chats/{conversationId}', 
-			'GET', 
-			{ 'conversationId': conversationId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Get a web chat conversation message
-	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
-	 * @param {String} conversationId conversationId
-	 * @param {String} messageId messageId
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	getConversationsChatMessage(conversationId, messageId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null || conversationId === '') {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsChatMessage';
-		}
-		// verify the required parameter 'messageId' is set
-		if (messageId === undefined || messageId === null || messageId === '') {
-			throw 'Missing the required parameter "messageId" when calling getConversationsChatMessage';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/chats/{conversationId}/messages/{messageId}', 
-			'GET', 
-			{ 'conversationId': conversationId,'messageId': messageId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Get the messages of a chat conversation.
-	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
-	 * @param {String} conversationId conversationId
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.after If specified, get the messages chronologically after the id of this message
-	 * @param {String} opts.before If specified, get the messages chronologically before the id of this message
-	 * @param {Object} opts.sortOrder Sort order (default to ascending)
-	 * @param {Number} opts.maxResults Limit the returned number of messages, up to a maximum of 100 (default to 100)
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	getConversationsChatMessages(conversationId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null || conversationId === '') {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsChatMessages';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/chats/{conversationId}/messages', 
-			'GET', 
-			{ 'conversationId': conversationId },
-			{ 'after': opts['after'],'before': opts['before'],'sortOrder': opts['sortOrder'],'maxResults': opts['maxResults'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Get the wrap-up for this conversation communication. 
-	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 * @param {String} communicationId communicationId
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.provisional Indicates whether or not to fetch provisional wrap-up code. (default to false)
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	getConversationsChatParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null || conversationId === '') {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsChatParticipantCommunicationWrapup';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null || participantId === '') {
-			throw 'Missing the required parameter "participantId" when calling getConversationsChatParticipantCommunicationWrapup';
-		}
-		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null || communicationId === '') {
-			throw 'Missing the required parameter "communicationId" when calling getConversationsChatParticipantCommunicationWrapup';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup', 
-			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
-			{ 'provisional': opts['provisional'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Get the wrap-up for this conversation participant. 
-	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.provisional Indicates whether or not to fetch provisional wrap-up code. (default to false)
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	getConversationsChatParticipantWrapup(conversationId, participantId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null || conversationId === '') {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsChatParticipantWrapup';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null || participantId === '') {
-			throw 'Missing the required parameter "participantId" when calling getConversationsChatParticipantWrapup';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapup', 
-			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId },
-			{ 'provisional': opts['provisional'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Get list of wrapup codes for this conversation participant
-	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	getConversationsChatParticipantWrapupcodes(conversationId, participantId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null || conversationId === '') {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsChatParticipantWrapupcodes';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null || participantId === '') {
-			throw 'Missing the required parameter "participantId" when calling getConversationsChatParticipantWrapupcodes';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapupcodes', 
-			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Get active chat conversations for the logged in user
-	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	getConversationsChats(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/chats', 
 			'GET', 
 			{  },
 			{  },
@@ -28922,170 +28808,6 @@ class ConversationsApi {
 
 	/**
 	 * Update a conversation by disconnecting all of the participants
-	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
-	 * @param {String} conversationId conversationId
-	 * @param {Object} body Conversation
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	patchConversationsChat(conversationId, body, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null || conversationId === '') {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsChat';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsChat';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/chats/{conversationId}', 
-			'PATCH', 
-			{ 'conversationId': conversationId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Update conversation participant
-	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 * @param {Object} body Update request
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	patchConversationsChatParticipant(conversationId, participantId, body, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null || conversationId === '') {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsChatParticipant';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null || participantId === '') {
-			throw 'Missing the required parameter "participantId" when calling patchConversationsChatParticipant';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsChatParticipant';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/chats/{conversationId}/participants/{participantId}', 
-			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Update the attributes on a conversation participant.
-	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 * @param {Object} body Participant attributes
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	patchConversationsChatParticipantAttributes(conversationId, participantId, body, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null || conversationId === '') {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsChatParticipantAttributes';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null || participantId === '') {
-			throw 'Missing the required parameter "participantId" when calling patchConversationsChatParticipantAttributes';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsChatParticipantAttributes';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/chats/{conversationId}/participants/{participantId}/attributes', 
-			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
-	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 * @param {String} communicationId communicationId
-	 * @param {Object} body Participant
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	patchConversationsChatParticipantCommunication(conversationId, participantId, communicationId, body, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null || conversationId === '') {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsChatParticipantCommunication';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null || participantId === '') {
-			throw 'Missing the required parameter "participantId" when calling patchConversationsChatParticipantCommunication';
-		}
-		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null || communicationId === '') {
-			throw 'Missing the required parameter "communicationId" when calling patchConversationsChatParticipantCommunication';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsChatParticipantCommunication';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}', 
-			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Update a conversation by disconnecting all of the participants
 	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 	 * @param {String} conversationId conversationId
 	 * @param {Object} body Conversation
@@ -31931,197 +31653,6 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Send a message on behalf of a communication in a chat conversation.
-	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
-	 * @param {String} conversationId conversationId
-	 * @param {String} communicationId communicationId
-	 * @param {Object} body Message
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	postConversationsChatCommunicationMessages(conversationId, communicationId, body, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null || conversationId === '') {
-			throw 'Missing the required parameter "conversationId" when calling postConversationsChatCommunicationMessages';
-		}
-		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null || communicationId === '') {
-			throw 'Missing the required parameter "communicationId" when calling postConversationsChatCommunicationMessages';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationsChatCommunicationMessages';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/chats/{conversationId}/communications/{communicationId}/messages', 
-			'POST', 
-			{ 'conversationId': conversationId,'communicationId': communicationId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Send a typing-indicator on behalf of a communication in a chat conversation.
-	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
-	 * @param {String} conversationId conversationId
-	 * @param {String} communicationId communicationId
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	postConversationsChatCommunicationTyping(conversationId, communicationId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null || conversationId === '') {
-			throw 'Missing the required parameter "conversationId" when calling postConversationsChatCommunicationTyping';
-		}
-		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null || communicationId === '') {
-			throw 'Missing the required parameter "communicationId" when calling postConversationsChatCommunicationTyping';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/chats/{conversationId}/communications/{communicationId}/typing', 
-			'POST', 
-			{ 'conversationId': conversationId,'communicationId': communicationId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Apply wrap-up for this conversation communication
-	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 * @param {String} communicationId communicationId
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Wrap-up
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	postConversationsChatParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null || conversationId === '') {
-			throw 'Missing the required parameter "conversationId" when calling postConversationsChatParticipantCommunicationWrapup';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null || participantId === '') {
-			throw 'Missing the required parameter "participantId" when calling postConversationsChatParticipantCommunicationWrapup';
-		}
-		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null || communicationId === '') {
-			throw 'Missing the required parameter "communicationId" when calling postConversationsChatParticipantCommunicationWrapup';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup', 
-			'POST', 
-			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Replace this participant with the specified user and/or address
-	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 * @param {Object} body Transfer request
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	postConversationsChatParticipantReplace(conversationId, participantId, body, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null || conversationId === '') {
-			throw 'Missing the required parameter "conversationId" when calling postConversationsChatParticipantReplace';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null || participantId === '') {
-			throw 'Missing the required parameter "participantId" when calling postConversationsChatParticipantReplace';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationsChatParticipantReplace';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/chats/{conversationId}/participants/{participantId}/replace', 
-			'POST', 
-			{ 'conversationId': conversationId,'participantId': participantId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Create a web chat conversation
-	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
-	 * @param {Object} body Create web chat request
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	postConversationsChats(body, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationsChats';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/chats', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
 	 * Apply wrap-up for this conversation communication
 	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 	 * @param {String} conversationId conversationId
@@ -34153,42 +33684,6 @@ class ConversationsApi {
 
 	/**
 	 * Update a conversation by setting its recording state
-	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
-	 * @param {String} conversationId conversationId
-	 * @param {Object} body SetRecordingState
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	putConversationsChatRecordingstate(conversationId, body, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null || conversationId === '') {
-			throw 'Missing the required parameter "conversationId" when calling putConversationsChatRecordingstate';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putConversationsChatRecordingstate';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/chats/{conversationId}/recordingstate', 
-			'PUT', 
-			{ 'conversationId': conversationId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Update a conversation by setting its recording state
 	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 	 * @param {String} conversationId conversationId
 	 * @param {Object} body SetRecordingState
@@ -34810,7 +34305,7 @@ class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -34911,7 +34406,7 @@ class DataPrivacyApi {
 	/**
 	 * DataPrivacy service.
 	 * @module purecloud-platform-client-v2/api/DataPrivacyApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -35104,11 +34599,147 @@ class DataPrivacyApi {
 
 }
 
+class DependenciesApi {
+	/**
+	 * Dependencies service.
+	 * @module purecloud-platform-client-v2/api/DependenciesApi
+	 * @version 259.0.0
+	 */
+
+	/**
+	 * Constructs a new DependenciesApi. 
+	 * @alias module:purecloud-platform-client-v2/api/DependenciesApi
+	 * @class
+	 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
+	 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
+	 */
+	constructor(apiClient) {
+		this.apiClient = apiClient || ApiClient.instance;
+	}
+
+
+	/**
+	 * Get entities that require the given entity
+	 * 
+	 * @param {Object} entityType Entity type
+	 * @param {String} entityId Entity ID
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.pageSize Page size (max 100) (default to 25)
+	 * @param {String} opts.beforeSourceType Cursor for previous page
+	 * @param {String} opts.beforeSourceId Cursor for previous page
+	 * @param {String} opts.afterSourceType Cursor for next page
+	 * @param {String} opts.afterSourceId Cursor for next page
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getDependenciesTypeEntityTypeIdEntityIdConnectionsRequiredby(entityType, entityId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'entityType' is set
+		if (entityType === undefined || entityType === null || entityType === '') {
+			throw 'Missing the required parameter "entityType" when calling getDependenciesTypeEntityTypeIdEntityIdConnectionsRequiredby';
+		}
+		// verify the required parameter 'entityId' is set
+		if (entityId === undefined || entityId === null || entityId === '') {
+			throw 'Missing the required parameter "entityId" when calling getDependenciesTypeEntityTypeIdEntityIdConnectionsRequiredby';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/dependencies/type/{entityType}/id/{entityId}/connections/requiredby', 
+			'GET', 
+			{ 'entityType': entityType,'entityId': entityId },
+			{ 'pageSize': opts['pageSize'],'beforeSourceType': opts['beforeSourceType'],'beforeSourceId': opts['beforeSourceId'],'afterSourceType': opts['afterSourceType'],'afterSourceId': opts['afterSourceId'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * An estimated count of entities that depend on this entity, including indirect dependencies.
+	 * 
+	 * @param {Object} entityType Entity type
+	 * @param {String} entityId Entity ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getDependenciesTypeEntityTypeIdEntityIdConnectionsRequiredbycounts(entityType, entityId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'entityType' is set
+		if (entityType === undefined || entityType === null || entityType === '') {
+			throw 'Missing the required parameter "entityType" when calling getDependenciesTypeEntityTypeIdEntityIdConnectionsRequiredbycounts';
+		}
+		// verify the required parameter 'entityId' is set
+		if (entityId === undefined || entityId === null || entityId === '') {
+			throw 'Missing the required parameter "entityId" when calling getDependenciesTypeEntityTypeIdEntityIdConnectionsRequiredbycounts';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/dependencies/type/{entityType}/id/{entityId}/connections/requiredbycounts', 
+			'GET', 
+			{ 'entityType': entityType,'entityId': entityId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get entities that the given entity requires
+	 * 
+	 * @param {Object} entityType Entity type
+	 * @param {String} entityId Entity ID
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.pageSize Page size (max 100) (default to 25)
+	 * @param {String} opts.beforeSourceType Cursor for previous page
+	 * @param {String} opts.beforeSourceId Cursor for previous page
+	 * @param {String} opts.afterSourceType Cursor for next page
+	 * @param {String} opts.afterSourceId Cursor for next page
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getDependenciesTypeEntityTypeIdEntityIdConnectionsRequires(entityType, entityId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'entityType' is set
+		if (entityType === undefined || entityType === null || entityType === '') {
+			throw 'Missing the required parameter "entityType" when calling getDependenciesTypeEntityTypeIdEntityIdConnectionsRequires';
+		}
+		// verify the required parameter 'entityId' is set
+		if (entityId === undefined || entityId === null || entityId === '') {
+			throw 'Missing the required parameter "entityId" when calling getDependenciesTypeEntityTypeIdEntityIdConnectionsRequires';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/dependencies/type/{entityType}/id/{entityId}/connections/requires', 
+			'GET', 
+			{ 'entityType': entityType,'entityId': entityId },
+			{ 'pageSize': opts['pageSize'],'beforeSourceType': opts['beforeSourceType'],'beforeSourceId': opts['beforeSourceId'],'afterSourceType': opts['afterSourceType'],'afterSourceId': opts['afterSourceId'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+}
+
 class DownloadsApi {
 	/**
 	 * Downloads service.
 	 * @module purecloud-platform-client-v2/api/DownloadsApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -35162,7 +34793,7 @@ class EmailsApi {
 	/**
 	 * Emails service.
 	 * @module purecloud-platform-client-v2/api/EmailsApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -35310,7 +34941,7 @@ class EmployeeEngagementApi {
 	/**
 	 * EmployeeEngagement service.
 	 * @module purecloud-platform-client-v2/api/EmployeeEngagementApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -35514,7 +35145,7 @@ class EventsApi {
 	/**
 	 * Events service.
 	 * @module purecloud-platform-client-v2/api/EventsApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -35565,7 +35196,6 @@ class EventsApi {
 	 * @param {Object} body batchRequest
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postEventsRoutingCustomkpiattributions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postEventsRoutingCustomkpiattributions(body, opts) { 
 		opts = opts || {};
@@ -35656,7 +35286,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -39841,7 +39471,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -40090,7 +39720,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -40324,7 +39954,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -43176,7 +42806,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -43320,7 +42950,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -43471,7 +43101,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -44087,7 +43717,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -44678,7 +44308,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -45729,7 +45359,7 @@ class InfrastructureAsCodeApi {
 	/**
 	 * InfrastructureAsCode service.
 	 * @module purecloud-platform-client-v2/api/InfrastructureAsCodeApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -45909,7 +45539,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -48850,7 +48480,7 @@ class IntentsApi {
 	/**
 	 * Intents service.
 	 * @module purecloud-platform-client-v2/api/IntentsApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -49376,13 +49006,44 @@ class IntentsApi {
 		);
 	}
 
+	/**
+	 * Get customer intents by IDs
+	 * 
+	 * @param {Object} body Customer intent IDs to retrieve
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * postIntentsCustomerintentsBulkRetrieve is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postIntentsCustomerintentsBulkRetrieve(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postIntentsCustomerintentsBulkRetrieve';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/intents/customerintents/bulk/retrieve', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
 }
 
 class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -52358,7 +52019,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -56885,7 +56546,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -58259,7 +57920,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -58518,7 +58179,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -59764,7 +59425,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -60062,7 +59723,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -60329,7 +59990,7 @@ class LogCaptureApi {
 	/**
 	 * LogCapture service.
 	 * @module purecloud-platform-client-v2/api/LogCaptureApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -60551,7 +60212,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -60969,7 +60630,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -61139,7 +60800,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -61400,7 +61061,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -61816,7 +61477,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -62180,7 +61841,7 @@ class OperationalEventsApi {
 	/**
 	 * OperationalEvents service.
 	 * @module purecloud-platform-client-v2/api/OperationalEventsApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -62311,7 +61972,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -62872,7 +62533,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -64476,7 +64137,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -70063,7 +69724,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -70921,7 +70582,7 @@ class ProcessAutomationApi {
 	/**
 	 * ProcessAutomation service.
 	 * @module purecloud-platform-client-v2/api/ProcessAutomationApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -71342,7 +71003,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -73820,7 +73481,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -75668,7 +75329,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -76431,7 +76092,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -76692,7 +76353,6 @@ class RoutingApi {
 	 * @param {String} kpiId Key Performance Indicator ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * deleteRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteRoutingPredictorsKeyperformanceindicator(kpiId, opts) { 
 		opts = opts || {};
@@ -78118,7 +77778,6 @@ class RoutingApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Parameter to request additional data to return in KPI payload
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getRoutingPredictorsKeyperformanceindicator(kpiId, opts) { 
 		opts = opts || {};
@@ -78175,7 +77834,6 @@ class RoutingApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getRoutingPredictorsKeyperformanceindicatortypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getRoutingPredictorsKeyperformanceindicatortypes(opts) { 
 		opts = opts || {};
@@ -79851,7 +79509,6 @@ class RoutingApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * patchRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchRoutingPredictorsKeyperformanceindicator(kpiId, opts) { 
 		opts = opts || {};
@@ -80867,7 +80524,6 @@ class RoutingApi {
 	 * @param {Object} body request
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postRoutingPredictorsKeyperformanceindicators is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postRoutingPredictorsKeyperformanceindicators(body, opts) { 
 		opts = opts || {};
@@ -81993,7 +81649,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -82954,7 +82610,7 @@ class ScreenMonitoringApi {
 	/**
 	 * ScreenMonitoring service.
 	 * @module purecloud-platform-client-v2/api/ScreenMonitoringApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -83330,7 +82986,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -83839,7 +83495,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -84655,7 +84311,7 @@ class SettingsApi {
 	/**
 	 * Settings service.
 	 * @module purecloud-platform-client-v2/api/SettingsApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -85064,7 +84720,7 @@ class SocialMediaApi {
 	/**
 	 * SocialMedia service.
 	 * @module purecloud-platform-client-v2/api/SocialMediaApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -87049,7 +86705,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -88242,6 +87898,36 @@ class SpeechTextAnalyticsApi {
 	}
 
 	/**
+	 * Get a Speech and Text Analytics GenAI phrases job by id
+	 * 
+	 * @param {String} jobId the id of the GenAI phrases job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getSpeechandtextanalyticsTopicsGeneratedphrasesJob(jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getSpeechandtextanalyticsTopicsGeneratedphrasesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/topics/generatedphrases/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Get a Speech and Text Analytics publish topics job by id
 	 * 
 	 * @param {String} jobId The id of the publish topics job
@@ -88635,6 +88321,36 @@ class SpeechTextAnalyticsApi {
 	}
 
 	/**
+	 * Create new Speech and Text Analytics GenAI topic phrases generation job
+	 * 
+	 * @param {Object} body The GenAI topic phrases generation job to create
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postSpeechandtextanalyticsTopicsGeneratedphrasesJobs(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsTopicsGeneratedphrasesJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/topics/generatedphrases/jobs', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Create new Speech and Text Analytics publish topics job
 	 * 
 	 * @param {Object} body The publish topics job to create
@@ -88665,7 +88381,7 @@ class SpeechTextAnalyticsApi {
 	}
 
 	/**
-	 * Create new Speech and Text Analytics publish topics job
+	 * Create new Speech and Text Analytics test topic phrase job
 	 * 
 	 * @param {Object} body The publish test topic phrase job to create
 	 * @param {Object} opts Optional parameters
@@ -89001,7 +88717,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -89115,7 +88831,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -89262,7 +88978,7 @@ class TaskManagementApi {
 	/**
 	 * TaskManagement service.
 	 * @module purecloud-platform-client-v2/api/TaskManagementApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -91758,7 +91474,7 @@ class TeamsApi {
 	/**
 	 * Teams service.
 	 * @module purecloud-platform-client-v2/api/TeamsApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -92101,7 +91817,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -92775,7 +92491,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -96753,7 +96469,7 @@ class TextbotsApi {
 	/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -96899,7 +96615,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -97077,7 +96793,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -97448,7 +97164,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -97826,7 +97542,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -98028,7 +97744,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -100360,7 +100076,7 @@ class UsersApi {
 
 	/**
 	 * Update user
-	 * 
+	 * Updating some fields, like a users extension, requires the telephony:extension:assign permission for the relevant division. Without it, the request will return 403 Forbidden.
 	 * @param {String} userId User ID
 	 * @param {Object} body User
 	 * @param {Object} opts Optional parameters
@@ -102253,7 +101969,7 @@ class UsersRulesApi {
 	/**
 	 * UsersRules service.
 	 * @module purecloud-platform-client-v2/api/UsersRulesApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -102570,7 +102286,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -102698,7 +102414,7 @@ class VirtualAgentsApi {
 	/**
 	 * VirtualAgents service.
 	 * @module purecloud-platform-client-v2/api/VirtualAgentsApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -102951,7 +102667,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -103777,663 +103493,11 @@ class VoicemailApi {
 
 }
 
-class WebChatApi {
-	/**
-	 * WebChat service.
-	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 258.2.0
-	 */
-
-	/**
-	 * Constructs a new WebChatApi. 
-	 * @alias module:purecloud-platform-client-v2/api/WebChatApi
-	 * @class
-	 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
-	 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
-	 */
-	constructor(apiClient) {
-		this.apiClient = apiClient || ApiClient.instance;
-	}
-
-
-	/**
-	 * Delete a WebChat deployment
-	 * 
-	 * @param {String} deploymentId Deployment Id
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	deleteWebchatDeployment(deploymentId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'deploymentId' is set
-		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
-			throw 'Missing the required parameter "deploymentId" when calling deleteWebchatDeployment';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/webchat/deployments/{deploymentId}', 
-			'DELETE', 
-			{ 'deploymentId': deploymentId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Remove a member from a chat conversation
-	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/
-	 * @param {String} conversationId conversationId
-	 * @param {String} memberId memberId
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	deleteWebchatGuestConversationMember(conversationId, memberId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null || conversationId === '') {
-			throw 'Missing the required parameter "conversationId" when calling deleteWebchatGuestConversationMember';
-		}
-		// verify the required parameter 'memberId' is set
-		if (memberId === undefined || memberId === null || memberId === '') {
-			throw 'Missing the required parameter "memberId" when calling deleteWebchatGuestConversationMember';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}', 
-			'DELETE', 
-			{ 'conversationId': conversationId,'memberId': memberId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Remove WebChat deployment settings
-	 * This endpoint is deprecated. Please see the article https://community.genesys.com/discussion/deprecation-acd-chat-v20-and-resulting-impact-to-apiv2webchatsettings.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	deleteWebchatSettings(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/webchat/settings', 
-			'DELETE', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Get a WebChat deployment
-	 * 
-	 * @param {String} deploymentId Deployment Id
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	getWebchatDeployment(deploymentId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'deploymentId' is set
-		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
-			throw 'Missing the required parameter "deploymentId" when calling getWebchatDeployment';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/webchat/deployments/{deploymentId}', 
-			'GET', 
-			{ 'deploymentId': deploymentId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * List WebChat deployments
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	getWebchatDeployments(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/webchat/deployments', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Get a media request in the conversation
-	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
-	 * @param {String} conversationId conversationId
-	 * @param {String} mediaRequestId mediaRequestId
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	getWebchatGuestConversationMediarequest(conversationId, mediaRequestId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null || conversationId === '') {
-			throw 'Missing the required parameter "conversationId" when calling getWebchatGuestConversationMediarequest';
-		}
-		// verify the required parameter 'mediaRequestId' is set
-		if (mediaRequestId === undefined || mediaRequestId === null || mediaRequestId === '') {
-			throw 'Missing the required parameter "mediaRequestId" when calling getWebchatGuestConversationMediarequest';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/webchat/guest/conversations/{conversationId}/mediarequests/{mediaRequestId}', 
-			'GET', 
-			{ 'conversationId': conversationId,'mediaRequestId': mediaRequestId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Get all media requests to the guest in the conversation
-	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/
-	 * @param {String} conversationId conversationId
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	getWebchatGuestConversationMediarequests(conversationId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null || conversationId === '') {
-			throw 'Missing the required parameter "conversationId" when calling getWebchatGuestConversationMediarequests';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/webchat/guest/conversations/{conversationId}/mediarequests', 
-			'GET', 
-			{ 'conversationId': conversationId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Get a web chat conversation member
-	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/
-	 * @param {String} conversationId conversationId
-	 * @param {String} memberId memberId
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	getWebchatGuestConversationMember(conversationId, memberId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null || conversationId === '') {
-			throw 'Missing the required parameter "conversationId" when calling getWebchatGuestConversationMember';
-		}
-		// verify the required parameter 'memberId' is set
-		if (memberId === undefined || memberId === null || memberId === '') {
-			throw 'Missing the required parameter "memberId" when calling getWebchatGuestConversationMember';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}', 
-			'GET', 
-			{ 'conversationId': conversationId,'memberId': memberId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Get the members of a chat conversation.
-	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/
-	 * @param {String} conversationId conversationId
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize The number of entries to return per page, or omitted for the default. (default to 25)
-	 * @param {Number} opts.pageNumber The page number to return, or omitted for the first page. (default to 1)
-	 * @param {Boolean} opts.excludeDisconnectedMembers If true, the results will not contain members who have a DISCONNECTED state. (default to false)
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	getWebchatGuestConversationMembers(conversationId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null || conversationId === '') {
-			throw 'Missing the required parameter "conversationId" when calling getWebchatGuestConversationMembers';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/webchat/guest/conversations/{conversationId}/members', 
-			'GET', 
-			{ 'conversationId': conversationId },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'excludeDisconnectedMembers': opts['excludeDisconnectedMembers'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Get a web chat conversation message
-	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/
-	 * @param {String} conversationId conversationId
-	 * @param {String} messageId messageId
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	getWebchatGuestConversationMessage(conversationId, messageId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null || conversationId === '') {
-			throw 'Missing the required parameter "conversationId" when calling getWebchatGuestConversationMessage';
-		}
-		// verify the required parameter 'messageId' is set
-		if (messageId === undefined || messageId === null || messageId === '') {
-			throw 'Missing the required parameter "messageId" when calling getWebchatGuestConversationMessage';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/webchat/guest/conversations/{conversationId}/messages/{messageId}', 
-			'GET', 
-			{ 'conversationId': conversationId,'messageId': messageId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Get the messages of a chat conversation.
-	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/
-	 * @param {String} conversationId conversationId
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.after If available, get the messages chronologically after the id of this message
-	 * @param {String} opts.before If available, get the messages chronologically before the id of this message
-	 * @param {Object} opts.sortOrder Sort order (default to ascending)
-	 * @param {Number} opts.maxResults Limit the returned number of messages, up to a maximum of 100 (default to 100)
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	getWebchatGuestConversationMessages(conversationId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null || conversationId === '') {
-			throw 'Missing the required parameter "conversationId" when calling getWebchatGuestConversationMessages';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/webchat/guest/conversations/{conversationId}/messages', 
-			'GET', 
-			{ 'conversationId': conversationId },
-			{ 'after': opts['after'],'before': opts['before'],'sortOrder': opts['sortOrder'],'maxResults': opts['maxResults'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Get WebChat deployment settings
-	 * This endpoint is deprecated. Please see the article https://community.genesys.com/discussion/deprecation-acd-chat-v20-and-resulting-impact-to-apiv2webchatsettings.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	getWebchatSettings(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/webchat/settings', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Update a media request in the conversation, setting the state to ACCEPTED/DECLINED/ERRORED
-	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
-	 * @param {String} conversationId conversationId
-	 * @param {String} mediaRequestId mediaRequestId
-	 * @param {Object} body Request
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	patchWebchatGuestConversationMediarequest(conversationId, mediaRequestId, body, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null || conversationId === '') {
-			throw 'Missing the required parameter "conversationId" when calling patchWebchatGuestConversationMediarequest';
-		}
-		// verify the required parameter 'mediaRequestId' is set
-		if (mediaRequestId === undefined || mediaRequestId === null || mediaRequestId === '') {
-			throw 'Missing the required parameter "mediaRequestId" when calling patchWebchatGuestConversationMediarequest';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchWebchatGuestConversationMediarequest';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/webchat/guest/conversations/{conversationId}/mediarequests/{mediaRequestId}', 
-			'PATCH', 
-			{ 'conversationId': conversationId,'mediaRequestId': mediaRequestId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Create WebChat deployment
-	 * 
-	 * @param {Object} body Deployment
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	postWebchatDeployments(body, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postWebchatDeployments';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/webchat/deployments', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Send a message in a chat conversation.
-	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/
-	 * @param {String} conversationId conversationId
-	 * @param {String} memberId memberId
-	 * @param {Object} body Message
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	postWebchatGuestConversationMemberMessages(conversationId, memberId, body, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null || conversationId === '') {
-			throw 'Missing the required parameter "conversationId" when calling postWebchatGuestConversationMemberMessages';
-		}
-		// verify the required parameter 'memberId' is set
-		if (memberId === undefined || memberId === null || memberId === '') {
-			throw 'Missing the required parameter "memberId" when calling postWebchatGuestConversationMemberMessages';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postWebchatGuestConversationMemberMessages';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}/messages', 
-			'POST', 
-			{ 'conversationId': conversationId,'memberId': memberId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Send a typing-indicator in a chat conversation.
-	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/
-	 * @param {String} conversationId conversationId
-	 * @param {String} memberId memberId
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	postWebchatGuestConversationMemberTyping(conversationId, memberId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null || conversationId === '') {
-			throw 'Missing the required parameter "conversationId" when calling postWebchatGuestConversationMemberTyping';
-		}
-		// verify the required parameter 'memberId' is set
-		if (memberId === undefined || memberId === null || memberId === '') {
-			throw 'Missing the required parameter "memberId" when calling postWebchatGuestConversationMemberTyping';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}/typing', 
-			'POST', 
-			{ 'conversationId': conversationId,'memberId': memberId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Create an ACD chat conversation from an external customer.
-	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. This endpoint will create a new ACD Chat conversation under the specified Chat Deployment. The conversation will begin with a guest member in it (with a role=CUSTOMER) according to the customer information that is supplied. If the guest member is authenticated, the memberAuthToken field should include his JWT as generated by the POST /api/v2/signeddata resource; if the guest member is anonymous (and the Deployment permits it) this field can be omitted. The returned data includes the IDs of the conversation created, along with a newly-create JWT token that you can supply to all future endpoints as authentication to perform operations against that conversation. After successfully creating a conversation, you should connect a websocket to the event stream named in the eventStreamUri field of the response; the conversation is not routed until the event stream is attached.
-	 * @param {Object} body CreateConversationRequest
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	postWebchatGuestConversations(body, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postWebchatGuestConversations';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/webchat/guest/conversations', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Update a WebChat deployment
-	 * 
-	 * @param {String} deploymentId Deployment Id
-	 * @param {Object} body Deployment
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	putWebchatDeployment(deploymentId, body, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'deploymentId' is set
-		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
-			throw 'Missing the required parameter "deploymentId" when calling putWebchatDeployment';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putWebchatDeployment';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/webchat/deployments/{deploymentId}', 
-			'PUT', 
-			{ 'deploymentId': deploymentId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Update WebChat deployment settings
-	 * This endpoint is deprecated. Please see the article https://community.genesys.com/discussion/deprecation-acd-chat-v20-and-resulting-impact-to-apiv2webchatsettings.
-	 * @param {Object} body webChatSettings
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	putWebchatSettings(body, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putWebchatSettings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/webchat/settings', 
-			'PUT', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-}
-
 class WebDeploymentsApi {
 	/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -105111,7 +104175,7 @@ class WebMessagingApi {
 	/**
 	 * WebMessaging service.
 	 * @module purecloud-platform-client-v2/api/WebMessagingApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -105270,187 +104334,11 @@ class WebMessagingApi {
 
 }
 
-class WidgetsApi {
-	/**
-	 * Widgets service.
-	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 258.2.0
-	 */
-
-	/**
-	 * Constructs a new WidgetsApi. 
-	 * @alias module:purecloud-platform-client-v2/api/WidgetsApi
-	 * @class
-	 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
-	 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
-	 */
-	constructor(apiClient) {
-		this.apiClient = apiClient || ApiClient.instance;
-	}
-
-
-	/**
-	 * Delete a Widget deployment
-	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-	 * @param {String} deploymentId Widget Config Id
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	deleteWidgetsDeployment(deploymentId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'deploymentId' is set
-		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
-			throw 'Missing the required parameter "deploymentId" when calling deleteWidgetsDeployment';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/widgets/deployments/{deploymentId}', 
-			'DELETE', 
-			{ 'deploymentId': deploymentId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Get a Widget deployment
-	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-	 * @param {String} deploymentId Widget Config Id
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	getWidgetsDeployment(deploymentId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'deploymentId' is set
-		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
-			throw 'Missing the required parameter "deploymentId" when calling getWidgetsDeployment';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/widgets/deployments/{deploymentId}', 
-			'GET', 
-			{ 'deploymentId': deploymentId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * List Widget deployments
-	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	getWidgetsDeployments(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/widgets/deployments', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Create Widget deployment
-	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-	 * @param {Object} body Deployment
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	postWidgetsDeployments(body, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postWidgetsDeployments';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/widgets/deployments', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Update a Widget deployment
-	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-	 * @param {String} deploymentId Widget Config Id
-	 * @param {Object} body Deployment
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	putWidgetsDeployment(deploymentId, body, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'deploymentId' is set
-		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
-			throw 'Missing the required parameter "deploymentId" when calling putWidgetsDeployment';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putWidgetsDeployment';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/widgets/deployments/{deploymentId}', 
-			'PUT', 
-			{ 'deploymentId': deploymentId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-}
-
 class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -106062,12 +104950,13 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Deletes a time off limit object
+	 * Deletes a time off limit object. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId} instead
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit.
 	 * @param {String} timeOffLimitId The ID of the time off limit object to delete
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	deleteWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId, opts) { 
 		opts = opts || {};
@@ -106097,12 +104986,13 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Deletes a time off plan
+	 * Deletes a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit
 	 * @param {String} timeOffPlanId The ID of the time off plan to delete
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	deleteWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId, opts) { 
 		opts = opts || {};
@@ -107309,6 +106199,111 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session', 
 			'GET', 
 			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get status of the session export job
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} jobId The job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJob(businessUnitId, jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/forecast/jobs/{jobId}', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get status of the historical export job
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} jobId The job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJob(businessUnitId, jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/historical/jobs/{jobId}', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get status of the snapshot export job
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} jobId The job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJob(businessUnitId, jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/snapshot/jobs/{jobId}', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'jobId': jobId },
 			{  },
 			{  },
 			{  },
@@ -109716,11 +108711,12 @@ class WorkforceManagementApi {
 
 	/**
 	 * Gets a time off limit object
-	 * Returns properties of time off limit object, but not daily values.
+	 * Returns properties of time off limit object, but not daily values. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId} instead
 	 * @param {String} managementUnitId The ID of the management unit.
 	 * @param {String} timeOffLimitId The ID of the time off limit to fetch
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	getWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId, opts) { 
 		opts = opts || {};
@@ -109751,10 +108747,11 @@ class WorkforceManagementApi {
 
 	/**
 	 * Gets a list of time off limit objects under management unit.
-	 * Currently only one time off limit object is allowed under management unit, so the list contains either 0 or 1 element.
+	 * Currently only one time off limit object is allowed under management unit, so the list contains either 0 or 1 element. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits instead
 	 * @param {String} managementUnitId The ID of the management unit.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	getWorkforcemanagementManagementunitTimeofflimits(managementUnitId, opts) { 
 		opts = opts || {};
@@ -109780,12 +108777,13 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Gets a time off plan
+	 * Gets a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit
 	 * @param {String} timeOffPlanId The ID of the time off plan to fetch
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	getWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId, opts) { 
 		opts = opts || {};
@@ -109815,11 +108813,12 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Gets a list of time off plans
+	 * Gets a list of time off plans. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans instead
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	getWorkforcemanagementManagementunitTimeoffplans(managementUnitId, opts) { 
 		opts = opts || {};
@@ -111984,12 +110983,13 @@ class WorkforceManagementApi {
 
 	/**
 	 * Updates a time off limit object.
-	 * Updates time off limit object properties, but not daily values.
+	 * Updates time off limit object properties, but not daily values. Deprecated: Updating defaultLimitMinutes is no longer supported
 	 * @param {String} managementUnitId The ID of the management unit.
 	 * @param {String} timeOffLimitId The id of time off limit object to update
 	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId, body, opts) { 
 		opts = opts || {};
@@ -112023,13 +111023,14 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Updates a time off plan
+	 * Updates a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit
 	 * @param {String} timeOffPlanId The ID of the time off plan to update
 	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	patchWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId, body, opts) { 
 		opts = opts || {};
@@ -113626,6 +112627,111 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Create a session export job
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobs(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobs';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/forecast/jobs', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Create a historical export job
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobs(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobs';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/historical/jobs', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Create a snapshot export job
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobs(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobs';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/snapshot/jobs', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Bulk add opportunities
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
@@ -114614,12 +113720,13 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Retrieves time-off limit related values based on a given set of filters.
+	 * Retrieves time-off limit related values based on a given set of filters. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query instead
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(businessUnitId, body, opts) { 
 		opts = opts || {};
@@ -115875,11 +114982,12 @@ class WorkforceManagementApi {
 
 	/**
 	 * Creates a new time off limit object under management unit.
-	 * Only one limit object is allowed under management unit, so an attempt to create second object will fail.
+	 * Only one limit object is allowed under management unit, so an attempt to create second object will fail. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits instead
 	 * @param {String} managementUnitId The ID of the management unit.
 	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	postWorkforcemanagementManagementunitTimeofflimits(managementUnitId, body, opts) { 
 		opts = opts || {};
@@ -115909,12 +115017,13 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Retrieves time off limit related values based on a given set of filters.
+	 * Retrieves time off limit related values based on a given set of filters. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query instead
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit.
 	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(managementUnitId, body, opts) { 
 		opts = opts || {};
@@ -115944,12 +115053,13 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Creates a new time off plan
+	 * Creates a new time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans instead
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit
 	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	postWorkforcemanagementManagementunitTimeoffplans(managementUnitId, body, opts) { 
 		opts = opts || {};
@@ -117219,12 +116329,13 @@ class WorkforceManagementApi {
 
 	/**
 	 * Sets daily values for a date range of time off limit object
-	 * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time off limit API
+	 * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time off limit API. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values instead
 	 * @param {String} managementUnitId The ID of the management unit.
 	 * @param {String} timeOffLimitId The ID of the time off limit object to set values for
 	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	putWorkforcemanagementManagementunitTimeofflimitValues(managementUnitId, timeOffLimitId, body, opts) { 
 		opts = opts || {};
@@ -117323,7 +116434,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 258.2.0
+ * @version 259.0.0
  */
 class platformClient {
 	constructor() {
@@ -117442,6 +116553,11 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/DataPrivacyApi}
 		 */
 		this.DataPrivacyApi = DataPrivacyApi;
+		/**
+		 * The DependenciesApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/DependenciesApi}
+		 */
+		this.DependenciesApi = DependenciesApi;
 		/**
 		 * The DownloadsApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/DownloadsApi}
@@ -117753,11 +116869,6 @@ class platformClient {
 		 */
 		this.VoicemailApi = VoicemailApi;
 		/**
-		 * The WebChatApi service constructor.
-		 * @property {module:purecloud-platform-client-v2/api/WebChatApi}
-		 */
-		this.WebChatApi = WebChatApi;
-		/**
 		 * The WebDeploymentsApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/WebDeploymentsApi}
 		 */
@@ -117767,11 +116878,6 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/WebMessagingApi}
 		 */
 		this.WebMessagingApi = WebMessagingApi;
-		/**
-		 * The WidgetsApi service constructor.
-		 * @property {module:purecloud-platform-client-v2/api/WidgetsApi}
-		 */
-		this.WidgetsApi = WidgetsApi;
 		/**
 		 * The WorkforceManagementApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/WorkforceManagementApi}

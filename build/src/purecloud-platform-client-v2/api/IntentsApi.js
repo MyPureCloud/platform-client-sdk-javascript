@@ -5,7 +5,7 @@ class IntentsApi {
 	/**
 	 * Intents service.
 	 * @module purecloud-platform-client-v2/api/IntentsApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**
@@ -518,6 +518,37 @@ class IntentsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/intents/customerintents', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get customer intents by IDs
+	 * 
+	 * @param {Object} body Customer intent IDs to retrieve
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * postIntentsCustomerintentsBulkRetrieve is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postIntentsCustomerintentsBulkRetrieve(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postIntentsCustomerintentsBulkRetrieve';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/intents/customerintents/bulk/retrieve', 
 			'POST', 
 			{  },
 			{  },

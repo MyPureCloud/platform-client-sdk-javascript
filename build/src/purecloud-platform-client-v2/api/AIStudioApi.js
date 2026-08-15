@@ -5,7 +5,7 @@ class AIStudioApi {
 	/**
 	 * AIStudio service.
 	 * @module purecloud-platform-client-v2/api/AIStudioApi
-	 * @version 258.2.0
+	 * @version 259.0.0
 	 */
 
 	/**

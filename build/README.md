@@ -6,7 +6,7 @@ A JavaScript library to interface with the Genesys Cloud Platform API. View the 
 [![npm](https://img.shields.io/npm/v/purecloud-platform-client-v2.svg)](https://www.npmjs.com/package/purecloud-platform-client-v2)
 [![Release Notes Badge](https://developer-content.genesys.cloud/images/sdk-release-notes.png)](https://github.com/MyPureCloud/platform-client-sdk-javascript/blob/master/releaseNotes.md)
 
-Documentation version purecloud-platform-client-v2@258.2.0
+Documentation version purecloud-platform-client-v2@259.0.0
 
 ## Preview APIs
 
@@ -29,7 +29,7 @@ For direct use in a browser script:
 
 ```html
 <!-- Include the CJS SDK -->
-<script src="https://sdk-cdn.mypurecloud.com/javascript/258.2.0/purecloud-platform-client-v2.min.js"></script>
+<script src="https://sdk-cdn.mypurecloud.com/javascript/259.0.0/purecloud-platform-client-v2.min.js"></script>
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
@@ -46,7 +46,7 @@ For direct use in a browser script:
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
-  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/258.2.0/purecloud-platform-client-v2.min.js'], (platformClient) => {
+  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/259.0.0/purecloud-platform-client-v2.min.js'], (platformClient) => {
     console.log(platformClient);
   });
 </script>
@@ -65,6 +65,13 @@ The node package's [package.json](https://github.com/MyPureCloud/platform-client
 * **browser**
 	* Entry point: dist/web-cjs/purecloud-platform-client-v2.min.js
 	* The [Browserify](http://browserify.org/)ed CJS module for standalone use in a browser
+
+## Using tagged version
+
+Use a specific version of the SDK? To do this, simply use the version number: 
+
+* CJS: `https://sdk-cdn.mypurecloud.com/javascript/<taggedversion>/purecloud-platform-client-v2.min.js`
+* AMD: `https://sdk-cdn.mypurecloud.com/javascript/amd/<taggedversion>/purecloud-platform-client-v2.min.js`
 
 ## Using the "latest" SDK
 
@@ -317,6 +324,12 @@ To facilitate the enablement of Popup Authentication, and limit the impact of it
 ```
 
 ### Introduce Popup Authentication in an existing code
+
+What you'll need to do:
+* You will need to host a new web page (i.e. the page, displayed in the pop-up window, the user is redirected to on successful authentication).
+* You will need to add the url of this page to the list of Authorized Redirect URIs of your OAuth Client.
+* You will need to add a couple of lines in your code, as you can see below (change your redirect url, and enable popup authentication)
+* Don't forget to include ["allow-popups" in the IFrame Sandbox options of your Client App/Interaction Widget integration](https://help.genesys.cloud/articles/set-up-an-interaction-widget-integration/) to allow the window pop-up.
 
 You can enable Popup Authentication with one of the two methods described in the following code.
 

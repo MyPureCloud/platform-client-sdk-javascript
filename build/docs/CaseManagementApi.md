@@ -30,8 +30,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getCasemanagementCaseplanVersionStageplans**](CaseManagementApi#getCasemanagementCaseplanVersionStageplans) | **GET** /api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/stageplans | Get a list of Stageplans.
 [**getCasemanagementCaseplans**](CaseManagementApi#getCasemanagementCaseplans) | **GET** /api/v2/casemanagement/caseplans | Get a list of Caseplans.
 [**getCasemanagementCasesExternalcontact**](CaseManagementApi#getCasemanagementCasesExternalcontact) | **GET** /api/v2/casemanagement/cases/externalcontacts/{externalContactId} | Get a list of Cases for an External Contact.
+[**getCasemanagementCasesQueryJob**](CaseManagementApi#getCasemanagementCasesQueryJob) | **GET** /api/v2/casemanagement/cases/query/jobs/{jobId} | Get a case query job by id
+[**getCasemanagementCasesQueryJobResults**](CaseManagementApi#getCasemanagementCasesQueryJobResults) | **GET** /api/v2/casemanagement/cases/query/jobs/{jobId}/results | Get results for a case query job
 [**getCasemanagementCasesReference**](CaseManagementApi#getCasemanagementCasesReference) | **GET** /api/v2/casemanagement/cases/references/{referenceId} | Get a Case by reference.
 [**patchCasemanagementCaseDatedue**](CaseManagementApi#patchCasemanagementCaseDatedue) | **PATCH** /api/v2/casemanagement/cases/{caseId}/datedue | Update the due date of a Case.
+[**patchCasemanagementCaseOwner**](CaseManagementApi#patchCasemanagementCaseOwner) | **PATCH** /api/v2/casemanagement/cases/{caseId}/owner | Update the ownerId of a Case
 [**patchCasemanagementCasePriority**](CaseManagementApi#patchCasemanagementCasePriority) | **PATCH** /api/v2/casemanagement/cases/{caseId}/priority | Update priority of a Case.
 [**patchCasemanagementCaseSummary**](CaseManagementApi#patchCasemanagementCaseSummary) | **PATCH** /api/v2/casemanagement/cases/{caseId}/summary | Update summary of a Case.
 [**patchCasemanagementCaseplan**](CaseManagementApi#patchCasemanagementCaseplan) | **PATCH** /api/v2/casemanagement/caseplans/{caseplanId} | Update the attributes of a Caseplan.
@@ -47,6 +50,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postCasemanagementCaseplansQuery**](CaseManagementApi#postCasemanagementCaseplansQuery) | **POST** /api/v2/casemanagement/caseplans/query | Query for Caseplans.
 [**postCasemanagementCases**](CaseManagementApi#postCasemanagementCases) | **POST** /api/v2/casemanagement/cases | Create a Case.
 [**postCasemanagementCasesAssociationsQuery**](CaseManagementApi#postCasemanagementCasesAssociationsQuery) | **POST** /api/v2/casemanagement/cases/associations/query | Query for Case associations by interaction.
+[**postCasemanagementCasesQueryJobs**](CaseManagementApi#postCasemanagementCasesQueryJobs) | **POST** /api/v2/casemanagement/cases/query/jobs | Create a Case query job.
 [**putCasemanagementCaseplanDataschema**](CaseManagementApi#putCasemanagementCaseplanDataschema) | **PUT** /api/v2/casemanagement/caseplans/{caseplanId}/dataschemas/{schemaKeyName} | Update a data schema on a draft Caseplan.
 [**putCasemanagementCaseplanIntakesettings**](CaseManagementApi#putCasemanagementCaseplanIntakesettings) | **PUT** /api/v2/casemanagement/caseplans/{caseplanId}/intakesettings | Update the intake settings for a Caseplan.
 
@@ -1520,6 +1524,124 @@ apiInstance.getCasemanagementCasesExternalcontact(externalContactId, opts)
 **CaseListing**
 
 
+## getCasemanagementCasesQueryJob
+
+> CaseQueryJobResponse getCasemanagementCasesQueryJob(jobId, opts)
+
+
+GET /api/v2/casemanagement/cases/query/jobs/{jobId}
+
+Get a case query job by id
+
+getCasemanagementCasesQueryJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* caseManagement:queryJob:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.CaseManagementApi();
+
+let jobId = "jobId_example"; // String | Job ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getCasemanagementCasesQueryJob(jobId, opts)
+  .then((data) => {
+    console.log(`getCasemanagementCasesQueryJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getCasemanagementCasesQueryJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | Job ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**CaseQueryJobResponse**
+
+
+## getCasemanagementCasesQueryJobResults
+
+> CaseQueryJobResultsResponse getCasemanagementCasesQueryJobResults(jobId, opts)
+
+
+GET /api/v2/casemanagement/cases/query/jobs/{jobId}/results
+
+Get results for a case query job
+
+getCasemanagementCasesQueryJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* caseManagement:queryJobResults:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.CaseManagementApi();
+
+let jobId = "jobId_example"; // String | Job ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getCasemanagementCasesQueryJobResults(jobId, opts)
+  .then((data) => {
+    console.log(`getCasemanagementCasesQueryJobResults success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getCasemanagementCasesQueryJobResults');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | Job ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**CaseQueryJobResultsResponse**
+
+
 ## getCasemanagementCasesReference
 
 > Case getCasemanagementCasesReference(referenceId, opts)
@@ -1631,6 +1753,67 @@ apiInstance.patchCasemanagementCaseDatedue(caseId, body, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **caseId** | **String** | Case identifier. |  |
  **body** | **Object** | Due date update. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**Case**
+
+
+## patchCasemanagementCaseOwner
+
+> Case patchCasemanagementCaseOwner(caseId, body, opts)
+
+
+PATCH /api/v2/casemanagement/cases/{caseId}/owner
+
+Update the ownerId of a Case
+
+patchCasemanagementCaseOwner is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* caseManagement:caseOwner:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.CaseManagementApi();
+
+let caseId = "caseId_example"; // String | Case identifier.
+let body = {}; // Object | OwnerId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchCasemanagementCaseOwner(caseId, body, opts)
+  .then((data) => {
+    console.log(`patchCasemanagementCaseOwner success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchCasemanagementCaseOwner');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **caseId** | **String** | Case identifier. |  |
+ **body** | **Object** | OwnerId |  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -2517,6 +2700,65 @@ apiInstance.postCasemanagementCasesAssociationsQuery(body, opts)
 **CaseAssociationQueryEntityListing**
 
 
+## postCasemanagementCasesQueryJobs
+
+> CaseQueryJobResponse postCasemanagementCasesQueryJobs(body, opts)
+
+
+POST /api/v2/casemanagement/cases/query/jobs
+
+Create a Case query job.
+
+postCasemanagementCasesQueryJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* caseManagement:queryJob:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.CaseManagementApi();
+
+let body = {}; // Object | Case query job create request.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postCasemanagementCasesQueryJobs(body, opts)
+  .then((data) => {
+    console.log(`postCasemanagementCasesQueryJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postCasemanagementCasesQueryJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Case query job create request. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**CaseQueryJobResponse**
+
+
 ## putCasemanagementCaseplanDataschema
 
 > CaseplanDataSchema putCasemanagementCaseplanDataschema(caseplanId, schemaKeyName, body, opts)
@@ -2637,4 +2879,4 @@ apiInstance.putCasemanagementCaseplanIntakesettings(caseplanId, body, opts)
 **IntakeSettingsListing**
 
 
-_purecloud-platform-client-v2@258.2.0_
+_purecloud-platform-client-v2@259.0.0_

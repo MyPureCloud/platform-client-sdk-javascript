@@ -3492,7 +3492,7 @@ apiInstance.putRecordingSettings(body, opts)
 
 ## putRecordingsDeletionprotection
 
-> void putRecordingsDeletionprotection(opts)
+> ManageDeleteProtectionResult putRecordingsDeletionprotection(opts)
 
 
 PUT /api/v2/recordings/deletionprotection
@@ -3527,8 +3527,8 @@ let opts = {
 };
 
 apiInstance.putRecordingsDeletionprotection(opts)
-  .then(() => {
-    console.log('putRecordingsDeletionprotection returned successfully.');
+  .then((data) => {
+    console.log(`putRecordingsDeletionprotection success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch((err) => {
     console.log('There was a failure calling putRecordingsDeletionprotection');
@@ -3547,7 +3547,7 @@ apiInstance.putRecordingsDeletionprotection(opts)
 
 ### Return type
 
-void (no response body)
+**ManageDeleteProtectionResult**
 
 
-_purecloud-platform-client-v2@258.2.0_
+_purecloud-platform-client-v2@259.0.0_

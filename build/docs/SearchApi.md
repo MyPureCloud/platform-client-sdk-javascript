@@ -488,7 +488,7 @@ apiInstance.getUsersSearch(q64, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **q64** | **String** | q64 |  |
  **expand** | **[String]** | expand | [optional]  |
- **integrationPresenceSource** | **String** | integrationPresenceSource | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
+ **integrationPresenceSource** | **String** | integrationPresenceSource | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight, RingCentral |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -1516,4 +1516,4 @@ apiInstance.postVoicemailSearch(body, opts)
 **VoicemailsSearchResponse**
 
 
-_purecloud-platform-client-v2@258.2.0_
+_purecloud-platform-client-v2@259.0.0_
