@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getFaxDocument**](FaxApi#getFaxDocument) | **GET** /api/v2/fax/documents/{documentId} | Get a document.
 [**getFaxDocumentContent**](FaxApi#getFaxDocumentContent) | **GET** /api/v2/fax/documents/{documentId}/content | Download a fax document.
 [**getFaxDocuments**](FaxApi#getFaxDocuments) | **GET** /api/v2/fax/documents | Get a list of fax documents.
+[**getFaxFaxIdStatus**](FaxApi#getFaxFaxIdStatus) | **GET** /api/v2/fax/{faxId}/status | Get fax status
 [**getFaxSettings**](FaxApi#getFaxSettings) | **GET** /api/v2/fax/settings | Get organization config for given organization
 [**getFaxSummary**](FaxApi#getFaxSummary) | **GET** /api/v2/fax/summary | Get fax summary
 [**putFaxDocument**](FaxApi#putFaxDocument) | **PUT** /api/v2/fax/documents/{documentId} | Update a fax document.
@@ -239,6 +240,65 @@ apiInstance.getFaxDocuments(opts)
 **FaxDocumentEntityListing**
 
 
+## getFaxFaxIdStatus
+
+> OutboundFaxStatus getFaxFaxIdStatus(faxId, opts)
+
+
+GET /api/v2/fax/{faxId}/status
+
+Get fax status
+
+Retrieves status for an outbound (sent) fax. Only the authenticated user who sent the fax can fetch its status; this operation does not expose inbound or other users faxes. When the `result` field is present on the response body, it describes the terminal outcome of **transmitting** the fax to the remote endpoint (e.g. SUCCESS or FAILURE). 
+
+Requires ANY permissions:
+
+* conversation:fax:send
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.FaxApi();
+
+let faxId = "faxId_example"; // String | Fax ID of an outbound fax sent by the authenticated user only.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getFaxFaxIdStatus(faxId, opts)
+  .then((data) => {
+    console.log(`getFaxFaxIdStatus success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getFaxFaxIdStatus');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **faxId** | **String** | Fax ID of an outbound fax sent by the authenticated user only. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**OutboundFaxStatus**
+
+
 ## getFaxSettings
 
 > FaxConfig getFaxSettings(opts)
@@ -457,4 +517,4 @@ apiInstance.putFaxSettings(opts)
 **FaxConfig**
 
 
-_purecloud-platform-client-v2@259.0.0_
+_purecloud-platform-client-v2@260.0.0_

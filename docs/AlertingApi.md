@@ -11,7 +11,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteAlertingRule**](AlertingApi#deleteAlertingRule) | **DELETE** /api/v2/alerting/rules/{ruleId} | Delete a rule.
 [**getAlertingAlert**](AlertingApi#getAlertingAlert) | **GET** /api/v2/alerting/alerts/{alertId} | Get an alert
 [**getAlertingRule**](AlertingApi#getAlertingRule) | **GET** /api/v2/alerting/rules/{ruleId} | Get a rule.
-[**patchAlertingAlert**](AlertingApi#patchAlertingAlert) | **PATCH** /api/v2/alerting/alerts/{alertId} | Allows an entity to mute/snooze an alert or update the unread status of the alert.
+[**patchAlertingAlert**](AlertingApi#patchAlertingAlert) | **PATCH** /api/v2/alerting/alerts/{alertId} | Allows an entity to mute/snooze an alert, update the unread status of the alert, or close an alert.
 [**patchAlertingAlertsAll**](AlertingApi#patchAlertingAlertsAll) | **PATCH** /api/v2/alerting/alerts/all | Updates all alerts
 [**patchAlertingAlertsBulk**](AlertingApi#patchAlertingAlertsBulk) | **PATCH** /api/v2/alerting/alerts/bulk | Bulk alert updates
 [**patchAlertingRulesBulk**](AlertingApi#patchAlertingRulesBulk) | **PATCH** /api/v2/alerting/rules/bulk | Bulk update of notification lists
@@ -313,9 +313,9 @@ apiInstance.getAlertingRule(ruleId, opts)
 
 PATCH /api/v2/alerting/alerts/{alertId}
 
-Allows an entity to mute/snooze an alert or update the unread status of the alert.
+Allows an entity to mute/snooze an alert, update the unread status of the alert, or close an alert.
 
-Snoozing an alert temporarily stop it from resending notifications to individualsas well as other services within Genesys Cloud for a given period.  Muting an alert will only block the notifications to individuals.
+Snoozing an alert temporarily stop it from resending notifications to individualsas well as other services within Genesys Cloud for a given period.  Muting an alert will only block the notifications to individuals. Closing an alert will mark it as closed.
 
 Requires ALL permissions:
 
@@ -884,4 +884,4 @@ apiInstance.putAlertingRule(ruleId, body, opts)
 **CommonRule**
 
 
-_purecloud-platform-client-v2@259.0.0_
+_purecloud-platform-client-v2@260.0.0_

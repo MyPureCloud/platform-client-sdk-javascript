@@ -1323,4 +1323,4 @@ apiInstance.postCoachingScheduleslotsQuery(body, opts)
 **CoachingSlotsResponse**
 
 
-_purecloud-platform-client-v2@259.0.0_
+_purecloud-platform-client-v2@260.0.0_

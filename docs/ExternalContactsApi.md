@@ -35,6 +35,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getExternalcontactsContactsSchemasLimits**](ExternalContactsApi#getExternalcontactsContactsSchemasLimits) | **GET** /api/v2/externalcontacts/contacts/schemas/limits | Get quantitative limits on schemas
 [**getExternalcontactsExternalsource**](ExternalContactsApi#getExternalcontactsExternalsource) | **GET** /api/v2/externalcontacts/externalsources/{externalSourceId} | Fetch an External Source
 [**getExternalcontactsExternalsources**](ExternalContactsApi#getExternalcontactsExternalsources) | **GET** /api/v2/externalcontacts/externalsources | Fetch a list of External Sources
+[**getExternalcontactsGraphsClusterscan**](ExternalContactsApi#getExternalcontactsGraphsClusterscan) | **GET** /api/v2/externalcontacts/graphs/clusterscans/{scanId} | Returns a single cluster scan
+[**getExternalcontactsGraphsClusterscanCluster**](ExternalContactsApi#getExternalcontactsGraphsClusterscanCluster) | **GET** /api/v2/externalcontacts/graphs/clusterscans/{scanId}/clusters/{clusterId} | Returns a single cluster found by a scan
+[**getExternalcontactsGraphsClusterscanClusters**](ExternalContactsApi#getExternalcontactsGraphsClusterscanClusters) | **GET** /api/v2/externalcontacts/graphs/clusterscans/{scanId}/clusters | Returns a list of clusters found by a scan
+[**getExternalcontactsGraphsClusterscanStatistics**](ExternalContactsApi#getExternalcontactsGraphsClusterscanStatistics) | **GET** /api/v2/externalcontacts/graphs/clusterscans/{scanId}/statistics | Returns the statistics about a single cluster scan
+[**getExternalcontactsGraphsClusterscans**](ExternalContactsApi#getExternalcontactsGraphsClusterscans) | **GET** /api/v2/externalcontacts/graphs/clusterscans | Returns a list of cluster scans
+[**getExternalcontactsGraphsClusterscansLatest**](ExternalContactsApi#getExternalcontactsGraphsClusterscansLatest) | **GET** /api/v2/externalcontacts/graphs/clusterscans/latest | Returns the latest cluster scan
+[**getExternalcontactsGraphsClusterscansLatestStatistics**](ExternalContactsApi#getExternalcontactsGraphsClusterscansLatestStatistics) | **GET** /api/v2/externalcontacts/graphs/clusterscans/latest/statistics | Returns the statistics about the latest cluster scan
+[**getExternalcontactsGraphsSettings**](ExternalContactsApi#getExternalcontactsGraphsSettings) | **GET** /api/v2/externalcontacts/graphs/settings | Returns the org-wide settings for ExternalContact graph operations
 [**getExternalcontactsImportCsvSetting**](ExternalContactsApi#getExternalcontactsImportCsvSetting) | **GET** /api/v2/externalcontacts/import/csv/settings/{settingsId} | Get settings for CSV import
 [**getExternalcontactsImportCsvSettings**](ExternalContactsApi#getExternalcontactsImportCsvSettings) | **GET** /api/v2/externalcontacts/import/csv/settings | Retrieve all settings for organization filtered by externalSettingsId if provided
 [**getExternalcontactsImportCsvUploadDetails**](ExternalContactsApi#getExternalcontactsImportCsvUploadDetails) | **GET** /api/v2/externalcontacts/import/csv/uploads/{uploadId}/details | Get details for CSV upload
@@ -132,6 +140,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putExternalcontactsContactsSchema**](ExternalContactsApi#putExternalcontactsContactsSchema) | **PUT** /api/v2/externalcontacts/contacts/schemas/{schemaId} | Update a schema
 [**putExternalcontactsConversation**](ExternalContactsApi#putExternalcontactsConversation) | **PUT** /api/v2/externalcontacts/conversations/{conversationId} | Associate/disassociate an external contact with a conversation
 [**putExternalcontactsExternalsource**](ExternalContactsApi#putExternalcontactsExternalsource) | **PUT** /api/v2/externalcontacts/externalsources/{externalSourceId} | Update an External Source
+[**putExternalcontactsGraphsClusterscanClusterMerge**](ExternalContactsApi#putExternalcontactsGraphsClusterscanClusterMerge) | **PUT** /api/v2/externalcontacts/graphs/clusterscans/{scanId}/clusters/{clusterId}/merge | Merge a single cluster found by a scan
+[**putExternalcontactsGraphsSettings**](ExternalContactsApi#putExternalcontactsGraphsSettings) | **PUT** /api/v2/externalcontacts/graphs/settings | Updates the org-wide settings for ExternalContact graph operations
 [**putExternalcontactsImportCsvSetting**](ExternalContactsApi#putExternalcontactsImportCsvSetting) | **PUT** /api/v2/externalcontacts/import/csv/settings/{settingsId} | Update settings for CSV import
 [**putExternalcontactsImportJob**](ExternalContactsApi#putExternalcontactsImportJob) | **PUT** /api/v2/externalcontacts/import/jobs/{jobId} | Update Job's workflow status
 [**putExternalcontactsImportSetting**](ExternalContactsApi#putExternalcontactsImportSetting) | **PUT** /api/v2/externalcontacts/import/settings/{settingsId} | Update settings
@@ -1852,6 +1862,488 @@ apiInstance.getExternalcontactsExternalsources(opts)
 ### Return type
 
 **CursorExternalSourceListing**
+
+
+## getExternalcontactsGraphsClusterscan
+
+> ClusterScan getExternalcontactsGraphsClusterscan(scanId, opts)
+
+
+GET /api/v2/externalcontacts/graphs/clusterscans/{scanId}
+
+Returns a single cluster scan
+
+getExternalcontactsGraphsClusterscan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* externalContacts:graphClusterScan:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let scanId = "scanId_example"; // String | Cluster scan ID
+let opts = { 
+  'expand': ["expand_example"], // [String] | which fields, if any, to expand
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getExternalcontactsGraphsClusterscan(scanId, opts)
+  .then((data) => {
+    console.log(`getExternalcontactsGraphsClusterscan success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsGraphsClusterscan');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **scanId** | **String** | Cluster scan ID |  |
+ **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: statistics.aggregated |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ClusterScan**
+
+
+## getExternalcontactsGraphsClusterscanCluster
+
+> Cluster getExternalcontactsGraphsClusterscanCluster(scanId, clusterId, opts)
+
+
+GET /api/v2/externalcontacts/graphs/clusterscans/{scanId}/clusters/{clusterId}
+
+Returns a single cluster found by a scan
+
+getExternalcontactsGraphsClusterscanCluster is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* externalContacts:graphCluster:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let scanId = "scanId_example"; // String | Cluster scan ID
+let clusterId = "clusterId_example"; // String | Cluster ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getExternalcontactsGraphsClusterscanCluster(scanId, clusterId, opts)
+  .then((data) => {
+    console.log(`getExternalcontactsGraphsClusterscanCluster success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsGraphsClusterscanCluster');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **scanId** | **String** | Cluster scan ID |  |
+ **clusterId** | **String** | Cluster ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**Cluster**
+
+
+## getExternalcontactsGraphsClusterscanClusters
+
+> ClusterList getExternalcontactsGraphsClusterscanClusters(scanId, opts)
+
+
+GET /api/v2/externalcontacts/graphs/clusterscans/{scanId}/clusters
+
+Returns a list of clusters found by a scan
+
+getExternalcontactsGraphsClusterscanClusters is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* externalContacts:graphCluster:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let scanId = "scanId_example"; // String | Cluster scan ID
+let opts = { 
+  'limit': 20, // Number | Max number of records to return (must be between 1 and 100)
+  'cursor': "cursor_example", // String | Cursor to continue scanning
+  'divisionIds': ["divisionIds_example"], // [String] | which divisions to filter results to, up to 50 (defaults to all divisions use has access to)
+  'mergeInfoStatus': "mergeInfoStatus_example", // String | which merge statuses to filter results to
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getExternalcontactsGraphsClusterscanClusters(scanId, opts)
+  .then((data) => {
+    console.log(`getExternalcontactsGraphsClusterscanClusters success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsGraphsClusterscanClusters');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **scanId** | **String** | Cluster scan ID |  |
+ **limit** | **Number** | Max number of records to return (must be between 1 and 100) | [optional] [default to 20] |
+ **cursor** | **String** | Cursor to continue scanning | [optional]  |
+ **divisionIds** | **[String]** | which divisions to filter results to, up to 50 (defaults to all divisions use has access to) | [optional]  |
+ **mergeInfoStatus** | **String** | which merge statuses to filter results to | [optional] <br />**Values**: AutoQueued, AutoSucceeded, AutoFailed, ManualQueued, ManualSucceeded, ManualFailed, NotMerged |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ClusterList**
+
+
+## getExternalcontactsGraphsClusterscanStatistics
+
+> ClusterScanStatistics getExternalcontactsGraphsClusterscanStatistics(scanId, opts)
+
+
+GET /api/v2/externalcontacts/graphs/clusterscans/{scanId}/statistics
+
+Returns the statistics about a single cluster scan
+
+getExternalcontactsGraphsClusterscanStatistics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* externalContacts:graphClusterScan:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let scanId = "scanId_example"; // String | Cluster scan ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getExternalcontactsGraphsClusterscanStatistics(scanId, opts)
+  .then((data) => {
+    console.log(`getExternalcontactsGraphsClusterscanStatistics success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsGraphsClusterscanStatistics');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **scanId** | **String** | Cluster scan ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ClusterScanStatistics**
+
+
+## getExternalcontactsGraphsClusterscans
+
+> ClusterScanList getExternalcontactsGraphsClusterscans(opts)
+
+
+GET /api/v2/externalcontacts/graphs/clusterscans
+
+Returns a list of cluster scans
+
+getExternalcontactsGraphsClusterscans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* externalContacts:graphClusterScan:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let opts = { 
+  'limit': 20, // Number | Max number of records to return (must be between 1 and 100)
+  'cursor': "cursor_example", // String | Cursor to continue scanning
+  'expand': ["expand_example"], // [String] | which fields, if any, to expand
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getExternalcontactsGraphsClusterscans(opts)
+  .then((data) => {
+    console.log(`getExternalcontactsGraphsClusterscans success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsGraphsClusterscans');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **limit** | **Number** | Max number of records to return (must be between 1 and 100) | [optional] [default to 20] |
+ **cursor** | **String** | Cursor to continue scanning | [optional]  |
+ **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: statistics.aggregated |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ClusterScanList**
+
+
+## getExternalcontactsGraphsClusterscansLatest
+
+> ClusterScan getExternalcontactsGraphsClusterscansLatest(opts)
+
+
+GET /api/v2/externalcontacts/graphs/clusterscans/latest
+
+Returns the latest cluster scan
+
+getExternalcontactsGraphsClusterscansLatest is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* externalContacts:contact:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let opts = { 
+  'expand': ["expand_example"], // [String] | which fields, if any, to expand
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getExternalcontactsGraphsClusterscansLatest(opts)
+  .then((data) => {
+    console.log(`getExternalcontactsGraphsClusterscansLatest success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsGraphsClusterscansLatest');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: statistics.aggregated |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ClusterScan**
+
+
+## getExternalcontactsGraphsClusterscansLatestStatistics
+
+> ClusterScanStatistics getExternalcontactsGraphsClusterscansLatestStatistics(opts)
+
+
+GET /api/v2/externalcontacts/graphs/clusterscans/latest/statistics
+
+Returns the statistics about the latest cluster scan
+
+getExternalcontactsGraphsClusterscansLatestStatistics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* externalContacts:contact:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getExternalcontactsGraphsClusterscansLatestStatistics(opts)
+  .then((data) => {
+    console.log(`getExternalcontactsGraphsClusterscansLatestStatistics success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsGraphsClusterscansLatestStatistics');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ClusterScanStatistics**
+
+
+## getExternalcontactsGraphsSettings
+
+> GraphSettings getExternalcontactsGraphsSettings(opts)
+
+
+GET /api/v2/externalcontacts/graphs/settings
+
+Returns the org-wide settings for ExternalContact graph operations
+
+getExternalcontactsGraphsSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* externalContacts:graphSettingsGlobal:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getExternalcontactsGraphsSettings(opts)
+  .then((data) => {
+    console.log(`getExternalcontactsGraphsSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsGraphsSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**GraphSettings**
 
 
 ## getExternalcontactsImportCsvSetting
@@ -7604,6 +8096,126 @@ apiInstance.putExternalcontactsExternalsource(externalSourceId, body, opts)
 **ExternalSource**
 
 
+## putExternalcontactsGraphsClusterscanClusterMerge
+
+> Cluster putExternalcontactsGraphsClusterscanClusterMerge(scanId, clusterId, opts)
+
+
+PUT /api/v2/externalcontacts/graphs/clusterscans/{scanId}/clusters/{clusterId}/merge
+
+Merge a single cluster found by a scan
+
+putExternalcontactsGraphsClusterscanClusterMerge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* externalContacts:graphCluster:merge
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let scanId = "scanId_example"; // String | Cluster scan ID
+let clusterId = "clusterId_example"; // String | Cluster ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.putExternalcontactsGraphsClusterscanClusterMerge(scanId, clusterId, opts)
+  .then((data) => {
+    console.log(`putExternalcontactsGraphsClusterscanClusterMerge success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putExternalcontactsGraphsClusterscanClusterMerge');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **scanId** | **String** | Cluster scan ID |  |
+ **clusterId** | **String** | Cluster ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**Cluster**
+
+
+## putExternalcontactsGraphsSettings
+
+> GraphSettings putExternalcontactsGraphsSettings(body, opts)
+
+
+PUT /api/v2/externalcontacts/graphs/settings
+
+Updates the org-wide settings for ExternalContact graph operations
+
+putExternalcontactsGraphsSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* externalContacts:graphSettingsGlobal:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let body = {}; // Object | OrgConfiguration
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.putExternalcontactsGraphsSettings(body, opts)
+  .then((data) => {
+    console.log(`putExternalcontactsGraphsSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putExternalcontactsGraphsSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | OrgConfiguration |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**GraphSettings**
+
+
 ## putExternalcontactsImportCsvSetting
 
 > CsvSettings putExternalcontactsImportCsvSetting(settingsId, body, opts)
@@ -8081,4 +8693,4 @@ apiInstance.putExternalcontactsRelationship(relationshipId, body, opts)
 **Relationship**
 
 
-_purecloud-platform-client-v2@259.0.0_
+_purecloud-platform-client-v2@260.0.0_

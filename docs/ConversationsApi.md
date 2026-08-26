@@ -5330,7 +5330,6 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let messageId = "messageId_example"; // String | messageId
 let opts = { 
-  'useNormalizedMessage': false, // Boolean | If true, response removes deprecated fields (textBody, media)
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
     'X-Request-ID': 'req-12345'
@@ -5353,7 +5352,6 @@ apiInstance.getConversationsMessageDetails(messageId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **messageId** | **String** | messageId |  |
- **useNormalizedMessage** | **Boolean** | If true, response removes deprecated fields (textBody, media) | [optional] [default to false] |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -5391,7 +5389,6 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let messageId = "messageId_example"; // String | messageId
 let opts = { 
-  'useNormalizedMessage': false, // Boolean | If true, response removes deprecated fields (textBody, media)
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
     'X-Request-ID': 'req-12345'
@@ -5415,7 +5412,6 @@ apiInstance.getConversationsMessageMessage(conversationId, messageId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **messageId** | **String** | messageId |  |
- **useNormalizedMessage** | **Boolean** | If true, response removes deprecated fields (textBody, media) | [optional] [default to false] |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -15337,7 +15333,6 @@ let conversationId = "conversationId_example"; // String | conversationId
 let communicationId = "communicationId_example"; // String | communicationId
 let body = {}; // Object | Message
 let opts = { 
-  'useNormalizedMessage': false, // Boolean | If true, response removes deprecated fields (textBody, media)
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
     'X-Request-ID': 'req-12345'
@@ -15362,7 +15357,6 @@ apiInstance.postConversationsMessageCommunicationMessages(conversationId, commun
  **conversationId** | **String** | conversationId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | Message |  |
- **useNormalizedMessage** | **Boolean** | If true, response removes deprecated fields (textBody, media) | [optional] [default to false] |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -15905,7 +15899,6 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | 
 let opts = { 
-  'useNormalizedMessage': false, // Boolean | If true, response removes deprecated fields (textBody, media)
   'body': ["body_example"], // [String] | messageIds
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
@@ -15929,7 +15922,6 @@ apiInstance.postConversationsMessageMessagesBulk(conversationId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** |  |  |
- **useNormalizedMessage** | **Boolean** | If true, response removes deprecated fields (textBody, media) | [optional] [default to false] |
  **body** | **[String]** | messageIds | [optional]  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
@@ -16273,7 +16265,6 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let body = {}; // Object | Create agentless outbound messaging request
 let opts = { 
-  'useNormalizedMessage': false, // Boolean | If true, response removes deprecated fields (textBody, messagingTemplate)
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
     'X-Request-ID': 'req-12345'
@@ -16296,7 +16287,6 @@ apiInstance.postConversationsMessagesAgentless(body, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Create agentless outbound messaging request |  |
- **useNormalizedMessage** | **Boolean** | If true, response removes deprecated fields (textBody, messagingTemplate) | [optional] [default to false] |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -18988,4 +18978,4 @@ apiInstance.putConversationsVideoRecordingstate(conversationId, body, opts)
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@259.0.0_
+_purecloud-platform-client-v2@260.0.0_
