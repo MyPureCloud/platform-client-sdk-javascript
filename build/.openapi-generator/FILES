@@ -236,6 +236,7 @@ docs/deleteBusinessrulesDecisiontableExport-example.txt
 docs/deleteBusinessrulesDecisiontableImport-example.txt
 docs/deleteBusinessrulesDecisiontableVersion-example.txt
 docs/deleteBusinessrulesDecisiontableVersionRow-example.txt
+docs/deleteBusinessrulesDecisiontableVersionSnapshot-example.txt
 docs/deleteBusinessrulesSchema-example.txt
 docs/deleteCasemanagementCase-example.txt
 docs/deleteCasemanagementCaseCommentsMeCommentId-example.txt
@@ -746,6 +747,8 @@ docs/getBusinessrulesDecisiontableVersions-example.txt
 docs/getBusinessrulesDecisiontables-example.txt
 docs/getBusinessrulesDecisiontablesSearch-example.txt
 docs/getBusinessrulesSchema-example.txt
+docs/getBusinessrulesSchemaVersion-example.txt
+docs/getBusinessrulesSchemaVersions-example.txt
 docs/getBusinessrulesSchemas-example.txt
 docs/getBusinessrulesSchemasCoretype-example.txt
 docs/getBusinessrulesSchemasCoretypes-example.txt
@@ -976,6 +979,14 @@ docs/getExternalcontactsContactsSchemasCoretypes-example.txt
 docs/getExternalcontactsContactsSchemasLimits-example.txt
 docs/getExternalcontactsExternalsource-example.txt
 docs/getExternalcontactsExternalsources-example.txt
+docs/getExternalcontactsGraphsClusterscan-example.txt
+docs/getExternalcontactsGraphsClusterscanCluster-example.txt
+docs/getExternalcontactsGraphsClusterscanClusters-example.txt
+docs/getExternalcontactsGraphsClusterscanStatistics-example.txt
+docs/getExternalcontactsGraphsClusterscans-example.txt
+docs/getExternalcontactsGraphsClusterscansLatest-example.txt
+docs/getExternalcontactsGraphsClusterscansLatestStatistics-example.txt
+docs/getExternalcontactsGraphsSettings-example.txt
 docs/getExternalcontactsImportCsvSetting-example.txt
 docs/getExternalcontactsImportCsvSettings-example.txt
 docs/getExternalcontactsImportCsvUploadDetails-example.txt
@@ -1018,6 +1029,7 @@ docs/getExternalcontactsSettings-example.txt
 docs/getFaxDocument-example.txt
 docs/getFaxDocumentContent-example.txt
 docs/getFaxDocuments-example.txt
+docs/getFaxFaxIdStatus-example.txt
 docs/getFaxSettings-example.txt
 docs/getFaxSummary-example.txt
 docs/getFieldconfig-example.txt
@@ -1805,6 +1817,8 @@ docs/getTelephonyMediaregions-example.txt
 docs/getTelephonyNumbersRouting-example.txt
 docs/getTelephonyOrganizationLink-example.txt
 docs/getTelephonyOrganizationLinkRegions-example.txt
+docs/getTelephonyPrefixes-example.txt
+docs/getTelephonyPrefixesSimulateCall-example.txt
 docs/getTelephonyProvidersEdge-example.txt
 docs/getTelephonyProvidersEdgeDiagnosticNslookup-example.txt
 docs/getTelephonyProvidersEdgeDiagnosticPing-example.txt
@@ -1873,6 +1887,7 @@ docs/getTelephonyProvidersEdgesTrunkMetrics-example.txt
 docs/getTelephonyProvidersEdgesTrunkbasesetting-example.txt
 docs/getTelephonyProvidersEdgesTrunkbasesettings-example.txt
 docs/getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases-example.txt
+docs/getTelephonyProvidersEdgesTrunkbasesettingsSiteSiteId-example.txt
 docs/getTelephonyProvidersEdgesTrunkbasesettingsTemplate-example.txt
 docs/getTelephonyProvidersEdgesTrunks-example.txt
 docs/getTelephonyProvidersEdgesTrunksMetrics-example.txt
@@ -2538,11 +2553,13 @@ docs/postBusinessrulesDecisiontableExports-example.txt
 docs/postBusinessrulesDecisiontableImports-example.txt
 docs/postBusinessrulesDecisiontableVersionCopy-example.txt
 docs/postBusinessrulesDecisiontableVersionExecute-example.txt
+docs/postBusinessrulesDecisiontableVersionRollback-example.txt
 docs/postBusinessrulesDecisiontableVersionRows-example.txt
 docs/postBusinessrulesDecisiontableVersionRowsBulkAdd-example.txt
 docs/postBusinessrulesDecisiontableVersionRowsBulkRemove-example.txt
 docs/postBusinessrulesDecisiontableVersionRowsBulkUpdate-example.txt
 docs/postBusinessrulesDecisiontableVersionRowsSearch-example.txt
+docs/postBusinessrulesDecisiontableVersionSnapshot-example.txt
 docs/postBusinessrulesDecisiontableVersionSync-example.txt
 docs/postBusinessrulesDecisiontableVersions-example.txt
 docs/postBusinessrulesDecisiontables-example.txt
@@ -3116,6 +3133,7 @@ docs/postTelephonyNumbersRouting-example.txt
 docs/postTelephonyNumbersRoutingAll-example.txt
 docs/postTelephonyNumbersRoutingReset-example.txt
 docs/postTelephonyOrganizationLink-example.txt
+docs/postTelephonyPrefixesBulk-example.txt
 docs/postTelephonyProvidersEdgeDiagnosticNslookup-example.txt
 docs/postTelephonyProvidersEdgeDiagnosticPing-example.txt
 docs/postTelephonyProvidersEdgeDiagnosticRoute-example.txt
@@ -3123,6 +3141,7 @@ docs/postTelephonyProvidersEdgeDiagnosticTracepath-example.txt
 docs/postTelephonyProvidersEdgeLogicalinterfaces-example.txt
 docs/postTelephonyProvidersEdgeLogsJobUpload-example.txt
 docs/postTelephonyProvidersEdgeLogsJobs-example.txt
+docs/postTelephonyProvidersEdgeOfflineconfiguration-example.txt
 docs/postTelephonyProvidersEdgeReboot-example.txt
 docs/postTelephonyProvidersEdgeSoftwareupdate-example.txt
 docs/postTelephonyProvidersEdgeStatuscode-example.txt
@@ -3142,6 +3161,8 @@ docs/postTelephonyProvidersEdgesSites-example.txt
 docs/postTelephonyProvidersEdgesSitesSearch-example.txt
 docs/postTelephonyProvidersEdgesSitesSearch-example.txt
 docs/postTelephonyProvidersEdgesTrunkbasesettings-example.txt
+docs/postTelephonyProvidersEdgesTrunkbasesettingsSearch-example.txt
+docs/postTelephonyProvidersEdgesTrunksSearch-example.txt
 docs/postTelephonySiptracesDownload-example.txt
 docs/postTextbotsBotflowsSessionTurns-example.txt
 docs/postTextbotsBotflowsSessions-example.txt
@@ -3394,6 +3415,8 @@ docs/putExternalcontactsContactNote-example.txt
 docs/putExternalcontactsContactsSchema-example.txt
 docs/putExternalcontactsConversation-example.txt
 docs/putExternalcontactsExternalsource-example.txt
+docs/putExternalcontactsGraphsClusterscanClusterMerge-example.txt
+docs/putExternalcontactsGraphsSettings-example.txt
 docs/putExternalcontactsImportCsvSetting-example.txt
 docs/putExternalcontactsImportJob-example.txt
 docs/putExternalcontactsImportSetting-example.txt

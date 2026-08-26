@@ -78,9 +78,10 @@ GET /api/v2/assistants/copilot/featuresupport
 
 Get information about the support of features for all the languages or only for a certain language.
 
-Requires ALL permissions:
+Requires ANY permissions:
 
 * assistants:copilot:view
+* assistants:copilotFeatureSupport:view
 
 ### Example Usage
 
@@ -185,4 +186,4 @@ apiInstance.putAssistantCopilot(assistantId, body, opts)
 **Copilot**
 
 
-_purecloud-platform-client-v2@259.0.0_
+_purecloud-platform-client-v2@260.0.0_

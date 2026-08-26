@@ -5,7 +5,7 @@ class BusinessRulesApi {
 	/**
 	 * BusinessRules service.
 	 * @module purecloud-platform-client-v2/api/BusinessRulesApi
-	 * @version 259.0.0
+	 * @version 260.0.0
 	 */
 
 	/**
@@ -185,6 +185,41 @@ class BusinessRulesApi {
 			'/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/{rowId}', 
 			'DELETE', 
 			{ 'tableId': tableId,'tableVersion': tableVersion,'rowId': rowId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Deletes a decision table version snapshot
+	 * 
+	 * @param {String} tableId Table ID
+	 * @param {Number} tableVersion Table Version
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	deleteBusinessrulesDecisiontableVersionSnapshot(tableId, tableVersion, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'tableId' is set
+		if (tableId === undefined || tableId === null || tableId === '') {
+			throw 'Missing the required parameter "tableId" when calling deleteBusinessrulesDecisiontableVersionSnapshot';
+		}
+		// verify the required parameter 'tableVersion' is set
+		if (tableVersion === undefined || tableVersion === null) {
+			throw 'Missing the required parameter "tableVersion" when calling deleteBusinessrulesDecisiontableVersionSnapshot';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/snapshot', 
+			'DELETE', 
+			{ 'tableId': tableId,'tableVersion': tableVersion },
 			{  },
 			{  },
 			{  },
@@ -509,6 +544,8 @@ class BusinessRulesApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 100.
+	 * @param {Array.<String>} opts.status Filter by version status. Repeatable.
+	 * @param {Boolean} opts.hasSnapshot When true, returns only versions that have snapshot metadata.
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getBusinessrulesDecisiontableVersions(tableId, opts) { 
@@ -523,7 +560,7 @@ class BusinessRulesApi {
 			'/api/v2/businessrules/decisiontables/{tableId}/versions', 
 			'GET', 
 			{ 'tableId': tableId },
-			{ 'after': opts['after'],'pageSize': opts['pageSize'] },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'],'status': this.apiClient.buildCollectionParam(opts['status'], 'multi'),'hasSnapshot': opts['hasSnapshot'] },
 			{  },
 			{  },
 			null, 
@@ -615,6 +652,74 @@ class BusinessRulesApi {
 			'GET', 
 			{ 'schemaId': schemaId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get a schema version
+	 * 
+	 * @param {String} schemaId Schema ID
+	 * @param {String} schemaVersion Schema version number
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getBusinessrulesSchemaVersion(schemaId, schemaVersion, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'schemaId' is set
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
+			throw 'Missing the required parameter "schemaId" when calling getBusinessrulesSchemaVersion';
+		}
+		// verify the required parameter 'schemaVersion' is set
+		if (schemaVersion === undefined || schemaVersion === null || schemaVersion === '') {
+			throw 'Missing the required parameter "schemaVersion" when calling getBusinessrulesSchemaVersion';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/businessrules/schemas/{schemaId}/versions/{schemaVersion}', 
+			'GET', 
+			{ 'schemaId': schemaId,'schemaVersion': schemaVersion },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * List schema versions
+	 * 
+	 * @param {String} schemaId Schema ID
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {String} opts.pageSize Number of items per page (must be between 1 and 100)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getBusinessrulesSchemaVersions(schemaId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'schemaId' is set
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
+			throw 'Missing the required parameter "schemaId" when calling getBusinessrulesSchemaVersions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/businessrules/schemas/{schemaId}/versions', 
+			'GET', 
+			{ 'schemaId': schemaId },
+			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'] },
 			{  },
 			{  },
 			null, 
@@ -1006,6 +1111,42 @@ class BusinessRulesApi {
 	}
 
 	/**
+	 * Re-publish a superseded decision table version as the current published version
+	 * 
+	 * @param {String} tableId Table ID
+	 * @param {Number} tableVersion Table Version
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body Rollback request
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postBusinessrulesDecisiontableVersionRollback(tableId, tableVersion, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'tableId' is set
+		if (tableId === undefined || tableId === null || tableId === '') {
+			throw 'Missing the required parameter "tableId" when calling postBusinessrulesDecisiontableVersionRollback';
+		}
+		// verify the required parameter 'tableVersion' is set
+		if (tableVersion === undefined || tableVersion === null) {
+			throw 'Missing the required parameter "tableVersion" when calling postBusinessrulesDecisiontableVersionRollback';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rollback', 
+			'POST', 
+			{ 'tableId': tableId,'tableVersion': tableVersion },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Create a decision table row
 	 * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queues division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
 	 * @param {String} tableId Table ID
@@ -1197,6 +1338,46 @@ class BusinessRulesApi {
 			'POST', 
 			{ 'tableId': tableId,'tableVersion': tableVersion },
 			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Creates a decision table version snapshot
+	 * 
+	 * @param {String} tableId Table ID
+	 * @param {Number} tableVersion Table Version
+	 * @param {Object} body Snapshot request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postBusinessrulesDecisiontableVersionSnapshot(tableId, tableVersion, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'tableId' is set
+		if (tableId === undefined || tableId === null || tableId === '') {
+			throw 'Missing the required parameter "tableId" when calling postBusinessrulesDecisiontableVersionSnapshot';
+		}
+		// verify the required parameter 'tableVersion' is set
+		if (tableVersion === undefined || tableVersion === null) {
+			throw 'Missing the required parameter "tableVersion" when calling postBusinessrulesDecisiontableVersionSnapshot';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postBusinessrulesDecisiontableVersionSnapshot';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/snapshot', 
+			'POST', 
+			{ 'tableId': tableId,'tableVersion': tableVersion },
+			{  },
 			{  },
 			{  },
 			body, 

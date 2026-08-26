@@ -5,7 +5,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 259.0.0
+	 * @version 260.0.0
 	 */
 
 	/**
@@ -895,6 +895,248 @@ class ExternalContactsApi {
 			'GET', 
 			{  },
 			{ 'cursor': opts['cursor'],'limit': opts['limit'],'name': opts['name'],'active': opts['active'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Returns a single cluster scan
+	 * 
+	 * @param {String} scanId Cluster scan ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand which fields, if any, to expand
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * getExternalcontactsGraphsClusterscan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getExternalcontactsGraphsClusterscan(scanId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'scanId' is set
+		if (scanId === undefined || scanId === null || scanId === '') {
+			throw 'Missing the required parameter "scanId" when calling getExternalcontactsGraphsClusterscan';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/graphs/clusterscans/{scanId}', 
+			'GET', 
+			{ 'scanId': scanId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Returns a single cluster found by a scan
+	 * 
+	 * @param {String} scanId Cluster scan ID
+	 * @param {String} clusterId Cluster ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * getExternalcontactsGraphsClusterscanCluster is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getExternalcontactsGraphsClusterscanCluster(scanId, clusterId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'scanId' is set
+		if (scanId === undefined || scanId === null || scanId === '') {
+			throw 'Missing the required parameter "scanId" when calling getExternalcontactsGraphsClusterscanCluster';
+		}
+		// verify the required parameter 'clusterId' is set
+		if (clusterId === undefined || clusterId === null || clusterId === '') {
+			throw 'Missing the required parameter "clusterId" when calling getExternalcontactsGraphsClusterscanCluster';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/graphs/clusterscans/{scanId}/clusters/{clusterId}', 
+			'GET', 
+			{ 'scanId': scanId,'clusterId': clusterId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Returns a list of clusters found by a scan
+	 * 
+	 * @param {String} scanId Cluster scan ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.limit Max number of records to return (must be between 1 and 100) (default to 20)
+	 * @param {String} opts.cursor Cursor to continue scanning
+	 * @param {Array.<String>} opts.divisionIds which divisions to filter results to, up to 50 (defaults to all divisions use has access to)
+	 * @param {Object} opts.mergeInfoStatus which merge statuses to filter results to
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * getExternalcontactsGraphsClusterscanClusters is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getExternalcontactsGraphsClusterscanClusters(scanId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'scanId' is set
+		if (scanId === undefined || scanId === null || scanId === '') {
+			throw 'Missing the required parameter "scanId" when calling getExternalcontactsGraphsClusterscanClusters';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/graphs/clusterscans/{scanId}/clusters', 
+			'GET', 
+			{ 'scanId': scanId },
+			{ 'limit': opts['limit'],'cursor': opts['cursor'],'divisionIds': this.apiClient.buildCollectionParam(opts['divisionIds'], 'multi'),'mergeInfo.status': opts['mergeInfoStatus'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Returns the statistics about a single cluster scan
+	 * 
+	 * @param {String} scanId Cluster scan ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * getExternalcontactsGraphsClusterscanStatistics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getExternalcontactsGraphsClusterscanStatistics(scanId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'scanId' is set
+		if (scanId === undefined || scanId === null || scanId === '') {
+			throw 'Missing the required parameter "scanId" when calling getExternalcontactsGraphsClusterscanStatistics';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/graphs/clusterscans/{scanId}/statistics', 
+			'GET', 
+			{ 'scanId': scanId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Returns a list of cluster scans
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.limit Max number of records to return (must be between 1 and 100) (default to 20)
+	 * @param {String} opts.cursor Cursor to continue scanning
+	 * @param {Array.<String>} opts.expand which fields, if any, to expand
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * getExternalcontactsGraphsClusterscans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getExternalcontactsGraphsClusterscans(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/graphs/clusterscans', 
+			'GET', 
+			{  },
+			{ 'limit': opts['limit'],'cursor': opts['cursor'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Returns the latest cluster scan
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand which fields, if any, to expand
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * getExternalcontactsGraphsClusterscansLatest is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getExternalcontactsGraphsClusterscansLatest(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/graphs/clusterscans/latest', 
+			'GET', 
+			{  },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Returns the statistics about the latest cluster scan
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * getExternalcontactsGraphsClusterscansLatestStatistics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getExternalcontactsGraphsClusterscansLatestStatistics(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/graphs/clusterscans/latest/statistics', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Returns the org-wide settings for ExternalContact graph operations
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * getExternalcontactsGraphsSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getExternalcontactsGraphsSettings(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/graphs/settings', 
+			'GET', 
+			{  },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -3888,6 +4130,73 @@ class ExternalContactsApi {
 			'/api/v2/externalcontacts/externalsources/{externalSourceId}', 
 			'PUT', 
 			{ 'externalSourceId': externalSourceId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Merge a single cluster found by a scan
+	 * 
+	 * @param {String} scanId Cluster scan ID
+	 * @param {String} clusterId Cluster ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * putExternalcontactsGraphsClusterscanClusterMerge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	putExternalcontactsGraphsClusterscanClusterMerge(scanId, clusterId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'scanId' is set
+		if (scanId === undefined || scanId === null || scanId === '') {
+			throw 'Missing the required parameter "scanId" when calling putExternalcontactsGraphsClusterscanClusterMerge';
+		}
+		// verify the required parameter 'clusterId' is set
+		if (clusterId === undefined || clusterId === null || clusterId === '') {
+			throw 'Missing the required parameter "clusterId" when calling putExternalcontactsGraphsClusterscanClusterMerge';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/graphs/clusterscans/{scanId}/clusters/{clusterId}/merge', 
+			'PUT', 
+			{ 'scanId': scanId,'clusterId': clusterId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Updates the org-wide settings for ExternalContact graph operations
+	 * 
+	 * @param {Object} body OrgConfiguration
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * putExternalcontactsGraphsSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	putExternalcontactsGraphsSettings(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putExternalcontactsGraphsSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/graphs/settings', 
+			'PUT', 
+			{  },
 			{  },
 			{  },
 			{  },

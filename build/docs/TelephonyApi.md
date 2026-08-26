@@ -14,6 +14,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getTelephonyNumbersRouting**](TelephonyApi#getTelephonyNumbersRouting) | **GET** /api/v2/telephony/numbers/routing | Get Number Routings by organizationId
 [**getTelephonyOrganizationLink**](TelephonyApi#getTelephonyOrganizationLink) | **GET** /api/v2/telephony/organization/link | Get organization links
 [**getTelephonyOrganizationLinkRegions**](TelephonyApi#getTelephonyOrganizationLinkRegions) | **GET** /api/v2/telephony/organization/link/regions | Get all the replica regions by primary region
+[**getTelephonyPrefixes**](TelephonyApi#getTelephonyPrefixes) | **GET** /api/v2/telephony/prefixes | Get prefixes
+[**getTelephonyPrefixesSimulateCall**](TelephonyApi#getTelephonyPrefixesSimulateCall) | **GET** /api/v2/telephony/prefixes/simulate/call | Simulate call to test fraud prefix functionality
 [**getTelephonySettings**](TelephonyApi#getTelephonySettings) | **GET** /api/v2/telephony/settings | Get the global telephony configuration.
 [**getTelephonySipmessagesConversation**](TelephonyApi#getTelephonySipmessagesConversation) | **GET** /api/v2/telephony/sipmessages/conversations/{conversationId} | Get a SIP message.
 [**getTelephonySipmessagesConversationHeaders**](TelephonyApi#getTelephonySipmessagesConversationHeaders) | **GET** /api/v2/telephony/sipmessages/conversations/{conversationId}/headers | Get SIP headers.
@@ -24,6 +26,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postTelephonyNumbersRoutingAll**](TelephonyApi#postTelephonyNumbersRoutingAll) | **POST** /api/v2/telephony/numbers/routing/all | Re-route all numbers on an organization
 [**postTelephonyNumbersRoutingReset**](TelephonyApi#postTelephonyNumbersRoutingReset) | **POST** /api/v2/telephony/numbers/routing/reset | Reset routing for organization
 [**postTelephonyOrganizationLink**](TelephonyApi#postTelephonyOrganizationLink) | **POST** /api/v2/telephony/organization/link | Create a link with an organization
+[**postTelephonyPrefixesBulk**](TelephonyApi#postTelephonyPrefixesBulk) | **POST** /api/v2/telephony/prefixes/bulk | Bulk save prefixes
 [**postTelephonySiptracesDownload**](TelephonyApi#postTelephonySiptracesDownload) | **POST** /api/v2/telephony/siptraces/download | Request a download of a pcap file to S3
 [**putTelephonyAgentGreetings**](TelephonyApi#putTelephonyAgentGreetings) | **PUT** /api/v2/telephony/agents/{agentId}/greetings | Updates an agent's greetings.
 [**putTelephonyAgentsGreetingsMe**](TelephonyApi#putTelephonyAgentsGreetingsMe) | **PUT** /api/v2/telephony/agents/greetings/me | Updates the agent's own greetings.
@@ -485,6 +488,128 @@ apiInstance.getTelephonyOrganizationLinkRegions(opts)
 ### Return type
 
 **[RegionResponse]**
+
+
+## getTelephonyPrefixes
+
+> PrefixListing getTelephonyPrefixes(type, opts)
+
+
+GET /api/v2/telephony/prefixes
+
+Get prefixes
+
+Requires ALL permissions:
+
+* telephony:prefix:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TelephonyApi();
+
+let type = "type_example"; // String | Filter by prefix type
+let opts = { 
+  'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'prefix': "prefix_example", // String | Filter by phone number prefix
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getTelephonyPrefixes(type, opts)
+  .then((data) => {
+    console.log(`getTelephonyPrefixes success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyPrefixes');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **type** | **String** | Filter by prefix type | <br />**Values**: Allow, Block |
+ **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **prefix** | **String** | Filter by phone number prefix | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**PrefixListing**
+
+
+## getTelephonyPrefixesSimulateCall
+
+> CallSimulationResult getTelephonyPrefixesSimulateCall(_number, opts)
+
+
+GET /api/v2/telephony/prefixes/simulate/call
+
+Simulate call to test fraud prefix functionality
+
+Requires ALL permissions:
+
+* telephony:prefix:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TelephonyApi();
+
+let _number = "_number_example"; // String | Phone number to simulate
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getTelephonyPrefixesSimulateCall(_number, opts)
+  .then((data) => {
+    console.log(`getTelephonyPrefixesSimulateCall success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyPrefixesSimulateCall');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **_number** | **String** | Phone number to simulate |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**CallSimulationResult**
 
 
 ## getTelephonySettings
@@ -1074,6 +1199,63 @@ apiInstance.postTelephonyOrganizationLink(body, opts)
 **OrganizationLink**
 
 
+## postTelephonyPrefixesBulk
+
+> BulkPrefixesResponse postTelephonyPrefixesBulk(body, opts)
+
+
+POST /api/v2/telephony/prefixes/bulk
+
+Bulk save prefixes
+
+Requires ALL permissions:
+
+* telephony:prefix:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TelephonyApi();
+
+let body = {}; // Object | Bulk save request with list of prefixes
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postTelephonyPrefixesBulk(body, opts)
+  .then((data) => {
+    console.log(`postTelephonyPrefixesBulk success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postTelephonyPrefixesBulk');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Bulk save request with list of prefixes |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**BulkPrefixesResponse**
+
+
 ## postTelephonySiptracesDownload
 
 > SipDownloadResponse postTelephonySiptracesDownload(sIPSearchPublicRequest, opts)
@@ -1304,4 +1486,4 @@ apiInstance.putTelephonySettings(body, opts)
 **TelephonySettings**
 
 
-_purecloud-platform-client-v2@259.0.0_
+_purecloud-platform-client-v2@260.0.0_

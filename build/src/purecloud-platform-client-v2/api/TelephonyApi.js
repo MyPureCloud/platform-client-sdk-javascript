@@ -5,7 +5,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 259.0.0
+	 * @version 260.0.0
 	 */
 
 	/**
@@ -228,6 +228,70 @@ class TelephonyApi {
 			'GET', 
 			{  },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get prefixes
+	 * 
+	 * @param {Object} type Filter by prefix type
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {String} opts.prefix Filter by phone number prefix
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getTelephonyPrefixes(type, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'type' is set
+		if (type === undefined || type === null) {
+			throw 'Missing the required parameter "type" when calling getTelephonyPrefixes';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/prefixes', 
+			'GET', 
+			{  },
+			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'prefix': opts['prefix'],'type': type },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Simulate call to test fraud prefix functionality
+	 * 
+	 * @param {String} _number Phone number to simulate
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getTelephonyPrefixesSimulateCall(_number, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter '_number' is set
+		if (_number === undefined || _number === null) {
+			throw 'Missing the required parameter "_number" when calling getTelephonyPrefixesSimulateCall';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/prefixes/simulate/call', 
+			'GET', 
+			{  },
+			{ 'number': _number },
 			{  },
 			{  },
 			null, 
@@ -535,6 +599,36 @@ class TelephonyApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/telephony/organization/link', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Bulk save prefixes
+	 * 
+	 * @param {Object} body Bulk save request with list of prefixes
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postTelephonyPrefixesBulk(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTelephonyPrefixesBulk';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/prefixes/bulk', 
 			'POST', 
 			{  },
 			{  },

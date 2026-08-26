@@ -11,6 +11,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteBusinessrulesDecisiontableImport**](BusinessRulesApi#deleteBusinessrulesDecisiontableImport) | **DELETE** /api/v2/businessrules/decisiontables/{tableId}/imports/{importJobId} | Delete decision table row import job
 [**deleteBusinessrulesDecisiontableVersion**](BusinessRulesApi#deleteBusinessrulesDecisiontableVersion) | **DELETE** /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion} | Delete a decision table version
 [**deleteBusinessrulesDecisiontableVersionRow**](BusinessRulesApi#deleteBusinessrulesDecisiontableVersionRow) | **DELETE** /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/{rowId} | Delete a decision table row
+[**deleteBusinessrulesDecisiontableVersionSnapshot**](BusinessRulesApi#deleteBusinessrulesDecisiontableVersionSnapshot) | **DELETE** /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/snapshot | Deletes a decision table version snapshot
 [**deleteBusinessrulesSchema**](BusinessRulesApi#deleteBusinessrulesSchema) | **DELETE** /api/v2/businessrules/schemas/{schemaId} | Delete a schema
 [**getBusinessrulesDecisiontable**](BusinessRulesApi#getBusinessrulesDecisiontable) | **GET** /api/v2/businessrules/decisiontables/{tableId} | Get a decision table
 [**getBusinessrulesDecisiontableExport**](BusinessRulesApi#getBusinessrulesDecisiontableExport) | **GET** /api/v2/businessrules/decisiontables/{tableId}/exports/{exportJobId} | Get an export job for a decision table
@@ -24,6 +25,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getBusinessrulesDecisiontables**](BusinessRulesApi#getBusinessrulesDecisiontables) | **GET** /api/v2/businessrules/decisiontables | Get a list of decision tables.
 [**getBusinessrulesDecisiontablesSearch**](BusinessRulesApi#getBusinessrulesDecisiontablesSearch) | **GET** /api/v2/businessrules/decisiontables/search | Search for decision tables.
 [**getBusinessrulesSchema**](BusinessRulesApi#getBusinessrulesSchema) | **GET** /api/v2/businessrules/schemas/{schemaId} | Get a schema
+[**getBusinessrulesSchemaVersion**](BusinessRulesApi#getBusinessrulesSchemaVersion) | **GET** /api/v2/businessrules/schemas/{schemaId}/versions/{schemaVersion} | Get a schema version
+[**getBusinessrulesSchemaVersions**](BusinessRulesApi#getBusinessrulesSchemaVersions) | **GET** /api/v2/businessrules/schemas/{schemaId}/versions | List schema versions
 [**getBusinessrulesSchemas**](BusinessRulesApi#getBusinessrulesSchemas) | **GET** /api/v2/businessrules/schemas | Get a list of schemas.
 [**getBusinessrulesSchemasCoretype**](BusinessRulesApi#getBusinessrulesSchemasCoretype) | **GET** /api/v2/businessrules/schemas/coretypes/{coreTypeName} | Get a specific named core type.
 [**getBusinessrulesSchemasCoretypes**](BusinessRulesApi#getBusinessrulesSchemasCoretypes) | **GET** /api/v2/businessrules/schemas/coretypes | Get the core types from which all schemas are built.
@@ -35,11 +38,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postBusinessrulesDecisiontableImports**](BusinessRulesApi#postBusinessrulesDecisiontableImports) | **POST** /api/v2/businessrules/decisiontables/{tableId}/imports | Create a decision table row import job
 [**postBusinessrulesDecisiontableVersionCopy**](BusinessRulesApi#postBusinessrulesDecisiontableVersionCopy) | **POST** /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/copy | Copy a decision table version
 [**postBusinessrulesDecisiontableVersionExecute**](BusinessRulesApi#postBusinessrulesDecisiontableVersionExecute) | **POST** /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/execute | Execute a decision table version
+[**postBusinessrulesDecisiontableVersionRollback**](BusinessRulesApi#postBusinessrulesDecisiontableVersionRollback) | **POST** /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rollback | Re-publish a superseded decision table version as the current published version
 [**postBusinessrulesDecisiontableVersionRows**](BusinessRulesApi#postBusinessrulesDecisiontableVersionRows) | **POST** /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows | Create a decision table row
 [**postBusinessrulesDecisiontableVersionRowsBulkAdd**](BusinessRulesApi#postBusinessrulesDecisiontableVersionRowsBulkAdd) | **POST** /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/bulk/add | Bulk add decision table rows
 [**postBusinessrulesDecisiontableVersionRowsBulkRemove**](BusinessRulesApi#postBusinessrulesDecisiontableVersionRowsBulkRemove) | **POST** /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/bulk/remove | Bulk delete decision table rows
 [**postBusinessrulesDecisiontableVersionRowsBulkUpdate**](BusinessRulesApi#postBusinessrulesDecisiontableVersionRowsBulkUpdate) | **POST** /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/bulk/update | Bulk update decision table rows
 [**postBusinessrulesDecisiontableVersionRowsSearch**](BusinessRulesApi#postBusinessrulesDecisiontableVersionRowsSearch) | **POST** /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/search | Search for decision table rows
+[**postBusinessrulesDecisiontableVersionSnapshot**](BusinessRulesApi#postBusinessrulesDecisiontableVersionSnapshot) | **POST** /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/snapshot | Creates a decision table version snapshot
 [**postBusinessrulesDecisiontableVersionSync**](BusinessRulesApi#postBusinessrulesDecisiontableVersionSync) | **POST** /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/sync | Update the Business Rules Schema to the latest version for a given decision table version
 [**postBusinessrulesDecisiontableVersions**](BusinessRulesApi#postBusinessrulesDecisiontableVersions) | **POST** /api/v2/businessrules/decisiontables/{tableId}/versions | Create a new decision table version. When sourceVersion is not provided, the draft is created from the published version.
 [**postBusinessrulesDecisiontables**](BusinessRulesApi#postBusinessrulesDecisiontables) | **POST** /api/v2/businessrules/decisiontables | Create a decision table
@@ -343,6 +348,65 @@ apiInstance.deleteBusinessrulesDecisiontableVersionRow(tableId, tableVersion, ro
  **tableId** | **String** | Table ID |  |
  **tableVersion** | **Number** | Table Version |  |
  **rowId** | **String** | Row ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+void (no response body)
+
+
+## deleteBusinessrulesDecisiontableVersionSnapshot
+
+> void deleteBusinessrulesDecisiontableVersionSnapshot(tableId, tableVersion, opts)
+
+
+DELETE /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/snapshot
+
+Deletes a decision table version snapshot
+
+Requires ANY permissions:
+
+* businessrules:decisionTableSnapshot:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.BusinessRulesApi();
+
+let tableId = "tableId_example"; // String | Table ID
+let tableVersion = 3.4; // Number | Table Version
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.deleteBusinessrulesDecisiontableVersionSnapshot(tableId, tableVersion, opts)
+  .then(() => {
+    console.log('deleteBusinessrulesDecisiontableVersionSnapshot returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteBusinessrulesDecisiontableVersionSnapshot');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **tableId** | **String** | Table ID |  |
+ **tableVersion** | **Number** | Table Version |  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -917,6 +981,8 @@ let tableId = "tableId_example"; // String | Table ID
 let opts = { 
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 100.
+  'status': ["status_example"], // [String] | Filter by version status. Repeatable.
+  'hasSnapshot': true, // Boolean | When true, returns only versions that have snapshot metadata.
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
     'X-Request-ID': 'req-12345'
@@ -941,6 +1007,8 @@ apiInstance.getBusinessrulesDecisiontableVersions(tableId, opts)
  **tableId** | **String** | Table ID |  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 100. | [optional]  |
+ **status** | **[String]** | Filter by version status. Repeatable. | [optional] <br />**Values**: Draft, Published, Error, Preparing, Superseded |
+ **hasSnapshot** | **Boolean** | When true, returns only versions that have snapshot metadata. | [optional]  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -1135,6 +1203,128 @@ apiInstance.getBusinessrulesSchema(schemaId, opts)
 ### Return type
 
 **BusinessRulesDataSchema**
+
+
+## getBusinessrulesSchemaVersion
+
+> BusinessRulesDataSchema getBusinessrulesSchemaVersion(schemaId, schemaVersion, opts)
+
+
+GET /api/v2/businessrules/schemas/{schemaId}/versions/{schemaVersion}
+
+Get a schema version
+
+Requires ANY permissions:
+
+* businessrules:businessRulesSchema:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.BusinessRulesApi();
+
+let schemaId = "schemaId_example"; // String | Schema ID
+let schemaVersion = "schemaVersion_example"; // String | Schema version number
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getBusinessrulesSchemaVersion(schemaId, schemaVersion, opts)
+  .then((data) => {
+    console.log(`getBusinessrulesSchemaVersion success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getBusinessrulesSchemaVersion');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **schemaId** | **String** | Schema ID |  |
+ **schemaVersion** | **String** | Schema version number |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**BusinessRulesDataSchema**
+
+
+## getBusinessrulesSchemaVersions
+
+> BusinessRulesDataSchemaListing getBusinessrulesSchemaVersions(schemaId, opts)
+
+
+GET /api/v2/businessrules/schemas/{schemaId}/versions
+
+List schema versions
+
+Requires ANY permissions:
+
+* businessrules:businessRulesSchema:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.BusinessRulesApi();
+
+let schemaId = "schemaId_example"; // String | Schema ID
+let opts = { 
+  'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'pageSize': "pageSize_example", // String | Number of items per page (must be between 1 and 100)
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getBusinessrulesSchemaVersions(schemaId, opts)
+  .then((data) => {
+    console.log(`getBusinessrulesSchemaVersions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getBusinessrulesSchemaVersions');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **schemaId** | **String** | Schema ID |  |
+ **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **pageSize** | **String** | Number of items per page (must be between 1 and 100) | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**BusinessRulesDataSchemaListing**
 
 
 ## getBusinessrulesSchemas
@@ -1792,6 +1982,67 @@ apiInstance.postBusinessrulesDecisiontableVersionExecute(tableId, tableVersion, 
 **DecisionTableExecutionResponse**
 
 
+## postBusinessrulesDecisiontableVersionRollback
+
+> DecisionTableVersion postBusinessrulesDecisiontableVersionRollback(tableId, tableVersion, opts)
+
+
+POST /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rollback
+
+Re-publish a superseded decision table version as the current published version
+
+Requires ANY permissions:
+
+* businessrules:decisionTable:rollback
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.BusinessRulesApi();
+
+let tableId = "tableId_example"; // String | Table ID
+let tableVersion = 3.4; // Number | Table Version
+let opts = { 
+  'body': {}, // Object | Rollback request
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postBusinessrulesDecisiontableVersionRollback(tableId, tableVersion, opts)
+  .then((data) => {
+    console.log(`postBusinessrulesDecisiontableVersionRollback success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postBusinessrulesDecisiontableVersionRollback');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **tableId** | **String** | Table ID |  |
+ **tableVersion** | **Number** | Table Version |  |
+ **body** | **Object** | Rollback request | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**DecisionTableVersion**
+
+
 ## postBusinessrulesDecisiontableVersionRows
 
 > DecisionTableRow postBusinessrulesDecisiontableVersionRows(tableId, tableVersion, body, opts)
@@ -2111,6 +2362,67 @@ apiInstance.postBusinessrulesDecisiontableVersionRowsSearch(tableId, tableVersio
 ### Return type
 
 **DecisionTableRowListing**
+
+
+## postBusinessrulesDecisiontableVersionSnapshot
+
+> DecisionTableVersion postBusinessrulesDecisiontableVersionSnapshot(tableId, tableVersion, body, opts)
+
+
+POST /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/snapshot
+
+Creates a decision table version snapshot
+
+Requires ANY permissions:
+
+* businessrules:decisionTableSnapshot:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.BusinessRulesApi();
+
+let tableId = "tableId_example"; // String | Table ID
+let tableVersion = 3.4; // Number | Table Version
+let body = {}; // Object | Snapshot request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postBusinessrulesDecisiontableVersionSnapshot(tableId, tableVersion, body, opts)
+  .then((data) => {
+    console.log(`postBusinessrulesDecisiontableVersionSnapshot success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postBusinessrulesDecisiontableVersionSnapshot');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **tableId** | **String** | Table ID |  |
+ **tableVersion** | **Number** | Table Version |  |
+ **body** | **Object** | Snapshot request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**DecisionTableVersion**
 
 
 ## postBusinessrulesDecisiontableVersionSync
@@ -2533,4 +2845,4 @@ apiInstance.putBusinessrulesSchema(schemaId, body, opts)
 **BusinessRulesDataSchema**
 
 
-_purecloud-platform-client-v2@259.0.0_
+_purecloud-platform-client-v2@260.0.0_

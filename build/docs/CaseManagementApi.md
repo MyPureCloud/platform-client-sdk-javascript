@@ -2879,4 +2879,4 @@ apiInstance.putCasemanagementCaseplanIntakesettings(caseplanId, body, opts)
 **IntakeSettingsListing**
 
 
-_purecloud-platform-client-v2@259.0.0_
+_purecloud-platform-client-v2@260.0.0_

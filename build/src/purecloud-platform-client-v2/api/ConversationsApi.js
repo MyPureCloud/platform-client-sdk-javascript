@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 259.0.0
+	 * @version 260.0.0
 	 */
 
 	/**
@@ -2790,7 +2790,6 @@ class ConversationsApi {
 	 * 
 	 * @param {String} messageId messageId
 	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.useNormalizedMessage If true, response removes deprecated fields (textBody, media) (default to false)
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getConversationsMessageDetails(messageId, opts) { 
@@ -2805,7 +2804,7 @@ class ConversationsApi {
 			'/api/v2/conversations/messages/{messageId}/details', 
 			'GET', 
 			{ 'messageId': messageId },
-			{ 'useNormalizedMessage': opts['useNormalizedMessage'] },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -2822,7 +2821,6 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} messageId messageId
 	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.useNormalizedMessage If true, response removes deprecated fields (textBody, media) (default to false)
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getConversationsMessageMessage(conversationId, messageId, opts) { 
@@ -2841,7 +2839,7 @@ class ConversationsApi {
 			'/api/v2/conversations/messages/{conversationId}/messages/{messageId}', 
 			'GET', 
 			{ 'conversationId': conversationId,'messageId': messageId },
-			{ 'useNormalizedMessage': opts['useNormalizedMessage'] },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -8591,7 +8589,6 @@ class ConversationsApi {
 	 * @param {String} communicationId communicationId
 	 * @param {Object} body Message
 	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.useNormalizedMessage If true, response removes deprecated fields (textBody, media) (default to false)
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postConversationsMessageCommunicationMessages(conversationId, communicationId, body, opts) { 
@@ -8614,7 +8611,7 @@ class ConversationsApi {
 			'/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages', 
 			'POST', 
 			{ 'conversationId': conversationId,'communicationId': communicationId },
-			{ 'useNormalizedMessage': opts['useNormalizedMessage'] },
+			{  },
 			{  },
 			{  },
 			body, 
@@ -8927,7 +8924,6 @@ class ConversationsApi {
 	 * The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: ["a3069a33b-bbb1-4703-9d68-061d9e9db96e", "55bc6be3-078c-4a49-a4e6-1e05776ed7e8"]. The max messages you can request in the body is 1,000. Best practice is to limit to only the messages you need in each request, rather than request large batches by default.
 	 * @param {String} conversationId 
 	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.useNormalizedMessage If true, response removes deprecated fields (textBody, media) (default to false)
 	 * @param {Array.<String>} opts.body messageIds
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
@@ -8943,7 +8939,7 @@ class ConversationsApi {
 			'/api/v2/conversations/messages/{conversationId}/messages/bulk', 
 			'POST', 
 			{ 'conversationId': conversationId },
-			{ 'useNormalizedMessage': opts['useNormalizedMessage'] },
+			{  },
 			{  },
 			{  },
 			opts['body'], 
@@ -9146,7 +9142,6 @@ class ConversationsApi {
 	 * Send an agentless (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. If there is already a connected conversation between the fromAddress and recipient specified, the useExistingActiveConversation param can be used to barge in to the ongoing conversation.
 	 * @param {Object} body Create agentless outbound messaging request
 	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.useNormalizedMessage If true, response removes deprecated fields (textBody, messagingTemplate) (default to false)
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postConversationsMessagesAgentless(body, opts) { 
@@ -9161,7 +9156,7 @@ class ConversationsApi {
 			'/api/v2/conversations/messages/agentless', 
 			'POST', 
 			{  },
-			{ 'useNormalizedMessage': opts['useNormalizedMessage'] },
+			{  },
 			{  },
 			{  },
 			body, 

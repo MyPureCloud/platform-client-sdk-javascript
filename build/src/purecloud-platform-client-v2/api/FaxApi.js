@@ -5,7 +5,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 259.0.0
+	 * @version 260.0.0
 	 */
 
 	/**
@@ -127,6 +127,36 @@ class FaxApi {
 			'GET', 
 			{  },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get fax status
+	 * Retrieves status for an outbound (sent) fax. Only the authenticated user who sent the fax can fetch its status; this operation does not expose inbound or other users faxes. When the `result` field is present on the response body, it describes the terminal outcome of **transmitting** the fax to the remote endpoint (e.g. SUCCESS or FAILURE). 
+	 * @param {String} faxId Fax ID of an outbound fax sent by the authenticated user only.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getFaxFaxIdStatus(faxId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'faxId' is set
+		if (faxId === undefined || faxId === null || faxId === '') {
+			throw 'Missing the required parameter "faxId" when calling getFaxFaxIdStatus';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/fax/{faxId}/status', 
+			'GET', 
+			{ 'faxId': faxId },
+			{  },
 			{  },
 			{  },
 			null, 

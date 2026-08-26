@@ -5,7 +5,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 259.0.0
+	 * @version 260.0.0
 	 */
 
 	/**
@@ -2488,6 +2488,40 @@ class TelephonyProvidersEdgeApi {
 	}
 
 	/**
+	 * Get Trunk Base Settings listing for site
+	 * Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
+	 * @param {String} siteId Site ID for trunk bases
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {String} opts.sortBy Value by which to sort (default to name)
+	 * @param {String} opts.sortOrder Sort order (default to ASC)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getTelephonyProvidersEdgesTrunkbasesettingsSiteSiteId(siteId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'siteId' is set
+		if (siteId === undefined || siteId === null || siteId === '') {
+			throw 'Missing the required parameter "siteId" when calling getTelephonyProvidersEdgesTrunkbasesettingsSiteSiteId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/trunkbasesettings/site/{siteId}', 
+			'GET', 
+			{ 'siteId': siteId },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Get a Trunk Base Settings instance template from a given make and model. This object can then be modified and saved as a new Trunk Base Settings instance
 	 * 
 	 * @param {String} trunkMetabaseId The id of a metabase object upon which to base this Trunk Base Settings
@@ -2877,6 +2911,41 @@ class TelephonyProvidersEdgeApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/{edgeId}/logs/jobs', 
+			'POST', 
+			{ 'edgeId': edgeId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Create a file that can be used to configure a hardware Edge's settings.
+	 * 
+	 * @param {String} edgeId Edge Id
+	 * @param {Object} body EdgeOfflineConfiguration
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postTelephonyProvidersEdgeOfflineconfiguration(edgeId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'edgeId' is set
+		if (edgeId === undefined || edgeId === null || edgeId === '') {
+			throw 'Missing the required parameter "edgeId" when calling postTelephonyProvidersEdgeOfflineconfiguration';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTelephonyProvidersEdgeOfflineconfiguration';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/{edgeId}/offlineconfiguration', 
 			'POST', 
 			{ 'edgeId': edgeId },
 			{  },
@@ -3429,6 +3498,66 @@ class TelephonyProvidersEdgeApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/trunkbasesettings', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Search Trunk Base Settings
+	 * Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
+	 * @param {Object} body Telephony search request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postTelephonyProvidersEdgesTrunkbasesettingsSearch(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTelephonyProvidersEdgesTrunkbasesettingsSearch';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/trunkbasesettings/search', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Search for trunks
+	 * 
+	 * @param {Object} body Telephony search request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postTelephonyProvidersEdgesTrunksSearch(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTelephonyProvidersEdgesTrunksSearch';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/trunks/search', 
 			'POST', 
 			{  },
 			{  },
