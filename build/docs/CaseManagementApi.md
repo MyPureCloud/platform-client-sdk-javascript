@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteCasemanagementCaseCommentsMeCommentId**](CaseManagementApi#deleteCasemanagementCaseCommentsMeCommentId) | **DELETE** /api/v2/casemanagement/cases/{caseId}/comments/me/{commentId} | Delete my Comment.
 [**deleteCasemanagementCaseplan**](CaseManagementApi#deleteCasemanagementCaseplan) | **DELETE** /api/v2/casemanagement/caseplans/{caseplanId} | Delete a Caseplan.
 [**deleteCasemanagementCaseplanDataschema**](CaseManagementApi#deleteCasemanagementCaseplanDataschema) | **DELETE** /api/v2/casemanagement/caseplans/{caseplanId}/dataschemas/{schemaKeyName} | Remove a data schema from a draft Caseplan.
+[**deleteCasemanagementCaseplanStageplan**](CaseManagementApi#deleteCasemanagementCaseplanStageplan) | **DELETE** /api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId} | Delete a Stageplan from a draft Caseplan.
 [**getCasemanagementCase**](CaseManagementApi#getCasemanagementCase) | **GET** /api/v2/casemanagement/cases/{caseId} | Get a Case.
 [**getCasemanagementCaseAssociation**](CaseManagementApi#getCasemanagementCaseAssociation) | **GET** /api/v2/casemanagement/cases/{caseId}/associations/{associationId} | Get a Case Association.
 [**getCasemanagementCaseAssociations**](CaseManagementApi#getCasemanagementCaseAssociations) | **GET** /api/v2/casemanagement/cases/{caseId}/associations | Get a list of Case associations for the Case.
@@ -45,6 +46,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postCasemanagementCaseTerminateJobs**](CaseManagementApi#postCasemanagementCaseTerminateJobs) | **POST** /api/v2/casemanagement/cases/{caseId}/terminate/jobs | Create a Terminate Job for a Case.
 [**postCasemanagementCaseplanDataschemas**](CaseManagementApi#postCasemanagementCaseplanDataschemas) | **POST** /api/v2/casemanagement/caseplans/{caseplanId}/dataschemas | Add a data schema to a draft Caseplan.
 [**postCasemanagementCaseplanPublish**](CaseManagementApi#postCasemanagementCaseplanPublish) | **POST** /api/v2/casemanagement/caseplans/{caseplanId}/publish | Publish Caseplan.
+[**postCasemanagementCaseplanStageplanReposition**](CaseManagementApi#postCasemanagementCaseplanStageplanReposition) | **POST** /api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId}/reposition | Reposition a Stageplan within a draft Caseplan.
+[**postCasemanagementCaseplanStageplans**](CaseManagementApi#postCasemanagementCaseplanStageplans) | **POST** /api/v2/casemanagement/caseplans/{caseplanId}/stageplans | Create a Stageplan on a draft Caseplan.
 [**postCasemanagementCaseplanVersions**](CaseManagementApi#postCasemanagementCaseplanVersions) | **POST** /api/v2/casemanagement/caseplans/{caseplanId}/versions | Create Caseplan version.
 [**postCasemanagementCaseplans**](CaseManagementApi#postCasemanagementCaseplans) | **POST** /api/v2/casemanagement/caseplans | Create a Caseplan.
 [**postCasemanagementCaseplansQuery**](CaseManagementApi#postCasemanagementCaseplansQuery) | **POST** /api/v2/casemanagement/caseplans/query | Query for Caseplans.
@@ -281,6 +284,67 @@ apiInstance.deleteCasemanagementCaseplanDataschema(caseplanId, schemaKeyName, op
 | ------------- | ------------- | ------------- | ------------- |
  **caseplanId** | **String** | Caseplan identifier. |  |
  **schemaKeyName** | **String** | Schema key (for example default). |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**Object**
+
+
+## deleteCasemanagementCaseplanStageplan
+
+> **Object** deleteCasemanagementCaseplanStageplan(caseplanId, stageplanId, opts)
+
+
+DELETE /api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId}
+
+Delete a Stageplan from a draft Caseplan.
+
+deleteCasemanagementCaseplanStageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* caseManagement:stageplan:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.CaseManagementApi();
+
+let caseplanId = "caseplanId_example"; // String | Caseplan identifier.
+let stageplanId = "stageplanId_example"; // String | Stageplan identifier.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.deleteCasemanagementCaseplanStageplan(caseplanId, stageplanId, opts)
+  .then((data) => {
+    console.log(`deleteCasemanagementCaseplanStageplan success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteCasemanagementCaseplanStageplan');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **caseplanId** | **String** | Caseplan identifier. |  |
+ **stageplanId** | **String** | Stageplan identifier. |  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -2413,6 +2477,130 @@ apiInstance.postCasemanagementCaseplanPublish(caseplanId, opts)
 **Caseplan**
 
 
+## postCasemanagementCaseplanStageplanReposition
+
+> **Object** postCasemanagementCaseplanStageplanReposition(caseplanId, stageplanId, body, opts)
+
+
+POST /api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId}/reposition
+
+Reposition a Stageplan within a draft Caseplan.
+
+postCasemanagementCaseplanStageplanReposition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* caseManagement:stageplan:reposition
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.CaseManagementApi();
+
+let caseplanId = "caseplanId_example"; // String | Caseplan identifier.
+let stageplanId = "stageplanId_example"; // String | Stageplan identifier.
+let body = {}; // Object | Stageplan reposition request.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postCasemanagementCaseplanStageplanReposition(caseplanId, stageplanId, body, opts)
+  .then((data) => {
+    console.log(`postCasemanagementCaseplanStageplanReposition success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postCasemanagementCaseplanStageplanReposition');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **caseplanId** | **String** | Caseplan identifier. |  |
+ **stageplanId** | **String** | Stageplan identifier. |  |
+ **body** | **Object** | Stageplan reposition request. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**Object**
+
+
+## postCasemanagementCaseplanStageplans
+
+> Stageplan postCasemanagementCaseplanStageplans(caseplanId, body, opts)
+
+
+POST /api/v2/casemanagement/caseplans/{caseplanId}/stageplans
+
+Create a Stageplan on a draft Caseplan.
+
+postCasemanagementCaseplanStageplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* caseManagement:stageplan:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.CaseManagementApi();
+
+let caseplanId = "caseplanId_example"; // String | Caseplan identifier.
+let body = {}; // Object | Stageplan create request.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postCasemanagementCaseplanStageplans(caseplanId, body, opts)
+  .then((data) => {
+    console.log(`postCasemanagementCaseplanStageplans success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postCasemanagementCaseplanStageplans');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **caseplanId** | **String** | Caseplan identifier. |  |
+ **body** | **Object** | Stageplan create request. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**Stageplan**
+
+
 ## postCasemanagementCaseplanVersions
 
 > Caseplan postCasemanagementCaseplanVersions(caseplanId, opts)
@@ -2879,4 +3067,4 @@ apiInstance.putCasemanagementCaseplanIntakesettings(caseplanId, body, opts)
 **IntakeSettingsListing**
 
 
-_purecloud-platform-client-v2@260.0.0_
+_purecloud-platform-client-v2@261.0.0_

@@ -2818,6 +2818,7 @@ declare class CaseManagementApi {
   	deleteCasemanagementCaseCommentsMeCommentId(caseId: string, commentId: string, opts?: CaseManagementApi.deleteCasemanagementCaseCommentsMeCommentIdOptions): Promise<object>;
   	deleteCasemanagementCaseplan(caseplanId: string, opts?: CaseManagementApi.deleteCasemanagementCaseplanOptions): Promise<object>;
   	deleteCasemanagementCaseplanDataschema(caseplanId: string, schemaKeyName: string, opts?: CaseManagementApi.deleteCasemanagementCaseplanDataschemaOptions): Promise<object>;
+  	deleteCasemanagementCaseplanStageplan(caseplanId: string, stageplanId: string, opts?: CaseManagementApi.deleteCasemanagementCaseplanStageplanOptions): Promise<object>;
   	getCasemanagementCase(caseId: string, opts?: CaseManagementApi.getCasemanagementCaseOptions): Promise<Models.Case>;
   	getCasemanagementCaseAssociation(caseId: string, associationId: string, opts?: CaseManagementApi.getCasemanagementCaseAssociationOptions): Promise<Models.CaseAssociation>;
   	getCasemanagementCaseAssociations(caseId: string, opts?: CaseManagementApi.getCasemanagementCaseAssociationsOptions): Promise<Models.CaseAssociationListing>;
@@ -2853,6 +2854,8 @@ declare class CaseManagementApi {
   	postCasemanagementCaseTerminateJobs(caseId: string, opts?: CaseManagementApi.postCasemanagementCaseTerminateJobsOptions): Promise<Models.TerminateJob>;
   	postCasemanagementCaseplanDataschemas(caseplanId: string, body: Models.CaseplanDataSchemaRequest, opts?: CaseManagementApi.postCasemanagementCaseplanDataschemasOptions): Promise<Models.CaseplanDataSchema>;
   	postCasemanagementCaseplanPublish(caseplanId: string, opts?: CaseManagementApi.postCasemanagementCaseplanPublishOptions): Promise<Models.Caseplan>;
+  	postCasemanagementCaseplanStageplanReposition(caseplanId: string, stageplanId: string, body: Models.StageplanReposition, opts?: CaseManagementApi.postCasemanagementCaseplanStageplanRepositionOptions): Promise<object>;
+  	postCasemanagementCaseplanStageplans(caseplanId: string, body: Models.StageplanCreate, opts?: CaseManagementApi.postCasemanagementCaseplanStageplansOptions): Promise<Models.Stageplan>;
   	postCasemanagementCaseplanVersions(caseplanId: string, opts?: CaseManagementApi.postCasemanagementCaseplanVersionsOptions): Promise<Models.Caseplan>;
   	postCasemanagementCaseplans(body: Models.CaseplanCreate, opts?: CaseManagementApi.postCasemanagementCaseplansOptions): Promise<Models.CaseplanCreateResponse>;
   	postCasemanagementCaseplansQuery(body: Models.CaseplanQueryRequest, opts?: CaseManagementApi.postCasemanagementCaseplansQueryOptions): Promise<Models.CaseplanQueryEntityListing>;
@@ -2874,6 +2877,9 @@ declare namespace CaseManagementApi {
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface deleteCasemanagementCaseplanDataschemaOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface deleteCasemanagementCaseplanStageplanOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface getCasemanagementCaseOptions { 
@@ -3011,6 +3017,12 @@ declare namespace CaseManagementApi {
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface postCasemanagementCaseplanPublishOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface postCasemanagementCaseplanStageplanRepositionOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface postCasemanagementCaseplanStageplansOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface postCasemanagementCaseplanVersionsOptions { 
@@ -5192,6 +5204,7 @@ declare class ExternalContactsApi {
   	postExternalcontactsContactsExports(body: Models.ContactsExport, opts?: ExternalContactsApi.postExternalcontactsContactsExportsOptions): Promise<Models.ContactsExport>;
   	postExternalcontactsContactsMerge(body: Models.MergeContactsRequest, opts?: ExternalContactsApi.postExternalcontactsContactsMergeOptions): Promise<Models.ExternalContact>;
   	postExternalcontactsContactsSchemas(body: Models.DataSchema, opts?: ExternalContactsApi.postExternalcontactsContactsSchemasOptions): Promise<Models.DataSchema>;
+  	postExternalcontactsContactsSearch(body: Models.ContactSearchRequest, opts?: ExternalContactsApi.postExternalcontactsContactsSearchOptions): Promise<Models.ContactListing>;
   	postExternalcontactsExternalsources(body: Models.ExternalSource, opts?: ExternalContactsApi.postExternalcontactsExternalsourcesOptions): Promise<Models.ExternalSource>;
   	postExternalcontactsIdentifierlookup(identifier: Models.ContactIdentifier, opts?: ExternalContactsApi.postExternalcontactsIdentifierlookupOptions): Promise<Models.ExternalContact>;
   	postExternalcontactsIdentifierlookupContacts(identifier: Models.ContactIdentifier, opts?: ExternalContactsApi.postExternalcontactsIdentifierlookupContactsOptions): Promise<Models.ExternalContact>;
@@ -5666,6 +5679,9 @@ declare namespace ExternalContactsApi {
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface postExternalcontactsContactsSchemasOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface postExternalcontactsContactsSearchOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface postExternalcontactsExternalsourcesOptions { 
@@ -13101,7 +13117,7 @@ declare class SocialMediaApi {
   	getSocialmediaEscalationrule(escalationRuleId: string, opts?: SocialMediaApi.getSocialmediaEscalationruleOptions): Promise<Models.EscalationRuleResponse>;
   	getSocialmediaEscalationrules(divisionId: string, opts?: SocialMediaApi.getSocialmediaEscalationrulesOptions): Promise<Models.SocialEscalationResponseEntityListing>;
   	getSocialmediaTopic(topicId: string, opts?: SocialMediaApi.getSocialmediaTopicOptions): Promise<Models.SocialTopicWithDataIngestionRuleMetadataResponse>;
-  	getSocialmediaTopicDataingestionrules(topicId: string, opts?: SocialMediaApi.getSocialmediaTopicDataingestionrulesOptions): Promise<Models.DataIngestionRuleResponseEntityListing>;
+  	getSocialmediaTopicDataingestionrules(topicId: string, opts?: SocialMediaApi.getSocialmediaTopicDataingestionrulesOptions): Promise<Models.GenericDataIngestionRuleResponseEntityListing>;
   	getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId(topicId: string, facebookIngestionRuleId: string, opts?: SocialMediaApi.getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdOptions): Promise<Models.FacebookDataIngestionRuleResponse>;
   	getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersion(topicId: string, facebookIngestionRuleId: string, dataIngestionRuleVersion: string, opts?: SocialMediaApi.getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersionOptions): Promise<Models.FacebookDataIngestionRuleVersionResponse>;
   	getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersions(topicId: string, facebookIngestionRuleId: string, opts?: SocialMediaApi.getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersionsOptions): Promise<Models.FacebookDataIngestionRuleVersionResponseEntityListing>;
@@ -19397,11 +19413,6 @@ declare namespace Models {
 		"alternateTimeDimension"?: string;
 	}
 	
-	export interface AgentUtilizationAggregationSort { 
-		"name": string;
-		"function": string;
-	}
-	
 	export interface AgentUtilizationAggregationView { 
 		"target": string;
 		"name": string;
@@ -19851,6 +19862,18 @@ declare namespace Models {
 		"allTimePoints"?: number;
 	}
 	
+	export interface AllocationOutputsTemplate { 
+		"calculationStartDate": string;
+		"calculationIntervalLengthMinutes": number;
+		"planningGroupAllocationResults": Array<Models.AllocationResultsTemplate>;
+	}
+	
+	export interface AllocationResultsTemplate { 
+		"planningGroupId": string;
+		"assignedAgentsPerInterval": Array<number>;
+		"headcountMultiplierPerInterval": Array<number>;
+	}
+	
 	export interface Alteration { 
 		"type"?: string;
 		"start"?: string;
@@ -19999,6 +20022,14 @@ declare namespace Models {
 		"routingStatus"?: string;
 		"routingStatusDate"?: string;
 		"isOutOfOffice"?: boolean;
+		"managementUnitId"?: string;
+		"businessUnitId"?: string;
+		"adherenceState"?: string;
+		"adherenceImpact"?: string;
+		"adherenceDate"?: string;
+		"scheduledActivityCodeId"?: string;
+		"scheduledActivityCategory"?: string;
+		"actualActivityCategory"?: string;
 	}
 	
 	export interface AnalyticsAgentStateAgentSessionResult { 
@@ -20019,6 +20050,9 @@ declare namespace Models {
 		"presenceCounts"?: Array<Models.AgentStatePresenceCount>;
 		"routingStatusCounts"?: Array<Models.AgentStateRoutingStatusCount>;
 		"isOutOfOfficeCounts"?: Array<Models.AgentStateIsOutOfOfficeCount>;
+		"adherenceStateCounts"?: Array<Models.AgentStateAdherenceStateCount>;
+		"scheduledActivityCategoryCounts"?: Array<Models.AgentStateActivityCategoryCount>;
+		"actualActivityCategoryCounts"?: Array<Models.AgentStateActivityCategoryCount>;
 	}
 	
 	export interface AnalyticsAgentStateQueryResponse { 
@@ -27363,6 +27397,24 @@ declare namespace Models {
 		"callableTimeColumn"?: string;
 	}
 	
+	export interface ContactSearchOperation { 
+		"simpleSearch"?: Models.ContactSimpleSearch;
+	}
+	
+	export interface ContactSearchRequest { 
+		"pageNumber"?: number;
+		"pageSize"?: number;
+		"divisionIds"?: Array<string>;
+		"expand"?: Array<string>;
+		"operation"?: Models.ContactSearchOperation;
+	}
+	
+	export interface ContactSimpleSearch { 
+		"query"?: string;
+		"sortOrder"?: Array<string>;
+		"ids"?: Array<string>;
+	}
+	
 	export interface ContactSort { 
 		"fieldName"?: string;
 		"direction"?: string;
@@ -27892,9 +27944,9 @@ declare namespace Models {
 	}
 	
 	export interface ContinuousForecastGetSessionResponse { 
-		"sessionId"?: string;
-		"lastSuccessfulSessionId"?: string;
-		"state"?: string;
+		"sessionId": string;
+		"lastSuccessfulSessionId": string;
+		"state": string;
 		"errorCode"?: string;
 	}
 	
@@ -30204,6 +30256,7 @@ declare namespace Models {
 		"queryStatement"?: string;
 		"language"?: string;
 		"queryReformulationContext"?: Models.ConversationIntentSuggestionsTopicQueryReformulationContext;
+		"participantType"?: string;
 	}
 	
 	export interface ConversationIntentSuggestionsTopicSuggestionFeedback { 
@@ -30286,6 +30339,7 @@ declare namespace Models {
 		"queryStatement"?: string;
 		"language"?: string;
 		"queryReformulationContext"?: Models.ConversationKnowledgeArticleSuggestionsTopicQueryReformulationContext;
+		"participantType"?: string;
 	}
 	
 	export interface ConversationKnowledgeArticleSuggestionsTopicSuggestionFeedback { 
@@ -30354,6 +30408,7 @@ declare namespace Models {
 		"queryStatement"?: string;
 		"language"?: string;
 		"queryReformulationContext"?: Models.ConversationKnowledgeSearchSuggestionsTopicQueryReformulationContext;
+		"participantType"?: string;
 	}
 	
 	export interface ConversationKnowledgeSearchSuggestionsTopicSuggestionFeedback { 
@@ -30976,6 +31031,7 @@ declare namespace Models {
 		"queryStatement"?: string;
 		"language"?: string;
 		"queryReformulationContext"?: Models.ConversationResponseSuggestionsTopicQueryReformulationContext;
+		"participantType"?: string;
 	}
 	
 	export interface ConversationResponseSuggestionsTopicSuggestionFeedback { 
@@ -31215,6 +31271,7 @@ declare namespace Models {
 		"queryStatement"?: string;
 		"language"?: string;
 		"queryReformulationContext"?: Models.ConversationScriptSuggestionsTopicQueryReformulationContext;
+		"participantType"?: string;
 	}
 	
 	export interface ConversationScriptSuggestionsTopicSuggestionFeedback { 
@@ -31683,6 +31740,7 @@ declare namespace Models {
 		"queryStatement"?: string;
 		"language"?: string;
 		"queryReformulationContext"?: Models.ConversationThirdPartyActionSuggestionsTopicQueryReformulationContext;
+		"participantType"?: string;
 	}
 	
 	export interface ConversationThirdPartyActionSuggestionsTopicSuggestionFeedback { 
@@ -32785,13 +32843,13 @@ declare namespace Models {
 	}
 	
 	export interface CreateVerifierRequest { 
-		"algorithm": string;
-		"digits": number;
-		"enabled": boolean;
+		"algorithm"?: string;
+		"digits"?: number;
+		"enabled"?: boolean;
 		"name": string;
-		"period": number;
-		"secretSize": number;
-		"default": boolean;
+		"period"?: number;
+		"secretSize"?: number;
+		"default"?: boolean;
 	}
 	
 	export interface CreateVerifierResponse { 
@@ -33685,33 +33743,6 @@ declare namespace Models {
 		"effectivePlatform": string;
 		"id": string;
 		"name"?: string;
-	}
-	
-	export interface DataIngestionRuleResponse { 
-		"id"?: string;
-		"name"?: string;
-		"description"?: string;
-		"status"?: string;
-		"version"?: number;
-		"dateCreated"?: string;
-		"dateModified"?: string;
-		"platform"?: string;
-		"ingestionRuleInfo"?: Models.MessageInfo;
-		"countries"?: Array<string>;
-		"selfUri"?: string;
-	}
-	
-	export interface DataIngestionRuleResponseEntityListing { 
-		"entities"?: Array<Models.DataIngestionRuleResponse>;
-		"pageSize"?: number;
-		"pageNumber"?: number;
-		"total"?: number;
-		"lastUri"?: string;
-		"firstUri"?: string;
-		"selfUri"?: string;
-		"nextUri"?: string;
-		"previousUri"?: string;
-		"pageCount"?: number;
 	}
 	
 	export interface DataIngestionRuleStatusPatchRequest { 
@@ -39765,7 +39796,6 @@ declare namespace Models {
 		"dateModified"?: string;
 		"platform"?: string;
 		"ingestionRuleInfo"?: Models.MessageInfo;
-		"countries"?: Array<string>;
 		"integrationId"?: string;
 		"selfUri"?: string;
 	}
@@ -39780,7 +39810,6 @@ declare namespace Models {
 		"dateModified"?: string;
 		"platform"?: string;
 		"ingestionRuleInfo"?: Models.MessageInfo;
-		"countries"?: Array<string>;
 		"integrationId"?: string;
 		"selfUri"?: string;
 	}
@@ -41591,6 +41620,33 @@ declare namespace Models {
 		"resources"?: Models.GuideVersionResources;
 	}
 	
+	export interface GenericDataIngestionRuleResponse { 
+		"id"?: string;
+		"name"?: string;
+		"description"?: string;
+		"status"?: string;
+		"version"?: number;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"platform"?: string;
+		"ingestionRuleInfo"?: Models.MessageInfo;
+		"countries"?: Array<string>;
+		"selfUri"?: string;
+	}
+	
+	export interface GenericDataIngestionRuleResponseEntityListing { 
+		"entities"?: Array<Models.GenericDataIngestionRuleResponse>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"lastUri"?: string;
+		"firstUri"?: string;
+		"selfUri"?: string;
+		"nextUri"?: string;
+		"previousUri"?: string;
+		"pageCount"?: number;
+	}
+	
 	export interface GenericSAML { 
 		"id"?: string;
 		"name"?: string;
@@ -41808,7 +41864,6 @@ declare namespace Models {
 		"dateModified"?: string;
 		"platform"?: string;
 		"ingestionRuleInfo"?: Models.MessageInfo;
-		"countries"?: Array<string>;
 		"integrationId"?: string;
 		"externalSource"?: Models.DomainEntityRef;
 		"selfUri"?: string;
@@ -41824,7 +41879,6 @@ declare namespace Models {
 		"dateModified"?: string;
 		"platform"?: string;
 		"ingestionRuleInfo"?: Models.MessageInfo;
-		"countries"?: Array<string>;
 		"integrationId"?: string;
 		"externalSource"?: Models.DomainEntityRef;
 		"selfUri"?: string;
@@ -43370,7 +43424,6 @@ declare namespace Models {
 		"dateModified"?: string;
 		"platform"?: string;
 		"ingestionRuleInfo"?: Models.MessageInfo;
-		"countries"?: Array<string>;
 		"integrationId"?: string;
 		"selfUri"?: string;
 	}
@@ -43385,7 +43438,6 @@ declare namespace Models {
 		"dateModified"?: string;
 		"platform"?: string;
 		"ingestionRuleInfo"?: Models.MessageInfo;
-		"countries"?: Array<string>;
 		"integrationId"?: string;
 		"selfUri"?: string;
 	}
@@ -50337,7 +50389,6 @@ declare namespace Models {
 		"dateModified"?: string;
 		"platform"?: string;
 		"ingestionRuleInfo"?: Models.MessageInfo;
-		"countries"?: Array<string>;
 		"externalSource"?: Models.DomainEntityRef;
 		"selfUri"?: string;
 	}
@@ -50352,7 +50403,6 @@ declare namespace Models {
 		"dateModified"?: string;
 		"platform"?: string;
 		"ingestionRuleInfo"?: Models.MessageInfo;
-		"countries"?: Array<string>;
 		"externalSource"?: Models.DomainEntityRef;
 		"selfUri"?: string;
 	}
@@ -52716,6 +52766,7 @@ declare namespace Models {
 		"scheduleId"?: string;
 		"weekDate"?: string;
 		"downloadUrl"?: string;
+		"allocationDownloadUrl"?: string;
 		"state"?: string;
 		"error"?: Models.PerformancePredictionCompleteEventTopicErrorBody;
 	}
@@ -52736,6 +52787,7 @@ declare namespace Models {
 	export interface PerformancePredictionRecalculationCompleteEventTopicPerformancePredictionUserRecalculationNotification { 
 		"operationId"?: string;
 		"downloadUrl"?: string;
+		"allocationDownloadUrl"?: string;
 		"state"?: string;
 		"error"?: Models.PerformancePredictionRecalculationCompleteEventTopicErrorBody;
 	}
@@ -58107,6 +58159,7 @@ declare namespace Models {
 		"roadsideAssistance"?: Models.RecordingRoadsideAssistance;
 		"richLink"?: Models.RichLink;
 		"messageReceipts"?: Array<Models.RecordingMessageReceipt>;
+		"notificationResponse"?: Models.RecordingNotificationResponse;
 	}
 	
 	export interface RecordingMetadata { 
@@ -60722,6 +60775,7 @@ declare namespace Models {
 	export interface SendAgentlessOutboundMessageRequest { 
 		"fromAddress": string;
 		"toAddress"?: string;
+		"externalContactId"?: string;
 		"toAddressMessengerType": string;
 		"textBody"?: string;
 		"messagingTemplate"?: Models.SendMessagingTemplateRequest;
@@ -62365,6 +62419,12 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface StageplanCreate { 
+		"name": string;
+		"description"?: string;
+		"after"?: string;
+	}
+	
 	export interface StageplanListing { 
 		"entities"?: Array<Models.Stageplan>;
 		"nextUri"?: string;
@@ -62376,6 +62436,10 @@ declare namespace Models {
 		"id"?: string;
 		"name"?: string;
 		"selfUri"?: string;
+	}
+	
+	export interface StageplanReposition { 
+		"after"?: string;
 	}
 	
 	export interface StageplanUpdate { 
@@ -65459,8 +65523,8 @@ declare namespace Models {
 		"dateModified"?: string;
 		"platform"?: string;
 		"ingestionRuleInfo"?: Models.MessageInfo;
-		"countries"?: Array<string>;
 		"searchTerms"?: string;
+		"countries"?: Array<string>;
 		"selfUri"?: string;
 	}
 	
@@ -65474,8 +65538,8 @@ declare namespace Models {
 		"dateModified"?: string;
 		"platform"?: string;
 		"ingestionRuleInfo"?: Models.MessageInfo;
-		"countries"?: Array<string>;
 		"searchTerms"?: string;
+		"countries"?: Array<string>;
 		"selfUri"?: string;
 	}
 	
@@ -67909,6 +67973,7 @@ declare namespace Models {
 		"status"?: string;
 		"mediaType"?: string;
 		"topic"?: string;
+		"characteristic"?: string;
 		"comparisonOperator"?: string;
 	}
 	
@@ -67954,6 +68019,7 @@ declare namespace Models {
 		"status"?: string;
 		"mediaType"?: string;
 		"topic"?: string;
+		"characteristic"?: string;
 		"comparisonOperator"?: string;
 	}
 	
@@ -68974,6 +69040,10 @@ declare namespace Models {
 		"socialSourceTypes"?: Array<string>;
 		"socialFollowerRange"?: Models.SocialNumericRange;
 		"socialVerificationStatus"?: boolean;
+		"socialEngagementLikes"?: Models.NumericRange;
+		"socialEngagementShares"?: Models.NumericRange;
+		"socialEngagementComments"?: Models.NumericRange;
+		"socialEngagementViews"?: Models.NumericRange;
 		"sessionExpired"?: boolean;
 		"screenMonitored"?: boolean;
 		"engagementSources"?: Array<string>;
@@ -72242,14 +72312,18 @@ declare namespace Models {
 	
 	export interface WorkitemOnAttributeChangeCondition { 
 		"attribute": string;
-		"newValue": string;
+		"newValue"?: string;
 		"oldValue"?: string;
+		"operator"?: string;
+		"value"?: number;
 	}
 	
 	export interface WorkitemOnAttributeChangeConditionUpdate { 
 		"attribute": string;
-		"newValue": string;
+		"newValue"?: string;
 		"oldValue"?: string;
+		"operator"?: string;
+		"value"?: number;
 	}
 	
 	export interface WorkitemOnAttributeChangeRule { 

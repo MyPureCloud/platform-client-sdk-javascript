@@ -2368,4 +2368,4 @@ apiInstance.putLearningModuleRule(moduleId, body, opts)
 **LearningModuleRule**
 
 
-_purecloud-platform-client-v2@260.0.0_
+_purecloud-platform-client-v2@261.0.0_

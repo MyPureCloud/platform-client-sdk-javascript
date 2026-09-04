@@ -5,7 +5,7 @@ class CaseManagementApi {
 	/**
 	 * CaseManagement service.
 	 * @module purecloud-platform-client-v2/api/CaseManagementApi
-	 * @version 260.0.0
+	 * @version 261.0.0
 	 */
 
 	/**
@@ -139,6 +139,42 @@ class CaseManagementApi {
 			'/api/v2/casemanagement/caseplans/{caseplanId}/dataschemas/{schemaKeyName}', 
 			'DELETE', 
 			{ 'caseplanId': caseplanId,'schemaKeyName': schemaKeyName },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Delete a Stageplan from a draft Caseplan.
+	 * 
+	 * @param {String} caseplanId Caseplan identifier.
+	 * @param {String} stageplanId Stageplan identifier.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * deleteCasemanagementCaseplanStageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteCasemanagementCaseplanStageplan(caseplanId, stageplanId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'caseplanId' is set
+		if (caseplanId === undefined || caseplanId === null || caseplanId === '') {
+			throw 'Missing the required parameter "caseplanId" when calling deleteCasemanagementCaseplanStageplan';
+		}
+		// verify the required parameter 'stageplanId' is set
+		if (stageplanId === undefined || stageplanId === null || stageplanId === '') {
+			throw 'Missing the required parameter "stageplanId" when calling deleteCasemanagementCaseplanStageplan';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId}', 
+			'DELETE', 
+			{ 'caseplanId': caseplanId,'stageplanId': stageplanId },
 			{  },
 			{  },
 			{  },
@@ -1378,6 +1414,83 @@ class CaseManagementApi {
 			{  },
 			{  },
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Reposition a Stageplan within a draft Caseplan.
+	 * 
+	 * @param {String} caseplanId Caseplan identifier.
+	 * @param {String} stageplanId Stageplan identifier.
+	 * @param {Object} body Stageplan reposition request.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * postCasemanagementCaseplanStageplanReposition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postCasemanagementCaseplanStageplanReposition(caseplanId, stageplanId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'caseplanId' is set
+		if (caseplanId === undefined || caseplanId === null || caseplanId === '') {
+			throw 'Missing the required parameter "caseplanId" when calling postCasemanagementCaseplanStageplanReposition';
+		}
+		// verify the required parameter 'stageplanId' is set
+		if (stageplanId === undefined || stageplanId === null || stageplanId === '') {
+			throw 'Missing the required parameter "stageplanId" when calling postCasemanagementCaseplanStageplanReposition';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postCasemanagementCaseplanStageplanReposition';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId}/reposition', 
+			'POST', 
+			{ 'caseplanId': caseplanId,'stageplanId': stageplanId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Create a Stageplan on a draft Caseplan.
+	 * 
+	 * @param {String} caseplanId Caseplan identifier.
+	 * @param {Object} body Stageplan create request.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * postCasemanagementCaseplanStageplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postCasemanagementCaseplanStageplans(caseplanId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'caseplanId' is set
+		if (caseplanId === undefined || caseplanId === null || caseplanId === '') {
+			throw 'Missing the required parameter "caseplanId" when calling postCasemanagementCaseplanStageplans';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postCasemanagementCaseplanStageplans';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/casemanagement/caseplans/{caseplanId}/stageplans', 
+			'POST', 
+			{ 'caseplanId': caseplanId },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json'],

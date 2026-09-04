@@ -242,6 +242,7 @@ docs/deleteCasemanagementCase-example.txt
 docs/deleteCasemanagementCaseCommentsMeCommentId-example.txt
 docs/deleteCasemanagementCaseplan-example.txt
 docs/deleteCasemanagementCaseplanDataschema-example.txt
+docs/deleteCasemanagementCaseplanStageplan-example.txt
 docs/deleteChatsRoomMessage-example.txt
 docs/deleteChatsRoomMessagesPin-example.txt
 docs/deleteChatsRoomParticipant-example.txt
@@ -2570,6 +2571,8 @@ docs/postCasemanagementCaseComments-example.txt
 docs/postCasemanagementCaseTerminateJobs-example.txt
 docs/postCasemanagementCaseplanDataschemas-example.txt
 docs/postCasemanagementCaseplanPublish-example.txt
+docs/postCasemanagementCaseplanStageplanReposition-example.txt
+docs/postCasemanagementCaseplanStageplans-example.txt
 docs/postCasemanagementCaseplanVersions-example.txt
 docs/postCasemanagementCaseplans-example.txt
 docs/postCasemanagementCaseplansQuery-example.txt
@@ -2744,6 +2747,7 @@ docs/postExternalcontactsContactsEnrich-example.txt
 docs/postExternalcontactsContactsExports-example.txt
 docs/postExternalcontactsContactsMerge-example.txt
 docs/postExternalcontactsContactsSchemas-example.txt
+docs/postExternalcontactsContactsSearch-example.txt
 docs/postExternalcontactsExternalsources-example.txt
 docs/postExternalcontactsIdentifierlookup-example.txt
 docs/postExternalcontactsIdentifierlookupContacts-example.txt

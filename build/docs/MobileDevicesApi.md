@@ -6,11 +6,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteMobiledevice**](MobileDevicesApi#deleteMobiledevice) | **DELETE** /api/v2/mobiledevices/{deviceId} | Delete device
-[**getMobiledevice**](MobileDevicesApi#getMobiledevice) | **GET** /api/v2/mobiledevices/{deviceId} | Get device
-[**getMobiledevices**](MobileDevicesApi#getMobiledevices) | **GET** /api/v2/mobiledevices | Get a list of all devices.
-[**postMobiledevices**](MobileDevicesApi#postMobiledevices) | **POST** /api/v2/mobiledevices | Create User device
-[**putMobiledevice**](MobileDevicesApi#putMobiledevice) | **PUT** /api/v2/mobiledevices/{deviceId} | Update device
+[**deleteMobiledevice**](MobileDevicesApi#deleteMobiledevice) | **DELETE** /api/v2/mobiledevices/{deviceId} | (Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Delete device
+[**getMobiledevice**](MobileDevicesApi#getMobiledevice) | **GET** /api/v2/mobiledevices/{deviceId} | (Deprecated) Get device
+[**getMobiledevices**](MobileDevicesApi#getMobiledevices) | **GET** /api/v2/mobiledevices | (Deprecated) Get a list of all devices.
+[**postMobiledevices**](MobileDevicesApi#postMobiledevices) | **POST** /api/v2/mobiledevices | (Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Create User device
+[**putMobiledevice**](MobileDevicesApi#putMobiledevice) | **PUT** /api/v2/mobiledevices/{deviceId} | (Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Update device
 
 
 
@@ -18,10 +18,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 > void deleteMobiledevice(deviceId, opts)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 DELETE /api/v2/mobiledevices/{deviceId}
 
-Delete device
+(Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Delete device
 
 Requires NO permissions:
 
@@ -73,10 +76,13 @@ void (no response body)
 
 > UserDevice getMobiledevice(deviceId, opts)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/mobiledevices/{deviceId}
 
-Get device
+(Deprecated) Get device
 
 Requires NO permissions:
 
@@ -128,10 +134,13 @@ apiInstance.getMobiledevice(deviceId, opts)
 
 > DirectoryUserDevicesListing getMobiledevices(opts)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/mobiledevices
 
-Get a list of all devices.
+(Deprecated) Get a list of all devices.
 
 Requires NO permissions:
 
@@ -187,10 +196,13 @@ apiInstance.getMobiledevices(opts)
 
 > UserDevice postMobiledevices(body, opts)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/mobiledevices
 
-Create User device
+(Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Create User device
 
 Requires NO permissions:
 
@@ -242,10 +254,13 @@ apiInstance.postMobiledevices(body, opts)
 
 > UserDevice putMobiledevice(deviceId, opts)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 PUT /api/v2/mobiledevices/{deviceId}
 
-Update device
+(Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Update device
 
 Requires NO permissions:
 
@@ -295,4 +310,4 @@ apiInstance.putMobiledevice(deviceId, opts)
 **UserDevice**
 
 
-_purecloud-platform-client-v2@260.0.0_
+_purecloud-platform-client-v2@261.0.0_

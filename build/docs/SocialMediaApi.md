@@ -961,7 +961,7 @@ apiInstance.getSocialmediaTopic(topicId, opts)
 
 ## getSocialmediaTopicDataingestionrules
 
-> DataIngestionRuleResponseEntityListing getSocialmediaTopicDataingestionrules(topicId, opts)
+> GenericDataIngestionRuleResponseEntityListing getSocialmediaTopicDataingestionrules(topicId, opts)
 
 
 GET /api/v2/socialmedia/topics/{topicId}/dataingestionrules
@@ -1019,7 +1019,7 @@ apiInstance.getSocialmediaTopicDataingestionrules(topicId, opts)
 
 ### Return type
 
-**DataIngestionRuleResponseEntityListing**
+**GenericDataIngestionRuleResponseEntityListing**
 
 
 ## getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId
@@ -3539,4 +3539,4 @@ apiInstance.putSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId(t
 **TwitterDataIngestionRuleResponse**
 
 
-_purecloud-platform-client-v2@260.0.0_
+_purecloud-platform-client-v2@261.0.0_

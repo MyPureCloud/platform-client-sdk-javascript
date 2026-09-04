@@ -4710,4 +4710,4 @@ apiInstance.putQualitySurveysScorable(customerSurveyUrl, body, opts)
 **ScorableSurvey**
 
 
-_purecloud-platform-client-v2@260.0.0_
+_purecloud-platform-client-v2@261.0.0_
