@@ -1,394 +1,288 @@
-Platform API version: 10727
+Platform API version: 10747
 
 
 
 
-# Major Changes (11 changes)
+# Major Changes (19 changes)
 
-**GET /api/v2/businessrules/decisiontables/{tableId}/versions** (2 changes)
+**PATCH /api/v2/agentic/virtualagents/{virtualAgentId}/versions/{versionId}** (1 change)
 
-* Parameter status was added
-* Parameter hasSnapshot was added
+* Parameter validateOnly was added
 
-**GET /api/v2/conversations/messages/{messageId}/details** (1 change)
+**POST /api/v2/agentic/virtualagents/{virtualAgentId}/versions** (1 change)
 
-* Parameter useNormalizedMessage was removed
+* Parameter validateOnly was added
 
-**GET /api/v2/conversations/messages/{conversationId}/messages/{messageId}** (1 change)
+**GET /api/v2/mobiledevices/{deviceId}** (1 change)
 
-* Parameter useNormalizedMessage was removed
+* Has been deprecated
 
-**POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages** (1 change)
+**PUT /api/v2/mobiledevices/{deviceId}** (1 change)
 
-* Parameter useNormalizedMessage was removed
+* Has been deprecated
 
-**POST /api/v2/conversations/messages/{conversationId}/messages/bulk** (1 change)
+**DELETE /api/v2/mobiledevices/{deviceId}** (1 change)
 
-* Parameter useNormalizedMessage was removed
+* Has been deprecated
 
-**POST /api/v2/conversations/messages/agentless** (1 change)
+**GET /api/v2/mobiledevices** (1 change)
 
-* Parameter useNormalizedMessage was removed
+* Has been deprecated
 
-**MessageData** (2 changes)
+**POST /api/v2/mobiledevices** (1 change)
 
-* Property textBody was removed
-* Property media was removed
+* Has been deprecated
 
-**SendAgentlessOutboundMessageResponse** (2 changes)
+**GET /api/v2/socialmedia/topics/{topicId}/dataingestionrules** (1 change)
 
-* Property textBody was removed
-* Property messagingTemplate was removed
+* Response 200 type was changed from DataIngestionRuleResponseEntityListing to GenericDataIngestionRuleResponseEntityListing
+
+**DataIngestionRuleResponse** (1 change)
+
+* Model DataIngestionRuleResponse was removed
+
+**DataIngestionRuleResponseEntityListing** (1 change)
+
+* Model DataIngestionRuleResponseEntityListing was removed
+
+**AgentUtilizationAggregationSort** (1 change)
+
+* Model AgentUtilizationAggregationSort was removed
+
+**FacebookDataIngestionRuleResponse** (1 change)
+
+* Property countries was removed
+
+**FacebookDataIngestionRuleVersionResponse** (1 change)
+
+* Property countries was removed
+
+**InstagramDataIngestionRuleResponse** (1 change)
+
+* Property countries was removed
+
+**InstagramDataIngestionRuleVersionResponse** (1 change)
+
+* Property countries was removed
+
+**OpenDataIngestionRuleResponse** (1 change)
+
+* Property countries was removed
+
+**OpenDataIngestionRuleVersionResponse** (1 change)
+
+* Property countries was removed
+
+**GoogleBusinessProfileDataIngestionRuleResponse** (1 change)
+
+* Property countries was removed
+
+**GoogleBusinessProfileDataIngestionRuleVersionResponse** (1 change)
+
+* Property countries was removed
 
 
-# Minor Changes (111 changes)
+# Minor Changes (70 changes)
 
-**/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rollback** (2 changes)
+**/api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId}** (1 change)
 
-* Path was added
-* Operation POST was added
+* Operation delete was added. Summary: Delete a Stageplan from a draft Caseplan.
 
-**/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/snapshot** (3 changes)
-
-* Path was added
-* Operation POST was added
-* Operation DELETE was added
-
-**/api/v2/businessrules/schemas/{schemaId}/versions/{schemaVersion}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/businessrules/schemas/{schemaId}/versions** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/telephony/prefixes** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/telephony/prefixes/bulk** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/telephony/prefixes/simulate/call** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/fax/{faxId}/status** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/telephony/providers/edges/{edgeId}/offlineconfiguration** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/telephony/providers/edges/trunkbasesettings/site/{siteId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/telephony/providers/edges/trunkbasesettings/search** (2 changes)
+**/api/v2/externalcontacts/contacts/search** (2 changes)
 
 * Path was added
 * Operation POST was added
 
-**/api/v2/telephony/providers/edges/trunks/search** (2 changes)
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/query/jobs** (1 change)
+
+* Response 202 was added
+
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/evaluate/jobs** (1 change)
+
+* Response 202 was added
+
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/weeks/summary/jobs** (1 change)
+
+* Response 202 was added
+
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/unmatched/search/jobs** (1 change)
+
+* Response 202 was added
+
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/state/bulk/jobs** (1 change)
+
+* Response 202 was added
+
+**POST /api/v2/workforcemanagement/shifttrading/trades/mine/query/jobs** (1 change)
+
+* Response 202 was added
+
+**POST /api/v2/workforcemanagement/shifttrading/trades/{tradeId}/jobs** (1 change)
+
+* Response 202 was added
+
+**POST /api/v2/workforcemanagement/shifttrading/trades/{tradeId}/state/jobs** (1 change)
+
+* Response 202 was added
+
+**POST /api/v2/workforcemanagement/shifttrading/trades/{tradeId}/match/jobs** (1 change)
+
+* Response 202 was added
+
+**/api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId}/reposition** (2 changes)
 
 * Path was added
 * Operation POST was added
 
-**/api/v2/externalcontacts/graphs/clusterscans/{scanId}/clusters/{clusterId}** (2 changes)
+**/api/v2/casemanagement/caseplans/{caseplanId}/stageplans** (2 changes)
 
 * Path was added
-* Operation GET was added
+* Operation POST was added
 
-**/api/v2/externalcontacts/graphs/clusterscans/{scanId}/clusters** (2 changes)
+**AnalyticsAgentStateAgentResponse** (8 changes)
 
-* Path was added
-* Operation GET was added
+* Optional property managementUnitId was added
+* Optional property businessUnitId was added
+* Optional property adherenceState was added
+* Optional property adherenceImpact was added
+* Optional property adherenceDate was added
+* Optional property scheduledActivityCodeId was added
+* Optional property scheduledActivityCategory was added
+* Optional property actualActivityCategory was added
 
-**/api/v2/externalcontacts/graphs/clusterscans/{scanId}** (2 changes)
+**AnalyticsAgentStateCountsResponse** (3 changes)
 
-* Path was added
-* Operation GET was added
+* Optional property adherenceStateCounts was added
+* Optional property scheduledActivityCategoryCounts was added
+* Optional property actualActivityCategoryCounts was added
 
-**/api/v2/externalcontacts/graphs/clusterscans/{scanId}/statistics** (2 changes)
+**ConversationAggregationQuery** (2 changes)
 
-* Path was added
-* Operation GET was added
+* Enum value nAgentDeclined was added to property metrics
+* Enum value nAlertExpired was added to property metrics
 
-**/api/v2/externalcontacts/graphs/clusterscans** (2 changes)
+**ConversationAggregationSort** (2 changes)
 
-* Path was added
-* Operation GET was added
+* Enum value nAgentDeclined was added to property name
+* Enum value nAlertExpired was added to property name
 
-**/api/v2/externalcontacts/graphs/settings** (3 changes)
+**ConversationAggregationView** (2 changes)
 
-* Path was added
-* Operation GET was added
-* Operation PUT was added
+* Enum value nAgentDeclined was added to property target
+* Enum value nAlertExpired was added to property target
 
-**/api/v2/externalcontacts/graphs/clusterscans/latest** (2 changes)
+**ConversationAsyncAggregationQuery** (2 changes)
 
-* Path was added
-* Operation GET was added
+* Enum value nAgentDeclined was added to property metrics
+* Enum value nAlertExpired was added to property metrics
 
-**/api/v2/externalcontacts/graphs/clusterscans/latest/statistics** (2 changes)
+**ConversationDetailQueryPredicate** (2 changes)
 
-* Path was added
-* Operation GET was added
+* Enum value nAgentDeclined was added to property metric
+* Enum value nAlertExpired was added to property metric
 
-**/api/v2/externalcontacts/graphs/clusterscans/{scanId}/clusters/{clusterId}/merge** (2 changes)
+**ViewFilter** (4 changes)
 
-* Path was added
-* Operation PUT was added
+* Optional property socialEngagementLikes was added
+* Optional property socialEngagementShares was added
+* Optional property socialEngagementComments was added
+* Optional property socialEngagementViews was added
 
-**CopilotCondition** (1 change)
-
-* Enum value Sentiment was added to property conditionType
-
-**CopilotSentimentSettings** (1 change)
-
-* Model was added
-
-**Group** (1 change)
-
-* Optional property email was added
-
-**DecisionTable** (1 change)
-
-* Optional property snapshotCount was added
-
-**DecisionTableVersion** (2 changes)
-
-* Optional property rollbackReason was added
-* Optional property snapshot was added
-
-**RollbackDecisionTableVersionRequest** (1 change)
+**ContactSearchOperation** (1 change)
 
 * Model was added
 
-**CreateDecisionTableSnapshotRequest** (1 change)
+**ContactSearchRequest** (1 change)
 
 * Model was added
 
-**PrefixListing** (1 change)
+**ContactSimpleSearch** (1 change)
 
 * Model was added
 
-**PrefixListingItem** (1 change)
+**SendAgentlessOutboundMessageRequest** (1 change)
+
+* Optional property externalContactId was added
+
+**RecordingMessagingMessage** (1 change)
+
+* Optional property notificationResponse was added
+
+**GenericDataIngestionRuleResponse** (1 change)
 
 * Model was added
 
-**BulkEntityErrorPrefix** (1 change)
+**GenericDataIngestionRuleResponseEntityListing** (1 change)
 
 * Model was added
 
-**BulkPrefixesResponse** (1 change)
+**AllocationOutputsTemplate** (1 change)
 
 * Model was added
 
-**BulkResponseResultPrefixPrefixBulkEntityErrorPrefix** (1 change)
+**AllocationResultsTemplate** (1 change)
 
 * Model was added
 
-**Prefix** (1 change)
+**WorkitemOnAttributeChangeCondition** (9 changes)
+
+* Enum value priority was added to property attribute
+* Enum value queueId was added to property attribute
+* Enum value assigneeId was added to property attribute
+* Enum value assignmentState was added to property attribute
+* Enum value languageId was added to property attribute
+* Enum value externalTag was added to property attribute
+* Enum value wrapup was added to property attribute
+* Optional property operator was added
+* Optional property value was added
+
+**WorkitemOnAttributeChangeConditionUpdate** (9 changes)
+
+* Enum value priority was added to property attribute
+* Enum value queueId was added to property attribute
+* Enum value assigneeId was added to property attribute
+* Enum value assignmentState was added to property attribute
+* Enum value languageId was added to property attribute
+* Enum value externalTag was added to property attribute
+* Enum value wrapup was added to property attribute
+* Optional property operator was added
+* Optional property value was added
+
+**StageplanReposition** (1 change)
 
 * Model was added
 
-**BulkPrefixesRequest** (1 change)
-
-* Model was added
-
-**CallSimulationResult** (1 change)
-
-* Model was added
-
-**SuggestionContext** (1 change)
-
-* Optional property participantType was added
-
-**Duration** (1 change)
-
-* Optional property positive was added
-
-**GroupUpdate** (1 change)
-
-* Optional property email was added
-
-**GroupCreate** (1 change)
-
-* Optional property email was added
-
-**OutboundFaxStatus** (1 change)
-
-* Model was added
-
-**TrustGroup** (1 change)
-
-* Optional property email was added
-
-**AlertRuleProperties** (1 change)
-
-* Enum value Anomaly was added to property type
-
-**CommonRulePredicate** (1 change)
-
-* Optional property characteristic was added
-
-**GetAlertQuery** (3 changes)
-
-* Enum value WorkforceManagement was added to property ruleType
-* Enum value OperationalConsole was added to property ruleType
-* Enum value Anomaly was added to property ruleType
-
-**CommonRule** (1 change)
-
-* Enum value Anomaly was added to property type
-
-**GetRulesQuery** (3 changes)
-
-* Enum value WorkforceManagement was added to property ruleType
-* Enum value OperationalConsole was added to property ruleType
-* Enum value Anomaly was added to property ruleType
-
-**DataIngestionRuleCriteria** (1 change)
-
-* Enum value LinkedIn was added to property effectivePlatform
-
-**EdgeOfflineConfigurationResponse** (1 change)
-
-* Model was added
-
-**EdgeOfflineConfiguration** (1 change)
-
-* Model was added
-
-**EdgeOfflineConfigurationInterface** (1 change)
-
-* Model was added
-
-**EdgeOfflineConfigurationNetwork** (1 change)
-
-* Model was added
-
-**TrunkBasesSearchResponse** (1 change)
-
-* Model was added
-
-**TelephonySearchCriteria** (1 change)
-
-* Model was added
-
-**TelephonySearchRequest** (1 change)
-
-* Model was added
-
-**TrunkInstanceSearchResponse** (1 change)
-
-* Model was added
-
-**SchedulingSettingsResponse** (1 change)
-
-* Optional property scheduleVisibility was added
-
-**SchedulingSettingsRequest** (1 change)
-
-* Optional property scheduleVisibility was added
-
-**UserStaffingGroupResponse** (2 changes)
-
-* Optional property startDate was added
-* Optional property endDate was added
-
-**ActivityPlanJobException** (6 changes)
-
-* Enum value InvalidUserIds was added to property exceptionType
-* Enum value InvalidFacilitatorId was added to property exceptionType
-* Enum value RuleError was added to property exceptionType
-* Enum value InvalidOccurrence was added to property exceptionType
-* Enum value NoScheduleFound was added to property exceptionType
-* Enum value SessionUsersNotRemoved was added to property exceptionType
-
-**CapacityPlanImportedForecast** (1 change)
-
-* Model was added
-
-**CapacityPlanImportedForecastRequest** (1 change)
-
-* Model was added
-
-**ValueWrapperCapacityPlanImportedForecastRequest** (1 change)
-
-* Model was added
-
-**Cluster** (1 change)
-
-* Model was added
-
-**ClusterScan** (1 change)
-
-* Model was added
-
-**ClusterScanStatistics** (1 change)
-
-* Model was added
-
-**ClusterStatistics** (1 change)
-
-* Model was added
-
-**ContactVertex** (1 change)
-
-* Model was added
-
-**Graph** (1 change)
-
-* Model was added
-
-**GraphEdge** (1 change)
-
-* Model was added
-
-**GraphVertices** (1 change)
-
-* Model was added
-
-**IdentifierVertex** (1 change)
-
-* Model was added
-
-**MergeError** (1 change)
-
-* Model was added
-
-**MergeInfo** (1 change)
-
-* Model was added
-
-**ClusterList** (1 change)
-
-* Model was added
-
-**ClusterScanList** (1 change)
-
-* Model was added
-
-**GraphSettings** (1 change)
+**StageplanCreate** (1 change)
 
 * Model was added
 
 
-# Point Changes (2 changes)
+# Point Changes (7 changes)
 
-**PATCH /api/v2/alerting/alerts/{alertId}** (2 changes)
+**PATCH /api/v2/agentic/virtualagents/{virtualAgentId}/versions/{versionId}** (1 change)
 
 * Description was changed
+
+**POST /api/v2/agentic/virtualagents/{virtualAgentId}/versions** (1 change)
+
+* Description was changed
+
+**GET /api/v2/mobiledevices/{deviceId}** (1 change)
+
+* Summary was changed
+
+**PUT /api/v2/mobiledevices/{deviceId}** (1 change)
+
+* Summary was changed
+
+**DELETE /api/v2/mobiledevices/{deviceId}** (1 change)
+
+* Summary was changed
+
+**GET /api/v2/mobiledevices** (1 change)
+
+* Summary was changed
+
+**POST /api/v2/mobiledevices** (1 change)
+
 * Summary was changed

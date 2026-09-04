@@ -117,6 +117,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postExternalcontactsContactsExports**](ExternalContactsApi#postExternalcontactsContactsExports) | **POST** /api/v2/externalcontacts/contacts/exports | Create bulk export
 [**postExternalcontactsContactsMerge**](ExternalContactsApi#postExternalcontactsContactsMerge) | **POST** /api/v2/externalcontacts/contacts/merge | Merge up to 25 contacts into a new contact record
 [**postExternalcontactsContactsSchemas**](ExternalContactsApi#postExternalcontactsContactsSchemas) | **POST** /api/v2/externalcontacts/contacts/schemas | Create a schema
+[**postExternalcontactsContactsSearch**](ExternalContactsApi#postExternalcontactsContactsSearch) | **POST** /api/v2/externalcontacts/contacts/search | Search for external contacts
 [**postExternalcontactsExternalsources**](ExternalContactsApi#postExternalcontactsExternalsources) | **POST** /api/v2/externalcontacts/externalsources | Create an External Source
 [**postExternalcontactsIdentifierlookup**](ExternalContactsApi#postExternalcontactsIdentifierlookup) | **POST** /api/v2/externalcontacts/identifierlookup | Fetch a contact using an identifier type and value.
 [**postExternalcontactsIdentifierlookupContacts**](ExternalContactsApi#postExternalcontactsIdentifierlookupContacts) | **POST** /api/v2/externalcontacts/identifierlookup/contacts | Fetch a contact using an identifier type and value.
@@ -6734,6 +6735,63 @@ apiInstance.postExternalcontactsContactsSchemas(body, opts)
 **DataSchema**
 
 
+## postExternalcontactsContactsSearch
+
+> ContactListing postExternalcontactsContactsSearch(body, opts)
+
+
+POST /api/v2/externalcontacts/contacts/search
+
+Search for external contacts
+
+Requires ANY permissions:
+
+* externalContacts:contact:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let body = {}; // Object | Search request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postExternalcontactsContactsSearch(body, opts)
+  .then((data) => {
+    console.log(`postExternalcontactsContactsSearch success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postExternalcontactsContactsSearch');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Search request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ContactListing**
+
+
 ## postExternalcontactsExternalsources
 
 > ExternalSource postExternalcontactsExternalsources(body, opts)
@@ -8693,4 +8751,4 @@ apiInstance.putExternalcontactsRelationship(relationshipId, body, opts)
 **Relationship**
 
 
-_purecloud-platform-client-v2@260.0.0_
+_purecloud-platform-client-v2@261.0.0_
