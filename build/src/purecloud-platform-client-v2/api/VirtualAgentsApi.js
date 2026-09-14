@@ -5,7 +5,7 @@ class VirtualAgentsApi {
 	/**
 	 * VirtualAgents service.
 	 * @module purecloud-platform-client-v2/api/VirtualAgentsApi
-	 * @version 261.0.0
+	 * @version 262.0.0
 	 */
 
 	/**

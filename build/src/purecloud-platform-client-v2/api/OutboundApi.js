@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 261.0.0
+	 * @version 262.0.0
 	 */
 
 	/**
@@ -1953,6 +1953,8 @@ class OutboundApi {
 	 * @param {String} opts.name Name
 	 * @param {Array.<String>} opts.id id
 	 * @param {Array.<String>} opts.divisionId Division ID(s)
+	 * @param {String} opts.timeZone Filter by time zone
+	 * @param {Array.<String>} opts.dateExpiration Filter by expiration date. Supports filter type prefixes, e.g. greaterthan:2025-01-01T00:00:00Z. Multiple values narrow the range. See https://developer.genesys.cloud/routing/outbound/filter-type
 	 * @param {String} opts.sortBy Sort by
 	 * @param {Object} opts.sortOrder Sort order (default to a)
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
@@ -1965,7 +1967,7 @@ class OutboundApi {
 			'/api/v2/outbound/contactlists', 
 			'GET', 
 			{  },
-			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
+			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'timeZone': opts['timeZone'],'dateExpiration': this.apiClient.buildCollectionParam(opts['dateExpiration'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
 			{  },
 			{  },
 			null, 
@@ -2081,6 +2083,7 @@ class OutboundApi {
 	 * @param {Boolean} opts.allowEmptyResult Whether to return an empty page when there are no results for that page (default to false)
 	 * @param {Object} opts.filterType Filter type (default to Prefix)
 	 * @param {String} opts.name Name
+	 * @param {String} opts.timeZone Filter by time zone
 	 * @param {String} opts.sortBy Sort by
 	 * @param {Object} opts.sortOrder Sort order (default to a)
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
@@ -2093,7 +2096,7 @@ class OutboundApi {
 			'/api/v2/outbound/contactlisttemplates', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'timeZone': opts['timeZone'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
 			{  },
 			{  },
 			null, 
@@ -4151,6 +4154,36 @@ class OutboundApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/outbound/contactlists', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Bulk update contact lists.
+	 * A maximum of 100 contact lists can be updated per request.
+	 * @param {Object} body Contact lists bulk edit request.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postOutboundContactlistsBulkUpdate(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postOutboundContactlistsBulkUpdate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/contactlists/bulk/update', 
 			'POST', 
 			{  },
 			{  },

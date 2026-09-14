@@ -5,7 +5,7 @@ class CaseManagementApi {
 	/**
 	 * CaseManagement service.
 	 * @module purecloud-platform-client-v2/api/CaseManagementApi
-	 * @version 261.0.0
+	 * @version 262.0.0
 	 */
 
 	/**
@@ -908,7 +908,6 @@ class CaseManagementApi {
 	 * @param {String} jobId Job ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getCasemanagementCasesQueryJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCasesQueryJob(jobId, opts) { 
 		opts = opts || {};
@@ -939,7 +938,6 @@ class CaseManagementApi {
 	 * @param {String} jobId Job ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getCasemanagementCasesQueryJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCasesQueryJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -1037,7 +1035,6 @@ class CaseManagementApi {
 	 * @param {Object} body OwnerId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * patchCasemanagementCaseOwner is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchCasemanagementCaseOwner(caseId, body, opts) { 
 		opts = opts || {};
@@ -1654,7 +1651,6 @@ class CaseManagementApi {
 	 * @param {Object} body Case query job create request.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postCasemanagementCasesQueryJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postCasemanagementCasesQueryJobs(body, opts) { 
 		opts = opts || {};

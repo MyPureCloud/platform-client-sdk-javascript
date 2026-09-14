@@ -2848,6 +2848,7 @@ let opts = {
   'includeMediaUris': true, // Boolean | Include the media URIs for each resource
   'includeResources': true, // Boolean | Include the resources for each system prompt
   'language': ["language_example"], // [String] | Filter the resources down to the provided languages
+  'divisionId': ["divisionId_example"], // [String] | division ID(s)
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
     'X-Request-ID': 'req-12345'
@@ -2879,6 +2880,7 @@ apiInstance.getArchitectPrompts(opts)
  **includeMediaUris** | **Boolean** | Include the media URIs for each resource | [optional] [default to true] |
  **includeResources** | **Boolean** | Include the resources for each system prompt | [optional] [default to true] |
  **language** | **[String]** | Filter the resources down to the provided languages | [optional]  |
+ **divisionId** | **[String]** | division ID(s) | [optional]  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -8398,7 +8400,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let opts = { 
-  'body': null, // Object | 
+  'body': {}, // Object | 
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
     'X-Request-ID': 'req-12345'
@@ -9510,4 +9512,4 @@ apiInstance.putFlowsOutcome(flowOutcomeId, opts)
 **Operation**
 
 
-_purecloud-platform-client-v2@261.0.0_
+_purecloud-platform-client-v2@262.0.0_

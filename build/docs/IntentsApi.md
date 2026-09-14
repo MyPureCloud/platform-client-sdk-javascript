@@ -985,8 +985,6 @@ POST /api/v2/intents/customerintents/bulk/retrieve
 
 Get customer intents by IDs
 
-postIntentsCustomerintentsBulkRetrieve is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * externalContacts:customerIntentTaxonomy:view
@@ -1035,4 +1033,4 @@ apiInstance.postIntentsCustomerintentsBulkRetrieve(body, opts)
 **[CustomerIntentResponse]**
 
 
-_purecloud-platform-client-v2@261.0.0_
+_purecloud-platform-client-v2@262.0.0_

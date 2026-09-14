@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 261.0.0
+	 * @version 262.0.0
 	 */
 
 	/**
@@ -1425,6 +1425,7 @@ class ArchitectApi {
 	 * @param {Boolean} opts.includeMediaUris Include the media URIs for each resource (default to true)
 	 * @param {Boolean} opts.includeResources Include the resources for each system prompt (default to true)
 	 * @param {Array.<String>} opts.language Filter the resources down to the provided languages
+	 * @param {Array.<String>} opts.divisionId division ID(s)
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getArchitectPrompts(opts) { 
@@ -1435,7 +1436,7 @@ class ArchitectApi {
 			'/api/v2/architect/prompts', 
 			'GET', 
 			{  },
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': this.apiClient.buildCollectionParam(opts['name'], 'multi'),'description': opts['description'],'nameOrDescription': opts['nameOrDescription'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'includeMediaUris': opts['includeMediaUris'],'includeResources': opts['includeResources'],'language': this.apiClient.buildCollectionParam(opts['language'], 'multi') },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': this.apiClient.buildCollectionParam(opts['name'], 'multi'),'description': opts['description'],'nameOrDescription': opts['nameOrDescription'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'includeMediaUris': opts['includeMediaUris'],'includeResources': opts['includeResources'],'language': this.apiClient.buildCollectionParam(opts['language'], 'multi'),'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
 			{  },
 			{  },
 			null, 

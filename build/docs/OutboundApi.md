@@ -139,6 +139,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postOutboundContactlistfiltersBulkRetrieve**](OutboundApi#postOutboundContactlistfiltersBulkRetrieve) | **POST** /api/v2/outbound/contactlistfilters/bulk/retrieve | Retrieve multiple contact list filters
 [**postOutboundContactlistfiltersPreview**](OutboundApi#postOutboundContactlistfiltersPreview) | **POST** /api/v2/outbound/contactlistfilters/preview | Get a preview of the output of a contact list filter
 [**postOutboundContactlists**](OutboundApi#postOutboundContactlists) | **POST** /api/v2/outbound/contactlists | Create a contact List.
+[**postOutboundContactlistsBulkUpdate**](OutboundApi#postOutboundContactlistsBulkUpdate) | **POST** /api/v2/outbound/contactlists/bulk/update | Bulk update contact lists.
 [**postOutboundContactlistsUploads**](OutboundApi#postOutboundContactlistsUploads) | **POST** /api/v2/outbound/contactlists/uploads | Generate presigned upload URL for contact list.
 [**postOutboundContactlisttemplates**](OutboundApi#postOutboundContactlisttemplates) | **POST** /api/v2/outbound/contactlisttemplates | Create Contact List Template
 [**postOutboundContactlisttemplatesBulkAdd**](OutboundApi#postOutboundContactlisttemplatesBulkAdd) | **POST** /api/v2/outbound/contactlisttemplates/bulk/add | Add multiple contact list templates
@@ -3953,6 +3954,8 @@ let opts = {
   'name': "name_example", // String | Name
   'id': ["id_example"], // [String] | id
   'divisionId': ["divisionId_example"], // [String] | Division ID(s)
+  'timeZone': "timeZone_example", // String | Filter by time zone
+  'dateExpiration': ["dateExpiration_example"], // [String] | Filter by expiration date. Supports filter type prefixes, e.g. greaterthan:2025-01-01T00:00:00Z. Multiple values narrow the range. See https://developer.genesys.cloud/routing/outbound/filter-type
   'sortBy': "sortBy_example", // String | Sort by
   'sortOrder': "a", // String | Sort order
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
@@ -3985,6 +3988,8 @@ apiInstance.getOutboundContactlists(opts)
  **name** | **String** | Name | [optional]  |
  **id** | **[String]** | id | [optional]  |
  **divisionId** | **[String]** | Division ID(s) | [optional]  |
+ **timeZone** | **String** | Filter by time zone | [optional]  |
+ **dateExpiration** | **[String]** | Filter by expiration date. Supports filter type prefixes, e.g. greaterthan:2025-01-01T00:00:00Z. Multiple values narrow the range. See https://developer.genesys.cloud/routing/outbound/filter-type | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
@@ -4221,6 +4226,7 @@ let opts = {
   'allowEmptyResult': false, // Boolean | Whether to return an empty page when there are no results for that page
   'filterType': "Prefix", // String | Filter type
   'name': "name_example", // String | Name
+  'timeZone': "timeZone_example", // String | Filter by time zone
   'sortBy': "sortBy_example", // String | Sort by
   'sortOrder': "a", // String | Sort order
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
@@ -4249,6 +4255,7 @@ apiInstance.getOutboundContactlisttemplates(opts)
  **allowEmptyResult** | **Boolean** | Whether to return an empty page when there are no results for that page | [optional] [default to false] |
  **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
  **name** | **String** | Name | [optional]  |
+ **timeZone** | **String** | Filter by time zone | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
@@ -8251,6 +8258,65 @@ apiInstance.postOutboundContactlists(body, opts)
 **ContactList**
 
 
+## postOutboundContactlistsBulkUpdate
+
+> ContactListsBulkEditResponse postOutboundContactlistsBulkUpdate(body, opts)
+
+
+POST /api/v2/outbound/contactlists/bulk/update
+
+Bulk update contact lists.
+
+A maximum of 100 contact lists can be updated per request.
+
+Requires ANY permissions:
+
+* outbound:contactList:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let body = {}; // Object | Contact lists bulk edit request.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postOutboundContactlistsBulkUpdate(body, opts)
+  .then((data) => {
+    console.log(`postOutboundContactlistsBulkUpdate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOutboundContactlistsBulkUpdate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Contact lists bulk edit request. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ContactListsBulkEditResponse**
+
+
 ## postOutboundContactlistsUploads
 
 > UploadUrlResponse postOutboundContactlistsUploads(body, opts)
@@ -10784,4 +10850,4 @@ apiInstance.putOutboundWrapupcodemappings(body, opts)
 **WrapUpCodeMapping**
 
 
-_purecloud-platform-client-v2@261.0.0_
+_purecloud-platform-client-v2@262.0.0_

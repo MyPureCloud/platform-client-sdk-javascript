@@ -761,7 +761,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.PresenceApi();
 
-let userId = "userId_example"; // String | user Id
+let userId = "userId_example"; // String | User ID (UUID)
 let sourceId = "sourceId_example"; // String | Presence source ID
 let opts = { 
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
@@ -785,7 +785,7 @@ apiInstance.getUserPresence(userId, sourceId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String** | user Id |  |
+ **userId** | **String** | User ID (UUID) |  |
  **sourceId** | **String** | Presence source ID |  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
@@ -820,7 +820,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.PresenceApi();
 
-let userId = "userId_example"; // String | user Id
+let userId = "userId_example"; // String | User ID (UUID)
 let opts = { 
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
@@ -843,7 +843,7 @@ apiInstance.getUserPresencesPurecloud(userId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String** | user Id |  |
+ **userId** | **String** | User ID (UUID) |  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -989,7 +989,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.PresenceApi();
 
-let userId = "userId_example"; // String | user Id
+let userId = "userId_example"; // String | User ID (UUID)
 let sourceId = "sourceId_example"; // String | Presence source ID
 let body = {}; // Object | User presence
 let opts = { 
@@ -1014,7 +1014,7 @@ apiInstance.patchUserPresence(userId, sourceId, body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String** | user Id |  |
+ **userId** | **String** | User ID (UUID) |  |
  **sourceId** | **String** | Presence source ID |  |
  **body** | **Object** | User presence |  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
@@ -1050,7 +1050,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.PresenceApi();
 
-let userId = "userId_example"; // String | user Id
+let userId = "userId_example"; // String | User ID (UUID)
 let body = {}; // Object | User presence
 let opts = { 
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
@@ -1074,7 +1074,7 @@ apiInstance.patchUserPresencesPurecloud(userId, body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String** | user Id |  |
+ **userId** | **String** | User ID (UUID) |  |
  **body** | **Object** | User presence |  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
@@ -1610,4 +1610,4 @@ apiInstance.putUsersPresencesBulk(body, opts)
 **[UserPresence]**
 
 
-_purecloud-platform-client-v2@261.0.0_
+_purecloud-platform-client-v2@262.0.0_

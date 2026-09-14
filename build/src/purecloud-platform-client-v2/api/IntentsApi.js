@@ -5,7 +5,7 @@ class IntentsApi {
 	/**
 	 * Intents service.
 	 * @module purecloud-platform-client-v2/api/IntentsApi
-	 * @version 261.0.0
+	 * @version 262.0.0
 	 */
 
 	/**
@@ -537,7 +537,6 @@ class IntentsApi {
 	 * @param {Object} body Customer intent IDs to retrieve
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postIntentsCustomerintentsBulkRetrieve is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postIntentsCustomerintentsBulkRetrieve(body, opts) { 
 		opts = opts || {};

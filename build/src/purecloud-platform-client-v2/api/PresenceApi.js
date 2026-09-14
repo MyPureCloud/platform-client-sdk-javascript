@@ -5,7 +5,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 261.0.0
+	 * @version 262.0.0
 	 */
 
 	/**
@@ -371,7 +371,7 @@ class PresenceApi {
 	/**
 	 * Get a user's Presence
 	 * Get a users presence for the specified source that is not specifically listed.  Used to support custom presence sources. This endpoint does not support registered presence sources.
-	 * @param {String} userId user Id
+	 * @param {String} userId User ID (UUID)
 	 * @param {String} sourceId Presence source ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
@@ -406,7 +406,7 @@ class PresenceApi {
 	/**
 	 * Get a user's Genesys Cloud presence.
 	 * Get the default Genesys Cloud user presence source PURECLOUD
-	 * @param {String} userId user Id
+	 * @param {String} userId User ID (UUID)
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
@@ -493,7 +493,7 @@ class PresenceApi {
 	/**
 	 * Patch a user's Presence
 	 * Patch a users presence for the specified source that is not specifically listed. This endpoint does not support registered presence sources. The presence object can be patched one of three ways. Option 1: Set the primary property to true. This will set the source defined in the path as the users primary presence source. Option 2: Provide the presenceDefinition value. The id is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
-	 * @param {String} userId user Id
+	 * @param {String} userId User ID (UUID)
 	 * @param {String} sourceId Presence source ID
 	 * @param {Object} body User presence
 	 * @param {Object} opts Optional parameters
@@ -533,7 +533,7 @@ class PresenceApi {
 	/**
 	 * Patch a Genesys Cloud user's presence
 	 * The presence object can be patched one of three ways. Option 1: Set the primary property to true. This will set the PURECLOUD source as the users primary presence source. Option 2: Provide the presenceDefinition value. The id is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
-	 * @param {String} userId user Id
+	 * @param {String} userId User ID (UUID)
 	 * @param {Object} body User presence
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers

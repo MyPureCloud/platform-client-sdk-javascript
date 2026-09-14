@@ -244,4 +244,4 @@ apiInstance.postUsageEventsQuery(opts)
 **EventQueryResponse**
 
 
-_purecloud-platform-client-v2@261.0.0_
+_purecloud-platform-client-v2@262.0.0_

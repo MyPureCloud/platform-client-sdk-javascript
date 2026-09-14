@@ -174,7 +174,7 @@ let apiInstance = new platformClient.BillingApi();
 let opts = { 
   'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
-  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 10.
   'dateStart': "dateStart_example", // String | Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
   'dateEnd': "dateEnd_example", // String | End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
   'status': "status_example", // String | Filter by the status of contracts
@@ -202,7 +202,7 @@ apiInstance.getBillingContracts(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
- **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **pageSize** | **String** | Number of entities to return. Maximum of 10. | [optional]  |
  **dateStart** | **String** | Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
  **dateEnd** | **String** | End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
  **status** | **String** | Filter by the status of contracts | [optional] <br />**Values**: Active, Inactive |
@@ -536,4 +536,4 @@ apiInstance.getBillingTrusteebillingoverviewTrustorOrgId(trustorOrgId, opts)
 **TrusteeBillingOverview**
 
 
-_purecloud-platform-client-v2@261.0.0_
+_purecloud-platform-client-v2@262.0.0_

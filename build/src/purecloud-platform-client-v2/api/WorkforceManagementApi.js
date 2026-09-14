@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 261.0.0
+	 * @version 262.0.0
 	 */
 
 	/**
@@ -2531,6 +2531,37 @@ class WorkforceManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get business unit scheduling preferences settings
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * getWorkforcemanagementBusinessunitSchedulingpreferencesSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getWorkforcemanagementBusinessunitSchedulingpreferencesSettings(businessUnitId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitSchedulingpreferencesSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulingpreferences/settings', 
 			'GET', 
 			{ 'businessUnitId': businessUnitId },
 			{  },
@@ -5107,6 +5138,32 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Get scheduling preferences settings for the agent's business unit
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * getWorkforcemanagementSchedulingpreferencesSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getWorkforcemanagementSchedulingpreferencesSettings(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/schedulingpreferences/settings', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Gets all of my shift trades
 	 * Deprecated. Use new route instead (/shifttrading/trades/mine/query/jobs)
 	 * @param {Object} opts Optional parameters
@@ -6294,6 +6351,42 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Update business unit scheduling preferences settings
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * patchWorkforcemanagementBusinessunitSchedulingpreferencesSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	patchWorkforcemanagementBusinessunitSchedulingpreferencesSettings(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitSchedulingpreferencesSettings';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitSchedulingpreferencesSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulingpreferences/settings', 
+			'PATCH', 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Updates a service goal template
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit.
@@ -6983,6 +7076,37 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Update agent scheduling preferences
+	 * 
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * patchWorkforcemanagementSchedulingpreferences is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	patchWorkforcemanagementSchedulingpreferences(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchWorkforcemanagementSchedulingpreferences';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/schedulingpreferences', 
+			'PATCH', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Update a time off request for the current user
 	 * 
 	 * @param {String} timeOffRequestId The ID of the time off request
@@ -7301,6 +7425,42 @@ class WorkforceManagementApi {
 			'POST', 
 			{ 'agentId': agentId },
 			{ 'forceAsync': opts['forceAsync'],'forceDownloadService': opts['forceDownloadService'] },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get agent scheduling preferences
+	 * 
+	 * @param {String} agentId The ID of the agent
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * postWorkforcemanagementAgentSchedulingpreferencesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postWorkforcemanagementAgentSchedulingpreferencesQuery(agentId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'agentId' is set
+		if (agentId === undefined || agentId === null || agentId === '') {
+			throw 'Missing the required parameter "agentId" when calling postWorkforcemanagementAgentSchedulingpreferencesQuery';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementAgentSchedulingpreferencesQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/agents/{agentId}/schedulingpreferences/query', 
+			'POST', 
+			{ 'agentId': agentId },
+			{  },
 			{  },
 			{  },
 			body, 
@@ -11468,6 +11628,37 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Get agent scheduling preferences
+	 * 
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * postWorkforcemanagementSchedulingpreferencesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postWorkforcemanagementSchedulingpreferencesQuery(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementSchedulingpreferencesQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/schedulingpreferences/query', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Updates a shift trade. This route can only be called by the initiating user
 	 * 
 	 * @param {String} tradeId The ID of the shift trade to update
@@ -11906,6 +12097,36 @@ class WorkforceManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/unavailabletimes/validation/jobs', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get a list of UserScheduleAdherence records for the requested users
+	 * 
+	 * @param {Object} body Request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementUsersActivity(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementUsersActivity';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/users/activity', 
 			'POST', 
 			{  },
 			{  },
