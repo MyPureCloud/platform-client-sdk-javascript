@@ -1597,8 +1597,6 @@ GET /api/v2/casemanagement/cases/query/jobs/{jobId}
 
 Get a case query job by id
 
-getCasemanagementCasesQueryJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * caseManagement:queryJob:view
@@ -1655,8 +1653,6 @@ apiInstance.getCasemanagementCasesQueryJob(jobId, opts)
 GET /api/v2/casemanagement/cases/query/jobs/{jobId}/results
 
 Get results for a case query job
-
-getCasemanagementCasesQueryJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -1832,8 +1828,6 @@ apiInstance.patchCasemanagementCaseDatedue(caseId, body, opts)
 PATCH /api/v2/casemanagement/cases/{caseId}/owner
 
 Update the ownerId of a Case
-
-patchCasemanagementCaseOwner is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -2897,8 +2891,6 @@ POST /api/v2/casemanagement/cases/query/jobs
 
 Create a Case query job.
 
-postCasemanagementCasesQueryJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * caseManagement:queryJob:add
@@ -3067,4 +3059,4 @@ apiInstance.putCasemanagementCaseplanIntakesettings(caseplanId, body, opts)
 **IntakeSettingsListing**
 
 
-_purecloud-platform-client-v2@261.0.0_
+_purecloud-platform-client-v2@262.0.0_

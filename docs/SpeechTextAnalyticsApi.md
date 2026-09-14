@@ -2243,7 +2243,7 @@ apiInstance.getSpeechandtextanalyticsTopics(opts)
  **name** | **String** | Case insensitive partial name to filter by | [optional]  |
  **ids** | **[String]** | Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed. | [optional]  |
  **dialects** | **[String]** | Comma separated dialect strings to filter by. Maximum of 15 dialects allowed. | [optional] <br />**Values**: en-US, es-US, en-AU, en-GB, en-ZA, es-ES, en-IN, fr-FR, fr-CA, it-IT, de-DE, pt-BR, pl-PL, pt-PT, nl-NL, ko-KR |
- **sortBy** | **String** | Sort results by. Defaults to name | [optional] <br />**Values**: name, matchingType |
+ **sortBy** | **String** | Sort results by. Defaults to name | [optional] <br />**Values**: name, matchingType, realTime |
  **sortOrder** | **String** | Sort order. Defaults to asc | [optional] <br />**Values**: asc, desc |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
@@ -3925,4 +3925,4 @@ apiInstance.putSpeechandtextanalyticsTopic(topicId, body, opts)
 **Topic**
 
 
-_purecloud-platform-client-v2@261.0.0_
+_purecloud-platform-client-v2@262.0.0_
