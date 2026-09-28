@@ -3457,7 +3457,7 @@ apiInstance.getRoutingPredictorsKeyperformanceindicator(kpiId, opts)
 
 ## getRoutingPredictorsKeyperformanceindicators
 
-> [KeyPerformanceIndicator] getRoutingPredictorsKeyperformanceindicators(opts)
+> KeyPerformanceIndicatorEntityListing getRoutingPredictorsKeyperformanceindicators(opts)
 
 
 GET /api/v2/routing/predictors/keyperformanceindicators
@@ -3511,7 +3511,7 @@ apiInstance.getRoutingPredictorsKeyperformanceindicators(opts)
 
 ### Return type
 
-**[KeyPerformanceIndicator]**
+**KeyPerformanceIndicatorEntityListing**
 
 
 ## getRoutingPredictorsKeyperformanceindicatortypes
@@ -7876,6 +7876,8 @@ POST /api/v2/routing/assessments/jobs
 
 Create a benefit assessment job.
 
+Queues with Benefit Assessment results less than 7 days old are skipped. If every queue in the requested divisions has recent results, the request is rejected.
+
 Requires ANY permissions:
 
 * routing:assessment:add
@@ -10619,4 +10621,4 @@ apiInstance.putUserRoutingskillsBulk(userId, body, opts)
 **UserSkillEntityListing**
 
 
-_purecloud-platform-client-v2@262.0.0_
+_purecloud-platform-client-v2@263.0.0_

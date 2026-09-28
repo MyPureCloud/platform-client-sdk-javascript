@@ -536,6 +536,7 @@ Delete Cloned User
 
 Requires ANY permissions:
 
+* authorization:orgTrusteeClonedUser:delete
 * authorization:orgTrusteeUser:delete
 
 ### Example Usage
@@ -1530,6 +1531,7 @@ Get Cloned User
 
 Requires ANY permissions:
 
+* authorization:orgTrusteeClonedUser:view
 * authorization:orgTrusteeUser:view
 
 ### Example Usage
@@ -1589,6 +1591,7 @@ The list of cloned users in the trustor organization (i.e. users with a native u
 
 Requires ANY permissions:
 
+* authorization:orgTrusteeClonedUser:view
 * authorization:orgTrusteeUser:view
 
 ### Example Usage
@@ -2733,8 +2736,9 @@ PUT /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}
 
 Creates a clone of the trustee user in the trustor org.
 
-Requires ALL permissions:
+Requires ANY permissions:
 
+* authorization:orgTrusteeClonedUser:add
 * authorization:orgTrusteeUser:add
 
 ### Example Usage
@@ -2901,4 +2905,4 @@ apiInstance.putOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId, opts)
 **TrustUser**
 
 
-_purecloud-platform-client-v2@262.0.0_
+_purecloud-platform-client-v2@263.0.0_

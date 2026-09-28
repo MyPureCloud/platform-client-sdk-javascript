@@ -6,8 +6,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+[**deleteWorkforcemanagementAdherenceAdjustment**](WorkforceManagementApi#deleteWorkforcemanagementAdherenceAdjustment) | **DELETE** /api/v2/workforcemanagement/adherence/adjustments/{adjustmentId} | Delete an adherence adjustment for the current user
 [**deleteWorkforcemanagementBusinessunit**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunit) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId} | Delete business unit
 [**deleteWorkforcemanagementBusinessunitActivitycode**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitActivitycode) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId} | Deletes an activity code
+[**deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/{reasonCodeId} | Delete an adherence adjustment reason code for a business unit
+[**deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/bulk | Delete adherence adjustment reason codes in bulk for a business unit
 [**deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocationshistory | Delete staffing group allocations history created for a capacity plan before the given date
 [**deleteWorkforcemanagementBusinessunitPlanninggroup**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitPlanninggroup) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId} | Deletes the planning group
 [**deleteWorkforcemanagementBusinessunitSchedulebid**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitSchedulebid) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId} | Delete a schedule bid
@@ -28,10 +31,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteWorkforcemanagementManagementunitWorkplan**](WorkforceManagementApi#deleteWorkforcemanagementManagementunitWorkplan) | **DELETE** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId} | Delete a work plan
 [**deleteWorkforcemanagementManagementunitWorkplanrotation**](WorkforceManagementApi#deleteWorkforcemanagementManagementunitWorkplanrotation) | **DELETE** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId} | Delete a work plan rotation
 [**getWorkforcemanagementAdherence**](WorkforceManagementApi#getWorkforcemanagementAdherence) | **GET** /api/v2/workforcemanagement/adherence | Get a list of UserScheduleAdherence records for the requested users
+[**getWorkforcemanagementAdherenceAdjustment**](WorkforceManagementApi#getWorkforcemanagementAdherenceAdjustment) | **GET** /api/v2/workforcemanagement/adherence/adjustments/{adjustmentId} | Get an adherence adjustment for the current user
 [**getWorkforcemanagementAdherenceExplanation**](WorkforceManagementApi#getWorkforcemanagementAdherenceExplanation) | **GET** /api/v2/workforcemanagement/adherence/explanations/{explanationId} | Get an adherence explanation for the current user
 [**getWorkforcemanagementAdherenceExplanationsJob**](WorkforceManagementApi#getWorkforcemanagementAdherenceExplanationsJob) | **GET** /api/v2/workforcemanagement/adherence/explanations/jobs/{jobId} | Query the status of an adherence explanation operation. Only the user who started the operation can query the status
 [**getWorkforcemanagementAdherenceHistoricalBulkJob**](WorkforceManagementApi#getWorkforcemanagementAdherenceHistoricalBulkJob) | **GET** /api/v2/workforcemanagement/adherence/historical/bulk/jobs/{jobId} | Request to fetch the status of the historical adherence bulk job. Only the user who started the operation can query the status
 [**getWorkforcemanagementAdherenceHistoricalJob**](WorkforceManagementApi#getWorkforcemanagementAdherenceHistoricalJob) | **GET** /api/v2/workforcemanagement/adherence/historical/jobs/{jobId} | Query the status of a historical adherence request operation. Only the user who started the operation can query the status
+[**getWorkforcemanagementAgentAdherenceAdjustment**](WorkforceManagementApi#getWorkforcemanagementAgentAdherenceAdjustment) | **GET** /api/v2/workforcemanagement/agents/{agentId}/adherence/adjustments/{adjustmentId} | Get an adherence adjustment for the requested agent
 [**getWorkforcemanagementAgentAdherenceExplanation**](WorkforceManagementApi#getWorkforcemanagementAgentAdherenceExplanation) | **GET** /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/{explanationId} | Get an adherence explanation
 [**getWorkforcemanagementAgentManagementunit**](WorkforceManagementApi#getWorkforcemanagementAgentManagementunit) | **GET** /api/v2/workforcemanagement/agents/{agentId}/managementunit | Get the management unit to which the agent belongs
 [**getWorkforcemanagementAgentsMeAdherenceHistoricalJob**](WorkforceManagementApi#getWorkforcemanagementAgentsMeAdherenceHistoricalJob) | **GET** /api/v2/workforcemanagement/agents/me/adherence/historical/jobs/{jobId} | Request to fetch the status of the agent adherence job. Only the user who started the operation can query the status
@@ -47,9 +52,21 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getWorkforcemanagementBusinessunitActivitycode**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivitycode) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId} | Get an activity code
 [**getWorkforcemanagementBusinessunitActivitycodes**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivitycodes) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes | Get activity codes
 [**getWorkforcemanagementBusinessunitActivityplan**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplan) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId} | Get an activity plan
+[**getWorkforcemanagementBusinessunitActivityplanDeletionsJob**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplanDeletionsJob) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/deletions/jobs/{jobId} | Gets an activity plan deletion job
+[**getWorkforcemanagementBusinessunitActivityplanJobs**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplanJobs) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/jobs | Gets the latest job for an activity plan in the business unit
+[**getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJob**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJob) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/sessions/{sessionId}/users/deletions/jobs/{jobId} | Gets a session users deletion job
+[**getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJob**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJob) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/sessions/deletions/jobs/{jobId} | Gets an activity plan sessions deletion job
+[**getWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJob**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJob) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/deletions/jobs/{jobId} | Gets an occurrences deletion job
 [**getWorkforcemanagementBusinessunitActivityplanRunsJob**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplanRunsJob) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/runs/jobs/{jobId} | Gets an activity plan run job
 [**getWorkforcemanagementBusinessunitActivityplans**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplans) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans | Get activity plans
 [**getWorkforcemanagementBusinessunitActivityplansJobs**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplansJobs) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/jobs | Gets the latest job for all activity plans in the business unit
+[**getWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk**](WorkforceManagementApi#getWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/bulk | Get adherence adjustments in bulk by ID for a business unit
+[**getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJob**](WorkforceManagementApi#getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJob) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/query/jobs/{jobId} | Query the status of an async adherence adjustments query job. Only the user who started the operation can query the status
+[**getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs**](WorkforceManagementApi#getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/query/jobs | Get query job history for the logged in user.
+[**getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode**](WorkforceManagementApi#getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/{reasonCodeId} | Get an adherence adjustment reason code for a business unit
+[**getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes**](WorkforceManagementApi#getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes | Get adherence adjustment reason codes for a business unit
+[**getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk**](WorkforceManagementApi#getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/bulk | Get adherence adjustment reason codes in bulk by ID for a business unit. This API can return deleted reason codes.
+[**getWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings**](WorkforceManagementApi#getWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/settings | Get adherence adjustments settings for a business unit
 [**getWorkforcemanagementBusinessunitAlternativeshiftsSettings**](WorkforceManagementApi#getWorkforcemanagementBusinessunitAlternativeshiftsSettings) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/settings | Get alternative shifts settings for a business unit
 [**getWorkforcemanagementBusinessunitAlternativeshiftsTrade**](WorkforceManagementApi#getWorkforcemanagementBusinessunitAlternativeshiftsTrade) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/trades/{tradeId} | Get an alternative shifts trade in a business unit for a given trade ID
 [**getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob**](WorkforceManagementApi#getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/trades/search/jobs/{jobId} | Query the status of an alternative shift search trade operation. Only the user who started the operation can query the status
@@ -176,13 +193,20 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getWorkforcemanagementWorkplanbidPreferences**](WorkforceManagementApi#getWorkforcemanagementWorkplanbidPreferences) | **GET** /api/v2/workforcemanagement/workplanbids/{bidId}/preferences | Gets an agent's work plan bidding preference
 [**getWorkforcemanagementWorkplanbidWorkplans**](WorkforceManagementApi#getWorkforcemanagementWorkplanbidWorkplans) | **GET** /api/v2/workforcemanagement/workplanbids/{bidId}/workplans | Gets an agent's work plans for a bid
 [**getWorkforcemanagementWorkplanbids**](WorkforceManagementApi#getWorkforcemanagementWorkplanbids) | **GET** /api/v2/workforcemanagement/workplanbids | Gets the list of work plan bids that belong to an agent
+[**patchWorkforcemanagementAdherenceAdjustment**](WorkforceManagementApi#patchWorkforcemanagementAdherenceAdjustment) | **PATCH** /api/v2/workforcemanagement/adherence/adjustments/{adjustmentId} | Update an adherence adjustment for the current user
+[**patchWorkforcemanagementAgentAdherenceAdjustment**](WorkforceManagementApi#patchWorkforcemanagementAgentAdherenceAdjustment) | **PATCH** /api/v2/workforcemanagement/agents/{agentId}/adherence/adjustments/{adjustmentId} | Update an adherence adjustment for the requested agent
 [**patchWorkforcemanagementAgentAdherenceExplanation**](WorkforceManagementApi#patchWorkforcemanagementAgentAdherenceExplanation) | **PATCH** /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/{explanationId} | Update an adherence explanation
+[**patchWorkforcemanagementAgentUnavailabletimes**](WorkforceManagementApi#patchWorkforcemanagementAgentUnavailabletimes) | **PATCH** /api/v2/workforcemanagement/agents/{agentId}/unavailabletimes | Update unavailable times for the requested agent
 [**patchWorkforcemanagementAlternativeshiftsTrade**](WorkforceManagementApi#patchWorkforcemanagementAlternativeshiftsTrade) | **PATCH** /api/v2/workforcemanagement/alternativeshifts/trades/{tradeId} | Update my alternative shifts trade by trade ID
 [**patchWorkforcemanagementAlternativeshiftsTradesStateJobs**](WorkforceManagementApi#patchWorkforcemanagementAlternativeshiftsTradesStateJobs) | **PATCH** /api/v2/workforcemanagement/alternativeshifts/trades/state/jobs | Bulk update alternative shift trade states
 [**patchWorkforcemanagementBusinessunit**](WorkforceManagementApi#patchWorkforcemanagementBusinessunit) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId} | Update business unit
 [**patchWorkforcemanagementBusinessunitActivitycode**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitActivitycode) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId} | Update an activity code
 [**patchWorkforcemanagementBusinessunitActivitycodesBulk**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitActivitycodesBulk) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/bulk | Update multiple activity codes
 [**patchWorkforcemanagementBusinessunitActivityplan**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitActivityplan) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId} | Update an activity plan
+[**patchWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/bulk | Update adherence adjustments in bulk for a business unit
+[**patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/{reasonCodeId} | Update an adherence adjustment reason code for a business unit
+[**patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/bulk | Update adherence adjustment reason codes in bulk for a business unit
+[**patchWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/settings | Update adherence adjustments settings for a business unit
 [**patchWorkforcemanagementBusinessunitAlternativeshiftsSettings**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitAlternativeshiftsSettings) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/settings | Update alternative shifts settings for a business unit
 [**patchWorkforcemanagementBusinessunitCapacityplan**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitCapacityplan) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId} | Update a capacity plan configuration
 [**patchWorkforcemanagementBusinessunitMinimumstaffingSettings**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitMinimumstaffingSettings) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/minimumstaffing/settings | Update minimum staffing settings for a business unit
@@ -217,9 +241,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchWorkforcemanagementUserWorkplanbidranks**](WorkforceManagementApi#patchWorkforcemanagementUserWorkplanbidranks) | **PATCH** /api/v2/workforcemanagement/users/{userId}/workplanbidranks | Update work plan bid ranks for a user
 [**patchWorkforcemanagementUsersWorkplanbidranksBulk**](WorkforceManagementApi#patchWorkforcemanagementUsersWorkplanbidranksBulk) | **PATCH** /api/v2/workforcemanagement/users/workplanbidranks/bulk | Update bulk work plan bid ranks on users. Max 50 users can be updated at a time.
 [**patchWorkforcemanagementWorkplanbidPreferences**](WorkforceManagementApi#patchWorkforcemanagementWorkplanbidPreferences) | **PATCH** /api/v2/workforcemanagement/workplanbids/{bidId}/preferences | Update an agent's work plan bidding preference
+[**postWorkforcemanagementAdherenceAdjustments**](WorkforceManagementApi#postWorkforcemanagementAdherenceAdjustments) | **POST** /api/v2/workforcemanagement/adherence/adjustments | Submit an adherence adjustment for the current user
+[**postWorkforcemanagementAdherenceAdjustmentsQuery**](WorkforceManagementApi#postWorkforcemanagementAdherenceAdjustmentsQuery) | **POST** /api/v2/workforcemanagement/adherence/adjustments/query | Query adherence adjustments for the current user
 [**postWorkforcemanagementAdherenceExplanations**](WorkforceManagementApi#postWorkforcemanagementAdherenceExplanations) | **POST** /api/v2/workforcemanagement/adherence/explanations | Submit an adherence explanation for the current user
 [**postWorkforcemanagementAdherenceExplanationsQuery**](WorkforceManagementApi#postWorkforcemanagementAdherenceExplanationsQuery) | **POST** /api/v2/workforcemanagement/adherence/explanations/query | Query adherence explanations for the current user
 [**postWorkforcemanagementAdherenceHistoricalBulk**](WorkforceManagementApi#postWorkforcemanagementAdherenceHistoricalBulk) | **POST** /api/v2/workforcemanagement/adherence/historical/bulk | Request a historical adherence report in bulk
+[**postWorkforcemanagementAgentAdherenceAdjustmentsQuery**](WorkforceManagementApi#postWorkforcemanagementAgentAdherenceAdjustmentsQuery) | **POST** /api/v2/workforcemanagement/agents/{agentId}/adherence/adjustments/query | Query adherence adjustments for the requested agent
 [**postWorkforcemanagementAgentAdherenceExplanations**](WorkforceManagementApi#postWorkforcemanagementAgentAdherenceExplanations) | **POST** /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations | Add an adherence explanation for the requested user
 [**postWorkforcemanagementAgentAdherenceExplanationsQuery**](WorkforceManagementApi#postWorkforcemanagementAgentAdherenceExplanationsQuery) | **POST** /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/query | Query adherence explanations for the given agent across a specified range
 [**postWorkforcemanagementAgentSchedulingpreferencesQuery**](WorkforceManagementApi#postWorkforcemanagementAgentSchedulingpreferencesQuery) | **POST** /api/v2/workforcemanagement/agents/{agentId}/schedulingpreferences/query | Get agent scheduling preferences
@@ -237,8 +264,16 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postWorkforcemanagementAlternativeshiftsOffersSearchJobs**](WorkforceManagementApi#postWorkforcemanagementAlternativeshiftsOffersSearchJobs) | **POST** /api/v2/workforcemanagement/alternativeshifts/offers/search/jobs | Request a search of alternative shift offers for a given shift
 [**postWorkforcemanagementAlternativeshiftsTrades**](WorkforceManagementApi#postWorkforcemanagementAlternativeshiftsTrades) | **POST** /api/v2/workforcemanagement/alternativeshifts/trades | Create my alternative shift trade using an existing offer's jobId
 [**postWorkforcemanagementBusinessunitActivitycodes**](WorkforceManagementApi#postWorkforcemanagementBusinessunitActivitycodes) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes | Create a new activity code
+[**postWorkforcemanagementBusinessunitActivityplanDeletionsJobs**](WorkforceManagementApi#postWorkforcemanagementBusinessunitActivityplanDeletionsJobs) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/deletions/jobs | Delete an activity plan
+[**postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobs**](WorkforceManagementApi#postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobs) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/sessions/{sessionId}/users/deletions/jobs | Triggers a job to delete users from a session in the activity plan occurrence
+[**postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobs**](WorkforceManagementApi#postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobs) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/sessions/deletions/jobs | Triggers a job to delete sessions for the activity plan occurrence
+[**postWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobs**](WorkforceManagementApi#postWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobs) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/deletions/jobs | Delete occurrences for the activity plan
 [**postWorkforcemanagementBusinessunitActivityplanRunsJobs**](WorkforceManagementApi#postWorkforcemanagementBusinessunitActivityplanRunsJobs) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/runs/jobs | Run an activity plan manually
 [**postWorkforcemanagementBusinessunitActivityplans**](WorkforceManagementApi#postWorkforcemanagementBusinessunitActivityplans) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans | Create an activity plan
+[**postWorkforcemanagementBusinessunitAdherenceAdjustmentsQuery**](WorkforceManagementApi#postWorkforcemanagementBusinessunitAdherenceAdjustmentsQuery) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/query | Query adherence adjustments for a business unit. Results will be returned using cursor pagination
+[**postWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs**](WorkforceManagementApi#postWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/query/jobs | Creates an async query job for adherence adjustments in a business unit.
+[**postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes**](WorkforceManagementApi#postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes | Create an adherence adjustment reason code for a business unit
+[**postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk**](WorkforceManagementApi#postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/bulk | Create adherence adjustment reason codes in bulk for a business unit
 [**postWorkforcemanagementBusinessunitAdherenceExplanationsQuery**](WorkforceManagementApi#postWorkforcemanagementBusinessunitAdherenceExplanationsQuery) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/explanations/query | Query adherence explanations across an entire business unit for the requested period
 [**postWorkforcemanagementBusinessunitAgentschedulesSearch**](WorkforceManagementApi#postWorkforcemanagementBusinessunitAgentschedulesSearch) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/agentschedules/search | Search published schedules
 [**postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch**](WorkforceManagementApi#postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/trades/search | List alternative shifts trades for a given management unit or agent
@@ -360,6 +395,63 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 
 
+## deleteWorkforcemanagementAdherenceAdjustment
+
+> void deleteWorkforcemanagementAdherenceAdjustment(adjustmentId, opts)
+
+
+DELETE /api/v2/workforcemanagement/adherence/adjustments/{adjustmentId}
+
+Delete an adherence adjustment for the current user
+
+Requires ANY permissions:
+
+* wfm:agentAdherenceAdjustments:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let adjustmentId = "adjustmentId_example"; // String | The ID of the adherence adjustment to delete
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.deleteWorkforcemanagementAdherenceAdjustment(adjustmentId, opts)
+  .then(() => {
+    console.log('deleteWorkforcemanagementAdherenceAdjustment returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteWorkforcemanagementAdherenceAdjustment');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **adjustmentId** | **String** | The ID of the adherence adjustment to delete |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+void (no response body)
+
+
 ## deleteWorkforcemanagementBusinessunit
 
 > void deleteWorkforcemanagementBusinessunit(businessUnitId, opts)
@@ -471,6 +563,124 @@ apiInstance.deleteWorkforcemanagementBusinessunitActivitycode(businessUnitId, ac
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit, or 'mine' for the business unit of the logged-in user. |  |
  **activityCodeId** | **String** | The ID of the activity code to delete |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+void (no response body)
+
+
+## deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode
+
+> void deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode(businessUnitId, reasonCodeId, opts)
+
+
+DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/{reasonCodeId}
+
+Delete an adherence adjustment reason code for a business unit
+
+Requires ANY permissions:
+
+* wfm:adherenceAdjustmentsReasonCodes:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let reasonCodeId = "reasonCodeId_example"; // String | The ID of the reason code to delete
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode(businessUnitId, reasonCodeId, opts)
+  .then(() => {
+    console.log('deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **reasonCodeId** | **String** | The ID of the reason code to delete |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+void (no response body)
+
+
+## deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk
+
+> void deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(businessUnitId, ids, opts)
+
+
+DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/bulk
+
+Delete adherence adjustment reason codes in bulk for a business unit
+
+Requires ANY permissions:
+
+* wfm:adherenceAdjustmentsReasonCodes:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let ids = ["ids_example"]; // [String] | The IDs of the reason codes to delete
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(businessUnitId, ids, opts)
+  .then(() => {
+    console.log('deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **ids** | **[String]** | The IDs of the reason codes to delete |  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -1667,6 +1877,63 @@ apiInstance.getWorkforcemanagementAdherence(userId, opts)
 **[UserScheduleAdherence]**
 
 
+## getWorkforcemanagementAdherenceAdjustment
+
+> CurrentAgentAdherenceAdjustment getWorkforcemanagementAdherenceAdjustment(adjustmentId, opts)
+
+
+GET /api/v2/workforcemanagement/adherence/adjustments/{adjustmentId}
+
+Get an adherence adjustment for the current user
+
+Requires ANY permissions:
+
+* wfm:agentAdherenceAdjustments:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let adjustmentId = "adjustmentId_example"; // String | The ID of the adherence adjustment
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getWorkforcemanagementAdherenceAdjustment(adjustmentId, opts)
+  .then((data) => {
+    console.log(`getWorkforcemanagementAdherenceAdjustment success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementAdherenceAdjustment');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **adjustmentId** | **String** | The ID of the adherence adjustment |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**CurrentAgentAdherenceAdjustment**
+
+
 ## getWorkforcemanagementAdherenceExplanation
 
 > AdherenceExplanationResponse getWorkforcemanagementAdherenceExplanation(explanationId, opts)
@@ -1895,6 +2162,65 @@ apiInstance.getWorkforcemanagementAdherenceHistoricalJob(jobId, opts)
 ### Return type
 
 **WfmHistoricalAdherenceResponse**
+
+
+## getWorkforcemanagementAgentAdherenceAdjustment
+
+> AdherenceAdjustment getWorkforcemanagementAgentAdherenceAdjustment(agentId, adjustmentId, opts)
+
+
+GET /api/v2/workforcemanagement/agents/{agentId}/adherence/adjustments/{adjustmentId}
+
+Get an adherence adjustment for the requested agent
+
+Requires ANY permissions:
+
+* wfm:adherenceAdjustments:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let agentId = "agentId_example"; // String | The ID of the agent
+let adjustmentId = "adjustmentId_example"; // String | The ID of the adherence adjustment
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getWorkforcemanagementAgentAdherenceAdjustment(agentId, adjustmentId, opts)
+  .then((data) => {
+    console.log(`getWorkforcemanagementAgentAdherenceAdjustment success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementAgentAdherenceAdjustment');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **agentId** | **String** | The ID of the agent |  |
+ **adjustmentId** | **String** | The ID of the adherence adjustment |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AdherenceAdjustment**
 
 
 ## getWorkforcemanagementAgentAdherenceExplanation
@@ -2977,6 +3303,315 @@ apiInstance.getWorkforcemanagementBusinessunitActivityplan(businessUnitId, activ
 **ActivityPlanResponse**
 
 
+## getWorkforcemanagementBusinessunitActivityplanDeletionsJob
+
+> ActivityPlanJobResponse getWorkforcemanagementBusinessunitActivityplanDeletionsJob(businessUnitId, activityPlanId, jobId, opts)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/deletions/jobs/{jobId}
+
+Gets an activity plan deletion job
+
+Requires ANY permissions:
+
+* wfm:activityPlanDeletionJob:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let activityPlanId = "activityPlanId_example"; // String | The ID of the activity plan associated with the deletion job
+let jobId = "jobId_example"; // String | The ID of the activity plan deletion job
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getWorkforcemanagementBusinessunitActivityplanDeletionsJob(businessUnitId, activityPlanId, jobId, opts)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitActivityplanDeletionsJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitActivityplanDeletionsJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **activityPlanId** | **String** | The ID of the activity plan associated with the deletion job |  |
+ **jobId** | **String** | The ID of the activity plan deletion job |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ActivityPlanJobResponse**
+
+
+## getWorkforcemanagementBusinessunitActivityplanJobs
+
+> ActivityPlanJobResponse getWorkforcemanagementBusinessunitActivityplanJobs(businessUnitId, activityPlanId, opts)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/jobs
+
+Gets the latest job for an activity plan in the business unit
+
+Requires ANY permissions:
+
+* wfm:activityPlan:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let activityPlanId = "activityPlanId_example"; // String | The ID of the activity plan associated with the run job
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getWorkforcemanagementBusinessunitActivityplanJobs(businessUnitId, activityPlanId, opts)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitActivityplanJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitActivityplanJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **activityPlanId** | **String** | The ID of the activity plan associated with the run job |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ActivityPlanJobResponse**
+
+
+## getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJob
+
+> ActivityPlanJobResponse getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJob(businessUnitId, activityPlanId, occurrenceId, sessionId, jobId, opts)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/sessions/{sessionId}/users/deletions/jobs/{jobId}
+
+Gets a session users deletion job
+
+Requires ANY permissions:
+
+* wfm:activityPlanOccurrenceSessionUserDeletionJob:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let activityPlanId = "activityPlanId_example"; // String | The ID of the activity plan
+let occurrenceId = "occurrenceId_example"; // String | The ID of the activity plan occurrence
+let sessionId = "sessionId_example"; // String | The ID of the activity plan occurrence session
+let jobId = "jobId_example"; // String | The ID of the activity plan occurrence session users deletion job
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJob(businessUnitId, activityPlanId, occurrenceId, sessionId, jobId, opts)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **activityPlanId** | **String** | The ID of the activity plan |  |
+ **occurrenceId** | **String** | The ID of the activity plan occurrence |  |
+ **sessionId** | **String** | The ID of the activity plan occurrence session |  |
+ **jobId** | **String** | The ID of the activity plan occurrence session users deletion job |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ActivityPlanJobResponse**
+
+
+## getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJob
+
+> ActivityPlanJobResponse getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJob(businessUnitId, activityPlanId, occurrenceId, jobId, opts)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/sessions/deletions/jobs/{jobId}
+
+Gets an activity plan sessions deletion job
+
+Requires ANY permissions:
+
+* wfm:activityPlanOccurrenceSessionDeletionJob:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let activityPlanId = "activityPlanId_example"; // String | The ID of the activity plan
+let occurrenceId = "occurrenceId_example"; // String | The ID of the activity plan occurrence
+let jobId = "jobId_example"; // String | The ID of the activity plan sessions deletion job
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJob(businessUnitId, activityPlanId, occurrenceId, jobId, opts)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **activityPlanId** | **String** | The ID of the activity plan |  |
+ **occurrenceId** | **String** | The ID of the activity plan occurrence |  |
+ **jobId** | **String** | The ID of the activity plan sessions deletion job |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ActivityPlanJobResponse**
+
+
+## getWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJob
+
+> ActivityPlanJobResponse getWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJob(businessUnitId, activityPlanId, jobId, opts)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/deletions/jobs/{jobId}
+
+Gets an occurrences deletion job
+
+Requires ANY permissions:
+
+* wfm:activityPlanOccurrenceDeletionJob:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let activityPlanId = "activityPlanId_example"; // String | The ID of the activity plan
+let jobId = "jobId_example"; // String | The ID of the activity plan occurrences deletion job
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJob(businessUnitId, activityPlanId, jobId, opts)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **activityPlanId** | **String** | The ID of the activity plan |  |
+ **jobId** | **String** | The ID of the activity plan occurrences deletion job |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ActivityPlanJobResponse**
+
+
 ## getWorkforcemanagementBusinessunitActivityplanRunsJob
 
 > ActivityPlanJobResponse getWorkforcemanagementBusinessunitActivityplanRunsJob(businessUnitId, activityPlanId, jobId, opts)
@@ -3152,6 +3787,415 @@ apiInstance.getWorkforcemanagementBusinessunitActivityplansJobs(businessUnitId, 
 ### Return type
 
 **ActivityPlanJobListing**
+
+
+## getWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk
+
+> AdherenceAdjustmentsListing getWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk(businessUnitId, adjustmentIds, opts)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/bulk
+
+Get adherence adjustments in bulk by ID for a business unit
+
+Requires ANY permissions:
+
+* wfm:adherenceAdjustments:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let adjustmentIds = ["adjustmentIds_example"]; // [String] | The IDs of the adherence adjustments to fetch
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk(businessUnitId, adjustmentIds, opts)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **adjustmentIds** | **[String]** | The IDs of the adherence adjustments to fetch |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AdherenceAdjustmentsListing**
+
+
+## getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJob
+
+> BuAdherenceAdjustmentsQueryJob getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJob(businessUnitId, jobId, opts)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/query/jobs/{jobId}
+
+Query the status of an async adherence adjustments query job. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Requires ANY permissions:
+
+* wfm:adherenceAdjustments:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let jobId = "jobId_example"; // String | The ID of the query job
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJob(businessUnitId, jobId, opts)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **jobId** | **String** | The ID of the query job |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**BuAdherenceAdjustmentsQueryJob**
+
+
+## getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs
+
+> BuAdherenceAdjustmentsQueryJobsReferenceListing getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs(businessUnitId, opts)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/query/jobs
+
+Get query job history for the logged in user.
+
+Requires ANY permissions:
+
+* wfm:adherenceAdjustments:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs(businessUnitId, opts)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**BuAdherenceAdjustmentsQueryJobsReferenceListing**
+
+
+## getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode
+
+> AdherenceAdjustmentsReasonCode getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode(businessUnitId, reasonCodeId, opts)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/{reasonCodeId}
+
+Get an adherence adjustment reason code for a business unit
+
+Requires ANY permissions:
+
+* wfm:adherenceAdjustmentsReasonCodes:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let reasonCodeId = "reasonCodeId_example"; // String | The ID of the reason code to fetch
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode(businessUnitId, reasonCodeId, opts)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **reasonCodeId** | **String** | The ID of the reason code to fetch |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AdherenceAdjustmentsReasonCode**
+
+
+## getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes
+
+> AdherenceAdjustmentsReasonCodesListing getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes(businessUnitId, opts)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes
+
+Get adherence adjustment reason codes for a business unit
+
+Requires ANY permissions:
+
+* wfm:adherenceAdjustmentsReasonCodes:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes(businessUnitId, opts)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AdherenceAdjustmentsReasonCodesListing**
+
+
+## getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk
+
+> AdherenceAdjustmentsReasonCodesListing getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(businessUnitId, ids, opts)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/bulk
+
+Get adherence adjustment reason codes in bulk by ID for a business unit. This API can return deleted reason codes.
+
+Requires ANY permissions:
+
+* wfm:adherenceAdjustmentsReasonCodes:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let ids = ["ids_example"]; // [String] | The IDs of the reason codes to fetch
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(businessUnitId, ids, opts)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **ids** | **[String]** | The IDs of the reason codes to fetch |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AdherenceAdjustmentsReasonCodesListing**
+
+
+## getWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings
+
+> BuAdherenceAdjustmentsSettings getWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings(businessUnitId, opts)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/settings
+
+Get adherence adjustments settings for a business unit
+
+Requires ANY permissions:
+
+* wfm:adherenceAdjustmentsSettings:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings(businessUnitId, opts)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**BuAdherenceAdjustmentsSettings**
 
 
 ## getWorkforcemanagementBusinessunitAlternativeshiftsSettings
@@ -10829,6 +11873,126 @@ apiInstance.getWorkforcemanagementWorkplanbids(opts)
 **AgentWorkPlanBids**
 
 
+## patchWorkforcemanagementAdherenceAdjustment
+
+> CurrentAgentAdherenceAdjustment patchWorkforcemanagementAdherenceAdjustment(adjustmentId, body, opts)
+
+
+PATCH /api/v2/workforcemanagement/adherence/adjustments/{adjustmentId}
+
+Update an adherence adjustment for the current user
+
+Requires ANY permissions:
+
+* wfm:agentAdherenceAdjustments:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let adjustmentId = "adjustmentId_example"; // String | The ID of the adherence adjustment to update
+let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchWorkforcemanagementAdherenceAdjustment(adjustmentId, body, opts)
+  .then((data) => {
+    console.log(`patchWorkforcemanagementAdherenceAdjustment success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchWorkforcemanagementAdherenceAdjustment');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **adjustmentId** | **String** | The ID of the adherence adjustment to update |  |
+ **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**CurrentAgentAdherenceAdjustment**
+
+
+## patchWorkforcemanagementAgentAdherenceAdjustment
+
+> AdherenceAdjustment patchWorkforcemanagementAgentAdherenceAdjustment(agentId, adjustmentId, body, opts)
+
+
+PATCH /api/v2/workforcemanagement/agents/{agentId}/adherence/adjustments/{adjustmentId}
+
+Update an adherence adjustment for the requested agent
+
+Requires ANY permissions:
+
+* wfm:adherenceAdjustments:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let agentId = "agentId_example"; // String | The ID of the agent
+let adjustmentId = "adjustmentId_example"; // String | The ID of the adherence adjustment
+let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchWorkforcemanagementAgentAdherenceAdjustment(agentId, adjustmentId, body, opts)
+  .then((data) => {
+    console.log(`patchWorkforcemanagementAgentAdherenceAdjustment success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchWorkforcemanagementAgentAdherenceAdjustment');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **agentId** | **String** | The ID of the agent |  |
+ **adjustmentId** | **String** | The ID of the adherence adjustment |  |
+ **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AdherenceAdjustment**
+
+
 ## patchWorkforcemanagementAgentAdherenceExplanation
 
 > AdherenceExplanationAsyncResponse patchWorkforcemanagementAgentAdherenceExplanation(agentId, explanationId, body, opts)
@@ -10888,6 +12052,67 @@ apiInstance.patchWorkforcemanagementAgentAdherenceExplanation(agentId, explanati
 ### Return type
 
 **AdherenceExplanationAsyncResponse**
+
+
+## patchWorkforcemanagementAgentUnavailabletimes
+
+> BulkUpdateAgentUnavailableTimesResponse patchWorkforcemanagementAgentUnavailabletimes(agentId, body, opts)
+
+
+PATCH /api/v2/workforcemanagement/agents/{agentId}/unavailabletimes
+
+Update unavailable times for the requested agent
+
+Large requests will be partitioned into multiple internal processing batches. Validation will occur against each internal batch independently rather than against the final combined state represented by the entire request
+
+Requires ANY permissions:
+
+* wfm:unavailableTimes:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let agentId = "agentId_example"; // String | The ID of the agent
+let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchWorkforcemanagementAgentUnavailabletimes(agentId, body, opts)
+  .then((data) => {
+    console.log(`patchWorkforcemanagementAgentUnavailabletimes success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchWorkforcemanagementAgentUnavailabletimes');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **agentId** | **String** | The ID of the agent |  |
+ **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**BulkUpdateAgentUnavailableTimesResponse**
 
 
 ## patchWorkforcemanagementAlternativeshiftsTrade
@@ -11248,6 +12473,244 @@ apiInstance.patchWorkforcemanagementBusinessunitActivityplan(businessUnitId, act
 ### Return type
 
 **ActivityPlanResponse**
+
+
+## patchWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk
+
+> AdherenceAdjustmentsListing patchWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk(businessUnitId, body, opts)
+
+
+PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/bulk
+
+Update adherence adjustments in bulk for a business unit
+
+Requires ANY permissions:
+
+* wfm:adherenceAdjustments:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk(businessUnitId, body, opts)
+  .then((data) => {
+    console.log(`patchWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AdherenceAdjustmentsListing**
+
+
+## patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode
+
+> AdherenceAdjustmentsReasonCode patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode(businessUnitId, reasonCodeId, body, opts)
+
+
+PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/{reasonCodeId}
+
+Update an adherence adjustment reason code for a business unit
+
+Requires ANY permissions:
+
+* wfm:adherenceAdjustmentsReasonCodes:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let reasonCodeId = "reasonCodeId_example"; // String | The ID of the reason code to update
+let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode(businessUnitId, reasonCodeId, body, opts)
+  .then((data) => {
+    console.log(`patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **reasonCodeId** | **String** | The ID of the reason code to update |  |
+ **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AdherenceAdjustmentsReasonCode**
+
+
+## patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk
+
+> AdherenceAdjustmentsReasonCodesListing patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(businessUnitId, body, opts)
+
+
+PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/bulk
+
+Update adherence adjustment reason codes in bulk for a business unit
+
+Requires ANY permissions:
+
+* wfm:adherenceAdjustmentsReasonCodes:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(businessUnitId, body, opts)
+  .then((data) => {
+    console.log(`patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AdherenceAdjustmentsReasonCodesListing**
+
+
+## patchWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings
+
+> BuAdherenceAdjustmentsSettings patchWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings(businessUnitId, body, opts)
+
+
+PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/settings
+
+Update adherence adjustments settings for a business unit
+
+Requires ANY permissions:
+
+* wfm:adherenceAdjustmentsSettings:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings(businessUnitId, body, opts)
+  .then((data) => {
+    console.log(`patchWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**BuAdherenceAdjustmentsSettings**
 
 
 ## patchWorkforcemanagementBusinessunitAlternativeshiftsSettings
@@ -13328,6 +14791,126 @@ apiInstance.patchWorkforcemanagementWorkplanbidPreferences(bidId, body, opts)
 **AgentWorkPlanBiddingPreferenceResponse**
 
 
+## postWorkforcemanagementAdherenceAdjustments
+
+> CurrentAgentAdherenceAdjustment postWorkforcemanagementAdherenceAdjustments(body, opts)
+
+
+POST /api/v2/workforcemanagement/adherence/adjustments
+
+Submit an adherence adjustment for the current user
+
+Requires ANY permissions:
+
+* wfm:agentAdherenceAdjustments:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postWorkforcemanagementAdherenceAdjustments(body, opts)
+  .then((data) => {
+    console.log(`postWorkforcemanagementAdherenceAdjustments success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementAdherenceAdjustments');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**CurrentAgentAdherenceAdjustment**
+
+
+## postWorkforcemanagementAdherenceAdjustmentsQuery
+
+> CurrentAgentCursorAdherenceAdjustmentsListing postWorkforcemanagementAdherenceAdjustmentsQuery(body, opts)
+
+
+POST /api/v2/workforcemanagement/adherence/adjustments/query
+
+Query adherence adjustments for the current user
+
+Requires ANY permissions:
+
+* wfm:agentAdherenceAdjustments:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let body = {}; // Object | body
+let opts = { 
+  'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'pageSize': "25", // String | The page size for the listing. The maximum page size is 500.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postWorkforcemanagementAdherenceAdjustmentsQuery(body, opts)
+  .then((data) => {
+    console.log(`postWorkforcemanagementAdherenceAdjustmentsQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementAdherenceAdjustmentsQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | body |  |
+ **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **pageSize** | **String** | The page size for the listing. The maximum page size is 500. | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**CurrentAgentCursorAdherenceAdjustmentsListing**
+
+
 ## postWorkforcemanagementAdherenceExplanations
 
 > AdherenceExplanationAsyncResponse postWorkforcemanagementAdherenceExplanations(body, opts)
@@ -13501,6 +15084,71 @@ apiInstance.postWorkforcemanagementAdherenceHistoricalBulk(body, opts)
 ### Return type
 
 **WfmHistoricalAdherenceBulkResponse**
+
+
+## postWorkforcemanagementAgentAdherenceAdjustmentsQuery
+
+> CursorAdherenceAdjustmentsListing postWorkforcemanagementAgentAdherenceAdjustmentsQuery(agentId, body, opts)
+
+
+POST /api/v2/workforcemanagement/agents/{agentId}/adherence/adjustments/query
+
+Query adherence adjustments for the requested agent
+
+Requires ANY permissions:
+
+* wfm:adherenceAdjustments:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let agentId = "agentId_example"; // String | The ID of the agent
+let body = {}; // Object | body
+let opts = { 
+  'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'pageSize': "25", // String | The page size for the listing. The maximum page size is 500.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postWorkforcemanagementAgentAdherenceAdjustmentsQuery(agentId, body, opts)
+  .then((data) => {
+    console.log(`postWorkforcemanagementAgentAdherenceAdjustmentsQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementAgentAdherenceAdjustmentsQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **agentId** | **String** | The ID of the agent |  |
+ **body** | **Object** | body |  |
+ **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **pageSize** | **String** | The page size for the listing. The maximum page size is 500. | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**CursorAdherenceAdjustmentsListing**
 
 
 ## postWorkforcemanagementAgentAdherenceExplanations
@@ -14507,6 +16155,258 @@ apiInstance.postWorkforcemanagementBusinessunitActivitycodes(businessUnitId, bod
 **BusinessUnitActivityCode**
 
 
+## postWorkforcemanagementBusinessunitActivityplanDeletionsJobs
+
+> ActivityPlanJobResponse postWorkforcemanagementBusinessunitActivityplanDeletionsJobs(businessUnitId, activityPlanId, opts)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/deletions/jobs
+
+Delete an activity plan
+
+Triggers a job to delete the activity plan. No further changes to the activity plan can be made
+
+Requires ANY permissions:
+
+* wfm:activityPlanDeletionJob:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let activityPlanId = "activityPlanId_example"; // String | The ID of the activity plan to delete
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postWorkforcemanagementBusinessunitActivityplanDeletionsJobs(businessUnitId, activityPlanId, opts)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitActivityplanDeletionsJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitActivityplanDeletionsJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **activityPlanId** | **String** | The ID of the activity plan to delete |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ActivityPlanJobResponse**
+
+
+## postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobs
+
+> ActivityPlanJobResponse postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobs(businessUnitId, activityPlanId, occurrenceId, sessionId, body, opts)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/sessions/{sessionId}/users/deletions/jobs
+
+Triggers a job to delete users from a session in the activity plan occurrence
+
+Requires ANY permissions:
+
+* wfm:activityPlanOccurrenceSessionUserDeletionJob:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let activityPlanId = "activityPlanId_example"; // String | The ID of the activity plan
+let occurrenceId = "occurrenceId_example"; // String | The ID of the activity plan occurrence
+let sessionId = "sessionId_example"; // String | The ID of the activity plan occurrence session
+let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobs(businessUnitId, activityPlanId, occurrenceId, sessionId, body, opts)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **activityPlanId** | **String** | The ID of the activity plan |  |
+ **occurrenceId** | **String** | The ID of the activity plan occurrence |  |
+ **sessionId** | **String** | The ID of the activity plan occurrence session |  |
+ **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ActivityPlanJobResponse**
+
+
+## postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobs
+
+> ActivityPlanJobResponse postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobs(businessUnitId, activityPlanId, occurrenceId, body, opts)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/sessions/deletions/jobs
+
+Triggers a job to delete sessions for the activity plan occurrence
+
+Requires ANY permissions:
+
+* wfm:activityPlanOccurrenceSessionDeletionJob:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let activityPlanId = "activityPlanId_example"; // String | The ID of the activity plan
+let occurrenceId = "occurrenceId_example"; // String | The ID of the activity plan occurrence
+let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobs(businessUnitId, activityPlanId, occurrenceId, body, opts)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **activityPlanId** | **String** | The ID of the activity plan |  |
+ **occurrenceId** | **String** | The ID of the activity plan occurrence |  |
+ **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ActivityPlanJobResponse**
+
+
+## postWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobs
+
+> ActivityPlanOccurrencesDeletionJobResponse postWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobs(businessUnitId, activityPlanId, body, opts)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/deletions/jobs
+
+Delete occurrences for the activity plan
+
+Triggers a job to delete occurrences of the activity plan. The activity plan cannot be updated until the job completes
+
+Requires ANY permissions:
+
+* wfm:activityPlanOccurrenceDeletionJob:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let activityPlanId = "activityPlanId_example"; // String | The ID of the activity plan
+let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobs(businessUnitId, activityPlanId, body, opts)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **activityPlanId** | **String** | The ID of the activity plan |  |
+ **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ActivityPlanOccurrencesDeletionJobResponse**
+
+
 ## postWorkforcemanagementBusinessunitActivityplanRunsJobs
 
 > ActivityPlanRunJobResponse postWorkforcemanagementBusinessunitActivityplanRunsJobs(businessUnitId, activityPlanId, opts)
@@ -14625,6 +16525,248 @@ apiInstance.postWorkforcemanagementBusinessunitActivityplans(businessUnitId, bod
 ### Return type
 
 **ActivityPlanResponse**
+
+
+## postWorkforcemanagementBusinessunitAdherenceAdjustmentsQuery
+
+> CursorAdherenceAdjustmentsListing postWorkforcemanagementBusinessunitAdherenceAdjustmentsQuery(businessUnitId, body, opts)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/query
+
+Query adherence adjustments for a business unit. Results will be returned using cursor pagination
+
+Requires ANY permissions:
+
+* wfm:adherenceAdjustments:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let body = {}; // Object | body
+let opts = { 
+  'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'pageSize': "25", // String | The page size for the listing. The maximum page size is 500.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postWorkforcemanagementBusinessunitAdherenceAdjustmentsQuery(businessUnitId, body, opts)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitAdherenceAdjustmentsQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitAdherenceAdjustmentsQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **body** | **Object** | body |  |
+ **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **pageSize** | **String** | The page size for the listing. The maximum page size is 500. | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**CursorAdherenceAdjustmentsListing**
+
+
+## postWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs
+
+> BuAdherenceAdjustmentsQueryJob postWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs(businessUnitId, body, opts)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/query/jobs
+
+Creates an async query job for adherence adjustments in a business unit.
+
+Requires ANY permissions:
+
+* wfm:adherenceAdjustments:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs(businessUnitId, body, opts)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**BuAdherenceAdjustmentsQueryJob**
+
+
+## postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes
+
+> AdherenceAdjustmentsReasonCode postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes(businessUnitId, body, opts)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes
+
+Create an adherence adjustment reason code for a business unit
+
+Requires ANY permissions:
+
+* wfm:adherenceAdjustmentsReasonCodes:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes(businessUnitId, body, opts)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AdherenceAdjustmentsReasonCode**
+
+
+## postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk
+
+> AdherenceAdjustmentsReasonCodesListing postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(businessUnitId, body, opts)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/bulk
+
+Create adherence adjustment reason codes in bulk for a business unit
+
+Requires ANY permissions:
+
+* wfm:adherenceAdjustmentsReasonCodes:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(businessUnitId, body, opts)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AdherenceAdjustmentsReasonCodesListing**
 
 
 ## postWorkforcemanagementBusinessunitAdherenceExplanationsQuery
@@ -21829,4 +23971,4 @@ apiInstance.putWorkforcemanagementSchedulebidPreference(bidId, body, opts)
 **AgentScheduleBiddingPreferenceResponse**
 
 
-_purecloud-platform-client-v2@262.0.0_
+_purecloud-platform-client-v2@263.0.0_

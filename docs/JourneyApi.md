@@ -68,7 +68,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getJourneyViewsJobsMe**](JourneyApi#getJourneyViewsJobsMe) | **GET** /api/v2/journey/views/jobs/me | Get my jobs
 [**getJourneyViewsSchedules**](JourneyApi#getJourneyViewsSchedules) | **GET** /api/v2/journey/views/schedules | Get the journey schedules for an organization.
 [**patchJourneyActionmap**](JourneyApi#patchJourneyActionmap) | **PATCH** /api/v2/journey/actionmaps/{actionMapId} | Update single action map.
-[**patchJourneyActiontarget**](JourneyApi#patchJourneyActiontarget) | **PATCH** /api/v2/journey/actiontargets/{actionTargetId} | Deprecated. Update a single action target.
 [**patchJourneyActiontemplate**](JourneyApi#patchJourneyActiontemplate) | **PATCH** /api/v2/journey/actiontemplates/{actionTemplateId} | Update a single action template.
 [**patchJourneyExternaleventsConfiguration**](JourneyApi#patchJourneyExternaleventsConfiguration) | **PATCH** /api/v2/journey/externalevents/configurations/{configId} | Update an external events configuration.
 [**patchJourneyOutcome**](JourneyApi#patchJourneyOutcome) | **PATCH** /api/v2/journey/outcomes/{outcomeId} | Deprecated. Update an outcome.
@@ -1421,7 +1420,7 @@ apiInstance.getJourneyActiontemplates(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **sortBy** | **String** | Field(s) to sort by. Prefix with '-' for descending (e.g. sortBy=name,-createdDate). | [optional]  |
- **mediaType** | **String** | Media type | [optional] <br />**Values**: webchat, webMessagingOffer, contentOffer, integrationAction, architectFlow, openAction |
+ **mediaType** | **String** | Media type | [optional] <br />**Values**: webMessagingOffer, contentOffer, integrationAction, architectFlow, openAction |
  **state** | **String** | Action template state. | [optional] <br />**Values**: Active, Inactive, Deleted |
  **queryFields** | **[String]** | ActionTemplate field(s) to query on. Requires 'queryValue' to also be set. | [optional]  |
  **queryValue** | **String** | Value to query on using fuzzy matching. Requires 'queryFields' to also be set. | [optional]  |
@@ -3823,70 +3822,6 @@ apiInstance.patchJourneyActionmap(actionMapId, opts)
 **ActionMap**
 
 
-## patchJourneyActiontarget
-
-> ActionTarget patchJourneyActiontarget(actionTargetId, opts)
-
-:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
-This resource has been deprecated
-:::
-
-PATCH /api/v2/journey/actiontargets/{actionTargetId}
-
-Deprecated. Update a single action target.
-
-ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
-
-Requires ANY permissions:
-
-* journey:actiontarget:edit
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.JourneyApi();
-
-let actionTargetId = "actionTargetId_example"; // String | ID of the action target.
-let opts = { 
-  'body': {}, // Object | 
-  'customHeaders': {  // Object.<string, string> | Request Custom Headers
-    'X-Service-Name': 'customer-service',
-    'X-Request-ID': 'req-12345'
-  }
-};
-
-apiInstance.patchJourneyActiontarget(actionTargetId, opts)
-  .then((data) => {
-    console.log(`patchJourneyActiontarget success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling patchJourneyActiontarget');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **actionTargetId** | **String** | ID of the action target. |  |
- **body** | **Object** |  | [optional]  |
- **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
-
-### Return type
-
-**ActionTarget**
-
-
 ## patchJourneyActiontemplate
 
 > ActionTemplate patchJourneyActiontemplate(actionTemplateId, opts)
@@ -5772,4 +5707,4 @@ apiInstance.putJourneyViewsEventdefinitionActivate(eventDefinitionId, opts)
 **ActivateExternalEventResponse**
 
 
-_purecloud-platform-client-v2@262.0.0_
+_purecloud-platform-client-v2@263.0.0_

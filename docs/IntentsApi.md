@@ -1033,4 +1033,4 @@ apiInstance.postIntentsCustomerintentsBulkRetrieve(body, opts)
 **[CustomerIntentResponse]**
 
 
-_purecloud-platform-client-v2@262.0.0_
+_purecloud-platform-client-v2@263.0.0_
