@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -4039,7 +4039,7 @@ class RoutingApi {
 
 	/**
 	 * Create a benefit assessment job.
-	 * 
+	 * Queues with Benefit Assessment results less than 7 days old are skipped. If every queue in the requested divisions has recent results, the request is rejected.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers

@@ -5,7 +5,7 @@ class CaseManagementApi {
 	/**
 	 * CaseManagement service.
 	 * @module purecloud-platform-client-v2/api/CaseManagementApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -1015,6 +1015,78 @@ class CaseManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/casemanagement/cases/{caseId}/datedue', 
+			'PATCH', 
+			{ 'caseId': caseId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update the description of a Case.
+	 * 
+	 * @param {String} caseId Case identifier.
+	 * @param {Object} body Description update.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * patchCasemanagementCaseDescription is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	patchCasemanagementCaseDescription(caseId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'caseId' is set
+		if (caseId === undefined || caseId === null || caseId === '') {
+			throw 'Missing the required parameter "caseId" when calling patchCasemanagementCaseDescription';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchCasemanagementCaseDescription';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/casemanagement/cases/{caseId}/description', 
+			'PATCH', 
+			{ 'caseId': caseId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update the external identifier of a Case.
+	 * 
+	 * @param {String} caseId Case identifier.
+	 * @param {Object} body External identifier update.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * patchCasemanagementCaseExternalid is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	patchCasemanagementCaseExternalid(caseId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'caseId' is set
+		if (caseId === undefined || caseId === null || caseId === '') {
+			throw 'Missing the required parameter "caseId" when calling patchCasemanagementCaseExternalid';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchCasemanagementCaseExternalid';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/casemanagement/cases/{caseId}/externalid', 
 			'PATCH', 
 			{ 'caseId': caseId },
 			{  },

@@ -6,7 +6,7 @@ A JavaScript library to interface with the Genesys Cloud Platform API. View the 
 [![npm](https://img.shields.io/npm/v/purecloud-platform-client-v2.svg)](https://www.npmjs.com/package/purecloud-platform-client-v2)
 [![Release Notes Badge](https://developer-content.genesys.cloud/images/sdk-release-notes.png)](https://github.com/MyPureCloud/platform-client-sdk-javascript/blob/master/releaseNotes.md)
 
-Documentation version purecloud-platform-client-v2@262.0.0
+Documentation version purecloud-platform-client-v2@263.0.0
 
 ## Preview APIs
 
@@ -29,7 +29,7 @@ For direct use in a browser script:
 
 ```html
 <!-- Include the CJS SDK -->
-<script src="https://sdk-cdn.mypurecloud.com/javascript/262.0.0/purecloud-platform-client-v2.min.js"></script>
+<script src="https://sdk-cdn.mypurecloud.com/javascript/263.0.0/purecloud-platform-client-v2.min.js"></script>
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
@@ -46,7 +46,7 @@ For direct use in a browser script:
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
-  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/262.0.0/purecloud-platform-client-v2.min.js'], (platformClient) => {
+  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/263.0.0/purecloud-platform-client-v2.min.js'], (platformClient) => {
     console.log(platformClient);
   });
 </script>
@@ -201,6 +201,8 @@ Optional parameters may be specified in the optional third parameter for `loginP
 * `target` - The organization ID of the target organization, when intending to log in to a specific target organization using Authorized Organizations.
 * `login_hint` - The `login_hint` allows an application to pass the email address and/or the org name values to the authorization server (email:orgName, email, orgName).
 * `prompt` - Use the `prompt=login` parameter to require that the user be prompted to enter credentials at the Gensys Cloud login screen and ignore any remembered sessions (auth cookies).
+
+* `skipTest` - (optional) Default: false. If true, loginPKCEGrant proceeds to OAuth Grant flow regardless of existing token (skip test of token). By default, loginPKCEGrant will: (1) check if there is an existing token in memory or in local storage, (2) test this token against Genesys Cloud, (3) use this token and skip the OAuth Grant flow process if it is still valid.
 
 The _loginPKCEGrant_ supports an optional fourth parameter for `loginPKCEGrant`. This parameter accepts a string, used to provide a code verifier as input. When no code verifier is provider (Method 1), the SDK automatically generates a PKCE Code Verifier and saves it in _window sessionStorage_. If a code verifier is provided (Method 2), it is up to the custom application to store the code verifier value and pass it in _loginPKCEGrant_.
 
@@ -549,6 +551,7 @@ You can find sample code for the popup window in the [samples directory](https:/
 * *auth_popup_specific.html*: posts a message to a pre-defined target origin.
 * *auth_popup_all.html*: posts a message to any target origin (\*).
 * *auth_popup_notify.html*: posts a message when a popup notify message is received (requires *AuthPopupConfiguration.notifyPopup = true*)
+* *auth_popup_notify_source.html*: uses event.source to post a message when a popup notify message is received (requires *AuthPopupConfiguration.notifyPopup = true*)
 
 ## SDK Logging
 

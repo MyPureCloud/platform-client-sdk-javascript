@@ -1202,7 +1202,7 @@ if(env)this.environment=env;else this.environment=this.host?this.host:'mypureclo
 this.environment=this.environment.replace(/\/+$/,'');// Strip protocol and subdomain
 if(this.environment.startsWith('https://'))this.environment=this.environment.substring(8);if(this.environment.startsWith('http://'))this.environment=this.environment.substring(7);if(this.environment.startsWith('api.'))this.environment=this.environment.substring(4);this.basePath="https://api.".concat(this.environment);this.authUrl="https://login.".concat(this.environment);}},{key:"getConfUrl",value:function getConfUrl(pathType,regionUrl){if(!this.gateway)return regionUrl;if(!this.gateway.host)return regionUrl;var url=this.gateway.protocol+'://'+this.gateway.host;if(this.gateway.port>-1)url=url+':'+this.gateway.port.toString();if(pathType==='login'){if(this.gateway.path_params_login){if(this.gateway.path_params_login.startsWith('/'))url=url+this.gateway.path_params_login;else url=url+'/'+this.gateway.path_params_login;}}else{if(this.gateway.path_params_api){if(this.gateway.path_params_api.startsWith('/'))url=url+this.gateway.path_params_api;else url=url+'/'+this.gateway.path_params_api;}}return url;}},{key:"getConfigString",value:function getConfigString(section,key){if(this.config._sections[section])return this.config._sections[section][key];}},{key:"getConfigBoolean",value:function getConfigBoolean(section,key){if(this.config._sections[section]&&this.config._sections[section][key]!==undefined){if(typeof this.config._sections[section][key]==='string'){return this.config._sections[section][key]==='true';}else return this.config._sections[section][key];}}},{key:"getConfigInt",value:function getConfigInt(section,key){if(this.config._sections[section]&&this.config._sections[section][key]){if(typeof this.config._sections[section][key]==='string'){return parseInt(this.config._sections[section][key]);}else return this.config._sections[section][key];}}}]);}();/**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 262.0.0
+ * @version 263.0.0
  */var ApiClient=/*#__PURE__*/function(){/**
    * Manages low level client-server communications, parameter marshalling, etc. There should not be any need for an
    * application to use this class directly - the *Api and model classes provide the public API for the service. The
@@ -1231,7 +1231,7 @@ if(this.environment.startsWith('https://'))this.environment=this.environment.sub
        */PIPES:'|',/**
        * Native array. Value: <code>multi</code>
        * @const
-       */MULTI:'multi'};this.useLegacyParameterFilter=false;if(typeof window!=='undefined'){// Browser only
+       */MULTI:'multi'};this.useLegacyParameterFilter=false;this._listenerAuthPopupMessage=null;if(typeof window!=='undefined'){// Browser only
 this._handleAuthPopupMessage=this._handleAuthPopupMessage.bind(this);}this._listenersAuthPopupStatus=[];this._authPopupWindow=null;this._checkPopupTimeout=null;this._notifyPopupInterval=null;this._popupIdentifier=null;this.onAuthPopupStatus=null;/**
      * @description Value is `true` if local storage exists. Otherwise, false.
      */try{localStorage.setItem('purecloud_local_storage_test','purecloud_local_storage_test');localStorage.removeItem('purecloud_local_storage_test');this.hasLocalStorage=true;}catch(e){this.hasLocalStorage=false;}/**
@@ -1363,11 +1363,11 @@ localStorage.setItem("".concat(this.settingsPrefix,"_auth_data"),JSON.stringify(
 },{key:"addAuthPopupStatusListener",value:function addAuthPopupStatusListener(listener){if(typeof listener==='function'&&listener){if(!this._listenersAuthPopupStatus)this._listenersAuthPopupStatus=[];this._listenersAuthPopupStatus.push(listener);}}},{key:"removeAuthPopupStatusListener",value:function removeAuthPopupStatusListener(listener){if(listener){if(!this._listenersAuthPopupStatus||this._listenersAuthPopupStatus.length==0)return;this._listenersAuthPopupStatus=this._listenersAuthPopupStatus.filter(function(l){return l!==listener;});}}},{key:"removeAllAuthPopupStatusListeners",value:function removeAllAuthPopupStatusListeners(){if(this._listenersAuthPopupStatus)this._listenersAuthPopupStatus=[];}},{key:"_emitAuthPopupStatus",value:function _emitAuthPopupStatus(status,msg,identifier){if(this.onAuthPopupStatus)this.onAuthPopupStatus(status,msg,identifier);if(!this._listenersAuthPopupStatus||this._listenersAuthPopupStatus.length==0)return;this._listenersAuthPopupStatus.forEach(function(listener){return listener(status,msg,identifier);});}},{key:"_generatePopupIdentifier",value:function _generatePopupIdentifier(nChar){if(nChar<8||nChar>64){throw new Error("Popup Identifier (length) must be between 8 and 64 characters");}// Check for window
 {var unreservedCharacters="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-._~";var randomString=Array.from(crypto.getRandomValues(new Uint32Array(nChar))).map(function(x){return unreservedCharacters[x%unreservedCharacters.length];}).join('');return randomString;}}},{key:"_startAuthPopup",value:function _startAuthPopup(url,query,loginPopupConfiguration){var _this7=this;try{if(!loginPopupConfiguration)loginPopupConfiguration={};// Stop timers, reset values/variables if necessary
 if(this._checkPopupTimeout)clearTimeout(this._checkPopupTimeout);this._checkPopupTimeout=null;if(this._notifyPopupInterval)clearInterval(this._notifyPopupInterval);this._notifyPopupInterval=null;// Remove Event Listener
-window.removeEventListener('message',this._handleAuthPopupMessage);if(this._authPopupWindow){if(loginPopupConfiguration.autoClosePopup===true&&!this._authPopupWindow.closed){this._authPopupWindow.close();}if(this._popupIdentifier)this._emitAuthPopupStatus("ABORTED","Previous Authorization Popup aborted.",this._popupIdentifier);this._popupIdentifier=null;}this._authPopupWindow=null;// Start
-this._popupIdentifier=this._generatePopupIdentifier(16);this._emitAuthPopupStatus("INIT","Authorization Popup Starting",this._popupIdentifier);var popupUrl=url;if(loginPopupConfiguration.overridePopupUrl){var overrideQuery=null;if(loginPopupConfiguration.overridePopupUrlAuthParameters===true&&query){if(loginPopupConfiguration.overridePopupUrlParameters){overrideQuery=_objectSpread(_objectSpread({},query),loginPopupConfiguration.overridePopupUrlParameters);}else{overrideQuery=query;}}else if(loginPopupConfiguration.overridePopupUrlParameters){overrideQuery=loginPopupConfiguration.overridePopupUrlParameters;}if(overrideQuery){popupUrl="".concat(loginPopupConfiguration.overridePopupUrl,"?").concat(new URLSearchParams(overrideQuery).toString());}else{popupUrl=loginPopupConfiguration.overridePopupUrl;}}return new Promise(function(resolve,reject){window.addEventListener('message',function(event){return _this7._handleAuthPopupMessage(event,loginPopupConfiguration,resolve,reject);});_this7._authPopupWindow=window.open(popupUrl,loginPopupConfiguration.popupTarget,loginPopupConfiguration.popupWindowFeatures);if(loginPopupConfiguration.notifyPopup===true){_this7._notifyPopupInterval=setInterval(function(){if(this._authPopupWindow){var popupLocationOrigin=new URL(this.redirectUri);// Genesys Cloud Auth Popup Notify Event
+if(this._listenerAuthPopupMessage){window.removeEventListener('message',this._listenerAuthPopupMessage);this._listenerAuthPopupMessage=null;}if(this._authPopupWindow){if(loginPopupConfiguration.autoClosePopup===true&&!this._authPopupWindow.closed){this._authPopupWindow.close();}if(this._popupIdentifier)this._emitAuthPopupStatus("ABORTED","Previous Authorization Popup aborted.",this._popupIdentifier);this._popupIdentifier=null;}this._authPopupWindow=null;// Start
+this._popupIdentifier=this._generatePopupIdentifier(16);this._emitAuthPopupStatus("INIT","Authorization Popup Starting",this._popupIdentifier);var popupUrl=url;if(loginPopupConfiguration.overridePopupUrl){var overrideQuery=null;if(loginPopupConfiguration.overridePopupUrlAuthParameters===true&&query){if(loginPopupConfiguration.overridePopupUrlParameters){overrideQuery=_objectSpread(_objectSpread({},query),loginPopupConfiguration.overridePopupUrlParameters);}else{overrideQuery=query;}}else if(loginPopupConfiguration.overridePopupUrlParameters){overrideQuery=loginPopupConfiguration.overridePopupUrlParameters;}if(overrideQuery){popupUrl="".concat(loginPopupConfiguration.overridePopupUrl,"?").concat(new URLSearchParams(overrideQuery).toString());}else{popupUrl=loginPopupConfiguration.overridePopupUrl;}}return new Promise(function(resolve,reject){_this7._listenerAuthPopupMessage=function(event){_this7._handleAuthPopupMessage(event,loginPopupConfiguration,resolve,reject);};window.addEventListener('message',_this7._listenerAuthPopupMessage);_this7._authPopupWindow=window.open(popupUrl,loginPopupConfiguration.popupTarget,loginPopupConfiguration.popupWindowFeatures);if(loginPopupConfiguration.notifyPopup===true){_this7._notifyPopupInterval=setInterval(function(){if(this._authPopupWindow){var popupLocationOrigin=new URL(this.redirectUri);// Genesys Cloud Auth Popup Notify Event
 var popupNotifyMessage={name:"gc_auth_popup",type:"notify"};if(loginPopupConfiguration.usePopupIdentifier===true&&this._popupIdentifier)popupNotifyMessage.identifier=this._popupIdentifier;this._authPopupWindow.postMessage(popupNotifyMessage,"".concat(popupLocationOrigin.protocol,"//").concat(popupLocationOrigin.host));}else{clearInterval(this.notifyPopupInterval);this._notifyPopupInterval=null;}}.bind(_this7),1000);}_this7._checkPopupTimeout=setTimeout(function(){// Authorization Popup Timeout
 this._emitAuthPopupStatus("TIMEOUT","Authorization Popup Timeout",this._popupIdentifier);// Remove event listener
-window.removeEventListener('message',this._handleAuthPopupMessage);// Close popup automatically if requested
+if(this._listenerAuthPopupMessage){window.removeEventListener('message',this._listenerAuthPopupMessage);this._listenerAuthPopupMessage=null;}// Close popup automatically if requested
 if(loginPopupConfiguration.autoClosePopup===true&&loginPopupConfiguration.autoClosePopupDelay>0){setTimeout(function(){if(this._authPopupWindow){if(!this._authPopupWindow.closed){this._authPopupWindow.close();}this._authPopupWindow=null;}}.bind(this),loginPopupConfiguration.autoClosePopupDelay);}else{if(loginPopupConfiguration.autoClosePopup===true){if(this._authPopupWindow){if(!this._authPopupWindow.closed){this._authPopupWindow.close();}}}this._authPopupWindow=null;}// Clear timeout
 this._checkPopupTimeout=null;// Clear Notify Popup
 if(this._notifyPopupInterval)clearInterval(this._notifyPopupInterval);this._notifyPopupInterval=null;// Raise error/reject
@@ -1376,7 +1376,7 @@ if(this.redirectUri.startsWith(event.origin)){// Verify format and message type
 if(event.data&&_typeof(event.data)==='object'){var jsonMessage=JSON.parse(JSON.stringify(event.data));// Genesys Cloud Auth Popup Message
 if(jsonMessage&&jsonMessage.name==="gc_auth_popup"&&jsonMessage.type==="message"){// Clear the _checkPopupTimeout and the _notifyPopupInterval
 if(this._checkPopupTimeout)clearTimeout(this._checkPopupTimeout);this._checkPopupTimeout=null;if(this._notifyPopupInterval)clearInterval(this._notifyPopupInterval);this._notifyPopupInterval=null;// Remove Event Listener
-window.removeEventListener('message',this._handleAuthPopupMessage);if(loginPopupConfiguration.usePopupIdentifier===true&&jsonMessage.identifier){if(jsonMessage.identifier!==this._popupIdentifier){// error
+if(this._listenerAuthPopupMessage){window.removeEventListener('message',this._listenerAuthPopupMessage);this._listenerAuthPopupMessage=null;}if(loginPopupConfiguration.usePopupIdentifier===true&&jsonMessage.identifier){if(jsonMessage.identifier!==this._popupIdentifier){// error
 this._emitAuthPopupStatus("Error","Invalid Popup Identifier received",this._popupIdentifier);authResult.accessToken=undefined;this._saveSettings(authResult);return reject(new Error("Invalid Popup Identifier received"));}}// Close the popup after delay if necessary (from app)
 if(loginPopupConfiguration.autoClosePopup===true&&loginPopupConfiguration.autoClosePopupDelay>0){setTimeout(function(){if(this._authPopupWindow){if(!this._authPopupWindow.closed){this._authPopupWindow.close();}this._authPopupWindow=null;}}.bind(this),loginPopupConfiguration.autoClosePopupDelay);}else{if(loginPopupConfiguration.autoClosePopup===true){if(this._authPopupWindow){if(!this._authPopupWindow.closed){this._authPopupWindow.close();}}}this._authPopupWindow=null;}var authResult={};var popupSearch=null;var popupHash=null;if(jsonMessage.auth&&_typeof(jsonMessage.auth)==='object'){authResult=jsonMessage.auth;// Force popup search in case of further window.replace
 popupSearch="?".concat(new URLSearchParams(authResult).toString());}else{if(jsonMessage.search&&jsonMessage.search!=='?')popupSearch=jsonMessage.search;if(jsonMessage.hash&&jsonMessage.hash!=='#')popupHash=jsonMessage.hash;// Get the token or the code and other authdata from incoming message
@@ -1467,6 +1467,8 @@ return reject(new Error("Code Challenge Error ".concat(error)));});});}}/**
   * @param {string} opts.target - (optional) The organization ID of the target organization, when intending to log in to a specific target organization using Authorized Organizations.
   * @param {string} opts.login_hint - (optional) The login_hint allows an application to pass the email address and/or the org name values to the authorization server (email:orgName, email, orgName).
   * @param {string} opts.prompt - (optional) Use the prompt=login parameter to require that the user be prompted to enter credentials at the Gensys Cloud login screen and ignore any remembered sessions (auth cookies).
+  * @param {object} opts.authPopupConfiguration - (optional) Overrides Authorization Popup Configuration.
+  * @param {boolean} opts.skipTest - (optional) Default: false. If true, proceeds to OAuth Grant flow regardless of existing token (skip test of token).
      * @param {string} codeVerifier - (optional) code verifier used to generate the code challenge
      */},{key:"loginPKCEGrant",value:function loginPKCEGrant(clientId,redirectUri,opts,codeVerifier){var _this11=this;// Need Local Storage or non null codeVerifier as parameter
 if(!this.hasLocalStorage&&!codeVerifier){throw new Error("loginPKCEGrant requires Local Storage or codeVerifier as input parameter");}// Check for auth code in query
@@ -1483,7 +1485,7 @@ _this11._saveSettings({accessToken:undefined});// remove codeVerifier from sessi
 if(_this11.hasLocalStorage){sessionStorage.removeItem("genesys_cloud_sdk_pkce_code_verifier");sessionStorage.removeItem("".concat(_this11.settingsPrefix,"_pkce_code_verifier"));}return reject(new Error("[".concat(error.name,"] ").concat(error.message)));});})["catch"](function(error){// Handle failure response
 _this11._saveSettings({accessToken:undefined});// remove codeVerifier from session storage
 if(_this11.hasLocalStorage){sessionStorage.removeItem("genesys_cloud_sdk_pkce_code_verifier");sessionStorage.removeItem("".concat(_this11.settingsPrefix,"_pkce_code_verifier"));}return reject(new Error("[".concat(error.name,"] ").concat(error.message)));});}else{// Test token (if previously stored) and proceed with login
-_this11._testTokenAccess().then(function(){if(!_this11.authData.state&&opts.state)_this11.authData.state=opts.state;resolve(_this11.authData);})["catch"](function(error){if(!_this11.codeVerifier){_this11.codeVerifier=_this11.generatePKCECodeVerifier(128);// save codeVerifier in session storage
+_this11._testTokenAccess(opts.skipTest).then(function(){if(!_this11.authData.state&&opts.state)_this11.authData.state=opts.state;resolve(_this11.authData);})["catch"](function(error){if(!_this11.codeVerifier){_this11.codeVerifier=_this11.generatePKCECodeVerifier(128);// save codeVerifier in session storage
 if(_this11.hasLocalStorage){sessionStorage.setItem("genesys_cloud_sdk_pkce_code_verifier",_this11.codeVerifier);sessionStorage.setItem("".concat(_this11.settingsPrefix,"_pkce_code_verifier"),_this11.codeVerifier);}}_this11.computePKCECodeChallenge(_this11.codeVerifier).then(function(codeChallenge){var tokenQuery={client_id:_this11.clientId,redirect_uri:_this11.redirectUri,code_challenge:codeChallenge,response_type:'code',code_challenge_method:'S256'};if(opts.state)tokenQuery.state=opts.state;if(opts.org)tokenQuery.org=opts.org;if(opts.provider)tokenQuery.provider=opts.provider;if(opts.target)tokenQuery.target=opts.target;if(opts.login_hint)tokenQuery.login_hint=opts.login_hint;if(opts.prompt&&opts.prompt=='login')tokenQuery.prompt=opts.prompt;// Overrides AuthPopupConfiguration locally
 var loginPopupConfiguration=_this11.config.mergeWithAuthPopupConfiguration(opts.authPopupConfiguration);var url=_this11._buildAuthUrl('oauth/authorize',tokenQuery);if(loginPopupConfiguration.usePopup===true){_this11._startAuthPopup(url,tokenQuery,loginPopupConfiguration).then(function(authData){resolve(authData);})["catch"](function(error){return reject(new Error("[".concat(error.name,"] ").concat(error.message)));});}else{window.location.replace(url);}})["catch"](function(err){return reject(new Error("[".concat(err.name,"]")));});});}});}/**
   * @description Parses the URL Query, grabs the code, and clears the query param. If no code is found, no action is taken.
@@ -1534,7 +1536,7 @@ _this15._sleep(_this15.config.refresh_token_wait_max).then(function(){if(_this15
    * @param {int} millis - Length to sleep in milliseconds
    */},{key:"_sleep",value:function _sleep(millis){return new Promise(function(resolve){return setTimeout(resolve,millis);});}/**
    * @description Loads token from storage, if enabled, and checks to ensure it works.
-   */},{key:"_testTokenAccess",value:function _testTokenAccess(){var _this16=this;return new Promise(function(resolve,reject){// Load from storage
+   */},{key:"_testTokenAccess",value:function _testTokenAccess(skipTest){var _this16=this;return new Promise(function(resolve,reject){if(typeof skipTest==="boolean"&&skipTest===true){reject(new Error('Skipping Test Token'));return;}// Load from storage
 _this16._loadSettings();// Check if there is a token to test
 if(!_this16.authentications['PureCloud OAuth'].accessToken){reject(new Error('Token is not set'));return;}// Test token
 _this16.callApi('/api/v2/tokens/me','GET',null,null,null,null,null,['PureCloud OAuth'],['application/json'],['application/json']).then(function(){resolve();})["catch"](function(error){_this16._saveSettings({accessToken:undefined});reject(error);});});}/**
@@ -1658,7 +1660,7 @@ resolve(data);})["catch"](function(error){var data=error;if(error.response&&erro
 that.config.logger.log('error',error.response.status,httpMethod,url,request.headers,error.response.headers,bodyParam,error.response.data);data=that.returnExtended===true?{status:error.response.status,statusText:error.response.statusText,headers:error.response.headers,body:error.response.data,text:error.response.text,error:error}:error.response.data?error.response.data:error.response.text;}reject(data);});}});}}]);}();var AIStudioApi=/*#__PURE__*/function(){/**
    * AIStudio service.
    * @module purecloud-platform-client-v2/api/AIStudioApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new AIStudioApi. 
    * @alias module:purecloud-platform-client-v2/api/AIStudioApi
@@ -1911,7 +1913,7 @@ if(summarySettingId===undefined||summarySettingId===null||summarySettingId==='')
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putConversationsSummariesSetting';}return this.apiClient.callApi('/api/v2/conversations/summaries/settings/{summarySettingId}','PUT',{'summarySettingId':summarySettingId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var AgentAssistantsApi=/*#__PURE__*/function(){/**
    * AgentAssistants service.
    * @module purecloud-platform-client-v2/api/AgentAssistantsApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new AgentAssistantsApi. 
    * @alias module:purecloud-platform-client-v2/api/AgentAssistantsApi
@@ -2137,7 +2139,7 @@ if(agentChecklistId===undefined||agentChecklistId===null||agentChecklistId==='')
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putAssistantsAgentchecklist';}return this.apiClient.callApi('/api/v2/assistants/agentchecklists/{agentChecklistId}','PUT',{'agentChecklistId':agentChecklistId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var AgentCopilotApi=/*#__PURE__*/function(){/**
    * AgentCopilot service.
    * @module purecloud-platform-client-v2/api/AgentCopilotApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new AgentCopilotApi. 
    * @alias module:purecloud-platform-client-v2/api/AgentCopilotApi
@@ -2169,7 +2171,7 @@ if(assistantId===undefined||assistantId===null||assistantId===''){throw'Missing 
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putAssistantCopilot';}return this.apiClient.callApi('/api/v2/assistants/{assistantId}/copilot','PUT',{'assistantId':assistantId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var AgentUIApi=/*#__PURE__*/function(){/**
    * AgentUI service.
    * @module purecloud-platform-client-v2/api/AgentUIApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new AgentUIApi. 
    * @alias module:purecloud-platform-client-v2/api/AgentUIApi
@@ -2211,7 +2213,7 @@ if(agentId===undefined||agentId===null||agentId===''){throw'Missing the required
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putUsersAgentuiAgentsAutoanswerAgentIdSettings';}return this.apiClient.callApi('/api/v2/users/agentui/agents/autoanswer/{agentId}/settings','PUT',{'agentId':agentId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var AlertingApi=/*#__PURE__*/function(){/**
    * Alerting service.
    * @module purecloud-platform-client-v2/api/AlertingApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new AlertingApi. 
    * @alias module:purecloud-platform-client-v2/api/AlertingApi
@@ -2325,7 +2327,7 @@ if(ruleId===undefined||ruleId===null||ruleId===''){throw'Missing the required pa
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putAlertingRule';}return this.apiClient.callApi('/api/v2/alerting/rules/{ruleId}','PUT',{'ruleId':ruleId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var AnalyticsApi=/*#__PURE__*/function(){/**
    * Analytics service.
    * @module purecloud-platform-client-v2/api/AnalyticsApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new AnalyticsApi. 
    * @alias module:purecloud-platform-client-v2/api/AnalyticsApi
@@ -2671,7 +2673,6 @@ if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required param
    * @param {String} downloadId Unique file Id to download
    * @param {Object} opts Optional parameters
    * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * getAnalyticsDataextractionDownload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    */},{key:"getAnalyticsDataextractionDownload",value:function getAnalyticsDataextractionDownload(downloadId,opts){opts=opts||{};// verify the required parameter 'downloadId' is set
 if(downloadId===undefined||downloadId===null||downloadId===''){throw'Missing the required parameter "downloadId" when calling getAnalyticsDataextractionDownload';}return this.apiClient.callApi('/api/v2/analytics/dataextraction/downloads/{downloadId}','GET',{'downloadId':downloadId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
    * Get metadata on files available for extraction
@@ -2684,7 +2685,6 @@ if(downloadId===undefined||downloadId===null||downloadId===''){throw'Missing the
    * @param {Date} opts.dateStart Start DateTime filter. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    * @param {Date} opts.dateEnd End DateTime filter. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * getAnalyticsDataextractionDownloadsMetadata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    */},{key:"getAnalyticsDataextractionDownloadsMetadata",value:function getAnalyticsDataextractionDownloadsMetadata(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/analytics/dataextraction/downloads/metadata','GET',{},{'before':opts['before'],'after':opts['after'],'pageSize':opts['pageSize'],'dataSchema':opts['dataSchema'],'dateStart':opts['dateStart'],'dateEnd':opts['dateEnd']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
    * Get analytics data retention setting
    * 
@@ -3101,7 +3101,6 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
    * @param {Object} body request
    * @param {Object} opts Optional parameters
    * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * postAnalyticsDataextractionDownloadsBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    */},{key:"postAnalyticsDataextractionDownloadsBulk",value:function postAnalyticsDataextractionDownloadsBulk(body,opts){opts=opts||{};// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postAnalyticsDataextractionDownloadsBulk';}return this.apiClient.callApi('/api/v2/analytics/dataextraction/downloads/bulk','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
    * Query for evaluation aggregates asynchronously
@@ -3382,7 +3381,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putAnalyticsDataretentionSettings';}return this.apiClient.callApi('/api/v2/analytics/dataretention/settings','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var ArchitectApi=/*#__PURE__*/function(){/**
    * Architect service.
    * @module purecloud-platform-client-v2/api/ArchitectApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new ArchitectApi. 
    * @alias module:purecloud-platform-client-v2/api/ArchitectApi
@@ -4781,7 +4780,7 @@ if(milestoneId===undefined||milestoneId===null||milestoneId===''){throw'Missing 
 if(flowOutcomeId===undefined||flowOutcomeId===null||flowOutcomeId===''){throw'Missing the required parameter "flowOutcomeId" when calling putFlowsOutcome';}return this.apiClient.callApi('/api/v2/flows/outcomes/{flowOutcomeId}','PUT',{'flowOutcomeId':flowOutcomeId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var AssistantCopilotVariationsApi=/*#__PURE__*/function(){/**
    * AssistantCopilotVariations service.
    * @module purecloud-platform-client-v2/api/AssistantCopilotVariationsApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new AssistantCopilotVariationsApi. 
    * @alias module:purecloud-platform-client-v2/api/AssistantCopilotVariationsApi
@@ -4836,7 +4835,7 @@ if(variationId===undefined||variationId===null||variationId===''){throw'Missing 
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putAssistantVariation';}return this.apiClient.callApi('/api/v2/assistants/{assistantId}/variations/{variationId}','PUT',{'assistantId':assistantId,'variationId':variationId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var AuditApi=/*#__PURE__*/function(){/**
    * Audit service.
    * @module purecloud-platform-client-v2/api/AuditApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new AuditApi. 
    * @alias module:purecloud-platform-client-v2/api/AuditApi
@@ -4897,7 +4896,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postAuditsQueryRealtimeRelated';}return this.apiClient.callApi('/api/v2/audits/query/realtime/related','POST',{},{'expand':this.apiClient.buildCollectionParam(opts['expand'],'multi')},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var AuthorizationApi=/*#__PURE__*/function(){/**
    * Authorization service.
    * @module purecloud-platform-client-v2/api/AuthorizationApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new AuthorizationApi. 
    * @alias module:purecloud-platform-client-v2/api/AuthorizationApi
@@ -5415,7 +5414,7 @@ if(subjectId===undefined||subjectId===null||subjectId===''){throw'Missing the re
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putUserRoles';}return this.apiClient.callApi('/api/v2/users/{subjectId}/roles','PUT',{'subjectId':subjectId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var BackgroundAssistantApi=/*#__PURE__*/function(){/**
    * BackgroundAssistant service.
    * @module purecloud-platform-client-v2/api/BackgroundAssistantApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new BackgroundAssistantApi. 
    * @alias module:purecloud-platform-client-v2/api/BackgroundAssistantApi
@@ -5438,7 +5437,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
    */},{key:"postScreenrecordingToken",value:function postScreenrecordingToken(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/screenrecording/token','POST',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var BillingApi=/*#__PURE__*/function(){/**
    * Billing service.
    * @module purecloud-platform-client-v2/api/BillingApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new BillingApi. 
    * @alias module:purecloud-platform-client-v2/api/BillingApi
@@ -5527,7 +5526,7 @@ if(endDate===undefined||endDate===null){throw'Missing the required parameter "en
 if(trustorOrgId===undefined||trustorOrgId===null||trustorOrgId===''){throw'Missing the required parameter "trustorOrgId" when calling getBillingTrusteebillingoverviewTrustorOrgId';}return this.apiClient.callApi('/api/v2/billing/trusteebillingoverview/{trustorOrgId}','GET',{'trustorOrgId':trustorOrgId},{'billingPeriodIndex':opts['billingPeriodIndex']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var BusinessRulesApi=/*#__PURE__*/function(){/**
    * BusinessRules service.
    * @module purecloud-platform-client-v2/api/BusinessRulesApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new BusinessRulesApi. 
    * @alias module:purecloud-platform-client-v2/api/BusinessRulesApi
@@ -5968,7 +5967,7 @@ if(schemaId===undefined||schemaId===null||schemaId===''){throw'Missing the requi
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putBusinessrulesSchema';}return this.apiClient.callApi('/api/v2/businessrules/schemas/{schemaId}','PUT',{'schemaId':schemaId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var CarrierServicesApi=/*#__PURE__*/function(){/**
    * CarrierServices service.
    * @module purecloud-platform-client-v2/api/CarrierServicesApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new CarrierServicesApi. 
    * @alias module:purecloud-platform-client-v2/api/CarrierServicesApi
@@ -5991,7 +5990,7 @@ if(phoneNumber===undefined||phoneNumber===null){throw'Missing the required param
    */},{key:"postCarrierservicesIntegrationsEmergencylocationsMe",value:function postCarrierservicesIntegrationsEmergencylocationsMe(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/carrierservices/integrations/emergencylocations/me','POST',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var CaseManagementApi=/*#__PURE__*/function(){/**
    * CaseManagement service.
    * @module purecloud-platform-client-v2/api/CaseManagementApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new CaseManagementApi. 
    * @alias module:purecloud-platform-client-v2/api/CaseManagementApi
@@ -6277,6 +6276,26 @@ if(referenceId===undefined||referenceId===null||referenceId===''){throw'Missing 
    */},{key:"patchCasemanagementCaseDatedue",value:function patchCasemanagementCaseDatedue(caseId,body,opts){opts=opts||{};// verify the required parameter 'caseId' is set
 if(caseId===undefined||caseId===null||caseId===''){throw'Missing the required parameter "caseId" when calling patchCasemanagementCaseDatedue';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchCasemanagementCaseDatedue';}return this.apiClient.callApi('/api/v2/casemanagement/cases/{caseId}/datedue','PATCH',{'caseId':caseId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+   * Update the description of a Case.
+   * 
+   * @param {String} caseId Case identifier.
+   * @param {Object} body Description update.
+   * @param {Object} opts Optional parameters
+   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+   * patchCasemanagementCaseDescription is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   */},{key:"patchCasemanagementCaseDescription",value:function patchCasemanagementCaseDescription(caseId,body,opts){opts=opts||{};// verify the required parameter 'caseId' is set
+if(caseId===undefined||caseId===null||caseId===''){throw'Missing the required parameter "caseId" when calling patchCasemanagementCaseDescription';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchCasemanagementCaseDescription';}return this.apiClient.callApi('/api/v2/casemanagement/cases/{caseId}/description','PATCH',{'caseId':caseId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+   * Update the external identifier of a Case.
+   * 
+   * @param {String} caseId Case identifier.
+   * @param {Object} body External identifier update.
+   * @param {Object} opts Optional parameters
+   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+   * patchCasemanagementCaseExternalid is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   */},{key:"patchCasemanagementCaseExternalid",value:function patchCasemanagementCaseExternalid(caseId,body,opts){opts=opts||{};// verify the required parameter 'caseId' is set
+if(caseId===undefined||caseId===null||caseId===''){throw'Missing the required parameter "caseId" when calling patchCasemanagementCaseExternalid';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchCasemanagementCaseExternalid';}return this.apiClient.callApi('/api/v2/casemanagement/cases/{caseId}/externalid','PATCH',{'caseId':caseId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
    * Update the ownerId of a Case
    * 
    * @param {String} caseId Case identifier.
@@ -6464,7 +6483,7 @@ if(caseplanId===undefined||caseplanId===null||caseplanId===''){throw'Missing the
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putCasemanagementCaseplanIntakesettings';}return this.apiClient.callApi('/api/v2/casemanagement/caseplans/{caseplanId}/intakesettings','PUT',{'caseplanId':caseplanId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var ChatApi=/*#__PURE__*/function(){/**
    * Chat service.
    * @module purecloud-platform-client-v2/api/ChatApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new ChatApi. 
    * @alias module:purecloud-platform-client-v2/api/ChatApi
@@ -6759,7 +6778,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putChatsSettings';}return this.apiClient.callApi('/api/v2/chats/settings','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var CoachingApi=/*#__PURE__*/function(){/**
    * Coaching service.
    * @module purecloud-platform-client-v2/api/CoachingApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new CoachingApi. 
    * @alias module:purecloud-platform-client-v2/api/CoachingApi
@@ -6958,7 +6977,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postCoachingScheduleslotsQuery';}return this.apiClient.callApi('/api/v2/coaching/scheduleslots/query','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var ContentManagementApi=/*#__PURE__*/function(){/**
    * ContentManagement service.
    * @module purecloud-platform-client-v2/api/ContentManagementApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new ContentManagementApi. 
    * @alias module:purecloud-platform-client-v2/api/ContentManagementApi
@@ -7290,7 +7309,7 @@ if(tagId===undefined||tagId===null||tagId===''){throw'Missing the required param
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putContentmanagementWorkspaceTagvalue';}return this.apiClient.callApi('/api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}','PUT',{'workspaceId':workspaceId,'tagId':tagId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var ConversationsApi=/*#__PURE__*/function(){/**
    * Conversations service.
    * @module purecloud-platform-client-v2/api/ConversationsApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new ConversationsApi. 
    * @alias module:purecloud-platform-client-v2/api/ConversationsApi
@@ -9685,6 +9704,15 @@ if(participantId===undefined||participantId===null||participantId===''){throw'Mi
 if(conversationId===undefined||conversationId===null||conversationId===''){throw'Missing the required parameter "conversationId" when calling postConversationsMessageParticipantReplace';}// verify the required parameter 'participantId' is set
 if(participantId===undefined||participantId===null||participantId===''){throw'Missing the required parameter "participantId" when calling postConversationsMessageParticipantReplace';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postConversationsMessageParticipantReplace';}return this.apiClient.callApi('/api/v2/conversations/messages/{conversationId}/participants/{participantId}/replace','POST',{'conversationId':conversationId,'participantId':participantId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+   * The User performing this action will takeover the conversation from the participant specified.
+   * This operation allows a user performing the action to take over a conversation from the participant specified. The user must be monitoring the participant and must have the necessary permissions to perform the takeover action.
+   * @param {String} conversationId The id of the conversation being taken over
+   * @param {String} participantId The id of the participant being taken over.
+   * @param {Object} opts Optional parameters
+   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+   */},{key:"postConversationsMessageParticipantTakeover",value:function postConversationsMessageParticipantTakeover(conversationId,participantId,opts){opts=opts||{};// verify the required parameter 'conversationId' is set
+if(conversationId===undefined||conversationId===null||conversationId===''){throw'Missing the required parameter "conversationId" when calling postConversationsMessageParticipantTakeover';}// verify the required parameter 'participantId' is set
+if(participantId===undefined||participantId===null||participantId===''){throw'Missing the required parameter "participantId" when calling postConversationsMessageParticipantTakeover';}return this.apiClient.callApi('/api/v2/conversations/messages/{conversationId}/participants/{participantId}/takeover','POST',{'conversationId':conversationId,'participantId':participantId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
    * Create an outbound messaging conversation.
    * If there is an existing conversation between the remote address and the address associated with the queue specified in createOutboundRequest then the result of this request depends on the state of that conversation and the useExistingConversation field of createOutboundRequest. If the existing conversation is in alerting or connected state, then the request will fail. If the existing conversation is disconnected but still within the conversation window then the request will fail unless useExistingConversation is set to true.
    * @param {Object} body Create outbound messaging conversation
@@ -10092,7 +10120,7 @@ if(conversationId===undefined||conversationId===null||conversationId===''){throw
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putConversationsVideoRecordingstate';}return this.apiClient.callApi('/api/v2/conversations/videos/{conversationId}/recordingstate','PUT',{'conversationId':conversationId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var DataExtensionsApi=/*#__PURE__*/function(){/**
    * DataExtensions service.
    * @module purecloud-platform-client-v2/api/DataExtensionsApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new DataExtensionsApi. 
    * @alias module:purecloud-platform-client-v2/api/DataExtensionsApi
@@ -10119,7 +10147,7 @@ if(coretypeName===undefined||coretypeName===null||coretypeName===''){throw'Missi
    */},{key:"getDataextensionsLimits",value:function getDataextensionsLimits(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/dataextensions/limits','GET',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var DataPrivacyApi=/*#__PURE__*/function(){/**
    * DataPrivacy service.
    * @module purecloud-platform-client-v2/api/DataPrivacyApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new DataPrivacyApi. 
    * @alias module:purecloud-platform-client-v2/api/DataPrivacyApi
@@ -10170,7 +10198,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postDataprivacyMaskingrulesValidate';}return this.apiClient.callApi('/api/v2/dataprivacy/maskingrules/validate','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var DependenciesApi=/*#__PURE__*/function(){/**
    * Dependencies service.
    * @module purecloud-platform-client-v2/api/DependenciesApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new DependenciesApi. 
    * @alias module:purecloud-platform-client-v2/api/DependenciesApi
@@ -10217,7 +10245,7 @@ if(entityType===undefined||entityType===null||entityType===''){throw'Missing the
 if(entityId===undefined||entityId===null||entityId===''){throw'Missing the required parameter "entityId" when calling getDependenciesTypeEntityTypeIdEntityIdConnectionsRequires';}return this.apiClient.callApi('/api/v2/dependencies/type/{entityType}/id/{entityId}/connections/requires','GET',{'entityType':entityType,'entityId':entityId},{'pageSize':opts['pageSize'],'beforeSourceType':opts['beforeSourceType'],'beforeSourceId':opts['beforeSourceId'],'afterSourceType':opts['afterSourceType'],'afterSourceId':opts['afterSourceId']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var DownloadsApi=/*#__PURE__*/function(){/**
    * Downloads service.
    * @module purecloud-platform-client-v2/api/DownloadsApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new DownloadsApi. 
    * @alias module:purecloud-platform-client-v2/api/DownloadsApi
@@ -10237,7 +10265,7 @@ if(entityId===undefined||entityId===null||entityId===''){throw'Missing the requi
 if(downloadId===undefined||downloadId===null||downloadId===''){throw'Missing the required parameter "downloadId" when calling getDownload';}return this.apiClient.callApi('/api/v2/downloads/{downloadId}','GET',{'downloadId':downloadId},{'contentDisposition':opts['contentDisposition'],'issueRedirect':opts['issueRedirect'],'redirectToAuth':opts['redirectToAuth']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var EmailsApi=/*#__PURE__*/function(){/**
    * Emails service.
    * @module purecloud-platform-client-v2/api/EmailsApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new EmailsApi. 
    * @alias module:purecloud-platform-client-v2/api/EmailsApi
@@ -10274,7 +10302,7 @@ if(downloadId===undefined||downloadId===null||downloadId===''){throw'Missing the
    */},{key:"patchEmailsSettingsThreading",value:function patchEmailsSettingsThreading(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/emails/settings/threading','PATCH',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var EmployeeEngagementApi=/*#__PURE__*/function(){/**
    * EmployeeEngagement service.
    * @module purecloud-platform-client-v2/api/EmployeeEngagementApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new EmployeeEngagementApi. 
    * @alias module:purecloud-platform-client-v2/api/EmployeeEngagementApi
@@ -10332,7 +10360,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postEmployeeengagementRecognitions';}return this.apiClient.callApi('/api/v2/employeeengagement/recognitions','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var EventsApi=/*#__PURE__*/function(){/**
    * Events service.
    * @module purecloud-platform-client-v2/api/EventsApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new EventsApi. 
    * @alias module:purecloud-platform-client-v2/api/EventsApi
@@ -10370,7 +10398,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postEventsUsersRoutingstatus';}return this.apiClient.callApi('/api/v2/events/users/routingstatus','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var ExternalContactsApi=/*#__PURE__*/function(){/**
    * ExternalContacts service.
    * @module purecloud-platform-client-v2/api/ExternalContactsApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new ExternalContactsApi. 
    * @alias module:purecloud-platform-client-v2/api/ExternalContactsApi
@@ -11530,7 +11558,7 @@ if(relationshipId===undefined||relationshipId===null||relationshipId===''){throw
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putExternalcontactsRelationship';}return this.apiClient.callApi('/api/v2/externalcontacts/relationships/{relationshipId}','PUT',{'relationshipId':relationshipId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var FaxApi=/*#__PURE__*/function(){/**
    * Fax service.
    * @module purecloud-platform-client-v2/api/FaxApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new FaxApi. 
    * @alias module:purecloud-platform-client-v2/api/FaxApi
@@ -11600,7 +11628,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
    */},{key:"putFaxSettings",value:function putFaxSettings(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/fax/settings','PUT',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var FlowsApi=/*#__PURE__*/function(){/**
    * Flows service.
    * @module purecloud-platform-client-v2/api/FlowsApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new FlowsApi. 
    * @alias module:purecloud-platform-client-v2/api/FlowsApi
@@ -11662,7 +11690,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postAnalyticsFlowsObservationsQuery';}return this.apiClient.callApi('/api/v2/analytics/flows/observations/query','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var GamificationApi=/*#__PURE__*/function(){/**
    * Gamification service.
    * @module purecloud-platform-client-v2/api/GamificationApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new GamificationApi. 
    * @alias module:purecloud-platform-client-v2/api/GamificationApi
@@ -12457,7 +12485,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(status===undefined||status===null){throw'Missing the required parameter "status" when calling putGamificationStatus';}return this.apiClient.callApi('/api/v2/gamification/status','PUT',{},{},{},{},status,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var GeneralDataProtectionRegulationApi=/*#__PURE__*/function(){/**
    * GeneralDataProtectionRegulation service.
    * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new GeneralDataProtectionRegulationApi. 
    * @alias module:purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
@@ -12498,7 +12526,7 @@ if(searchValue===undefined||searchValue===null){throw'Missing the required param
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postGdprRequests';}return this.apiClient.callApi('/api/v2/gdpr/requests','POST',{},{'deleteConfirmed':opts['deleteConfirmed']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var GeolocationApi=/*#__PURE__*/function(){/**
    * Geolocation service.
    * @module purecloud-platform-client-v2/api/GeolocationApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new GeolocationApi. 
    * @alias module:purecloud-platform-client-v2/api/GeolocationApi
@@ -12540,7 +12568,7 @@ if(clientId===undefined||clientId===null||clientId===''){throw'Missing the requi
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchUserGeolocation';}return this.apiClient.callApi('/api/v2/users/{userId}/geolocations/{clientId}','PATCH',{'userId':userId,'clientId':clientId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var GreetingsApi=/*#__PURE__*/function(){/**
    * Greetings service.
    * @module purecloud-platform-client-v2/api/GreetingsApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new GreetingsApi. 
    * @alias module:purecloud-platform-client-v2/api/GreetingsApi
@@ -12699,7 +12727,7 @@ if(userId===undefined||userId===null||userId===''){throw'Missing the required pa
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putUserGreetingsDefaults';}return this.apiClient.callApi('/api/v2/users/{userId}/greetings/defaults','PUT',{'userId':userId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var GroupsApi=/*#__PURE__*/function(){/**
    * Groups service.
    * @module purecloud-platform-client-v2/api/GroupsApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new GroupsApi. 
    * @alias module:purecloud-platform-client-v2/api/GroupsApi
@@ -12862,7 +12890,7 @@ if(groupId===undefined||groupId===null||groupId===''){throw'Missing the required
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putGroupDynamicsettings';}return this.apiClient.callApi('/api/v2/groups/{groupId}/dynamicsettings','PUT',{'groupId':groupId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var IdentityProviderApi=/*#__PURE__*/function(){/**
    * IdentityProvider service.
    * @module purecloud-platform-client-v2/api/IdentityProviderApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new IdentityProviderApi. 
    * @alias module:purecloud-platform-client-v2/api/IdentityProviderApi
@@ -13094,7 +13122,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putIdentityprovidersSalesforce';}return this.apiClient.callApi('/api/v2/identityproviders/salesforce','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var InfrastructureAsCodeApi=/*#__PURE__*/function(){/**
    * InfrastructureAsCode service.
    * @module purecloud-platform-client-v2/api/InfrastructureAsCodeApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new InfrastructureAsCodeApi. 
    * @alias module:purecloud-platform-client-v2/api/InfrastructureAsCodeApi
@@ -13154,7 +13182,7 @@ if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required param
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postInfrastructureascodeJobs';}return this.apiClient.callApi('/api/v2/infrastructureascode/jobs','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var IntegrationsApi=/*#__PURE__*/function(){/**
    * Integrations service.
    * @module purecloud-platform-client-v2/api/IntegrationsApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new IntegrationsApi. 
    * @alias module:purecloud-platform-client-v2/api/IntegrationsApi
@@ -13973,7 +14001,7 @@ if(ucIntegrationId===undefined||ucIntegrationId===null||ucIntegrationId===''){th
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putIntegrationsUnifiedcommunicationThirdpartypresences';}return this.apiClient.callApi('/api/v2/integrations/unifiedcommunications/{ucIntegrationId}/thirdpartypresences','PUT',{'ucIntegrationId':ucIntegrationId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var IntentsApi=/*#__PURE__*/function(){/**
    * Intents service.
    * @module purecloud-platform-client-v2/api/IntentsApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new IntentsApi. 
    * @alias module:purecloud-platform-client-v2/api/IntentsApi
@@ -14124,7 +14152,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postIntentsCustomerintentsBulkRetrieve';}return this.apiClient.callApi('/api/v2/intents/customerintents/bulk/retrieve','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var JourneyApi=/*#__PURE__*/function(){/**
    * Journey service.
    * @module purecloud-platform-client-v2/api/JourneyApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new JourneyApi. 
    * @alias module:purecloud-platform-client-v2/api/JourneyApi
@@ -14640,15 +14668,6 @@ if(eventDefinitionId===undefined||eventDefinitionId===null||eventDefinitionId===
    * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
    */},{key:"patchJourneyActionmap",value:function patchJourneyActionmap(actionMapId,opts){opts=opts||{};// verify the required parameter 'actionMapId' is set
 if(actionMapId===undefined||actionMapId===null||actionMapId===''){throw'Missing the required parameter "actionMapId" when calling patchJourneyActionmap';}return this.apiClient.callApi('/api/v2/journey/actionmaps/{actionMapId}','PATCH',{'actionMapId':actionMapId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Deprecated. Update a single action target.
-   * ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
-   * @param {String} actionTargetId ID of the action target.
-   * @param {Object} opts Optional parameters
-   * @param {Object} opts.body 
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"patchJourneyActiontarget",value:function patchJourneyActiontarget(actionTargetId,opts){opts=opts||{};// verify the required parameter 'actionTargetId' is set
-if(actionTargetId===undefined||actionTargetId===null||actionTargetId===''){throw'Missing the required parameter "actionTargetId" when calling patchJourneyActiontarget';}return this.apiClient.callApi('/api/v2/journey/actiontargets/{actionTargetId}','PATCH',{'actionTargetId':actionTargetId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
    * Update a single action template.
    * 
    * @param {String} actionTemplateId ID of the action template.
@@ -14904,7 +14923,7 @@ if(eventDefinitionId===undefined||eventDefinitionId===null||eventDefinitionId===
 if(eventDefinitionId===undefined||eventDefinitionId===null||eventDefinitionId===''){throw'Missing the required parameter "eventDefinitionId" when calling putJourneyViewsEventdefinitionActivate';}return this.apiClient.callApi('/api/v2/journey/views/eventdefinitions/{eventDefinitionId}/activate','PUT',{'eventDefinitionId':eventDefinitionId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var KnowledgeApi=/*#__PURE__*/function(){/**
    * Knowledge service.
    * @module purecloud-platform-client-v2/api/KnowledgeApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new KnowledgeApi. 
    * @alias module:purecloud-platform-client-v2/api/KnowledgeApi
@@ -16178,7 +16197,7 @@ if(sourceId===undefined||sourceId===null||sourceId===''){throw'Missing the requi
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putKnowledgeSource';}return this.apiClient.callApi('/api/v2/knowledge/sources/{sourceId}','PUT',{'sourceId':sourceId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var LanguageUnderstandingApi=/*#__PURE__*/function(){/**
    * LanguageUnderstanding service.
    * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new LanguageUnderstandingApi. 
    * @alias module:purecloud-platform-client-v2/api/LanguageUnderstandingApi
@@ -16552,7 +16571,7 @@ if(domainVersionId===undefined||domainVersionId===null||domainVersionId===''){th
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putLanguageunderstandingDomainVersion';}return this.apiClient.callApi('/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}','PUT',{'domainId':domainId,'domainVersionId':domainVersionId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var LanguagesApi=/*#__PURE__*/function(){/**
    * Languages service.
    * @module purecloud-platform-client-v2/api/LanguagesApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new LanguagesApi. 
    * @alias module:purecloud-platform-client-v2/api/LanguagesApi
@@ -16622,7 +16641,7 @@ if(userId===undefined||userId===null||userId===''){throw'Missing the required pa
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postLanguages';}return this.apiClient.callApi('/api/v2/languages','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var LearningApi=/*#__PURE__*/function(){/**
    * Learning service.
    * @module purecloud-platform-client-v2/api/LearningApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new LearningApi. 
    * @alias module:purecloud-platform-client-v2/api/LearningApi
@@ -16968,7 +16987,7 @@ if(moduleId===undefined||moduleId===null||moduleId===''){throw'Missing the requi
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putLearningModuleRule';}return this.apiClient.callApi('/api/v2/learning/modules/{moduleId}/rule','PUT',{'moduleId':moduleId},{'assign':opts['assign']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var LicenseApi=/*#__PURE__*/function(){/**
    * License service.
    * @module purecloud-platform-client-v2/api/LicenseApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new LicenseApi. 
    * @alias module:purecloud-platform-client-v2/api/LicenseApi
@@ -17043,7 +17062,7 @@ if(featureName===undefined||featureName===null||featureName===''){throw'Missing 
    */},{key:"postLicenseUsers",value:function postLicenseUsers(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/license/users','POST',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var LocationsApi=/*#__PURE__*/function(){/**
    * Locations service.
    * @module purecloud-platform-client-v2/api/LocationsApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new LocationsApi. 
    * @alias module:purecloud-platform-client-v2/api/LocationsApi
@@ -17115,7 +17134,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postLocationsSearch';}return this.apiClient.callApi('/api/v2/locations/search','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var LogCaptureApi=/*#__PURE__*/function(){/**
    * LogCapture service.
    * @module purecloud-platform-client-v2/api/LogCaptureApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new LogCaptureApi. 
    * @alias module:purecloud-platform-client-v2/api/LogCaptureApi
@@ -17174,7 +17193,7 @@ if(userId===undefined||userId===null||userId===''){throw'Missing the required pa
 if(userId===undefined||userId===null||userId===''){throw'Missing the required parameter "userId" when calling postDiagnosticsLogcaptureBrowserUser';}return this.apiClient.callApi('/api/v2/diagnostics/logcapture/browser/users/{userId}','POST',{'userId':userId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var MessagingApi=/*#__PURE__*/function(){/**
    * Messaging service.
    * @module purecloud-platform-client-v2/api/MessagingApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new MessagingApi. 
    * @alias module:purecloud-platform-client-v2/api/MessagingApi
@@ -17288,7 +17307,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putMessagingSettingsDefault';}return this.apiClient.callApi('/api/v2/messaging/settings/default','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var MobileDevicesApi=/*#__PURE__*/function(){/**
    * MobileDevices service.
    * @module purecloud-platform-client-v2/api/MobileDevicesApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new MobileDevicesApi. 
    * @alias module:purecloud-platform-client-v2/api/MobileDevicesApi
@@ -17340,7 +17359,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(deviceId===undefined||deviceId===null||deviceId===''){throw'Missing the required parameter "deviceId" when calling putMobiledevice';}return this.apiClient.callApi('/api/v2/mobiledevices/{deviceId}','PUT',{'deviceId':deviceId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var NotificationsApi=/*#__PURE__*/function(){/**
    * Notifications service.
    * @module purecloud-platform-client-v2/api/NotificationsApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new NotificationsApi. 
    * @alias module:purecloud-platform-client-v2/api/NotificationsApi
@@ -17409,7 +17428,7 @@ if(channelId===undefined||channelId===null||channelId===''){throw'Missing the re
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putNotificationsChannelSubscriptions';}return this.apiClient.callApi('/api/v2/notifications/channels/{channelId}/subscriptions','PUT',{'channelId':channelId},{'ignoreErrors':opts['ignoreErrors']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var OAuthApi=/*#__PURE__*/function(){/**
    * OAuth service.
    * @module purecloud-platform-client-v2/api/OAuthApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new OAuthApi. 
    * @alias module:purecloud-platform-client-v2/api/OAuthApi
@@ -17515,7 +17534,7 @@ if(clientId===undefined||clientId===null||clientId===''){throw'Missing the requi
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putOauthClient';}return this.apiClient.callApi('/api/v2/oauth/clients/{clientId}','PUT',{'clientId':clientId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var ObjectsApi=/*#__PURE__*/function(){/**
    * Objects service.
    * @module purecloud-platform-client-v2/api/ObjectsApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new ObjectsApi. 
    * @alias module:purecloud-platform-client-v2/api/ObjectsApi
@@ -17618,7 +17637,7 @@ if(divisionId===undefined||divisionId===null||divisionId===''){throw'Missing the
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putAuthorizationDivision';}return this.apiClient.callApi('/api/v2/authorization/divisions/{divisionId}','PUT',{'divisionId':divisionId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var OperationalEventsApi=/*#__PURE__*/function(){/**
    * OperationalEvents service.
    * @module purecloud-platform-client-v2/api/OperationalEventsApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new OperationalEventsApi. 
    * @alias module:purecloud-platform-client-v2/api/OperationalEventsApi
@@ -17655,7 +17674,7 @@ if(eventDefinitionId===undefined||eventDefinitionId===null||eventDefinitionId===
    */},{key:"postUsageEventsQuery",value:function postUsageEventsQuery(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/usage/events/query','POST',{},{'before':opts['before'],'after':opts['after'],'pageSize':opts['pageSize']},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var OrganizationApi=/*#__PURE__*/function(){/**
    * Organization service.
    * @module purecloud-platform-client-v2/api/OrganizationApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new OrganizationApi. 
    * @alias module:purecloud-platform-client-v2/api/OrganizationApi
@@ -17795,7 +17814,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putOrganizationsWhitelist';}return this.apiClient.callApi('/api/v2/organizations/whitelist','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var OrganizationAuthorizationApi=/*#__PURE__*/function(){/**
    * OrganizationAuthorization service.
    * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new OrganizationAuthorizationApi. 
    * @alias module:purecloud-platform-client-v2/api/OrganizationAuthorizationApi
@@ -18215,7 +18234,7 @@ if(trustorOrgId===undefined||trustorOrgId===null||trustorOrgId===''){throw'Missi
 if(trusteeUserId===undefined||trusteeUserId===null||trusteeUserId===''){throw'Missing the required parameter "trusteeUserId" when calling putOrgauthorizationTrustorUser';}return this.apiClient.callApi('/api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId}','PUT',{'trustorOrgId':trustorOrgId,'trusteeUserId':trusteeUserId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var OutboundApi=/*#__PURE__*/function(){/**
    * Outbound service.
    * @module purecloud-platform-client-v2/api/OutboundApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new OutboundApi. 
    * @alias module:purecloud-platform-client-v2/api/OutboundApi
@@ -19711,7 +19730,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putOutboundWrapupcodemappings';}return this.apiClient.callApi('/api/v2/outbound/wrapupcodemappings','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var PresenceApi=/*#__PURE__*/function(){/**
    * Presence service.
    * @module purecloud-platform-client-v2/api/PresenceApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new PresenceApi. 
    * @alias module:purecloud-platform-client-v2/api/PresenceApi
@@ -19931,7 +19950,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putUsersPresencesBulk';}return this.apiClient.callApi('/api/v2/users/presences/bulk','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var ProcessAutomationApi=/*#__PURE__*/function(){/**
    * ProcessAutomation service.
    * @module purecloud-platform-client-v2/api/ProcessAutomationApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new ProcessAutomationApi. 
    * @alias module:purecloud-platform-client-v2/api/ProcessAutomationApi
@@ -20045,7 +20064,7 @@ if(triggerId===undefined||triggerId===null||triggerId===''){throw'Missing the re
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putProcessautomationTrigger';}return this.apiClient.callApi('/api/v2/processautomation/triggers/{triggerId}','PUT',{'triggerId':triggerId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var QualityApi=/*#__PURE__*/function(){/**
    * Quality service.
    * @module purecloud-platform-client-v2/api/QualityApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new QualityApi. 
    * @alias module:purecloud-platform-client-v2/api/QualityApi
@@ -20737,7 +20756,7 @@ if(customerSurveyUrl===undefined||customerSurveyUrl===null){throw'Missing the re
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putQualitySurveysScorable';}return this.apiClient.callApi('/api/v2/quality/surveys/scorable','PUT',{},{'customerSurveyUrl':customerSurveyUrl},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var RecordingApi=/*#__PURE__*/function(){/**
    * Recording service.
    * @module purecloud-platform-client-v2/api/RecordingApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new RecordingApi. 
    * @alias module:purecloud-platform-client-v2/api/RecordingApi
@@ -21236,7 +21255,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
    */},{key:"putRecordingsDeletionprotection",value:function putRecordingsDeletionprotection(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/recordings/deletionprotection','PUT',{},{'protect':opts['protect']},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var ResponseManagementApi=/*#__PURE__*/function(){/**
    * ResponseManagement service.
    * @module purecloud-platform-client-v2/api/ResponseManagementApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new ResponseManagementApi. 
    * @alias module:purecloud-platform-client-v2/api/ResponseManagementApi
@@ -21433,7 +21452,7 @@ if(responseAssetId===undefined||responseAssetId===null||responseAssetId===''){th
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putResponsemanagementResponseasset';}return this.apiClient.callApi('/api/v2/responsemanagement/responseassets/{responseAssetId}','PUT',{'responseAssetId':responseAssetId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var RoutingApi=/*#__PURE__*/function(){/**
    * Routing service.
    * @module purecloud-platform-client-v2/api/RoutingApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new RoutingApi. 
    * @alias module:purecloud-platform-client-v2/api/RoutingApi
@@ -22518,7 +22537,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
    * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
    */},{key:"postRoutingAssessments",value:function postRoutingAssessments(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/routing/assessments','POST',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
    * Create a benefit assessment job.
-   * 
+   * Queues with Benefit Assessment results less than 7 days old are skipped. If every queue in the requested divisions has recent results, the request is rejected.
    * @param {Object} opts Optional parameters
    * @param {Object} opts.body 
    * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
@@ -22897,7 +22916,7 @@ if(userId===undefined||userId===null||userId===''){throw'Missing the required pa
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putUserRoutingskillsBulk';}return this.apiClient.callApi('/api/v2/users/{userId}/routingskills/bulk','PUT',{'userId':userId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var SCIMApi=/*#__PURE__*/function(){/**
    * SCIM service.
    * @module purecloud-platform-client-v2/api/SCIMApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new SCIMApi. 
    * @alias module:purecloud-platform-client-v2/api/SCIMApi
@@ -23160,7 +23179,7 @@ if(userId===undefined||userId===null||userId===''){throw'Missing the required pa
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putScimV2User';}return this.apiClient.callApi('/api/v2/scim/v2/users/{userId}','PUT',{'userId':userId},{},{'If-Match':opts['ifMatch']},{},body,['PureCloud OAuth'],['application/scim+json','application/json'],['application/scim+json','application/json'],opts['customHeaders']);}}]);}();var ScreenMonitoringApi=/*#__PURE__*/function(){/**
    * ScreenMonitoring service.
    * @module purecloud-platform-client-v2/api/ScreenMonitoringApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new ScreenMonitoringApi. 
    * @alias module:purecloud-platform-client-v2/api/ScreenMonitoringApi
@@ -23257,7 +23276,7 @@ if(userId===undefined||userId===null||userId===''){throw'Missing the required pa
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putScreenmonitorsSettings';}return this.apiClient.callApi('/api/v2/screenmonitors/settings','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var ScriptsApi=/*#__PURE__*/function(){/**
    * Scripts service.
    * @module purecloud-platform-client-v2/api/ScriptsApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new ScriptsApi. 
    * @alias module:purecloud-platform-client-v2/api/ScriptsApi
@@ -23419,7 +23438,7 @@ if(scriptId===undefined||scriptId===null||scriptId===''){throw'Missing the requi
    */},{key:"postScriptsPublished",value:function postScriptsPublished(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/scripts/published','POST',{},{'scriptDataVersion':opts['scriptDataVersion']},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var SearchApi=/*#__PURE__*/function(){/**
    * Search service.
    * @module purecloud-platform-client-v2/api/SearchApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new SearchApi. 
    * @alias module:purecloud-platform-client-v2/api/SearchApi
@@ -23626,7 +23645,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postVoicemailSearch';}return this.apiClient.callApi('/api/v2/voicemail/search','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var SettingsApi=/*#__PURE__*/function(){/**
    * Settings service.
    * @module purecloud-platform-client-v2/api/SettingsApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new SettingsApi. 
    * @alias module:purecloud-platform-client-v2/api/SettingsApi
@@ -23723,7 +23742,7 @@ if(agentId===undefined||agentId===null||agentId===''){throw'Missing the required
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putUsersAgentuiAgentsAutoanswerAgentIdSettings';}return this.apiClient.callApi('/api/v2/users/agentui/agents/autoanswer/{agentId}/settings','PUT',{'agentId':agentId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var SocialMediaApi=/*#__PURE__*/function(){/**
    * SocialMedia service.
    * @module purecloud-platform-client-v2/api/SocialMediaApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new SocialMediaApi. 
    * @alias module:purecloud-platform-client-v2/api/SocialMediaApi
@@ -24278,7 +24297,7 @@ if(topicId===undefined||topicId===null||topicId===''){throw'Missing the required
 if(twitterIngestionRuleId===undefined||twitterIngestionRuleId===null||twitterIngestionRuleId===''){throw'Missing the required parameter "twitterIngestionRuleId" when calling putSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId';}return this.apiClient.callApi('/api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter/{twitterIngestionRuleId}','PUT',{'topicId':topicId,'twitterIngestionRuleId':twitterIngestionRuleId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var SpeechTextAnalyticsApi=/*#__PURE__*/function(){/**
    * SpeechTextAnalytics service.
    * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new SpeechTextAnalyticsApi. 
    * @alias module:purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
@@ -24438,6 +24457,13 @@ if(programId===undefined||programId===null||programId===''){throw'Missing the re
    * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
    */},{key:"getSpeechandtextanalyticsProgramSettingsInsights",value:function getSpeechandtextanalyticsProgramSettingsInsights(programId,opts){opts=opts||{};// verify the required parameter 'programId' is set
 if(programId===undefined||programId===null||programId===''){throw'Missing the required parameter "programId" when calling getSpeechandtextanalyticsProgramSettingsInsights';}return this.apiClient.callApi('/api/v2/speechandtextanalytics/programs/{programId}/settings/insights','GET',{'programId':programId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+   * Get program processing settings
+   * 
+   * @param {String} programId The id of the program
+   * @param {Object} opts Optional parameters
+   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+   */},{key:"getSpeechandtextanalyticsProgramSettingsProcessing",value:function getSpeechandtextanalyticsProgramSettingsProcessing(programId,opts){opts=opts||{};// verify the required parameter 'programId' is set
+if(programId===undefined||programId===null||programId===''){throw'Missing the required parameter "programId" when calling getSpeechandtextanalyticsProgramSettingsProcessing';}return this.apiClient.callApi('/api/v2/speechandtextanalytics/programs/{programId}/settings/processing','GET',{'programId':programId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
    * Get transcription engine settings of a program
    * 
    * @param {String} programId The id of the program
@@ -24486,6 +24512,14 @@ if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required param
    * @param {Array.<String>} opts.programIds Comma separated Program IDs to filter by. Maximum of 50 IDs allowed.
    * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
    */},{key:"getSpeechandtextanalyticsProgramsSettingsInsights",value:function getSpeechandtextanalyticsProgramsSettingsInsights(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/speechandtextanalytics/programs/settings/insights','GET',{},{'pageSize':opts['pageSize'],'pageNumber':opts['pageNumber'],'programIds':this.apiClient.buildCollectionParam(opts['programIds'],'multi')},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+   * Get the list of program processing settings for the organization
+   * 
+   * @param {Object} opts Optional parameters
+   * @param {Number} opts.pageSize The page size for the listing. The max that will be returned is 100. (default to 100)
+   * @param {Number} opts.pageNumber The page number for the listing (default to 1)
+   * @param {Array.<String>} opts.programIds Comma separated Program IDs to filter by. Maximum of 50 IDs allowed.
+   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+   */},{key:"getSpeechandtextanalyticsProgramsSettingsProcessing",value:function getSpeechandtextanalyticsProgramsSettingsProcessing(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/speechandtextanalytics/programs/settings/processing','GET',{},{'pageSize':opts['pageSize'],'pageNumber':opts['pageNumber'],'programIds':this.apiClient.buildCollectionParam(opts['programIds'],'multi')},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
    * Get a Speech and Text Analytics program-topic links job by id
    * 
    * @param {String} jobId The id of the program-topic links job
@@ -24622,6 +24656,15 @@ if(conversationId===undefined||conversationId===null||conversationId===''){throw
    * @param {Object} opts Optional parameters
    * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
    */},{key:"getSpeechandtextanalyticsTranslationsLanguages",value:function getSpeechandtextanalyticsTranslationsLanguages(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/speechandtextanalytics/translations/languages','GET',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+   * Update program processing settings
+   * 
+   * @param {String} programId The id of the program
+   * @param {Object} body Program processing settings
+   * @param {Object} opts Optional parameters
+   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+   */},{key:"patchSpeechandtextanalyticsProgramSettingsProcessing",value:function patchSpeechandtextanalyticsProgramSettingsProcessing(programId,body,opts){opts=opts||{};// verify the required parameter 'programId' is set
+if(programId===undefined||programId===null||programId===''){throw'Missing the required parameter "programId" when calling patchSpeechandtextanalyticsProgramSettingsProcessing';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchSpeechandtextanalyticsProgramSettingsProcessing';}return this.apiClient.callApi('/api/v2/speechandtextanalytics/programs/{programId}/settings/processing','PATCH',{'programId':programId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
    * Patch Speech And Text Analytics Settings
    * 
    * @param {Object} body Speech And Text Analytics Settings
@@ -24785,7 +24828,7 @@ if(topicId===undefined||topicId===null||topicId===''){throw'Missing the required
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putSpeechandtextanalyticsTopic';}return this.apiClient.callApi('/api/v2/speechandtextanalytics/topics/{topicId}','PUT',{'topicId':topicId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var StationsApi=/*#__PURE__*/function(){/**
    * Stations service.
    * @module purecloud-platform-client-v2/api/StationsApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new StationsApi. 
    * @alias module:purecloud-platform-client-v2/api/StationsApi
@@ -24822,7 +24865,7 @@ if(stationId===undefined||stationId===null||stationId===''){throw'Missing the re
    */},{key:"getStations",value:function getStations(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/stations','GET',{},{'pageSize':opts['pageSize'],'pageNumber':opts['pageNumber'],'sortBy':opts['sortBy'],'name':opts['name'],'userSelectable':opts['userSelectable'],'webRtcUserId':opts['webRtcUserId'],'id':opts['id'],'lineAppearanceId':opts['lineAppearanceId']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var SuggestApi=/*#__PURE__*/function(){/**
    * Suggest service.
    * @module purecloud-platform-client-v2/api/SuggestApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new SuggestApi. 
    * @alias module:purecloud-platform-client-v2/api/SuggestApi
@@ -24866,7 +24909,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postSearchSuggest';}return this.apiClient.callApi('/api/v2/search/suggest','POST',{},{'profile':opts['profile']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var TaskManagementApi=/*#__PURE__*/function(){/**
    * TaskManagement service.
    * @module purecloud-platform-client-v2/api/TaskManagementApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new TaskManagementApi. 
    * @alias module:purecloud-platform-client-v2/api/TaskManagementApi
@@ -25510,7 +25553,7 @@ if(schemaId===undefined||schemaId===null||schemaId===''){throw'Missing the requi
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putTaskmanagementWorkitemsSchema';}return this.apiClient.callApi('/api/v2/taskmanagement/workitems/schemas/{schemaId}','PUT',{'schemaId':schemaId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var TeamsApi=/*#__PURE__*/function(){/**
    * Teams service.
    * @module purecloud-platform-client-v2/api/TeamsApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new TeamsApi. 
    * @alias module:purecloud-platform-client-v2/api/TeamsApi
@@ -25606,7 +25649,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postTeamsSearch';}return this.apiClient.callApi('/api/v2/teams/search','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var TelephonyApi=/*#__PURE__*/function(){/**
    * Telephony service.
    * @module purecloud-platform-client-v2/api/TelephonyApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new TelephonyApi. 
    * @alias module:purecloud-platform-client-v2/api/TelephonyApi
@@ -25800,7 +25843,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putTelephonySettings';}return this.apiClient.callApi('/api/v2/telephony/settings','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var TelephonyProvidersEdgeApi=/*#__PURE__*/function(){/**
    * TelephonyProvidersEdge service.
    * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new TelephonyProvidersEdgeApi. 
    * @alias module:purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
@@ -26887,7 +26930,7 @@ if(trunkBaseSettingsId===undefined||trunkBaseSettingsId===null||trunkBaseSetting
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putTelephonyProvidersEdgesTrunkbasesetting';}return this.apiClient.callApi('/api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId}','PUT',{'trunkBaseSettingsId':trunkBaseSettingsId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var TextbotsApi=/*#__PURE__*/function(){/**
    * Textbots service.
    * @module purecloud-platform-client-v2/api/TextbotsApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new TextbotsApi. 
    * @alias module:purecloud-platform-client-v2/api/TextbotsApi
@@ -26930,7 +26973,7 @@ if(launchRequest===undefined||launchRequest===null){throw'Missing the required p
 if(postTextRequest===undefined||postTextRequest===null){throw'Missing the required parameter "postTextRequest" when calling postTextbotsBotsExecute';}return this.apiClient.callApi('/api/v2/textbots/bots/execute','POST',{},{},{},{},postTextRequest,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var TokensApi=/*#__PURE__*/function(){/**
    * Tokens service.
    * @module purecloud-platform-client-v2/api/TokensApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new TokensApi. 
    * @alias module:purecloud-platform-client-v2/api/TokensApi
@@ -26974,7 +27017,7 @@ if(userId===undefined||userId===null||userId===''){throw'Missing the required pa
    */},{key:"putTokensTimeout",value:function putTokensTimeout(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/tokens/timeout','PUT',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var UploadsApi=/*#__PURE__*/function(){/**
    * Uploads service.
    * @module purecloud-platform-client-v2/api/UploadsApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new UploadsApi. 
    * @alias module:purecloud-platform-client-v2/api/UploadsApi
@@ -27069,7 +27112,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postUploadsWorkforcemanagementHistoricaldataCsv';}return this.apiClient.callApi('/api/v2/uploads/workforcemanagement/historicaldata/csv','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var UsageApi=/*#__PURE__*/function(){/**
    * Usage service.
    * @module purecloud-platform-client-v2/api/UsageApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new UsageApi. 
    * @alias module:purecloud-platform-client-v2/api/UsageApi
@@ -27171,7 +27214,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postUsageSimplesearch';}return this.apiClient.callApi('/api/v2/usage/simplesearch','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var UserRecordingsApi=/*#__PURE__*/function(){/**
    * UserRecordings service.
    * @module purecloud-platform-client-v2/api/UserRecordingsApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new UserRecordingsApi. 
    * @alias module:purecloud-platform-client-v2/api/UserRecordingsApi
@@ -27227,7 +27270,7 @@ if(recordingId===undefined||recordingId===null||recordingId===''){throw'Missing 
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putUserrecording';}return this.apiClient.callApi('/api/v2/userrecordings/{recordingId}','PUT',{'recordingId':recordingId},{'expand':this.apiClient.buildCollectionParam(opts['expand'],'multi')},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var UsersApi=/*#__PURE__*/function(){/**
    * Users service.
    * @module purecloud-platform-client-v2/api/UsersApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new UsersApi. 
    * @alias module:purecloud-platform-client-v2/api/UsersApi
@@ -28334,7 +28377,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(stationId===undefined||stationId===null||stationId===''){throw'Missing the required parameter "stationId" when calling putUsersStationsMeAssociatedstationStationId';}return this.apiClient.callApi('/api/v2/users/stations/me/associatedstation/{stationId}','PUT',{'stationId':stationId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var UsersRulesApi=/*#__PURE__*/function(){/**
    * UsersRules service.
    * @module purecloud-platform-client-v2/api/UsersRulesApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new UsersRulesApi. 
    * @alias module:purecloud-platform-client-v2/api/UsersRulesApi
@@ -28424,7 +28467,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postUsersRulesQuery';}return this.apiClient.callApi('/api/v2/users/rules/query','POST',{},{'pageNumber':opts['pageNumber'],'pageSize':opts['pageSize']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var UtilitiesApi=/*#__PURE__*/function(){/**
    * Utilities service.
    * @module purecloud-platform-client-v2/api/UtilitiesApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new UtilitiesApi. 
    * @alias module:purecloud-platform-client-v2/api/UtilitiesApi
@@ -28458,7 +28501,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postCertificateDetails';}return this.apiClient.callApi('/api/v2/certificate/details','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var VirtualAgentsApi=/*#__PURE__*/function(){/**
    * VirtualAgents service.
    * @module purecloud-platform-client-v2/api/VirtualAgentsApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new VirtualAgentsApi. 
    * @alias module:purecloud-platform-client-v2/api/VirtualAgentsApi
@@ -28530,7 +28573,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postAgenticVirtualagents';}return this.apiClient.callApi('/api/v2/agentic/virtualagents','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var VoicemailApi=/*#__PURE__*/function(){/**
    * Voicemail service.
    * @module purecloud-platform-client-v2/api/VoicemailApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new VoicemailApi. 
    * @alias module:purecloud-platform-client-v2/api/VoicemailApi
@@ -28737,7 +28780,7 @@ if(userId===undefined||userId===null||userId===''){throw'Missing the required pa
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putVoicemailUserpolicy';}return this.apiClient.callApi('/api/v2/voicemail/userpolicies/{userId}','PUT',{'userId':userId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var WebDeploymentsApi=/*#__PURE__*/function(){/**
    * WebDeployments service.
    * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new WebDeploymentsApi. 
    * @alias module:purecloud-platform-client-v2/api/WebDeploymentsApi
@@ -28915,7 +28958,7 @@ if(deploymentId===undefined||deploymentId===null||deploymentId===''){throw'Missi
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putWebdeploymentsDeploymentIdentityresolution';}return this.apiClient.callApi('/api/v2/webdeployments/deployments/{deploymentId}/identityresolution','PUT',{'deploymentId':deploymentId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var WebMessagingApi=/*#__PURE__*/function(){/**
    * WebMessaging service.
    * @module purecloud-platform-client-v2/api/WebMessagingApi
-   * @version 262.0.0
+   * @version 263.0.0
    *//**
    * Constructs a new WebMessagingApi. 
    * @alias module:purecloud-platform-client-v2/api/WebMessagingApi
@@ -28961,3258 +29004,3598 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(deploymentId===undefined||deploymentId===null||deploymentId===''){throw'Missing the required parameter "deploymentId" when calling postWebmessagingDeploymentPushdevice';}// verify the required parameter 'tokenId' is set
 if(tokenId===undefined||tokenId===null||tokenId===''){throw'Missing the required parameter "tokenId" when calling postWebmessagingDeploymentPushdevice';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWebmessagingDeploymentPushdevice';}return this.apiClient.callApi('/api/v2/webmessaging/deployments/{deploymentId}/pushdevices/{tokenId}','POST',{'deploymentId':deploymentId,'tokenId':tokenId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var WorkforceManagementApi=/*#__PURE__*/function(){/**
-   * WorkforceManagement service.
-   * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-   * @version 262.0.0
-   *//**
-   * Constructs a new WorkforceManagementApi. 
-   * @alias module:purecloud-platform-client-v2/api/WorkforceManagementApi
-   * @class
-   * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
-   * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
-   */function WorkforceManagementApi(apiClient){_classCallCheck(this,WorkforceManagementApi);this.apiClient=apiClient||ApiClient.instance;}/**
-   * Delete business unit
-   * A business unit cannot be deleted if it contains one or more management units
-   * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */return _createClass(WorkforceManagementApi,[{key:"deleteWorkforcemanagementBusinessunit",value:function deleteWorkforcemanagementBusinessunit(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * WorkforceManagement service.
+	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
+	 * @version 263.0.0
+	 *//**
+	 * Constructs a new WorkforceManagementApi. 
+	 * @alias module:purecloud-platform-client-v2/api/WorkforceManagementApi
+	 * @class
+	 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
+	 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
+	 */function WorkforceManagementApi(apiClient){_classCallCheck(this,WorkforceManagementApi);this.apiClient=apiClient||ApiClient.instance;}/**
+	 * Delete an adherence adjustment for the current user
+	 * 
+	 * @param {String} adjustmentId The ID of the adherence adjustment to delete
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */return _createClass(WorkforceManagementApi,[{key:"deleteWorkforcemanagementAdherenceAdjustment",value:function deleteWorkforcemanagementAdherenceAdjustment(adjustmentId,opts){opts=opts||{};// verify the required parameter 'adjustmentId' is set
+if(adjustmentId===undefined||adjustmentId===null||adjustmentId===''){throw'Missing the required parameter "adjustmentId" when calling deleteWorkforcemanagementAdherenceAdjustment';}return this.apiClient.callApi('/api/v2/workforcemanagement/adherence/adjustments/{adjustmentId}','DELETE',{'adjustmentId':adjustmentId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Delete business unit
+	 * A business unit cannot be deleted if it contains one or more management units
+	 * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"deleteWorkforcemanagementBusinessunit",value:function deleteWorkforcemanagementBusinessunit(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunit';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}','DELETE',{'businessUnitId':businessUnitId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Deletes an activity code
-   * 
-   * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
-   * @param {String} activityCodeId The ID of the activity code to delete
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"deleteWorkforcemanagementBusinessunitActivitycode",value:function deleteWorkforcemanagementBusinessunitActivitycode(businessUnitId,activityCodeId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Deletes an activity code
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+	 * @param {String} activityCodeId The ID of the activity code to delete
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"deleteWorkforcemanagementBusinessunitActivitycode",value:function deleteWorkforcemanagementBusinessunitActivitycode(businessUnitId,activityCodeId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitActivitycode';}// verify the required parameter 'activityCodeId' is set
 if(activityCodeId===undefined||activityCodeId===null||activityCodeId===''){throw'Missing the required parameter "activityCodeId" when calling deleteWorkforcemanagementBusinessunitActivitycode';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}','DELETE',{'businessUnitId':businessUnitId,'activityCodeId':activityCodeId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Delete staffing group allocations history created for a capacity plan before the given date
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} capacityPlanId The ID of the capacity plan
-   * @param {Object} opts Optional parameters
-   * @param {String} opts.beforeDateId The date to delete records that are created on or before this date in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory",value:function deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory(businessUnitId,capacityPlanId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Delete an adherence adjustment reason code for a business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} reasonCodeId The ID of the reason code to delete
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode",value:function deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode(businessUnitId,reasonCodeId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode';}// verify the required parameter 'reasonCodeId' is set
+if(reasonCodeId===undefined||reasonCodeId===null||reasonCodeId===''){throw'Missing the required parameter "reasonCodeId" when calling deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/{reasonCodeId}','DELETE',{'businessUnitId':businessUnitId,'reasonCodeId':reasonCodeId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Delete adherence adjustment reason codes in bulk for a business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Array.<String>} ids The IDs of the reason codes to delete
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk",value:function deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(businessUnitId,ids,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk';}// verify the required parameter 'ids' is set
+if(ids===undefined||ids===null){throw'Missing the required parameter "ids" when calling deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/bulk','DELETE',{'businessUnitId':businessUnitId},{'ids':this.apiClient.buildCollectionParam(ids,'multi')},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Delete staffing group allocations history created for a capacity plan before the given date
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} capacityPlanId The ID of the capacity plan
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.beforeDateId The date to delete records that are created on or before this date in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory",value:function deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory(businessUnitId,capacityPlanId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory';}// verify the required parameter 'capacityPlanId' is set
 if(capacityPlanId===undefined||capacityPlanId===null||capacityPlanId===''){throw'Missing the required parameter "capacityPlanId" when calling deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocationshistory','DELETE',{'businessUnitId':businessUnitId,'capacityPlanId':capacityPlanId},{'beforeDateId':opts['beforeDateId']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Deletes the planning group
-   * 
-   * @param {String} businessUnitId The ID of the business unit.
-   * @param {String} planningGroupId The ID of a planning group to delete
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"deleteWorkforcemanagementBusinessunitPlanninggroup",value:function deleteWorkforcemanagementBusinessunitPlanninggroup(businessUnitId,planningGroupId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Deletes the planning group
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit.
+	 * @param {String} planningGroupId The ID of a planning group to delete
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"deleteWorkforcemanagementBusinessunitPlanninggroup",value:function deleteWorkforcemanagementBusinessunitPlanninggroup(businessUnitId,planningGroupId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitPlanninggroup';}// verify the required parameter 'planningGroupId' is set
 if(planningGroupId===undefined||planningGroupId===null||planningGroupId===''){throw'Missing the required parameter "planningGroupId" when calling deleteWorkforcemanagementBusinessunitPlanninggroup';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}','DELETE',{'businessUnitId':businessUnitId,'planningGroupId':planningGroupId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Delete a schedule bid
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} bidId The ID of the schedule bid
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"deleteWorkforcemanagementBusinessunitSchedulebid",value:function deleteWorkforcemanagementBusinessunitSchedulebid(businessUnitId,bidId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Delete a schedule bid
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The ID of the schedule bid
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"deleteWorkforcemanagementBusinessunitSchedulebid",value:function deleteWorkforcemanagementBusinessunitSchedulebid(businessUnitId,bidId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitSchedulebid';}// verify the required parameter 'bidId' is set
 if(bidId===undefined||bidId===null||bidId===''){throw'Missing the required parameter "bidId" when calling deleteWorkforcemanagementBusinessunitSchedulebid';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}','DELETE',{'businessUnitId':businessUnitId,'bidId':bidId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Delete a schedule bid group by bid group Id
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} bidId The ID of the schedule bid associated with the bid groups
-   * @param {String} bidGroupId Schedule Bid Group id
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"deleteWorkforcemanagementBusinessunitSchedulebidGroup",value:function deleteWorkforcemanagementBusinessunitSchedulebidGroup(businessUnitId,bidId,bidGroupId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Delete a schedule bid group by bid group Id
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The ID of the schedule bid associated with the bid groups
+	 * @param {String} bidGroupId Schedule Bid Group id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"deleteWorkforcemanagementBusinessunitSchedulebidGroup",value:function deleteWorkforcemanagementBusinessunitSchedulebidGroup(businessUnitId,bidId,bidGroupId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitSchedulebidGroup';}// verify the required parameter 'bidId' is set
 if(bidId===undefined||bidId===null||bidId===''){throw'Missing the required parameter "bidId" when calling deleteWorkforcemanagementBusinessunitSchedulebidGroup';}// verify the required parameter 'bidGroupId' is set
 if(bidGroupId===undefined||bidGroupId===null||bidGroupId===''){throw'Missing the required parameter "bidGroupId" when calling deleteWorkforcemanagementBusinessunitSchedulebidGroup';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/{bidGroupId}','DELETE',{'businessUnitId':businessUnitId,'bidId':bidId,'bidGroupId':bidGroupId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Cancel a scheduling run
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} runId The ID of the schedule run
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"deleteWorkforcemanagementBusinessunitSchedulingRun",value:function deleteWorkforcemanagementBusinessunitSchedulingRun(businessUnitId,runId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Cancel a scheduling run
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} runId The ID of the schedule run
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"deleteWorkforcemanagementBusinessunitSchedulingRun",value:function deleteWorkforcemanagementBusinessunitSchedulingRun(businessUnitId,runId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitSchedulingRun';}// verify the required parameter 'runId' is set
 if(runId===undefined||runId===null||runId===''){throw'Missing the required parameter "runId" when calling deleteWorkforcemanagementBusinessunitSchedulingRun';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}','DELETE',{'businessUnitId':businessUnitId,'runId':runId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Delete a service goal template
-   * 
-   * @param {String} businessUnitId The ID of the business unit.
-   * @param {String} serviceGoalTemplateId The ID of the service goal template to delete
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"deleteWorkforcemanagementBusinessunitServicegoaltemplate",value:function deleteWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId,serviceGoalTemplateId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Delete a service goal template
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit.
+	 * @param {String} serviceGoalTemplateId The ID of the service goal template to delete
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"deleteWorkforcemanagementBusinessunitServicegoaltemplate",value:function deleteWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId,serviceGoalTemplateId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitServicegoaltemplate';}// verify the required parameter 'serviceGoalTemplateId' is set
 if(serviceGoalTemplateId===undefined||serviceGoalTemplateId===null||serviceGoalTemplateId===''){throw'Missing the required parameter "serviceGoalTemplateId" when calling deleteWorkforcemanagementBusinessunitServicegoaltemplate';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}','DELETE',{'businessUnitId':businessUnitId,'serviceGoalTemplateId':serviceGoalTemplateId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Deletes a staffing group
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} staffingGroupId The ID of the staffing group to delete
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"deleteWorkforcemanagementBusinessunitStaffinggroup",value:function deleteWorkforcemanagementBusinessunitStaffinggroup(businessUnitId,staffingGroupId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Deletes a staffing group
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} staffingGroupId The ID of the staffing group to delete
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"deleteWorkforcemanagementBusinessunitStaffinggroup",value:function deleteWorkforcemanagementBusinessunitStaffinggroup(businessUnitId,staffingGroupId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitStaffinggroup';}// verify the required parameter 'staffingGroupId' is set
 if(staffingGroupId===undefined||staffingGroupId===null||staffingGroupId===''){throw'Missing the required parameter "staffingGroupId" when calling deleteWorkforcemanagementBusinessunitStaffinggroup';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId}','DELETE',{'businessUnitId':businessUnitId,'staffingGroupId':staffingGroupId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Deletes a time-off limit object
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} timeOffLimitId The ID of the time-off limit object to delete
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"deleteWorkforcemanagementBusinessunitTimeofflimit",value:function deleteWorkforcemanagementBusinessunitTimeofflimit(businessUnitId,timeOffLimitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Deletes a time-off limit object
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} timeOffLimitId The ID of the time-off limit object to delete
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"deleteWorkforcemanagementBusinessunitTimeofflimit",value:function deleteWorkforcemanagementBusinessunitTimeofflimit(businessUnitId,timeOffLimitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitTimeofflimit';}// verify the required parameter 'timeOffLimitId' is set
 if(timeOffLimitId===undefined||timeOffLimitId===null||timeOffLimitId===''){throw'Missing the required parameter "timeOffLimitId" when calling deleteWorkforcemanagementBusinessunitTimeofflimit';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}','DELETE',{'businessUnitId':businessUnitId,'timeOffLimitId':timeOffLimitId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Deletes a time-off plan
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} timeOffPlanId The ID of the time-off plan to delete
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"deleteWorkforcemanagementBusinessunitTimeoffplan",value:function deleteWorkforcemanagementBusinessunitTimeoffplan(businessUnitId,timeOffPlanId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Deletes a time-off plan
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} timeOffPlanId The ID of the time-off plan to delete
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"deleteWorkforcemanagementBusinessunitTimeoffplan",value:function deleteWorkforcemanagementBusinessunitTimeoffplan(businessUnitId,timeOffPlanId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitTimeoffplan';}// verify the required parameter 'timeOffPlanId' is set
 if(timeOffPlanId===undefined||timeOffPlanId===null||timeOffPlanId===''){throw'Missing the required parameter "timeOffPlanId" when calling deleteWorkforcemanagementBusinessunitTimeoffplan';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId}','DELETE',{'businessUnitId':businessUnitId,'timeOffPlanId':timeOffPlanId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Delete a schedule
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-   * @param {String} scheduleId The ID of the schedule
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"deleteWorkforcemanagementBusinessunitWeekSchedule",value:function deleteWorkforcemanagementBusinessunitWeekSchedule(businessUnitId,weekId,scheduleId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Delete a schedule
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} scheduleId The ID of the schedule
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"deleteWorkforcemanagementBusinessunitWeekSchedule",value:function deleteWorkforcemanagementBusinessunitWeekSchedule(businessUnitId,weekId,scheduleId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitWeekSchedule';}// verify the required parameter 'weekId' is set
 if(weekId===undefined||weekId===null){throw'Missing the required parameter "weekId" when calling deleteWorkforcemanagementBusinessunitWeekSchedule';}// verify the required parameter 'scheduleId' is set
 if(scheduleId===undefined||scheduleId===null||scheduleId===''){throw'Missing the required parameter "scheduleId" when calling deleteWorkforcemanagementBusinessunitWeekSchedule';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}','DELETE',{'businessUnitId':businessUnitId,'weekId':weekId,'scheduleId':scheduleId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Delete a short term forecast
-   * Must not be tied to any schedules
-   * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
-   * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-   * @param {String} forecastId The ID of the forecast
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"deleteWorkforcemanagementBusinessunitWeekShorttermforecast",value:function deleteWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnitId,weekDateId,forecastId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Delete a short term forecast
+	 * Must not be tied to any schedules
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
+	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} forecastId The ID of the forecast
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"deleteWorkforcemanagementBusinessunitWeekShorttermforecast",value:function deleteWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnitId,weekDateId,forecastId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitWeekShorttermforecast';}// verify the required parameter 'weekDateId' is set
 if(weekDateId===undefined||weekDateId===null){throw'Missing the required parameter "weekDateId" when calling deleteWorkforcemanagementBusinessunitWeekShorttermforecast';}// verify the required parameter 'forecastId' is set
 if(forecastId===undefined||forecastId===null||forecastId===''){throw'Missing the required parameter "forecastId" when calling deleteWorkforcemanagementBusinessunitWeekShorttermforecast';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}','DELETE',{'businessUnitId':businessUnitId,'weekDateId':weekDateId,'forecastId':forecastId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Delete a work plan bid
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} bidId The ID of the work plan bid
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"deleteWorkforcemanagementBusinessunitWorkplanbid",value:function deleteWorkforcemanagementBusinessunitWorkplanbid(businessUnitId,bidId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Delete a work plan bid
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The ID of the work plan bid
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"deleteWorkforcemanagementBusinessunitWorkplanbid",value:function deleteWorkforcemanagementBusinessunitWorkplanbid(businessUnitId,bidId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitWorkplanbid';}// verify the required parameter 'bidId' is set
 if(bidId===undefined||bidId===null||bidId===''){throw'Missing the required parameter "bidId" when calling deleteWorkforcemanagementBusinessunitWorkplanbid';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}','DELETE',{'businessUnitId':businessUnitId,'bidId':bidId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Delete a bid group by bid group Id
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} bidId The work plan bid id of the bid groups
-   * @param {String} bidGroupId Work Plan Bid Group id
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"deleteWorkforcemanagementBusinessunitWorkplanbidGroup",value:function deleteWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId,bidId,bidGroupId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Delete a bid group by bid group Id
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The work plan bid id of the bid groups
+	 * @param {String} bidGroupId Work Plan Bid Group id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"deleteWorkforcemanagementBusinessunitWorkplanbidGroup",value:function deleteWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId,bidId,bidGroupId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitWorkplanbidGroup';}// verify the required parameter 'bidId' is set
 if(bidId===undefined||bidId===null||bidId===''){throw'Missing the required parameter "bidId" when calling deleteWorkforcemanagementBusinessunitWorkplanbidGroup';}// verify the required parameter 'bidGroupId' is set
 if(bidGroupId===undefined||bidGroupId===null||bidGroupId===''){throw'Missing the required parameter "bidGroupId" when calling deleteWorkforcemanagementBusinessunitWorkplanbidGroup';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}','DELETE',{'businessUnitId':businessUnitId,'bidId':bidId,'bidGroupId':bidGroupId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Disable generated calendar link for the current user
-   * 
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"deleteWorkforcemanagementCalendarUrlIcs",value:function deleteWorkforcemanagementCalendarUrlIcs(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/calendar/url/ics','DELETE',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Delete management unit
-   * 
-   * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"deleteWorkforcemanagementManagementunit",value:function deleteWorkforcemanagementManagementunit(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Disable generated calendar link for the current user
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"deleteWorkforcemanagementCalendarUrlIcs",value:function deleteWorkforcemanagementCalendarUrlIcs(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/calendar/url/ics','DELETE',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Delete management unit
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"deleteWorkforcemanagementManagementunit",value:function deleteWorkforcemanagementManagementunit(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling deleteWorkforcemanagementManagementunit';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}','DELETE',{'managementUnitId':managementUnitId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Deletes a time off limit object. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId} instead
-   * 
-   * @param {String} managementUnitId The ID of the management unit.
-   * @param {String} timeOffLimitId The ID of the time off limit object to delete
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"deleteWorkforcemanagementManagementunitTimeofflimit",value:function deleteWorkforcemanagementManagementunitTimeofflimit(managementUnitId,timeOffLimitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Deletes a time off limit object. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId} instead
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit.
+	 * @param {String} timeOffLimitId The ID of the time off limit object to delete
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
+	 */},{key:"deleteWorkforcemanagementManagementunitTimeofflimit",value:function deleteWorkforcemanagementManagementunitTimeofflimit(managementUnitId,timeOffLimitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling deleteWorkforcemanagementManagementunitTimeofflimit';}// verify the required parameter 'timeOffLimitId' is set
 if(timeOffLimitId===undefined||timeOffLimitId===null||timeOffLimitId===''){throw'Missing the required parameter "timeOffLimitId" when calling deleteWorkforcemanagementManagementunitTimeofflimit';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}','DELETE',{'managementUnitId':managementUnitId,'timeOffLimitId':timeOffLimitId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Deletes a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
-   * 
-   * @param {String} managementUnitId The ID of the management unit
-   * @param {String} timeOffPlanId The ID of the time off plan to delete
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"deleteWorkforcemanagementManagementunitTimeoffplan",value:function deleteWorkforcemanagementManagementunitTimeoffplan(managementUnitId,timeOffPlanId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Deletes a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit
+	 * @param {String} timeOffPlanId The ID of the time off plan to delete
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
+	 */},{key:"deleteWorkforcemanagementManagementunitTimeoffplan",value:function deleteWorkforcemanagementManagementunitTimeoffplan(managementUnitId,timeOffPlanId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling deleteWorkforcemanagementManagementunitTimeoffplan';}// verify the required parameter 'timeOffPlanId' is set
 if(timeOffPlanId===undefined||timeOffPlanId===null||timeOffPlanId===''){throw'Missing the required parameter "timeOffPlanId" when calling deleteWorkforcemanagementManagementunitTimeoffplan';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}','DELETE',{'managementUnitId':managementUnitId,'timeOffPlanId':timeOffPlanId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Delete a work plan
-   * 
-   * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-   * @param {String} workPlanId The ID of the work plan to delete
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"deleteWorkforcemanagementManagementunitWorkplan",value:function deleteWorkforcemanagementManagementunitWorkplan(managementUnitId,workPlanId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Delete a work plan
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {String} workPlanId The ID of the work plan to delete
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"deleteWorkforcemanagementManagementunitWorkplan",value:function deleteWorkforcemanagementManagementunitWorkplan(managementUnitId,workPlanId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling deleteWorkforcemanagementManagementunitWorkplan';}// verify the required parameter 'workPlanId' is set
 if(workPlanId===undefined||workPlanId===null||workPlanId===''){throw'Missing the required parameter "workPlanId" when calling deleteWorkforcemanagementManagementunitWorkplan';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}','DELETE',{'managementUnitId':managementUnitId,'workPlanId':workPlanId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Delete a work plan rotation
-   * 
-   * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-   * @param {String} workPlanRotationId The ID of the work plan rotation to be deleted
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"deleteWorkforcemanagementManagementunitWorkplanrotation",value:function deleteWorkforcemanagementManagementunitWorkplanrotation(managementUnitId,workPlanRotationId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Delete a work plan rotation
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {String} workPlanRotationId The ID of the work plan rotation to be deleted
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"deleteWorkforcemanagementManagementunitWorkplanrotation",value:function deleteWorkforcemanagementManagementunitWorkplanrotation(managementUnitId,workPlanRotationId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling deleteWorkforcemanagementManagementunitWorkplanrotation';}// verify the required parameter 'workPlanRotationId' is set
 if(workPlanRotationId===undefined||workPlanRotationId===null||workPlanRotationId===''){throw'Missing the required parameter "workPlanRotationId" when calling deleteWorkforcemanagementManagementunitWorkplanrotation';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}','DELETE',{'managementUnitId':managementUnitId,'workPlanRotationId':workPlanRotationId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get a list of UserScheduleAdherence records for the requested users
-   * 
-   * @param {Array.<String>} userId User Id(s) for which to fetch current schedule adherence information.  Min 1, Max of 100 userIds per request
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementAdherence",value:function getWorkforcemanagementAdherence(userId,opts){opts=opts||{};// verify the required parameter 'userId' is set
+	 * Get a list of UserScheduleAdherence records for the requested users
+	 * 
+	 * @param {Array.<String>} userId User Id(s) for which to fetch current schedule adherence information.  Min 1, Max of 100 userIds per request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementAdherence",value:function getWorkforcemanagementAdherence(userId,opts){opts=opts||{};// verify the required parameter 'userId' is set
 if(userId===undefined||userId===null){throw'Missing the required parameter "userId" when calling getWorkforcemanagementAdherence';}return this.apiClient.callApi('/api/v2/workforcemanagement/adherence','GET',{},{'userId':this.apiClient.buildCollectionParam(userId,'multi')},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get an adherence explanation for the current user
-   * 
-   * @param {String} explanationId The ID of the explanation to update
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementAdherenceExplanation",value:function getWorkforcemanagementAdherenceExplanation(explanationId,opts){opts=opts||{};// verify the required parameter 'explanationId' is set
+	 * Get an adherence adjustment for the current user
+	 * 
+	 * @param {String} adjustmentId The ID of the adherence adjustment
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementAdherenceAdjustment",value:function getWorkforcemanagementAdherenceAdjustment(adjustmentId,opts){opts=opts||{};// verify the required parameter 'adjustmentId' is set
+if(adjustmentId===undefined||adjustmentId===null||adjustmentId===''){throw'Missing the required parameter "adjustmentId" when calling getWorkforcemanagementAdherenceAdjustment';}return this.apiClient.callApi('/api/v2/workforcemanagement/adherence/adjustments/{adjustmentId}','GET',{'adjustmentId':adjustmentId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Get an adherence explanation for the current user
+	 * 
+	 * @param {String} explanationId The ID of the explanation to update
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementAdherenceExplanation",value:function getWorkforcemanagementAdherenceExplanation(explanationId,opts){opts=opts||{};// verify the required parameter 'explanationId' is set
 if(explanationId===undefined||explanationId===null||explanationId===''){throw'Missing the required parameter "explanationId" when calling getWorkforcemanagementAdherenceExplanation';}return this.apiClient.callApi('/api/v2/workforcemanagement/adherence/explanations/{explanationId}','GET',{'explanationId':explanationId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Query the status of an adherence explanation operation. Only the user who started the operation can query the status
-   * Job details are only retained if the initial request returned a 202 ACCEPTED response
-   * @param {String} jobId The ID of the job
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementAdherenceExplanationsJob",value:function getWorkforcemanagementAdherenceExplanationsJob(jobId,opts){opts=opts||{};// verify the required parameter 'jobId' is set
+	 * Query the status of an adherence explanation operation. Only the user who started the operation can query the status
+	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
+	 * @param {String} jobId The ID of the job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementAdherenceExplanationsJob",value:function getWorkforcemanagementAdherenceExplanationsJob(jobId,opts){opts=opts||{};// verify the required parameter 'jobId' is set
 if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required parameter "jobId" when calling getWorkforcemanagementAdherenceExplanationsJob';}return this.apiClient.callApi('/api/v2/workforcemanagement/adherence/explanations/jobs/{jobId}','GET',{'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Request to fetch the status of the historical adherence bulk job. Only the user who started the operation can query the status
-   * Job details are only retained if the initial request returned a 202 ACCEPTED response
-   * @param {String} jobId ID of the job to get
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementAdherenceHistoricalBulkJob",value:function getWorkforcemanagementAdherenceHistoricalBulkJob(jobId,opts){opts=opts||{};// verify the required parameter 'jobId' is set
+	 * Request to fetch the status of the historical adherence bulk job. Only the user who started the operation can query the status
+	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
+	 * @param {String} jobId ID of the job to get
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementAdherenceHistoricalBulkJob",value:function getWorkforcemanagementAdherenceHistoricalBulkJob(jobId,opts){opts=opts||{};// verify the required parameter 'jobId' is set
 if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required parameter "jobId" when calling getWorkforcemanagementAdherenceHistoricalBulkJob';}return this.apiClient.callApi('/api/v2/workforcemanagement/adherence/historical/bulk/jobs/{jobId}','GET',{'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Query the status of a historical adherence request operation. Only the user who started the operation can query the status
-   * Job details are only retained if the initial request returned a 202 ACCEPTED response
-   * @param {String} jobId jobId
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementAdherenceHistoricalJob",value:function getWorkforcemanagementAdherenceHistoricalJob(jobId,opts){opts=opts||{};// verify the required parameter 'jobId' is set
+	 * Query the status of a historical adherence request operation. Only the user who started the operation can query the status
+	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
+	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementAdherenceHistoricalJob",value:function getWorkforcemanagementAdherenceHistoricalJob(jobId,opts){opts=opts||{};// verify the required parameter 'jobId' is set
 if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required parameter "jobId" when calling getWorkforcemanagementAdherenceHistoricalJob';}return this.apiClient.callApi('/api/v2/workforcemanagement/adherence/historical/jobs/{jobId}','GET',{'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get an adherence explanation
-   * 
-   * @param {String} agentId The ID of the agent to query
-   * @param {String} explanationId The ID of the explanation to update
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementAgentAdherenceExplanation",value:function getWorkforcemanagementAgentAdherenceExplanation(agentId,explanationId,opts){opts=opts||{};// verify the required parameter 'agentId' is set
+	 * Get an adherence adjustment for the requested agent
+	 * 
+	 * @param {String} agentId The ID of the agent
+	 * @param {String} adjustmentId The ID of the adherence adjustment
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementAgentAdherenceAdjustment",value:function getWorkforcemanagementAgentAdherenceAdjustment(agentId,adjustmentId,opts){opts=opts||{};// verify the required parameter 'agentId' is set
+if(agentId===undefined||agentId===null||agentId===''){throw'Missing the required parameter "agentId" when calling getWorkforcemanagementAgentAdherenceAdjustment';}// verify the required parameter 'adjustmentId' is set
+if(adjustmentId===undefined||adjustmentId===null||adjustmentId===''){throw'Missing the required parameter "adjustmentId" when calling getWorkforcemanagementAgentAdherenceAdjustment';}return this.apiClient.callApi('/api/v2/workforcemanagement/agents/{agentId}/adherence/adjustments/{adjustmentId}','GET',{'agentId':agentId,'adjustmentId':adjustmentId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Get an adherence explanation
+	 * 
+	 * @param {String} agentId The ID of the agent to query
+	 * @param {String} explanationId The ID of the explanation to update
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementAgentAdherenceExplanation",value:function getWorkforcemanagementAgentAdherenceExplanation(agentId,explanationId,opts){opts=opts||{};// verify the required parameter 'agentId' is set
 if(agentId===undefined||agentId===null||agentId===''){throw'Missing the required parameter "agentId" when calling getWorkforcemanagementAgentAdherenceExplanation';}// verify the required parameter 'explanationId' is set
 if(explanationId===undefined||explanationId===null||explanationId===''){throw'Missing the required parameter "explanationId" when calling getWorkforcemanagementAgentAdherenceExplanation';}return this.apiClient.callApi('/api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/{explanationId}','GET',{'agentId':agentId,'explanationId':explanationId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get the management unit to which the agent belongs
-   * 
-   * @param {String} agentId The ID of the agent to look up
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementAgentManagementunit",value:function getWorkforcemanagementAgentManagementunit(agentId,opts){opts=opts||{};// verify the required parameter 'agentId' is set
+	 * Get the management unit to which the agent belongs
+	 * 
+	 * @param {String} agentId The ID of the agent to look up
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementAgentManagementunit",value:function getWorkforcemanagementAgentManagementunit(agentId,opts){opts=opts||{};// verify the required parameter 'agentId' is set
 if(agentId===undefined||agentId===null||agentId===''){throw'Missing the required parameter "agentId" when calling getWorkforcemanagementAgentManagementunit';}return this.apiClient.callApi('/api/v2/workforcemanagement/agents/{agentId}/managementunit','GET',{'agentId':agentId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Request to fetch the status of the agent adherence job. Only the user who started the operation can query the status
-   * Job details are only retained if the initial request returned a 202 ACCEPTED response
-   * @param {String} jobId ID of the job to get
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementAgentsMeAdherenceHistoricalJob",value:function getWorkforcemanagementAgentsMeAdherenceHistoricalJob(jobId,opts){opts=opts||{};// verify the required parameter 'jobId' is set
+	 * Request to fetch the status of the agent adherence job. Only the user who started the operation can query the status
+	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
+	 * @param {String} jobId ID of the job to get
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementAgentsMeAdherenceHistoricalJob",value:function getWorkforcemanagementAgentsMeAdherenceHistoricalJob(jobId,opts){opts=opts||{};// verify the required parameter 'jobId' is set
 if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required parameter "jobId" when calling getWorkforcemanagementAgentsMeAdherenceHistoricalJob';}return this.apiClient.callApi('/api/v2/workforcemanagement/agents/me/adherence/historical/jobs/{jobId}','GET',{'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get the management unit to which the currently logged in agent belongs
-   * 
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementAgentsMeManagementunit",value:function getWorkforcemanagementAgentsMeManagementunit(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/agents/me/managementunit','GET',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Query the status of an alternative shift offers operation. Only the user who started the operation can query the status
-   * Job details are only retained if the initial request returned a 202 ACCEPTED response
-   * @param {String} jobId The ID of the job
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementAlternativeshiftsOffersJob",value:function getWorkforcemanagementAlternativeshiftsOffersJob(jobId,opts){opts=opts||{};// verify the required parameter 'jobId' is set
+	 * Get the management unit to which the currently logged in agent belongs
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementAgentsMeManagementunit",value:function getWorkforcemanagementAgentsMeManagementunit(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/agents/me/managementunit','GET',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Query the status of an alternative shift offers operation. Only the user who started the operation can query the status
+	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
+	 * @param {String} jobId The ID of the job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementAlternativeshiftsOffersJob",value:function getWorkforcemanagementAlternativeshiftsOffersJob(jobId,opts){opts=opts||{};// verify the required parameter 'jobId' is set
 if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required parameter "jobId" when calling getWorkforcemanagementAlternativeshiftsOffersJob';}return this.apiClient.callApi('/api/v2/workforcemanagement/alternativeshifts/offers/jobs/{jobId}','GET',{'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Query the status of an alternative shift search offers operation. Only the user who started the operation can query the status
-   * Job details are only retained if the initial request returned a 202 ACCEPTED response
-   * @param {String} jobId The ID of the job
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementAlternativeshiftsOffersSearchJob",value:function getWorkforcemanagementAlternativeshiftsOffersSearchJob(jobId,opts){opts=opts||{};// verify the required parameter 'jobId' is set
+	 * Query the status of an alternative shift search offers operation. Only the user who started the operation can query the status
+	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
+	 * @param {String} jobId The ID of the job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementAlternativeshiftsOffersSearchJob",value:function getWorkforcemanagementAlternativeshiftsOffersSearchJob(jobId,opts){opts=opts||{};// verify the required parameter 'jobId' is set
 if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required parameter "jobId" when calling getWorkforcemanagementAlternativeshiftsOffersSearchJob';}return this.apiClient.callApi('/api/v2/workforcemanagement/alternativeshifts/offers/search/jobs/{jobId}','GET',{'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get alternative shifts settings from the current logged in agent’s business unit
-   * 
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementAlternativeshiftsSettings",value:function getWorkforcemanagementAlternativeshiftsSettings(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/alternativeshifts/settings','GET',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get my alternative shift trade by trade ID
-   * 
-   * @param {String} tradeId The ID of the alternative shift trade
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementAlternativeshiftsTrade",value:function getWorkforcemanagementAlternativeshiftsTrade(tradeId,opts){opts=opts||{};// verify the required parameter 'tradeId' is set
+	 * Get alternative shifts settings from the current logged in agent’s business unit
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementAlternativeshiftsSettings",value:function getWorkforcemanagementAlternativeshiftsSettings(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/alternativeshifts/settings','GET',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Get my alternative shift trade by trade ID
+	 * 
+	 * @param {String} tradeId The ID of the alternative shift trade
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementAlternativeshiftsTrade",value:function getWorkforcemanagementAlternativeshiftsTrade(tradeId,opts){opts=opts||{};// verify the required parameter 'tradeId' is set
 if(tradeId===undefined||tradeId===null||tradeId===''){throw'Missing the required parameter "tradeId" when calling getWorkforcemanagementAlternativeshiftsTrade';}return this.apiClient.callApi('/api/v2/workforcemanagement/alternativeshifts/trades/{tradeId}','GET',{'tradeId':tradeId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get a list of my alternative shifts trades
-   * 
-   * @param {Object} opts Optional parameters
-   * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementAlternativeshiftsTrades",value:function getWorkforcemanagementAlternativeshiftsTrades(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/alternativeshifts/trades','GET',{},{'forceAsync':opts['forceAsync']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Query the status of an alternative shift trades operation. Only the user who started the operation can query the status
-   * Job details are only retained if the initial request returned a 202 ACCEPTED response
-   * @param {String} jobId The ID of the job
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementAlternativeshiftsTradesJob",value:function getWorkforcemanagementAlternativeshiftsTradesJob(jobId,opts){opts=opts||{};// verify the required parameter 'jobId' is set
+	 * Get a list of my alternative shifts trades
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementAlternativeshiftsTrades",value:function getWorkforcemanagementAlternativeshiftsTrades(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/alternativeshifts/trades','GET',{},{'forceAsync':opts['forceAsync']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Query the status of an alternative shift trades operation. Only the user who started the operation can query the status
+	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
+	 * @param {String} jobId The ID of the job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementAlternativeshiftsTradesJob",value:function getWorkforcemanagementAlternativeshiftsTradesJob(jobId,opts){opts=opts||{};// verify the required parameter 'jobId' is set
 if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required parameter "jobId" when calling getWorkforcemanagementAlternativeshiftsTradesJob';}return this.apiClient.callApi('/api/v2/workforcemanagement/alternativeshifts/trades/jobs/{jobId}','GET',{'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Query the status of an alternative shift trade state operation. Only the user who started the operation can query the status
-   * Job details are only retained if the initial request returned a 202 ACCEPTED response
-   * @param {String} jobId The ID of the job
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementAlternativeshiftsTradesStateJob",value:function getWorkforcemanagementAlternativeshiftsTradesStateJob(jobId,opts){opts=opts||{};// verify the required parameter 'jobId' is set
+	 * Query the status of an alternative shift trade state operation. Only the user who started the operation can query the status
+	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
+	 * @param {String} jobId The ID of the job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementAlternativeshiftsTradesStateJob",value:function getWorkforcemanagementAlternativeshiftsTradesStateJob(jobId,opts){opts=opts||{};// verify the required parameter 'jobId' is set
 if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required parameter "jobId" when calling getWorkforcemanagementAlternativeshiftsTradesStateJob';}return this.apiClient.callApi('/api/v2/workforcemanagement/alternativeshifts/trades/state/jobs/{jobId}','GET',{'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get business unit
-   * Expanding "settings" will retrieve all settings.  All other expands will retrieve only the requested settings field(s).
-   * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
-   * @param {Object} opts Optional parameters
-   * @param {Array.<String>} opts.expand Include to access additional data on the business unit
-   * @param {Boolean} opts.includeSchedulingDefaultMessageSeverities Whether to include scheduling default message severities
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunit",value:function getWorkforcemanagementBusinessunit(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get business unit
+	 * Expanding "settings" will retrieve all settings.  All other expands will retrieve only the requested settings field(s).
+	 * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Include to access additional data on the business unit
+	 * @param {Boolean} opts.includeSchedulingDefaultMessageSeverities Whether to include scheduling default message severities
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunit",value:function getWorkforcemanagementBusinessunit(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunit';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}','GET',{'businessUnitId':businessUnitId},{'expand':this.apiClient.buildCollectionParam(opts['expand'],'multi'),'includeSchedulingDefaultMessageSeverities':opts['includeSchedulingDefaultMessageSeverities']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get an activity code
-   * 
-   * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
-   * @param {String} activityCodeId The ID of the activity code to fetch
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitActivitycode",value:function getWorkforcemanagementBusinessunitActivitycode(businessUnitId,activityCodeId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get an activity code
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+	 * @param {String} activityCodeId The ID of the activity code to fetch
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitActivitycode",value:function getWorkforcemanagementBusinessunitActivitycode(businessUnitId,activityCodeId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivitycode';}// verify the required parameter 'activityCodeId' is set
 if(activityCodeId===undefined||activityCodeId===null||activityCodeId===''){throw'Missing the required parameter "activityCodeId" when calling getWorkforcemanagementBusinessunitActivitycode';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}','GET',{'businessUnitId':businessUnitId,'activityCodeId':activityCodeId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get activity codes
-   * 
-   * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
-   * @param {Object} opts Optional parameters
-   * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitActivitycodes",value:function getWorkforcemanagementBusinessunitActivitycodes(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get activity codes
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitActivitycodes",value:function getWorkforcemanagementBusinessunitActivitycodes(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivitycodes';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes','GET',{'businessUnitId':businessUnitId},{'forceDownloadService':opts['forceDownloadService']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get an activity plan
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} activityPlanId The ID of the activity plan to fetch
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitActivityplan",value:function getWorkforcemanagementBusinessunitActivityplan(businessUnitId,activityPlanId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get an activity plan
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} activityPlanId The ID of the activity plan to fetch
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitActivityplan",value:function getWorkforcemanagementBusinessunitActivityplan(businessUnitId,activityPlanId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivityplan';}// verify the required parameter 'activityPlanId' is set
 if(activityPlanId===undefined||activityPlanId===null||activityPlanId===''){throw'Missing the required parameter "activityPlanId" when calling getWorkforcemanagementBusinessunitActivityplan';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}','GET',{'businessUnitId':businessUnitId,'activityPlanId':activityPlanId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Gets an activity plan run job
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} activityPlanId The ID of the activity plan associated with the run job
-   * @param {String} jobId The ID of the activity plan run job
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitActivityplanRunsJob",value:function getWorkforcemanagementBusinessunitActivityplanRunsJob(businessUnitId,activityPlanId,jobId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Gets an activity plan deletion job
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} activityPlanId The ID of the activity plan associated with the deletion job
+	 * @param {String} jobId The ID of the activity plan deletion job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitActivityplanDeletionsJob",value:function getWorkforcemanagementBusinessunitActivityplanDeletionsJob(businessUnitId,activityPlanId,jobId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivityplanDeletionsJob';}// verify the required parameter 'activityPlanId' is set
+if(activityPlanId===undefined||activityPlanId===null||activityPlanId===''){throw'Missing the required parameter "activityPlanId" when calling getWorkforcemanagementBusinessunitActivityplanDeletionsJob';}// verify the required parameter 'jobId' is set
+if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitActivityplanDeletionsJob';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/deletions/jobs/{jobId}','GET',{'businessUnitId':businessUnitId,'activityPlanId':activityPlanId,'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Gets the latest job for an activity plan in the business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} activityPlanId The ID of the activity plan associated with the run job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitActivityplanJobs",value:function getWorkforcemanagementBusinessunitActivityplanJobs(businessUnitId,activityPlanId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivityplanJobs';}// verify the required parameter 'activityPlanId' is set
+if(activityPlanId===undefined||activityPlanId===null||activityPlanId===''){throw'Missing the required parameter "activityPlanId" when calling getWorkforcemanagementBusinessunitActivityplanJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/jobs','GET',{'businessUnitId':businessUnitId,'activityPlanId':activityPlanId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Gets a session users deletion job
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} activityPlanId The ID of the activity plan
+	 * @param {String} occurrenceId The ID of the activity plan occurrence
+	 * @param {String} sessionId The ID of the activity plan occurrence session
+	 * @param {String} jobId The ID of the activity plan occurrence session users deletion job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJob",value:function getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJob(businessUnitId,activityPlanId,occurrenceId,sessionId,jobId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJob';}// verify the required parameter 'activityPlanId' is set
+if(activityPlanId===undefined||activityPlanId===null||activityPlanId===''){throw'Missing the required parameter "activityPlanId" when calling getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJob';}// verify the required parameter 'occurrenceId' is set
+if(occurrenceId===undefined||occurrenceId===null||occurrenceId===''){throw'Missing the required parameter "occurrenceId" when calling getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJob';}// verify the required parameter 'sessionId' is set
+if(sessionId===undefined||sessionId===null||sessionId===''){throw'Missing the required parameter "sessionId" when calling getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJob';}// verify the required parameter 'jobId' is set
+if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJob';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/sessions/{sessionId}/users/deletions/jobs/{jobId}','GET',{'businessUnitId':businessUnitId,'activityPlanId':activityPlanId,'occurrenceId':occurrenceId,'sessionId':sessionId,'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Gets an activity plan sessions deletion job
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} activityPlanId The ID of the activity plan
+	 * @param {String} occurrenceId The ID of the activity plan occurrence
+	 * @param {String} jobId The ID of the activity plan sessions deletion job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJob",value:function getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJob(businessUnitId,activityPlanId,occurrenceId,jobId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJob';}// verify the required parameter 'activityPlanId' is set
+if(activityPlanId===undefined||activityPlanId===null||activityPlanId===''){throw'Missing the required parameter "activityPlanId" when calling getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJob';}// verify the required parameter 'occurrenceId' is set
+if(occurrenceId===undefined||occurrenceId===null||occurrenceId===''){throw'Missing the required parameter "occurrenceId" when calling getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJob';}// verify the required parameter 'jobId' is set
+if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJob';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/sessions/deletions/jobs/{jobId}','GET',{'businessUnitId':businessUnitId,'activityPlanId':activityPlanId,'occurrenceId':occurrenceId,'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Gets an occurrences deletion job
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} activityPlanId The ID of the activity plan
+	 * @param {String} jobId The ID of the activity plan occurrences deletion job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJob",value:function getWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJob(businessUnitId,activityPlanId,jobId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJob';}// verify the required parameter 'activityPlanId' is set
+if(activityPlanId===undefined||activityPlanId===null||activityPlanId===''){throw'Missing the required parameter "activityPlanId" when calling getWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJob';}// verify the required parameter 'jobId' is set
+if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJob';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/deletions/jobs/{jobId}','GET',{'businessUnitId':businessUnitId,'activityPlanId':activityPlanId,'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Gets an activity plan run job
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} activityPlanId The ID of the activity plan associated with the run job
+	 * @param {String} jobId The ID of the activity plan run job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitActivityplanRunsJob",value:function getWorkforcemanagementBusinessunitActivityplanRunsJob(businessUnitId,activityPlanId,jobId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivityplanRunsJob';}// verify the required parameter 'activityPlanId' is set
 if(activityPlanId===undefined||activityPlanId===null||activityPlanId===''){throw'Missing the required parameter "activityPlanId" when calling getWorkforcemanagementBusinessunitActivityplanRunsJob';}// verify the required parameter 'jobId' is set
 if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitActivityplanRunsJob';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/runs/jobs/{jobId}','GET',{'businessUnitId':businessUnitId,'activityPlanId':activityPlanId,'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get activity plans
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} opts Optional parameters
-   * @param {Object} opts.state Optionally filter by activity plan state
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitActivityplans",value:function getWorkforcemanagementBusinessunitActivityplans(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get activity plans
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.state Optionally filter by activity plan state
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitActivityplans",value:function getWorkforcemanagementBusinessunitActivityplans(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivityplans';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans','GET',{'businessUnitId':businessUnitId},{'state':opts['state']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Gets the latest job for all activity plans in the business unit
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitActivityplansJobs",value:function getWorkforcemanagementBusinessunitActivityplansJobs(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Gets the latest job for all activity plans in the business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitActivityplansJobs",value:function getWorkforcemanagementBusinessunitActivityplansJobs(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivityplansJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/jobs','GET',{'businessUnitId':businessUnitId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get alternative shifts settings for a business unit
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitAlternativeshiftsSettings",value:function getWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get adherence adjustments in bulk by ID for a business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Array.<String>} adjustmentIds The IDs of the adherence adjustments to fetch
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk",value:function getWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk(businessUnitId,adjustmentIds,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk';}// verify the required parameter 'adjustmentIds' is set
+if(adjustmentIds===undefined||adjustmentIds===null){throw'Missing the required parameter "adjustmentIds" when calling getWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/bulk','GET',{'businessUnitId':businessUnitId},{'adjustmentIds':this.apiClient.buildCollectionParam(adjustmentIds,'multi')},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Query the status of an async adherence adjustments query job. Only the user who started the operation can query the status
+	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} jobId The ID of the query job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJob",value:function getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJob(businessUnitId,jobId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJob';}// verify the required parameter 'jobId' is set
+if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJob';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/query/jobs/{jobId}','GET',{'businessUnitId':businessUnitId,'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Get query job history for the logged in user.
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs",value:function getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/query/jobs','GET',{'businessUnitId':businessUnitId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Get an adherence adjustment reason code for a business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} reasonCodeId The ID of the reason code to fetch
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode",value:function getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode(businessUnitId,reasonCodeId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode';}// verify the required parameter 'reasonCodeId' is set
+if(reasonCodeId===undefined||reasonCodeId===null||reasonCodeId===''){throw'Missing the required parameter "reasonCodeId" when calling getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/{reasonCodeId}','GET',{'businessUnitId':businessUnitId,'reasonCodeId':reasonCodeId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Get adherence adjustment reason codes for a business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes",value:function getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes','GET',{'businessUnitId':businessUnitId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Get adherence adjustment reason codes in bulk by ID for a business unit. This API can return deleted reason codes.
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Array.<String>} ids The IDs of the reason codes to fetch
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk",value:function getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(businessUnitId,ids,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk';}// verify the required parameter 'ids' is set
+if(ids===undefined||ids===null){throw'Missing the required parameter "ids" when calling getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/bulk','GET',{'businessUnitId':businessUnitId},{'ids':this.apiClient.buildCollectionParam(ids,'multi')},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Get adherence adjustments settings for a business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings",value:function getWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/settings','GET',{'businessUnitId':businessUnitId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Get alternative shifts settings for a business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitAlternativeshiftsSettings",value:function getWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitAlternativeshiftsSettings';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/settings','GET',{'businessUnitId':businessUnitId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get an alternative shifts trade in a business unit for a given trade ID
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} tradeId The ID of the alternative shift trade
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitAlternativeshiftsTrade",value:function getWorkforcemanagementBusinessunitAlternativeshiftsTrade(businessUnitId,tradeId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get an alternative shifts trade in a business unit for a given trade ID
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} tradeId The ID of the alternative shift trade
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitAlternativeshiftsTrade",value:function getWorkforcemanagementBusinessunitAlternativeshiftsTrade(businessUnitId,tradeId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitAlternativeshiftsTrade';}// verify the required parameter 'tradeId' is set
 if(tradeId===undefined||tradeId===null||tradeId===''){throw'Missing the required parameter "tradeId" when calling getWorkforcemanagementBusinessunitAlternativeshiftsTrade';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/trades/{tradeId}','GET',{'businessUnitId':businessUnitId,'tradeId':tradeId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Query the status of an alternative shift search trade operation. Only the user who started the operation can query the status
-   * Job details are only retained if the initial request returned a 202 ACCEPTED response
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} jobId The ID of the job
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob",value:function getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob(businessUnitId,jobId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Query the status of an alternative shift search trade operation. Only the user who started the operation can query the status
+	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} jobId The ID of the job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob",value:function getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob(businessUnitId,jobId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob';}// verify the required parameter 'jobId' is set
 if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/trades/search/jobs/{jobId}','GET',{'businessUnitId':businessUnitId,'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get a capacity plan
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} capacityPlanId The ID of the capacity plan
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitCapacityplan",value:function getWorkforcemanagementBusinessunitCapacityplan(businessUnitId,capacityPlanId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get a capacity plan
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} capacityPlanId The ID of the capacity plan
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitCapacityplan",value:function getWorkforcemanagementBusinessunitCapacityplan(businessUnitId,capacityPlanId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitCapacityplan';}// verify the required parameter 'capacityPlanId' is set
 if(capacityPlanId===undefined||capacityPlanId===null||capacityPlanId===''){throw'Missing the required parameter "capacityPlanId" when calling getWorkforcemanagementBusinessunitCapacityplan';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}','GET',{'businessUnitId':businessUnitId,'capacityPlanId':capacityPlanId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get a capacity plan's forecast inputs
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} capacityPlanId The ID of the capacity plan
-   * @param {Object} opts Optional parameters
-   * @param {Object} opts.granularity Granularity to access capacity plan forecast data, defaults to weekly
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitCapacityplanForecast",value:function getWorkforcemanagementBusinessunitCapacityplanForecast(businessUnitId,capacityPlanId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get a capacity plan's forecast inputs
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} capacityPlanId The ID of the capacity plan
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.granularity Granularity to access capacity plan forecast data, defaults to weekly
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitCapacityplanForecast",value:function getWorkforcemanagementBusinessunitCapacityplanForecast(businessUnitId,capacityPlanId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitCapacityplanForecast';}// verify the required parameter 'capacityPlanId' is set
 if(capacityPlanId===undefined||capacityPlanId===null||capacityPlanId===''){throw'Missing the required parameter "capacityPlanId" when calling getWorkforcemanagementBusinessunitCapacityplanForecast';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/forecast','GET',{'businessUnitId':businessUnitId,'capacityPlanId':capacityPlanId},{'granularity':opts['granularity']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get a capacity plan's staffing group allocations
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} capacityPlanId The ID of the capacity plan
-   * @param {Object} opts Optional parameters
-   * @param {Object} opts.granularity Granularity to access staffing group data, defaults to weekly
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations",value:function getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(businessUnitId,capacityPlanId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get a capacity plan's staffing group allocations
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} capacityPlanId The ID of the capacity plan
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.granularity Granularity to access staffing group data, defaults to weekly
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations",value:function getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(businessUnitId,capacityPlanId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations';}// verify the required parameter 'capacityPlanId' is set
 if(capacityPlanId===undefined||capacityPlanId===null||capacityPlanId===''){throw'Missing the required parameter "capacityPlanId" when calling getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocations','GET',{'businessUnitId':businessUnitId,'capacityPlanId':capacityPlanId},{'granularity':opts['granularity']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get a capacity plan's staffing requirements
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} capacityPlanId The ID of the capacity plan
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements",value:function getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements(businessUnitId,capacityPlanId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get a capacity plan's staffing requirements
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} capacityPlanId The ID of the capacity plan
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements",value:function getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements(businessUnitId,capacityPlanId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements';}// verify the required parameter 'capacityPlanId' is set
 if(capacityPlanId===undefined||capacityPlanId===null||capacityPlanId===''){throw'Missing the required parameter "capacityPlanId" when calling getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffingrequirements','GET',{'businessUnitId':businessUnitId,'capacityPlanId':capacityPlanId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get the latest long term staffing requirements for a business unit
-   * 
-   * @param {String} businessUnitId 
-   * @param {String} weekDateId weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-   * @param {String} forecastId forecastId of forecast
-   * @param {Object} opts Optional parameters
-   * @param {Object} opts.granularity Granularity to access staffing requirements data, defaults to weekly
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast",value:function getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast(businessUnitId,weekDateId,forecastId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get the latest long term staffing requirements for a business unit
+	 * 
+	 * @param {String} businessUnitId 
+	 * @param {String} weekDateId weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} forecastId forecastId of forecast
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.granularity Granularity to access staffing requirements data, defaults to weekly
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast",value:function getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast(businessUnitId,weekDateId,forecastId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast';}// verify the required parameter 'weekDateId' is set
 if(weekDateId===undefined||weekDateId===null){throw'Missing the required parameter "weekDateId" when calling getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast';}// verify the required parameter 'forecastId' is set
 if(forecastId===undefined||forecastId===null||forecastId===''){throw'Missing the required parameter "forecastId" when calling getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplanning/longtermrequirements/automaticbestmethod/weeks/{weekDateId}/forecasts/{forecastId}','GET',{'businessUnitId':businessUnitId,'weekDateId':weekDateId,'forecastId':forecastId},{'granularity':opts['granularity']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get list of capacity plans for a business unit
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitCapacityplans",value:function getWorkforcemanagementBusinessunitCapacityplans(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get list of capacity plans for a business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitCapacityplans",value:function getWorkforcemanagementBusinessunitCapacityplans(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitCapacityplans';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans','GET',{'businessUnitId':businessUnitId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Gets the status of the given job
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} jobId The ID of the update job
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitDecisionmetricsJob",value:function getWorkforcemanagementBusinessunitDecisionmetricsJob(businessUnitId,jobId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Gets the status of the given job
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} jobId The ID of the update job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitDecisionmetricsJob",value:function getWorkforcemanagementBusinessunitDecisionmetricsJob(businessUnitId,jobId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitDecisionmetricsJob';}// verify the required parameter 'jobId' is set
 if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitDecisionmetricsJob';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/decisionmetrics/jobs/{jobId}','GET',{'businessUnitId':businessUnitId,'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get intraday planning groups for the given date
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} _date yyyy-MM-dd date string interpreted in the configured business unit time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitIntradayPlanninggroups",value:function getWorkforcemanagementBusinessunitIntradayPlanninggroups(businessUnitId,_date,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get intraday planning groups for the given date
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} _date yyyy-MM-dd date string interpreted in the configured business unit time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitIntradayPlanninggroups",value:function getWorkforcemanagementBusinessunitIntradayPlanninggroups(businessUnitId,_date,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitIntradayPlanninggroups';}// verify the required parameter '_date' is set
 if(_date===undefined||_date===null){throw'Missing the required parameter "_date" when calling getWorkforcemanagementBusinessunitIntradayPlanninggroups';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday/planninggroups','GET',{'businessUnitId':businessUnitId},{'date':_date},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get the latest session for the business unit ID
-   * 
-   * @param {String} businessUnitId 
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   */},{key:"getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession",value:function getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get the latest session for the business unit ID
+	 * 
+	 * @param {String} businessUnitId 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */},{key:"getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession",value:function getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session','GET',{'businessUnitId':businessUnitId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get status of the session export job
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} jobId The job ID
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJob",value:function getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJob(businessUnitId,jobId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get status of the session export job
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} jobId The job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJob",value:function getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJob(businessUnitId,jobId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJob';}// verify the required parameter 'jobId' is set
 if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJob';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/forecast/jobs/{jobId}','GET',{'businessUnitId':businessUnitId,'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get status of the historical export job
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} jobId The job ID
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJob",value:function getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJob(businessUnitId,jobId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get status of the historical export job
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} jobId The job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJob",value:function getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJob(businessUnitId,jobId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJob';}// verify the required parameter 'jobId' is set
 if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJob';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/historical/jobs/{jobId}','GET',{'businessUnitId':businessUnitId,'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get status of the snapshot export job
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} jobId The job ID
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJob",value:function getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJob(businessUnitId,jobId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get status of the snapshot export job
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} jobId The job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJob",value:function getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJob(businessUnitId,jobId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJob';}// verify the required parameter 'jobId' is set
 if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJob';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/snapshot/jobs/{jobId}','GET',{'businessUnitId':businessUnitId,'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get the session details for the session ID
-   * 
-   * @param {String} businessUnitId 
-   * @param {String} sessionId 
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   */},{key:"getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId",value:function getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId(businessUnitId,sessionId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get the session details for the session ID
+	 * 
+	 * @param {String} businessUnitId 
+	 * @param {String} sessionId 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */},{key:"getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId",value:function getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId(businessUnitId,sessionId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId';}// verify the required parameter 'sessionId' is set
 if(sessionId===undefined||sessionId===null||sessionId===''){throw'Missing the required parameter "sessionId" when calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/{sessionId}','GET',{'businessUnitId':businessUnitId,'sessionId':sessionId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get the snapshot details for the snapshot ID
-   * 
-   * @param {String} businessUnitId 
-   * @param {String} sessionId 
-   * @param {String} snapshotId 
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   */},{key:"getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId",value:function getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId(businessUnitId,sessionId,snapshotId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get the snapshot details for the snapshot ID
+	 * 
+	 * @param {String} businessUnitId 
+	 * @param {String} sessionId 
+	 * @param {String} snapshotId 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */},{key:"getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId",value:function getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId(businessUnitId,sessionId,snapshotId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId';}// verify the required parameter 'sessionId' is set
 if(sessionId===undefined||sessionId===null||sessionId===''){throw'Missing the required parameter "sessionId" when calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId';}// verify the required parameter 'snapshotId' is set
 if(snapshotId===undefined||snapshotId===null||snapshotId===''){throw'Missing the required parameter "snapshotId" when calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/{sessionId}/snapshot/{snapshotId}','GET',{'businessUnitId':businessUnitId,'sessionId':sessionId,'snapshotId':snapshotId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get all authorized management units in the business unit
-   * 
-   * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
-   * @param {Object} opts Optional parameters
-   * @param {Object} opts.feature If specified, the list of management units for which the user is authorized to use the requested feature will be returned
-   * @param {String} opts.divisionId If specified, the list of management units belonging to the specified division will be returned
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitManagementunits",value:function getWorkforcemanagementBusinessunitManagementunits(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get all authorized management units in the business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.feature If specified, the list of management units for which the user is authorized to use the requested feature will be returned
+	 * @param {String} opts.divisionId If specified, the list of management units belonging to the specified division will be returned
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitManagementunits",value:function getWorkforcemanagementBusinessunitManagementunits(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitManagementunits';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/managementunits','GET',{'businessUnitId':businessUnitId},{'feature':opts['feature'],'divisionId':opts['divisionId']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get minimum staffing settings for a business unit
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitMinimumstaffingSettings",value:function getWorkforcemanagementBusinessunitMinimumstaffingSettings(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get minimum staffing settings for a business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitMinimumstaffingSettings",value:function getWorkforcemanagementBusinessunitMinimumstaffingSettings(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitMinimumstaffingSettings';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/minimumstaffing/settings','GET',{'businessUnitId':businessUnitId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get opportunity details
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} opportunityId The ID of the opportunity
-   * @param {Object} opts Optional parameters
-   * @param {Object} opts.expand List of resources to expand
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitOpportunity",value:function getWorkforcemanagementBusinessunitOpportunity(businessUnitId,opportunityId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get opportunity details
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} opportunityId The ID of the opportunity
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand List of resources to expand
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitOpportunity",value:function getWorkforcemanagementBusinessunitOpportunity(businessUnitId,opportunityId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitOpportunity';}// verify the required parameter 'opportunityId' is set
 if(opportunityId===undefined||opportunityId===null||opportunityId===''){throw'Missing the required parameter "opportunityId" when calling getWorkforcemanagementBusinessunitOpportunity';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities/{opportunityId}','GET',{'businessUnitId':businessUnitId,'opportunityId':opportunityId},{'expand':opts['expand']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get a planning group
-   * 
-   * @param {String} businessUnitId The ID of the business unit.
-   * @param {String} planningGroupId The ID of a planning group to fetch
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitPlanninggroup",value:function getWorkforcemanagementBusinessunitPlanninggroup(businessUnitId,planningGroupId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get a planning group
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit.
+	 * @param {String} planningGroupId The ID of a planning group to fetch
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitPlanninggroup",value:function getWorkforcemanagementBusinessunitPlanninggroup(businessUnitId,planningGroupId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitPlanninggroup';}// verify the required parameter 'planningGroupId' is set
 if(planningGroupId===undefined||planningGroupId===null||planningGroupId===''){throw'Missing the required parameter "planningGroupId" when calling getWorkforcemanagementBusinessunitPlanninggroup';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}','GET',{'businessUnitId':businessUnitId,'planningGroupId':planningGroupId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Gets list of planning groups
-   * 
-   * @param {String} businessUnitId The ID of the business unit.
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitPlanninggroups",value:function getWorkforcemanagementBusinessunitPlanninggroups(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Gets list of planning groups
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitPlanninggroups",value:function getWorkforcemanagementBusinessunitPlanninggroups(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitPlanninggroups';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups','GET',{'businessUnitId':businessUnitId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get a schedule bid
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} bidId The ID of the schedule bid
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitSchedulebid",value:function getWorkforcemanagementBusinessunitSchedulebid(businessUnitId,bidId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get a schedule bid
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The ID of the schedule bid
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitSchedulebid",value:function getWorkforcemanagementBusinessunitSchedulebid(businessUnitId,bidId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitSchedulebid';}// verify the required parameter 'bidId' is set
 if(bidId===undefined||bidId===null||bidId===''){throw'Missing the required parameter "bidId" when calling getWorkforcemanagementBusinessunitSchedulebid';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}','GET',{'businessUnitId':businessUnitId,'bidId':bidId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get a schedule bid group
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} bidId The ID of the schedule bid associated with the bid groups
-   * @param {String} bidGroupId Schedule Bid Group id
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitSchedulebidGroup",value:function getWorkforcemanagementBusinessunitSchedulebidGroup(businessUnitId,bidId,bidGroupId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get a schedule bid group
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The ID of the schedule bid associated with the bid groups
+	 * @param {String} bidGroupId Schedule Bid Group id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitSchedulebidGroup",value:function getWorkforcemanagementBusinessunitSchedulebidGroup(businessUnitId,bidId,bidGroupId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitSchedulebidGroup';}// verify the required parameter 'bidId' is set
 if(bidId===undefined||bidId===null||bidId===''){throw'Missing the required parameter "bidId" when calling getWorkforcemanagementBusinessunitSchedulebidGroup';}// verify the required parameter 'bidGroupId' is set
 if(bidGroupId===undefined||bidGroupId===null||bidGroupId===''){throw'Missing the required parameter "bidGroupId" when calling getWorkforcemanagementBusinessunitSchedulebidGroup';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/{bidGroupId}','GET',{'businessUnitId':businessUnitId,'bidId':bidId,'bidGroupId':bidGroupId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get agents schedule bid preferences for a bid group
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} bidId The ID of the schedule bid associated with the bid groups
-   * @param {String} bidGroupId The ID of the schedule bid group
-   * @param {Object} opts Optional parameters
-   * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
-   * @param {Array.<String>} opts.expand Include to fetch agents' preferences with priorities
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitSchedulebidGroupPreferences",value:function getWorkforcemanagementBusinessunitSchedulebidGroupPreferences(businessUnitId,bidId,bidGroupId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get agents schedule bid preferences for a bid group
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The ID of the schedule bid associated with the bid groups
+	 * @param {String} bidGroupId The ID of the schedule bid group
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Array.<String>} opts.expand Include to fetch agents' preferences with priorities
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitSchedulebidGroupPreferences",value:function getWorkforcemanagementBusinessunitSchedulebidGroupPreferences(businessUnitId,bidId,bidGroupId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitSchedulebidGroupPreferences';}// verify the required parameter 'bidId' is set
 if(bidId===undefined||bidId===null||bidId===''){throw'Missing the required parameter "bidId" when calling getWorkforcemanagementBusinessunitSchedulebidGroupPreferences';}// verify the required parameter 'bidGroupId' is set
 if(bidGroupId===undefined||bidGroupId===null||bidGroupId===''){throw'Missing the required parameter "bidGroupId" when calling getWorkforcemanagementBusinessunitSchedulebidGroupPreferences';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/{bidGroupId}/preferences','GET',{'businessUnitId':businessUnitId,'bidId':bidId,'bidGroupId':bidGroupId},{'forceDownloadService':opts['forceDownloadService'],'expand':this.apiClient.buildCollectionParam(opts['expand'],'multi')},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get summary of bid groups that belong to a schedule bid
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} bidId The ID of the schedule bid associated with the bid groups
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitSchedulebidGroupsSummary",value:function getWorkforcemanagementBusinessunitSchedulebidGroupsSummary(businessUnitId,bidId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get summary of bid groups that belong to a schedule bid
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The ID of the schedule bid associated with the bid groups
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitSchedulebidGroupsSummary",value:function getWorkforcemanagementBusinessunitSchedulebidGroupsSummary(businessUnitId,bidId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitSchedulebidGroupsSummary';}// verify the required parameter 'bidId' is set
 if(bidId===undefined||bidId===null||bidId===''){throw'Missing the required parameter "bidId" when calling getWorkforcemanagementBusinessunitSchedulebidGroupsSummary';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/summary','GET',{'businessUnitId':businessUnitId,'bidId':bidId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get list of schedule bids
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitSchedulebids",value:function getWorkforcemanagementBusinessunitSchedulebids(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get list of schedule bids
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitSchedulebids",value:function getWorkforcemanagementBusinessunitSchedulebids(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitSchedulebids';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids','GET',{'businessUnitId':businessUnitId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get scheduler settings for a business unit
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitSchedulerSettings",value:function getWorkforcemanagementBusinessunitSchedulerSettings(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get scheduler settings for a business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitSchedulerSettings",value:function getWorkforcemanagementBusinessunitSchedulerSettings(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitSchedulerSettings';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduler/settings','GET',{'businessUnitId':businessUnitId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get a scheduling run
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} runId The ID of the schedule run
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitSchedulingRun",value:function getWorkforcemanagementBusinessunitSchedulingRun(businessUnitId,runId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get a scheduling run
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} runId The ID of the schedule run
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitSchedulingRun",value:function getWorkforcemanagementBusinessunitSchedulingRun(businessUnitId,runId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitSchedulingRun';}// verify the required parameter 'runId' is set
 if(runId===undefined||runId===null||runId===''){throw'Missing the required parameter "runId" when calling getWorkforcemanagementBusinessunitSchedulingRun';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}','GET',{'businessUnitId':businessUnitId,'runId':runId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get the result of a rescheduling operation
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} runId The ID of the schedule run
-   * @param {Array.<String>} managementUnitIds The IDs of the management units for which to fetch the reschedule results
-   * @param {Array.<String>} expand The fields to expand. Omitting will return an empty response
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitSchedulingRunResult",value:function getWorkforcemanagementBusinessunitSchedulingRunResult(businessUnitId,runId,managementUnitIds,expand,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get the result of a rescheduling operation
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} runId The ID of the schedule run
+	 * @param {Array.<String>} managementUnitIds The IDs of the management units for which to fetch the reschedule results
+	 * @param {Array.<String>} expand The fields to expand. Omitting will return an empty response
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitSchedulingRunResult",value:function getWorkforcemanagementBusinessunitSchedulingRunResult(businessUnitId,runId,managementUnitIds,expand,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitSchedulingRunResult';}// verify the required parameter 'runId' is set
 if(runId===undefined||runId===null||runId===''){throw'Missing the required parameter "runId" when calling getWorkforcemanagementBusinessunitSchedulingRunResult';}// verify the required parameter 'managementUnitIds' is set
 if(managementUnitIds===undefined||managementUnitIds===null){throw'Missing the required parameter "managementUnitIds" when calling getWorkforcemanagementBusinessunitSchedulingRunResult';}// verify the required parameter 'expand' is set
 if(expand===undefined||expand===null){throw'Missing the required parameter "expand" when calling getWorkforcemanagementBusinessunitSchedulingRunResult';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}/result','GET',{'businessUnitId':businessUnitId,'runId':runId},{'managementUnitIds':this.apiClient.buildCollectionParam(managementUnitIds,'multi'),'expand':this.apiClient.buildCollectionParam(expand,'multi')},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get the list of scheduling runs
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitSchedulingRuns",value:function getWorkforcemanagementBusinessunitSchedulingRuns(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get the list of scheduling runs
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitSchedulingRuns",value:function getWorkforcemanagementBusinessunitSchedulingRuns(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitSchedulingRuns';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs','GET',{'businessUnitId':businessUnitId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get business unit scheduling preferences settings
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * getWorkforcemanagementBusinessunitSchedulingpreferencesSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   */},{key:"getWorkforcemanagementBusinessunitSchedulingpreferencesSettings",value:function getWorkforcemanagementBusinessunitSchedulingpreferencesSettings(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get business unit scheduling preferences settings
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * getWorkforcemanagementBusinessunitSchedulingpreferencesSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */},{key:"getWorkforcemanagementBusinessunitSchedulingpreferencesSettings",value:function getWorkforcemanagementBusinessunitSchedulingpreferencesSettings(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitSchedulingpreferencesSettings';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulingpreferences/settings','GET',{'businessUnitId':businessUnitId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get a service goal template
-   * 
-   * @param {String} businessUnitId The ID of the business unit.
-   * @param {String} serviceGoalTemplateId The ID of a service goal template to fetch
-   * @param {Object} opts Optional parameters
-   * @param {Array.<String>} opts.expand Include to access additional data on the service goal template
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitServicegoaltemplate",value:function getWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId,serviceGoalTemplateId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get a service goal template
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit.
+	 * @param {String} serviceGoalTemplateId The ID of a service goal template to fetch
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Include to access additional data on the service goal template
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitServicegoaltemplate",value:function getWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId,serviceGoalTemplateId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitServicegoaltemplate';}// verify the required parameter 'serviceGoalTemplateId' is set
 if(serviceGoalTemplateId===undefined||serviceGoalTemplateId===null||serviceGoalTemplateId===''){throw'Missing the required parameter "serviceGoalTemplateId" when calling getWorkforcemanagementBusinessunitServicegoaltemplate';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}','GET',{'businessUnitId':businessUnitId,'serviceGoalTemplateId':serviceGoalTemplateId},{'expand':this.apiClient.buildCollectionParam(opts['expand'],'multi')},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Gets list of service goal templates
-   * 
-   * @param {String} businessUnitId The ID of the business unit.
-   * @param {Object} opts Optional parameters
-   * @param {Array.<String>} opts.expand Include to access additional data on the service goal template
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitServicegoaltemplates",value:function getWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Gets list of service goal templates
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit.
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Include to access additional data on the service goal template
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitServicegoaltemplates",value:function getWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitServicegoaltemplates';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates','GET',{'businessUnitId':businessUnitId},{'expand':this.apiClient.buildCollectionParam(opts['expand'],'multi')},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * View results of the evaluate shift trades in a management unit per week operation. Only the user who started the operation can query the status
-   * Job details are only retained if the initial request returned a 202 ACCEPTED response
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} jobId The ID of the job
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitShifttradingTradesEvaluateJob",value:function getWorkforcemanagementBusinessunitShifttradingTradesEvaluateJob(businessUnitId,jobId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * View results of the evaluate shift trades in a management unit per week operation. Only the user who started the operation can query the status
+	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} jobId The ID of the job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitShifttradingTradesEvaluateJob",value:function getWorkforcemanagementBusinessunitShifttradingTradesEvaluateJob(businessUnitId,jobId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitShifttradingTradesEvaluateJob';}// verify the required parameter 'jobId' is set
 if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitShifttradingTradesEvaluateJob';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/evaluate/jobs/{jobId}','GET',{'businessUnitId':businessUnitId,'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * View results of the query shift trades in a management unit per user operation. Only the user who started the operation can query the status
-   * Job details are only retained if the initial request returned a 202 ACCEPTED response
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} jobId The ID of the job
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitShifttradingTradesQueryJob",value:function getWorkforcemanagementBusinessunitShifttradingTradesQueryJob(businessUnitId,jobId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * View results of the query shift trades in a management unit per user operation. Only the user who started the operation can query the status
+	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} jobId The ID of the job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitShifttradingTradesQueryJob",value:function getWorkforcemanagementBusinessunitShifttradingTradesQueryJob(businessUnitId,jobId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitShifttradingTradesQueryJob';}// verify the required parameter 'jobId' is set
 if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitShifttradingTradesQueryJob';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/query/jobs/{jobId}','GET',{'businessUnitId':businessUnitId,'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * View results of bulk update trades states operation. Only the user who started the operation can query the status.
-   * Job details are only retained if the initial request returned a 202 ACCEPTED response
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} jobId The ID of the job
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitShifttradingTradesStateBulkJob",value:function getWorkforcemanagementBusinessunitShifttradingTradesStateBulkJob(businessUnitId,jobId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * View results of bulk update trades states operation. Only the user who started the operation can query the status.
+	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} jobId The ID of the job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitShifttradingTradesStateBulkJob",value:function getWorkforcemanagementBusinessunitShifttradingTradesStateBulkJob(businessUnitId,jobId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitShifttradingTradesStateBulkJob';}// verify the required parameter 'jobId' is set
 if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitShifttradingTradesStateBulkJob';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/state/bulk/jobs/{jobId}','GET',{'businessUnitId':businessUnitId,'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * View result of potential shift trade matches for the current user. Only the user who started the operation can query the status
-   * Job details are only retained if the initial request returned a 202 ACCEPTED response
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} jobId The ID of the job
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJob",value:function getWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJob(businessUnitId,jobId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * View result of potential shift trade matches for the current user. Only the user who started the operation can query the status
+	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} jobId The ID of the job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJob",value:function getWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJob(businessUnitId,jobId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJob';}// verify the required parameter 'jobId' is set
 if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJob';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/unmatched/search/jobs/{jobId}','GET',{'businessUnitId':businessUnitId,'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * View results of the retrieve the summary of shift trades in a matched state per week operation. Only the user who started the operation can query the status
-   * Job details are only retained if the initial request returned a 202 ACCEPTED response
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} jobId The ID of the job
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitShifttradingWeeksSummaryJob",value:function getWorkforcemanagementBusinessunitShifttradingWeeksSummaryJob(businessUnitId,jobId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * View results of the retrieve the summary of shift trades in a matched state per week operation. Only the user who started the operation can query the status
+	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} jobId The ID of the job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitShifttradingWeeksSummaryJob",value:function getWorkforcemanagementBusinessunitShifttradingWeeksSummaryJob(businessUnitId,jobId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitShifttradingWeeksSummaryJob';}// verify the required parameter 'jobId' is set
 if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitShifttradingWeeksSummaryJob';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/weeks/summary/jobs/{jobId}','GET',{'businessUnitId':businessUnitId,'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Gets a staffing group
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} staffingGroupId The ID of the staffing group to fetch
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitStaffinggroup",value:function getWorkforcemanagementBusinessunitStaffinggroup(businessUnitId,staffingGroupId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Gets a staffing group
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} staffingGroupId The ID of the staffing group to fetch
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitStaffinggroup",value:function getWorkforcemanagementBusinessunitStaffinggroup(businessUnitId,staffingGroupId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitStaffinggroup';}// verify the required parameter 'staffingGroupId' is set
 if(staffingGroupId===undefined||staffingGroupId===null||staffingGroupId===''){throw'Missing the required parameter "staffingGroupId" when calling getWorkforcemanagementBusinessunitStaffinggroup';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId}','GET',{'businessUnitId':businessUnitId,'staffingGroupId':staffingGroupId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Gets a list of staffing groups
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} opts Optional parameters
-   * @param {String} opts.managementUnitId The ID of the management unit to get management unit specific staffing groups
-   * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitStaffinggroups",value:function getWorkforcemanagementBusinessunitStaffinggroups(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Gets a list of staffing groups
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.managementUnitId The ID of the management unit to get management unit specific staffing groups
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitStaffinggroups",value:function getWorkforcemanagementBusinessunitStaffinggroups(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitStaffinggroups';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups','GET',{'businessUnitId':businessUnitId},{'managementUnitId':opts['managementUnitId'],'forceDownloadService':opts['forceDownloadService']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Gets a time-off limit object
-   * Returns properties of time-off limit object, but not daily values
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} timeOffLimitId The ID of the time-off limit to fetch
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitTimeofflimit",value:function getWorkforcemanagementBusinessunitTimeofflimit(businessUnitId,timeOffLimitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Gets a time-off limit object
+	 * Returns properties of time-off limit object, but not daily values
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} timeOffLimitId The ID of the time-off limit to fetch
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitTimeofflimit",value:function getWorkforcemanagementBusinessunitTimeofflimit(businessUnitId,timeOffLimitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitTimeofflimit';}// verify the required parameter 'timeOffLimitId' is set
 if(timeOffLimitId===undefined||timeOffLimitId===null||timeOffLimitId===''){throw'Missing the required parameter "timeOffLimitId" when calling getWorkforcemanagementBusinessunitTimeofflimit';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}','GET',{'businessUnitId':businessUnitId,'timeOffLimitId':timeOffLimitId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Query the convert time-off limit granularity job operation. Only the user who started the operation can query the status.
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} timeOffLimitId The ID of the time-off limit
-   * @param {String} jobId The ID of the convert time off limit granularity job
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJob",value:function getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJob(businessUnitId,timeOffLimitId,jobId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Query the convert time-off limit granularity job operation. Only the user who started the operation can query the status.
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} timeOffLimitId The ID of the time-off limit
+	 * @param {String} jobId The ID of the convert time off limit granularity job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJob",value:function getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJob(businessUnitId,timeOffLimitId,jobId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJob';}// verify the required parameter 'timeOffLimitId' is set
 if(timeOffLimitId===undefined||timeOffLimitId===null||timeOffLimitId===''){throw'Missing the required parameter "timeOffLimitId" when calling getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJob';}// verify the required parameter 'jobId' is set
 if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJob';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/granularityconversion/jobs/{jobId}','GET',{'businessUnitId':businessUnitId,'timeOffLimitId':timeOffLimitId,'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Query the list of convert time-off limit granularity job operation.
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} timeOffLimitId The ID of the time-off limit
-   * @param {Object} opts Optional parameters
-   * @param {Object} opts.statuses Status to filter the list of jobs
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobs",value:function getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobs(businessUnitId,timeOffLimitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Query the list of convert time-off limit granularity job operation.
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} timeOffLimitId The ID of the time-off limit
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.statuses Status to filter the list of jobs
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobs",value:function getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobs(businessUnitId,timeOffLimitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobs';}// verify the required parameter 'timeOffLimitId' is set
 if(timeOffLimitId===undefined||timeOffLimitId===null||timeOffLimitId===''){throw'Missing the required parameter "timeOffLimitId" when calling getWorkforcemanagementBusinessunitTimeofflimitGranularityconversionJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/granularityconversion/jobs','GET',{'businessUnitId':businessUnitId,'timeOffLimitId':timeOffLimitId},{'statuses':opts['statuses']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Gets a list of time-off limit objects
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} opts Optional parameters
-   * @param {String} opts.managementUnitId The ID of the management unit to get management unit specific time-off limit objects
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitTimeofflimits",value:function getWorkforcemanagementBusinessunitTimeofflimits(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Gets a list of time-off limit objects
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.managementUnitId The ID of the management unit to get management unit specific time-off limit objects
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitTimeofflimits",value:function getWorkforcemanagementBusinessunitTimeofflimits(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitTimeofflimits';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits','GET',{'businessUnitId':businessUnitId},{'managementUnitId':opts['managementUnitId']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Gets a time-off plan
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} timeOffPlanId The ID of the time-off plan to fetch
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitTimeoffplan",value:function getWorkforcemanagementBusinessunitTimeoffplan(businessUnitId,timeOffPlanId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Gets a time-off plan
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} timeOffPlanId The ID of the time-off plan to fetch
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitTimeoffplan",value:function getWorkforcemanagementBusinessunitTimeoffplan(businessUnitId,timeOffPlanId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitTimeoffplan';}// verify the required parameter 'timeOffPlanId' is set
 if(timeOffPlanId===undefined||timeOffPlanId===null||timeOffPlanId===''){throw'Missing the required parameter "timeOffPlanId" when calling getWorkforcemanagementBusinessunitTimeoffplan';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId}','GET',{'businessUnitId':businessUnitId,'timeOffPlanId':timeOffPlanId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Gets a list of time-off plans
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} opts Optional parameters
-   * @param {String} opts.managementUnitId The ID of the management unit to get management unit specific staffing groups
-   * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
-   * @param {Array.<String>} opts.expand Include to access additional data for the time-off plans
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitTimeoffplans",value:function getWorkforcemanagementBusinessunitTimeoffplans(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Gets a list of time-off plans
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.managementUnitId The ID of the management unit to get management unit specific staffing groups
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Array.<String>} opts.expand Include to access additional data for the time-off plans
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitTimeoffplans",value:function getWorkforcemanagementBusinessunitTimeoffplans(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitTimeoffplans';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans','GET',{'businessUnitId':businessUnitId},{'managementUnitId':opts['managementUnitId'],'forceDownloadService':opts['forceDownloadService'],'expand':this.apiClient.buildCollectionParam(opts['expand'],'multi')},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get users in the business unit
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} opts Optional parameters
-   * @param {Array.<String>} opts.managementUnitIds The IDs of the management units for which to retrieve users
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitUsers",value:function getWorkforcemanagementBusinessunitUsers(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get users in the business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.managementUnitIds The IDs of the management units for which to retrieve users
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitUsers",value:function getWorkforcemanagementBusinessunitUsers(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitUsers';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/users','GET',{'businessUnitId':businessUnitId},{'managementUnitIds':this.apiClient.buildCollectionParam(opts['managementUnitIds'],'multi')},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get the metadata for the schedule, describing which management units and agents are in the scheduleSchedule data can then be loaded with the query route
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-   * @param {String} scheduleId The ID of the schedule
-   * @param {Object} opts Optional parameters
-   * @param {Object} opts.expand expand
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitWeekSchedule",value:function getWorkforcemanagementBusinessunitWeekSchedule(businessUnitId,weekId,scheduleId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get the metadata for the schedule, describing which management units and agents are in the scheduleSchedule data can then be loaded with the query route
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} scheduleId The ID of the schedule
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand expand
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitWeekSchedule",value:function getWorkforcemanagementBusinessunitWeekSchedule(businessUnitId,weekId,scheduleId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekSchedule';}// verify the required parameter 'weekId' is set
 if(weekId===undefined||weekId===null){throw'Missing the required parameter "weekId" when calling getWorkforcemanagementBusinessunitWeekSchedule';}// verify the required parameter 'scheduleId' is set
 if(scheduleId===undefined||scheduleId===null||scheduleId===''){throw'Missing the required parameter "scheduleId" when calling getWorkforcemanagementBusinessunitWeekSchedule';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}','GET',{'businessUnitId':businessUnitId,'weekId':weekId,'scheduleId':scheduleId},{'expand':opts['expand']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get the generation results for a generated schedule
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-   * @param {String} scheduleId The ID of the schedule
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitWeekScheduleGenerationresults",value:function getWorkforcemanagementBusinessunitWeekScheduleGenerationresults(businessUnitId,weekId,scheduleId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get the generation results for a generated schedule
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} scheduleId The ID of the schedule
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitWeekScheduleGenerationresults",value:function getWorkforcemanagementBusinessunitWeekScheduleGenerationresults(businessUnitId,weekId,scheduleId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekScheduleGenerationresults';}// verify the required parameter 'weekId' is set
 if(weekId===undefined||weekId===null){throw'Missing the required parameter "weekId" when calling getWorkforcemanagementBusinessunitWeekScheduleGenerationresults';}// verify the required parameter 'scheduleId' is set
 if(scheduleId===undefined||scheduleId===null||scheduleId===''){throw'Missing the required parameter "scheduleId" when calling getWorkforcemanagementBusinessunitWeekScheduleGenerationresults';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/generationresults','GET',{'businessUnitId':businessUnitId,'weekId':weekId,'scheduleId':scheduleId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get the headcount forecast by planning group for the schedule
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-   * @param {String} scheduleId The ID of the schedule
-   * @param {Object} opts Optional parameters
-   * @param {Boolean} opts.forceDownload Whether to force the result to come via download url.  For testing purposes only
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast",value:function getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast(businessUnitId,weekId,scheduleId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get the headcount forecast by planning group for the schedule
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} scheduleId The ID of the schedule
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceDownload Whether to force the result to come via download url.  For testing purposes only
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast",value:function getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast(businessUnitId,weekId,scheduleId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast';}// verify the required parameter 'weekId' is set
 if(weekId===undefined||weekId===null){throw'Missing the required parameter "weekId" when calling getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast';}// verify the required parameter 'scheduleId' is set
 if(scheduleId===undefined||scheduleId===null||scheduleId===''){throw'Missing the required parameter "scheduleId" when calling getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/headcountforecast','GET',{'businessUnitId':businessUnitId,'weekId':weekId,'scheduleId':scheduleId},{'forceDownload':opts['forceDownload']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Loads agent's schedule history.
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-   * @param {String} scheduleId The ID of the schedule
-   * @param {String} agentId THe ID of the agent
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent",value:function getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent(businessUnitId,weekId,scheduleId,agentId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Loads agent's schedule history.
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} scheduleId The ID of the schedule
+	 * @param {String} agentId THe ID of the agent
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent",value:function getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent(businessUnitId,weekId,scheduleId,agentId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent';}// verify the required parameter 'weekId' is set
 if(weekId===undefined||weekId===null){throw'Missing the required parameter "weekId" when calling getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent';}// verify the required parameter 'scheduleId' is set
 if(scheduleId===undefined||scheduleId===null||scheduleId===''){throw'Missing the required parameter "scheduleId" when calling getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent';}// verify the required parameter 'agentId' is set
 if(agentId===undefined||agentId===null||agentId===''){throw'Missing the required parameter "agentId" when calling getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/history/agents/{agentId}','GET',{'businessUnitId':businessUnitId,'weekId':weekId,'scheduleId':scheduleId,'agentId':agentId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get the performance prediction for the associated schedule
-   * 
-   * @param {String} businessUnitId The ID of the business unit to which the performance prediction belongs
-   * @param {String} weekId First day of schedule week in yyyy-MM-dd format
-   * @param {String} scheduleId The ID of the schedule the performance prediction belongs to
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions",value:function getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions(businessUnitId,weekId,scheduleId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get the performance prediction for the associated schedule
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit to which the performance prediction belongs
+	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format
+	 * @param {String} scheduleId The ID of the schedule the performance prediction belongs to
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions",value:function getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions(businessUnitId,weekId,scheduleId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions';}// verify the required parameter 'weekId' is set
 if(weekId===undefined||weekId===null||weekId===''){throw'Missing the required parameter "weekId" when calling getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions';}// verify the required parameter 'scheduleId' is set
 if(scheduleId===undefined||scheduleId===null||scheduleId===''){throw'Missing the required parameter "scheduleId" when calling getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions','GET',{'businessUnitId':businessUnitId,'weekId':weekId,'scheduleId':scheduleId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get recalculated performance prediction result
-   * 
-   * @param {String} businessUnitId The ID of the business unit to which the performance prediction belongs
-   * @param {String} weekId First day of schedule week in yyyy-MM-dd format
-   * @param {String} scheduleId The ID of the schedule the recalculation belongs to
-   * @param {String} recalculationId The ID of the recalculation request
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation",value:function getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation(businessUnitId,weekId,scheduleId,recalculationId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get recalculated performance prediction result
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit to which the performance prediction belongs
+	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format
+	 * @param {String} scheduleId The ID of the schedule the recalculation belongs to
+	 * @param {String} recalculationId The ID of the recalculation request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation",value:function getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation(businessUnitId,weekId,scheduleId,recalculationId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation';}// verify the required parameter 'weekId' is set
 if(weekId===undefined||weekId===null||weekId===''){throw'Missing the required parameter "weekId" when calling getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation';}// verify the required parameter 'scheduleId' is set
 if(scheduleId===undefined||scheduleId===null||scheduleId===''){throw'Missing the required parameter "scheduleId" when calling getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation';}// verify the required parameter 'recalculationId' is set
 if(recalculationId===undefined||recalculationId===null||recalculationId===''){throw'Missing the required parameter "recalculationId" when calling getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations/{recalculationId}','GET',{'businessUnitId':businessUnitId,'weekId':weekId,'scheduleId':scheduleId,'recalculationId':recalculationId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get the list of week schedules for the specified week
-   * Use "recent" (without quotes) for the `weekId` path parameter to fetch all schedules for up to +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} weekId First day of schedule week in yyyy-MM-dd format, or 'recent' (without quotes) to get recent schedules
-   * @param {Object} opts Optional parameters
-   * @param {String} opts.earliestWeekDate If weekId == 'recent', specify the earliest schedule start week date (inclusive) to include in the 'recent' range, in yyyy-MM-dd format. Ignored if weekId != 'recent'. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-   * @param {String} opts.latestWeekDate If weekId == 'recent', specify the latest schedule start week date (inclusive) to include in the 'recent' range, in yyyy-MM-dd format. Ignored if weekId != 'recent'. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-   * @param {Boolean} opts.includeOnlyPublished includeOnlyPublished
-   * @param {Object} opts.expand expand
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitWeekSchedules",value:function getWorkforcemanagementBusinessunitWeekSchedules(businessUnitId,weekId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get the list of week schedules for the specified week
+	 * Use "recent" (without quotes) for the `weekId` path parameter to fetch all schedules for up to +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format, or 'recent' (without quotes) to get recent schedules
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.earliestWeekDate If weekId == 'recent', specify the earliest schedule start week date (inclusive) to include in the 'recent' range, in yyyy-MM-dd format. Ignored if weekId != 'recent'. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} opts.latestWeekDate If weekId == 'recent', specify the latest schedule start week date (inclusive) to include in the 'recent' range, in yyyy-MM-dd format. Ignored if weekId != 'recent'. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Boolean} opts.includeOnlyPublished includeOnlyPublished
+	 * @param {Object} opts.expand expand
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitWeekSchedules",value:function getWorkforcemanagementBusinessunitWeekSchedules(businessUnitId,weekId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekSchedules';}// verify the required parameter 'weekId' is set
 if(weekId===undefined||weekId===null||weekId===''){throw'Missing the required parameter "weekId" when calling getWorkforcemanagementBusinessunitWeekSchedules';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules','GET',{'businessUnitId':businessUnitId,'weekId':weekId},{'earliestWeekDate':opts['earliestWeekDate'],'latestWeekDate':opts['latestWeekDate'],'includeOnlyPublished':opts['includeOnlyPublished'],'expand':opts['expand']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get a short term forecast
-   * 
-   * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
-   * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-   * @param {String} forecastId The ID of the forecast
-   * @param {Object} opts Optional parameters
-   * @param {Array.<String>} opts.expand Include to access additional data on the forecast
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitWeekShorttermforecast",value:function getWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnitId,weekDateId,forecastId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get a short term forecast
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
+	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} forecastId The ID of the forecast
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Include to access additional data on the forecast
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitWeekShorttermforecast",value:function getWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnitId,weekDateId,forecastId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecast';}// verify the required parameter 'weekDateId' is set
 if(weekDateId===undefined||weekDateId===null){throw'Missing the required parameter "weekDateId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecast';}// verify the required parameter 'forecastId' is set
 if(forecastId===undefined||forecastId===null||forecastId===''){throw'Missing the required parameter "forecastId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecast';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}','GET',{'businessUnitId':businessUnitId,'weekDateId':weekDateId,'forecastId':forecastId},{'expand':this.apiClient.buildCollectionParam(opts['expand'],'multi')},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get the result of a short term forecast calculation
-   * Includes modifications unless you pass the doNotApplyModifications query parameter
-   * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
-   * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-   * @param {String} forecastId The ID of the forecast
-   * @param {Object} opts Optional parameters
-   * @param {Number} opts.weekNumber The week number to fetch (for multi-week forecasts)
-   * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitWeekShorttermforecastData",value:function getWorkforcemanagementBusinessunitWeekShorttermforecastData(businessUnitId,weekDateId,forecastId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get the result of a short term forecast calculation
+	 * Includes modifications unless you pass the doNotApplyModifications query parameter
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
+	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} forecastId The ID of the forecast
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.weekNumber The week number to fetch (for multi-week forecasts)
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitWeekShorttermforecastData",value:function getWorkforcemanagementBusinessunitWeekShorttermforecastData(businessUnitId,weekDateId,forecastId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastData';}// verify the required parameter 'weekDateId' is set
 if(weekDateId===undefined||weekDateId===null){throw'Missing the required parameter "weekDateId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastData';}// verify the required parameter 'forecastId' is set
 if(forecastId===undefined||forecastId===null||forecastId===''){throw'Missing the required parameter "forecastId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastData';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/data','GET',{'businessUnitId':businessUnitId,'weekDateId':weekDateId,'forecastId':forecastId},{'weekNumber':opts['weekNumber'],'forceDownloadService':opts['forceDownloadService']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Gets the forecast generation results
-   * 
-   * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
-   * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-   * @param {String} forecastId The ID of the forecast
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults",value:function getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults(businessUnitId,weekDateId,forecastId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Gets the forecast generation results
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
+	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} forecastId The ID of the forecast
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults",value:function getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults(businessUnitId,weekDateId,forecastId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults';}// verify the required parameter 'weekDateId' is set
 if(weekDateId===undefined||weekDateId===null){throw'Missing the required parameter "weekDateId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults';}// verify the required parameter 'forecastId' is set
 if(forecastId===undefined||forecastId===null||forecastId===''){throw'Missing the required parameter "forecastId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/generationresults','GET',{'businessUnitId':businessUnitId,'weekDateId':weekDateId,'forecastId':forecastId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get the result of a long term forecast calculation
-   * Includes modifications unless you pass the doNotApplyModifications query parameter
-   * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
-   * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-   * @param {String} forecastId The ID of the forecast
-   * @param {Object} opts Optional parameters
-   * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata",value:function getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata(businessUnitId,weekDateId,forecastId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get the result of a long term forecast calculation
+	 * Includes modifications unless you pass the doNotApplyModifications query parameter
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
+	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} forecastId The ID of the forecast
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata",value:function getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata(businessUnitId,weekDateId,forecastId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata';}// verify the required parameter 'weekDateId' is set
 if(weekDateId===undefined||weekDateId===null){throw'Missing the required parameter "weekDateId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata';}// verify the required parameter 'forecastId' is set
 if(forecastId===undefined||forecastId===null||forecastId===''){throw'Missing the required parameter "forecastId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/longtermforecastdata','GET',{'businessUnitId':businessUnitId,'weekDateId':weekDateId,'forecastId':forecastId},{'forceDownloadService':opts['forceDownloadService']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Gets the forecast planning group snapshot
-   * 
-   * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
-   * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-   * @param {String} forecastId The ID of the forecast
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups",value:function getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups(businessUnitId,weekDateId,forecastId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Gets the forecast planning group snapshot
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
+	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} forecastId The ID of the forecast
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups",value:function getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups(businessUnitId,weekDateId,forecastId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups';}// verify the required parameter 'weekDateId' is set
 if(weekDateId===undefined||weekDateId===null){throw'Missing the required parameter "weekDateId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups';}// verify the required parameter 'forecastId' is set
 if(forecastId===undefined||forecastId===null||forecastId===''){throw'Missing the required parameter "forecastId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/planninggroups','GET',{'businessUnitId':businessUnitId,'weekDateId':weekDateId,'forecastId':forecastId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get the staffing requirement by planning group for a forecast
-   * 
-   * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
-   * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-   * @param {String} forecastId The ID of the forecast
-   * @param {Object} opts Optional parameters
-   * @param {Array.<String>} opts.weekNumbers The week numbers to fetch (for multi-week forecasts) staffing requirements. Returns all week data if the list is not specified
-   * @param {Array.<String>} opts.expand Expand to include minimum staffing values in (staffing requirement response or applied to base staffing requirement values)
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement",value:function getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement(businessUnitId,weekDateId,forecastId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get the staffing requirement by planning group for a forecast
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
+	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} forecastId The ID of the forecast
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.weekNumbers The week numbers to fetch (for multi-week forecasts) staffing requirements. Returns all week data if the list is not specified
+	 * @param {Array.<String>} opts.expand Expand to include minimum staffing values in (staffing requirement response or applied to base staffing requirement values)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement",value:function getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement(businessUnitId,weekDateId,forecastId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement';}// verify the required parameter 'weekDateId' is set
 if(weekDateId===undefined||weekDateId===null){throw'Missing the required parameter "weekDateId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement';}// verify the required parameter 'forecastId' is set
 if(forecastId===undefined||forecastId===null||forecastId===''){throw'Missing the required parameter "forecastId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/staffingrequirement','GET',{'businessUnitId':businessUnitId,'weekDateId':weekDateId,'forecastId':forecastId},{'weekNumbers':this.apiClient.buildCollectionParam(opts['weekNumbers'],'multi'),'expand':this.apiClient.buildCollectionParam(opts['expand'],'multi')},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get short term forecasts
-   * Use "recent" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for up to +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
-   * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
-   * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format or 'recent' (without quotes) to fetch recent forecasts
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitWeekShorttermforecasts",value:function getWorkforcemanagementBusinessunitWeekShorttermforecasts(businessUnitId,weekDateId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get short term forecasts
+	 * Use "recent" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for up to +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
+	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format or 'recent' (without quotes) to fetch recent forecasts
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitWeekShorttermforecasts",value:function getWorkforcemanagementBusinessunitWeekShorttermforecasts(businessUnitId,weekDateId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecasts';}// verify the required parameter 'weekDateId' is set
 if(weekDateId===undefined||weekDateId===null||weekDateId===''){throw'Missing the required parameter "weekDateId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecasts';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts','GET',{'businessUnitId':businessUnitId,'weekDateId':weekDateId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get a work plan bid
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} bidId The id of the workplanbid
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitWorkplanbid",value:function getWorkforcemanagementBusinessunitWorkplanbid(businessUnitId,bidId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get a work plan bid
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The id of the workplanbid
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitWorkplanbid",value:function getWorkforcemanagementBusinessunitWorkplanbid(businessUnitId,bidId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWorkplanbid';}// verify the required parameter 'bidId' is set
 if(bidId===undefined||bidId===null||bidId===''){throw'Missing the required parameter "bidId" when calling getWorkforcemanagementBusinessunitWorkplanbid';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}','GET',{'businessUnitId':businessUnitId,'bidId':bidId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get a bid group by bid group Id
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} bidId The work plan bid id of the bid groups
-   * @param {String} bidGroupId Work Plan Bid Group id
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitWorkplanbidGroup",value:function getWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId,bidId,bidGroupId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get a bid group by bid group Id
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The work plan bid id of the bid groups
+	 * @param {String} bidGroupId Work Plan Bid Group id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitWorkplanbidGroup",value:function getWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId,bidId,bidGroupId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWorkplanbidGroup';}// verify the required parameter 'bidId' is set
 if(bidId===undefined||bidId===null||bidId===''){throw'Missing the required parameter "bidId" when calling getWorkforcemanagementBusinessunitWorkplanbidGroup';}// verify the required parameter 'bidGroupId' is set
 if(bidGroupId===undefined||bidGroupId===null||bidGroupId===''){throw'Missing the required parameter "bidGroupId" when calling getWorkforcemanagementBusinessunitWorkplanbidGroup';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}','GET',{'businessUnitId':businessUnitId,'bidId':bidId,'bidGroupId':bidGroupId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Gets the work plan preferences of all the agents in the work plan bid group
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} bidId The work plan bid id of the bid groups
-   * @param {String} bidGroupId The ID of the work plan bid group
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences",value:function getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId,bidId,bidGroupId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Gets the work plan preferences of all the agents in the work plan bid group
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The work plan bid id of the bid groups
+	 * @param {String} bidGroupId The ID of the work plan bid group
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences",value:function getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId,bidId,bidGroupId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences';}// verify the required parameter 'bidId' is set
 if(bidId===undefined||bidId===null||bidId===''){throw'Missing the required parameter "bidId" when calling getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences';}// verify the required parameter 'bidGroupId' is set
 if(bidGroupId===undefined||bidGroupId===null||bidGroupId===''){throw'Missing the required parameter "bidGroupId" when calling getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}/preferences','GET',{'businessUnitId':businessUnitId,'bidId':bidId,'bidGroupId':bidGroupId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get summary of bid groups that belong to a work plan bid
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} bidId The work plan bid id of the bid groups
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary",value:function getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary(businessUnitId,bidId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get summary of bid groups that belong to a work plan bid
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The work plan bid id of the bid groups
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary",value:function getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary(businessUnitId,bidId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary';}// verify the required parameter 'bidId' is set
 if(bidId===undefined||bidId===null||bidId===''){throw'Missing the required parameter "bidId" when calling getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/summary','GET',{'businessUnitId':businessUnitId,'bidId':bidId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get list of work plan bids
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitWorkplanbids",value:function getWorkforcemanagementBusinessunitWorkplanbids(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get list of work plan bids
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitWorkplanbids",value:function getWorkforcemanagementBusinessunitWorkplanbids(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWorkplanbids';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids','GET',{'businessUnitId':businessUnitId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get business units
-   * 
-   * @param {Object} opts Optional parameters
-   * @param {Object} opts.feature If specified, the list of business units for which the user is authorized to use the requested feature will be returned
-   * @param {String} opts.divisionId If specified, the list of business units belonging to the specified division will be returned
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunits",value:function getWorkforcemanagementBusinessunits(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits','GET',{},{'feature':opts['feature'],'divisionId':opts['divisionId']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get business units across divisions
-   * 
-   * @param {Object} opts Optional parameters
-   * @param {Array.<String>} opts.divisionId The divisionIds to filter by. If omitted, will return business units in all divisions
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementBusinessunitsDivisionviews",value:function getWorkforcemanagementBusinessunitsDivisionviews(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/divisionviews','GET',{},{'divisionId':this.apiClient.buildCollectionParam(opts['divisionId'],'multi')},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get ics formatted calendar based on shareable link
-   * 
-   * @param {String} calendarId The id of the ics-formatted calendar
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementCalendarDataIcs",value:function getWorkforcemanagementCalendarDataIcs(calendarId,opts){opts=opts||{};// verify the required parameter 'calendarId' is set
+	 * Get business units
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.feature If specified, the list of business units for which the user is authorized to use the requested feature will be returned
+	 * @param {String} opts.divisionId If specified, the list of business units belonging to the specified division will be returned
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunits",value:function getWorkforcemanagementBusinessunits(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits','GET',{},{'feature':opts['feature'],'divisionId':opts['divisionId']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Get business units across divisions
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.divisionId The divisionIds to filter by. If omitted, will return business units in all divisions
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementBusinessunitsDivisionviews",value:function getWorkforcemanagementBusinessunitsDivisionviews(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/divisionviews','GET',{},{'divisionId':this.apiClient.buildCollectionParam(opts['divisionId'],'multi')},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Get ics formatted calendar based on shareable link
+	 * 
+	 * @param {String} calendarId The id of the ics-formatted calendar
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementCalendarDataIcs",value:function getWorkforcemanagementCalendarDataIcs(calendarId,opts){opts=opts||{};// verify the required parameter 'calendarId' is set
 if(calendarId===undefined||calendarId===null){throw'Missing the required parameter "calendarId" when calling getWorkforcemanagementCalendarDataIcs';}return this.apiClient.callApi('/api/v2/workforcemanagement/calendar/data/ics','GET',{},{'calendarId':calendarId},{},{},null,['PureCloud OAuth'],['application/json'],['text/calendar'],opts['customHeaders']);}/**
-   * Get existing calendar link for the current user
-   * 
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementCalendarUrlIcs",value:function getWorkforcemanagementCalendarUrlIcs(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/calendar/url/ics','GET',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Retrieves delete job status for historical data imports associated with the job id
-   * 
-   * @param {String} jobId The job ID of the historical data delete request
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementHistoricaldataBulkRemoveJob",value:function getWorkforcemanagementHistoricaldataBulkRemoveJob(jobId,opts){opts=opts||{};// verify the required parameter 'jobId' is set
+	 * Get existing calendar link for the current user
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementCalendarUrlIcs",value:function getWorkforcemanagementCalendarUrlIcs(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/calendar/url/ics','GET',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Retrieves delete job status for historical data imports associated with the job id
+	 * 
+	 * @param {String} jobId The job ID of the historical data delete request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementHistoricaldataBulkRemoveJob",value:function getWorkforcemanagementHistoricaldataBulkRemoveJob(jobId,opts){opts=opts||{};// verify the required parameter 'jobId' is set
 if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required parameter "jobId" when calling getWorkforcemanagementHistoricaldataBulkRemoveJob';}return this.apiClient.callApi('/api/v2/workforcemanagement/historicaldata/bulk/remove/jobs/{jobId}','GET',{'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Retrieves all delete job status for historical data
-   * 
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementHistoricaldataBulkRemoveJobs",value:function getWorkforcemanagementHistoricaldataBulkRemoveJobs(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/historicaldata/bulk/remove/jobs','GET',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Retrieves status of the historical data imports of the organization
-   * 
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementHistoricaldataImportstatus",value:function getWorkforcemanagementHistoricaldataImportstatus(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/historicaldata/importstatus','GET',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Retrieves status of the historical data imports associated with job id
-   * 
-   * @param {String} jobId The job Id of the historical data import request
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementHistoricaldataImportstatusJobId",value:function getWorkforcemanagementHistoricaldataImportstatusJobId(jobId,opts){opts=opts||{};// verify the required parameter 'jobId' is set
+	 * Retrieves all delete job status for historical data
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementHistoricaldataBulkRemoveJobs",value:function getWorkforcemanagementHistoricaldataBulkRemoveJobs(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/historicaldata/bulk/remove/jobs','GET',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Retrieves status of the historical data imports of the organization
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementHistoricaldataImportstatus",value:function getWorkforcemanagementHistoricaldataImportstatus(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/historicaldata/importstatus','GET',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Retrieves status of the historical data imports associated with job id
+	 * 
+	 * @param {String} jobId The job Id of the historical data import request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementHistoricaldataImportstatusJobId",value:function getWorkforcemanagementHistoricaldataImportstatusJobId(jobId,opts){opts=opts||{};// verify the required parameter 'jobId' is set
 if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required parameter "jobId" when calling getWorkforcemanagementHistoricaldataImportstatusJobId';}return this.apiClient.callApi('/api/v2/workforcemanagement/historicaldata/importstatus/{jobId}','GET',{'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get integrations
-   * 
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementIntegrationsHris",value:function getWorkforcemanagementIntegrationsHris(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/integrations/hris','GET',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Query the results of time off types job
-   * 
-   * @param {String} jobId The ID of the job.
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementIntegrationsHrisTimeofftypesJob",value:function getWorkforcemanagementIntegrationsHrisTimeofftypesJob(jobId,opts){opts=opts||{};// verify the required parameter 'jobId' is set
+	 * Get integrations
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementIntegrationsHris",value:function getWorkforcemanagementIntegrationsHris(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/integrations/hris','GET',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Query the results of time off types job
+	 * 
+	 * @param {String} jobId The ID of the job.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementIntegrationsHrisTimeofftypesJob",value:function getWorkforcemanagementIntegrationsHrisTimeofftypesJob(jobId,opts){opts=opts||{};// verify the required parameter 'jobId' is set
 if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required parameter "jobId" when calling getWorkforcemanagementIntegrationsHrisTimeofftypesJob';}return this.apiClient.callApi('/api/v2/workforcemanagement/integrations/hris/timeofftypes/jobs/{jobId}','GET',{'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get management unit
-   * settings.shortTermForecasting is deprecated and now lives on the business unit
-   * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-   * @param {Object} opts Optional parameters
-   * @param {Array.<String>} opts.expand 
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementManagementunit",value:function getWorkforcemanagementManagementunit(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Get management unit
+	 * settings.shortTermForecasting is deprecated and now lives on the business unit
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementManagementunit",value:function getWorkforcemanagementManagementunit(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunit';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}','GET',{'managementUnitId':managementUnitId},{'expand':this.apiClient.buildCollectionParam(opts['expand'],'multi')},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Deprecated: Instead use /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes. Get the list of activity codes
-   * 
-   * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"getWorkforcemanagementManagementunitActivitycodes",value:function getWorkforcemanagementManagementunitActivitycodes(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Deprecated: Instead use /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes. Get the list of activity codes
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
+	 */},{key:"getWorkforcemanagementManagementunitActivitycodes",value:function getWorkforcemanagementManagementunitActivitycodes(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitActivitycodes';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/activitycodes','GET',{'managementUnitId':managementUnitId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get a list of user schedule adherence records for the requested management unit
-   * 
-   * @param {String} managementUnitId The ID of the management unit
-   * @param {Object} opts Optional parameters
-   * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementManagementunitAdherence",value:function getWorkforcemanagementManagementunitAdherence(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Get a list of user schedule adherence records for the requested management unit
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementManagementunitAdherence",value:function getWorkforcemanagementManagementunitAdherence(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitAdherence';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/adherence','GET',{'managementUnitId':managementUnitId},{'forceDownloadService':opts['forceDownloadService']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get data for agent in the management unit
-   * 
-   * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-   * @param {String} agentId The agent id
-   * @param {Object} opts Optional parameters
-   * @param {Boolean} opts.excludeCapabilities Excludes all capabilities of the agent such as queues, languages, and skills
-   * @param {Array.<String>} opts.expand 
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementManagementunitAgent",value:function getWorkforcemanagementManagementunitAgent(managementUnitId,agentId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Get data for agent in the management unit
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {String} agentId The agent id
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.excludeCapabilities Excludes all capabilities of the agent such as queues, languages, and skills
+	 * @param {Array.<String>} opts.expand 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementManagementunitAgent",value:function getWorkforcemanagementManagementunitAgent(managementUnitId,agentId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitAgent';}// verify the required parameter 'agentId' is set
 if(agentId===undefined||agentId===null||agentId===''){throw'Missing the required parameter "agentId" when calling getWorkforcemanagementManagementunitAgent';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}','GET',{'managementUnitId':managementUnitId,'agentId':agentId},{'excludeCapabilities':opts['excludeCapabilities'],'expand':this.apiClient.buildCollectionParam(opts['expand'],'multi')},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Gets all the shift trades for a given agent
-   * Deprecated. Use new route instead (/businessunits/{businessUnitId}/shifttrading/trades/query/jobs)
-   * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-   * @param {String} agentId The agent id
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"getWorkforcemanagementManagementunitAgentShifttrades",value:function getWorkforcemanagementManagementunitAgentShifttrades(managementUnitId,agentId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Gets all the shift trades for a given agent
+	 * Deprecated. Use new route instead (/businessunits/{businessUnitId}/shifttrading/trades/query/jobs)
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {String} agentId The agent id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
+	 */},{key:"getWorkforcemanagementManagementunitAgentShifttrades",value:function getWorkforcemanagementManagementunitAgentShifttrades(managementUnitId,agentId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitAgentShifttrades';}// verify the required parameter 'agentId' is set
 if(agentId===undefined||agentId===null||agentId===''){throw'Missing the required parameter "agentId" when calling getWorkforcemanagementManagementunitAgentShifttrades';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}/shifttrades','GET',{'managementUnitId':managementUnitId,'agentId':agentId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Gets the decision metrics of all user in given management unit
-   * 
-   * @param {String} managementUnitId The ID of the management unit
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementManagementunitDecisionmetrics",value:function getWorkforcemanagementManagementunitDecisionmetrics(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Gets the decision metrics of all user in given management unit
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementManagementunitDecisionmetrics",value:function getWorkforcemanagementManagementunitDecisionmetrics(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitDecisionmetrics';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/decisionmetrics','GET',{'managementUnitId':managementUnitId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Gets a summary of all shift trades in the matched state
-   * Deprecated. Use new route instead (/businessunits/{businessUnitId}/shifttrading/weeks/summary/jobs)
-   * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"getWorkforcemanagementManagementunitShifttradesMatched",value:function getWorkforcemanagementManagementunitShifttradesMatched(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Gets a summary of all shift trades in the matched state
+	 * Deprecated. Use new route instead (/businessunits/{businessUnitId}/shifttrading/weeks/summary/jobs)
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
+	 */},{key:"getWorkforcemanagementManagementunitShifttradesMatched",value:function getWorkforcemanagementManagementunitShifttradesMatched(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitShifttradesMatched';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/matched','GET',{'managementUnitId':managementUnitId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Gets list of users available for whom you can send direct shift trade requests
-   * 
-   * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementManagementunitShifttradesUsers",value:function getWorkforcemanagementManagementunitShifttradesUsers(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Gets list of users available for whom you can send direct shift trade requests
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementManagementunitShifttradesUsers",value:function getWorkforcemanagementManagementunitShifttradesUsers(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitShifttradesUsers';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/users','GET',{'managementUnitId':managementUnitId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Gets a time off limit object
-   * Returns properties of time off limit object, but not daily values. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId} instead
-   * @param {String} managementUnitId The ID of the management unit.
-   * @param {String} timeOffLimitId The ID of the time off limit to fetch
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"getWorkforcemanagementManagementunitTimeofflimit",value:function getWorkforcemanagementManagementunitTimeofflimit(managementUnitId,timeOffLimitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Gets a time off limit object
+	 * Returns properties of time off limit object, but not daily values. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId} instead
+	 * @param {String} managementUnitId The ID of the management unit.
+	 * @param {String} timeOffLimitId The ID of the time off limit to fetch
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
+	 */},{key:"getWorkforcemanagementManagementunitTimeofflimit",value:function getWorkforcemanagementManagementunitTimeofflimit(managementUnitId,timeOffLimitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitTimeofflimit';}// verify the required parameter 'timeOffLimitId' is set
 if(timeOffLimitId===undefined||timeOffLimitId===null||timeOffLimitId===''){throw'Missing the required parameter "timeOffLimitId" when calling getWorkforcemanagementManagementunitTimeofflimit';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}','GET',{'managementUnitId':managementUnitId,'timeOffLimitId':timeOffLimitId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Gets a list of time off limit objects under management unit.
-   * Currently only one time off limit object is allowed under management unit, so the list contains either 0 or 1 element. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits instead
-   * @param {String} managementUnitId The ID of the management unit.
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"getWorkforcemanagementManagementunitTimeofflimits",value:function getWorkforcemanagementManagementunitTimeofflimits(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Gets a list of time off limit objects under management unit.
+	 * Currently only one time off limit object is allowed under management unit, so the list contains either 0 or 1 element. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits instead
+	 * @param {String} managementUnitId The ID of the management unit.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
+	 */},{key:"getWorkforcemanagementManagementunitTimeofflimits",value:function getWorkforcemanagementManagementunitTimeofflimits(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitTimeofflimits';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits','GET',{'managementUnitId':managementUnitId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Gets a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
-   * 
-   * @param {String} managementUnitId The ID of the management unit
-   * @param {String} timeOffPlanId The ID of the time off plan to fetch
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"getWorkforcemanagementManagementunitTimeoffplan",value:function getWorkforcemanagementManagementunitTimeoffplan(managementUnitId,timeOffPlanId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Gets a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit
+	 * @param {String} timeOffPlanId The ID of the time off plan to fetch
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
+	 */},{key:"getWorkforcemanagementManagementunitTimeoffplan",value:function getWorkforcemanagementManagementunitTimeoffplan(managementUnitId,timeOffPlanId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitTimeoffplan';}// verify the required parameter 'timeOffPlanId' is set
 if(timeOffPlanId===undefined||timeOffPlanId===null||timeOffPlanId===''){throw'Missing the required parameter "timeOffPlanId" when calling getWorkforcemanagementManagementunitTimeoffplan';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}','GET',{'managementUnitId':managementUnitId,'timeOffPlanId':timeOffPlanId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Gets a list of time off plans. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans instead
-   * 
-   * @param {String} managementUnitId The ID of the management unit
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"getWorkforcemanagementManagementunitTimeoffplans",value:function getWorkforcemanagementManagementunitTimeoffplans(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Gets a list of time off plans. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans instead
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
+	 */},{key:"getWorkforcemanagementManagementunitTimeoffplans",value:function getWorkforcemanagementManagementunitTimeoffplans(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitTimeoffplans';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans','GET',{'managementUnitId':managementUnitId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get a time off request
-   * 
-   * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-   * @param {String} userId The userId to whom the Time Off Request applies.
-   * @param {String} timeOffRequestId Time Off Request Id
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementManagementunitUserTimeoffrequest",value:function getWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId,userId,timeOffRequestId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Get a time off request
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {String} userId The userId to whom the Time Off Request applies.
+	 * @param {String} timeOffRequestId Time Off Request Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementManagementunitUserTimeoffrequest",value:function getWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId,userId,timeOffRequestId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitUserTimeoffrequest';}// verify the required parameter 'userId' is set
 if(userId===undefined||userId===null||userId===''){throw'Missing the required parameter "userId" when calling getWorkforcemanagementManagementunitUserTimeoffrequest';}// verify the required parameter 'timeOffRequestId' is set
 if(timeOffRequestId===undefined||timeOffRequestId===null||timeOffRequestId===''){throw'Missing the required parameter "timeOffRequestId" when calling getWorkforcemanagementManagementunitUserTimeoffrequest';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}','GET',{'managementUnitId':managementUnitId,'userId':userId,'timeOffRequestId':timeOffRequestId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Retrieves time off limit, allocated and waitlisted values according to specific time off request
-   * 
-   * @param {String} managementUnitId The ID of the management unit.
-   * @param {String} userId The userId to whom the time off request applies.
-   * @param {String} timeOffRequestId The ID of the time off request, which dates and activityCodeId determine limit values to retrieve
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits",value:function getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits(managementUnitId,userId,timeOffRequestId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Retrieves time off limit, allocated and waitlisted values according to specific time off request
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit.
+	 * @param {String} userId The userId to whom the time off request applies.
+	 * @param {String} timeOffRequestId The ID of the time off request, which dates and activityCodeId determine limit values to retrieve
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits",value:function getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits(managementUnitId,userId,timeOffRequestId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits';}// verify the required parameter 'userId' is set
 if(userId===undefined||userId===null||userId===''){throw'Missing the required parameter "userId" when calling getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits';}// verify the required parameter 'timeOffRequestId' is set
 if(timeOffRequestId===undefined||timeOffRequestId===null||timeOffRequestId===''){throw'Missing the required parameter "timeOffRequestId" when calling getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}/timeofflimits','GET',{'managementUnitId':managementUnitId,'userId':userId,'timeOffRequestId':timeOffRequestId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get a list of time off requests for a given user
-   * 
-   * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-   * @param {String} userId The userId to whom the Time Off Request applies.
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementManagementunitUserTimeoffrequests",value:function getWorkforcemanagementManagementunitUserTimeoffrequests(managementUnitId,userId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Get a list of time off requests for a given user
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {String} userId The userId to whom the Time Off Request applies.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementManagementunitUserTimeoffrequests",value:function getWorkforcemanagementManagementunitUserTimeoffrequests(managementUnitId,userId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitUserTimeoffrequests';}// verify the required parameter 'userId' is set
 if(userId===undefined||userId===null||userId===''){throw'Missing the required parameter "userId" when calling getWorkforcemanagementManagementunitUserTimeoffrequests';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests','GET',{'managementUnitId':managementUnitId,'userId':userId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get users in the management unit
-   * 
-   * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementManagementunitUsers",value:function getWorkforcemanagementManagementunitUsers(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Get users in the management unit
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementManagementunitUsers",value:function getWorkforcemanagementManagementunitUsers(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitUsers';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/users','GET',{'managementUnitId':managementUnitId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Deprecated.  Use the equivalent business unit resource instead. Get a week schedule
-   * 
-   * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-   * @param {String} weekId First day of schedule week in yyyy-MM-dd format.
-   * @param {String} scheduleId The ID of the schedule to fetch
-   * @param {Object} opts Optional parameters
-   * @param {Object} opts.expand Which fields, if any, to expand
-   * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"getWorkforcemanagementManagementunitWeekSchedule",value:function getWorkforcemanagementManagementunitWeekSchedule(managementUnitId,weekId,scheduleId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Deprecated.  Use the equivalent business unit resource instead. Get a week schedule
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format.
+	 * @param {String} scheduleId The ID of the schedule to fetch
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand Which fields, if any, to expand
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
+	 */},{key:"getWorkforcemanagementManagementunitWeekSchedule",value:function getWorkforcemanagementManagementunitWeekSchedule(managementUnitId,weekId,scheduleId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitWeekSchedule';}// verify the required parameter 'weekId' is set
 if(weekId===undefined||weekId===null||weekId===''){throw'Missing the required parameter "weekId" when calling getWorkforcemanagementManagementunitWeekSchedule';}// verify the required parameter 'scheduleId' is set
 if(scheduleId===undefined||scheduleId===null||scheduleId===''){throw'Missing the required parameter "scheduleId" when calling getWorkforcemanagementManagementunitWeekSchedule';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId}','GET',{'managementUnitId':managementUnitId,'weekId':weekId,'scheduleId':scheduleId},{'expand':opts['expand'],'forceDownloadService':opts['forceDownloadService']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Deprecated.  Use the equivalent business unit resource instead. Get the list of schedules in a week in management unit
-   * 
-   * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-   * @param {String} weekId First day of schedule week in yyyy-MM-dd format.
-   * @param {Object} opts Optional parameters
-   * @param {Boolean} opts.includeOnlyPublished Return only published schedules
-   * @param {String} opts.earliestWeekDate The start date of the earliest week to query in yyyy-MM-dd format
-   * @param {String} opts.latestWeekDate The start date of the latest week to query in yyyy-MM-dd format
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"getWorkforcemanagementManagementunitWeekSchedules",value:function getWorkforcemanagementManagementunitWeekSchedules(managementUnitId,weekId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Deprecated.  Use the equivalent business unit resource instead. Get the list of schedules in a week in management unit
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format.
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.includeOnlyPublished Return only published schedules
+	 * @param {String} opts.earliestWeekDate The start date of the earliest week to query in yyyy-MM-dd format
+	 * @param {String} opts.latestWeekDate The start date of the latest week to query in yyyy-MM-dd format
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
+	 */},{key:"getWorkforcemanagementManagementunitWeekSchedules",value:function getWorkforcemanagementManagementunitWeekSchedules(managementUnitId,weekId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitWeekSchedules';}// verify the required parameter 'weekId' is set
 if(weekId===undefined||weekId===null||weekId===''){throw'Missing the required parameter "weekId" when calling getWorkforcemanagementManagementunitWeekSchedules';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules','GET',{'managementUnitId':managementUnitId,'weekId':weekId},{'includeOnlyPublished':opts['includeOnlyPublished'],'earliestWeekDate':opts['earliestWeekDate'],'latestWeekDate':opts['latestWeekDate']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Gets all the shift trades for a given week
-   * Deprecated. Use new route instead (/businessunits/{businessUnitId}/shifttrading/trades/evaluate/jobs)
-   * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-   * @param {String} weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-   * @param {Object} opts Optional parameters
-   * @param {Boolean} opts.evaluateMatches Whether to evaluate the matches for violations (default to true)
-   * @param {Boolean} opts.includeCrossWeekShifts Whether to include all shift trades with either the initiating shift or the receiving shift in the week (default to false)
-   * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"getWorkforcemanagementManagementunitWeekShifttrades",value:function getWorkforcemanagementManagementunitWeekShifttrades(managementUnitId,weekDateId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Gets all the shift trades for a given week
+	 * Deprecated. Use new route instead (/businessunits/{businessUnitId}/shifttrading/trades/evaluate/jobs)
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {String} weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.evaluateMatches Whether to evaluate the matches for violations (default to true)
+	 * @param {Boolean} opts.includeCrossWeekShifts Whether to include all shift trades with either the initiating shift or the receiving shift in the week (default to false)
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
+	 */},{key:"getWorkforcemanagementManagementunitWeekShifttrades",value:function getWorkforcemanagementManagementunitWeekShifttrades(managementUnitId,weekDateId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitWeekShifttrades';}// verify the required parameter 'weekDateId' is set
 if(weekDateId===undefined||weekDateId===null){throw'Missing the required parameter "weekDateId" when calling getWorkforcemanagementManagementunitWeekShifttrades';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades','GET',{'managementUnitId':managementUnitId,'weekDateId':weekDateId},{'evaluateMatches':opts['evaluateMatches'],'includeCrossWeekShifts':opts['includeCrossWeekShifts'],'forceDownloadService':opts['forceDownloadService']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get a work plan
-   * 
-   * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-   * @param {String} workPlanId The ID of the work plan to fetch
-   * @param {Object} opts Optional parameters
-   * @param {Array.<String>} opts.includeOnly limit response to the specified fields
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementManagementunitWorkplan",value:function getWorkforcemanagementManagementunitWorkplan(managementUnitId,workPlanId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Get a work plan
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {String} workPlanId The ID of the work plan to fetch
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.includeOnly limit response to the specified fields
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementManagementunitWorkplan",value:function getWorkforcemanagementManagementunitWorkplan(managementUnitId,workPlanId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitWorkplan';}// verify the required parameter 'workPlanId' is set
 if(workPlanId===undefined||workPlanId===null||workPlanId===''){throw'Missing the required parameter "workPlanId" when calling getWorkforcemanagementManagementunitWorkplan';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}','GET',{'managementUnitId':managementUnitId,'workPlanId':workPlanId},{'includeOnly':this.apiClient.buildCollectionParam(opts['includeOnly'],'multi')},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get a work plan rotation
-   * 
-   * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-   * @param {String} workPlanRotationId The ID of the work plan rotation to fetch
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementManagementunitWorkplanrotation",value:function getWorkforcemanagementManagementunitWorkplanrotation(managementUnitId,workPlanRotationId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Get a work plan rotation
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {String} workPlanRotationId The ID of the work plan rotation to fetch
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementManagementunitWorkplanrotation",value:function getWorkforcemanagementManagementunitWorkplanrotation(managementUnitId,workPlanRotationId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitWorkplanrotation';}// verify the required parameter 'workPlanRotationId' is set
 if(workPlanRotationId===undefined||workPlanRotationId===null||workPlanRotationId===''){throw'Missing the required parameter "workPlanRotationId" when calling getWorkforcemanagementManagementunitWorkplanrotation';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}','GET',{'managementUnitId':managementUnitId,'workPlanRotationId':workPlanRotationId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get work plan rotations
-   * 
-   * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-   * @param {Object} opts Optional parameters
-   * @param {Array.<String>} opts.expand 
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementManagementunitWorkplanrotations",value:function getWorkforcemanagementManagementunitWorkplanrotations(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Get work plan rotations
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementManagementunitWorkplanrotations",value:function getWorkforcemanagementManagementunitWorkplanrotations(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitWorkplanrotations';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations','GET',{'managementUnitId':managementUnitId},{'expand':this.apiClient.buildCollectionParam(opts['expand'],'multi')},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get work plans
-   * "expand=details" is deprecated
-   * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-   * @param {Object} opts Optional parameters
-   * @param {Array.<String>} opts.expand Include to access additional data on the work plans
-   * @param {Array.<String>} opts.exclude Exclude specific data on the work plans from the response
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementManagementunitWorkplans",value:function getWorkforcemanagementManagementunitWorkplans(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Get work plans
+	 * "expand=details" is deprecated
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Include to access additional data on the work plans
+	 * @param {Array.<String>} opts.exclude Exclude specific data on the work plans from the response
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementManagementunitWorkplans",value:function getWorkforcemanagementManagementunitWorkplans(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitWorkplans';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans','GET',{'managementUnitId':managementUnitId},{'expand':this.apiClient.buildCollectionParam(opts['expand'],'multi'),'exclude':this.apiClient.buildCollectionParam(opts['exclude'],'multi')},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get management units
-   * 
-   * @param {Object} opts Optional parameters
-   * @param {Number} opts.pageSize Deprecated, paging is not supported
-   * @param {Number} opts.pageNumber Deprecated, paging is not supported
-   * @param {Object} opts.expand Deprecated, expand settings on the single MU route
-   * @param {Object} opts.feature If specified, the list of management units for which the user is authorized to use the requested feature will be returned
-   * @param {String} opts.divisionId If specified, the list of management units belonging to the specified division will be returned
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementManagementunits",value:function getWorkforcemanagementManagementunits(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits','GET',{},{'pageSize':opts['pageSize'],'pageNumber':opts['pageNumber'],'expand':opts['expand'],'feature':opts['feature'],'divisionId':opts['divisionId']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get management units across divisions
-   * 
-   * @param {Object} opts Optional parameters
-   * @param {Array.<String>} opts.divisionId The divisionIds to filter by. If omitted, will return all divisions
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementManagementunitsDivisionviews",value:function getWorkforcemanagementManagementunitsDivisionviews(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/divisionviews','GET',{},{'divisionId':this.apiClient.buildCollectionParam(opts['divisionId'],'multi')},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get a list of notifications for the current user
-   * Notifications are only initially sent if you have the relevant Notify and Edit permissions
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementNotifications",value:function getWorkforcemanagementNotifications(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/notifications','GET',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Gets an agent's schedule bidding preference
-   * 
-   * @param {String} bidId The ID of the schedule bid
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementSchedulebidPreference",value:function getWorkforcemanagementSchedulebidPreference(bidId,opts){opts=opts||{};// verify the required parameter 'bidId' is set
+	 * Get management units
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Deprecated, paging is not supported
+	 * @param {Number} opts.pageNumber Deprecated, paging is not supported
+	 * @param {Object} opts.expand Deprecated, expand settings on the single MU route
+	 * @param {Object} opts.feature If specified, the list of management units for which the user is authorized to use the requested feature will be returned
+	 * @param {String} opts.divisionId If specified, the list of management units belonging to the specified division will be returned
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementManagementunits",value:function getWorkforcemanagementManagementunits(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits','GET',{},{'pageSize':opts['pageSize'],'pageNumber':opts['pageNumber'],'expand':opts['expand'],'feature':opts['feature'],'divisionId':opts['divisionId']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Get management units across divisions
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.divisionId The divisionIds to filter by. If omitted, will return all divisions
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementManagementunitsDivisionviews",value:function getWorkforcemanagementManagementunitsDivisionviews(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/divisionviews','GET',{},{'divisionId':this.apiClient.buildCollectionParam(opts['divisionId'],'multi')},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Get a list of notifications for the current user
+	 * Notifications are only initially sent if you have the relevant Notify and Edit permissions
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementNotifications",value:function getWorkforcemanagementNotifications(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/notifications','GET',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Gets an agent's schedule bidding preference
+	 * 
+	 * @param {String} bidId The ID of the schedule bid
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementSchedulebidPreference",value:function getWorkforcemanagementSchedulebidPreference(bidId,opts){opts=opts||{};// verify the required parameter 'bidId' is set
 if(bidId===undefined||bidId===null||bidId===''){throw'Missing the required parameter "bidId" when calling getWorkforcemanagementSchedulebidPreference';}return this.apiClient.callApi('/api/v2/workforcemanagement/schedulebids/{bidId}/preference','GET',{'bidId':bidId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Gets an agent's schedule sets for a bid
-   * 
-   * @param {String} bidId The ID of the schedule bid
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementSchedulebidSchedulesets",value:function getWorkforcemanagementSchedulebidSchedulesets(bidId,opts){opts=opts||{};// verify the required parameter 'bidId' is set
+	 * Gets an agent's schedule sets for a bid
+	 * 
+	 * @param {String} bidId The ID of the schedule bid
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementSchedulebidSchedulesets",value:function getWorkforcemanagementSchedulebidSchedulesets(bidId,opts){opts=opts||{};// verify the required parameter 'bidId' is set
 if(bidId===undefined||bidId===null||bidId===''){throw'Missing the required parameter "bidId" when calling getWorkforcemanagementSchedulebidSchedulesets';}return this.apiClient.callApi('/api/v2/workforcemanagement/schedulebids/{bidId}/schedulesets','GET',{'bidId':bidId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Gets the list of schedule bids that belong to an agent. It will fetch an open bid or upcoming bid or a bid that is closed recently
-   * 
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementSchedulebids",value:function getWorkforcemanagementSchedulebids(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/schedulebids','GET',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get status of the scheduling job
-   * 
-   * @param {String} jobId The id of the scheduling job
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementSchedulingjob",value:function getWorkforcemanagementSchedulingjob(jobId,opts){opts=opts||{};// verify the required parameter 'jobId' is set
+	 * Gets the list of schedule bids that belong to an agent. It will fetch an open bid or upcoming bid or a bid that is closed recently
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementSchedulebids",value:function getWorkforcemanagementSchedulebids(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/schedulebids','GET',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Get status of the scheduling job
+	 * 
+	 * @param {String} jobId The id of the scheduling job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementSchedulingjob",value:function getWorkforcemanagementSchedulingjob(jobId,opts){opts=opts||{};// verify the required parameter 'jobId' is set
 if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required parameter "jobId" when calling getWorkforcemanagementSchedulingjob';}return this.apiClient.callApi('/api/v2/workforcemanagement/schedulingjobs/{jobId}','GET',{'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get scheduling preferences settings for the agent's business unit
-   * 
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * getWorkforcemanagementSchedulingpreferencesSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   */},{key:"getWorkforcemanagementSchedulingpreferencesSettings",value:function getWorkforcemanagementSchedulingpreferencesSettings(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/schedulingpreferences/settings','GET',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Gets all of my shift trades
-   * Deprecated. Use new route instead (/shifttrading/trades/mine/query/jobs)
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"getWorkforcemanagementShifttrades",value:function getWorkforcemanagementShifttrades(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/shifttrades','GET',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * View result of update trade operation. Only the user who started the operation can query the status
-   * Job details are only retained if the initial request returned a 202 ACCEPTED response
-   * @param {String} tradeId The ID of the shift trade to update
-   * @param {String} jobId The ID of the job
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementShifttradingTradeJob",value:function getWorkforcemanagementShifttradingTradeJob(tradeId,jobId,opts){opts=opts||{};// verify the required parameter 'tradeId' is set
+	 * Get scheduling preferences settings for the agent's business unit
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * getWorkforcemanagementSchedulingpreferencesSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */},{key:"getWorkforcemanagementSchedulingpreferencesSettings",value:function getWorkforcemanagementSchedulingpreferencesSettings(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/schedulingpreferences/settings','GET',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Gets all of my shift trades
+	 * Deprecated. Use new route instead (/shifttrading/trades/mine/query/jobs)
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
+	 */},{key:"getWorkforcemanagementShifttrades",value:function getWorkforcemanagementShifttrades(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/shifttrades','GET',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * View result of update trade operation. Only the user who started the operation can query the status
+	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
+	 * @param {String} tradeId The ID of the shift trade to update
+	 * @param {String} jobId The ID of the job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementShifttradingTradeJob",value:function getWorkforcemanagementShifttradingTradeJob(tradeId,jobId,opts){opts=opts||{};// verify the required parameter 'tradeId' is set
 if(tradeId===undefined||tradeId===null||tradeId===''){throw'Missing the required parameter "tradeId" when calling getWorkforcemanagementShifttradingTradeJob';}// verify the required parameter 'jobId' is set
 if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required parameter "jobId" when calling getWorkforcemanagementShifttradingTradeJob';}return this.apiClient.callApi('/api/v2/workforcemanagement/shifttrading/trades/{tradeId}/jobs/{jobId}','GET',{'tradeId':tradeId,'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * View result of match shift trade operation. Only the receiving user who started the operation can query the status.
-   * Job details are only retained if the initial request returned a 202 ACCEPTED response
-   * @param {String} tradeId The ID of the shift trade to update
-   * @param {String} jobId The ID of the job
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementShifttradingTradeMatchJob",value:function getWorkforcemanagementShifttradingTradeMatchJob(tradeId,jobId,opts){opts=opts||{};// verify the required parameter 'tradeId' is set
+	 * View result of match shift trade operation. Only the receiving user who started the operation can query the status.
+	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
+	 * @param {String} tradeId The ID of the shift trade to update
+	 * @param {String} jobId The ID of the job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementShifttradingTradeMatchJob",value:function getWorkforcemanagementShifttradingTradeMatchJob(tradeId,jobId,opts){opts=opts||{};// verify the required parameter 'tradeId' is set
 if(tradeId===undefined||tradeId===null||tradeId===''){throw'Missing the required parameter "tradeId" when calling getWorkforcemanagementShifttradingTradeMatchJob';}// verify the required parameter 'jobId' is set
 if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required parameter "jobId" when calling getWorkforcemanagementShifttradingTradeMatchJob';}return this.apiClient.callApi('/api/v2/workforcemanagement/shifttrading/trades/{tradeId}/match/jobs/{jobId}','GET',{'tradeId':tradeId,'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * View result of update trade state operation. Only the user who started the operation can query the status.
-   * Job details are only retained if the initial request returned a 202 ACCEPTED response
-   * @param {String} tradeId The ID of the shift trade to update
-   * @param {String} jobId The ID of the job
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementShifttradingTradeStateJob",value:function getWorkforcemanagementShifttradingTradeStateJob(tradeId,jobId,opts){opts=opts||{};// verify the required parameter 'tradeId' is set
+	 * View result of update trade state operation. Only the user who started the operation can query the status.
+	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
+	 * @param {String} tradeId The ID of the shift trade to update
+	 * @param {String} jobId The ID of the job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementShifttradingTradeStateJob",value:function getWorkforcemanagementShifttradingTradeStateJob(tradeId,jobId,opts){opts=opts||{};// verify the required parameter 'tradeId' is set
 if(tradeId===undefined||tradeId===null||tradeId===''){throw'Missing the required parameter "tradeId" when calling getWorkforcemanagementShifttradingTradeStateJob';}// verify the required parameter 'jobId' is set
 if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required parameter "jobId" when calling getWorkforcemanagementShifttradingTradeStateJob';}return this.apiClient.callApi('/api/v2/workforcemanagement/shifttrading/trades/{tradeId}/state/jobs/{jobId}','GET',{'tradeId':tradeId,'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * View result of create trade operation. Only the user who started the operation can query the status
-   * Job details are only retained if the initial request returned a 202 ACCEPTED response
-   * @param {String} jobId The ID of the job
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementShifttradingTradesJob",value:function getWorkforcemanagementShifttradingTradesJob(jobId,opts){opts=opts||{};// verify the required parameter 'jobId' is set
+	 * View result of create trade operation. Only the user who started the operation can query the status
+	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
+	 * @param {String} jobId The ID of the job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementShifttradingTradesJob",value:function getWorkforcemanagementShifttradingTradesJob(jobId,opts){opts=opts||{};// verify the required parameter 'jobId' is set
 if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required parameter "jobId" when calling getWorkforcemanagementShifttradingTradesJob';}return this.apiClient.callApi('/api/v2/workforcemanagement/shifttrading/trades/jobs/{jobId}','GET',{'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * View results of retrieve all my shift trade operation. Only the user who started the operation can query the status
-   * Job details are only retained if the initial request returned a 202 ACCEPTED response
-   * @param {String} jobId The ID of the job
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementShifttradingTradesMineQueryJob",value:function getWorkforcemanagementShifttradingTradesMineQueryJob(jobId,opts){opts=opts||{};// verify the required parameter 'jobId' is set
+	 * View results of retrieve all my shift trade operation. Only the user who started the operation can query the status
+	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
+	 * @param {String} jobId The ID of the job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementShifttradingTradesMineQueryJob",value:function getWorkforcemanagementShifttradingTradesMineQueryJob(jobId,opts){opts=opts||{};// verify the required parameter 'jobId' is set
 if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required parameter "jobId" when calling getWorkforcemanagementShifttradingTradesMineQueryJob';}return this.apiClient.callApi('/api/v2/workforcemanagement/shifttrading/trades/mine/query/jobs/{jobId}','GET',{'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Request to fetch the status of the historical shrinkage query
-   * 
-   * @param {String} jobId jobId
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementShrinkageJob",value:function getWorkforcemanagementShrinkageJob(jobId,opts){opts=opts||{};// verify the required parameter 'jobId' is set
+	 * Request to fetch the status of the historical shrinkage query
+	 * 
+	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementShrinkageJob",value:function getWorkforcemanagementShrinkageJob(jobId,opts){opts=opts||{};// verify the required parameter 'jobId' is set
 if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required parameter "jobId" when calling getWorkforcemanagementShrinkageJob';}return this.apiClient.callApi('/api/v2/workforcemanagement/shrinkage/jobs/{jobId}','GET',{'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get a list of user schedule adherence records for the requested team
-   * 
-   * @param {String} teamId The ID of the team
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementTeamAdherence",value:function getWorkforcemanagementTeamAdherence(teamId,opts){opts=opts||{};// verify the required parameter 'teamId' is set
+	 * Get a list of user schedule adherence records for the requested team
+	 * 
+	 * @param {String} teamId The ID of the team
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementTeamAdherence",value:function getWorkforcemanagementTeamAdherence(teamId,opts){opts=opts||{};// verify the required parameter 'teamId' is set
 if(teamId===undefined||teamId===null||teamId===''){throw'Missing the required parameter "teamId" when calling getWorkforcemanagementTeamAdherence';}return this.apiClient.callApi('/api/v2/workforcemanagement/teams/{teamId}/adherence','GET',{'teamId':teamId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Query the results of time off types job
-   * 
-   * @param {String} jobId The ID of the job.
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementTimeoffbalanceJob",value:function getWorkforcemanagementTimeoffbalanceJob(jobId,opts){opts=opts||{};// verify the required parameter 'jobId' is set
+	 * Query the results of time off types job
+	 * 
+	 * @param {String} jobId The ID of the job.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementTimeoffbalanceJob",value:function getWorkforcemanagementTimeoffbalanceJob(jobId,opts){opts=opts||{};// verify the required parameter 'jobId' is set
 if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required parameter "jobId" when calling getWorkforcemanagementTimeoffbalanceJob';}return this.apiClient.callApi('/api/v2/workforcemanagement/timeoffbalance/jobs/{jobId}','GET',{'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get a time off request for the current user
-   * 
-   * @param {String} timeOffRequestId The ID of the time off request
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementTimeoffrequest",value:function getWorkforcemanagementTimeoffrequest(timeOffRequestId,opts){opts=opts||{};// verify the required parameter 'timeOffRequestId' is set
+	 * Get a time off request for the current user
+	 * 
+	 * @param {String} timeOffRequestId The ID of the time off request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementTimeoffrequest",value:function getWorkforcemanagementTimeoffrequest(timeOffRequestId,opts){opts=opts||{};// verify the required parameter 'timeOffRequestId' is set
 if(timeOffRequestId===undefined||timeOffRequestId===null||timeOffRequestId===''){throw'Missing the required parameter "timeOffRequestId" when calling getWorkforcemanagementTimeoffrequest';}return this.apiClient.callApi('/api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}','GET',{'timeOffRequestId':timeOffRequestId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get the daily waitlist positions of a time off request for the current user
-   * 
-   * @param {String} timeOffRequestId The ID of the time off request
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementTimeoffrequestWaitlistpositions",value:function getWorkforcemanagementTimeoffrequestWaitlistpositions(timeOffRequestId,opts){opts=opts||{};// verify the required parameter 'timeOffRequestId' is set
+	 * Get the daily waitlist positions of a time off request for the current user
+	 * 
+	 * @param {String} timeOffRequestId The ID of the time off request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementTimeoffrequestWaitlistpositions",value:function getWorkforcemanagementTimeoffrequestWaitlistpositions(timeOffRequestId,opts){opts=opts||{};// verify the required parameter 'timeOffRequestId' is set
 if(timeOffRequestId===undefined||timeOffRequestId===null||timeOffRequestId===''){throw'Missing the required parameter "timeOffRequestId" when calling getWorkforcemanagementTimeoffrequestWaitlistpositions';}return this.apiClient.callApi('/api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}/waitlistpositions','GET',{'timeOffRequestId':timeOffRequestId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get a list of time off requests for the current user
-   * 
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementTimeoffrequests",value:function getWorkforcemanagementTimeoffrequests(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/timeoffrequests','GET',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get availability management unit's settings for agent
-   * 
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementUnavailabletimesSettings",value:function getWorkforcemanagementUnavailabletimesSettings(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/unavailabletimes/settings','GET',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Query agent unavailable times validation job
-   * 
-   * @param {String} jobId The ID of the job
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementUnavailabletimesValidationJob",value:function getWorkforcemanagementUnavailabletimesValidationJob(jobId,opts){opts=opts||{};// verify the required parameter 'jobId' is set
+	 * Get a list of time off requests for the current user
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementTimeoffrequests",value:function getWorkforcemanagementTimeoffrequests(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/timeoffrequests','GET',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Get availability management unit's settings for agent
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementUnavailabletimesSettings",value:function getWorkforcemanagementUnavailabletimesSettings(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/unavailabletimes/settings','GET',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Query agent unavailable times validation job
+	 * 
+	 * @param {String} jobId The ID of the job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementUnavailabletimesValidationJob",value:function getWorkforcemanagementUnavailabletimesValidationJob(jobId,opts){opts=opts||{};// verify the required parameter 'jobId' is set
 if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required parameter "jobId" when calling getWorkforcemanagementUnavailabletimesValidationJob';}return this.apiClient.callApi('/api/v2/workforcemanagement/unavailabletimes/validation/jobs/{jobId}','GET',{'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get work plan bid ranks for a user
-   * 
-   * @param {String} userId The userId to whom the work plan bid ranks apply.
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementUserWorkplanbidranks",value:function getWorkforcemanagementUserWorkplanbidranks(userId,opts){opts=opts||{};// verify the required parameter 'userId' is set
+	 * Get work plan bid ranks for a user
+	 * 
+	 * @param {String} userId The userId to whom the work plan bid ranks apply.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementUserWorkplanbidranks",value:function getWorkforcemanagementUserWorkplanbidranks(userId,opts){opts=opts||{};// verify the required parameter 'userId' is set
 if(userId===undefined||userId===null||userId===''){throw'Missing the required parameter "userId" when calling getWorkforcemanagementUserWorkplanbidranks';}return this.apiClient.callApi('/api/v2/workforcemanagement/users/{userId}/workplanbidranks','GET',{'userId':userId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Gets an agent's work plan bidding preference
-   * 
-   * @param {String} bidId The ID of the work plan bid
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementWorkplanbidPreferences",value:function getWorkforcemanagementWorkplanbidPreferences(bidId,opts){opts=opts||{};// verify the required parameter 'bidId' is set
+	 * Gets an agent's work plan bidding preference
+	 * 
+	 * @param {String} bidId The ID of the work plan bid
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementWorkplanbidPreferences",value:function getWorkforcemanagementWorkplanbidPreferences(bidId,opts){opts=opts||{};// verify the required parameter 'bidId' is set
 if(bidId===undefined||bidId===null||bidId===''){throw'Missing the required parameter "bidId" when calling getWorkforcemanagementWorkplanbidPreferences';}return this.apiClient.callApi('/api/v2/workforcemanagement/workplanbids/{bidId}/preferences','GET',{'bidId':bidId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Gets an agent's work plans for a bid
-   * 
-   * @param {String} bidId The ID of the work plan bid
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementWorkplanbidWorkplans",value:function getWorkforcemanagementWorkplanbidWorkplans(bidId,opts){opts=opts||{};// verify the required parameter 'bidId' is set
+	 * Gets an agent's work plans for a bid
+	 * 
+	 * @param {String} bidId The ID of the work plan bid
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementWorkplanbidWorkplans",value:function getWorkforcemanagementWorkplanbidWorkplans(bidId,opts){opts=opts||{};// verify the required parameter 'bidId' is set
 if(bidId===undefined||bidId===null||bidId===''){throw'Missing the required parameter "bidId" when calling getWorkforcemanagementWorkplanbidWorkplans';}return this.apiClient.callApi('/api/v2/workforcemanagement/workplanbids/{bidId}/workplans','GET',{'bidId':bidId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Gets the list of work plan bids that belong to an agent
-   * 
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"getWorkforcemanagementWorkplanbids",value:function getWorkforcemanagementWorkplanbids(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/workplanbids','GET',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Update an adherence explanation
-   * 
-   * @param {String} agentId The ID of the agent to query
-   * @param {String} explanationId The ID of the explanation to update
-   * @param {Object} body The request body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"patchWorkforcemanagementAgentAdherenceExplanation",value:function patchWorkforcemanagementAgentAdherenceExplanation(agentId,explanationId,body,opts){opts=opts||{};// verify the required parameter 'agentId' is set
+	 * Gets the list of work plan bids that belong to an agent
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"getWorkforcemanagementWorkplanbids",value:function getWorkforcemanagementWorkplanbids(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/workplanbids','GET',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Update an adherence adjustment for the current user
+	 * 
+	 * @param {String} adjustmentId The ID of the adherence adjustment to update
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"patchWorkforcemanagementAdherenceAdjustment",value:function patchWorkforcemanagementAdherenceAdjustment(adjustmentId,body,opts){opts=opts||{};// verify the required parameter 'adjustmentId' is set
+if(adjustmentId===undefined||adjustmentId===null||adjustmentId===''){throw'Missing the required parameter "adjustmentId" when calling patchWorkforcemanagementAdherenceAdjustment';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementAdherenceAdjustment';}return this.apiClient.callApi('/api/v2/workforcemanagement/adherence/adjustments/{adjustmentId}','PATCH',{'adjustmentId':adjustmentId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Update an adherence adjustment for the requested agent
+	 * 
+	 * @param {String} agentId The ID of the agent
+	 * @param {String} adjustmentId The ID of the adherence adjustment
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"patchWorkforcemanagementAgentAdherenceAdjustment",value:function patchWorkforcemanagementAgentAdherenceAdjustment(agentId,adjustmentId,body,opts){opts=opts||{};// verify the required parameter 'agentId' is set
+if(agentId===undefined||agentId===null||agentId===''){throw'Missing the required parameter "agentId" when calling patchWorkforcemanagementAgentAdherenceAdjustment';}// verify the required parameter 'adjustmentId' is set
+if(adjustmentId===undefined||adjustmentId===null||adjustmentId===''){throw'Missing the required parameter "adjustmentId" when calling patchWorkforcemanagementAgentAdherenceAdjustment';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementAgentAdherenceAdjustment';}return this.apiClient.callApi('/api/v2/workforcemanagement/agents/{agentId}/adherence/adjustments/{adjustmentId}','PATCH',{'agentId':agentId,'adjustmentId':adjustmentId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Update an adherence explanation
+	 * 
+	 * @param {String} agentId The ID of the agent to query
+	 * @param {String} explanationId The ID of the explanation to update
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"patchWorkforcemanagementAgentAdherenceExplanation",value:function patchWorkforcemanagementAgentAdherenceExplanation(agentId,explanationId,body,opts){opts=opts||{};// verify the required parameter 'agentId' is set
 if(agentId===undefined||agentId===null||agentId===''){throw'Missing the required parameter "agentId" when calling patchWorkforcemanagementAgentAdherenceExplanation';}// verify the required parameter 'explanationId' is set
 if(explanationId===undefined||explanationId===null||explanationId===''){throw'Missing the required parameter "explanationId" when calling patchWorkforcemanagementAgentAdherenceExplanation';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementAgentAdherenceExplanation';}return this.apiClient.callApi('/api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/{explanationId}','PATCH',{'agentId':agentId,'explanationId':explanationId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Update my alternative shifts trade by trade ID
-   * 
-   * @param {String} tradeId The ID of the alternative shift trade
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"patchWorkforcemanagementAlternativeshiftsTrade",value:function patchWorkforcemanagementAlternativeshiftsTrade(tradeId,body,opts){opts=opts||{};// verify the required parameter 'tradeId' is set
+	 * Update unavailable times for the requested agent
+	 * Large requests will be partitioned into multiple internal processing batches. Validation will occur against each internal batch independently rather than against the final combined state represented by the entire request
+	 * @param {String} agentId The ID of the agent
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"patchWorkforcemanagementAgentUnavailabletimes",value:function patchWorkforcemanagementAgentUnavailabletimes(agentId,body,opts){opts=opts||{};// verify the required parameter 'agentId' is set
+if(agentId===undefined||agentId===null||agentId===''){throw'Missing the required parameter "agentId" when calling patchWorkforcemanagementAgentUnavailabletimes';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementAgentUnavailabletimes';}return this.apiClient.callApi('/api/v2/workforcemanagement/agents/{agentId}/unavailabletimes','PATCH',{'agentId':agentId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Update my alternative shifts trade by trade ID
+	 * 
+	 * @param {String} tradeId The ID of the alternative shift trade
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"patchWorkforcemanagementAlternativeshiftsTrade",value:function patchWorkforcemanagementAlternativeshiftsTrade(tradeId,body,opts){opts=opts||{};// verify the required parameter 'tradeId' is set
 if(tradeId===undefined||tradeId===null||tradeId===''){throw'Missing the required parameter "tradeId" when calling patchWorkforcemanagementAlternativeshiftsTrade';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementAlternativeshiftsTrade';}return this.apiClient.callApi('/api/v2/workforcemanagement/alternativeshifts/trades/{tradeId}','PATCH',{'tradeId':tradeId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Bulk update alternative shift trade states
-   * 
-   * @param {Object} body The request body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"patchWorkforcemanagementAlternativeshiftsTradesStateJobs",value:function patchWorkforcemanagementAlternativeshiftsTradesStateJobs(body,opts){opts=opts||{};// verify the required parameter 'body' is set
+	 * Bulk update alternative shift trade states
+	 * 
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"patchWorkforcemanagementAlternativeshiftsTradesStateJobs",value:function patchWorkforcemanagementAlternativeshiftsTradesStateJobs(body,opts){opts=opts||{};// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementAlternativeshiftsTradesStateJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/alternativeshifts/trades/state/jobs','PATCH',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Update business unit
-   * 
-   * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Boolean} opts.includeSchedulingDefaultMessageSeverities Whether to include scheduling default message severities
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"patchWorkforcemanagementBusinessunit",value:function patchWorkforcemanagementBusinessunit(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Update business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.includeSchedulingDefaultMessageSeverities Whether to include scheduling default message severities
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"patchWorkforcemanagementBusinessunit",value:function patchWorkforcemanagementBusinessunit(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunit';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunit';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}','PATCH',{'businessUnitId':businessUnitId},{'includeSchedulingDefaultMessageSeverities':opts['includeSchedulingDefaultMessageSeverities']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Update an activity code
-   * 
-   * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
-   * @param {String} activityCodeId The ID of the activity code to update
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"patchWorkforcemanagementBusinessunitActivitycode",value:function patchWorkforcemanagementBusinessunitActivitycode(businessUnitId,activityCodeId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Update an activity code
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+	 * @param {String} activityCodeId The ID of the activity code to update
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"patchWorkforcemanagementBusinessunitActivitycode",value:function patchWorkforcemanagementBusinessunitActivitycode(businessUnitId,activityCodeId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitActivitycode';}// verify the required parameter 'activityCodeId' is set
 if(activityCodeId===undefined||activityCodeId===null||activityCodeId===''){throw'Missing the required parameter "activityCodeId" when calling patchWorkforcemanagementBusinessunitActivitycode';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitActivitycode';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}','PATCH',{'businessUnitId':businessUnitId,'activityCodeId':activityCodeId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Update multiple activity codes
-   * 
-   * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"patchWorkforcemanagementBusinessunitActivitycodesBulk",value:function patchWorkforcemanagementBusinessunitActivitycodesBulk(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Update multiple activity codes
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"patchWorkforcemanagementBusinessunitActivitycodesBulk",value:function patchWorkforcemanagementBusinessunitActivitycodesBulk(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitActivitycodesBulk';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitActivitycodesBulk';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/bulk','PATCH',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Update an activity plan
-   * If a job associated with the activity plan is in Processing state the activity plan cannot be updated
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} activityPlanId The ID of the activity plan to update
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"patchWorkforcemanagementBusinessunitActivityplan",value:function patchWorkforcemanagementBusinessunitActivityplan(businessUnitId,activityPlanId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Update an activity plan
+	 * If a job associated with the activity plan is in Processing state the activity plan cannot be updated
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} activityPlanId The ID of the activity plan to update
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"patchWorkforcemanagementBusinessunitActivityplan",value:function patchWorkforcemanagementBusinessunitActivityplan(businessUnitId,activityPlanId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitActivityplan';}// verify the required parameter 'activityPlanId' is set
 if(activityPlanId===undefined||activityPlanId===null||activityPlanId===''){throw'Missing the required parameter "activityPlanId" when calling patchWorkforcemanagementBusinessunitActivityplan';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitActivityplan';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}','PATCH',{'businessUnitId':businessUnitId,'activityPlanId':activityPlanId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Update alternative shifts settings for a business unit
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"patchWorkforcemanagementBusinessunitAlternativeshiftsSettings",value:function patchWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Update adherence adjustments in bulk for a business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"patchWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk",value:function patchWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/bulk','PATCH',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Update an adherence adjustment reason code for a business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} reasonCodeId The ID of the reason code to update
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode",value:function patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode(businessUnitId,reasonCodeId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode';}// verify the required parameter 'reasonCodeId' is set
+if(reasonCodeId===undefined||reasonCodeId===null||reasonCodeId===''){throw'Missing the required parameter "reasonCodeId" when calling patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/{reasonCodeId}','PATCH',{'businessUnitId':businessUnitId,'reasonCodeId':reasonCodeId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Update adherence adjustment reason codes in bulk for a business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk",value:function patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/bulk','PATCH',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Update adherence adjustments settings for a business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"patchWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings",value:function patchWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/settings','PATCH',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Update alternative shifts settings for a business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"patchWorkforcemanagementBusinessunitAlternativeshiftsSettings",value:function patchWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitAlternativeshiftsSettings';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitAlternativeshiftsSettings';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/settings','PATCH',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Update a capacity plan configuration
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} capacityPlanId The ID of the capacity plan
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"patchWorkforcemanagementBusinessunitCapacityplan",value:function patchWorkforcemanagementBusinessunitCapacityplan(businessUnitId,capacityPlanId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Update a capacity plan configuration
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} capacityPlanId The ID of the capacity plan
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"patchWorkforcemanagementBusinessunitCapacityplan",value:function patchWorkforcemanagementBusinessunitCapacityplan(businessUnitId,capacityPlanId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitCapacityplan';}// verify the required parameter 'capacityPlanId' is set
 if(capacityPlanId===undefined||capacityPlanId===null||capacityPlanId===''){throw'Missing the required parameter "capacityPlanId" when calling patchWorkforcemanagementBusinessunitCapacityplan';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitCapacityplan';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}','PATCH',{'businessUnitId':businessUnitId,'capacityPlanId':capacityPlanId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Update minimum staffing settings for a business unit
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"patchWorkforcemanagementBusinessunitMinimumstaffingSettings",value:function patchWorkforcemanagementBusinessunitMinimumstaffingSettings(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Update minimum staffing settings for a business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"patchWorkforcemanagementBusinessunitMinimumstaffingSettings",value:function patchWorkforcemanagementBusinessunitMinimumstaffingSettings(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitMinimumstaffingSettings';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitMinimumstaffingSettings';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/minimumstaffing/settings','PATCH',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Update the opportunity
-   * Only opportunities with Draft status can be updated.
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} opportunityId The ID of the opportunity
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"patchWorkforcemanagementBusinessunitOpportunity",value:function patchWorkforcemanagementBusinessunitOpportunity(businessUnitId,opportunityId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Update the opportunity
+	 * Only opportunities with Draft status can be updated.
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} opportunityId The ID of the opportunity
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"patchWorkforcemanagementBusinessunitOpportunity",value:function patchWorkforcemanagementBusinessunitOpportunity(businessUnitId,opportunityId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitOpportunity';}// verify the required parameter 'opportunityId' is set
 if(opportunityId===undefined||opportunityId===null||opportunityId===''){throw'Missing the required parameter "opportunityId" when calling patchWorkforcemanagementBusinessunitOpportunity';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitOpportunity';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities/{opportunityId}','PATCH',{'businessUnitId':businessUnitId,'opportunityId':opportunityId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Updates the planning group
-   * If the request body contains queue references in route paths, routing:queue:view is required in each referenced queues division.
-   * @param {String} businessUnitId The ID of the business unit.
-   * @param {String} planningGroupId The ID of a planning group to update
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"patchWorkforcemanagementBusinessunitPlanninggroup",value:function patchWorkforcemanagementBusinessunitPlanninggroup(businessUnitId,planningGroupId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Updates the planning group
+	 * If the request body contains queue references in route paths, routing:queue:view is required in each referenced queues division.
+	 * @param {String} businessUnitId The ID of the business unit.
+	 * @param {String} planningGroupId The ID of a planning group to update
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"patchWorkforcemanagementBusinessunitPlanninggroup",value:function patchWorkforcemanagementBusinessunitPlanninggroup(businessUnitId,planningGroupId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitPlanninggroup';}// verify the required parameter 'planningGroupId' is set
 if(planningGroupId===undefined||planningGroupId===null||planningGroupId===''){throw'Missing the required parameter "planningGroupId" when calling patchWorkforcemanagementBusinessunitPlanninggroup';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitPlanninggroup';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}','PATCH',{'businessUnitId':businessUnitId,'planningGroupId':planningGroupId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Update a schedule bid
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} bidId The ID of the schedule bid
-   * @param {Object} body The schedule bid to be updated
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"patchWorkforcemanagementBusinessunitSchedulebid",value:function patchWorkforcemanagementBusinessunitSchedulebid(businessUnitId,bidId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Update a schedule bid
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The ID of the schedule bid
+	 * @param {Object} body The schedule bid to be updated
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"patchWorkforcemanagementBusinessunitSchedulebid",value:function patchWorkforcemanagementBusinessunitSchedulebid(businessUnitId,bidId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitSchedulebid';}// verify the required parameter 'bidId' is set
 if(bidId===undefined||bidId===null||bidId===''){throw'Missing the required parameter "bidId" when calling patchWorkforcemanagementBusinessunitSchedulebid';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitSchedulebid';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}','PATCH',{'businessUnitId':businessUnitId,'bidId':bidId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Update a schedule bid group by bid group Id
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} bidId The ID of the schedule bid associated with the bid groups
-   * @param {String} bidGroupId Schedule Bid Group id
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"patchWorkforcemanagementBusinessunitSchedulebidGroup",value:function patchWorkforcemanagementBusinessunitSchedulebidGroup(businessUnitId,bidId,bidGroupId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Update a schedule bid group by bid group Id
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The ID of the schedule bid associated with the bid groups
+	 * @param {String} bidGroupId Schedule Bid Group id
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"patchWorkforcemanagementBusinessunitSchedulebidGroup",value:function patchWorkforcemanagementBusinessunitSchedulebidGroup(businessUnitId,bidId,bidGroupId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitSchedulebidGroup';}// verify the required parameter 'bidId' is set
 if(bidId===undefined||bidId===null||bidId===''){throw'Missing the required parameter "bidId" when calling patchWorkforcemanagementBusinessunitSchedulebidGroup';}// verify the required parameter 'bidGroupId' is set
 if(bidGroupId===undefined||bidGroupId===null||bidGroupId===''){throw'Missing the required parameter "bidGroupId" when calling patchWorkforcemanagementBusinessunitSchedulebidGroup';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitSchedulebidGroup';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/{bidGroupId}','PATCH',{'businessUnitId':businessUnitId,'bidId':bidId,'bidGroupId':bidGroupId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Overrides the assigned schedule bid for the specified agents
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} bidId The ID of the schedule bid associated with the bid groups
-   * @param {String} bidGroupId The ID of the schedule bid group
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences",value:function patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences(businessUnitId,bidId,bidGroupId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Overrides the assigned schedule bid for the specified agents
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The ID of the schedule bid associated with the bid groups
+	 * @param {String} bidGroupId The ID of the schedule bid group
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences",value:function patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences(businessUnitId,bidId,bidGroupId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences';}// verify the required parameter 'bidId' is set
 if(bidId===undefined||bidId===null||bidId===''){throw'Missing the required parameter "bidId" when calling patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences';}// verify the required parameter 'bidGroupId' is set
 if(bidGroupId===undefined||bidGroupId===null||bidGroupId===''){throw'Missing the required parameter "bidGroupId" when calling patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/{bidGroupId}/preferences','PATCH',{'businessUnitId':businessUnitId,'bidId':bidId,'bidGroupId':bidGroupId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Update scheduler settings for a business unit
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"patchWorkforcemanagementBusinessunitSchedulerSettings",value:function patchWorkforcemanagementBusinessunitSchedulerSettings(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Update scheduler settings for a business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"patchWorkforcemanagementBusinessunitSchedulerSettings",value:function patchWorkforcemanagementBusinessunitSchedulerSettings(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitSchedulerSettings';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitSchedulerSettings';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduler/settings','PATCH',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Mark a schedule run as applied
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} runId The ID of the schedule run
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"patchWorkforcemanagementBusinessunitSchedulingRun",value:function patchWorkforcemanagementBusinessunitSchedulingRun(businessUnitId,runId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Mark a schedule run as applied
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} runId The ID of the schedule run
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"patchWorkforcemanagementBusinessunitSchedulingRun",value:function patchWorkforcemanagementBusinessunitSchedulingRun(businessUnitId,runId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitSchedulingRun';}// verify the required parameter 'runId' is set
 if(runId===undefined||runId===null||runId===''){throw'Missing the required parameter "runId" when calling patchWorkforcemanagementBusinessunitSchedulingRun';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitSchedulingRun';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}','PATCH',{'businessUnitId':businessUnitId,'runId':runId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Update business unit scheduling preferences settings
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * patchWorkforcemanagementBusinessunitSchedulingpreferencesSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   */},{key:"patchWorkforcemanagementBusinessunitSchedulingpreferencesSettings",value:function patchWorkforcemanagementBusinessunitSchedulingpreferencesSettings(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Update business unit scheduling preferences settings
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * patchWorkforcemanagementBusinessunitSchedulingpreferencesSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */},{key:"patchWorkforcemanagementBusinessunitSchedulingpreferencesSettings",value:function patchWorkforcemanagementBusinessunitSchedulingpreferencesSettings(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitSchedulingpreferencesSettings';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitSchedulingpreferencesSettings';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulingpreferences/settings','PATCH',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Updates a service goal template
-   * 
-   * @param {String} businessUnitId The ID of the business unit.
-   * @param {String} serviceGoalTemplateId The ID of a service goal template to update
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"patchWorkforcemanagementBusinessunitServicegoaltemplate",value:function patchWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId,serviceGoalTemplateId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Updates a service goal template
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit.
+	 * @param {String} serviceGoalTemplateId The ID of a service goal template to update
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"patchWorkforcemanagementBusinessunitServicegoaltemplate",value:function patchWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId,serviceGoalTemplateId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitServicegoaltemplate';}// verify the required parameter 'serviceGoalTemplateId' is set
 if(serviceGoalTemplateId===undefined||serviceGoalTemplateId===null||serviceGoalTemplateId===''){throw'Missing the required parameter "serviceGoalTemplateId" when calling patchWorkforcemanagementBusinessunitServicegoaltemplate';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitServicegoaltemplate';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}','PATCH',{'businessUnitId':businessUnitId,'serviceGoalTemplateId':serviceGoalTemplateId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Updates a staffing group
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} staffingGroupId The ID of the staffing group to update
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"patchWorkforcemanagementBusinessunitStaffinggroup",value:function patchWorkforcemanagementBusinessunitStaffinggroup(businessUnitId,staffingGroupId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Updates a staffing group
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} staffingGroupId The ID of the staffing group to update
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"patchWorkforcemanagementBusinessunitStaffinggroup",value:function patchWorkforcemanagementBusinessunitStaffinggroup(businessUnitId,staffingGroupId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitStaffinggroup';}// verify the required parameter 'staffingGroupId' is set
 if(staffingGroupId===undefined||staffingGroupId===null||staffingGroupId===''){throw'Missing the required parameter "staffingGroupId" when calling patchWorkforcemanagementBusinessunitStaffinggroup';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitStaffinggroup';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId}','PATCH',{'businessUnitId':businessUnitId,'staffingGroupId':staffingGroupId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Updates a time-off plan
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} timeOffPlanId The ID of the time-off plan to update
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"patchWorkforcemanagementBusinessunitTimeoffplan",value:function patchWorkforcemanagementBusinessunitTimeoffplan(businessUnitId,timeOffPlanId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Updates a time-off plan
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} timeOffPlanId The ID of the time-off plan to update
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"patchWorkforcemanagementBusinessunitTimeoffplan",value:function patchWorkforcemanagementBusinessunitTimeoffplan(businessUnitId,timeOffPlanId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitTimeoffplan';}// verify the required parameter 'timeOffPlanId' is set
 if(timeOffPlanId===undefined||timeOffPlanId===null||timeOffPlanId===''){throw'Missing the required parameter "timeOffPlanId" when calling patchWorkforcemanagementBusinessunitTimeoffplan';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitTimeoffplan';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId}','PATCH',{'businessUnitId':businessUnitId,'timeOffPlanId':timeOffPlanId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Update work plan bid
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} bidId The id of the workplanbid
-   * @param {Object} body The work plan bid to be updated
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"patchWorkforcemanagementBusinessunitWorkplanbid",value:function patchWorkforcemanagementBusinessunitWorkplanbid(businessUnitId,bidId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Update work plan bid
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The id of the workplanbid
+	 * @param {Object} body The work plan bid to be updated
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"patchWorkforcemanagementBusinessunitWorkplanbid",value:function patchWorkforcemanagementBusinessunitWorkplanbid(businessUnitId,bidId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitWorkplanbid';}// verify the required parameter 'bidId' is set
 if(bidId===undefined||bidId===null||bidId===''){throw'Missing the required parameter "bidId" when calling patchWorkforcemanagementBusinessunitWorkplanbid';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitWorkplanbid';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}','PATCH',{'businessUnitId':businessUnitId,'bidId':bidId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Update a bid group by bid group Id
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} bidId The work plan bid id of the bid groups
-   * @param {String} bidGroupId Work Plan Bid Group id
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"patchWorkforcemanagementBusinessunitWorkplanbidGroup",value:function patchWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId,bidId,bidGroupId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Update a bid group by bid group Id
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The work plan bid id of the bid groups
+	 * @param {String} bidGroupId Work Plan Bid Group id
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"patchWorkforcemanagementBusinessunitWorkplanbidGroup",value:function patchWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId,bidId,bidGroupId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitWorkplanbidGroup';}// verify the required parameter 'bidId' is set
 if(bidId===undefined||bidId===null||bidId===''){throw'Missing the required parameter "bidId" when calling patchWorkforcemanagementBusinessunitWorkplanbidGroup';}// verify the required parameter 'bidGroupId' is set
 if(bidGroupId===undefined||bidGroupId===null||bidGroupId===''){throw'Missing the required parameter "bidGroupId" when calling patchWorkforcemanagementBusinessunitWorkplanbidGroup';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitWorkplanbidGroup';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}','PATCH',{'businessUnitId':businessUnitId,'bidId':bidId,'bidGroupId':bidGroupId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Overrides the assigned work plan for the specified agents
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} bidId The work plan bid id of the bid groups
-   * @param {String} bidGroupId The ID of the work plan bid group
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences",value:function patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId,bidId,bidGroupId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Overrides the assigned work plan for the specified agents
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The work plan bid id of the bid groups
+	 * @param {String} bidGroupId The ID of the work plan bid group
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences",value:function patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId,bidId,bidGroupId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences';}// verify the required parameter 'bidId' is set
 if(bidId===undefined||bidId===null||bidId===''){throw'Missing the required parameter "bidId" when calling patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences';}// verify the required parameter 'bidGroupId' is set
 if(bidGroupId===undefined||bidGroupId===null||bidGroupId===''){throw'Missing the required parameter "bidGroupId" when calling patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}/preferences','PATCH',{'businessUnitId':businessUnitId,'bidId':bidId,'bidGroupId':bidGroupId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Update the requested management unit
-   * 
-   * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"patchWorkforcemanagementManagementunit",value:function patchWorkforcemanagementManagementunit(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Update the requested management unit
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"patchWorkforcemanagementManagementunit",value:function patchWorkforcemanagementManagementunit(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunit';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementManagementunit';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}','PATCH',{'managementUnitId':managementUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Update agent configurations
-   * 
-   * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"patchWorkforcemanagementManagementunitAgents",value:function patchWorkforcemanagementManagementunitAgents(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Update agent configurations
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"patchWorkforcemanagementManagementunitAgents",value:function patchWorkforcemanagementManagementunitAgents(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitAgents';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementManagementunitAgents';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents','PATCH',{'managementUnitId':managementUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Updates agent work plan configuration
-   * 
-   * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"patchWorkforcemanagementManagementunitAgentsWorkplansBulk",value:function patchWorkforcemanagementManagementunitAgentsWorkplansBulk(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Updates agent work plan configuration
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"patchWorkforcemanagementManagementunitAgentsWorkplansBulk",value:function patchWorkforcemanagementManagementunitAgentsWorkplansBulk(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitAgentsWorkplansBulk';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementManagementunitAgentsWorkplansBulk';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/workplans/bulk','PATCH',{'managementUnitId':managementUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Updates a time off limit object.
-   * Updates time off limit object properties, but not daily values. Deprecated: Updating defaultLimitMinutes is no longer supported
-   * @param {String} managementUnitId The ID of the management unit.
-   * @param {String} timeOffLimitId The id of time off limit object to update
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"patchWorkforcemanagementManagementunitTimeofflimit",value:function patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId,timeOffLimitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Updates a time off limit object.
+	 * Updates time off limit object properties, but not daily values. Deprecated: Updating defaultLimitMinutes is no longer supported
+	 * @param {String} managementUnitId The ID of the management unit.
+	 * @param {String} timeOffLimitId The id of time off limit object to update
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
+	 */},{key:"patchWorkforcemanagementManagementunitTimeofflimit",value:function patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId,timeOffLimitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitTimeofflimit';}// verify the required parameter 'timeOffLimitId' is set
 if(timeOffLimitId===undefined||timeOffLimitId===null||timeOffLimitId===''){throw'Missing the required parameter "timeOffLimitId" when calling patchWorkforcemanagementManagementunitTimeofflimit';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementManagementunitTimeofflimit';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}','PATCH',{'managementUnitId':managementUnitId,'timeOffLimitId':timeOffLimitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Updates a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
-   * 
-   * @param {String} managementUnitId The ID of the management unit
-   * @param {String} timeOffPlanId The ID of the time off plan to update
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"patchWorkforcemanagementManagementunitTimeoffplan",value:function patchWorkforcemanagementManagementunitTimeoffplan(managementUnitId,timeOffPlanId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Updates a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit
+	 * @param {String} timeOffPlanId The ID of the time off plan to update
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
+	 */},{key:"patchWorkforcemanagementManagementunitTimeoffplan",value:function patchWorkforcemanagementManagementunitTimeoffplan(managementUnitId,timeOffPlanId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitTimeoffplan';}// verify the required parameter 'timeOffPlanId' is set
 if(timeOffPlanId===undefined||timeOffPlanId===null||timeOffPlanId===''){throw'Missing the required parameter "timeOffPlanId" when calling patchWorkforcemanagementManagementunitTimeoffplan';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementManagementunitTimeoffplan';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}','PATCH',{'managementUnitId':managementUnitId,'timeOffPlanId':timeOffPlanId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Set integration status for a time off request.
-   * 
-   * @param {String} managementUnitId The ID of the management unit.
-   * @param {String} timeOffRequestId The ID of the time off request.
-   * @param {String} userId The ID of user to whom the time off request belongs.
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus",value:function patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus(managementUnitId,timeOffRequestId,userId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Set integration status for a time off request.
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit.
+	 * @param {String} timeOffRequestId The ID of the time off request.
+	 * @param {String} userId The ID of user to whom the time off request belongs.
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus",value:function patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus(managementUnitId,timeOffRequestId,userId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus';}// verify the required parameter 'timeOffRequestId' is set
 if(timeOffRequestId===undefined||timeOffRequestId===null||timeOffRequestId===''){throw'Missing the required parameter "timeOffRequestId" when calling patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus';}// verify the required parameter 'userId' is set
 if(userId===undefined||userId===null||userId===''){throw'Missing the required parameter "userId" when calling patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/{timeOffRequestId}/users/{userId}/integrationstatus','PATCH',{'managementUnitId':managementUnitId,'timeOffRequestId':timeOffRequestId,'userId':userId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Update management unit availability settings
-   * 
-   * @param {String} managementUnitId The ID of the management unit
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"patchWorkforcemanagementManagementunitUnavailabletimesSettings",value:function patchWorkforcemanagementManagementunitUnavailabletimesSettings(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Update management unit availability settings
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"patchWorkforcemanagementManagementunitUnavailabletimesSettings",value:function patchWorkforcemanagementManagementunitUnavailabletimesSettings(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitUnavailabletimesSettings';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementManagementunitUnavailabletimesSettings';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/unavailabletimes/settings','PATCH',{'managementUnitId':managementUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Update a time off request
-   * 
-   * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-   * @param {String} userId The id of the user the requested time off request belongs to
-   * @param {String} timeOffRequestId The id of the time off request to update
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"patchWorkforcemanagementManagementunitUserTimeoffrequest",value:function patchWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId,userId,timeOffRequestId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Update a time off request
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {String} userId The id of the user the requested time off request belongs to
+	 * @param {String} timeOffRequestId The id of the time off request to update
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"patchWorkforcemanagementManagementunitUserTimeoffrequest",value:function patchWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId,userId,timeOffRequestId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitUserTimeoffrequest';}// verify the required parameter 'userId' is set
 if(userId===undefined||userId===null||userId===''){throw'Missing the required parameter "userId" when calling patchWorkforcemanagementManagementunitUserTimeoffrequest';}// verify the required parameter 'timeOffRequestId' is set
 if(timeOffRequestId===undefined||timeOffRequestId===null||timeOffRequestId===''){throw'Missing the required parameter "timeOffRequestId" when calling patchWorkforcemanagementManagementunitUserTimeoffrequest';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementManagementunitUserTimeoffrequest';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}','PATCH',{'managementUnitId':managementUnitId,'userId':userId,'timeOffRequestId':timeOffRequestId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Updates a shift trade. This route can only be called by the initiating agent
-   * Deprecated. Use new route instead (/shifttrading/trades/{tradeId}/jobs)
-   * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-   * @param {String} weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-   * @param {String} tradeId The ID of the shift trade to update
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"patchWorkforcemanagementManagementunitWeekShifttrade",value:function patchWorkforcemanagementManagementunitWeekShifttrade(managementUnitId,weekDateId,tradeId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Updates a shift trade. This route can only be called by the initiating agent
+	 * Deprecated. Use new route instead (/shifttrading/trades/{tradeId}/jobs)
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {String} weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} tradeId The ID of the shift trade to update
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
+	 */},{key:"patchWorkforcemanagementManagementunitWeekShifttrade",value:function patchWorkforcemanagementManagementunitWeekShifttrade(managementUnitId,weekDateId,tradeId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitWeekShifttrade';}// verify the required parameter 'weekDateId' is set
 if(weekDateId===undefined||weekDateId===null){throw'Missing the required parameter "weekDateId" when calling patchWorkforcemanagementManagementunitWeekShifttrade';}// verify the required parameter 'tradeId' is set
 if(tradeId===undefined||tradeId===null||tradeId===''){throw'Missing the required parameter "tradeId" when calling patchWorkforcemanagementManagementunitWeekShifttrade';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementManagementunitWeekShifttrade';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}','PATCH',{'managementUnitId':managementUnitId,'weekDateId':weekDateId,'tradeId':tradeId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Update a work plan
-   * 
-   * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-   * @param {String} workPlanId The ID of the work plan to update
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object} opts.validationMode Allows to update work plan even if validation result is invalid
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"patchWorkforcemanagementManagementunitWorkplan",value:function patchWorkforcemanagementManagementunitWorkplan(managementUnitId,workPlanId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Update a work plan
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {String} workPlanId The ID of the work plan to update
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.validationMode Allows to update work plan even if validation result is invalid
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"patchWorkforcemanagementManagementunitWorkplan",value:function patchWorkforcemanagementManagementunitWorkplan(managementUnitId,workPlanId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitWorkplan';}// verify the required parameter 'workPlanId' is set
 if(workPlanId===undefined||workPlanId===null||workPlanId===''){throw'Missing the required parameter "workPlanId" when calling patchWorkforcemanagementManagementunitWorkplan';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementManagementunitWorkplan';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}','PATCH',{'managementUnitId':managementUnitId,'workPlanId':workPlanId},{'validationMode':opts['validationMode']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Update a work plan rotation
-   * 
-   * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-   * @param {String} workPlanRotationId The ID of the work plan rotation to update
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"patchWorkforcemanagementManagementunitWorkplanrotation",value:function patchWorkforcemanagementManagementunitWorkplanrotation(managementUnitId,workPlanRotationId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Update a work plan rotation
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {String} workPlanRotationId The ID of the work plan rotation to update
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"patchWorkforcemanagementManagementunitWorkplanrotation",value:function patchWorkforcemanagementManagementunitWorkplanrotation(managementUnitId,workPlanRotationId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitWorkplanrotation';}// verify the required parameter 'workPlanRotationId' is set
 if(workPlanRotationId===undefined||workPlanRotationId===null||workPlanRotationId===''){throw'Missing the required parameter "workPlanRotationId" when calling patchWorkforcemanagementManagementunitWorkplanrotation';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementManagementunitWorkplanrotation';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}','PATCH',{'managementUnitId':managementUnitId,'workPlanRotationId':workPlanRotationId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Update agent scheduling preferences
-   * 
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * patchWorkforcemanagementSchedulingpreferences is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   */},{key:"patchWorkforcemanagementSchedulingpreferences",value:function patchWorkforcemanagementSchedulingpreferences(body,opts){opts=opts||{};// verify the required parameter 'body' is set
+	 * Update agent scheduling preferences
+	 * 
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * patchWorkforcemanagementSchedulingpreferences is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */},{key:"patchWorkforcemanagementSchedulingpreferences",value:function patchWorkforcemanagementSchedulingpreferences(body,opts){opts=opts||{};// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementSchedulingpreferences';}return this.apiClient.callApi('/api/v2/workforcemanagement/schedulingpreferences','PATCH',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Update a time off request for the current user
-   * 
-   * @param {String} timeOffRequestId The ID of the time off request
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"patchWorkforcemanagementTimeoffrequest",value:function patchWorkforcemanagementTimeoffrequest(timeOffRequestId,body,opts){opts=opts||{};// verify the required parameter 'timeOffRequestId' is set
+	 * Update a time off request for the current user
+	 * 
+	 * @param {String} timeOffRequestId The ID of the time off request
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"patchWorkforcemanagementTimeoffrequest",value:function patchWorkforcemanagementTimeoffrequest(timeOffRequestId,body,opts){opts=opts||{};// verify the required parameter 'timeOffRequestId' is set
 if(timeOffRequestId===undefined||timeOffRequestId===null||timeOffRequestId===''){throw'Missing the required parameter "timeOffRequestId" when calling patchWorkforcemanagementTimeoffrequest';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementTimeoffrequest';}return this.apiClient.callApi('/api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}','PATCH',{'timeOffRequestId':timeOffRequestId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Update agent unavailable times
-   * 
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"patchWorkforcemanagementUnavailabletimes",value:function patchWorkforcemanagementUnavailabletimes(body,opts){opts=opts||{};// verify the required parameter 'body' is set
+	 * Update agent unavailable times
+	 * 
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"patchWorkforcemanagementUnavailabletimes",value:function patchWorkforcemanagementUnavailabletimes(body,opts){opts=opts||{};// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementUnavailabletimes';}return this.apiClient.callApi('/api/v2/workforcemanagement/unavailabletimes','PATCH',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Update work plan bid ranks for a user
-   * 
-   * @param {String} userId The userId to whom the work plan bid ranks apply.
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"patchWorkforcemanagementUserWorkplanbidranks",value:function patchWorkforcemanagementUserWorkplanbidranks(userId,body,opts){opts=opts||{};// verify the required parameter 'userId' is set
+	 * Update work plan bid ranks for a user
+	 * 
+	 * @param {String} userId The userId to whom the work plan bid ranks apply.
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"patchWorkforcemanagementUserWorkplanbidranks",value:function patchWorkforcemanagementUserWorkplanbidranks(userId,body,opts){opts=opts||{};// verify the required parameter 'userId' is set
 if(userId===undefined||userId===null||userId===''){throw'Missing the required parameter "userId" when calling patchWorkforcemanagementUserWorkplanbidranks';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementUserWorkplanbidranks';}return this.apiClient.callApi('/api/v2/workforcemanagement/users/{userId}/workplanbidranks','PATCH',{'userId':userId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Update bulk work plan bid ranks on users. Max 50 users can be updated at a time.
-   * 
-   * @param {Array.<Object>} body Users
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"patchWorkforcemanagementUsersWorkplanbidranksBulk",value:function patchWorkforcemanagementUsersWorkplanbidranksBulk(body,opts){opts=opts||{};// verify the required parameter 'body' is set
+	 * Update bulk work plan bid ranks on users. Max 50 users can be updated at a time.
+	 * 
+	 * @param {Array.<Object>} body Users
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"patchWorkforcemanagementUsersWorkplanbidranksBulk",value:function patchWorkforcemanagementUsersWorkplanbidranksBulk(body,opts){opts=opts||{};// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementUsersWorkplanbidranksBulk';}return this.apiClient.callApi('/api/v2/workforcemanagement/users/workplanbidranks/bulk','PATCH',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Update an agent's work plan bidding preference
-   * 
-   * @param {String} bidId The ID of the work plan bid
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"patchWorkforcemanagementWorkplanbidPreferences",value:function patchWorkforcemanagementWorkplanbidPreferences(bidId,body,opts){opts=opts||{};// verify the required parameter 'bidId' is set
+	 * Update an agent's work plan bidding preference
+	 * 
+	 * @param {String} bidId The ID of the work plan bid
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"patchWorkforcemanagementWorkplanbidPreferences",value:function patchWorkforcemanagementWorkplanbidPreferences(bidId,body,opts){opts=opts||{};// verify the required parameter 'bidId' is set
 if(bidId===undefined||bidId===null||bidId===''){throw'Missing the required parameter "bidId" when calling patchWorkforcemanagementWorkplanbidPreferences';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementWorkplanbidPreferences';}return this.apiClient.callApi('/api/v2/workforcemanagement/workplanbids/{bidId}/preferences','PATCH',{'bidId':bidId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Submit an adherence explanation for the current user
-   * 
-   * @param {Object} body The request body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementAdherenceExplanations",value:function postWorkforcemanagementAdherenceExplanations(body,opts){opts=opts||{};// verify the required parameter 'body' is set
+	 * Submit an adherence adjustment for the current user
+	 * 
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementAdherenceAdjustments",value:function postWorkforcemanagementAdherenceAdjustments(body,opts){opts=opts||{};// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementAdherenceAdjustments';}return this.apiClient.callApi('/api/v2/workforcemanagement/adherence/adjustments','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Query adherence adjustments for the current user
+	 * 
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {String} opts.pageSize The page size for the listing. The maximum page size is 500. (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementAdherenceAdjustmentsQuery",value:function postWorkforcemanagementAdherenceAdjustmentsQuery(body,opts){opts=opts||{};// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementAdherenceAdjustmentsQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/adherence/adjustments/query','POST',{},{'before':opts['before'],'after':opts['after'],'pageSize':opts['pageSize']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Submit an adherence explanation for the current user
+	 * 
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementAdherenceExplanations",value:function postWorkforcemanagementAdherenceExplanations(body,opts){opts=opts||{};// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementAdherenceExplanations';}return this.apiClient.callApi('/api/v2/workforcemanagement/adherence/explanations','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Query adherence explanations for the current user
-   * 
-   * @param {Object} body The request body
-   * @param {Object} opts Optional parameters
-   * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
-   * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementAdherenceExplanationsQuery",value:function postWorkforcemanagementAdherenceExplanationsQuery(body,opts){opts=opts||{};// verify the required parameter 'body' is set
+	 * Query adherence explanations for the current user
+	 * 
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementAdherenceExplanationsQuery",value:function postWorkforcemanagementAdherenceExplanationsQuery(body,opts){opts=opts||{};// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementAdherenceExplanationsQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/adherence/explanations/query','POST',{},{'forceAsync':opts['forceAsync'],'forceDownloadService':opts['forceDownloadService']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Request a historical adherence report in bulk
-   * 
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementAdherenceHistoricalBulk",value:function postWorkforcemanagementAdherenceHistoricalBulk(body,opts){opts=opts||{};// verify the required parameter 'body' is set
+	 * Request a historical adherence report in bulk
+	 * 
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementAdherenceHistoricalBulk",value:function postWorkforcemanagementAdherenceHistoricalBulk(body,opts){opts=opts||{};// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementAdherenceHistoricalBulk';}return this.apiClient.callApi('/api/v2/workforcemanagement/adherence/historical/bulk','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Add an adherence explanation for the requested user
-   * 
-   * @param {String} agentId The ID of the agent to query
-   * @param {Object} body The request body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementAgentAdherenceExplanations",value:function postWorkforcemanagementAgentAdherenceExplanations(agentId,body,opts){opts=opts||{};// verify the required parameter 'agentId' is set
+	 * Query adherence adjustments for the requested agent
+	 * 
+	 * @param {String} agentId The ID of the agent
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {String} opts.pageSize The page size for the listing. The maximum page size is 500. (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementAgentAdherenceAdjustmentsQuery",value:function postWorkforcemanagementAgentAdherenceAdjustmentsQuery(agentId,body,opts){opts=opts||{};// verify the required parameter 'agentId' is set
+if(agentId===undefined||agentId===null||agentId===''){throw'Missing the required parameter "agentId" when calling postWorkforcemanagementAgentAdherenceAdjustmentsQuery';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementAgentAdherenceAdjustmentsQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/agents/{agentId}/adherence/adjustments/query','POST',{'agentId':agentId},{'before':opts['before'],'after':opts['after'],'pageSize':opts['pageSize']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Add an adherence explanation for the requested user
+	 * 
+	 * @param {String} agentId The ID of the agent to query
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementAgentAdherenceExplanations",value:function postWorkforcemanagementAgentAdherenceExplanations(agentId,body,opts){opts=opts||{};// verify the required parameter 'agentId' is set
 if(agentId===undefined||agentId===null||agentId===''){throw'Missing the required parameter "agentId" when calling postWorkforcemanagementAgentAdherenceExplanations';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementAgentAdherenceExplanations';}return this.apiClient.callApi('/api/v2/workforcemanagement/agents/{agentId}/adherence/explanations','POST',{'agentId':agentId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Query adherence explanations for the given agent across a specified range
-   * 
-   * @param {String} agentId The ID of the agent to query
-   * @param {Object} body The request body
-   * @param {Object} opts Optional parameters
-   * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
-   * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementAgentAdherenceExplanationsQuery",value:function postWorkforcemanagementAgentAdherenceExplanationsQuery(agentId,body,opts){opts=opts||{};// verify the required parameter 'agentId' is set
+	 * Query adherence explanations for the given agent across a specified range
+	 * 
+	 * @param {String} agentId The ID of the agent to query
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementAgentAdherenceExplanationsQuery",value:function postWorkforcemanagementAgentAdherenceExplanationsQuery(agentId,body,opts){opts=opts||{};// verify the required parameter 'agentId' is set
 if(agentId===undefined||agentId===null||agentId===''){throw'Missing the required parameter "agentId" when calling postWorkforcemanagementAgentAdherenceExplanationsQuery';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementAgentAdherenceExplanationsQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/query','POST',{'agentId':agentId},{'forceAsync':opts['forceAsync'],'forceDownloadService':opts['forceDownloadService']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get agent scheduling preferences
-   * 
-   * @param {String} agentId The ID of the agent
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * postWorkforcemanagementAgentSchedulingpreferencesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   */},{key:"postWorkforcemanagementAgentSchedulingpreferencesQuery",value:function postWorkforcemanagementAgentSchedulingpreferencesQuery(agentId,body,opts){opts=opts||{};// verify the required parameter 'agentId' is set
+	 * Get agent scheduling preferences
+	 * 
+	 * @param {String} agentId The ID of the agent
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * postWorkforcemanagementAgentSchedulingpreferencesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */},{key:"postWorkforcemanagementAgentSchedulingpreferencesQuery",value:function postWorkforcemanagementAgentSchedulingpreferencesQuery(agentId,body,opts){opts=opts||{};// verify the required parameter 'agentId' is set
 if(agentId===undefined||agentId===null||agentId===''){throw'Missing the required parameter "agentId" when calling postWorkforcemanagementAgentSchedulingpreferencesQuery';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementAgentSchedulingpreferencesQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/agents/{agentId}/schedulingpreferences/query','POST',{'agentId':agentId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get agent unavailable times
-   * 
-   * @param {String} agentId The ID of the agent
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementAgentUnavailabletimesQuery",value:function postWorkforcemanagementAgentUnavailabletimesQuery(agentId,body,opts){opts=opts||{};// verify the required parameter 'agentId' is set
+	 * Get agent unavailable times
+	 * 
+	 * @param {String} agentId The ID of the agent
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementAgentUnavailabletimesQuery",value:function postWorkforcemanagementAgentUnavailabletimesQuery(agentId,body,opts){opts=opts||{};// verify the required parameter 'agentId' is set
 if(agentId===undefined||agentId===null||agentId===''){throw'Missing the required parameter "agentId" when calling postWorkforcemanagementAgentUnavailabletimesQuery';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementAgentUnavailabletimesQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/agents/{agentId}/unavailabletimes/query','POST',{'agentId':agentId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Move agents in and out of management unit
-   * 
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementAgents",value:function postWorkforcemanagementAgents(body,opts){opts=opts||{};// verify the required parameter 'body' is set
+	 * Move agents in and out of management unit
+	 * 
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementAgents",value:function postWorkforcemanagementAgents(body,opts){opts=opts||{};// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementAgents';}return this.apiClient.callApi('/api/v2/workforcemanagement/agents','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Query integrations for agents
-   * 
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementAgentsIntegrationsHrisQuery",value:function postWorkforcemanagementAgentsIntegrationsHrisQuery(body,opts){opts=opts||{};// verify the required parameter 'body' is set
+	 * Query integrations for agents
+	 * 
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementAgentsIntegrationsHrisQuery",value:function postWorkforcemanagementAgentsIntegrationsHrisQuery(body,opts){opts=opts||{};// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementAgentsIntegrationsHrisQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/agents/integrations/hris/query','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Request an agent historical adherence report
-   * The maximum supported range for historical adherence queries is 31 days, or 7 days when the expand query parameter includes any of the following: exceptionInfo, actuals, scheduledActivities
-   * @param {Object} opts Optional parameters
-   * @param {Array.<String>} opts.expand Which fields, if any, to expand with. wfm:AgentHistoricalAdherenceConformance:view permission is required for conformance, and wfm:agentSchedule:view permission is required for scheduledActivities.
-   * @param {Object} opts.body body
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementAgentsMeAdherenceHistoricalJobs",value:function postWorkforcemanagementAgentsMeAdherenceHistoricalJobs(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/agents/me/adherence/historical/jobs','POST',{},{'expand':this.apiClient.buildCollectionParam(opts['expand'],'multi')},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get agent possible work shifts for requested time frame
-   * 
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementAgentsMePossibleworkshifts",value:function postWorkforcemanagementAgentsMePossibleworkshifts(body,opts){opts=opts||{};// verify the required parameter 'body' is set
+	 * Request an agent historical adherence report
+	 * The maximum supported range for historical adherence queries is 31 days, or 7 days when the expand query parameter includes any of the following: exceptionInfo, actuals, scheduledActivities
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand with. wfm:AgentHistoricalAdherenceConformance:view permission is required for conformance, and wfm:agentSchedule:view permission is required for scheduledActivities.
+	 * @param {Object} opts.body body
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementAgentsMeAdherenceHistoricalJobs",value:function postWorkforcemanagementAgentsMeAdherenceHistoricalJobs(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/agents/me/adherence/historical/jobs','POST',{},{'expand':this.apiClient.buildCollectionParam(opts['expand'],'multi')},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Get agent possible work shifts for requested time frame
+	 * 
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementAgentsMePossibleworkshifts",value:function postWorkforcemanagementAgentsMePossibleworkshifts(body,opts){opts=opts||{};// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementAgentsMePossibleworkshifts';}return this.apiClient.callApi('/api/v2/workforcemanagement/agents/me/possibleworkshifts','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Bulk add enrollments to opportunities for the authenticated agent
-   * Allows an agent to enroll in opportunities. This endpoint can return partial success.
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkAdd",value:function postWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkAdd(body,opts){opts=opts||{};// verify the required parameter 'body' is set
+	 * Bulk add enrollments to opportunities for the authenticated agent
+	 * Allows an agent to enroll in opportunities. This endpoint can return partial success.
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkAdd",value:function postWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkAdd(body,opts){opts=opts||{};// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkAdd';}return this.apiClient.callApi('/api/v2/workforcemanagement/agents/opportunities/enrollments/bulk/add','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Bulk update enrollment status for the authenticated agent
-   * Allows an agent to update the status of their enrollments (e.g. withdraw). Returns partial success if some enrollments cannot be updated.
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkStatusesUpdate",value:function postWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkStatusesUpdate(body,opts){opts=opts||{};// verify the required parameter 'body' is set
+	 * Bulk update enrollment status for the authenticated agent
+	 * Allows an agent to update the status of their enrollments (e.g. withdraw). Returns partial success if some enrollments cannot be updated.
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkStatusesUpdate",value:function postWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkStatusesUpdate(body,opts){opts=opts||{};// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkStatusesUpdate';}return this.apiClient.callApi('/api/v2/workforcemanagement/agents/opportunities/enrollments/bulk/statuses/update','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Query opportunities for the authenticated agent
-   * Queries within the specified date range. Each opportunity includes the agents enrollment details if they have enrolled.
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object} opts.expand List of resources to expand
-   * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementAgentsOpportunitiesQuery",value:function postWorkforcemanagementAgentsOpportunitiesQuery(body,opts){opts=opts||{};// verify the required parameter 'body' is set
+	 * Query opportunities for the authenticated agent
+	 * Queries within the specified date range. Each opportunity includes the agents enrollment details if they have enrolled.
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand List of resources to expand
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementAgentsOpportunitiesQuery",value:function postWorkforcemanagementAgentsOpportunitiesQuery(body,opts){opts=opts||{};// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementAgentsOpportunitiesQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/agents/opportunities/query','POST',{},{'expand':opts['expand'],'forceDownloadService':opts['forceDownloadService']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Fetch agent schedules for the logged in user's management unit
-   * 
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
-   * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementAgentschedulesManagementunitsMine",value:function postWorkforcemanagementAgentschedulesManagementunitsMine(body,opts){opts=opts||{};// verify the required parameter 'body' is set
+	 * Fetch agent schedules for the logged in user's management unit
+	 * 
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementAgentschedulesManagementunitsMine",value:function postWorkforcemanagementAgentschedulesManagementunitsMine(body,opts){opts=opts||{};// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementAgentschedulesManagementunitsMine';}return this.apiClient.callApi('/api/v2/workforcemanagement/agentschedules/managementunits/mine','POST',{},{'forceAsync':opts['forceAsync'],'forceDownloadService':opts['forceDownloadService']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get published schedule for the current user
-   * 
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementAgentschedulesMine",value:function postWorkforcemanagementAgentschedulesMine(body,opts){opts=opts||{};// verify the required parameter 'body' is set
+	 * Get published schedule for the current user
+	 * 
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementAgentschedulesMine",value:function postWorkforcemanagementAgentschedulesMine(body,opts){opts=opts||{};// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementAgentschedulesMine';}return this.apiClient.callApi('/api/v2/workforcemanagement/agentschedules/mine','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Request a list of alternative shift offers for a given schedule
-   * 
-   * @param {Object} body The request body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementAlternativeshiftsOffersJobs",value:function postWorkforcemanagementAlternativeshiftsOffersJobs(body,opts){opts=opts||{};// verify the required parameter 'body' is set
+	 * Request a list of alternative shift offers for a given schedule
+	 * 
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementAlternativeshiftsOffersJobs",value:function postWorkforcemanagementAlternativeshiftsOffersJobs(body,opts){opts=opts||{};// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementAlternativeshiftsOffersJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/alternativeshifts/offers/jobs','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Request a search of alternative shift offers for a given shift
-   * 
-   * @param {Object} body The request body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementAlternativeshiftsOffersSearchJobs",value:function postWorkforcemanagementAlternativeshiftsOffersSearchJobs(body,opts){opts=opts||{};// verify the required parameter 'body' is set
+	 * Request a search of alternative shift offers for a given shift
+	 * 
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementAlternativeshiftsOffersSearchJobs",value:function postWorkforcemanagementAlternativeshiftsOffersSearchJobs(body,opts){opts=opts||{};// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementAlternativeshiftsOffersSearchJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/alternativeshifts/offers/search/jobs','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Create my alternative shift trade using an existing offer's jobId
-   * 
-   * @param {Object} body The request body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementAlternativeshiftsTrades",value:function postWorkforcemanagementAlternativeshiftsTrades(body,opts){opts=opts||{};// verify the required parameter 'body' is set
+	 * Create my alternative shift trade using an existing offer's jobId
+	 * 
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementAlternativeshiftsTrades",value:function postWorkforcemanagementAlternativeshiftsTrades(body,opts){opts=opts||{};// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementAlternativeshiftsTrades';}return this.apiClient.callApi('/api/v2/workforcemanagement/alternativeshifts/trades','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Create a new activity code
-   * 
-   * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitActivitycodes",value:function postWorkforcemanagementBusinessunitActivitycodes(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Create a new activity code
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitActivitycodes",value:function postWorkforcemanagementBusinessunitActivitycodes(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitActivitycodes';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitActivitycodes';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Run an activity plan manually
-   * Triggers a job running the activity plan. The activity plan cannot be updated until the job completes
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} activityPlanId The ID of the activity plan to run
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitActivityplanRunsJobs",value:function postWorkforcemanagementBusinessunitActivityplanRunsJobs(businessUnitId,activityPlanId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Delete an activity plan
+	 * Triggers a job to delete the activity plan. No further changes to the activity plan can be made
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} activityPlanId The ID of the activity plan to delete
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitActivityplanDeletionsJobs",value:function postWorkforcemanagementBusinessunitActivityplanDeletionsJobs(businessUnitId,activityPlanId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitActivityplanDeletionsJobs';}// verify the required parameter 'activityPlanId' is set
+if(activityPlanId===undefined||activityPlanId===null||activityPlanId===''){throw'Missing the required parameter "activityPlanId" when calling postWorkforcemanagementBusinessunitActivityplanDeletionsJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/deletions/jobs','POST',{'businessUnitId':businessUnitId,'activityPlanId':activityPlanId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Triggers a job to delete users from a session in the activity plan occurrence
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} activityPlanId The ID of the activity plan
+	 * @param {String} occurrenceId The ID of the activity plan occurrence
+	 * @param {String} sessionId The ID of the activity plan occurrence session
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobs",value:function postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobs(businessUnitId,activityPlanId,occurrenceId,sessionId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobs';}// verify the required parameter 'activityPlanId' is set
+if(activityPlanId===undefined||activityPlanId===null||activityPlanId===''){throw'Missing the required parameter "activityPlanId" when calling postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobs';}// verify the required parameter 'occurrenceId' is set
+if(occurrenceId===undefined||occurrenceId===null||occurrenceId===''){throw'Missing the required parameter "occurrenceId" when calling postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobs';}// verify the required parameter 'sessionId' is set
+if(sessionId===undefined||sessionId===null||sessionId===''){throw'Missing the required parameter "sessionId" when calling postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobs';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/sessions/{sessionId}/users/deletions/jobs','POST',{'businessUnitId':businessUnitId,'activityPlanId':activityPlanId,'occurrenceId':occurrenceId,'sessionId':sessionId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Triggers a job to delete sessions for the activity plan occurrence
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} activityPlanId The ID of the activity plan
+	 * @param {String} occurrenceId The ID of the activity plan occurrence
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobs",value:function postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobs(businessUnitId,activityPlanId,occurrenceId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobs';}// verify the required parameter 'activityPlanId' is set
+if(activityPlanId===undefined||activityPlanId===null||activityPlanId===''){throw'Missing the required parameter "activityPlanId" when calling postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobs';}// verify the required parameter 'occurrenceId' is set
+if(occurrenceId===undefined||occurrenceId===null||occurrenceId===''){throw'Missing the required parameter "occurrenceId" when calling postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobs';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/sessions/deletions/jobs','POST',{'businessUnitId':businessUnitId,'activityPlanId':activityPlanId,'occurrenceId':occurrenceId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Delete occurrences for the activity plan
+	 * Triggers a job to delete occurrences of the activity plan. The activity plan cannot be updated until the job completes
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} activityPlanId The ID of the activity plan
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobs",value:function postWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobs(businessUnitId,activityPlanId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobs';}// verify the required parameter 'activityPlanId' is set
+if(activityPlanId===undefined||activityPlanId===null||activityPlanId===''){throw'Missing the required parameter "activityPlanId" when calling postWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobs';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/deletions/jobs','POST',{'businessUnitId':businessUnitId,'activityPlanId':activityPlanId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Run an activity plan manually
+	 * Triggers a job running the activity plan. The activity plan cannot be updated until the job completes
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} activityPlanId The ID of the activity plan to run
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitActivityplanRunsJobs",value:function postWorkforcemanagementBusinessunitActivityplanRunsJobs(businessUnitId,activityPlanId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitActivityplanRunsJobs';}// verify the required parameter 'activityPlanId' is set
 if(activityPlanId===undefined||activityPlanId===null||activityPlanId===''){throw'Missing the required parameter "activityPlanId" when calling postWorkforcemanagementBusinessunitActivityplanRunsJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/runs/jobs','POST',{'businessUnitId':businessUnitId,'activityPlanId':activityPlanId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Create an activity plan
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitActivityplans",value:function postWorkforcemanagementBusinessunitActivityplans(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Create an activity plan
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitActivityplans",value:function postWorkforcemanagementBusinessunitActivityplans(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitActivityplans';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitActivityplans';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Query adherence explanations across an entire business unit for the requested period
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} body The request body
-   * @param {Object} opts Optional parameters
-   * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
-   * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitAdherenceExplanationsQuery",value:function postWorkforcemanagementBusinessunitAdherenceExplanationsQuery(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Query adherence adjustments for a business unit. Results will be returned using cursor pagination
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {String} opts.pageSize The page size for the listing. The maximum page size is 500. (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitAdherenceAdjustmentsQuery",value:function postWorkforcemanagementBusinessunitAdherenceAdjustmentsQuery(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitAdherenceAdjustmentsQuery';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitAdherenceAdjustmentsQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/query','POST',{'businessUnitId':businessUnitId},{'before':opts['before'],'after':opts['after'],'pageSize':opts['pageSize']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Creates an async query job for adherence adjustments in a business unit.
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs",value:function postWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/query/jobs','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Create an adherence adjustment reason code for a business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes",value:function postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Create adherence adjustment reason codes in bulk for a business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk",value:function postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/bulk','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Query adherence explanations across an entire business unit for the requested period
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitAdherenceExplanationsQuery",value:function postWorkforcemanagementBusinessunitAdherenceExplanationsQuery(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitAdherenceExplanationsQuery';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitAdherenceExplanationsQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/explanations/query','POST',{'businessUnitId':businessUnitId},{'forceAsync':opts['forceAsync'],'forceDownloadService':opts['forceDownloadService']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Search published schedules
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
-   * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitAgentschedulesSearch",value:function postWorkforcemanagementBusinessunitAgentschedulesSearch(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Search published schedules
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitAgentschedulesSearch",value:function postWorkforcemanagementBusinessunitAgentschedulesSearch(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitAgentschedulesSearch';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitAgentschedulesSearch';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/agentschedules/search','POST',{'businessUnitId':businessUnitId},{'forceAsync':opts['forceAsync'],'forceDownloadService':opts['forceDownloadService']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * List alternative shifts trades for a given management unit or agent
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} body The request body
-   * @param {Object} opts Optional parameters
-   * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch",value:function postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * List alternative shifts trades for a given management unit or agent
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch",value:function postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/trades/search','POST',{'businessUnitId':businessUnitId},{'forceAsync':opts['forceAsync']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Copy a capacity plan
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} capacityPlanId The ID of the capacity plan
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitCapacityplanCopy",value:function postWorkforcemanagementBusinessunitCapacityplanCopy(businessUnitId,capacityPlanId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Copy a capacity plan
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} capacityPlanId The ID of the capacity plan
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitCapacityplanCopy",value:function postWorkforcemanagementBusinessunitCapacityplanCopy(businessUnitId,capacityPlanId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitCapacityplanCopy';}// verify the required parameter 'capacityPlanId' is set
 if(capacityPlanId===undefined||capacityPlanId===null||capacityPlanId===''){throw'Missing the required parameter "capacityPlanId" when calling postWorkforcemanagementBusinessunitCapacityplanCopy';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitCapacityplanCopy';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/copy','POST',{'businessUnitId':businessUnitId,'capacityPlanId':capacityPlanId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Regenerate requirements for capacity plan
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} capacityPlanId The ID of the capacity plan
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate",value:function postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate(businessUnitId,capacityPlanId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Regenerate requirements for capacity plan
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} capacityPlanId The ID of the capacity plan
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate",value:function postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate(businessUnitId,capacityPlanId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate';}// verify the required parameter 'capacityPlanId' is set
 if(capacityPlanId===undefined||capacityPlanId===null||capacityPlanId===''){throw'Missing the required parameter "capacityPlanId" when calling postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/requirement/generate','POST',{'businessUnitId':businessUnitId,'capacityPlanId':capacityPlanId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Create staffing group allocations for a capacity plan
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} capacityPlanId The ID of the capacity plan
-   * @param {Object} body 
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations",value:function postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(businessUnitId,capacityPlanId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Create staffing group allocations for a capacity plan
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} capacityPlanId The ID of the capacity plan
+	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations",value:function postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(businessUnitId,capacityPlanId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations';}// verify the required parameter 'capacityPlanId' is set
 if(capacityPlanId===undefined||capacityPlanId===null||capacityPlanId===''){throw'Missing the required parameter "capacityPlanId" when calling postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocations','POST',{'businessUnitId':businessUnitId,'capacityPlanId':capacityPlanId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Query staffing groups allocations history for a capacity plan
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} capacityPlanId The ID of the capacity plan
-   * @param {Object} body 
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery",value:function postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery(businessUnitId,capacityPlanId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Query staffing groups allocations history for a capacity plan
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} capacityPlanId The ID of the capacity plan
+	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery",value:function postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery(businessUnitId,capacityPlanId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery';}// verify the required parameter 'capacityPlanId' is set
 if(capacityPlanId===undefined||capacityPlanId===null||capacityPlanId===''){throw'Missing the required parameter "capacityPlanId" when calling postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocationshistory/query','POST',{'businessUnitId':businessUnitId,'capacityPlanId':capacityPlanId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Force regenerate the latest long term staffing requirements for a business unit
-   * 
-   * @param {String} businessUnitId 
-   * @param {String} weekDateId weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-   * @param {String} forecastId forecastId of forecast
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate",value:function postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate(businessUnitId,weekDateId,forecastId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Force regenerate the latest long term staffing requirements for a business unit
+	 * 
+	 * @param {String} businessUnitId 
+	 * @param {String} weekDateId weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} forecastId forecastId of forecast
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate",value:function postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate(businessUnitId,weekDateId,forecastId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate';}// verify the required parameter 'weekDateId' is set
 if(weekDateId===undefined||weekDateId===null){throw'Missing the required parameter "weekDateId" when calling postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate';}// verify the required parameter 'forecastId' is set
 if(forecastId===undefined||forecastId===null||forecastId===''){throw'Missing the required parameter "forecastId" when calling postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplanning/longtermrequirements/automaticbestmethod/weeks/{weekDateId}/forecasts/{forecastId}/forceregenerate','POST',{'businessUnitId':businessUnitId,'weekDateId':weekDateId,'forecastId':forecastId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Create a new capacity plan
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitCapacityplans",value:function postWorkforcemanagementBusinessunitCapacityplans(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Create a new capacity plan
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitCapacityplans",value:function postWorkforcemanagementBusinessunitCapacityplans(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitCapacityplans';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitCapacityplans';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Delete capacity plans in a business unit
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitCapacityplansBulkRemove",value:function postWorkforcemanagementBusinessunitCapacityplansBulkRemove(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Delete capacity plans in a business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitCapacityplansBulkRemove",value:function postWorkforcemanagementBusinessunitCapacityplansBulkRemove(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitCapacityplansBulkRemove';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitCapacityplansBulkRemove';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/bulk/remove','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Initiates the decision metrics update process
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitDecisionmetricsUpdate",value:function postWorkforcemanagementBusinessunitDecisionmetricsUpdate(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Initiates the decision metrics update process
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitDecisionmetricsUpdate",value:function postWorkforcemanagementBusinessunitDecisionmetricsUpdate(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitDecisionmetricsUpdate';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitDecisionmetricsUpdate';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/decisionmetrics/update','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Creates a signed upload URL for updating decision metrics
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitDecisionmetricsUpdateUploadurl",value:function postWorkforcemanagementBusinessunitDecisionmetricsUpdateUploadurl(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Creates a signed upload URL for updating decision metrics
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitDecisionmetricsUpdateUploadurl",value:function postWorkforcemanagementBusinessunitDecisionmetricsUpdateUploadurl(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitDecisionmetricsUpdateUploadurl';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitDecisionmetricsUpdateUploadurl';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/decisionmetrics/update/uploadurl','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get intraday data for the given date for the requested planningGroupIds
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitIntraday",value:function postWorkforcemanagementBusinessunitIntraday(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get intraday data for the given date for the requested planningGroupIds
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitIntraday",value:function postWorkforcemanagementBusinessunitIntraday(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitIntraday';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitIntraday';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday','POST',{'businessUnitId':businessUnitId},{'forceAsync':opts['forceAsync']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Create a session export job
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} body The request body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobs",value:function postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobs(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Create a session export job
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobs",value:function postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobs(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobs';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportForecastJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/forecast/jobs','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Create a historical export job
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} body The request body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobs",value:function postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobs(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Create a historical export job
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobs",value:function postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobs(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobs';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportHistoricalJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/historical/jobs','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Create a snapshot export job
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} body The request body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobs",value:function postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobs(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Create a snapshot export job
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobs",value:function postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobs(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobs';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionExportSnapshotJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/snapshot/jobs','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Bulk add opportunities
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitOpportunitiesBulkAdd",value:function postWorkforcemanagementBusinessunitOpportunitiesBulkAdd(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Bulk add opportunities
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitOpportunitiesBulkAdd",value:function postWorkforcemanagementBusinessunitOpportunitiesBulkAdd(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitOpportunitiesBulkAdd';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitOpportunitiesBulkAdd';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities/bulk/add','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Bulk publish opportunities
-   * Published opportunities become available for agent enrollment when they open. Returns partial success if some opportunities cannot be published.
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitOpportunitiesBulkPublish",value:function postWorkforcemanagementBusinessunitOpportunitiesBulkPublish(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Bulk publish opportunities
+	 * Published opportunities become available for agent enrollment when they open. Returns partial success if some opportunities cannot be published.
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitOpportunitiesBulkPublish",value:function postWorkforcemanagementBusinessunitOpportunitiesBulkPublish(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitOpportunitiesBulkPublish';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitOpportunitiesBulkPublish';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities/bulk/publish','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Bulk remove opportunities
-   * This operation is permanent and cannot be undone. Returns partial success if some opportunities cannot be removed.
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitOpportunitiesBulkRemove",value:function postWorkforcemanagementBusinessunitOpportunitiesBulkRemove(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Bulk remove opportunities
+	 * This operation is permanent and cannot be undone. Returns partial success if some opportunities cannot be removed.
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitOpportunitiesBulkRemove",value:function postWorkforcemanagementBusinessunitOpportunitiesBulkRemove(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitOpportunitiesBulkRemove';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitOpportunitiesBulkRemove';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities/bulk/remove','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Bulk update opportunities status
-   * If status is Closed, pending enrollments are automatically denied; approved enrollments remain in schedules. Returns partial success if some opportunities cannot be updated.
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitOpportunitiesBulkStatusesUpdate",value:function postWorkforcemanagementBusinessunitOpportunitiesBulkStatusesUpdate(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Bulk update opportunities status
+	 * If status is Closed, pending enrollments are automatically denied; approved enrollments remain in schedules. Returns partial success if some opportunities cannot be updated.
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitOpportunitiesBulkStatusesUpdate",value:function postWorkforcemanagementBusinessunitOpportunitiesBulkStatusesUpdate(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitOpportunitiesBulkStatusesUpdate';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitOpportunitiesBulkStatusesUpdate';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities/bulk/statuses/update','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Bulk update enrollment status
-   * Updates the status of enrollments (approve/deny). Returns partial success if some enrollments cannot be updated.
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitOpportunitiesEnrollmentsBulkStatusesUpdate",value:function postWorkforcemanagementBusinessunitOpportunitiesEnrollmentsBulkStatusesUpdate(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Bulk update enrollment status
+	 * Updates the status of enrollments (approve/deny). Returns partial success if some enrollments cannot be updated.
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitOpportunitiesEnrollmentsBulkStatusesUpdate",value:function postWorkforcemanagementBusinessunitOpportunitiesEnrollmentsBulkStatusesUpdate(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitOpportunitiesEnrollmentsBulkStatusesUpdate';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitOpportunitiesEnrollmentsBulkStatusesUpdate';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities/enrollments/bulk/statuses/update','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Query enrollments
-   * For more information about opportunities, use the expand parameter.
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object} opts.expand List of resources to expand
-   * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitOpportunitiesEnrollmentsQuery",value:function postWorkforcemanagementBusinessunitOpportunitiesEnrollmentsQuery(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Query enrollments
+	 * For more information about opportunities, use the expand parameter.
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand List of resources to expand
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitOpportunitiesEnrollmentsQuery",value:function postWorkforcemanagementBusinessunitOpportunitiesEnrollmentsQuery(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitOpportunitiesEnrollmentsQuery';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitOpportunitiesEnrollmentsQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities/enrollments/query','POST',{'businessUnitId':businessUnitId},{'expand':opts['expand'],'forceDownloadService':opts['forceDownloadService']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Query opportunities by external activity IDs
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitOpportunitiesExternalactivitiesQuery",value:function postWorkforcemanagementBusinessunitOpportunitiesExternalactivitiesQuery(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Query opportunities by external activity IDs
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitOpportunitiesExternalactivitiesQuery",value:function postWorkforcemanagementBusinessunitOpportunitiesExternalactivitiesQuery(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitOpportunitiesExternalactivitiesQuery';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitOpportunitiesExternalactivitiesQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities/externalactivities/query','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Query opportunities within the specified date range
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitOpportunitiesQuery",value:function postWorkforcemanagementBusinessunitOpportunitiesQuery(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Query opportunities within the specified date range
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitOpportunitiesQuery",value:function postWorkforcemanagementBusinessunitOpportunitiesQuery(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitOpportunitiesQuery';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitOpportunitiesQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities/query','POST',{'businessUnitId':businessUnitId},{'forceDownloadService':opts['forceDownloadService']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Adds a new planning group
-   * If the request body contains queue references in route paths, routing:queue:view is required in each referenced queues division.
-   * @param {String} businessUnitId The ID of the business unit.
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitPlanninggroups",value:function postWorkforcemanagementBusinessunitPlanninggroups(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Adds a new planning group
+	 * If the request body contains queue references in route paths, routing:queue:view is required in each referenced queues division.
+	 * @param {String} businessUnitId The ID of the business unit.
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitPlanninggroups",value:function postWorkforcemanagementBusinessunitPlanninggroups(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitPlanninggroups';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitPlanninggroups';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Copy a schedule bid
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} bidId The ID of the schedule bid to copy
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitSchedulebidCopy",value:function postWorkforcemanagementBusinessunitSchedulebidCopy(businessUnitId,bidId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Copy a schedule bid
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The ID of the schedule bid to copy
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitSchedulebidCopy",value:function postWorkforcemanagementBusinessunitSchedulebidCopy(businessUnitId,bidId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitSchedulebidCopy';}// verify the required parameter 'bidId' is set
 if(bidId===undefined||bidId===null||bidId===''){throw'Missing the required parameter "bidId" when calling postWorkforcemanagementBusinessunitSchedulebidCopy';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitSchedulebidCopy';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/copy','POST',{'businessUnitId':businessUnitId,'bidId':bidId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Add a bid group in a given schedule bid
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} bidId The ID of the schedule bid associated with the bid groups
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitSchedulebidGroups",value:function postWorkforcemanagementBusinessunitSchedulebidGroups(businessUnitId,bidId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Add a bid group in a given schedule bid
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The ID of the schedule bid associated with the bid groups
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitSchedulebidGroups",value:function postWorkforcemanagementBusinessunitSchedulebidGroups(businessUnitId,bidId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitSchedulebidGroups';}// verify the required parameter 'bidId' is set
 if(bidId===undefined||bidId===null||bidId===''){throw'Missing the required parameter "bidId" when calling postWorkforcemanagementBusinessunitSchedulebidGroups';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitSchedulebidGroups';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups','POST',{'businessUnitId':businessUnitId,'bidId':bidId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Create a new schedule bid
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} body The schedule bid to be created
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitSchedulebids",value:function postWorkforcemanagementBusinessunitSchedulebids(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Create a new schedule bid
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body The schedule bid to be created
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitSchedulebids",value:function postWorkforcemanagementBusinessunitSchedulebids(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitSchedulebids';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitSchedulebids';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Fetch all the agents with effective schedule set for the given BU
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesets",value:function postWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesets(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Fetch all the agents with effective schedule set for the given BU
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesets",value:function postWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesets(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesets';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitSchedulebidsEffectiveschedulesets';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/effectiveschedulesets','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Adds a new service goal template
-   * 
-   * @param {String} businessUnitId The ID of the business unit.
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitServicegoaltemplates",value:function postWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Adds a new service goal template
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit.
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitServicegoaltemplates",value:function postWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitServicegoaltemplates';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitServicegoaltemplates';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Queries and evaluates against shift trade configuration shift trades in a management unit per week
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} body The request body
-   * @param {Object} opts Optional parameters
-   * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
-   * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs",value:function postWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Queries and evaluates against shift trade configuration shift trades in a management unit per week
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs",value:function postWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/evaluate/jobs','POST',{'businessUnitId':businessUnitId},{'forceAsync':opts['forceAsync'],'forceDownloadService':opts['forceDownloadService']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Queries shift trades in a management unit per user
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} body The request body
-   * @param {Object} opts Optional parameters
-   * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
-   * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitShifttradingTradesQueryJobs",value:function postWorkforcemanagementBusinessunitShifttradingTradesQueryJobs(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Queries shift trades in a management unit per user
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitShifttradingTradesQueryJobs",value:function postWorkforcemanagementBusinessunitShifttradingTradesQueryJobs(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitShifttradingTradesQueryJobs';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitShifttradingTradesQueryJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/query/jobs','POST',{'businessUnitId':businessUnitId},{'forceAsync':opts['forceAsync'],'forceDownloadService':opts['forceDownloadService']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Bulk update multiple trade states. Permits a supervisor to approve or deny multiple trades.
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} body The request body
-   * @param {Object} opts Optional parameters
-   * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
-   * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobs",value:function postWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobs(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Bulk update multiple trade states. Permits a supervisor to approve or deny multiple trades.
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobs",value:function postWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobs(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobs';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/state/bulk/jobs','POST',{'businessUnitId':businessUnitId},{'forceAsync':opts['forceAsync'],'forceDownloadService':opts['forceDownloadService']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Start an async job to find potential shift trade matches for the current receiving user
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} body The request body
-   * @param {Object} opts Optional parameters
-   * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
-   * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobs",value:function postWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobs(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Start an async job to find potential shift trade matches for the current receiving user
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobs",value:function postWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobs(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobs';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/unmatched/search/jobs','POST',{'businessUnitId':businessUnitId},{'forceAsync':opts['forceAsync'],'forceDownloadService':opts['forceDownloadService']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Retrieves the summary of shift trades in a matched state per week
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} body The request body
-   * @param {Object} opts Optional parameters
-   * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobs",value:function postWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobs(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Retrieves the summary of shift trades in a matched state per week
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobs",value:function postWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobs(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobs';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/weeks/summary/jobs','POST',{'businessUnitId':businessUnitId},{'forceAsync':opts['forceAsync']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Creates a new staffing group
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitStaffinggroups",value:function postWorkforcemanagementBusinessunitStaffinggroups(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Creates a new staffing group
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitStaffinggroups",value:function postWorkforcemanagementBusinessunitStaffinggroups(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitStaffinggroups';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitStaffinggroups';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Gets a list of planning group to staffing groups list association
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery",value:function postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Gets a list of planning group to staffing groups list association
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery",value:function postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/planninggroups/query','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Gets staffing group associations for a list of user IDs
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitStaffinggroupsQuery",value:function postWorkforcemanagementBusinessunitStaffinggroupsQuery(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Gets staffing group associations for a list of user IDs
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitStaffinggroupsQuery",value:function postWorkforcemanagementBusinessunitStaffinggroupsQuery(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitStaffinggroupsQuery';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitStaffinggroupsQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/query','POST',{'businessUnitId':businessUnitId},{'forceDownloadService':opts['forceDownloadService']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Converts existing time-off limit to another granularity.
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} timeOffLimitId The ID of the time-off limit
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitTimeofflimitGranularityconversion",value:function postWorkforcemanagementBusinessunitTimeofflimitGranularityconversion(businessUnitId,timeOffLimitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Converts existing time-off limit to another granularity.
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} timeOffLimitId The ID of the time-off limit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitTimeofflimitGranularityconversion",value:function postWorkforcemanagementBusinessunitTimeofflimitGranularityconversion(businessUnitId,timeOffLimitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitTimeofflimitGranularityconversion';}// verify the required parameter 'timeOffLimitId' is set
 if(timeOffLimitId===undefined||timeOffLimitId===null||timeOffLimitId===''){throw'Missing the required parameter "timeOffLimitId" when calling postWorkforcemanagementBusinessunitTimeofflimitGranularityconversion';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitTimeofflimitGranularityconversion';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/granularityconversion','POST',{'businessUnitId':businessUnitId,'timeOffLimitId':timeOffLimitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Starts importing the uploaded time-off limit values
-   * Call after uploading the time-off limit values data to the url supplied by the /import/uploadurl route
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} timeOffLimitId The ID of the time-off limit object to set limit values for
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitTimeofflimitValuesImport",value:function postWorkforcemanagementBusinessunitTimeofflimitValuesImport(businessUnitId,timeOffLimitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Starts importing the uploaded time-off limit values
+	 * Call after uploading the time-off limit values data to the url supplied by the /import/uploadurl route
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} timeOffLimitId The ID of the time-off limit object to set limit values for
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitTimeofflimitValuesImport",value:function postWorkforcemanagementBusinessunitTimeofflimitValuesImport(businessUnitId,timeOffLimitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitTimeofflimitValuesImport';}// verify the required parameter 'timeOffLimitId' is set
 if(timeOffLimitId===undefined||timeOffLimitId===null||timeOffLimitId===''){throw'Missing the required parameter "timeOffLimitId" when calling postWorkforcemanagementBusinessunitTimeofflimitValuesImport';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitTimeofflimitValuesImport';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/import','POST',{'businessUnitId':businessUnitId,'timeOffLimitId':timeOffLimitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Creates a signed upload URL for importing values into time-off limit
-   * Once the upload is complete, call the /import route to start the import process
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} timeOffLimitId The ID of the time-off limit object to set values for
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitTimeofflimitValuesImportUploadurl",value:function postWorkforcemanagementBusinessunitTimeofflimitValuesImportUploadurl(businessUnitId,timeOffLimitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Creates a signed upload URL for importing values into time-off limit
+	 * Once the upload is complete, call the /import route to start the import process
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} timeOffLimitId The ID of the time-off limit object to set values for
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitTimeofflimitValuesImportUploadurl",value:function postWorkforcemanagementBusinessunitTimeofflimitValuesImportUploadurl(businessUnitId,timeOffLimitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitTimeofflimitValuesImportUploadurl';}// verify the required parameter 'timeOffLimitId' is set
 if(timeOffLimitId===undefined||timeOffLimitId===null||timeOffLimitId===''){throw'Missing the required parameter "timeOffLimitId" when calling postWorkforcemanagementBusinessunitTimeofflimitValuesImportUploadurl';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitTimeofflimitValuesImportUploadurl';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/import/uploadurl','POST',{'businessUnitId':businessUnitId,'timeOffLimitId':timeOffLimitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Retrieves time-off limit related values based on a given set of filters.
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} timeOffLimitId The ID of the time-off limit
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitTimeofflimitValuesQuery",value:function postWorkforcemanagementBusinessunitTimeofflimitValuesQuery(businessUnitId,timeOffLimitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Retrieves time-off limit related values based on a given set of filters.
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} timeOffLimitId The ID of the time-off limit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitTimeofflimitValuesQuery",value:function postWorkforcemanagementBusinessunitTimeofflimitValuesQuery(businessUnitId,timeOffLimitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitTimeofflimitValuesQuery';}// verify the required parameter 'timeOffLimitId' is set
 if(timeOffLimitId===undefined||timeOffLimitId===null||timeOffLimitId===''){throw'Missing the required parameter "timeOffLimitId" when calling postWorkforcemanagementBusinessunitTimeofflimitValuesQuery';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitTimeofflimitValuesQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query','POST',{'businessUnitId':businessUnitId,'timeOffLimitId':timeOffLimitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Creates a new time-off limit object
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitTimeofflimits",value:function postWorkforcemanagementBusinessunitTimeofflimits(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Creates a new time-off limit object
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitTimeofflimits",value:function postWorkforcemanagementBusinessunitTimeofflimits(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitTimeofflimits';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitTimeofflimits';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Retrieves time-off limit related values based on a given set of filters. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query instead
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery",value:function postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Retrieves time-off limit related values based on a given set of filters. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query instead
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
+	 */},{key:"postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery",value:function postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values/query','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Creates a new time-off plan
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitTimeoffplans",value:function postWorkforcemanagementBusinessunitTimeoffplans(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Creates a new time-off plan
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitTimeoffplans",value:function postWorkforcemanagementBusinessunitTimeoffplans(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitTimeoffplans';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitTimeoffplans';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get agent schedule generation unavailable times
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitUnavailabletimesSchedulesQuery",value:function postWorkforcemanagementBusinessunitUnavailabletimesSchedulesQuery(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Get agent schedule generation unavailable times
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitUnavailabletimesSchedulesQuery",value:function postWorkforcemanagementBusinessunitUnavailabletimesSchedulesQuery(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitUnavailabletimesSchedulesQuery';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitUnavailabletimesSchedulesQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/unavailabletimes/schedules/query','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Query availability management units settings
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitUnavailabletimesSettingsQuery",value:function postWorkforcemanagementBusinessunitUnavailabletimesSettingsQuery(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Query availability management units settings
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitUnavailabletimesSettingsQuery",value:function postWorkforcemanagementBusinessunitUnavailabletimesSettingsQuery(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitUnavailabletimesSettingsQuery';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitUnavailabletimesSettingsQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/unavailabletimes/settings/query','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Loads agent schedule data from the schedule. Used in combination with the metadata route
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-   * @param {String} scheduleId The ID of the schedule
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
-   * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery",value:function postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery(businessUnitId,weekId,scheduleId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Loads agent schedule data from the schedule. Used in combination with the metadata route
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} scheduleId The ID of the schedule
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery",value:function postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery(businessUnitId,weekId,scheduleId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery';}// verify the required parameter 'weekId' is set
 if(weekId===undefined||weekId===null){throw'Missing the required parameter "weekId" when calling postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery';}// verify the required parameter 'scheduleId' is set
 if(scheduleId===undefined||scheduleId===null||scheduleId===''){throw'Missing the required parameter "scheduleId" when calling postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/agentschedules/query','POST',{'businessUnitId':businessUnitId,'weekId':weekId,'scheduleId':scheduleId},{'forceAsync':opts['forceAsync'],'forceDownloadService':opts['forceDownloadService']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Copy a schedule
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-   * @param {String} scheduleId The ID of the schedule to copy
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitWeekScheduleCopy",value:function postWorkforcemanagementBusinessunitWeekScheduleCopy(businessUnitId,weekId,scheduleId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Copy a schedule
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} scheduleId The ID of the schedule to copy
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitWeekScheduleCopy",value:function postWorkforcemanagementBusinessunitWeekScheduleCopy(businessUnitId,weekId,scheduleId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekScheduleCopy';}// verify the required parameter 'weekId' is set
 if(weekId===undefined||weekId===null){throw'Missing the required parameter "weekId" when calling postWorkforcemanagementBusinessunitWeekScheduleCopy';}// verify the required parameter 'scheduleId' is set
 if(scheduleId===undefined||scheduleId===null||scheduleId===''){throw'Missing the required parameter "scheduleId" when calling postWorkforcemanagementBusinessunitWeekScheduleCopy';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekScheduleCopy';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/copy','POST',{'businessUnitId':businessUnitId,'weekId':weekId,'scheduleId':scheduleId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Request a daily recalculation of the performance prediction for the associated schedule
-   * 
-   * @param {String} businessUnitId The ID of the business unit to which the performance prediction belongs
-   * @param {String} weekId First day of schedule week in yyyy-MM-dd format
-   * @param {String} scheduleId The ID of the schedule the performance prediction belongs to
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations",value:function postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations(businessUnitId,weekId,scheduleId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Request a daily recalculation of the performance prediction for the associated schedule
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit to which the performance prediction belongs
+	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format
+	 * @param {String} scheduleId The ID of the schedule the performance prediction belongs to
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations",value:function postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations(businessUnitId,weekId,scheduleId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations';}// verify the required parameter 'weekId' is set
 if(weekId===undefined||weekId===null||weekId===''){throw'Missing the required parameter "weekId" when calling postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations';}// verify the required parameter 'scheduleId' is set
 if(scheduleId===undefined||scheduleId===null||scheduleId===''){throw'Missing the required parameter "scheduleId" when calling postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations','POST',{'businessUnitId':businessUnitId,'weekId':weekId,'scheduleId':scheduleId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Upload daily activity changes to be able to request a performance prediction recalculation
-   * 
-   * @param {String} businessUnitId The ID of the business unit to which the performance prediction belongs
-   * @param {String} weekId First day of schedule week in yyyy-MM-dd format
-   * @param {String} scheduleId The ID of the schedule the performance prediction belongs to
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl",value:function postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl(businessUnitId,weekId,scheduleId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Upload daily activity changes to be able to request a performance prediction recalculation
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit to which the performance prediction belongs
+	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format
+	 * @param {String} scheduleId The ID of the schedule the performance prediction belongs to
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl",value:function postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl(businessUnitId,weekId,scheduleId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl';}// verify the required parameter 'weekId' is set
 if(weekId===undefined||weekId===null||weekId===''){throw'Missing the required parameter "weekId" when calling postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl';}// verify the required parameter 'scheduleId' is set
 if(scheduleId===undefined||scheduleId===null||scheduleId===''){throw'Missing the required parameter "scheduleId" when calling postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations/uploadurl','POST',{'businessUnitId':businessUnitId,'weekId':weekId,'scheduleId':scheduleId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Start a rescheduling run
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-   * @param {String} scheduleId The ID of the schedule
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitWeekScheduleReschedule",value:function postWorkforcemanagementBusinessunitWeekScheduleReschedule(businessUnitId,weekId,scheduleId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Start a rescheduling run
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} scheduleId The ID of the schedule
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitWeekScheduleReschedule",value:function postWorkforcemanagementBusinessunitWeekScheduleReschedule(businessUnitId,weekId,scheduleId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekScheduleReschedule';}// verify the required parameter 'weekId' is set
 if(weekId===undefined||weekId===null){throw'Missing the required parameter "weekId" when calling postWorkforcemanagementBusinessunitWeekScheduleReschedule';}// verify the required parameter 'scheduleId' is set
 if(scheduleId===undefined||scheduleId===null||scheduleId===''){throw'Missing the required parameter "scheduleId" when calling postWorkforcemanagementBusinessunitWeekScheduleReschedule';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekScheduleReschedule';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/reschedule','POST',{'businessUnitId':businessUnitId,'weekId':weekId,'scheduleId':scheduleId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Starts processing a schedule update
-   * Call after uploading the schedule data to the url supplied by the /update/uploadurl route
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-   * @param {String} scheduleId The ID of the schedule
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitWeekScheduleUpdate",value:function postWorkforcemanagementBusinessunitWeekScheduleUpdate(businessUnitId,weekId,scheduleId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Starts processing a schedule update
+	 * Call after uploading the schedule data to the url supplied by the /update/uploadurl route
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} scheduleId The ID of the schedule
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitWeekScheduleUpdate",value:function postWorkforcemanagementBusinessunitWeekScheduleUpdate(businessUnitId,weekId,scheduleId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekScheduleUpdate';}// verify the required parameter 'weekId' is set
 if(weekId===undefined||weekId===null){throw'Missing the required parameter "weekId" when calling postWorkforcemanagementBusinessunitWeekScheduleUpdate';}// verify the required parameter 'scheduleId' is set
 if(scheduleId===undefined||scheduleId===null||scheduleId===''){throw'Missing the required parameter "scheduleId" when calling postWorkforcemanagementBusinessunitWeekScheduleUpdate';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekScheduleUpdate';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/update','POST',{'businessUnitId':businessUnitId,'weekId':weekId,'scheduleId':scheduleId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Creates a signed upload URL for updating a schedule
-   * Once the upload is complete, call the /{scheduleId}/update route to start the schedule update process
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-   * @param {String} scheduleId The ID of the schedule
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl",value:function postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl(businessUnitId,weekId,scheduleId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Creates a signed upload URL for updating a schedule
+	 * Once the upload is complete, call the /{scheduleId}/update route to start the schedule update process
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} scheduleId The ID of the schedule
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl",value:function postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl(businessUnitId,weekId,scheduleId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl';}// verify the required parameter 'weekId' is set
 if(weekId===undefined||weekId===null){throw'Missing the required parameter "weekId" when calling postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl';}// verify the required parameter 'scheduleId' is set
 if(scheduleId===undefined||scheduleId===null||scheduleId===''){throw'Missing the required parameter "scheduleId" when calling postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/update/uploadurl','POST',{'businessUnitId':businessUnitId,'weekId':weekId,'scheduleId':scheduleId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Create a blank schedule
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitWeekSchedules",value:function postWorkforcemanagementBusinessunitWeekSchedules(businessUnitId,weekId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Create a blank schedule
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitWeekSchedules",value:function postWorkforcemanagementBusinessunitWeekSchedules(businessUnitId,weekId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekSchedules';}// verify the required parameter 'weekId' is set
 if(weekId===undefined||weekId===null){throw'Missing the required parameter "weekId" when calling postWorkforcemanagementBusinessunitWeekSchedules';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekSchedules';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules','POST',{'businessUnitId':businessUnitId,'weekId':weekId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Generate a schedule
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitWeekSchedulesGenerate",value:function postWorkforcemanagementBusinessunitWeekSchedulesGenerate(businessUnitId,weekId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Generate a schedule
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitWeekSchedulesGenerate",value:function postWorkforcemanagementBusinessunitWeekSchedulesGenerate(businessUnitId,weekId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekSchedulesGenerate';}// verify the required parameter 'weekId' is set
 if(weekId===undefined||weekId===null){throw'Missing the required parameter "weekId" when calling postWorkforcemanagementBusinessunitWeekSchedulesGenerate';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekSchedulesGenerate';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/generate','POST',{'businessUnitId':businessUnitId,'weekId':weekId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Starts processing a schedule import
-   * Call after uploading the schedule data to the url supplied by the /import/uploadurl route
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-   * @param {Object} body 
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitWeekSchedulesImport",value:function postWorkforcemanagementBusinessunitWeekSchedulesImport(businessUnitId,weekId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Starts processing a schedule import
+	 * Call after uploading the schedule data to the url supplied by the /import/uploadurl route
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitWeekSchedulesImport",value:function postWorkforcemanagementBusinessunitWeekSchedulesImport(businessUnitId,weekId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekSchedulesImport';}// verify the required parameter 'weekId' is set
 if(weekId===undefined||weekId===null){throw'Missing the required parameter "weekId" when calling postWorkforcemanagementBusinessunitWeekSchedulesImport';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekSchedulesImport';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/import','POST',{'businessUnitId':businessUnitId,'weekId':weekId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Creates a signed upload URL for importing a schedule
-   * Once the upload is complete, call the /import route to start the schedule import process
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl",value:function postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl(businessUnitId,weekId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Creates a signed upload URL for importing a schedule
+	 * Once the upload is complete, call the /import route to start the schedule import process
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl",value:function postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl(businessUnitId,weekId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl';}// verify the required parameter 'weekId' is set
 if(weekId===undefined||weekId===null){throw'Missing the required parameter "weekId" when calling postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/import/uploadurl','POST',{'businessUnitId':businessUnitId,'weekId':weekId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Copy a short term forecast
-   * 
-   * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
-   * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-   * @param {String} forecastId The ID of the forecast to copy
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitWeekShorttermforecastCopy",value:function postWorkforcemanagementBusinessunitWeekShorttermforecastCopy(businessUnitId,weekDateId,forecastId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Copy a short term forecast
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
+	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} forecastId The ID of the forecast to copy
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitWeekShorttermforecastCopy",value:function postWorkforcemanagementBusinessunitWeekShorttermforecastCopy(businessUnitId,weekDateId,forecastId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastCopy';}// verify the required parameter 'weekDateId' is set
 if(weekDateId===undefined||weekDateId===null){throw'Missing the required parameter "weekDateId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastCopy';}// verify the required parameter 'forecastId' is set
 if(forecastId===undefined||forecastId===null||forecastId===''){throw'Missing the required parameter "forecastId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastCopy';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastCopy';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/copy','POST',{'businessUnitId':businessUnitId,'weekDateId':weekDateId,'forecastId':forecastId},{'forceAsync':opts['forceAsync']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Generate a short term forecast
-   * 
-   * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
-   * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate",value:function postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate(businessUnitId,weekDateId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Generate a short term forecast
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
+	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate",value:function postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate(businessUnitId,weekDateId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate';}// verify the required parameter 'weekDateId' is set
 if(weekDateId===undefined||weekDateId===null){throw'Missing the required parameter "weekDateId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/generate','POST',{'businessUnitId':businessUnitId,'weekDateId':weekDateId},{'forceAsync':opts['forceAsync']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Starts importing the uploaded short term forecast
-   * Call after uploading the forecast data to the url supplied by the /import/uploadurl route
-   * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
-   * @param {String} weekDateId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitWeekShorttermforecastsImport",value:function postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(businessUnitId,weekDateId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Starts importing the uploaded short term forecast
+	 * Call after uploading the forecast data to the url supplied by the /import/uploadurl route
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
+	 * @param {String} weekDateId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitWeekShorttermforecastsImport",value:function postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(businessUnitId,weekDateId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastsImport';}// verify the required parameter 'weekDateId' is set
 if(weekDateId===undefined||weekDateId===null){throw'Missing the required parameter "weekDateId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastsImport';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastsImport';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/import','POST',{'businessUnitId':businessUnitId,'weekDateId':weekDateId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Creates a signed upload URL for importing a short term forecast
-   * Once the upload is complete, call the /import route to start the short term forecast import process
-   * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
-   * @param {String} weekDateId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl",value:function postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl(businessUnitId,weekDateId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Creates a signed upload URL for importing a short term forecast
+	 * Once the upload is complete, call the /import route to start the short term forecast import process
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
+	 * @param {String} weekDateId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl",value:function postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl(businessUnitId,weekDateId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl';}// verify the required parameter 'weekDateId' is set
 if(weekDateId===undefined||weekDateId===null){throw'Missing the required parameter "weekDateId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/import/uploadurl','POST',{'businessUnitId':businessUnitId,'weekDateId':weekDateId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Copy a work plan bid
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} bidId The ID of the work plan bid to copy
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitWorkplanbidCopy",value:function postWorkforcemanagementBusinessunitWorkplanbidCopy(businessUnitId,bidId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Copy a work plan bid
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The ID of the work plan bid to copy
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitWorkplanbidCopy",value:function postWorkforcemanagementBusinessunitWorkplanbidCopy(businessUnitId,bidId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWorkplanbidCopy';}// verify the required parameter 'bidId' is set
 if(bidId===undefined||bidId===null||bidId===''){throw'Missing the required parameter "bidId" when calling postWorkforcemanagementBusinessunitWorkplanbidCopy';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWorkplanbidCopy';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/copy','POST',{'businessUnitId':businessUnitId,'bidId':bidId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Add a bid group in a given work plan bid
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} bidId The work plan bid id of the bid groups
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitWorkplanbidGroups",value:function postWorkforcemanagementBusinessunitWorkplanbidGroups(businessUnitId,bidId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Add a bid group in a given work plan bid
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The work plan bid id of the bid groups
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitWorkplanbidGroups",value:function postWorkforcemanagementBusinessunitWorkplanbidGroups(businessUnitId,bidId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWorkplanbidGroups';}// verify the required parameter 'bidId' is set
 if(bidId===undefined||bidId===null||bidId===''){throw'Missing the required parameter "bidId" when calling postWorkforcemanagementBusinessunitWorkplanbidGroups';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWorkplanbidGroups';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups','POST',{'businessUnitId':businessUnitId,'bidId':bidId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Create a new work plan bid
-   * 
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {Object} body The work plan bid to be created
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunitWorkplanbids",value:function postWorkforcemanagementBusinessunitWorkplanbids(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Create a new work plan bid
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body The work plan bid to be created
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunitWorkplanbids",value:function postWorkforcemanagementBusinessunitWorkplanbids(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWorkplanbids';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWorkplanbids';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Add a new business unit
-   * It may take a minute or two for a new business unit to be available for api operations
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Boolean} opts.includeSchedulingDefaultMessageSeverities Whether to include scheduling default message severities
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementBusinessunits",value:function postWorkforcemanagementBusinessunits(body,opts){opts=opts||{};// verify the required parameter 'body' is set
+	 * Add a new business unit
+	 * It may take a minute or two for a new business unit to be available for api operations
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.includeSchedulingDefaultMessageSeverities Whether to include scheduling default message severities
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementBusinessunits",value:function postWorkforcemanagementBusinessunits(body,opts){opts=opts||{};// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunits';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits','POST',{},{'includeSchedulingDefaultMessageSeverities':opts['includeSchedulingDefaultMessageSeverities']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Create a newly generated calendar link for the current user; if the current user has previously generated one, the generated link will be returned
-   * 
-   * @param {Object} opts Optional parameters
-   * @param {String} opts.language A language tag (which is sometimes referred to as a locale identifier) to use to localize default activity code names in the ics-formatted calendar (default to en-US)
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementCalendarUrlIcs",value:function postWorkforcemanagementCalendarUrlIcs(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/calendar/url/ics','POST',{},{'language':opts['language']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Delete the list of the historical data import entries
-   * 
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementHistoricaldataBulkRemoveJobs",value:function postWorkforcemanagementHistoricaldataBulkRemoveJobs(body,opts){opts=opts||{};// verify the required parameter 'body' is set
+	 * Create a newly generated calendar link for the current user; if the current user has previously generated one, the generated link will be returned
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.language A language tag (which is sometimes referred to as a locale identifier) to use to localize default activity code names in the ics-formatted calendar (default to en-US)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementCalendarUrlIcs",value:function postWorkforcemanagementCalendarUrlIcs(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/calendar/url/ics','POST',{},{'language':opts['language']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Delete the list of the historical data import entries
+	 * 
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementHistoricaldataBulkRemoveJobs",value:function postWorkforcemanagementHistoricaldataBulkRemoveJobs(body,opts){opts=opts||{};// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementHistoricaldataBulkRemoveJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/historicaldata/bulk/remove/jobs','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Trigger validation process for historical import
-   * 
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementHistoricaldataValidate",value:function postWorkforcemanagementHistoricaldataValidate(body,opts){opts=opts||{};// verify the required parameter 'body' is set
+	 * Trigger validation process for historical import
+	 * 
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementHistoricaldataValidate",value:function postWorkforcemanagementHistoricaldataValidate(body,opts){opts=opts||{};// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementHistoricaldataValidate';}return this.apiClient.callApi('/api/v2/workforcemanagement/historicaldata/validate','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get list of time off types configured in integration
-   * 
-   * @param {String} hrisIntegrationId The ID of the HRIS integration for which time off types are queried.
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementIntegrationsHriTimeofftypesJobs",value:function postWorkforcemanagementIntegrationsHriTimeofftypesJobs(hrisIntegrationId,opts){opts=opts||{};// verify the required parameter 'hrisIntegrationId' is set
+	 * Get list of time off types configured in integration
+	 * 
+	 * @param {String} hrisIntegrationId The ID of the HRIS integration for which time off types are queried.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementIntegrationsHriTimeofftypesJobs",value:function postWorkforcemanagementIntegrationsHriTimeofftypesJobs(hrisIntegrationId,opts){opts=opts||{};// verify the required parameter 'hrisIntegrationId' is set
 if(hrisIntegrationId===undefined||hrisIntegrationId===null||hrisIntegrationId===''){throw'Missing the required parameter "hrisIntegrationId" when calling postWorkforcemanagementIntegrationsHriTimeofftypesJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/integrations/hris/{hrisIntegrationId}/timeofftypes/jobs','POST',{'hrisIntegrationId':hrisIntegrationId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get agents work plans configuration
-   * 
-   * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementManagementunitAgentsWorkplansQuery",value:function postWorkforcemanagementManagementunitAgentsWorkplansQuery(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Get agents work plans configuration
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementManagementunitAgentsWorkplansQuery",value:function postWorkforcemanagementManagementunitAgentsWorkplansQuery(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitAgentsWorkplansQuery';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitAgentsWorkplansQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/workplans/query','POST',{'managementUnitId':managementUnitId},{'forceDownloadService':opts['forceDownloadService']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Query published schedules for given given time range for set of users
-   * 
-   * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
-   * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementManagementunitAgentschedulesSearch",value:function postWorkforcemanagementManagementunitAgentschedulesSearch(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Query published schedules for given given time range for set of users
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementManagementunitAgentschedulesSearch",value:function postWorkforcemanagementManagementunitAgentschedulesSearch(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitAgentschedulesSearch';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitAgentschedulesSearch';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/agentschedules/search','POST',{'managementUnitId':managementUnitId},{'forceAsync':opts['forceAsync'],'forceDownloadService':opts['forceDownloadService']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Request a historical adherence report
-   * The maximum supported range for historical adherence queries is 31 days, or 7 days with includeExceptions = true
-   * @param {String} managementUnitId The ID of the management unit
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementManagementunitHistoricaladherencequery",value:function postWorkforcemanagementManagementunitHistoricaladherencequery(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Request a historical adherence report
+	 * The maximum supported range for historical adherence queries is 31 days, or 7 days with includeExceptions = true
+	 * @param {String} managementUnitId The ID of the management unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementManagementunitHistoricaladherencequery",value:function postWorkforcemanagementManagementunitHistoricaladherencequery(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitHistoricaladherencequery';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitHistoricaladherencequery';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/historicaladherencequery','POST',{'managementUnitId':managementUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Move the requested management unit to a new business unit
-   * Returns status 200 if the management unit is already in the requested business unit
-   * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementManagementunitMove",value:function postWorkforcemanagementManagementunitMove(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Move the requested management unit to a new business unit
+	 * Returns status 200 if the management unit is already in the requested business unit
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementManagementunitMove",value:function postWorkforcemanagementManagementunitMove(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitMove';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitMove';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/move','POST',{'managementUnitId':managementUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Query published schedules for given given time range for set of users
-   * 
-   * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"postWorkforcemanagementManagementunitSchedulesSearch",value:function postWorkforcemanagementManagementunitSchedulesSearch(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Query published schedules for given given time range for set of users
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
+	 */},{key:"postWorkforcemanagementManagementunitSchedulesSearch",value:function postWorkforcemanagementManagementunitSchedulesSearch(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitSchedulesSearch';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitSchedulesSearch';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/schedules/search','POST',{'managementUnitId':managementUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Request a historical shrinkage report
-   * The maximum supported range for historical shrinkage queries is up to 32 days. Historical Shrinkage for a given date range can be queried in two modes - granular and aggregated. To see granular shrinkage information, provide granularity in the request body. 
-   * @param {String} managementUnitId The ID of the management unit
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementManagementunitShrinkageJobs",value:function postWorkforcemanagementManagementunitShrinkageJobs(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Request a historical shrinkage report
+	 * The maximum supported range for historical shrinkage queries is up to 32 days. Historical Shrinkage for a given date range can be queried in two modes - granular and aggregated. To see granular shrinkage information, provide granularity in the request body. 
+	 * @param {String} managementUnitId The ID of the management unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementManagementunitShrinkageJobs",value:function postWorkforcemanagementManagementunitShrinkageJobs(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitShrinkageJobs';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitShrinkageJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/shrinkage/jobs','POST',{'managementUnitId':managementUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Creates a new time off limit object under management unit.
-   * Only one limit object is allowed under management unit, so an attempt to create second object will fail. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits instead
-   * @param {String} managementUnitId The ID of the management unit.
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"postWorkforcemanagementManagementunitTimeofflimits",value:function postWorkforcemanagementManagementunitTimeofflimits(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Creates a new time off limit object under management unit.
+	 * Only one limit object is allowed under management unit, so an attempt to create second object will fail. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits instead
+	 * @param {String} managementUnitId The ID of the management unit.
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
+	 */},{key:"postWorkforcemanagementManagementunitTimeofflimits",value:function postWorkforcemanagementManagementunitTimeofflimits(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeofflimits';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitTimeofflimits';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits','POST',{'managementUnitId':managementUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Retrieves time off limit related values based on a given set of filters. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query instead
-   * 
-   * @param {String} managementUnitId The ID of the management unit.
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"postWorkforcemanagementManagementunitTimeofflimitsValuesQuery",value:function postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Retrieves time off limit related values based on a given set of filters. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query instead
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit.
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
+	 */},{key:"postWorkforcemanagementManagementunitTimeofflimitsValuesQuery",value:function postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeofflimitsValuesQuery';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitTimeofflimitsValuesQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/values/query','POST',{'managementUnitId':managementUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Creates a new time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans instead
-   * 
-   * @param {String} managementUnitId The ID of the management unit
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"postWorkforcemanagementManagementunitTimeoffplans",value:function postWorkforcemanagementManagementunitTimeoffplans(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Creates a new time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans instead
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
+	 */},{key:"postWorkforcemanagementManagementunitTimeoffplans",value:function postWorkforcemanagementManagementunitTimeoffplans(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffplans';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitTimeoffplans';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans','POST',{'managementUnitId':managementUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Create a new time off request
-   * 
-   * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementManagementunitTimeoffrequests",value:function postWorkforcemanagementManagementunitTimeoffrequests(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Create a new time off request
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementManagementunitTimeoffrequests",value:function postWorkforcemanagementManagementunitTimeoffrequests(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffrequests';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitTimeoffrequests';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests','POST',{'managementUnitId':managementUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Retrieves integration statuses for a list of time off requests
-   * 
-   * @param {String} managementUnitId The ID of the management unit.
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery",value:function postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Retrieves integration statuses for a list of time off requests
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit.
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery",value:function postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/integrationstatus/query','POST',{'managementUnitId':managementUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Fetches time off requests matching the conditions specified in the request body
-   * Request body requires one of the following: statuses == [Pending] or date range to be specified and less than or equal to 33 days. All other fields are filters
-   * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementManagementunitTimeoffrequestsQuery",value:function postWorkforcemanagementManagementunitTimeoffrequestsQuery(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Fetches time off requests matching the conditions specified in the request body
+	 * Request body requires one of the following: statuses == [Pending] or date range to be specified and less than or equal to 33 days. All other fields are filters
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementManagementunitTimeoffrequestsQuery",value:function postWorkforcemanagementManagementunitTimeoffrequestsQuery(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffrequestsQuery';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitTimeoffrequestsQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/query','POST',{'managementUnitId':managementUnitId},{'forceDownloadService':opts['forceDownloadService']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Retrieves daily waitlist position for a list of time off requests
-   * 
-   * @param {String} managementUnitId The ID of the management unit.
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery",value:function postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Retrieves daily waitlist position for a list of time off requests
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit.
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery",value:function postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/waitlistpositions/query','POST',{'managementUnitId':managementUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Query time off balances for a given user for specified activity code and dates
-   * 
-   * @param {String} managementUnitId The ID of the management unit
-   * @param {String} userId The ID of the user
-   * @param {Object} body The request body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementManagementunitUserTimeoffbalanceJobs",value:function postWorkforcemanagementManagementunitUserTimeoffbalanceJobs(managementUnitId,userId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Query time off balances for a given user for specified activity code and dates
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit
+	 * @param {String} userId The ID of the user
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementManagementunitUserTimeoffbalanceJobs",value:function postWorkforcemanagementManagementunitUserTimeoffbalanceJobs(managementUnitId,userId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitUserTimeoffbalanceJobs';}// verify the required parameter 'userId' is set
 if(userId===undefined||userId===null||userId===''){throw'Missing the required parameter "userId" when calling postWorkforcemanagementManagementunitUserTimeoffbalanceJobs';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitUserTimeoffbalanceJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffbalance/jobs','POST',{'managementUnitId':managementUnitId,'userId':userId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Query time off balances for dates spanned by a given time off request
-   * 
-   * @param {String} managementUnitId The ID of the management unit.
-   * @param {String} userId The userId to whom the time off request applies.
-   * @param {String} timeOffRequestId The time off request id.
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs",value:function postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs(managementUnitId,userId,timeOffRequestId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Query time off balances for dates spanned by a given time off request
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit.
+	 * @param {String} userId The userId to whom the time off request applies.
+	 * @param {String} timeOffRequestId The time off request id.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs",value:function postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs(managementUnitId,userId,timeOffRequestId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs';}// verify the required parameter 'userId' is set
 if(userId===undefined||userId===null||userId===''){throw'Missing the required parameter "userId" when calling postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs';}// verify the required parameter 'timeOffRequestId' is set
 if(timeOffRequestId===undefined||timeOffRequestId===null||timeOffRequestId===''){throw'Missing the required parameter "timeOffRequestId" when calling postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}/timeoffbalance/jobs','POST',{'managementUnitId':managementUnitId,'userId':userId,'timeOffRequestId':timeOffRequestId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Estimates available time off for an agent
-   * 
-   * @param {String} managementUnitId The ID of the management unit
-   * @param {String} userId The id of the user for whom the time off request estimate is requested
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object} opts.includeOnly Limit response to the specified field
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate",value:function postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(managementUnitId,userId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Estimates available time off for an agent
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit
+	 * @param {String} userId The id of the user for whom the time off request estimate is requested
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.includeOnly Limit response to the specified field
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate",value:function postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(managementUnitId,userId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate';}// verify the required parameter 'userId' is set
 if(userId===undefined||userId===null||userId===''){throw'Missing the required parameter "userId" when calling postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/estimate','POST',{'managementUnitId':managementUnitId,'userId':userId},{'includeOnly':opts['includeOnly']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Matches a shift trade. This route can only be called by the receiving agent
-   * Deprecated. Use new route instead (/shifttrading/trades/{tradeId}/match/jobs)
-   * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-   * @param {String} weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-   * @param {String} tradeId The ID of the shift trade to update
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"postWorkforcemanagementManagementunitWeekShifttradeMatch",value:function postWorkforcemanagementManagementunitWeekShifttradeMatch(managementUnitId,weekDateId,tradeId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Matches a shift trade. This route can only be called by the receiving agent
+	 * Deprecated. Use new route instead (/shifttrading/trades/{tradeId}/match/jobs)
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {String} weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} tradeId The ID of the shift trade to update
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
+	 */},{key:"postWorkforcemanagementManagementunitWeekShifttradeMatch",value:function postWorkforcemanagementManagementunitWeekShifttradeMatch(managementUnitId,weekDateId,tradeId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekShifttradeMatch';}// verify the required parameter 'weekDateId' is set
 if(weekDateId===undefined||weekDateId===null){throw'Missing the required parameter "weekDateId" when calling postWorkforcemanagementManagementunitWeekShifttradeMatch';}// verify the required parameter 'tradeId' is set
 if(tradeId===undefined||tradeId===null||tradeId===''){throw'Missing the required parameter "tradeId" when calling postWorkforcemanagementManagementunitWeekShifttradeMatch';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWeekShifttradeMatch';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}/match','POST',{'managementUnitId':managementUnitId,'weekDateId':weekDateId,'tradeId':tradeId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Adds a shift trade
-   * Deprecated. Use new route instead (/shifttrading/trades/jobs)
-   * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-   * @param {String} weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"postWorkforcemanagementManagementunitWeekShifttrades",value:function postWorkforcemanagementManagementunitWeekShifttrades(managementUnitId,weekDateId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Adds a shift trade
+	 * Deprecated. Use new route instead (/shifttrading/trades/jobs)
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {String} weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
+	 */},{key:"postWorkforcemanagementManagementunitWeekShifttrades",value:function postWorkforcemanagementManagementunitWeekShifttrades(managementUnitId,weekDateId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekShifttrades';}// verify the required parameter 'weekDateId' is set
 if(weekDateId===undefined||weekDateId===null){throw'Missing the required parameter "weekDateId" when calling postWorkforcemanagementManagementunitWeekShifttrades';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWeekShifttrades';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades','POST',{'managementUnitId':managementUnitId,'weekDateId':weekDateId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Searches for potential shift trade matches for the current agent
-   * Deprecated. Use new route instead (/businessunits/{businessUnitId}/shifttrading/unmatched/search/jobs)
-   * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-   * @param {String} weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"postWorkforcemanagementManagementunitWeekShifttradesSearch",value:function postWorkforcemanagementManagementunitWeekShifttradesSearch(managementUnitId,weekDateId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Searches for potential shift trade matches for the current agent
+	 * Deprecated. Use new route instead (/businessunits/{businessUnitId}/shifttrading/unmatched/search/jobs)
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {String} weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
+	 */},{key:"postWorkforcemanagementManagementunitWeekShifttradesSearch",value:function postWorkforcemanagementManagementunitWeekShifttradesSearch(managementUnitId,weekDateId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekShifttradesSearch';}// verify the required parameter 'weekDateId' is set
 if(weekDateId===undefined||weekDateId===null){throw'Missing the required parameter "weekDateId" when calling postWorkforcemanagementManagementunitWeekShifttradesSearch';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWeekShifttradesSearch';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/search','POST',{'managementUnitId':managementUnitId,'weekDateId':weekDateId},{'forceDownloadService':opts['forceDownloadService']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Updates the state of a batch of shift trades
-   * Admin functionality is not supported with "mine". Deprecated. Use new route instead (/businessunits/{buId}/shifttrading/trades/state/bulk/jobs)
-   * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-   * @param {String} weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"postWorkforcemanagementManagementunitWeekShifttradesStateBulk",value:function postWorkforcemanagementManagementunitWeekShifttradesStateBulk(managementUnitId,weekDateId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Updates the state of a batch of shift trades
+	 * Admin functionality is not supported with "mine". Deprecated. Use new route instead (/businessunits/{buId}/shifttrading/trades/state/bulk/jobs)
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {String} weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
+	 */},{key:"postWorkforcemanagementManagementunitWeekShifttradesStateBulk",value:function postWorkforcemanagementManagementunitWeekShifttradesStateBulk(managementUnitId,weekDateId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekShifttradesStateBulk';}// verify the required parameter 'weekDateId' is set
 if(weekDateId===undefined||weekDateId===null){throw'Missing the required parameter "weekDateId" when calling postWorkforcemanagementManagementunitWeekShifttradesStateBulk';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWeekShifttradesStateBulk';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/state/bulk','POST',{'managementUnitId':managementUnitId,'weekDateId':weekDateId},{'forceAsync':opts['forceAsync']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Create a copy of work plan
-   * 
-   * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-   * @param {String} workPlanId The ID of the work plan to create a copy
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementManagementunitWorkplanCopy",value:function postWorkforcemanagementManagementunitWorkplanCopy(managementUnitId,workPlanId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Create a copy of work plan
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {String} workPlanId The ID of the work plan to create a copy
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementManagementunitWorkplanCopy",value:function postWorkforcemanagementManagementunitWorkplanCopy(managementUnitId,workPlanId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWorkplanCopy';}// verify the required parameter 'workPlanId' is set
 if(workPlanId===undefined||workPlanId===null||workPlanId===''){throw'Missing the required parameter "workPlanId" when calling postWorkforcemanagementManagementunitWorkplanCopy';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWorkplanCopy';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/copy','POST',{'managementUnitId':managementUnitId,'workPlanId':workPlanId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Validate Work Plan
-   * 
-   * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-   * @param {String} workPlanId The ID of the work plan to validate. For new work plan, use the word 'new' for the ID.
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Array.<String>} opts.expand 
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementManagementunitWorkplanValidate",value:function postWorkforcemanagementManagementunitWorkplanValidate(managementUnitId,workPlanId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Validate Work Plan
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {String} workPlanId The ID of the work plan to validate. For new work plan, use the word 'new' for the ID.
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementManagementunitWorkplanValidate",value:function postWorkforcemanagementManagementunitWorkplanValidate(managementUnitId,workPlanId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWorkplanValidate';}// verify the required parameter 'workPlanId' is set
 if(workPlanId===undefined||workPlanId===null||workPlanId===''){throw'Missing the required parameter "workPlanId" when calling postWorkforcemanagementManagementunitWorkplanValidate';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWorkplanValidate';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/validate','POST',{'managementUnitId':managementUnitId,'workPlanId':workPlanId},{'expand':this.apiClient.buildCollectionParam(opts['expand'],'multi')},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Create a copy of work plan rotation
-   * 
-   * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-   * @param {String} workPlanRotationId The ID of the work plan rotation to create a copy
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementManagementunitWorkplanrotationCopy",value:function postWorkforcemanagementManagementunitWorkplanrotationCopy(managementUnitId,workPlanRotationId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Create a copy of work plan rotation
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {String} workPlanRotationId The ID of the work plan rotation to create a copy
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementManagementunitWorkplanrotationCopy",value:function postWorkforcemanagementManagementunitWorkplanrotationCopy(managementUnitId,workPlanRotationId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWorkplanrotationCopy';}// verify the required parameter 'workPlanRotationId' is set
 if(workPlanRotationId===undefined||workPlanRotationId===null||workPlanRotationId===''){throw'Missing the required parameter "workPlanRotationId" when calling postWorkforcemanagementManagementunitWorkplanrotationCopy';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWorkplanrotationCopy';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}/copy','POST',{'managementUnitId':managementUnitId,'workPlanRotationId':workPlanRotationId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Create a new work plan rotation
-   * 
-   * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementManagementunitWorkplanrotations",value:function postWorkforcemanagementManagementunitWorkplanrotations(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Create a new work plan rotation
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementManagementunitWorkplanrotations",value:function postWorkforcemanagementManagementunitWorkplanrotations(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWorkplanrotations';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWorkplanrotations';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations','POST',{'managementUnitId':managementUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Create a new work plan
-   * 
-   * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object} opts.validationMode Allows to create work plan even if the validation result is invalid
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementManagementunitWorkplans",value:function postWorkforcemanagementManagementunitWorkplans(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Create a new work plan
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.validationMode Allows to create work plan even if the validation result is invalid
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementManagementunitWorkplans",value:function postWorkforcemanagementManagementunitWorkplans(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWorkplans';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWorkplans';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans','POST',{'managementUnitId':managementUnitId},{'validationMode':opts['validationMode']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Add a management unit
-   * It may take a minute or two for a new management unit to be available for api operations
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementManagementunits",value:function postWorkforcemanagementManagementunits(body,opts){opts=opts||{};// verify the required parameter 'body' is set
+	 * Add a management unit
+	 * It may take a minute or two for a new management unit to be available for api operations
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementManagementunits",value:function postWorkforcemanagementManagementunits(body,opts){opts=opts||{};// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunits';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Mark a list of notifications as read or unread
-   * 
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementNotificationsUpdate",value:function postWorkforcemanagementNotificationsUpdate(body,opts){opts=opts||{};// verify the required parameter 'body' is set
+	 * Mark a list of notifications as read or unread
+	 * 
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementNotificationsUpdate",value:function postWorkforcemanagementNotificationsUpdate(body,opts){opts=opts||{};// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementNotificationsUpdate';}return this.apiClient.callApi('/api/v2/workforcemanagement/notifications/update','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get published schedule for the current user
-   * 
-   * @param {Object} opts Optional parameters
-   * @param {Object} opts.body body
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"postWorkforcemanagementSchedules",value:function postWorkforcemanagementSchedules(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/schedules','POST',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get agent scheduling preferences
-   * 
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * postWorkforcemanagementSchedulingpreferencesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   */},{key:"postWorkforcemanagementSchedulingpreferencesQuery",value:function postWorkforcemanagementSchedulingpreferencesQuery(body,opts){opts=opts||{};// verify the required parameter 'body' is set
+	 * Get published schedule for the current user
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
+	 */},{key:"postWorkforcemanagementSchedules",value:function postWorkforcemanagementSchedules(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/schedules','POST',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
+	 * Get agent scheduling preferences
+	 * 
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * postWorkforcemanagementSchedulingpreferencesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */},{key:"postWorkforcemanagementSchedulingpreferencesQuery",value:function postWorkforcemanagementSchedulingpreferencesQuery(body,opts){opts=opts||{};// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementSchedulingpreferencesQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/schedulingpreferences/query','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Updates a shift trade. This route can only be called by the initiating user
-   * 
-   * @param {String} tradeId The ID of the shift trade to update
-   * @param {Object} body The request body
-   * @param {Object} opts Optional parameters
-   * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementShifttradingTradeJobs",value:function postWorkforcemanagementShifttradingTradeJobs(tradeId,body,opts){opts=opts||{};// verify the required parameter 'tradeId' is set
+	 * Updates a shift trade. This route can only be called by the initiating user
+	 * 
+	 * @param {String} tradeId The ID of the shift trade to update
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementShifttradingTradeJobs",value:function postWorkforcemanagementShifttradingTradeJobs(tradeId,body,opts){opts=opts||{};// verify the required parameter 'tradeId' is set
 if(tradeId===undefined||tradeId===null||tradeId===''){throw'Missing the required parameter "tradeId" when calling postWorkforcemanagementShifttradingTradeJobs';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementShifttradingTradeJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/shifttrading/trades/{tradeId}/jobs','POST',{'tradeId':tradeId},{'forceAsync':opts['forceAsync']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Matches a shift trade. This route can only be called by the receiving user
-   * 
-   * @param {String} tradeId The ID of the shift trade to match
-   * @param {Object} body The request body
-   * @param {Object} opts Optional parameters
-   * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementShifttradingTradeMatchJobs",value:function postWorkforcemanagementShifttradingTradeMatchJobs(tradeId,body,opts){opts=opts||{};// verify the required parameter 'tradeId' is set
+	 * Matches a shift trade. This route can only be called by the receiving user
+	 * 
+	 * @param {String} tradeId The ID of the shift trade to match
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementShifttradingTradeMatchJobs",value:function postWorkforcemanagementShifttradingTradeMatchJobs(tradeId,body,opts){opts=opts||{};// verify the required parameter 'tradeId' is set
 if(tradeId===undefined||tradeId===null||tradeId===''){throw'Missing the required parameter "tradeId" when calling postWorkforcemanagementShifttradingTradeMatchJobs';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementShifttradingTradeMatchJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/shifttrading/trades/{tradeId}/match/jobs','POST',{'tradeId':tradeId},{'forceAsync':opts['forceAsync']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Update trade state by a user
-   * 
-   * @param {String} tradeId The ID of the shift trade to update state
-   * @param {Object} body The request body
-   * @param {Object} opts Optional parameters
-   * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementShifttradingTradeStateJobs",value:function postWorkforcemanagementShifttradingTradeStateJobs(tradeId,body,opts){opts=opts||{};// verify the required parameter 'tradeId' is set
+	 * Update trade state by a user
+	 * 
+	 * @param {String} tradeId The ID of the shift trade to update state
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementShifttradingTradeStateJobs",value:function postWorkforcemanagementShifttradingTradeStateJobs(tradeId,body,opts){opts=opts||{};// verify the required parameter 'tradeId' is set
 if(tradeId===undefined||tradeId===null||tradeId===''){throw'Missing the required parameter "tradeId" when calling postWorkforcemanagementShifttradingTradeStateJobs';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementShifttradingTradeStateJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/shifttrading/trades/{tradeId}/state/jobs','POST',{'tradeId':tradeId},{'forceAsync':opts['forceAsync']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Add a shift trade job
-   * 
-   * @param {Object} body The request body
-   * @param {Object} opts Optional parameters
-   * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementShifttradingTradesJobs",value:function postWorkforcemanagementShifttradingTradesJobs(body,opts){opts=opts||{};// verify the required parameter 'body' is set
+	 * Add a shift trade job
+	 * 
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementShifttradingTradesJobs",value:function postWorkforcemanagementShifttradingTradesJobs(body,opts){opts=opts||{};// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementShifttradingTradesJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/shifttrading/trades/jobs','POST',{},{'forceAsync':opts['forceAsync']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Retrieve all my shift trades where I am either the initiating or receiving user
-   * 
-   * @param {Object} body The request body
-   * @param {Object} opts Optional parameters
-   * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
-   * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementShifttradingTradesMineQueryJobs",value:function postWorkforcemanagementShifttradingTradesMineQueryJobs(body,opts){opts=opts||{};// verify the required parameter 'body' is set
+	 * Retrieve all my shift trades where I am either the initiating or receiving user
+	 * 
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementShifttradingTradesMineQueryJobs",value:function postWorkforcemanagementShifttradingTradesMineQueryJobs(body,opts){opts=opts||{};// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementShifttradingTradesMineQueryJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/shifttrading/trades/mine/query/jobs','POST',{},{'forceAsync':opts['forceAsync'],'forceDownloadService':opts['forceDownloadService']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Request a teams historical adherence report
-   * The maximum supported range for historical adherence queries is 31 days, or 7 days with includeExceptions = true
-   * @param {String} teamId The ID of the team
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementTeamAdherenceHistorical",value:function postWorkforcemanagementTeamAdherenceHistorical(teamId,body,opts){opts=opts||{};// verify the required parameter 'teamId' is set
+	 * Request a teams historical adherence report
+	 * The maximum supported range for historical adherence queries is 31 days, or 7 days with includeExceptions = true
+	 * @param {String} teamId The ID of the team
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementTeamAdherenceHistorical",value:function postWorkforcemanagementTeamAdherenceHistorical(teamId,body,opts){opts=opts||{};// verify the required parameter 'teamId' is set
 if(teamId===undefined||teamId===null||teamId===''){throw'Missing the required parameter "teamId" when calling postWorkforcemanagementTeamAdherenceHistorical';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementTeamAdherenceHistorical';}return this.apiClient.callApi('/api/v2/workforcemanagement/teams/{teamId}/adherence/historical','POST',{'teamId':teamId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Request a historical shrinkage report
-   * The maximum supported range for historical shrinkage queries is up to 32 days
-   * @param {String} teamId The ID of the team
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementTeamShrinkageJobs",value:function postWorkforcemanagementTeamShrinkageJobs(teamId,body,opts){opts=opts||{};// verify the required parameter 'teamId' is set
+	 * Request a historical shrinkage report
+	 * The maximum supported range for historical shrinkage queries is up to 32 days
+	 * @param {String} teamId The ID of the team
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementTeamShrinkageJobs",value:function postWorkforcemanagementTeamShrinkageJobs(teamId,body,opts){opts=opts||{};// verify the required parameter 'teamId' is set
 if(teamId===undefined||teamId===null||teamId===''){throw'Missing the required parameter "teamId" when calling postWorkforcemanagementTeamShrinkageJobs';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementTeamShrinkageJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/teams/{teamId}/shrinkage/jobs','POST',{'teamId':teamId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Query time off balances for the current user for specified activity code and dates
-   * 
-   * @param {Object} body The request body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementTimeoffbalanceJobs",value:function postWorkforcemanagementTimeoffbalanceJobs(body,opts){opts=opts||{};// verify the required parameter 'body' is set
+	 * Query time off balances for the current user for specified activity code and dates
+	 * 
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementTimeoffbalanceJobs",value:function postWorkforcemanagementTimeoffbalanceJobs(body,opts){opts=opts||{};// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementTimeoffbalanceJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/timeoffbalance/jobs','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Queries available time off for the current user
-   * 
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementTimeofflimitsAvailableQuery",value:function postWorkforcemanagementTimeofflimitsAvailableQuery(body,opts){opts=opts||{};// verify the required parameter 'body' is set
+	 * Queries available time off for the current user
+	 * 
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementTimeofflimitsAvailableQuery",value:function postWorkforcemanagementTimeofflimitsAvailableQuery(body,opts){opts=opts||{};// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementTimeofflimitsAvailableQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/timeofflimits/available/query','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Create a time off request for the current user
-   * 
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementTimeoffrequests",value:function postWorkforcemanagementTimeoffrequests(body,opts){opts=opts||{};// verify the required parameter 'body' is set
+	 * Create a time off request for the current user
+	 * 
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementTimeoffrequests",value:function postWorkforcemanagementTimeoffrequests(body,opts){opts=opts||{};// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementTimeoffrequests';}return this.apiClient.callApi('/api/v2/workforcemanagement/timeoffrequests','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Estimates available time off for current user
-   * 
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object} opts.includeOnly Limit response to the specified field
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementTimeoffrequestsEstimate",value:function postWorkforcemanagementTimeoffrequestsEstimate(body,opts){opts=opts||{};// verify the required parameter 'body' is set
+	 * Estimates available time off for current user
+	 * 
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.includeOnly Limit response to the specified field
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementTimeoffrequestsEstimate",value:function postWorkforcemanagementTimeoffrequestsEstimate(body,opts){opts=opts||{};// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementTimeoffrequestsEstimate';}return this.apiClient.callApi('/api/v2/workforcemanagement/timeoffrequests/estimate','POST',{},{'includeOnly':opts['includeOnly']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Retrieves integration statuses for a list of current user time off requests
-   * 
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery",value:function postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery(body,opts){opts=opts||{};// verify the required parameter 'body' is set
+	 * Retrieves integration statuses for a list of current user time off requests
+	 * 
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery",value:function postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery(body,opts){opts=opts||{};// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/timeoffrequests/integrationstatus/query','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get agent unavailable times
-   * 
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementUnavailabletimesQuery",value:function postWorkforcemanagementUnavailabletimesQuery(body,opts){opts=opts||{};// verify the required parameter 'body' is set
+	 * Get agent unavailable times
+	 * 
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementUnavailabletimesQuery",value:function postWorkforcemanagementUnavailabletimesQuery(body,opts){opts=opts||{};// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementUnavailabletimesQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/unavailabletimes/query','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Validates proposed changes to an agent's unavailable time spans against scheduling rules and constraints for a specific week
-   * 
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementUnavailabletimesValidationJobs",value:function postWorkforcemanagementUnavailabletimesValidationJobs(body,opts){opts=opts||{};// verify the required parameter 'body' is set
+	 * Validates proposed changes to an agent's unavailable time spans against scheduling rules and constraints for a specific week
+	 * 
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementUnavailabletimesValidationJobs",value:function postWorkforcemanagementUnavailabletimesValidationJobs(body,opts){opts=opts||{};// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementUnavailabletimesValidationJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/unavailabletimes/validation/jobs','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Get a list of UserScheduleAdherence records for the requested users
-   * 
-   * @param {Object} body Request body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"postWorkforcemanagementUsersActivity",value:function postWorkforcemanagementUsersActivity(body,opts){opts=opts||{};// verify the required parameter 'body' is set
+	 * Get a list of UserScheduleAdherence records for the requested users
+	 * 
+	 * @param {Object} body Request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"postWorkforcemanagementUsersActivity",value:function postWorkforcemanagementUsersActivity(body,opts){opts=opts||{};// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementUsersActivity';}return this.apiClient.callApi('/api/v2/workforcemanagement/users/activity','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Update integrations for agent
-   * 
-   * @param {String} agentId The ID of the agent
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"putWorkforcemanagementAgentIntegrationsHris",value:function putWorkforcemanagementAgentIntegrationsHris(agentId,body,opts){opts=opts||{};// verify the required parameter 'agentId' is set
+	 * Update integrations for agent
+	 * 
+	 * @param {String} agentId The ID of the agent
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"putWorkforcemanagementAgentIntegrationsHris",value:function putWorkforcemanagementAgentIntegrationsHris(agentId,body,opts){opts=opts||{};// verify the required parameter 'agentId' is set
 if(agentId===undefined||agentId===null||agentId===''){throw'Missing the required parameter "agentId" when calling putWorkforcemanagementAgentIntegrationsHris';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putWorkforcemanagementAgentIntegrationsHris';}return this.apiClient.callApi('/api/v2/workforcemanagement/agents/{agentId}/integrations/hris','PUT',{'agentId':agentId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Sets daily values for a date range of time-off limit object
-   * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time-off limit API
-   * @param {String} businessUnitId The ID of the business unit
-   * @param {String} timeOffLimitId The ID of the time-off limit object to set values for
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"putWorkforcemanagementBusinessunitTimeofflimitValues",value:function putWorkforcemanagementBusinessunitTimeofflimitValues(businessUnitId,timeOffLimitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * Sets daily values for a date range of time-off limit object
+	 * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time-off limit API
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} timeOffLimitId The ID of the time-off limit object to set values for
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"putWorkforcemanagementBusinessunitTimeofflimitValues",value:function putWorkforcemanagementBusinessunitTimeofflimitValues(businessUnitId,timeOffLimitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null||businessUnitId===''){throw'Missing the required parameter "businessUnitId" when calling putWorkforcemanagementBusinessunitTimeofflimitValues';}// verify the required parameter 'timeOffLimitId' is set
 if(timeOffLimitId===undefined||timeOffLimitId===null||timeOffLimitId===''){throw'Missing the required parameter "timeOffLimitId" when calling putWorkforcemanagementBusinessunitTimeofflimitValues';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putWorkforcemanagementBusinessunitTimeofflimitValues';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values','PUT',{'businessUnitId':businessUnitId,'timeOffLimitId':timeOffLimitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Sets daily values for a date range of time off limit object
-   * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time off limit API. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values instead
-   * @param {String} managementUnitId The ID of the management unit.
-   * @param {String} timeOffLimitId The ID of the time off limit object to set values for
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   * @deprecated
-   */},{key:"putWorkforcemanagementManagementunitTimeofflimitValues",value:function putWorkforcemanagementManagementunitTimeofflimitValues(managementUnitId,timeOffLimitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * Sets daily values for a date range of time off limit object
+	 * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time off limit API. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values instead
+	 * @param {String} managementUnitId The ID of the management unit.
+	 * @param {String} timeOffLimitId The ID of the time off limit object to set values for
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
+	 */},{key:"putWorkforcemanagementManagementunitTimeofflimitValues",value:function putWorkforcemanagementManagementunitTimeofflimitValues(managementUnitId,timeOffLimitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null||managementUnitId===''){throw'Missing the required parameter "managementUnitId" when calling putWorkforcemanagementManagementunitTimeofflimitValues';}// verify the required parameter 'timeOffLimitId' is set
 if(timeOffLimitId===undefined||timeOffLimitId===null||timeOffLimitId===''){throw'Missing the required parameter "timeOffLimitId" when calling putWorkforcemanagementManagementunitTimeofflimitValues';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putWorkforcemanagementManagementunitTimeofflimitValues';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}/values','PUT',{'managementUnitId':managementUnitId,'timeOffLimitId':timeOffLimitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}/**
-   * Update an agent's schedule set preference
-   * 
-   * @param {String} bidId The ID of the schedule bid
-   * @param {Object} body body
-   * @param {Object} opts Optional parameters
-   * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-   */},{key:"putWorkforcemanagementSchedulebidPreference",value:function putWorkforcemanagementSchedulebidPreference(bidId,body,opts){opts=opts||{};// verify the required parameter 'bidId' is set
+	 * Update an agent's schedule set preference
+	 * 
+	 * @param {String} bidId The ID of the schedule bid
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */},{key:"putWorkforcemanagementSchedulebidPreference",value:function putWorkforcemanagementSchedulebidPreference(bidId,body,opts){opts=opts||{};// verify the required parameter 'bidId' is set
 if(bidId===undefined||bidId===null||bidId===''){throw'Missing the required parameter "bidId" when calling putWorkforcemanagementSchedulebidPreference';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putWorkforcemanagementSchedulebidPreference';}return this.apiClient.callApi('/api/v2/workforcemanagement/schedulebids/{bidId}/preference','PUT',{'bidId':bidId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();/**
  * A JavaScript library to interface with the PureCloud Platform API.<br>
@@ -32243,7 +32626,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 262.0.0
+ * @version 263.0.0
  */var platformClient=/*#__PURE__*/_createClass(function platformClient(){_classCallCheck(this,platformClient);/**
      * The ApiClient constructor.
      * @property {module:purecloud-platform-client-v2/ApiClient}

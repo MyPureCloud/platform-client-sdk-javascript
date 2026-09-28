@@ -5,7 +5,7 @@ class DependenciesApi {
 	/**
 	 * Dependencies service.
 	 * @module purecloud-platform-client-v2/api/DependenciesApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**

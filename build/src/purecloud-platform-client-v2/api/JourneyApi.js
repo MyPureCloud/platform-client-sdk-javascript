@@ -5,7 +5,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -1937,38 +1937,6 @@ class JourneyApi {
 			'/api/v2/journey/actionmaps/{actionMapId}', 
 			'PATCH', 
 			{ 'actionMapId': actionMapId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Deprecated. Update a single action target.
-	 * ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
-	 * @param {String} actionTargetId ID of the action target.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	patchJourneyActiontarget(actionTargetId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'actionTargetId' is set
-		if (actionTargetId === undefined || actionTargetId === null || actionTargetId === '') {
-			throw 'Missing the required parameter "actionTargetId" when calling patchJourneyActiontarget';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/actiontargets/{actionTargetId}', 
-			'PATCH', 
-			{ 'actionTargetId': actionTargetId },
 			{  },
 			{  },
 			{  },

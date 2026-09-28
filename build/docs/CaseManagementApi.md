@@ -35,6 +35,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getCasemanagementCasesQueryJobResults**](CaseManagementApi#getCasemanagementCasesQueryJobResults) | **GET** /api/v2/casemanagement/cases/query/jobs/{jobId}/results | Get results for a case query job
 [**getCasemanagementCasesReference**](CaseManagementApi#getCasemanagementCasesReference) | **GET** /api/v2/casemanagement/cases/references/{referenceId} | Get a Case by reference.
 [**patchCasemanagementCaseDatedue**](CaseManagementApi#patchCasemanagementCaseDatedue) | **PATCH** /api/v2/casemanagement/cases/{caseId}/datedue | Update the due date of a Case.
+[**patchCasemanagementCaseDescription**](CaseManagementApi#patchCasemanagementCaseDescription) | **PATCH** /api/v2/casemanagement/cases/{caseId}/description | Update the description of a Case.
+[**patchCasemanagementCaseExternalid**](CaseManagementApi#patchCasemanagementCaseExternalid) | **PATCH** /api/v2/casemanagement/cases/{caseId}/externalid | Update the external identifier of a Case.
 [**patchCasemanagementCaseOwner**](CaseManagementApi#patchCasemanagementCaseOwner) | **PATCH** /api/v2/casemanagement/cases/{caseId}/owner | Update the ownerId of a Case
 [**patchCasemanagementCasePriority**](CaseManagementApi#patchCasemanagementCasePriority) | **PATCH** /api/v2/casemanagement/cases/{caseId}/priority | Update priority of a Case.
 [**patchCasemanagementCaseSummary**](CaseManagementApi#patchCasemanagementCaseSummary) | **PATCH** /api/v2/casemanagement/cases/{caseId}/summary | Update summary of a Case.
@@ -1820,6 +1822,128 @@ apiInstance.patchCasemanagementCaseDatedue(caseId, body, opts)
 **Case**
 
 
+## patchCasemanagementCaseDescription
+
+> Case patchCasemanagementCaseDescription(caseId, body, opts)
+
+
+PATCH /api/v2/casemanagement/cases/{caseId}/description
+
+Update the description of a Case.
+
+patchCasemanagementCaseDescription is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* caseManagement:caseDescription:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.CaseManagementApi();
+
+let caseId = "caseId_example"; // String | Case identifier.
+let body = {}; // Object | Description update.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchCasemanagementCaseDescription(caseId, body, opts)
+  .then((data) => {
+    console.log(`patchCasemanagementCaseDescription success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchCasemanagementCaseDescription');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **caseId** | **String** | Case identifier. |  |
+ **body** | **Object** | Description update. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**Case**
+
+
+## patchCasemanagementCaseExternalid
+
+> Case patchCasemanagementCaseExternalid(caseId, body, opts)
+
+
+PATCH /api/v2/casemanagement/cases/{caseId}/externalid
+
+Update the external identifier of a Case.
+
+patchCasemanagementCaseExternalid is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* caseManagement:caseExternalId:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.CaseManagementApi();
+
+let caseId = "caseId_example"; // String | Case identifier.
+let body = {}; // Object | External identifier update.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchCasemanagementCaseExternalid(caseId, body, opts)
+  .then((data) => {
+    console.log(`patchCasemanagementCaseExternalid success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchCasemanagementCaseExternalid');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **caseId** | **String** | Case identifier. |  |
+ **body** | **Object** | External identifier update. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**Case**
+
+
 ## patchCasemanagementCaseOwner
 
 > Case patchCasemanagementCaseOwner(caseId, body, opts)
@@ -3059,4 +3183,4 @@ apiInstance.putCasemanagementCaseplanIntakesettings(caseplanId, body, opts)
 **IntakeSettingsListing**
 
 
-_purecloud-platform-client-v2@262.0.0_
+_purecloud-platform-client-v2@263.0.0_

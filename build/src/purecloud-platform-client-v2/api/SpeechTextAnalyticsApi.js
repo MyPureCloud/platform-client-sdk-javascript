@@ -5,7 +5,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -630,6 +630,36 @@ class SpeechTextAnalyticsApi {
 	}
 
 	/**
+	 * Get program processing settings
+	 * 
+	 * @param {String} programId The id of the program
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getSpeechandtextanalyticsProgramSettingsProcessing(programId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'programId' is set
+		if (programId === undefined || programId === null || programId === '') {
+			throw 'Missing the required parameter "programId" when calling getSpeechandtextanalyticsProgramSettingsProcessing';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/programs/{programId}/settings/processing', 
+			'GET', 
+			{ 'programId': programId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Get transcription engine settings of a program
 	 * 
 	 * @param {String} programId The id of the program
@@ -793,6 +823,34 @@ class SpeechTextAnalyticsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/programs/settings/insights', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'programIds': this.apiClient.buildCollectionParam(opts['programIds'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get the list of program processing settings for the organization
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize The page size for the listing. The max that will be returned is 100. (default to 100)
+	 * @param {Number} opts.pageNumber The page number for the listing (default to 1)
+	 * @param {Array.<String>} opts.programIds Comma separated Program IDs to filter by. Maximum of 50 IDs allowed.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getSpeechandtextanalyticsProgramsSettingsProcessing(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/programs/settings/processing', 
 			'GET', 
 			{  },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'programIds': this.apiClient.buildCollectionParam(opts['programIds'], 'multi') },
@@ -1342,6 +1400,41 @@ class SpeechTextAnalyticsApi {
 			{  },
 			{  },
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update program processing settings
+	 * 
+	 * @param {String} programId The id of the program
+	 * @param {Object} body Program processing settings
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	patchSpeechandtextanalyticsProgramSettingsProcessing(programId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'programId' is set
+		if (programId === undefined || programId === null || programId === '') {
+			throw 'Missing the required parameter "programId" when calling patchSpeechandtextanalyticsProgramSettingsProcessing';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchSpeechandtextanalyticsProgramSettingsProcessing';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/programs/{programId}/settings/processing', 
+			'PATCH', 
+			{ 'programId': programId },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json'],

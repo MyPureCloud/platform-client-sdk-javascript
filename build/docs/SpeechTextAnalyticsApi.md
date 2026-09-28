@@ -26,12 +26,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getSpeechandtextanalyticsProgram**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgram) | **GET** /api/v2/speechandtextanalytics/programs/{programId} | Get a Speech and Text Analytics program by id
 [**getSpeechandtextanalyticsProgramMappings**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramMappings) | **GET** /api/v2/speechandtextanalytics/programs/{programId}/mappings | Get Speech and Text Analytics program mappings to queues and flows by id
 [**getSpeechandtextanalyticsProgramSettingsInsights**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramSettingsInsights) | **GET** /api/v2/speechandtextanalytics/programs/{programId}/settings/insights | Get AI Insights settings of a program
+[**getSpeechandtextanalyticsProgramSettingsProcessing**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramSettingsProcessing) | **GET** /api/v2/speechandtextanalytics/programs/{programId}/settings/processing | Get program processing settings
 [**getSpeechandtextanalyticsProgramTranscriptionengines**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramTranscriptionengines) | **GET** /api/v2/speechandtextanalytics/programs/{programId}/transcriptionengines | Get transcription engine settings of a program
 [**getSpeechandtextanalyticsPrograms**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsPrograms) | **GET** /api/v2/speechandtextanalytics/programs | Get the list of Speech and Text Analytics programs
 [**getSpeechandtextanalyticsProgramsGeneralJob**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramsGeneralJob) | **GET** /api/v2/speechandtextanalytics/programs/general/jobs/{jobId} | Get a Speech and Text Analytics general program job by id
 [**getSpeechandtextanalyticsProgramsMappings**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramsMappings) | **GET** /api/v2/speechandtextanalytics/programs/mappings | Get the list of Speech and Text Analytics programs mappings to queues and flows
 [**getSpeechandtextanalyticsProgramsPublishjob**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramsPublishjob) | **GET** /api/v2/speechandtextanalytics/programs/publishjobs/{jobId} | Get a Speech and Text Analytics publish programs job by id
 [**getSpeechandtextanalyticsProgramsSettingsInsights**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramsSettingsInsights) | **GET** /api/v2/speechandtextanalytics/programs/settings/insights | Get the list of program AI Insights settings for the organization
+[**getSpeechandtextanalyticsProgramsSettingsProcessing**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramsSettingsProcessing) | **GET** /api/v2/speechandtextanalytics/programs/settings/processing | Get the list of program processing settings for the organization
 [**getSpeechandtextanalyticsProgramsTopiclinksJob**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramsTopiclinksJob) | **GET** /api/v2/speechandtextanalytics/programs/topiclinks/jobs/{jobId} | Get a Speech and Text Analytics program-topic links job by id
 [**getSpeechandtextanalyticsProgramsTranscriptionenginesDialects**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramsTranscriptionenginesDialects) | **GET** /api/v2/speechandtextanalytics/programs/transcriptionengines/dialects | Get supported dialects for each transcription engine
 [**getSpeechandtextanalyticsProgramsUnpublished**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramsUnpublished) | **GET** /api/v2/speechandtextanalytics/programs/unpublished | Get the list of Speech and Text Analytics unpublished programs
@@ -51,6 +53,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getSpeechandtextanalyticsTopicsTestphraseJob**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsTopicsTestphraseJob) | **GET** /api/v2/speechandtextanalytics/topics/testphrase/jobs/{jobId} | Get a Speech and Text Analytics test topics phrase job by id
 [**getSpeechandtextanalyticsTranslationsLanguageConversation**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsTranslationsLanguageConversation) | **GET** /api/v2/speechandtextanalytics/translations/languages/{languageId}/conversations/{conversationId} | Translate a single interaction recording (or an email conversation)
 [**getSpeechandtextanalyticsTranslationsLanguages**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsTranslationsLanguages) | **GET** /api/v2/speechandtextanalytics/translations/languages | Get supported translation languages
+[**patchSpeechandtextanalyticsProgramSettingsProcessing**](SpeechTextAnalyticsApi#patchSpeechandtextanalyticsProgramSettingsProcessing) | **PATCH** /api/v2/speechandtextanalytics/programs/{programId}/settings/processing | Update program processing settings
 [**patchSpeechandtextanalyticsSettings**](SpeechTextAnalyticsApi#patchSpeechandtextanalyticsSettings) | **PATCH** /api/v2/speechandtextanalytics/settings | Patch Speech And Text Analytics Settings
 [**postSpeechandtextanalyticsCategories**](SpeechTextAnalyticsApi#postSpeechandtextanalyticsCategories) | **POST** /api/v2/speechandtextanalytics/categories | Create new Speech and Text Analytics category
 [**postSpeechandtextanalyticsDictionaryfeedback**](SpeechTextAnalyticsApi#postSpeechandtextanalyticsDictionaryfeedback) | **POST** /api/v2/speechandtextanalytics/dictionaryfeedback | Create a Speech and Text Analytics DictionaryFeedback
@@ -1244,6 +1247,64 @@ apiInstance.getSpeechandtextanalyticsProgramSettingsInsights(programId, opts)
 **ProgramInsightsSettings**
 
 
+## getSpeechandtextanalyticsProgramSettingsProcessing
+
+> ProgramProcessingSettings getSpeechandtextanalyticsProgramSettingsProcessing(programId, opts)
+
+
+GET /api/v2/speechandtextanalytics/programs/{programId}/settings/processing
+
+Get program processing settings
+
+Requires ALL permissions:
+
+* speechAndTextAnalytics:program:view
+* speechAndTextAnalytics:processingSettings:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SpeechTextAnalyticsApi();
+
+let programId = "programId_example"; // String | The id of the program
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getSpeechandtextanalyticsProgramSettingsProcessing(programId, opts)
+  .then((data) => {
+    console.log(`getSpeechandtextanalyticsProgramSettingsProcessing success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getSpeechandtextanalyticsProgramSettingsProcessing');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **programId** | **String** | The id of the program |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ProgramProcessingSettings**
+
+
 ## getSpeechandtextanalyticsProgramTranscriptionengines
 
 > ProgramTranscriptionEngines getSpeechandtextanalyticsProgramTranscriptionengines(programId, opts)
@@ -1606,6 +1667,68 @@ apiInstance.getSpeechandtextanalyticsProgramsSettingsInsights(opts)
 ### Return type
 
 **ProgramInsightsSettingsEntityListing**
+
+
+## getSpeechandtextanalyticsProgramsSettingsProcessing
+
+> ProgramProcessingSettingsEntityListing getSpeechandtextanalyticsProgramsSettingsProcessing(opts)
+
+
+GET /api/v2/speechandtextanalytics/programs/settings/processing
+
+Get the list of program processing settings for the organization
+
+Requires ALL permissions:
+
+* speechAndTextAnalytics:program:view
+* speechAndTextAnalytics:processingSettings:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SpeechTextAnalyticsApi();
+
+let opts = { 
+  'pageSize': 100, // Number | The page size for the listing. The max that will be returned is 100.
+  'pageNumber': 1, // Number | The page number for the listing
+  'programIds': ["programIds_example"], // [String] | Comma separated Program IDs to filter by. Maximum of 50 IDs allowed.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getSpeechandtextanalyticsProgramsSettingsProcessing(opts)
+  .then((data) => {
+    console.log(`getSpeechandtextanalyticsProgramsSettingsProcessing success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getSpeechandtextanalyticsProgramsSettingsProcessing');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | The page size for the listing. The max that will be returned is 100. | [optional] [default to 100] |
+ **pageNumber** | **Number** | The page number for the listing | [optional] [default to 1] |
+ **programIds** | **[String]** | Comma separated Program IDs to filter by. Maximum of 50 IDs allowed. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ProgramProcessingSettingsEntityListing**
 
 
 ## getSpeechandtextanalyticsProgramsTopiclinksJob
@@ -2704,6 +2827,66 @@ apiInstance.getSpeechandtextanalyticsTranslationsLanguages(opts)
 ### Return type
 
 **TranslateSupportedLanguageList**
+
+
+## patchSpeechandtextanalyticsProgramSettingsProcessing
+
+> ProgramProcessingSettingsPatchResponse patchSpeechandtextanalyticsProgramSettingsProcessing(programId, body, opts)
+
+
+PATCH /api/v2/speechandtextanalytics/programs/{programId}/settings/processing
+
+Update program processing settings
+
+Requires ALL permissions:
+
+* speechAndTextAnalytics:program:edit
+* speechAndTextAnalytics:processingSettings:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SpeechTextAnalyticsApi();
+
+let programId = "programId_example"; // String | The id of the program
+let body = {}; // Object | Program processing settings
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchSpeechandtextanalyticsProgramSettingsProcessing(programId, body, opts)
+  .then((data) => {
+    console.log(`patchSpeechandtextanalyticsProgramSettingsProcessing success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchSpeechandtextanalyticsProgramSettingsProcessing');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **programId** | **String** | The id of the program |  |
+ **body** | **Object** | Program processing settings |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ProgramProcessingSettingsPatchResponse**
 
 
 ## patchSpeechandtextanalyticsSettings
@@ -3925,4 +4108,4 @@ apiInstance.putSpeechandtextanalyticsTopic(topicId, body, opts)
 **Topic**
 
 
-_purecloud-platform-client-v2@262.0.0_
+_purecloud-platform-client-v2@263.0.0_

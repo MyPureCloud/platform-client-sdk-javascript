@@ -5,7 +5,7 @@ import HttpRequestOptions from './HttpRequestOptions.js';
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 262.0.0
+ * @version 263.0.0
  */
 class ApiClient {
 	/**
@@ -73,6 +73,7 @@ class ApiClient {
 
 		this.useLegacyParameterFilter = false;
 
+		this._listenerAuthPopupMessage = null;
 		if (typeof window !== 'undefined') {
 			// Browser only
 			this._handleAuthPopupMessage = this._handleAuthPopupMessage.bind(this);
@@ -550,7 +551,10 @@ class ApiClient {
 			this._notifyPopupInterval = null;
 
 			// Remove Event Listener
-			window.removeEventListener('message', this._handleAuthPopupMessage);
+			if (this._listenerAuthPopupMessage) {
+				window.removeEventListener('message', this._listenerAuthPopupMessage);
+				this._listenerAuthPopupMessage = null;
+			}
 
 			if (this._authPopupWindow) {
 				if (loginPopupConfiguration.autoClosePopup === true && !this._authPopupWindow.closed) {
@@ -588,7 +592,10 @@ class ApiClient {
 			}
 
 			return new Promise((resolve, reject) => {
-				window.addEventListener('message', (event) => this._handleAuthPopupMessage(event, loginPopupConfiguration, resolve, reject));
+				this._listenerAuthPopupMessage = (event) => {
+					this._handleAuthPopupMessage(event, loginPopupConfiguration, resolve, reject);
+				}
+				window.addEventListener('message', this._listenerAuthPopupMessage);
 
 				this._authPopupWindow = window.open(popupUrl, loginPopupConfiguration.popupTarget, loginPopupConfiguration.popupWindowFeatures);
 
@@ -618,7 +625,10 @@ class ApiClient {
 						// Authorization Popup Timeout
 						this._emitAuthPopupStatus("TIMEOUT", "Authorization Popup Timeout", this._popupIdentifier);
 						// Remove event listener
-						window.removeEventListener('message', this._handleAuthPopupMessage);
+						if (this._listenerAuthPopupMessage) {
+							window.removeEventListener('message', this._listenerAuthPopupMessage);
+							this._listenerAuthPopupMessage = null;
+						}
 						// Close popup automatically if requested
 						if (loginPopupConfiguration.autoClosePopup === true && loginPopupConfiguration.autoClosePopupDelay > 0) {
 							setTimeout(
@@ -707,7 +717,10 @@ class ApiClient {
 					if (this._notifyPopupInterval) clearInterval(this._notifyPopupInterval);
 					this._notifyPopupInterval = null;
 					// Remove Event Listener
-					window.removeEventListener('message', this._handleAuthPopupMessage);
+					if (this._listenerAuthPopupMessage) {
+						window.removeEventListener('message', this._listenerAuthPopupMessage);
+						this._listenerAuthPopupMessage = null;
+					}
 
 					if (loginPopupConfiguration.usePopupIdentifier === true && jsonMessage.identifier) {
 						if (jsonMessage.identifier !== this._popupIdentifier) {
@@ -1263,6 +1276,8 @@ class ApiClient {
 	* @param {string} opts.target - (optional) The organization ID of the target organization, when intending to log in to a specific target organization using Authorized Organizations.
 	* @param {string} opts.login_hint - (optional) The login_hint allows an application to pass the email address and/or the org name values to the authorization server (email:orgName, email, orgName).
 	* @param {string} opts.prompt - (optional) Use the prompt=login parameter to require that the user be prompted to enter credentials at the Gensys Cloud login screen and ignore any remembered sessions (auth cookies).
+	* @param {object} opts.authPopupConfiguration - (optional) Overrides Authorization Popup Configuration.
+	* @param {boolean} opts.skipTest - (optional) Default: false. If true, proceeds to OAuth Grant flow regardless of existing token (skip test of token).
     * @param {string} codeVerifier - (optional) code verifier used to generate the code challenge
     */
     loginPKCEGrant(clientId, redirectUri, opts, codeVerifier) {
@@ -1345,7 +1360,7 @@ class ApiClient {
                   });
             } else {
                 // Test token (if previously stored) and proceed with login
-                this._testTokenAccess()
+                this._testTokenAccess(opts.skipTest)
                   .then(() => {
                     if (!this.authData.state && opts.state)
                       this.authData.state = opts.state;
@@ -1638,8 +1653,12 @@ class ApiClient {
 	/**
 	 * @description Loads token from storage, if enabled, and checks to ensure it works.
 	 */
-	_testTokenAccess() {
+	_testTokenAccess(skipTest) {
 		return new Promise((resolve, reject) => {
+			if (typeof skipTest === "boolean" && skipTest === true) {
+				reject(new Error('Skipping Test Token'));
+				return;
+			}
 			// Load from storage
 			this._loadSettings();
 

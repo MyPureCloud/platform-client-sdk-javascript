@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -9100,6 +9100,41 @@ class ConversationsApi {
 			{  },
 			{  },
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * The User performing this action will takeover the conversation from the participant specified.
+	 * This operation allows a user performing the action to take over a conversation from the participant specified. The user must be monitoring the participant and must have the necessary permissions to perform the takeover action.
+	 * @param {String} conversationId The id of the conversation being taken over
+	 * @param {String} participantId The id of the participant being taken over.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postConversationsMessageParticipantTakeover(conversationId, participantId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling postConversationsMessageParticipantTakeover';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null || participantId === '') {
+			throw 'Missing the required parameter "participantId" when calling postConversationsMessageParticipantTakeover';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messages/{conversationId}/participants/{participantId}/takeover', 
+			'POST', 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
+			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json'],

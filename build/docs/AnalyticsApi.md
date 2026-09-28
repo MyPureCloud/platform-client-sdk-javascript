@@ -2689,8 +2689,6 @@ GET /api/v2/analytics/dataextraction/downloads/{downloadId}
 
 Get analytics data warehouse file download
 
-getAnalyticsDataextractionDownload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:datawarehouse:view
@@ -2747,8 +2745,6 @@ void (no response body)
 GET /api/v2/analytics/dataextraction/downloads/metadata
 
 Get metadata on files available for extraction
-
-getAnalyticsDataextractionDownloadsMetadata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -5965,8 +5961,6 @@ POST /api/v2/analytics/dataextraction/downloads/bulk
 
 Get download URLs for analytics data warehouse files
 
-postAnalyticsDataextractionDownloadsBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:datawarehouse:view
@@ -8206,4 +8200,4 @@ apiInstance.putAnalyticsDataretentionSettings(body, opts)
 **AnalyticsDataRetentionResponse**
 
 
-_purecloud-platform-client-v2@262.0.0_
+_purecloud-platform-client-v2@263.0.0_

@@ -5,7 +5,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -1342,7 +1342,6 @@ class AnalyticsApi {
 	 * @param {String} downloadId Unique file Id to download
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsDataextractionDownload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsDataextractionDownload(downloadId, opts) { 
 		opts = opts || {};
@@ -1378,7 +1377,6 @@ class AnalyticsApi {
 	 * @param {Date} opts.dateStart Start DateTime filter. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 	 * @param {Date} opts.dateEnd End DateTime filter. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsDataextractionDownloadsMetadata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsDataextractionDownloadsMetadata(opts) { 
 		opts = opts || {};
@@ -3045,7 +3043,6 @@ class AnalyticsApi {
 	 * @param {Object} body request
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postAnalyticsDataextractionDownloadsBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsDataextractionDownloadsBulk(body, opts) { 
 		opts = opts || {};

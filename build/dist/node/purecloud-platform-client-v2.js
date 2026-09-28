@@ -849,7 +849,7 @@ class Configuration {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 262.0.0
+ * @version 263.0.0
  */
 class ApiClient {
 	/**
@@ -917,6 +917,7 @@ class ApiClient {
 
 		this.useLegacyParameterFilter = false;
 
+		this._listenerAuthPopupMessage = null;
 		if (typeof window !== 'undefined') {
 			// Browser only
 			this._handleAuthPopupMessage = this._handleAuthPopupMessage.bind(this);
@@ -1394,7 +1395,10 @@ class ApiClient {
 			this._notifyPopupInterval = null;
 
 			// Remove Event Listener
-			window.removeEventListener('message', this._handleAuthPopupMessage);
+			if (this._listenerAuthPopupMessage) {
+				window.removeEventListener('message', this._listenerAuthPopupMessage);
+				this._listenerAuthPopupMessage = null;
+			}
 
 			if (this._authPopupWindow) {
 				if (loginPopupConfiguration.autoClosePopup === true && !this._authPopupWindow.closed) {
@@ -1432,7 +1436,10 @@ class ApiClient {
 			}
 
 			return new Promise((resolve, reject) => {
-				window.addEventListener('message', (event) => this._handleAuthPopupMessage(event, loginPopupConfiguration, resolve, reject));
+				this._listenerAuthPopupMessage = (event) => {
+					this._handleAuthPopupMessage(event, loginPopupConfiguration, resolve, reject);
+				};
+				window.addEventListener('message', this._listenerAuthPopupMessage);
 
 				this._authPopupWindow = window.open(popupUrl, loginPopupConfiguration.popupTarget, loginPopupConfiguration.popupWindowFeatures);
 
@@ -1462,7 +1469,10 @@ class ApiClient {
 						// Authorization Popup Timeout
 						this._emitAuthPopupStatus("TIMEOUT", "Authorization Popup Timeout", this._popupIdentifier);
 						// Remove event listener
-						window.removeEventListener('message', this._handleAuthPopupMessage);
+						if (this._listenerAuthPopupMessage) {
+							window.removeEventListener('message', this._listenerAuthPopupMessage);
+							this._listenerAuthPopupMessage = null;
+						}
 						// Close popup automatically if requested
 						if (loginPopupConfiguration.autoClosePopup === true && loginPopupConfiguration.autoClosePopupDelay > 0) {
 							setTimeout(
@@ -1551,7 +1561,10 @@ class ApiClient {
 					if (this._notifyPopupInterval) clearInterval(this._notifyPopupInterval);
 					this._notifyPopupInterval = null;
 					// Remove Event Listener
-					window.removeEventListener('message', this._handleAuthPopupMessage);
+					if (this._listenerAuthPopupMessage) {
+						window.removeEventListener('message', this._listenerAuthPopupMessage);
+						this._listenerAuthPopupMessage = null;
+					}
 
 					if (loginPopupConfiguration.usePopupIdentifier === true && jsonMessage.identifier) {
 						if (jsonMessage.identifier !== this._popupIdentifier) {
@@ -2107,6 +2120,8 @@ class ApiClient {
 	* @param {string} opts.target - (optional) The organization ID of the target organization, when intending to log in to a specific target organization using Authorized Organizations.
 	* @param {string} opts.login_hint - (optional) The login_hint allows an application to pass the email address and/or the org name values to the authorization server (email:orgName, email, orgName).
 	* @param {string} opts.prompt - (optional) Use the prompt=login parameter to require that the user be prompted to enter credentials at the Gensys Cloud login screen and ignore any remembered sessions (auth cookies).
+	* @param {object} opts.authPopupConfiguration - (optional) Overrides Authorization Popup Configuration.
+	* @param {boolean} opts.skipTest - (optional) Default: false. If true, proceeds to OAuth Grant flow regardless of existing token (skip test of token).
     * @param {string} codeVerifier - (optional) code verifier used to generate the code challenge
     */
     loginPKCEGrant(clientId, redirectUri, opts, codeVerifier) {
@@ -2189,7 +2204,7 @@ class ApiClient {
                   });
             } else {
                 // Test token (if previously stored) and proceed with login
-                this._testTokenAccess()
+                this._testTokenAccess(opts.skipTest)
                   .then(() => {
                     if (!this.authData.state && opts.state)
                       this.authData.state = opts.state;
@@ -2482,8 +2497,12 @@ class ApiClient {
 	/**
 	 * @description Loads token from storage, if enabled, and checks to ensure it works.
 	 */
-	_testTokenAccess() {
+	_testTokenAccess(skipTest) {
 		return new Promise((resolve, reject) => {
+			if (typeof skipTest === "boolean" && skipTest === true) {
+				reject(new Error('Skipping Test Token'));
+				return;
+			}
 			// Load from storage
 			this._loadSettings();
 
@@ -3037,7 +3056,7 @@ class AIStudioApi {
 	/**
 	 * AIStudio service.
 	 * @module purecloud-platform-client-v2/api/AIStudioApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -3984,7 +4003,7 @@ class AgentAssistantsApi {
 	/**
 	 * AgentAssistants service.
 	 * @module purecloud-platform-client-v2/api/AgentAssistantsApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -4789,7 +4808,7 @@ class AgentCopilotApi {
 	/**
 	 * AgentCopilot service.
 	 * @module purecloud-platform-client-v2/api/AgentCopilotApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -4901,7 +4920,7 @@ class AgentUIApi {
 	/**
 	 * AgentUI service.
 	 * @module purecloud-platform-client-v2/api/AgentUIApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -5052,7 +5071,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -5513,7 +5532,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -6850,7 +6869,6 @@ class AnalyticsApi {
 	 * @param {String} downloadId Unique file Id to download
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsDataextractionDownload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsDataextractionDownload(downloadId, opts) { 
 		opts = opts || {};
@@ -6886,7 +6904,6 @@ class AnalyticsApi {
 	 * @param {Date} opts.dateStart Start DateTime filter. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 	 * @param {Date} opts.dateEnd End DateTime filter. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsDataextractionDownloadsMetadata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsDataextractionDownloadsMetadata(opts) { 
 		opts = opts || {};
@@ -8553,7 +8570,6 @@ class AnalyticsApi {
 	 * @param {Object} body request
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postAnalyticsDataextractionDownloadsBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsDataextractionDownloadsBulk(body, opts) { 
 		opts = opts || {};
@@ -9734,7 +9750,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -14692,7 +14708,7 @@ class AssistantCopilotVariationsApi {
 	/**
 	 * AssistantCopilotVariations service.
 	 * @module purecloud-platform-client-v2/api/AssistantCopilotVariationsApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -14888,7 +14904,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -15115,7 +15131,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -17040,7 +17056,7 @@ class BackgroundAssistantApi {
 	/**
 	 * BackgroundAssistant service.
 	 * @module purecloud-platform-client-v2/api/BackgroundAssistantApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -17114,7 +17130,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -17398,7 +17414,7 @@ class BusinessRulesApi {
 	/**
 	 * BusinessRules service.
 	 * @module purecloud-platform-client-v2/api/BusinessRulesApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -19028,7 +19044,7 @@ class CarrierServicesApi {
 	/**
 	 * CarrierServices service.
 	 * @module purecloud-platform-client-v2/api/CarrierServicesApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -19105,7 +19121,7 @@ class CaseManagementApi {
 	/**
 	 * CaseManagement service.
 	 * @module purecloud-platform-client-v2/api/CaseManagementApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -20129,6 +20145,78 @@ class CaseManagementApi {
 	}
 
 	/**
+	 * Update the description of a Case.
+	 * 
+	 * @param {String} caseId Case identifier.
+	 * @param {Object} body Description update.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * patchCasemanagementCaseDescription is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	patchCasemanagementCaseDescription(caseId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'caseId' is set
+		if (caseId === undefined || caseId === null || caseId === '') {
+			throw 'Missing the required parameter "caseId" when calling patchCasemanagementCaseDescription';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchCasemanagementCaseDescription';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/casemanagement/cases/{caseId}/description', 
+			'PATCH', 
+			{ 'caseId': caseId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update the external identifier of a Case.
+	 * 
+	 * @param {String} caseId Case identifier.
+	 * @param {Object} body External identifier update.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * patchCasemanagementCaseExternalid is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	patchCasemanagementCaseExternalid(caseId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'caseId' is set
+		if (caseId === undefined || caseId === null || caseId === '') {
+			throw 'Missing the required parameter "caseId" when calling patchCasemanagementCaseExternalid';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchCasemanagementCaseExternalid';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/casemanagement/cases/{caseId}/externalid', 
+			'PATCH', 
+			{ 'caseId': caseId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Update the ownerId of a Case
 	 * 
 	 * @param {String} caseId Case identifier.
@@ -20856,7 +20944,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -21995,7 +22083,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -22709,7 +22797,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -23904,7 +23992,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -33007,6 +33095,41 @@ class ConversationsApi {
 	}
 
 	/**
+	 * The User performing this action will takeover the conversation from the participant specified.
+	 * This operation allows a user performing the action to take over a conversation from the participant specified. The user must be monitoring the participant and must have the necessary permissions to perform the takeover action.
+	 * @param {String} conversationId The id of the conversation being taken over
+	 * @param {String} participantId The id of the participant being taken over.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postConversationsMessageParticipantTakeover(conversationId, participantId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling postConversationsMessageParticipantTakeover';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null || participantId === '') {
+			throw 'Missing the required parameter "participantId" when calling postConversationsMessageParticipantTakeover';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messages/{conversationId}/participants/{participantId}/takeover', 
+			'POST', 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Create an outbound messaging conversation.
 	 * If there is an existing conversation between the remote address and the address associated with the queue specified in createOutboundRequest then the result of this request depends on the state of that conversation and the useExistingConversation field of createOutboundRequest. If the existing conversation is in alerting or connected state, then the request will fail. If the existing conversation is disconnected but still within the conversation window then the request will fail unless useExistingConversation is set to true.
 	 * @param {Object} body Create outbound messaging conversation
@@ -34591,7 +34714,7 @@ class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -34692,7 +34815,7 @@ class DataPrivacyApi {
 	/**
 	 * DataPrivacy service.
 	 * @module purecloud-platform-client-v2/api/DataPrivacyApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -34889,7 +35012,7 @@ class DependenciesApi {
 	/**
 	 * Dependencies service.
 	 * @module purecloud-platform-client-v2/api/DependenciesApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -35025,7 +35148,7 @@ class DownloadsApi {
 	/**
 	 * Downloads service.
 	 * @module purecloud-platform-client-v2/api/DownloadsApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -35079,7 +35202,7 @@ class EmailsApi {
 	/**
 	 * Emails service.
 	 * @module purecloud-platform-client-v2/api/EmailsApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -35227,7 +35350,7 @@ class EmployeeEngagementApi {
 	/**
 	 * EmployeeEngagement service.
 	 * @module purecloud-platform-client-v2/api/EmployeeEngagementApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -35431,7 +35554,7 @@ class EventsApi {
 	/**
 	 * Events service.
 	 * @module purecloud-platform-client-v2/api/EventsApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -35572,7 +35695,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -40096,7 +40219,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -40375,7 +40498,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -40609,7 +40732,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -43461,7 +43584,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -43605,7 +43728,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -43756,7 +43879,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -44372,7 +44495,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -44963,7 +45086,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -46014,7 +46137,7 @@ class InfrastructureAsCodeApi {
 	/**
 	 * InfrastructureAsCode service.
 	 * @module purecloud-platform-client-v2/api/InfrastructureAsCodeApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -46194,7 +46317,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -49135,7 +49258,7 @@ class IntentsApi {
 	/**
 	 * Intents service.
 	 * @module purecloud-platform-client-v2/api/IntentsApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -49697,7 +49820,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -51641,38 +51764,6 @@ class JourneyApi {
 	}
 
 	/**
-	 * Deprecated. Update a single action target.
-	 * ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
-	 * @param {String} actionTargetId ID of the action target.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	patchJourneyActiontarget(actionTargetId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'actionTargetId' is set
-		if (actionTargetId === undefined || actionTargetId === null || actionTargetId === '') {
-			throw 'Missing the required parameter "actionTargetId" when calling patchJourneyActiontarget';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/actiontargets/{actionTargetId}', 
-			'PATCH', 
-			{ 'actionTargetId': actionTargetId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
 	 * Update a single action template.
 	 * 
 	 * @param {String} actionTemplateId ID of the action template.
@@ -52673,7 +52764,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -57200,7 +57291,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -58574,7 +58665,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -58833,7 +58924,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -60079,7 +60170,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -60377,7 +60468,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -60644,7 +60735,7 @@ class LogCaptureApi {
 	/**
 	 * LogCapture service.
 	 * @module purecloud-platform-client-v2/api/LogCaptureApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -60866,7 +60957,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -61284,7 +61375,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -61459,7 +61550,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -61720,7 +61811,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -62136,7 +62227,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -62500,7 +62591,7 @@ class OperationalEventsApi {
 	/**
 	 * OperationalEvents service.
 	 * @module purecloud-platform-client-v2/api/OperationalEventsApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -62631,7 +62722,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -63192,7 +63283,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -64796,7 +64887,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -70416,7 +70507,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -71274,7 +71365,7 @@ class ProcessAutomationApi {
 	/**
 	 * ProcessAutomation service.
 	 * @module purecloud-platform-client-v2/api/ProcessAutomationApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -71695,7 +71786,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -74173,7 +74264,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -76021,7 +76112,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -76784,7 +76875,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -80818,7 +80909,7 @@ class RoutingApi {
 
 	/**
 	 * Create a benefit assessment job.
-	 * 
+	 * Queues with Benefit Assessment results less than 7 days old are skipped. If every queue in the requested divisions has recent results, the request is rejected.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
@@ -82341,7 +82432,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -83302,7 +83393,7 @@ class ScreenMonitoringApi {
 	/**
 	 * ScreenMonitoring service.
 	 * @module purecloud-platform-client-v2/api/ScreenMonitoringApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -83678,7 +83769,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -84187,7 +84278,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -85003,7 +85094,7 @@ class SettingsApi {
 	/**
 	 * Settings service.
 	 * @module purecloud-platform-client-v2/api/SettingsApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -85412,7 +85503,7 @@ class SocialMediaApi {
 	/**
 	 * SocialMedia service.
 	 * @module purecloud-platform-client-v2/api/SocialMediaApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -87397,7 +87488,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -88022,6 +88113,36 @@ class SpeechTextAnalyticsApi {
 	}
 
 	/**
+	 * Get program processing settings
+	 * 
+	 * @param {String} programId The id of the program
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getSpeechandtextanalyticsProgramSettingsProcessing(programId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'programId' is set
+		if (programId === undefined || programId === null || programId === '') {
+			throw 'Missing the required parameter "programId" when calling getSpeechandtextanalyticsProgramSettingsProcessing';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/programs/{programId}/settings/processing', 
+			'GET', 
+			{ 'programId': programId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Get transcription engine settings of a program
 	 * 
 	 * @param {String} programId The id of the program
@@ -88185,6 +88306,34 @@ class SpeechTextAnalyticsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/programs/settings/insights', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'programIds': this.apiClient.buildCollectionParam(opts['programIds'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get the list of program processing settings for the organization
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize The page size for the listing. The max that will be returned is 100. (default to 100)
+	 * @param {Number} opts.pageNumber The page number for the listing (default to 1)
+	 * @param {Array.<String>} opts.programIds Comma separated Program IDs to filter by. Maximum of 50 IDs allowed.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getSpeechandtextanalyticsProgramsSettingsProcessing(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/programs/settings/processing', 
 			'GET', 
 			{  },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'programIds': this.apiClient.buildCollectionParam(opts['programIds'], 'multi') },
@@ -88734,6 +88883,41 @@ class SpeechTextAnalyticsApi {
 			{  },
 			{  },
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update program processing settings
+	 * 
+	 * @param {String} programId The id of the program
+	 * @param {Object} body Program processing settings
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	patchSpeechandtextanalyticsProgramSettingsProcessing(programId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'programId' is set
+		if (programId === undefined || programId === null || programId === '') {
+			throw 'Missing the required parameter "programId" when calling patchSpeechandtextanalyticsProgramSettingsProcessing';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchSpeechandtextanalyticsProgramSettingsProcessing';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/programs/{programId}/settings/processing', 
+			'PATCH', 
+			{ 'programId': programId },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json'],
@@ -89409,7 +89593,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -89523,7 +89707,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -89670,7 +89854,7 @@ class TaskManagementApi {
 	/**
 	 * TaskManagement service.
 	 * @module purecloud-platform-client-v2/api/TaskManagementApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -92166,7 +92350,7 @@ class TeamsApi {
 	/**
 	 * Teams service.
 	 * @module purecloud-platform-client-v2/api/TeamsApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -92509,7 +92693,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -93277,7 +93461,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -97384,7 +97568,7 @@ class TextbotsApi {
 	/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -97530,7 +97714,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -97708,7 +97892,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -98079,7 +98263,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -98457,7 +98641,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -98659,7 +98843,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -102884,7 +103068,7 @@ class UsersRulesApi {
 	/**
 	 * UsersRules service.
 	 * @module purecloud-platform-client-v2/api/UsersRulesApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -103201,7 +103385,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -103329,7 +103513,7 @@ class VirtualAgentsApi {
 	/**
 	 * VirtualAgents service.
 	 * @module purecloud-platform-client-v2/api/VirtualAgentsApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -103582,7 +103766,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -104412,7 +104596,7 @@ class WebDeploymentsApi {
 	/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -105090,7 +105274,7 @@ class WebMessagingApi {
 	/**
 	 * WebMessaging service.
 	 * @module purecloud-platform-client-v2/api/WebMessagingApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -105253,7 +105437,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 262.0.0
+	 * @version 263.0.0
 	 */
 
 	/**
@@ -105267,6 +105451,36 @@ class WorkforceManagementApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
+
+	/**
+	 * Delete an adherence adjustment for the current user
+	 * 
+	 * @param {String} adjustmentId The ID of the adherence adjustment to delete
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	deleteWorkforcemanagementAdherenceAdjustment(adjustmentId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'adjustmentId' is set
+		if (adjustmentId === undefined || adjustmentId === null || adjustmentId === '') {
+			throw 'Missing the required parameter "adjustmentId" when calling deleteWorkforcemanagementAdherenceAdjustment';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/adherence/adjustments/{adjustmentId}', 
+			'DELETE', 
+			{ 'adjustmentId': adjustmentId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
 
 	/**
 	 * Delete business unit
@@ -105323,6 +105537,76 @@ class WorkforceManagementApi {
 			'DELETE', 
 			{ 'businessUnitId': businessUnitId,'activityCodeId': activityCodeId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Delete an adherence adjustment reason code for a business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} reasonCodeId The ID of the reason code to delete
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode(businessUnitId, reasonCodeId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode';
+		}
+		// verify the required parameter 'reasonCodeId' is set
+		if (reasonCodeId === undefined || reasonCodeId === null || reasonCodeId === '') {
+			throw 'Missing the required parameter "reasonCodeId" when calling deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/{reasonCodeId}', 
+			'DELETE', 
+			{ 'businessUnitId': businessUnitId,'reasonCodeId': reasonCodeId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Delete adherence adjustment reason codes in bulk for a business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Array.<String>} ids The IDs of the reason codes to delete
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(businessUnitId, ids, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk';
+		}
+		// verify the required parameter 'ids' is set
+		if (ids === undefined || ids === null) {
+			throw 'Missing the required parameter "ids" when calling deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/bulk', 
+			'DELETE', 
+			{ 'businessUnitId': businessUnitId },
+			{ 'ids': this.apiClient.buildCollectionParam(ids, 'multi') },
 			{  },
 			{  },
 			null, 
@@ -106037,6 +106321,36 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Get an adherence adjustment for the current user
+	 * 
+	 * @param {String} adjustmentId The ID of the adherence adjustment
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementAdherenceAdjustment(adjustmentId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'adjustmentId' is set
+		if (adjustmentId === undefined || adjustmentId === null || adjustmentId === '') {
+			throw 'Missing the required parameter "adjustmentId" when calling getWorkforcemanagementAdherenceAdjustment';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/adherence/adjustments/{adjustmentId}', 
+			'GET', 
+			{ 'adjustmentId': adjustmentId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Get an adherence explanation for the current user
 	 * 
 	 * @param {String} explanationId The ID of the explanation to update
@@ -106145,6 +106459,41 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/adherence/historical/jobs/{jobId}', 
 			'GET', 
 			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get an adherence adjustment for the requested agent
+	 * 
+	 * @param {String} agentId The ID of the agent
+	 * @param {String} adjustmentId The ID of the adherence adjustment
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementAgentAdherenceAdjustment(agentId, adjustmentId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'agentId' is set
+		if (agentId === undefined || agentId === null || agentId === '') {
+			throw 'Missing the required parameter "agentId" when calling getWorkforcemanagementAgentAdherenceAdjustment';
+		}
+		// verify the required parameter 'adjustmentId' is set
+		if (adjustmentId === undefined || adjustmentId === null || adjustmentId === '') {
+			throw 'Missing the required parameter "adjustmentId" when calling getWorkforcemanagementAgentAdherenceAdjustment';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/agents/{agentId}/adherence/adjustments/{adjustmentId}', 
+			'GET', 
+			{ 'agentId': agentId,'adjustmentId': adjustmentId },
 			{  },
 			{  },
 			{  },
@@ -106611,6 +106960,216 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Gets an activity plan deletion job
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} activityPlanId The ID of the activity plan associated with the deletion job
+	 * @param {String} jobId The ID of the activity plan deletion job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementBusinessunitActivityplanDeletionsJob(businessUnitId, activityPlanId, jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivityplanDeletionsJob';
+		}
+		// verify the required parameter 'activityPlanId' is set
+		if (activityPlanId === undefined || activityPlanId === null || activityPlanId === '') {
+			throw 'Missing the required parameter "activityPlanId" when calling getWorkforcemanagementBusinessunitActivityplanDeletionsJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitActivityplanDeletionsJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/deletions/jobs/{jobId}', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'activityPlanId': activityPlanId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Gets the latest job for an activity plan in the business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} activityPlanId The ID of the activity plan associated with the run job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementBusinessunitActivityplanJobs(businessUnitId, activityPlanId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivityplanJobs';
+		}
+		// verify the required parameter 'activityPlanId' is set
+		if (activityPlanId === undefined || activityPlanId === null || activityPlanId === '') {
+			throw 'Missing the required parameter "activityPlanId" when calling getWorkforcemanagementBusinessunitActivityplanJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/jobs', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'activityPlanId': activityPlanId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Gets a session users deletion job
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} activityPlanId The ID of the activity plan
+	 * @param {String} occurrenceId The ID of the activity plan occurrence
+	 * @param {String} sessionId The ID of the activity plan occurrence session
+	 * @param {String} jobId The ID of the activity plan occurrence session users deletion job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJob(businessUnitId, activityPlanId, occurrenceId, sessionId, jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJob';
+		}
+		// verify the required parameter 'activityPlanId' is set
+		if (activityPlanId === undefined || activityPlanId === null || activityPlanId === '') {
+			throw 'Missing the required parameter "activityPlanId" when calling getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJob';
+		}
+		// verify the required parameter 'occurrenceId' is set
+		if (occurrenceId === undefined || occurrenceId === null || occurrenceId === '') {
+			throw 'Missing the required parameter "occurrenceId" when calling getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJob';
+		}
+		// verify the required parameter 'sessionId' is set
+		if (sessionId === undefined || sessionId === null || sessionId === '') {
+			throw 'Missing the required parameter "sessionId" when calling getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/sessions/{sessionId}/users/deletions/jobs/{jobId}', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'activityPlanId': activityPlanId,'occurrenceId': occurrenceId,'sessionId': sessionId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Gets an activity plan sessions deletion job
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} activityPlanId The ID of the activity plan
+	 * @param {String} occurrenceId The ID of the activity plan occurrence
+	 * @param {String} jobId The ID of the activity plan sessions deletion job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJob(businessUnitId, activityPlanId, occurrenceId, jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJob';
+		}
+		// verify the required parameter 'activityPlanId' is set
+		if (activityPlanId === undefined || activityPlanId === null || activityPlanId === '') {
+			throw 'Missing the required parameter "activityPlanId" when calling getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJob';
+		}
+		// verify the required parameter 'occurrenceId' is set
+		if (occurrenceId === undefined || occurrenceId === null || occurrenceId === '') {
+			throw 'Missing the required parameter "occurrenceId" when calling getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/sessions/deletions/jobs/{jobId}', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'activityPlanId': activityPlanId,'occurrenceId': occurrenceId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Gets an occurrences deletion job
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} activityPlanId The ID of the activity plan
+	 * @param {String} jobId The ID of the activity plan occurrences deletion job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJob(businessUnitId, activityPlanId, jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJob';
+		}
+		// verify the required parameter 'activityPlanId' is set
+		if (activityPlanId === undefined || activityPlanId === null || activityPlanId === '') {
+			throw 'Missing the required parameter "activityPlanId" when calling getWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/deletions/jobs/{jobId}', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'activityPlanId': activityPlanId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Gets an activity plan run job
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
@@ -106698,6 +107257,236 @@ class WorkforceManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/jobs', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get adherence adjustments in bulk by ID for a business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Array.<String>} adjustmentIds The IDs of the adherence adjustments to fetch
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk(businessUnitId, adjustmentIds, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk';
+		}
+		// verify the required parameter 'adjustmentIds' is set
+		if (adjustmentIds === undefined || adjustmentIds === null) {
+			throw 'Missing the required parameter "adjustmentIds" when calling getWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/bulk', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId },
+			{ 'adjustmentIds': this.apiClient.buildCollectionParam(adjustmentIds, 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Query the status of an async adherence adjustments query job. Only the user who started the operation can query the status
+	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} jobId The ID of the query job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJob(businessUnitId, jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/query/jobs/{jobId}', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get query job history for the logged in user.
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs(businessUnitId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/query/jobs', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get an adherence adjustment reason code for a business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} reasonCodeId The ID of the reason code to fetch
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode(businessUnitId, reasonCodeId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode';
+		}
+		// verify the required parameter 'reasonCodeId' is set
+		if (reasonCodeId === undefined || reasonCodeId === null || reasonCodeId === '') {
+			throw 'Missing the required parameter "reasonCodeId" when calling getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/{reasonCodeId}', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'reasonCodeId': reasonCodeId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get adherence adjustment reason codes for a business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes(businessUnitId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get adherence adjustment reason codes in bulk by ID for a business unit. This API can return deleted reason codes.
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Array.<String>} ids The IDs of the reason codes to fetch
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(businessUnitId, ids, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk';
+		}
+		// verify the required parameter 'ids' is set
+		if (ids === undefined || ids === null) {
+			throw 'Missing the required parameter "ids" when calling getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/bulk', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId },
+			{ 'ids': this.apiClient.buildCollectionParam(ids, 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get adherence adjustments settings for a business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings(businessUnitId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/settings', 
 			'GET', 
 			{ 'businessUnitId': businessUnitId },
 			{  },
@@ -110948,6 +111737,81 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Update an adherence adjustment for the current user
+	 * 
+	 * @param {String} adjustmentId The ID of the adherence adjustment to update
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	patchWorkforcemanagementAdherenceAdjustment(adjustmentId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'adjustmentId' is set
+		if (adjustmentId === undefined || adjustmentId === null || adjustmentId === '') {
+			throw 'Missing the required parameter "adjustmentId" when calling patchWorkforcemanagementAdherenceAdjustment';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchWorkforcemanagementAdherenceAdjustment';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/adherence/adjustments/{adjustmentId}', 
+			'PATCH', 
+			{ 'adjustmentId': adjustmentId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update an adherence adjustment for the requested agent
+	 * 
+	 * @param {String} agentId The ID of the agent
+	 * @param {String} adjustmentId The ID of the adherence adjustment
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	patchWorkforcemanagementAgentAdherenceAdjustment(agentId, adjustmentId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'agentId' is set
+		if (agentId === undefined || agentId === null || agentId === '') {
+			throw 'Missing the required parameter "agentId" when calling patchWorkforcemanagementAgentAdherenceAdjustment';
+		}
+		// verify the required parameter 'adjustmentId' is set
+		if (adjustmentId === undefined || adjustmentId === null || adjustmentId === '') {
+			throw 'Missing the required parameter "adjustmentId" when calling patchWorkforcemanagementAgentAdherenceAdjustment';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchWorkforcemanagementAgentAdherenceAdjustment';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/agents/{agentId}/adherence/adjustments/{adjustmentId}', 
+			'PATCH', 
+			{ 'agentId': agentId,'adjustmentId': adjustmentId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Update an adherence explanation
 	 * 
 	 * @param {String} agentId The ID of the agent to query
@@ -110976,6 +111840,41 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/{explanationId}', 
 			'PATCH', 
 			{ 'agentId': agentId,'explanationId': explanationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update unavailable times for the requested agent
+	 * Large requests will be partitioned into multiple internal processing batches. Validation will occur against each internal batch independently rather than against the final combined state represented by the entire request
+	 * @param {String} agentId The ID of the agent
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	patchWorkforcemanagementAgentUnavailabletimes(agentId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'agentId' is set
+		if (agentId === undefined || agentId === null || agentId === '') {
+			throw 'Missing the required parameter "agentId" when calling patchWorkforcemanagementAgentUnavailabletimes';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchWorkforcemanagementAgentUnavailabletimes';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/agents/{agentId}/unavailabletimes', 
+			'PATCH', 
+			{ 'agentId': agentId },
 			{  },
 			{  },
 			{  },
@@ -111192,6 +112091,151 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}', 
 			'PATCH', 
 			{ 'businessUnitId': businessUnitId,'activityPlanId': activityPlanId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update adherence adjustments in bulk for a business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	patchWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/bulk', 
+			'PATCH', 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update an adherence adjustment reason code for a business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} reasonCodeId The ID of the reason code to update
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode(businessUnitId, reasonCodeId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode';
+		}
+		// verify the required parameter 'reasonCodeId' is set
+		if (reasonCodeId === undefined || reasonCodeId === null || reasonCodeId === '') {
+			throw 'Missing the required parameter "reasonCodeId" when calling patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/{reasonCodeId}', 
+			'PATCH', 
+			{ 'businessUnitId': businessUnitId,'reasonCodeId': reasonCodeId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update adherence adjustment reason codes in bulk for a business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/bulk', 
+			'PATCH', 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update adherence adjustments settings for a business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	patchWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/settings', 
+			'PATCH', 
+			{ 'businessUnitId': businessUnitId },
 			{  },
 			{  },
 			{  },
@@ -112520,6 +113564,69 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Submit an adherence adjustment for the current user
+	 * 
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementAdherenceAdjustments(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementAdherenceAdjustments';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/adherence/adjustments', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Query adherence adjustments for the current user
+	 * 
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {String} opts.pageSize The page size for the listing. The maximum page size is 500. (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementAdherenceAdjustmentsQuery(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementAdherenceAdjustmentsQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/adherence/adjustments/query', 
+			'POST', 
+			{  },
+			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Submit an adherence explanation for the current user
 	 * 
 	 * @param {Object} body The request body
@@ -112601,6 +113708,44 @@ class WorkforceManagementApi {
 			'POST', 
 			{  },
 			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Query adherence adjustments for the requested agent
+	 * 
+	 * @param {String} agentId The ID of the agent
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {String} opts.pageSize The page size for the listing. The maximum page size is 500. (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementAgentAdherenceAdjustmentsQuery(agentId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'agentId' is set
+		if (agentId === undefined || agentId === null || agentId === '') {
+			throw 'Missing the required parameter "agentId" when calling postWorkforcemanagementAgentAdherenceAdjustmentsQuery';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementAgentAdherenceAdjustmentsQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/agents/{agentId}/adherence/adjustments/query', 
+			'POST', 
+			{ 'agentId': agentId },
+			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'] },
 			{  },
 			{  },
 			body, 
@@ -113151,6 +114296,176 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Delete an activity plan
+	 * Triggers a job to delete the activity plan. No further changes to the activity plan can be made
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} activityPlanId The ID of the activity plan to delete
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementBusinessunitActivityplanDeletionsJobs(businessUnitId, activityPlanId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitActivityplanDeletionsJobs';
+		}
+		// verify the required parameter 'activityPlanId' is set
+		if (activityPlanId === undefined || activityPlanId === null || activityPlanId === '') {
+			throw 'Missing the required parameter "activityPlanId" when calling postWorkforcemanagementBusinessunitActivityplanDeletionsJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/deletions/jobs', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId,'activityPlanId': activityPlanId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Triggers a job to delete users from a session in the activity plan occurrence
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} activityPlanId The ID of the activity plan
+	 * @param {String} occurrenceId The ID of the activity plan occurrence
+	 * @param {String} sessionId The ID of the activity plan occurrence session
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobs(businessUnitId, activityPlanId, occurrenceId, sessionId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobs';
+		}
+		// verify the required parameter 'activityPlanId' is set
+		if (activityPlanId === undefined || activityPlanId === null || activityPlanId === '') {
+			throw 'Missing the required parameter "activityPlanId" when calling postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobs';
+		}
+		// verify the required parameter 'occurrenceId' is set
+		if (occurrenceId === undefined || occurrenceId === null || occurrenceId === '') {
+			throw 'Missing the required parameter "occurrenceId" when calling postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobs';
+		}
+		// verify the required parameter 'sessionId' is set
+		if (sessionId === undefined || sessionId === null || sessionId === '') {
+			throw 'Missing the required parameter "sessionId" when calling postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobs';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/sessions/{sessionId}/users/deletions/jobs', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId,'activityPlanId': activityPlanId,'occurrenceId': occurrenceId,'sessionId': sessionId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Triggers a job to delete sessions for the activity plan occurrence
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} activityPlanId The ID of the activity plan
+	 * @param {String} occurrenceId The ID of the activity plan occurrence
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobs(businessUnitId, activityPlanId, occurrenceId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobs';
+		}
+		// verify the required parameter 'activityPlanId' is set
+		if (activityPlanId === undefined || activityPlanId === null || activityPlanId === '') {
+			throw 'Missing the required parameter "activityPlanId" when calling postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobs';
+		}
+		// verify the required parameter 'occurrenceId' is set
+		if (occurrenceId === undefined || occurrenceId === null || occurrenceId === '') {
+			throw 'Missing the required parameter "occurrenceId" when calling postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobs';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/sessions/deletions/jobs', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId,'activityPlanId': activityPlanId,'occurrenceId': occurrenceId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Delete occurrences for the activity plan
+	 * Triggers a job to delete occurrences of the activity plan. The activity plan cannot be updated until the job completes
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} activityPlanId The ID of the activity plan
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobs(businessUnitId, activityPlanId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobs';
+		}
+		// verify the required parameter 'activityPlanId' is set
+		if (activityPlanId === undefined || activityPlanId === null || activityPlanId === '') {
+			throw 'Missing the required parameter "activityPlanId" when calling postWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobs';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/deletions/jobs', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId,'activityPlanId': activityPlanId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Run an activity plan manually
 	 * Triggers a job running the activity plan. The activity plan cannot be updated until the job completes
 	 * @param {String} businessUnitId The ID of the business unit
@@ -113207,6 +114522,149 @@ class WorkforceManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Query adherence adjustments for a business unit. Results will be returned using cursor pagination
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {String} opts.pageSize The page size for the listing. The maximum page size is 500. (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementBusinessunitAdherenceAdjustmentsQuery(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitAdherenceAdjustmentsQuery';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitAdherenceAdjustmentsQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/query', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId },
+			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Creates an async query job for adherence adjustments in a business unit.
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/query/jobs', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Create an adherence adjustment reason code for a business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Create adherence adjustment reason codes in bulk for a business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/bulk', 
 			'POST', 
 			{ 'businessUnitId': businessUnitId },
 			{  },
@@ -117570,7 +119028,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 262.0.0
+ * @version 263.0.0
  */
 class platformClient {
 	constructor() {
