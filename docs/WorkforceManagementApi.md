@@ -23971,4 +23971,4 @@ apiInstance.putWorkforcemanagementSchedulebidPreference(bidId, body, opts)
 **AgentScheduleBiddingPreferenceResponse**
 
 
-_purecloud-platform-client-v2@263.0.0_
+_purecloud-platform-client-v2@263.1.0_
