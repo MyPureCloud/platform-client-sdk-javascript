@@ -1703,4 +1703,4 @@ apiInstance.putConversationsSummariesSetting(summarySettingId, body, opts)
 **SummarySetting**
 
 
-_purecloud-platform-client-v2@263.0.0_
+_purecloud-platform-client-v2@263.1.0_

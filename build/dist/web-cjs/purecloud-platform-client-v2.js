@@ -2869,7 +2869,7 @@ exports.clearImmediate = typeof clearImmediate === "function" ? clearImmediate :
 }).call(this)}).call(this,require("timers").setImmediate,require("timers").clearImmediate)
 },{"process/browser.js":6,"timers":7}],"platformClient":[function(require,module,exports){
 (function (global,Buffer,setImmediate){(function (){
-'use strict';function asyncGeneratorStep(n,t,e,r,o,a,c){try{var i=n[a](c),u=i.value;}catch(n){return void e(n);}i.done?t(u):Promise.resolve(u).then(r,o);}function _asyncToGenerator(n){return function(){var t=this,e=arguments;return new Promise(function(r,o){var a=n.apply(t,e);function _next(n){asyncGeneratorStep(a,r,o,_next,_throw,"next",n);}function _throw(n){asyncGeneratorStep(a,r,o,_next,_throw,"throw",n);}_next(void 0);});};}function _regeneratorValues(e){if(null!=e){var t=e["function"==typeof Symbol&&Symbol.iterator||"@@iterator"],r=0;if(t)return t.call(e);if("function"==typeof e.next)return e;if(!isNaN(e.length))return{next:function next(){return e&&r>=e.length&&(e=void 0),{value:e&&e[r++],done:!e};}};}throw new TypeError(_typeof(e)+" is not iterable");}function _regenerator(){/*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */var e,t,r="function"==typeof Symbol?Symbol:{},n=r.iterator||"@@iterator",o=r.toStringTag||"@@toStringTag";function i(r,n,o,i){var c=n&&n.prototype instanceof Generator?n:Generator,u=Object.create(c.prototype);return _regeneratorDefine2(u,"_invoke",function(r,n,o){var i,c,u,f=0,p=o||[],y=!1,G={p:0,n:0,v:e,a:d,f:d.bind(e,4),d:function d(t,r){return i=t,c=0,u=e,G.n=r,a;}};function d(r,n){for(c=r,u=n,t=0;!y&&f&&!o&&t<p.length;t++){var o,i=p[t],d=G.p,l=i[2];r>3?(o=l===n)&&(u=i[(c=i[4])?5:(c=3,3)],i[4]=i[5]=e):i[0]<=d&&((o=r<2&&d<i[1])?(c=0,G.v=n,G.n=i[1]):d<l&&(o=r<3||i[0]>n||n>l)&&(i[4]=r,i[5]=n,G.n=l,c=0));}if(o||r>1)return a;throw y=!0,n;}return function(o,p,l){if(f>1)throw TypeError("Generator is already running");for(y&&1===p&&d(p,l),c=p,u=l;(t=c<2?e:u)||!y;){i||(c?c<3?(c>1&&(G.n=-1),d(c,u)):G.n=u:G.v=u);try{if(f=2,i){if(c||(o="next"),t=i[o]){if(!(t=t.call(i,u)))throw TypeError("iterator result is not an object");if(!t.done)return t;u=t.value,c<2&&(c=0);}else 1===c&&(t=i["return"])&&t.call(i),c<2&&(u=TypeError("The iterator does not provide a '"+o+"' method"),c=1);i=e;}else if((t=(y=G.n<0)?u:r.call(n,G))!==a)break;}catch(t){i=e,c=1,u=t;}finally{f=1;}}return{value:t,done:y};};}(r,o,i),!0),u;}var a={};function Generator(){}function GeneratorFunction(){}function GeneratorFunctionPrototype(){}t=Object.getPrototypeOf;var c=[][n]?t(t([][n]())):(_regeneratorDefine2(t={},n,function(){return this;}),t),u=GeneratorFunctionPrototype.prototype=Generator.prototype=Object.create(c);function f(e){return Object.setPrototypeOf?Object.setPrototypeOf(e,GeneratorFunctionPrototype):(e.__proto__=GeneratorFunctionPrototype,_regeneratorDefine2(e,o,"GeneratorFunction")),e.prototype=Object.create(u),e;}return GeneratorFunction.prototype=GeneratorFunctionPrototype,_regeneratorDefine2(u,"constructor",GeneratorFunctionPrototype),_regeneratorDefine2(GeneratorFunctionPrototype,"constructor",GeneratorFunction),GeneratorFunction.displayName="GeneratorFunction",_regeneratorDefine2(GeneratorFunctionPrototype,o,"GeneratorFunction"),_regeneratorDefine2(u),_regeneratorDefine2(u,o,"Generator"),_regeneratorDefine2(u,n,function(){return this;}),_regeneratorDefine2(u,"toString",function(){return"[object Generator]";}),(_regenerator=function _regenerator(){return{w:i,m:f};})();}function _regeneratorDefine2(e,r,n,t){var i=Object.defineProperty;try{i({},"",{});}catch(e){i=0;}_regeneratorDefine2=function _regeneratorDefine(e,r,n,t){function o(r,n){_regeneratorDefine2(e,r,function(e){return this._invoke(r,n,e);});}r?i?i(e,r,{value:n,enumerable:!t,configurable:!t,writable:!t}):e[r]=n:(o("next",0),o("throw",1),o("return",2));},_regeneratorDefine2(e,r,n,t);}function ownKeys(e,r){var t=Object.keys(e);if(Object.getOwnPropertySymbols){var o=Object.getOwnPropertySymbols(e);r&&(o=o.filter(function(r){return Object.getOwnPropertyDescriptor(e,r).enumerable;})),t.push.apply(t,o);}return t;}function _objectSpread(e){for(var r=1;r<arguments.length;r++){var t=null!=arguments[r]?arguments[r]:{};r%2?ownKeys(Object(t),!0).forEach(function(r){_defineProperty(e,r,t[r]);}):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(t)):ownKeys(Object(t)).forEach(function(r){Object.defineProperty(e,r,Object.getOwnPropertyDescriptor(t,r));});}return e;}function _defineProperty(e,r,t){return(r=_toPropertyKey(r))in e?Object.defineProperty(e,r,{value:t,enumerable:!0,configurable:!0,writable:!0}):e[r]=t,e;}function _callSuper(t,o,e){return o=_getPrototypeOf(o),_possibleConstructorReturn(t,_isNativeReflectConstruct()?Reflect.construct(o,e||[],_getPrototypeOf(t).constructor):o.apply(t,e));}function _possibleConstructorReturn(t,e){if(e&&("object"==_typeof(e)||"function"==typeof e))return e;if(void 0!==e)throw new TypeError("Derived constructors may only return object or undefined");return _assertThisInitialized(t);}function _assertThisInitialized(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e;}function _inherits(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function");t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,writable:!0,configurable:!0}}),Object.defineProperty(t,"prototype",{writable:!1}),e&&_setPrototypeOf(t,e);}function _wrapNativeSuper(t){var r="function"==typeof Map?new Map():void 0;return _wrapNativeSuper=function _wrapNativeSuper(t){if(null===t||!_isNativeFunction(t))return t;if("function"!=typeof t)throw new TypeError("Super expression must either be null or a function");if(void 0!==r){if(r.has(t))return r.get(t);r.set(t,Wrapper);}function Wrapper(){return _construct(t,arguments,_getPrototypeOf(this).constructor);}return Wrapper.prototype=Object.create(t.prototype,{constructor:{value:Wrapper,enumerable:!1,writable:!0,configurable:!0}}),_setPrototypeOf(Wrapper,t);},_wrapNativeSuper(t);}function _construct(t,e,r){if(_isNativeReflectConstruct())return Reflect.construct.apply(null,arguments);var o=[null];o.push.apply(o,e);var p=new(t.bind.apply(t,o))();return r&&_setPrototypeOf(p,r.prototype),p;}function _isNativeReflectConstruct(){try{var t=!Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],function(){}));}catch(t){}return(_isNativeReflectConstruct=function _isNativeReflectConstruct(){return!!t;})();}function _isNativeFunction(t){try{return-1!==Function.toString.call(t).indexOf("[native code]");}catch(n){return"function"==typeof t;}}function _setPrototypeOf(t,e){return _setPrototypeOf=Object.setPrototypeOf?Object.setPrototypeOf.bind():function(t,e){return t.__proto__=e,t;},_setPrototypeOf(t,e);}function _getPrototypeOf(t){return _getPrototypeOf=Object.setPrototypeOf?Object.getPrototypeOf.bind():function(t){return t.__proto__||Object.getPrototypeOf(t);},_getPrototypeOf(t);}function _toConsumableArray(r){return _arrayWithoutHoles(r)||_iterableToArray(r)||_unsupportedIterableToArray(r)||_nonIterableSpread();}function _nonIterableSpread(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _iterableToArray(r){if("undefined"!=typeof Symbol&&null!=r[Symbol.iterator]||null!=r["@@iterator"])return Array.from(r);}function _arrayWithoutHoles(r){if(Array.isArray(r))return _arrayLikeToArray(r);}function _createForOfIteratorHelper(r,e){var t="undefined"!=typeof Symbol&&r[Symbol.iterator]||r["@@iterator"];if(!t){if(Array.isArray(r)||(t=_unsupportedIterableToArray(r))||e&&r&&"number"==typeof r.length){t&&(r=t);var _n=0,F=function F(){};return{s:F,n:function n(){return _n>=r.length?{done:!0}:{done:!1,value:r[_n++]};},e:function e(r){throw r;},f:F};}throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}var o,a=!0,u=!1;return{s:function s(){t=t.call(r);},n:function n(){var r=t.next();return a=r.done,r;},e:function e(r){u=!0,o=r;},f:function f(){try{a||null==t["return"]||t["return"]();}finally{if(u)throw o;}}};}function _classCallCheck(a,n){if(!(a instanceof n))throw new TypeError("Cannot call a class as a function");}function _defineProperties(e,r){for(var t=0;t<r.length;t++){var o=r[t];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,_toPropertyKey(o.key),o);}}function _createClass(e,r,t){return r&&_defineProperties(e.prototype,r),t&&_defineProperties(e,t),Object.defineProperty(e,"prototype",{writable:!1}),e;}function _toPropertyKey(t){var i=_toPrimitive(t,"string");return"symbol"==_typeof(i)?i:i+"";}function _toPrimitive(t,r){if("object"!=_typeof(t)||!t)return t;var e=t[Symbol.toPrimitive];if(void 0!==e){var i=e.call(t,r||"default");if("object"!=_typeof(i))return i;throw new TypeError("@@toPrimitive must return a primitive value.");}return("string"===r?String:Number)(t);}function _slicedToArray(r,e){return _arrayWithHoles(r)||_iterableToArrayLimit(r,e)||_unsupportedIterableToArray(r,e)||_nonIterableRest();}function _nonIterableRest(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(r,a){if(r){if("string"==typeof r)return _arrayLikeToArray(r,a);var t={}.toString.call(r).slice(8,-1);return"Object"===t&&r.constructor&&(t=r.constructor.name),"Map"===t||"Set"===t?Array.from(r):"Arguments"===t||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t)?_arrayLikeToArray(r,a):void 0;}}function _arrayLikeToArray(r,a){(null==a||a>r.length)&&(a=r.length);for(var e=0,n=Array(a);e<a;e++)n[e]=r[e];return n;}function _iterableToArrayLimit(r,l){var t=null==r?null:"undefined"!=typeof Symbol&&r[Symbol.iterator]||r["@@iterator"];if(null!=t){var e,n,i,u,a=[],f=!0,o=!1;try{if(i=(t=t.call(r)).next,0===l){if(Object(t)!==t)return;f=!1;}else for(;!(f=(e=i.call(t)).done)&&(a.push(e.value),a.length!==l);f=!0);}catch(r){o=!0,n=r;}finally{try{if(!f&&null!=t["return"]&&(u=t["return"](),Object(u)!==u))return;}finally{if(o)throw n;}}return a;}}function _arrayWithHoles(r){if(Array.isArray(r))return r;}function _typeof(o){"@babel/helpers - typeof";return _typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(o){return typeof o;}:function(o){return o&&"function"==typeof Symbol&&o.constructor===Symbol&&o!==Symbol.prototype?"symbol":typeof o;},_typeof(o);}function _wrapAsyncGenerator(e){return function(){return new AsyncGenerator(e.apply(this,arguments));};}function AsyncGenerator(e){var t,n;function resume(t,n){try{var r=e[t](n),o=r.value,u=o instanceof _OverloadYield;Promise.resolve(u?o.v:o).then(function(n){if(u){var i="return"===t&&o.k?t:"next";if(!o.k||n.done)return resume(i,n);n=e[i](n).value;}settle(!!r.done,n);},function(e){resume("throw",e);});}catch(e){settle(2,e);}}function settle(e,r){2===e?t.reject(r):t.resolve({value:r,done:e}),(t=t.next)?resume(t.key,t.arg):n=null;}this._invoke=function(e,r){return new Promise(function(o,u){var i={key:e,arg:r,resolve:o,reject:u,next:null};n?n=n.next=i:(t=n=i,resume(e,r));});},"function"!=typeof e["return"]&&(this["return"]=void 0);}AsyncGenerator.prototype["function"==typeof Symbol&&Symbol.asyncIterator||"@@asyncIterator"]=function(){return this;},AsyncGenerator.prototype.next=function(e){return this._invoke("next",e);},AsyncGenerator.prototype["throw"]=function(e){return this._invoke("throw",e);},AsyncGenerator.prototype["return"]=function(e){return this._invoke("return",e);};function _awaitAsyncGenerator(e){return new _OverloadYield(e,0);}function _asyncGeneratorDelegate(t){var e={},n=!1;function pump(e,r){return n=!0,r=new Promise(function(n){n(t[e](r));}),{done:!1,value:new _OverloadYield(r,1)};}return e["undefined"!=typeof Symbol&&Symbol.iterator||"@@iterator"]=function(){return this;},e.next=function(t){return n?(n=!1,t):pump("next",t);},"function"==typeof t["throw"]&&(e["throw"]=function(t){if(n)throw n=!1,t;return pump("throw",t);}),"function"==typeof t["return"]&&(e["return"]=function(t){return n?(n=!1,t):pump("return",t);}),e;}function _OverloadYield(e,d){this.v=e,this.k=d;}function _asyncIterator(r){var n,t,o,e=2;for("undefined"!=typeof Symbol&&(t=Symbol.asyncIterator,o=Symbol.iterator);e--;){if(t&&null!=(n=r[t]))return n.call(r);if(o&&null!=(n=r[o]))return new AsyncFromSyncIterator(n.call(r));t="@@asyncIterator",o="@@iterator";}throw new TypeError("Object is not async iterable");}function AsyncFromSyncIterator(r){function AsyncFromSyncIteratorContinuation(r){if(Object(r)!==r)return Promise.reject(new TypeError(r+" is not an object."));var n=r.done;return Promise.resolve(r.value).then(function(r){return{value:r,done:n};});}return AsyncFromSyncIterator=function AsyncFromSyncIterator(r){this.s=r,this.n=r.next;},AsyncFromSyncIterator.prototype={s:null,n:null,next:function next(){return AsyncFromSyncIteratorContinuation(this.n.apply(this.s,arguments));},"return":function _return(r){var n=this.s["return"];return void 0===n?Promise.resolve({value:r,done:!0}):AsyncFromSyncIteratorContinuation(n.apply(this.s,arguments));},"throw":function _throw(r){var n=this.s["return"];return void 0===n?Promise.reject(r):AsyncFromSyncIteratorContinuation(n.apply(this.s,arguments));}},new AsyncFromSyncIterator(r);}var PureCloudRegionHosts={us_east_1:'mypurecloud.com',eu_west_1:'mypurecloud.ie',ap_southeast_2:'mypurecloud.com.au',ap_northeast_1:'mypurecloud.jp',eu_central_1:'mypurecloud.de',us_west_2:'usw2.pure.cloud',ca_central_1:'cac1.pure.cloud',ap_northeast_2:'apne2.pure.cloud',eu_west_2:'euw2.pure.cloud',ap_south_1:'aps1.pure.cloud',us_east_2:'use2.us-gov-pure.cloud',sa_east_1:'sae1.pure.cloud',me_central_1:'mec1.pure.cloud',ap_northeast_3:'apne3.pure.cloud',eu_central_2:'euc2.pure.cloud',mx_central_1:'mxc1.pure.cloud',ap_southeast_1:'apse1.pure.cloud',eusc_de_east_1:'edee1.eusc-pure.cloud'};var global$1=typeof global!=="undefined"?global:typeof self!=="undefined"?self:typeof window!=="undefined"?window:{};// shim for using process in browser
+'use strict';function asyncGeneratorStep(n,t,e,r,o,a,c){try{var i=n[a](c),u=i.value;}catch(n){return void e(n);}i.done?t(u):Promise.resolve(u).then(r,o);}function _asyncToGenerator(n){return function(){var t=this,e=arguments;return new Promise(function(r,o){var a=n.apply(t,e);function _next(n){asyncGeneratorStep(a,r,o,_next,_throw,"next",n);}function _throw(n){asyncGeneratorStep(a,r,o,_next,_throw,"throw",n);}_next(void 0);});};}function _regeneratorValues(e){if(null!=e){var t=e["function"==typeof Symbol&&Symbol.iterator||"@@iterator"],r=0;if(t)return t.call(e);if("function"==typeof e.next)return e;if(!isNaN(e.length))return{next:function next(){return e&&r>=e.length&&(e=void 0),{value:e&&e[r++],done:!e};}};}throw new TypeError(_typeof(e)+" is not iterable");}function _regenerator(){/*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */var e,t,r="function"==typeof Symbol?Symbol:{},n=r.iterator||"@@iterator",o=r.toStringTag||"@@toStringTag";function i(r,n,o,i){var c=n&&n.prototype instanceof Generator?n:Generator,u=Object.create(c.prototype);return _regeneratorDefine2(u,"_invoke",function(r,n,o){var i,c,u,f=0,p=o||[],y=!1,G={p:0,n:0,v:e,a:d,f:d.bind(e,4),d:function d(t,r){return i=t,c=0,u=e,G.n=r,a;}};function d(r,n){for(c=r,u=n,t=0;!y&&f&&!o&&t<p.length;t++){var o,i=p[t],d=G.p,l=i[2];r>3?(o=l===n)&&(u=i[(c=i[4])?5:(c=3,3)],i[4]=i[5]=e):i[0]<=d&&((o=r<2&&d<i[1])?(c=0,G.v=n,G.n=i[1]):d<l&&(o=r<3||i[0]>n||n>l)&&(i[4]=r,i[5]=n,G.n=l,c=0));}if(o||r>1)return a;throw y=!0,n;}return function(o,p,l){if(f>1)throw TypeError("Generator is already running");for(y&&1===p&&d(p,l),c=p,u=l;(t=c<2?e:u)||!y;){i||(c?c<3?(c>1&&(G.n=-1),d(c,u)):G.n=u:G.v=u);try{if(f=2,i){if(c||(o="next"),t=i[o]){if(!(t=t.call(i,u)))throw TypeError("iterator result is not an object");if(!t.done)return t;u=t.value,c<2&&(c=0);}else 1===c&&(t=i["return"])&&t.call(i),c<2&&(u=TypeError("The iterator does not provide a '"+o+"' method"),c=1);i=e;}else if((t=(y=G.n<0)?u:r.call(n,G))!==a)break;}catch(t){i=e,c=1,u=t;}finally{f=1;}}return{value:t,done:y};};}(r,o,i),!0),u;}var a={};function Generator(){}function GeneratorFunction(){}function GeneratorFunctionPrototype(){}t=Object.getPrototypeOf;var c=[][n]?t(t([][n]())):(_regeneratorDefine2(t={},n,function(){return this;}),t),u=GeneratorFunctionPrototype.prototype=Generator.prototype=Object.create(c);function f(e){return Object.setPrototypeOf?Object.setPrototypeOf(e,GeneratorFunctionPrototype):(e.__proto__=GeneratorFunctionPrototype,_regeneratorDefine2(e,o,"GeneratorFunction")),e.prototype=Object.create(u),e;}return GeneratorFunction.prototype=GeneratorFunctionPrototype,_regeneratorDefine2(u,"constructor",GeneratorFunctionPrototype),_regeneratorDefine2(GeneratorFunctionPrototype,"constructor",GeneratorFunction),GeneratorFunction.displayName="GeneratorFunction",_regeneratorDefine2(GeneratorFunctionPrototype,o,"GeneratorFunction"),_regeneratorDefine2(u),_regeneratorDefine2(u,o,"Generator"),_regeneratorDefine2(u,n,function(){return this;}),_regeneratorDefine2(u,"toString",function(){return"[object Generator]";}),(_regenerator=function _regenerator(){return{w:i,m:f};})();}function _regeneratorDefine2(e,r,n,t){var i=Object.defineProperty;try{i({},"",{});}catch(e){i=0;}_regeneratorDefine2=function _regeneratorDefine(e,r,n,t){function o(r,n){_regeneratorDefine2(e,r,function(e){return this._invoke(r,n,e);});}r?i?i(e,r,{value:n,enumerable:!t,configurable:!t,writable:!t}):e[r]=n:(o("next",0),o("throw",1),o("return",2));},_regeneratorDefine2(e,r,n,t);}function ownKeys(e,r){var t=Object.keys(e);if(Object.getOwnPropertySymbols){var o=Object.getOwnPropertySymbols(e);r&&(o=o.filter(function(r){return Object.getOwnPropertyDescriptor(e,r).enumerable;})),t.push.apply(t,o);}return t;}function _objectSpread(e){for(var r=1;r<arguments.length;r++){var t=null!=arguments[r]?arguments[r]:{};r%2?ownKeys(Object(t),!0).forEach(function(r){_defineProperty(e,r,t[r]);}):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(t)):ownKeys(Object(t)).forEach(function(r){Object.defineProperty(e,r,Object.getOwnPropertyDescriptor(t,r));});}return e;}function _defineProperty(e,r,t){return(r=_toPropertyKey(r))in e?Object.defineProperty(e,r,{value:t,enumerable:!0,configurable:!0,writable:!0}):e[r]=t,e;}function _callSuper(t,o,e){return o=_getPrototypeOf(o),_possibleConstructorReturn(t,_isNativeReflectConstruct()?Reflect.construct(o,e||[],_getPrototypeOf(t).constructor):o.apply(t,e));}function _possibleConstructorReturn(t,e){if(e&&("object"==_typeof(e)||"function"==typeof e))return e;if(void 0!==e)throw new TypeError("Derived constructors may only return object or undefined");return _assertThisInitialized(t);}function _assertThisInitialized(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e;}function _inherits(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function");t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,writable:!0,configurable:!0}}),Object.defineProperty(t,"prototype",{writable:!1}),e&&_setPrototypeOf(t,e);}function _wrapNativeSuper(t){var r="function"==typeof Map?new Map():void 0;return _wrapNativeSuper=function _wrapNativeSuper(t){if(null===t||!_isNativeFunction(t))return t;if("function"!=typeof t)throw new TypeError("Super expression must either be null or a function");if(void 0!==r){if(r.has(t))return r.get(t);r.set(t,Wrapper);}function Wrapper(){return _construct(t,arguments,_getPrototypeOf(this).constructor);}return Wrapper.prototype=Object.create(t.prototype,{constructor:{value:Wrapper,enumerable:!1,writable:!0,configurable:!0}}),_setPrototypeOf(Wrapper,t);},_wrapNativeSuper(t);}function _construct(t,e,r){if(_isNativeReflectConstruct())return Reflect.construct.apply(null,arguments);var o=[null];o.push.apply(o,e);var p=new(t.bind.apply(t,o))();return r&&_setPrototypeOf(p,r.prototype),p;}function _isNativeReflectConstruct(){try{var t=!Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],function(){}));}catch(t){}return(_isNativeReflectConstruct=function _isNativeReflectConstruct(){return!!t;})();}function _isNativeFunction(t){try{return-1!==Function.toString.call(t).indexOf("[native code]");}catch(n){return"function"==typeof t;}}function _setPrototypeOf(t,e){return _setPrototypeOf=Object.setPrototypeOf?Object.setPrototypeOf.bind():function(t,e){return t.__proto__=e,t;},_setPrototypeOf(t,e);}function _getPrototypeOf(t){return _getPrototypeOf=Object.setPrototypeOf?Object.getPrototypeOf.bind():function(t){return t.__proto__||Object.getPrototypeOf(t);},_getPrototypeOf(t);}function _classCallCheck(a,n){if(!(a instanceof n))throw new TypeError("Cannot call a class as a function");}function _defineProperties(e,r){for(var t=0;t<r.length;t++){var o=r[t];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,_toPropertyKey(o.key),o);}}function _createClass(e,r,t){return r&&_defineProperties(e.prototype,r),t&&_defineProperties(e,t),Object.defineProperty(e,"prototype",{writable:!1}),e;}function _toPropertyKey(t){var i=_toPrimitive(t,"string");return"symbol"==_typeof(i)?i:i+"";}function _toPrimitive(t,r){if("object"!=_typeof(t)||!t)return t;var e=t[Symbol.toPrimitive];if(void 0!==e){var i=e.call(t,r||"default");if("object"!=_typeof(i))return i;throw new TypeError("@@toPrimitive must return a primitive value.");}return("string"===r?String:Number)(t);}function _slicedToArray(r,e){return _arrayWithHoles(r)||_iterableToArrayLimit(r,e)||_unsupportedIterableToArray(r,e)||_nonIterableRest();}function _nonIterableRest(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _iterableToArrayLimit(r,l){var t=null==r?null:"undefined"!=typeof Symbol&&r[Symbol.iterator]||r["@@iterator"];if(null!=t){var e,n,i,u,a=[],f=!0,o=!1;try{if(i=(t=t.call(r)).next,0===l){if(Object(t)!==t)return;f=!1;}else for(;!(f=(e=i.call(t)).done)&&(a.push(e.value),a.length!==l);f=!0);}catch(r){o=!0,n=r;}finally{try{if(!f&&null!=t["return"]&&(u=t["return"](),Object(u)!==u))return;}finally{if(o)throw n;}}return a;}}function _arrayWithHoles(r){if(Array.isArray(r))return r;}function _createForOfIteratorHelper(r,e){var t="undefined"!=typeof Symbol&&r[Symbol.iterator]||r["@@iterator"];if(!t){if(Array.isArray(r)||(t=_unsupportedIterableToArray(r))||e&&r&&"number"==typeof r.length){t&&(r=t);var _n=0,F=function F(){};return{s:F,n:function n(){return _n>=r.length?{done:!0}:{done:!1,value:r[_n++]};},e:function e(r){throw r;},f:F};}throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}var o,a=!0,u=!1;return{s:function s(){t=t.call(r);},n:function n(){var r=t.next();return a=r.done,r;},e:function e(r){u=!0,o=r;},f:function f(){try{a||null==t["return"]||t["return"]();}finally{if(u)throw o;}}};}function _typeof(o){"@babel/helpers - typeof";return _typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(o){return typeof o;}:function(o){return o&&"function"==typeof Symbol&&o.constructor===Symbol&&o!==Symbol.prototype?"symbol":typeof o;},_typeof(o);}function _toConsumableArray(r){return _arrayWithoutHoles(r)||_iterableToArray(r)||_unsupportedIterableToArray(r)||_nonIterableSpread();}function _nonIterableSpread(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(r,a){if(r){if("string"==typeof r)return _arrayLikeToArray(r,a);var t={}.toString.call(r).slice(8,-1);return"Object"===t&&r.constructor&&(t=r.constructor.name),"Map"===t||"Set"===t?Array.from(r):"Arguments"===t||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t)?_arrayLikeToArray(r,a):void 0;}}function _iterableToArray(r){if("undefined"!=typeof Symbol&&null!=r[Symbol.iterator]||null!=r["@@iterator"])return Array.from(r);}function _arrayWithoutHoles(r){if(Array.isArray(r))return _arrayLikeToArray(r);}function _arrayLikeToArray(r,a){(null==a||a>r.length)&&(a=r.length);for(var e=0,n=Array(a);e<a;e++)n[e]=r[e];return n;}function _wrapAsyncGenerator(e){return function(){return new AsyncGenerator(e.apply(this,arguments));};}function AsyncGenerator(e){var t,n;function resume(t,n){try{var r=e[t](n),o=r.value,u=o instanceof _OverloadYield;Promise.resolve(u?o.v:o).then(function(n){if(u){var i="return"===t&&o.k?t:"next";if(!o.k||n.done)return resume(i,n);n=e[i](n).value;}settle(!!r.done,n);},function(e){resume("throw",e);});}catch(e){settle(2,e);}}function settle(e,r){2===e?t.reject(r):t.resolve({value:r,done:e}),(t=t.next)?resume(t.key,t.arg):n=null;}this._invoke=function(e,r){return new Promise(function(o,u){var i={key:e,arg:r,resolve:o,reject:u,next:null};n?n=n.next=i:(t=n=i,resume(e,r));});},"function"!=typeof e["return"]&&(this["return"]=void 0);}AsyncGenerator.prototype["function"==typeof Symbol&&Symbol.asyncIterator||"@@asyncIterator"]=function(){return this;},AsyncGenerator.prototype.next=function(e){return this._invoke("next",e);},AsyncGenerator.prototype["throw"]=function(e){return this._invoke("throw",e);},AsyncGenerator.prototype["return"]=function(e){return this._invoke("return",e);};function _awaitAsyncGenerator(e){return new _OverloadYield(e,0);}function _asyncGeneratorDelegate(t){var e={},n=!1;function pump(e,r){return n=!0,r=new Promise(function(n){n(t[e](r));}),{done:!1,value:new _OverloadYield(r,1)};}return e["undefined"!=typeof Symbol&&Symbol.iterator||"@@iterator"]=function(){return this;},e.next=function(t){return n?(n=!1,t):pump("next",t);},"function"==typeof t["throw"]&&(e["throw"]=function(t){if(n)throw n=!1,t;return pump("throw",t);}),"function"==typeof t["return"]&&(e["return"]=function(t){return n?(n=!1,t):pump("return",t);}),e;}function _OverloadYield(e,d){this.v=e,this.k=d;}function _asyncIterator(r){var n,t,o,e=2;for("undefined"!=typeof Symbol&&(t=Symbol.asyncIterator,o=Symbol.iterator);e--;){if(t&&null!=(n=r[t]))return n.call(r);if(o&&null!=(n=r[o]))return new AsyncFromSyncIterator(n.call(r));t="@@asyncIterator",o="@@iterator";}throw new TypeError("Object is not async iterable");}function AsyncFromSyncIterator(r){function AsyncFromSyncIteratorContinuation(r){if(Object(r)!==r)return Promise.reject(new TypeError(r+" is not an object."));var n=r.done;return Promise.resolve(r.value).then(function(r){return{value:r,done:n};});}return AsyncFromSyncIterator=function AsyncFromSyncIterator(r){this.s=r,this.n=r.next;},AsyncFromSyncIterator.prototype={s:null,n:null,next:function next(){return AsyncFromSyncIteratorContinuation(this.n.apply(this.s,arguments));},"return":function _return(r){var n=this.s["return"];return void 0===n?Promise.resolve({value:r,done:!0}):AsyncFromSyncIteratorContinuation(n.apply(this.s,arguments));},"throw":function _throw(r){var n=this.s["return"];return void 0===n?Promise.reject(r):AsyncFromSyncIteratorContinuation(n.apply(this.s,arguments));}},new AsyncFromSyncIterator(r);}var PureCloudRegionHosts={us_east_1:'mypurecloud.com',eu_west_1:'mypurecloud.ie',ap_southeast_2:'mypurecloud.com.au',ap_northeast_1:'mypurecloud.jp',eu_central_1:'mypurecloud.de',us_west_2:'usw2.pure.cloud',ca_central_1:'cac1.pure.cloud',ap_northeast_2:'apne2.pure.cloud',eu_west_2:'euw2.pure.cloud',ap_south_1:'aps1.pure.cloud',us_east_2:'use2.us-gov-pure.cloud',sa_east_1:'sae1.pure.cloud',me_central_1:'mec1.pure.cloud',ap_northeast_3:'apne3.pure.cloud',eu_central_2:'euc2.pure.cloud',mx_central_1:'mxc1.pure.cloud',ap_southeast_1:'apse1.pure.cloud',eusc_de_east_1:'edee1.eusc-pure.cloud'};var global$1=typeof global!=="undefined"?global:typeof self!=="undefined"?self:typeof window!=="undefined"?window:{};// shim for using process in browser
 // based off https://github.com/defunctzombie/node-process/blob/master/browser.js
 function defaultSetTimout(){throw new Error('setTimeout has not been defined');}function defaultClearTimeout(){throw new Error('clearTimeout has not been defined');}var cachedSetTimeout=defaultSetTimout;var cachedClearTimeout=defaultClearTimeout;if(typeof global$1.setTimeout==='function'){cachedSetTimeout=setTimeout;}if(typeof global$1.clearTimeout==='function'){cachedClearTimeout=clearTimeout;}function runTimeout(fun){if(cachedSetTimeout===setTimeout){//normal enviroments in sane situations
 return setTimeout(fun,0);}// if setTimeout wasn't available but was latter defined
@@ -2894,18 +2894,40 @@ function hrtime(previousTimestamp){var clocktime=performanceNow.call(performance
  * @param {*} thisArg - The value to be passed as the `this` parameter
  * @returns {Function} A new function that will call the original function with the specified `this` context
  */function bind(fn,thisArg){return function wrap(){return fn.apply(thisArg,arguments);};}// utils is a library of generic helper functions non-specific to axios
-var toString$1=Object.prototype.toString;var getPrototypeOf=Object.getPrototypeOf;var iterator=Symbol.iterator,toStringTag=Symbol.toStringTag;/* Creating a function that will check if an object has a property. */var hasOwnProperty=function(_ref3){var hasOwnProperty=_ref3.hasOwnProperty;return function(obj,prop){return hasOwnProperty.call(obj,prop);};}(Object.prototype);/**
- * Walk the prototype chain (excluding the shared Object.prototype) looking for
- * an own `prop`. This distinguishes genuine own/inherited members — including
- * class accessors and template prototypes — from members injected via
- * Object.prototype pollution (e.g. `Object.prototype.username = '...'`), which
- * live on Object.prototype itself and are therefore never matched.
+var toString$1=Object.prototype.toString;var getPrototypeOf=Object.getPrototypeOf;var iterator=Symbol.iterator,toStringTag=Symbol.toStringTag;/* Creating a function that will check if an object has a property. */var hasOwnProperty=function(_ref3){var hasOwnProperty=_ref3.hasOwnProperty;return function(obj,prop){return hasOwnProperty.call(obj,prop);};}(Object.prototype);var isUnsafeObjectKey=function isUnsafeObjectKey(prop){return typeof prop==='string'&&(prop==='__proto__'||prop==='constructor'||prop==='prototype');};/**
+ * Determine whether an inherited object must be treated as a shared-prototype
+ * boundary. Cross-realm Object.prototype objects cannot be distinguished
+ * reliably from application-created null-prototype objects because their
+ * properties are mutable, so all inherited terminal prototypes are excluded
+ * as a fail-closed boundary. A null-prototype source still keeps its own
+ * properties, as produced by mergeConfig and other safe materialization paths.
+ *
+ * @param {*} obj The object to inspect
+ * @param {*} prototype The object's prototype
+ * @param {boolean} source Whether obj is the original traversal source
+ *
+ * @returns {boolean} True when obj is a safe prototype traversal boundary
+ */var isPrototypeBoundary=function isPrototypeBoundary(obj,prototype,source){return obj===Object.prototype||!source&&prototype===null;};/**
+ * Determine whether an object can retain its identity through code paths that
+ * add, replace, and remove config properties without bypassing unsafe-key
+ * filtering. Immutable objects, unsafe-key-bearing objects, and objects with
+ * accessor or restricted data properties must be materialized instead.
+ *
+ * @param {*} obj The object to inspect
+ *
+ * @returns {boolean} True when every own property is safe and fully mutable
+ */var isSafeAndFullyMutable=function isSafeAndFullyMutable(obj){if(!Object.isExtensible(obj)){return false;}var props=Object.getOwnPropertyNames(obj);if(Object.getOwnPropertySymbols){props.push.apply(props,_toConsumableArray(Object.getOwnPropertySymbols(obj)));}return props.every(function(prop){if(isUnsafeObjectKey(prop)){return false;}var descriptor=Object.getOwnPropertyDescriptor(obj,prop);return!!descriptor&&descriptor.configurable&&descriptor.writable===true;});};/**
+ * Walk the prototype chain (excluding the source realm's Object.prototype)
+ * looking for an own `prop`. This distinguishes genuine own/inherited members
+ * — including class accessors and template prototypes — from members injected
+ * via Object.prototype pollution (e.g. `Object.prototype.username = '...'`),
+ * which live on Object.prototype itself and are therefore never matched.
  *
  * @param {*} thing The value whose chain to inspect
  * @param {string|symbol} prop The property key to look for
  *
  * @returns {boolean} True when `prop` is owned below Object.prototype
- */var hasOwnInPrototypeChain=function hasOwnInPrototypeChain(thing,prop){var obj=thing;var seen=[];while(obj!=null&&obj!==Object.prototype){if(seen.indexOf(obj)!==-1){return false;}seen.push(obj);if(hasOwnProperty(obj,prop)){return true;}obj=getPrototypeOf(obj);}return false;};/**
+ */var hasOwnInPrototypeChain=function hasOwnInPrototypeChain(thing,prop){var obj=thing;var seen=[];while(obj!=null){if(seen.indexOf(obj)!==-1){return false;}seen.push(obj);var _prototype=getPrototypeOf(obj);if(isPrototypeBoundary(obj,_prototype,obj===thing)){return false;}if(hasOwnProperty(obj,prop)){return true;}obj=_prototype;}return false;};/**
  * Read `obj[prop]` only when it is safe from Object.prototype pollution. Own
  * properties and members inherited from a non-Object.prototype source (a class
  * instance or template object) are honored; a value reachable only through a
@@ -2915,7 +2937,17 @@ var toString$1=Object.prototype.toString;var getPrototypeOf=Object.getPrototypeO
  * @param {string|symbol} prop The property key to read
  *
  * @returns {*} The resolved value, or undefined when unsafe/absent
- */var getSafeProp=function getSafeProp(obj,prop){return obj!=null&&hasOwnInPrototypeChain(obj,prop)?obj[prop]:undefined;};var kindOf=function(cache){return function(thing){var str=toString$1.call(thing);return cache[str]||(cache[str]=str.slice(8,-1).toLowerCase());};}(Object.create(null));var kindOfTest=function kindOfTest(type){type=type.toLowerCase();return function(thing){return kindOf(thing)===type;};};var typeOfTest=function typeOfTest(type){return function(thing){return _typeof(thing)===type;};};/**
+ */var getSafeProp=function getSafeProp(obj,prop){return obj!=null&&hasOwnInPrototypeChain(obj,prop)?obj[prop]:undefined;};/**
+ * Flatten an object and its application-defined prototype chain into a
+ * null-prototype object. Members inherited only from the source realm's
+ * Object.prototype are deliberately excluded, while class/template members
+ * below that boundary are preserved.
+ *
+ * @param {*} thing The value to flatten
+ *
+ * @returns {*} A null-prototype copy, or the original value when it is already
+ * structurally safe or is not an object
+ */var toSafeFlatObject=function toSafeFlatObject(thing){if(thing==null||_typeof(thing)!=='object'&&typeof thing!=='function'){return thing;}var sourcePrototype=getPrototypeOf(thing);if(sourcePrototype===null&&isSafeAndFullyMutable(thing)){return thing;}var result=Object.create(null);var merged=Object.create(null);var seen=[];var current=thing;while(current!=null){if(seen.indexOf(current)!==-1){break;}seen.push(current);var _prototype2=current===thing?sourcePrototype:getPrototypeOf(current);if(isPrototypeBoundary(current,_prototype2,current===thing)){break;}var props=Object.getOwnPropertyNames(current);if(Object.getOwnPropertySymbols){props.push.apply(props,_toConsumableArray(Object.getOwnPropertySymbols(current)));}var _iterator3=_createForOfIteratorHelper(props),_step2;try{for(_iterator3.s();!(_step2=_iterator3.n()).done;){var prop=_step2.value;if(isUnsafeObjectKey(prop)){continue;}if(!hasOwnProperty(merged,prop)){result[prop]=thing[prop];merged[prop]=true;}}}catch(err){_iterator3.e(err);}finally{_iterator3.f();}current=_prototype2;}return result;};var kindOf=function(cache){return function(thing){var str=toString$1.call(thing);return cache[str]||(cache[str]=str.slice(8,-1).toLowerCase());};}(Object.create(null));var kindOfTest=function kindOfTest(type){type=type.toLowerCase();return function(thing){return kindOf(thing)===type;};};var typeOfTest=function typeOfTest(type){return function(thing){return _typeof(thing)===type;};};/**
  * Determine if a value is a non-null object
  *
  * @param {Object} val The value to test
@@ -2979,9 +3011,9 @@ var toString$1=Object.prototype.toString;var getPrototypeOf=Object.getPrototypeO
  * @param {*} val The value to test
  *
  * @returns {boolean} True if value is a plain Object, otherwise false
- */var isPlainObject=function isPlainObject(val){if(!isObject(val)){return false;}var prototype=getPrototypeOf(val);return(prototype===null||prototype===Object.prototype||getPrototypeOf(prototype)===null)&&// Treat any genuine (non-Object.prototype-polluted) Symbol.toStringTag or
-// Symbol.iterator as evidence the value is a tagged/iterable type rather
-// than a plain object, while ignoring keys injected onto Object.prototype.
+ */var isPlainObject=function isPlainObject(val){if(!isObject(val)){return false;}var prototype=getPrototypeOf(val);return(prototype===null||prototype===Object.prototype||getPrototypeOf(prototype)===null)&&// Treat safe own/inherited Symbol.toStringTag or Symbol.iterator members as
+// evidence the value is tagged/iterable, while ignoring members reachable
+// only through shared or terminal prototype boundaries.
 !hasOwnInPrototypeChain(val,toStringTag)&&!hasOwnInPrototypeChain(val,iterator);};/**
  * Determine if a value is an empty object (safely handles Buffers)
  *
@@ -3031,7 +3063,7 @@ return false;}};/**
  * @param {*} val The value to test
  *
  * @returns {boolean} True if value is a FileList, otherwise false
- */var isFileList=kindOfTest('FileList');/**
+ */var isFileList=kindOfTest('FileList');var isSet=kindOfTest('Set');/**
  * Determine if a value is a Stream
  *
  * @param {*} val The value to test
@@ -3209,7 +3241,7 @@ if(isFunction$1(obj)&&['arguments','caller','callee'].includes(name)){return fal
  * @returns {Object} The JSON-compatible object.
  */var toJSONObject=function toJSONObject(obj){var visited=new WeakSet();var _visit=function visit(source){if(isObject(source)){if(visited.has(source)){return;}//Buffer check
 if(isBuffer$1(source)){return source;}if(!('toJSON'in source)){// add-on descent / delete-on-ascent: preserves path semantics, so DAG nodes serialise at every occurrence (see #7230).
-visited.add(source);var target=isArray$1(source)?[]:{};forEach(source,function(value,key){var reducedValue=_visit(value);!isUndefined(reducedValue)&&(target[key]=reducedValue);});visited["delete"](source);return target;}}return source;};return _visit(obj);};/**
+visited.add(source);var target;if(isSet(source)){target=[];var _iterator4=_createForOfIteratorHelper(source),_step3;try{for(_iterator4.s();!(_step3=_iterator4.n()).done;){var value=_step3.value;var reducedValue=_visit(value);!isUndefined(reducedValue)&&target.push(reducedValue);}}catch(err){_iterator4.e(err);}finally{_iterator4.f();}}else{target=isArray$1(source)?[]:{};forEach(source,function(value,key){var reducedValue=_visit(value);!isUndefined(reducedValue)&&(target[key]=reducedValue);});}visited["delete"](source);return target;}}return source;};return _visit(obj);};/**
  * Determines if a value is an async function.
  *
  * @param {*} thing - The value to test.
@@ -3245,7 +3277,683 @@ var isIterable=function isIterable(thing){return thing!=null&&isFunction$1(thing
  *
  * @returns {boolean} True if value has a non-polluted iterator
  */var isSafeIterable=function isSafeIterable(thing){return thing!=null&&hasOwnInPrototypeChain(thing,iterator)&&isIterable(thing);};var utils$1={isArray:isArray$1,isArrayBuffer:isArrayBuffer,isBuffer:isBuffer$1,isFormData:isFormData,isArrayBufferView:isArrayBufferView,isString:isString,isNumber:isNumber,isBoolean:isBoolean,isObject:isObject,isPlainObject:isPlainObject,isEmptyObject:isEmptyObject,isReadableStream:isReadableStream,isRequest:isRequest,isResponse:isResponse,isHeaders:isHeaders,isUndefined:isUndefined,isDate:isDate,isFile:isFile,isReactNativeBlob:isReactNativeBlob,isReactNative:isReactNative,isBlob:isBlob,isRegExp:isRegExp,isFunction:isFunction$1,isStream:isStream,isURLSearchParams:isURLSearchParams,isTypedArray:isTypedArray,isFileList:isFileList,forEach:forEach,merge:merge,extend:extend,trim:trim,stripBOM:stripBOM,inherits:inherits,toFlatObject:toFlatObject,kindOf:kindOf,kindOfTest:kindOfTest,endsWith:endsWith,toArray:toArray,forEachEntry:forEachEntry,matchAll:matchAll,isHTMLForm:isHTMLForm,hasOwnProperty:hasOwnProperty,hasOwnProp:hasOwnProperty,// an alias to avoid ESLint no-prototype-builtins detection
-hasOwnInPrototypeChain:hasOwnInPrototypeChain,getSafeProp:getSafeProp,reduceDescriptors:reduceDescriptors,freezeMethods:freezeMethods,toObjectSet:toObjectSet,toCamelCase:toCamelCase,noop:noop,toFiniteNumber:toFiniteNumber,findKey:findKey,global:_global,isContextDefined:isContextDefined,isSpecCompliantForm:isSpecCompliantForm,toJSONObject:toJSONObject,isAsyncFn:isAsyncFn,isThenable:isThenable,setImmediate:_setImmediate,asap:asap,isIterable:isIterable,isSafeIterable:isSafeIterable};var lookup=[];var revLookup=[];var Arr=typeof Uint8Array!=='undefined'?Uint8Array:Array;var inited=false;function init(){inited=true;var code='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';for(var i=0,len=code.length;i<len;++i){lookup[i]=code[i];revLookup[code.charCodeAt(i)]=i;}revLookup['-'.charCodeAt(0)]=62;revLookup['_'.charCodeAt(0)]=63;}function toByteArray(b64){if(!inited){init();}var i,j,l,tmp,placeHolders,arr;var len=b64.length;if(len%4>0){throw new Error('Invalid string. Length must be a multiple of 4');}// the number of equal signs (place holders)
+hasOwnInPrototypeChain:hasOwnInPrototypeChain,getSafeProp:getSafeProp,toSafeFlatObject:toSafeFlatObject,reduceDescriptors:reduceDescriptors,freezeMethods:freezeMethods,toObjectSet:toObjectSet,toCamelCase:toCamelCase,noop:noop,toFiniteNumber:toFiniteNumber,findKey:findKey,global:_global,isContextDefined:isContextDefined,isSpecCompliantForm:isSpecCompliantForm,toJSONObject:toJSONObject,isAsyncFn:isAsyncFn,isThenable:isThenable,setImmediate:_setImmediate,asap:asap,isIterable:isIterable,isSafeIterable:isSafeIterable};// RawAxiosHeaders whose duplicates are ignored by node
+// c.f. https://nodejs.org/api/http.html#http_message_headers
+var ignoreDuplicateOf=utils$1.toObjectSet(['age','authorization','content-length','content-type','etag','expires','from','host','if-modified-since','if-unmodified-since','last-modified','location','max-forwards','proxy-authorization','referer','retry-after','user-agent']);/**
+ * Parse headers into an object
+ *
+ * ```
+ * Date: Wed, 27 Aug 2014 08:58:49 GMT
+ * Content-Type: application/json
+ * Connection: keep-alive
+ * Transfer-Encoding: chunked
+ * ```
+ *
+ * @param {String} rawHeaders Headers needing to be parsed
+ *
+ * @returns {Object} Headers parsed into an object
+ */var parseHeaders=function parseHeaders(rawHeaders){var parsed={};var key;var val;var i;rawHeaders&&rawHeaders.split('\n').forEach(function parser(line){i=line.indexOf(':');key=line.substring(0,i).trim().toLowerCase();val=line.substring(i+1).trim();var hasKey=utils$1.hasOwnProp(parsed,key);if(!key||hasKey&&utils$1.hasOwnProp(ignoreDuplicateOf,key)){return;}if(key==='set-cookie'){if(hasKey){parsed[key].push(val);}else{parsed[key]=[val];}}else{parsed[key]=hasKey?parsed[key]+', '+val:val;}});return parsed;};function trimSPorHTAB(str){var start=0;var end=str.length;while(start<end){var code=str.charCodeAt(start);if(code!==0x09&&code!==0x20){break;}start+=1;}while(end>start){var _code=str.charCodeAt(end-1);if(_code!==0x09&&_code!==0x20){break;}end-=1;}return start===0&&end===str.length?str:str.slice(start,end);}// The control-code ranges are intentional: header sanitization strips C0/DEL bytes.
+// eslint-disable-next-line no-control-regex
+var INVALID_UNICODE_HEADER_VALUE_CHARS=new RegExp("[\\u0000-\\u0008\\u000a-\\u001f\\u007f]+",'g');// eslint-disable-next-line no-control-regex
+var INVALID_BYTE_STRING_HEADER_VALUE_CHARS=new RegExp("[^\\u0009\\u0020-\\u007e\\u0080-\\u00ff]+",'g');function sanitizeValue(value,invalidChars){if(utils$1.isArray(value)){return value.map(function(item){return sanitizeValue(item,invalidChars);});}return trimSPorHTAB(String(value).replace(invalidChars,''));}var sanitizeHeaderValue=function sanitizeHeaderValue(value){return sanitizeValue(value,INVALID_UNICODE_HEADER_VALUE_CHARS);};var sanitizeByteStringHeaderValue=function sanitizeByteStringHeaderValue(value){return sanitizeValue(value,INVALID_BYTE_STRING_HEADER_VALUE_CHARS);};function toByteStringHeaderObject(headers){var byteStringHeaders=Object.create(null);utils$1.forEach(headers.toJSON(),function(value,header){byteStringHeaders[header]=sanitizeByteStringHeaderValue(value);});return byteStringHeaders;}var $internals$1=Symbol('internals');function normalizeHeader(header){return header&&String(header).trim().toLowerCase();}function normalizeValue(value){if(value===false||value==null){return value;}return utils$1.isArray(value)?value.map(normalizeValue):sanitizeHeaderValue(String(value));}function parseTokens(str){var tokens=Object.create(null);var tokensRE=/([^\s,;=]+)\s*(?:=\s*([^,;]+))?/g;var match;while(match=tokensRE.exec(str)){tokens[match[1]]=match[2];}return tokens;}var parameterNameRE=/^[!#$%&'*+\-.^_`|~0-9A-Za-z]+$/;function trimOWS(value){var start=0;var end=value.length;while(start<end){var code=value.charCodeAt(start);if(code!==0x09&&code!==0x20){break;}start+=1;}while(end>start){var _code2=value.charCodeAt(end-1);if(_code2!==0x09&&_code2!==0x20){break;}end-=1;}return start===0&&end===value.length?value:value.slice(start,end);}function decodeQuotedString(value){var last=value.length-1;if(last<1||value.charCodeAt(0)!==0x22||value.charCodeAt(last)!==0x22){return value;}var decoded='';for(var i=1;i<last;i++){var code=value.charCodeAt(i);if(code===0x22){return value;}if(code===0x5c){i+=1;if(i>=last){return value;}}decoded+=value[i];}return decoded;}function _parseParameters(value){var parameters=Object.create(null);var str=String(value);var start=0;var quoted=false;var escaped=false;function parseParameter(end){var part=trimOWS(str.slice(start,end));var equals=part.indexOf('=');if(equals<1){return;}var name=trimOWS(part.slice(0,equals));if(!parameterNameRE.test(name)){return;}var normalizedName=name.toLowerCase();if(normalizedName==='__proto__'||normalizedName==='constructor'||normalizedName==='prototype'){return;}var parameterValue=trimOWS(part.slice(equals+1));parameters[normalizedName]=decodeQuotedString(parameterValue);}for(var i=0;i<str.length;i++){var code=str.charCodeAt(i);if(quoted){if(escaped){escaped=false;}else if(code===0x5c){escaped=true;}else if(code===0x22){quoted=false;}}else if(code===0x22){quoted=true;}else if(code===0x2c||code===0x3b){parseParameter(i);start=i+1;}}parseParameter(str.length);return parameters;}var isValidHeaderName=function isValidHeaderName(str){return /^[-_a-zA-Z0-9^`|~,!#$%&'*+.]+$/.test(str.trim());};function matchHeaderValue(context,value,header,filter,isHeaderNameFilter){if(utils$1.isFunction(filter)){return filter.call(this,value,header);}if(isHeaderNameFilter){value=header;}if(!utils$1.isString(value))return;if(utils$1.isString(filter)){return value.indexOf(filter)!==-1;}if(utils$1.isRegExp(filter)){return filter.test(value);}}function formatHeader(header){return header.trim().toLowerCase().replace(/([a-z\d])(\w*)/g,function(w,_char,str){return _char.toUpperCase()+str;});}function buildAccessors(obj,header){var accessorName=utils$1.toCamelCase(' '+header);['get','set','has'].forEach(function(methodName){Object.defineProperty(obj,methodName+accessorName,{// Null-proto descriptor so a polluted Object.prototype.get cannot turn
+// this data descriptor into an accessor descriptor on the way in.
+__proto__:null,value:function value(arg1,arg2,arg3){return this[methodName].call(this,header,arg1,arg2,arg3);},configurable:true});});}var AxiosHeaders=/*#__PURE__*/function(){function AxiosHeaders(headers){_classCallCheck(this,AxiosHeaders);headers&&this.set(headers);}return _createClass(AxiosHeaders,[{key:"set",value:function set(header,valueOrRewrite,rewrite){var self=this;function setHeader(_value,_header,_rewrite){var lHeader=normalizeHeader(_header);if(!lHeader){return;}var key=utils$1.findKey(self,lHeader);if(!key||self[key]===undefined||_rewrite===true||_rewrite===undefined&&self[key]!==false){self[key||_header]=normalizeValue(_value);}}var setHeaders=function setHeaders(headers,_rewrite){return utils$1.forEach(headers,function(_value,_header){return setHeader(_value,_header,_rewrite);});};if(utils$1.isPlainObject(header)||header instanceof this.constructor){setHeaders(header,valueOrRewrite);}else if(utils$1.isString(header)&&(header=header.trim())&&!isValidHeaderName(header)){setHeaders(parseHeaders(header),valueOrRewrite);}else if(utils$1.isObject(header)&&utils$1.isSafeIterable(header)){var obj=Object.create(null),dest,key;var _iterator5=_createForOfIteratorHelper(header),_step4;try{for(_iterator5.s();!(_step4=_iterator5.n()).done;){var entry=_step4.value;if(!utils$1.isArray(entry)){throw new TypeError('Object iterator must return a key-value pair');}key=entry[0];if(utils$1.hasOwnProp(obj,key)){dest=obj[key];obj[key]=utils$1.isArray(dest)?[].concat(_toConsumableArray(dest),[entry[1]]):[dest,entry[1]];}else{obj[key]=entry[1];}}}catch(err){_iterator5.e(err);}finally{_iterator5.f();}setHeaders(obj,valueOrRewrite);}else{header!=null&&setHeader(valueOrRewrite,header,rewrite);}return this;}},{key:"get",value:function get(header,parser){header=normalizeHeader(header);if(header){var key=utils$1.findKey(this,header);if(key){var value=this[key];if(!parser){return value;}if(parser===true){return parseTokens(value);}if(utils$1.isFunction(parser)){return parser.call(this,value,key);}if(utils$1.isRegExp(parser)){return parser.exec(value);}throw new TypeError('parser must be boolean|regexp|function');}}}},{key:"has",value:function has(header,matcher){header=normalizeHeader(header);if(header){var key=utils$1.findKey(this,header);return!!(key&&this[key]!==undefined&&(!matcher||matchHeaderValue(this,this[key],key,matcher)));}return false;}},{key:"delete",value:function _delete(header,matcher){var self=this;var deleted=false;function deleteHeader(_header){_header=normalizeHeader(_header);if(_header){var key=utils$1.findKey(self,_header);if(key&&(!matcher||matchHeaderValue(self,self[key],key,matcher))){delete self[key];deleted=true;}}}if(utils$1.isArray(header)){header.forEach(deleteHeader);}else{deleteHeader(header);}return deleted;}},{key:"clear",value:function clear(matcher){var keys=Object.keys(this);var i=keys.length;var deleted=false;while(i--){var key=keys[i];if(!matcher||matchHeaderValue(this,this[key],key,matcher,true)){delete this[key];deleted=true;}}return deleted;}},{key:"normalize",value:function normalize(format){var self=this;var headers={};utils$1.forEach(this,function(value,header){var key=utils$1.findKey(headers,header);if(key){self[key]=normalizeValue(value);delete self[header];return;}var normalized=format?formatHeader(header):String(header).trim();if(normalized!==header){delete self[header];}self[normalized]=normalizeValue(value);headers[normalized]=true;});return this;}},{key:"concat",value:function concat(){var _this$constructor;for(var _len=arguments.length,targets=new Array(_len),_key2=0;_key2<_len;_key2++){targets[_key2]=arguments[_key2];}return(_this$constructor=this.constructor).concat.apply(_this$constructor,[this].concat(targets));}},{key:"toJSON",value:function toJSON(asStrings){var obj=Object.create(null);utils$1.forEach(this,function(value,header){value!=null&&value!==false&&(obj[header]=asStrings&&utils$1.isArray(value)?value.join(', '):value);});return obj;}},{key:Symbol.iterator,value:function value(){return Object.entries(this.toJSON())[Symbol.iterator]();}},{key:"toString",value:function toString(){return Object.entries(this.toJSON()).map(function(_ref8){var _ref9=_slicedToArray(_ref8,2),header=_ref9[0],value=_ref9[1];return header+': '+value;}).join('\n');}},{key:"getSetCookie",value:function getSetCookie(){var value=this.get('set-cookie');return utils$1.isArray(value)?value:value==null||value===false?[]:[value];}},{key:Symbol.toStringTag,get:function get(){return'AxiosHeaders';}}],[{key:"from",value:function from(thing){return thing instanceof this?thing:new this(thing);}},{key:"parseParameters",value:function parseParameters(value){return _parseParameters(value);}},{key:"concat",value:function concat(first){var computed=new this(first);for(var _len2=arguments.length,targets=new Array(_len2>1?_len2-1:0),_key3=1;_key3<_len2;_key3++){targets[_key3-1]=arguments[_key3];}targets.forEach(function(target){return computed.set(target);});return computed;}},{key:"accessor",value:function accessor(header){var internals=this[$internals$1]=this[$internals$1]={accessors:{}};var accessors=internals.accessors;var prototype=this.prototype;function defineAccessor(_header){var lHeader=normalizeHeader(_header);if(!accessors[lHeader]){buildAccessors(prototype,_header);accessors[lHeader]=true;}}utils$1.isArray(header)?header.forEach(defineAccessor):defineAccessor(header);return this;}}]);}();AxiosHeaders.accessor(['Content-Type','Content-Length','Accept','Accept-Encoding','User-Agent','Authorization']);// reserved names hotfix
+utils$1.reduceDescriptors(AxiosHeaders.prototype,function(_ref0,key){var value=_ref0.value;var mapped=key[0].toUpperCase()+key.slice(1);// map `set` => `Set`
+return{get:function get(){return value;},set:function set(headerValue){this[mapped]=headerValue;}};});utils$1.freezeMethods(AxiosHeaders);var AxiosHeaders$1=AxiosHeaders;var REDACTED='[REDACTED ****]';function hasOwnOrPrototypeToJSON(source){if(utils$1.hasOwnProp(source,'toJSON')){return true;}var prototype=Object.getPrototypeOf(source);while(prototype&&prototype!==Object.prototype){if(utils$1.hasOwnProp(prototype,'toJSON')){return true;}prototype=Object.getPrototypeOf(prototype);}return false;}// Build a plain-object snapshot of `config` and replace the value of any key
+// (case-insensitive) listed in `redactKeys` with REDACTED. Walks through arrays
+// and AxiosHeaders, and short-circuits on circular references.
+function redactConfig(config,redactKeys){var lowerKeys=new Set(redactKeys.map(function(k){return String(k).toLowerCase();}));var seen=[];var _visit2=function visit(source){if(source===null||_typeof(source)!=='object')return source;if(utils$1.isBuffer(source))return source;if(seen.indexOf(source)!==-1)return undefined;if(source instanceof AxiosHeaders$1){source=source.toJSON();}seen.push(source);var result;if(utils$1.isArray(source)){result=[];source.forEach(function(v,i){var reducedValue=_visit2(v);if(!utils$1.isUndefined(reducedValue)){result[i]=reducedValue;}});}else{if(!utils$1.isPlainObject(source)&&hasOwnOrPrototypeToJSON(source)){seen.pop();return source;}result=Object.create(null);for(var _i=0,_Object$entries=Object.entries(source);_i<_Object$entries.length;_i++){var _Object$entries$_i=_slicedToArray(_Object$entries[_i],2),key=_Object$entries$_i[0],value=_Object$entries$_i[1];var reducedValue=lowerKeys.has(key.toLowerCase())?REDACTED:_visit2(value);if(!utils$1.isUndefined(reducedValue)){result[key]=reducedValue;}}}seen.pop();return result;};return _visit2(config);}function stringifySafely$1(value){try{return String(value);}catch(err){return'';}}function aggregateErrorMessage(error){var message=error.errors.map(function(entry){try{return entry&&entry.message?stringifySafely$1(entry.message):stringifySafely$1(entry);}catch(err){return'';}}).filter(Boolean).join('; ');return message||error.name||'AggregateError';}var AxiosError=/*#__PURE__*/function(_Error){/**
+   * Create an Error with the specified message, config, error code, request and response.
+   *
+   * @param {string} message The error message.
+   * @param {string} [code] The error code (for example, 'ECONNABORTED').
+   * @param {Object} [config] The config.
+   * @param {Object} [request] The request.
+   * @param {Object} [response] The response.
+   *
+   * @returns {Error} The created error.
+   */function AxiosError(message,code,config,request,response){var _this;_classCallCheck(this,AxiosError);_this=_callSuper(this,AxiosError,[message]);// Make message enumerable to maintain backward compatibility
+// The native Error constructor sets message as non-enumerable,
+// but axios < v1.13.3 had it as enumerable
+Object.defineProperty(_this,'message',{// Null-proto descriptor so a polluted Object.prototype.get cannot turn
+// this data descriptor into an accessor descriptor on the way in.
+__proto__:null,value:message,enumerable:true,writable:true,configurable:true});_this.name='AxiosError';_this.isAxiosError=true;code&&(_this.code=code);config&&(_this.config=config);request&&(_this.request=request);if(response){_this.response=response;_this.status=response.status;}return _this;}_inherits(AxiosError,_Error);return _createClass(AxiosError,[{key:"toJSON",value:function toJSON(){// Opt-in redaction: when the request config carries a `redact` array, the
+// value of any matching key (case-insensitive, at any depth) is replaced
+// with REDACTED in the serialized snapshot. Undefined or empty leaves the
+// existing serialization behavior unchanged.
+var config=this.config;var redactKeys=config&&utils$1.hasOwnProp(config,'redact')?config.redact:undefined;var serializedConfig=utils$1.isArray(redactKeys)&&redactKeys.length>0?redactConfig(config,redactKeys):utils$1.toJSONObject(config);return{// Standard
+message:this.message,name:this.name,// Microsoft
+description:this.description,number:this.number,// Mozilla
+fileName:this.fileName,lineNumber:this.lineNumber,columnNumber:this.columnNumber,stack:this.stack,// Axios
+config:serializedConfig,code:this.code,status:this.status};}}],[{key:"from",value:function from(error,code,config,request,response,customProps){// `AggregateError` (thrown by Node on dual-stack/Happy-Eyeballs connection
+// failures) has an empty `message`; its detail lives in `errors[]`. Without
+// this, the wrapped error surfaces with a blank message (see #6721).
+var message=error.message;if(!message&&utils$1.isArray(error.errors)&&error.errors.length){message=aggregateErrorMessage(error);}var axiosError=new AxiosError(message,code||error.code,config,request,response);// Match native `Error` `cause` semantics: non-enumerable. The wrapped
+// error often carries circular internals (sockets, requests, agents), so
+// an enumerable `cause` makes structured loggers (pino/winston) and any
+// own-property walk throw "Converting circular structure to JSON".
+// Regression from #6982; see #7205. `__proto__: null` mirrors the
+// `message` descriptor below (prototype-pollution-safe descriptor).
+Object.defineProperty(axiosError,'cause',{__proto__:null,value:error,writable:true,enumerable:false,configurable:true});axiosError.name=error.name;// Preserve status from the original error if not already set from response
+if(error.status!=null&&axiosError.status==null){axiosError.status=error.status;}customProps&&Object.assign(axiosError,customProps);return axiosError;}}]);}(/*#__PURE__*/_wrapNativeSuper(Error));// This can be changed to static properties as soon as the parser options in .eslint.cjs are updated.
+AxiosError.ERR_BAD_OPTION_VALUE='ERR_BAD_OPTION_VALUE';AxiosError.ERR_BAD_OPTION='ERR_BAD_OPTION';AxiosError.ECONNABORTED='ECONNABORTED';AxiosError.ETIMEDOUT='ETIMEDOUT';AxiosError.ECONNREFUSED='ECONNREFUSED';AxiosError.ERR_NETWORK='ERR_NETWORK';AxiosError.ERR_FR_TOO_MANY_REDIRECTS='ERR_FR_TOO_MANY_REDIRECTS';AxiosError.ERR_DEPRECATED='ERR_DEPRECATED';AxiosError.ERR_BAD_RESPONSE='ERR_BAD_RESPONSE';AxiosError.ERR_BAD_REQUEST='ERR_BAD_REQUEST';AxiosError.ERR_CANCELED='ERR_CANCELED';AxiosError.ERR_NOT_SUPPORT='ERR_NOT_SUPPORT';AxiosError.ERR_INVALID_URL='ERR_INVALID_URL';AxiosError.ERR_FORM_DATA_DEPTH_EXCEEDED='ERR_FORM_DATA_DEPTH_EXCEEDED';var AxiosError$1=AxiosError;// eslint-disable-next-line strict
+var httpAdapter=null;// Default nesting limit shared with the inverse transform (formDataToJSON) so
+// the FormData <-> JSON round-trip stays symmetric.
+var DEFAULT_FORM_DATA_MAX_DEPTH=100;/**
+ * Determines if the given thing is a array or js object.
+ *
+ * @param {string} thing - The object or array to be visited.
+ *
+ * @returns {boolean}
+ */function isVisitable(thing){return utils$1.isPlainObject(thing)||utils$1.isArray(thing);}/**
+ * It removes the brackets from the end of a string
+ *
+ * @param {string} key - The key of the parameter.
+ *
+ * @returns {string} the key without the brackets.
+ */function removeBrackets(key){return utils$1.endsWith(key,'[]')?key.slice(0,-2):key;}/**
+ * It takes a path, a key, and a boolean, and returns a string
+ *
+ * @param {string} path - The path to the current key.
+ * @param {string} key - The key of the current object being iterated over.
+ * @param {string} dots - If true, the key will be rendered with dots instead of brackets.
+ *
+ * @returns {string} The path to the current key.
+ */function renderKey(path,key,dots){if(!path)return key;return path.concat(key).map(function each(token,i){// eslint-disable-next-line no-param-reassign
+token=removeBrackets(token);return!dots&&i?'['+token+']':token;}).join(dots?'.':'');}/**
+ * If the array is an array and none of its elements are visitable, then it's a flat array.
+ *
+ * @param {Array<any>} arr - The array to check
+ *
+ * @returns {boolean}
+ */function isFlatArray(arr){return utils$1.isArray(arr)&&!arr.some(isVisitable);}var predicates=utils$1.toFlatObject(utils$1,{},null,function filter(prop){return /^is[A-Z]/.test(prop);});/**
+ * Convert a data object to FormData
+ *
+ * @param {Object} obj
+ * @param {?Object} [formData]
+ * @param {?Object} [options]
+ * @param {Function} [options.visitor]
+ * @param {Boolean} [options.metaTokens = true]
+ * @param {Boolean} [options.dots = false]
+ * @param {?Boolean} [options.indexes = false]
+ *
+ * @returns {Object}
+ **//**
+ * It converts an object into a FormData object
+ *
+ * @param {Object<any, any>} obj - The object to convert to form data.
+ * @param {string} formData - The FormData object to append to.
+ * @param {Object<string, any>} options
+ *
+ * @returns
+ */function toFormData(obj,formData,options){if(!utils$1.isObject(obj)){throw new TypeError('target must be an object');}// eslint-disable-next-line no-param-reassign
+formData=formData||new FormData();var option=function option(name,fallback){var value=utils$1.getSafeProp(options,name);return utils$1.isUndefined(value)?fallback:value;};var metaTokens=option('metaTokens',true);// eslint-disable-next-line no-use-before-define
+var visitor=option('visitor')||defaultVisitor;var dots=option('dots',false);var indexes=option('indexes',false);var _Blob=option('Blob')||typeof Blob!=='undefined'&&Blob;var maxDepth=option('maxDepth',DEFAULT_FORM_DATA_MAX_DEPTH);var useBlob=_Blob&&utils$1.isSpecCompliantForm(formData);var stack=[];if(!utils$1.isFunction(visitor)){throw new TypeError('visitor must be a function');}function convertValue(value){if(value===null)return'';if(utils$1.isDate(value)){return value.toISOString();}if(utils$1.isBoolean(value)){return value.toString();}if(!useBlob&&utils$1.isBlob(value)){throw new AxiosError$1('Blob is not supported. Use a Buffer instead.');}if(utils$1.isArrayBuffer(value)||utils$1.isTypedArray(value)){if(useBlob&&typeof _Blob==='function'){return new _Blob([value]);}throw new AxiosError$1('Blob is not supported. Use a Buffer instead.',AxiosError$1.ERR_NOT_SUPPORT);}return value;}function throwIfMaxDepthExceeded(depth){if(depth>maxDepth){throw new AxiosError$1('Object is too deeply nested ('+depth+' levels). Max depth: '+maxDepth,AxiosError$1.ERR_FORM_DATA_DEPTH_EXCEEDED);}}function stringifyWithDepthLimit(value,depth){if(maxDepth===Infinity){return JSON.stringify(value);}var ancestors=[];return JSON.stringify(value,function limitDepth(_key,currentValue){if(!utils$1.isObject(currentValue)){return currentValue;}while(ancestors.length&&ancestors[ancestors.length-1]!==this){ancestors.pop();}ancestors.push(currentValue);throwIfMaxDepthExceeded(depth+ancestors.length-1);return currentValue;});}/**
+   * Default visitor.
+   *
+   * @param {*} value
+   * @param {String|Number} key
+   * @param {Array<String|Number>} path
+   * @this {FormData}
+   *
+   * @returns {boolean} return true to visit the each prop of the value recursively
+   */function defaultVisitor(value,key,path){var arr=value;if(utils$1.isReactNative(formData)&&utils$1.isReactNativeBlob(value)){formData.append(renderKey(path,key,dots),convertValue(value));return false;}if(value&&!path&&_typeof(value)==='object'){if(utils$1.endsWith(key,'{}')){// eslint-disable-next-line no-param-reassign
+key=metaTokens?key:key.slice(0,-2);// eslint-disable-next-line no-param-reassign
+value=stringifyWithDepthLimit(value,1);}else if(utils$1.isArray(value)&&isFlatArray(value)||(utils$1.isFileList(value)||utils$1.endsWith(key,'[]'))&&(arr=utils$1.toArray(value))){// eslint-disable-next-line no-param-reassign
+key=removeBrackets(key);arr.forEach(function each(el,index){!(utils$1.isUndefined(el)||el===null)&&formData.append(// eslint-disable-next-line no-nested-ternary
+indexes===true?renderKey([key],index,dots):indexes===null?key:key+'[]',convertValue(el));});return false;}}if(isVisitable(value)){return true;}formData.append(renderKey(path,key,dots),convertValue(value));return false;}var exposedHelpers=Object.assign(predicates,{defaultVisitor:defaultVisitor,convertValue:convertValue,isVisitable:isVisitable});function build(value,path){var depth=arguments.length>2&&arguments[2]!==undefined?arguments[2]:0;if(utils$1.isUndefined(value))return;throwIfMaxDepthExceeded(depth);if(stack.indexOf(value)!==-1){throw new Error('Circular reference detected in '+path.join('.'));}stack.push(value);utils$1.forEach(value,function each(el,key){var result=!(utils$1.isUndefined(el)||el===null)&&visitor.call(formData,el,utils$1.isString(key)?key.trim():key,path,exposedHelpers);if(result===true){build(el,path?path.concat(key):[key],depth+1);}});stack.pop();}if(!utils$1.isObject(obj)){throw new TypeError('data must be an object');}build(obj);return formData;}/**
+ * It encodes a string by replacing all characters that are not in the unreserved set with
+ * their percent-encoded equivalents
+ *
+ * @param {string} str - The string to encode.
+ *
+ * @returns {string} The encoded string.
+ */function encode$1(str){var charMap={'!':'%21',"'":'%27','(':'%28',')':'%29','~':'%7E','%20':'+'};return encodeURIComponent(str).replace(/[!'()~]|%20/g,function replacer(match){return charMap[match];});}/**
+ * It takes a params object and converts it to a FormData object
+ *
+ * @param {Object<string, any>} params - The parameters to be converted to a FormData object.
+ * @param {Object<string, any>} options - The options object passed to the Axios constructor.
+ *
+ * @returns {void}
+ */function AxiosURLSearchParams(params,options){this._pairs=[];params&&toFormData(params,this,options);}var prototype=AxiosURLSearchParams.prototype;prototype.append=function append(name,value){this._pairs.push([name,value]);};prototype.toString=function toString(encoder){var _this2=this;var _encode=encoder?function(value){return encoder.call(_this2,value,encode$1);}:encode$1;return this._pairs.map(function each(pair){return _encode(pair[0])+'='+_encode(pair[1]);},'').join('&');};/**
+ * It replaces URL-encoded forms of `:`, `$`, `,`, and spaces with
+ * their plain counterparts (`:`, `$`, `,`, `+`).
+ *
+ * @param {string} val The value to be encoded.
+ *
+ * @returns {string} The encoded value.
+ */function encode(val){return encodeURIComponent(val).replace(/%3A/gi,':').replace(/%24/g,'$').replace(/%2C/gi,',').replace(/%20/g,'+');}/**
+ * Build a URL by appending params to the end
+ *
+ * @param {string} url The base of the url (e.g., http://www.google.com)
+ * @param {object} [params] The params to be appended
+ * @param {?(object|Function)} options
+ *
+ * @returns {string} The formatted url
+ */function buildURL(url,params,options){if(!params){return url;}url=url||'';var _options=utils$1.isFunction(options)?{serialize:options}:options;// Read serializer options pollution-safely: own properties and methods on a
+// class/template prototype are honored, but values injected onto a polluted
+// Object.prototype are ignored.
+var _encode=utils$1.getSafeProp(_options,'encode')||encode;var serializeFn=utils$1.getSafeProp(_options,'serialize');var serializedParams;if(serializeFn){serializedParams=serializeFn(params,_options);}else{serializedParams=utils$1.isURLSearchParams(params)?params.toString():new AxiosURLSearchParams(params,_options).toString(_encode);}if(serializedParams){var hashmarkIndex=url.indexOf('#');if(hashmarkIndex!==-1){url=url.slice(0,hashmarkIndex);}url+=(url.indexOf('?')===-1?'?':'&')+serializedParams;}return url;}var $internals=Symbol('internals');// `handlers` is public and may be replaced with a nullish value by user code;
+// `clear()` has always tolerated that. Treat it as an empty stack rather than
+// dereferencing it.
+function countHandlers(handlers){return handlers?handlers.length:0;}function trimHandlers(handlers){if(!handlers){return;}while(handlers.length&&handlers[handlers.length-1]===null){handlers.pop();}}function syncHandlerEntries(manager,internals){var handlers=manager.handlers;var length=countHandlers(handlers);if(handlers!==internals.handlersRef){internals.handlersRef=handlers;internals.handlerEntries.clear();}else if(length!==internals.handlersLength){if(!length){internals.handlerEntries.clear();}else{internals.handlerEntries.forEach(function removeStaleEntry(entry,id){if(handlers[entry.index]!==entry.handler){internals.handlerEntries["delete"](id);}});}}internals.handlersLength=length;}var InterceptorManager=/*#__PURE__*/function(){function InterceptorManager(){_classCallCheck(this,InterceptorManager);this.handlers=[];this[$internals]={handlersRef:this.handlers,handlersLength:this.handlers.length,handlerEntries:new Map(),iterationDepth:0,nextId:0};}/**
+   * Add a new interceptor to the stack
+   *
+   * @param {Function} fulfilled The function to handle `then` for a `Promise`
+   * @param {Function} rejected The function to handle `reject` for a `Promise`
+   * @param {Object} options The options for the interceptor, synchronous and runWhen
+   *
+   * @return {Number} An ID used to remove interceptor later
+   */return _createClass(InterceptorManager,[{key:"use",value:function use(fulfilled,rejected,options){var handler={fulfilled:fulfilled,rejected:rejected,synchronous:options?options.synchronous:false,runWhen:options?options.runWhen:null};var internals=this[$internals];if(this.handlers==null){this.handlers=[];}syncHandlerEntries(this,internals);var id=internals.nextId++;this.handlers.push(handler);internals.handlerEntries.set(id,{handler:handler,index:this.handlers.length-1});internals.handlersLength=this.handlers.length;return id;}/**
+   * Remove an interceptor from the stack
+   *
+   * @param {Number} id The ID that was returned by `use`
+   *
+   * @returns {void}
+   */},{key:"eject",value:function eject(id){var internals=this[$internals];syncHandlerEntries(this,internals);var entry=internals.handlerEntries.get(id);if(entry){internals.handlerEntries["delete"](id);// Ignore IDs invalidated by clear or direct replacement of handlers.
+if(this.handlers[entry.index]!==entry.handler){return;}this.handlers[entry.index]=null;// Do not reuse an index while forEach is walking its length snapshot.
+if(!internals.iterationDepth){trimHandlers(this.handlers);internals.handlersLength=this.handlers.length;}}}/**
+   * Clear all interceptors from the stack
+   *
+   * @returns {void}
+   */},{key:"clear",value:function clear(){if(this.handlers){this.handlers=[];syncHandlerEntries(this,this[$internals]);}}/**
+   * Iterate over all the registered interceptors
+   *
+   * This method is particularly useful for skipping over any
+   * interceptors that may have become `null` calling `eject`.
+   *
+   * @param {Function} fn The function to call for each interceptor
+   *
+   * @returns {void}
+   */},{key:"forEach",value:function forEach(fn){var internals=this[$internals];syncHandlerEntries(this,internals);internals.iterationDepth++;try{utils$1.forEach(this.handlers,function forEachHandler(h){if(h!==null){fn(h);}});}finally{if(! --internals.iterationDepth){syncHandlerEntries(this,internals);trimHandlers(this.handlers);internals.handlersLength=countHandlers(this.handlers);}}}}]);}();var InterceptorManager$1=InterceptorManager;var transitionalDefaults={silentJSONParsing:true,forcedJSONParsing:true,clarifyTimeoutError:false,legacyInterceptorReqResOrdering:true,advertiseZstdAcceptEncoding:false,validateStatusUndefinedResolves:true};var URLSearchParams$1=typeof URLSearchParams!=='undefined'?URLSearchParams:AxiosURLSearchParams;var FormData$1=typeof FormData!=='undefined'?FormData:null;var Blob$1=typeof Blob!=='undefined'?Blob:null;var platform$1={isBrowser:true,classes:{URLSearchParams:URLSearchParams$1,FormData:FormData$1,Blob:Blob$1},protocols:['http','https','file','blob','url','data']};var hasBrowserEnv=typeof window!=='undefined'&&typeof document!=='undefined';var _navigator=(typeof navigator==="undefined"?"undefined":_typeof(navigator))==='object'&&navigator||undefined;/**
+ * Determine if we're running in a standard browser environment
+ *
+ * This allows axios to run in a web worker, and react-native.
+ * Both environments support XMLHttpRequest, but not fully standard globals.
+ *
+ * web workers:
+ *  typeof window -> undefined
+ *  typeof document -> undefined
+ *
+ * react-native:
+ *  navigator.product -> 'ReactNative'
+ * nativescript
+ *  navigator.product -> 'NativeScript' or 'NS'
+ *
+ * @returns {boolean}
+ */var hasStandardBrowserEnv=hasBrowserEnv&&(!_navigator||['ReactNative','NativeScript','NS'].indexOf(_navigator.product)<0);/**
+ * Determine if we're running in a standard browser webWorker environment
+ *
+ * Although the `isStandardBrowserEnv` method indicates that
+ * `allows axios to run in a web worker`, the WebWorker will still be
+ * filtered out due to its judgment standard
+ * `typeof window !== 'undefined' && typeof document !== 'undefined'`.
+ * This leads to a problem when axios post `FormData` in webWorker
+ */var hasStandardBrowserWebWorkerEnv=function(){return typeof WorkerGlobalScope!=='undefined'&&// eslint-disable-next-line no-undef
+self instanceof WorkerGlobalScope&&typeof self.importScripts==='function';}();var origin=hasBrowserEnv&&window.location.href||'http://localhost';var utils=/*#__PURE__*/Object.freeze({__proto__:null,hasBrowserEnv:hasBrowserEnv,hasStandardBrowserWebWorkerEnv:hasStandardBrowserWebWorkerEnv,hasStandardBrowserEnv:hasStandardBrowserEnv,navigator:_navigator,origin:origin});var platform=_objectSpread(_objectSpread({},utils),platform$1);function toURLEncodedForm(data,options){return toFormData(data,new platform.classes.URLSearchParams(),_objectSpread({visitor:function visitor(value,key,path,helpers){if(platform.isNode&&utils$1.isBuffer(value)){this.append(key,value.toString('base64'));return false;}return helpers.defaultVisitor.apply(this,arguments);}},options));}var MAX_DEPTH=DEFAULT_FORM_DATA_MAX_DEPTH;function throwIfDepthExceeded(index){if(index>MAX_DEPTH){throw new AxiosError$1('FormData field is too deeply nested ('+index+' levels). Max depth: '+MAX_DEPTH,AxiosError$1.ERR_FORM_DATA_DEPTH_EXCEEDED);}}/**
+ * It takes a string like `foo[x][y][z]` and returns an array like `['foo', 'x', 'y', 'z']
+ *
+ * @param {string} name - The name of the property to get.
+ *
+ * @returns An array of strings.
+ */function parsePropPath(name){// foo[x][y][z] -> ['foo', 'x', 'y', 'z']
+// foo.x.y.z    -> ['foo', 'x', 'y', 'z']
+// A path is split on `.` and on `[...]` groups. A segment — whether written
+// in dot notation or captured inside brackets — may contain any character
+// except `.`, `[` and `]`, so a key like `user-name` or `user name` is kept
+// literal instead of being split (#5402). `.`, `[` and `]` keep their existing
+// meaning, e.g. `foo[bar.baz]` -> ['foo', 'bar', 'baz'] and `[]` is an array push.
+// Excluding `[` from the bracket group also makes the match fail fast at the
+// next `[`, so a malformed name cannot rescan to the end of the string from
+// every unmatched `[` — parsing stays linear in the length of the name.
+var path=[];var pattern=/[^.[\]]+|\[([^.[\]]*)]/g;var match;while((match=pattern.exec(name))!==null){throwIfDepthExceeded(path.length);path.push(match[0]==='[]'?'':match[1]||match[0]);}return path;}/**
+ * Convert an array to an object.
+ *
+ * @param {Array<any>} arr - The array to convert to an object.
+ *
+ * @returns An object with the same keys and values as the array.
+ */function arrayToObject(arr){var obj={};var keys=Object.keys(arr);var i;var len=keys.length;var key;for(i=0;i<len;i++){key=keys[i];obj[key]=arr[key];}return obj;}/**
+ * It takes a FormData object and returns a JavaScript object
+ *
+ * @param {string} formData The FormData object to convert to JSON.
+ *
+ * @returns {Object<string, any> | null} The converted object.
+ */function formDataToJSON(formData){function buildPath(path,value,target,index){throwIfDepthExceeded(index);var name=path[index++];if(name==='__proto__')return true;var isNumericKey=Number.isFinite(+name);var isLast=index>=path.length;name=!name&&utils$1.isArray(target)?target.length:name;if(isLast){if(utils$1.hasOwnProp(target,name)){target[name]=utils$1.isArray(target[name])?target[name].concat(value):[target[name],value];}else{target[name]=value;}return!isNumericKey;}if(!utils$1.hasOwnProp(target,name)||!utils$1.isObject(target[name])){target[name]=[];}var result=buildPath(path,value,target[name],index);if(result&&utils$1.isArray(target[name])){target[name]=arrayToObject(target[name]);}return!isNumericKey;}if(utils$1.isFormData(formData)&&utils$1.isFunction(formData.entries)){var obj={};utils$1.forEachEntry(formData,function(name,value){buildPath(parsePropPath(name),value,obj,0);});return obj;}return null;}var methodList=Object.freeze(['get','delete','head','options','post','put','patch','purge','link','unlink','query']);var methodList$1=methodList;var own=function own(obj,key){return obj!=null&&utils$1.hasOwnProp(obj,key)?obj[key]:undefined;};/**
+ * It takes a string, tries to parse it, and if it fails, it returns the stringified version
+ * of the input
+ *
+ * @param {any} rawValue - The value to be stringified.
+ * @param {Function} parser - A function that parses a string into a JavaScript object.
+ * @param {Function} encoder - A function that takes a value and returns a string.
+ *
+ * @returns {string} A stringified version of the rawValue.
+ */function stringifySafely(rawValue,parser,encoder){if(utils$1.isString(rawValue)){try{(parser||JSON.parse)(rawValue);return utils$1.trim(rawValue);}catch(e){if(e.name!=='SyntaxError'){throw e;}}}return(encoder||JSON.stringify)(rawValue);}var defaults={transitional:transitionalDefaults,adapter:['xhr','http','fetch'],transformRequest:[function transformRequest(data,headers){var contentType=headers.getContentType()||'';var hasJSONContentType=contentType.indexOf('application/json')>-1;var isObjectPayload=utils$1.isObject(data);if(isObjectPayload&&utils$1.isHTMLForm(data)){data=new FormData(data);}var isFormData=utils$1.isFormData(data);if(isFormData){return hasJSONContentType?JSON.stringify(formDataToJSON(data)):data;}if(utils$1.isArrayBuffer(data)||utils$1.isBuffer(data)||utils$1.isStream(data)||utils$1.isFile(data)||utils$1.isBlob(data)||utils$1.isReadableStream(data)){return data;}if(utils$1.isArrayBufferView(data)){return data.buffer;}if(utils$1.isURLSearchParams(data)){headers.setContentType('application/x-www-form-urlencoded;charset=utf-8',false);return data.toString();}var isFileList;if(isObjectPayload){var formSerializer=own(this,'formSerializer');if(contentType.indexOf('application/x-www-form-urlencoded')>-1){return toURLEncodedForm(data,formSerializer).toString();}if((isFileList=utils$1.isFileList(data))||contentType.indexOf('multipart/form-data')>-1){var _env=own(this,'env');var _FormData=_env&&_env.FormData;return toFormData(isFileList?{'files[]':data}:data,_FormData&&new _FormData(),formSerializer);}}if(isObjectPayload||hasJSONContentType){headers.setContentType('application/json',false);return stringifySafely(data);}return data;}],transformResponse:[function transformResponse(data){var transitional=own(this,'transitional')||defaults.transitional;var forcedJSONParsing=transitional&&transitional.forcedJSONParsing;var responseType=own(this,'responseType');var JSONRequested=responseType==='json';if(utils$1.isResponse(data)||utils$1.isReadableStream(data)){return data;}if(data&&utils$1.isString(data)&&(forcedJSONParsing&&!responseType||JSONRequested)){var silentJSONParsing=transitional&&transitional.silentJSONParsing;var strictJSONParsing=!silentJSONParsing&&JSONRequested;try{return JSON.parse(data,own(this,'parseReviver'));}catch(e){if(strictJSONParsing){if(e.name==='SyntaxError'){throw AxiosError$1.from(e,AxiosError$1.ERR_BAD_RESPONSE,this,null,own(this,'response'));}throw e;}}}return data;}],/**
+   * A timeout in milliseconds to abort a request. If set to 0 (default) a
+   * timeout is not created.
+   */timeout:0,xsrfCookieName:'XSRF-TOKEN',xsrfHeaderName:'X-XSRF-TOKEN',maxContentLength:-1,maxBodyLength:-1,env:{FormData:platform.classes.FormData,Blob:platform.classes.Blob},validateStatus:function validateStatus(status){return status>=200&&status<300;},headers:{common:{Accept:'application/json, text/plain, */*','Content-Type':undefined}}};utils$1.forEach(methodList$1,function(method){defaults.headers[method]={};});var defaults$1=defaults;/**
+ * Transform the data for a request or a response
+ *
+ * @param {Array|Function} fns A single function or Array of functions
+ * @param {?Object} response The response object
+ *
+ * @returns {*} The resulting transformed data
+ */function transformData(fns,response){var config=this||defaults$1;var context=response||config;var headers=AxiosHeaders$1.from(context.headers);var data=context.data;utils$1.forEach(fns,function transform(fn){data=fn.call(config,data,headers.normalize(),response?response.status:undefined);});headers.normalize();return data;}function isCancel(value){return!!(value&&value.__CANCEL__);}var CanceledError=/*#__PURE__*/function(_AxiosError$){/**
+   * A `CanceledError` is an object that is thrown when an operation is canceled.
+   *
+   * @param {string=} message The message.
+   * @param {Object=} config The config.
+   * @param {Object=} request The request.
+   *
+   * @returns {CanceledError} The created error.
+   */function CanceledError(message,config,request){var _this3;_classCallCheck(this,CanceledError);_this3=_callSuper(this,CanceledError,[message==null?'canceled':message,AxiosError$1.ERR_CANCELED,config,request]);_this3.name='CanceledError';_this3.__CANCEL__=true;return _this3;}_inherits(CanceledError,_AxiosError$);return _createClass(CanceledError);}(AxiosError$1);var CanceledError$1=CanceledError;/**
+ * Resolve or reject a Promise based on response status.
+ *
+ * @param {Function} resolve A function that resolves the promise.
+ * @param {Function} reject A function that rejects the promise.
+ * @param {object} response The response.
+ *
+ * @returns {object} The response.
+ */function settle(resolve,reject,response){var validateStatus=response.config.validateStatus;if(!response.status||!validateStatus||validateStatus(response.status)){resolve(response);}else{reject(new AxiosError$1('Request failed with status code '+response.status,response.status>=400&&response.status<500?AxiosError$1.ERR_BAD_REQUEST:AxiosError$1.ERR_BAD_RESPONSE,response.config,response.request,response));}}var urlParserControlCharacters=/[\t\n\r]/g;/**
+ * Match WHATWG URL preprocessing before checking a URL's protocol.
+ *
+ * @param {string} url
+ *
+ * @returns {string}
+ */function normalizeURLForProtocolCheck(url){if(typeof url!=='string'){return url;}var start=0;while(start<url.length&&url.charCodeAt(start)<=0x20){start++;}return url.slice(start).replace(urlParserControlCharacters,'');}function parseProtocol(url){var match=/^([-+\w]{1,25}):(?:\/\/)?/.exec(url);return match&&match[1]||'';}/**
+ * Calculate data maxRate
+ * @param {Number} [samplesCount= 10]
+ * @param {Number} [min= 1000]
+ * @returns {Function}
+ */function speedometer(samplesCount,min){samplesCount=samplesCount||10;var bytes=new Array(samplesCount);var timestamps=new Array(samplesCount);var head=0;var tail=0;var firstSampleTS;min=min!==undefined?min:1000;return function push(chunkLength){var now=Date.now();var startedAt=timestamps[tail];if(!firstSampleTS){firstSampleTS=now;}bytes[head]=chunkLength;timestamps[head]=now;var i=tail;var bytesCount=0;while(i!==head){bytesCount+=bytes[i++];i=i%samplesCount;}head=(head+1)%samplesCount;if(head===tail){tail=(tail+1)%samplesCount;}if(now-firstSampleTS<min){return;}var passed=startedAt&&now-startedAt;return passed?Math.round(bytesCount*1000/passed):undefined;};}/**
+ * Throttle decorator
+ * @param {Function} fn
+ * @param {Number} freq
+ * @return {Array<Function>}
+ */function throttle(fn,freq){var timestamp=0;var threshold=1000/freq;var lastArgs;var timer;var invoke=function invoke(args){var now=arguments.length>1&&arguments[1]!==undefined?arguments[1]:Date.now();timestamp=now;lastArgs=null;if(timer){clearTimeout(timer);timer=null;}fn.apply(void 0,_toConsumableArray(args));};var throttled=function throttled(){var now=Date.now();var passed=now-timestamp;for(var _len3=arguments.length,args=new Array(_len3),_key4=0;_key4<_len3;_key4++){args[_key4]=arguments[_key4];}if(passed>=threshold){invoke(args,now);}else{lastArgs=args;if(!timer){timer=setTimeout(function(){timer=null;invoke(lastArgs);},threshold-passed);}}};var flush=function flush(){return lastArgs&&invoke(lastArgs);};var flushWith=function flushWith(){for(var _len4=arguments.length,args=new Array(_len4),_key5=0;_key5<_len4;_key5++){args[_key5]=arguments[_key5];}return invoke(args);};return[throttled,flush,flushWith];}var progressEventReducer=function progressEventReducer(listener,isDownloadStream){var freq=arguments.length>2&&arguments[2]!==undefined?arguments[2]:3;var bytesNotified=0;var _speedometer=speedometer(50,250);return throttle(function(e){if(!e||!utils$1.isNumber(e.loaded)){return;}var rawLoaded=e.loaded;var total=e.lengthComputable?e.total:undefined;var loaded=Math.max(0,total!=null?Math.min(rawLoaded,total):rawLoaded);var progressBytes=Math.max(0,loaded-bytesNotified);var rate=_speedometer(progressBytes);bytesNotified=Math.max(bytesNotified,loaded);var data=_defineProperty({loaded:loaded,total:total,progress:total?loaded/total:undefined,bytes:progressBytes,rate:rate?rate:undefined,estimated:rate&&total?(total-loaded)/rate:undefined,event:e,lengthComputable:total!=null},isDownloadStream?'download':'upload',true);listener(data);},freq);};var progressEventDecorator=function progressEventDecorator(total,throttled){var lengthComputable=total!=null;return[function(loaded){return throttled[0]({lengthComputable:lengthComputable,total:total,loaded:loaded});},throttled[1]];};var asyncDecorator=function asyncDecorator(fn){var scheduler=arguments.length>1&&arguments[1]!==undefined?arguments[1]:utils$1.asap;return function(){for(var _len5=arguments.length,args=new Array(_len5),_key6=0;_key6<_len5;_key6++){args[_key6]=arguments[_key6];}return scheduler(function(){return fn.apply(void 0,args);});};};var isURLSameOrigin=platform.hasStandardBrowserEnv?function(origin,isMSIE){return function(url){url=new URL(url,platform.origin);return origin.protocol===url.protocol&&origin.host===url.host&&(isMSIE||origin.port===url.port);};}(new URL(platform.origin),platform.navigator&&/(msie|trident)/i.test(platform.navigator.userAgent)):function(){return true;};var cookies=platform.hasStandardBrowserEnv?// Standard browser envs support document.cookie
+{write:function write(name,value,expires,path,domain,secure,sameSite){if(typeof document==='undefined')return;var cookie=["".concat(name,"=").concat(encodeURIComponent(value))];if(utils$1.isNumber(expires)){cookie.push("expires=".concat(new Date(expires).toUTCString()));}if(utils$1.isString(path)){cookie.push("path=".concat(path));}if(utils$1.isString(domain)){cookie.push("domain=".concat(domain));}if(secure===true){cookie.push('secure');}if(utils$1.isString(sameSite)){cookie.push("SameSite=".concat(sameSite));}document.cookie=cookie.join('; ');},read:function read(name){if(typeof document==='undefined')return null;// Match name=value by splitting on the semicolon separator instead of building a
+// RegExp from `name` — interpolating an unescaped string into a RegExp would let
+// metacharacters (e.g. `.+?` in an attacker-influenced cookie name) cause ReDoS or
+// match the wrong cookie. Browsers may serialize cookie pairs as either ";" or
+// "; ", so ignore optional whitespace before each cookie name.
+var cookies=document.cookie.split(';');for(var i=0;i<cookies.length;i++){var cookie=cookies[i].replace(/^\s+/,'');var eq=cookie.indexOf('=');if(eq!==-1&&cookie.slice(0,eq)===name){try{return decodeURIComponent(cookie.slice(eq+1));}catch(e){return cookie.slice(eq+1);}}}return null;},remove:function remove(name){this.write(name,'',Date.now()-86400000,'/');}}:// Non-standard browser env (web workers, react-native) lack needed support.
+{write:function write(){},read:function read(){return null;},remove:function remove(){}};/**
+ * Determines whether the specified URL is absolute
+ *
+ * @param {string} url The URL to test
+ *
+ * @returns {boolean} True if the specified URL is absolute, otherwise false
+ */function isAbsoluteURL(url){// A URL is considered absolute if it begins with "<scheme>://" or "//" (protocol-relative URL).
+// RFC 3986 defines scheme name as a sequence of characters beginning with a letter and followed
+// by any combination of letters, digits, plus, period, or hyphen.
+if(typeof url!=='string'){return false;}return /^([a-z][a-z\d+\-.]*:)?\/\//i.test(url);}/**
+ * Creates a new URL by combining the specified URLs
+ *
+ * @param {string} baseURL The base URL
+ * @param {string} relativeURL The relative URL
+ *
+ * @returns {string} The combined URL
+ */function combineURLs(baseURL,relativeURL){if(!relativeURL){return baseURL;}var end=baseURL.length;while(end>0&&baseURL.charCodeAt(end-1)===47){end--;}return baseURL.slice(0,end)+'/'+relativeURL.replace(/^\/+/,'');}var malformedHttpProtocol=/^https?:(?!\/\/)/i;// Redact the parts of a URL that can carry secrets before it is embedded in an
+// error message. AxiosError.toJSON() serializes `message` verbatim and errors
+// are commonly logged, while the opt-in `config.redact` model only cleans
+// config keys — it cannot reach the message. Redact only the genuinely
+// sensitive substrings — userinfo (credentials), query parameter values and
+// fragment contents — with the same REDACTED marker the config redaction uses,
+// while keeping the scheme, host, path and parameter names so the offending
+// request stays accurately identifiable.
+function redactFragment(fragment){if(!fragment){return fragment;}return fragment.replace(/(^|&)([^=&]*=)?[^&]+/g,function(match,separator){var parameterName=arguments.length>2&&arguments[2]!==undefined?arguments[2]:'';return"".concat(separator).concat(parameterName).concat(REDACTED);});}function redactSensitiveURLParts(url){var redactedURL=url.replace(/^(https?:\/{0,2})[^/?#]*@/i,"$1".concat(REDACTED,"@"));var fragmentIndex=redactedURL.indexOf('#');var urlWithoutFragment=fragmentIndex===-1?redactedURL:redactedURL.slice(0,fragmentIndex);var redactedURLWithoutFragment=urlWithoutFragment.replace(/([?&][^=&#]*=)[^&#]*/g,"$1".concat(REDACTED));if(fragmentIndex===-1){return redactedURLWithoutFragment;}return"".concat(redactedURLWithoutFragment,"#").concat(redactFragment(redactedURL.slice(fragmentIndex+1)));}function assertValidHttpProtocolURL(url,config){if(typeof url==='string'){var normalizedURL=normalizeURLForProtocolCheck(url);if(malformedHttpProtocol.test(normalizedURL)){throw new AxiosError$1("Invalid URL ".concat(JSON.stringify(redactSensitiveURLParts(normalizedURL)),": missing \"//\" after protocol"),AxiosError$1.ERR_INVALID_URL,config);}}}/**
+ * Creates a new URL by combining the baseURL with the requestedURL,
+ * only when the requestedURL is not already an absolute URL.
+ * If the requestURL is absolute, this function returns the requestedURL untouched.
+ *
+ * @param {string} baseURL The base URL
+ * @param {string} requestedURL Absolute or relative URL to combine
+ *
+ * @returns {string} The combined full path
+ */function buildFullPath(baseURL,requestedURL,allowAbsoluteUrls,config){assertValidHttpProtocolURL(requestedURL,config);var isRelativeUrl=!isAbsoluteURL(requestedURL);if(baseURL&&(isRelativeUrl||allowAbsoluteUrls===false)){assertValidHttpProtocolURL(baseURL,config);return combineURLs(baseURL,requestedURL);}return requestedURL;}var headersToObject=function headersToObject(thing){return thing instanceof AxiosHeaders$1?_objectSpread({},thing):thing;};var ownEnumerableKeys=function ownEnumerableKeys(thing){if(Object.getOwnPropertySymbols&&Object.getOwnPropertyDescriptor){return Object.keys(thing).concat(Object.getOwnPropertySymbols(thing).filter(function(symbol){return Object.getOwnPropertyDescriptor(thing,symbol).enumerable;}));}return Object.keys(thing);};/**
+ * Config-specific merge-function which creates a new config-object
+ * by merging two configuration objects together.
+ *
+ * @param {Object} config1
+ * @param {Object} config2
+ *
+ * @returns {Object} New object resulting from merging config2 to config1
+ */function mergeConfig(config1,config2){// eslint-disable-next-line no-param-reassign
+config1=config1||{};config2=config2||{};// Use a null-prototype object so that downstream reads such as `config.auth`
+// or `config.baseURL` cannot inherit polluted values from Object.prototype.
+// `hasOwnProperty` is restored as a non-enumerable own slot to preserve
+// ergonomics for user code that relies on it.
+var config=Object.create(null);Object.defineProperty(config,'hasOwnProperty',{// Null-proto descriptor so a polluted Object.prototype.get cannot turn
+// this data descriptor into an accessor descriptor on the way in.
+__proto__:null,value:Object.prototype.hasOwnProperty,enumerable:false,writable:true,configurable:true});function getMergedValue(target,source,prop,caseless){if(utils$1.isPlainObject(target)&&utils$1.isPlainObject(source)){return utils$1.merge.call({caseless:caseless},target,source);}else if(utils$1.isPlainObject(source)){return utils$1.merge({},source);}else if(utils$1.isArray(source)){return source.slice();}return source;}function mergeDeepProperties(a,b,prop,caseless){if(!utils$1.isUndefined(b)){return getMergedValue(a,b,prop,caseless);}else if(!utils$1.isUndefined(a)){return getMergedValue(undefined,a,prop,caseless);}}// eslint-disable-next-line consistent-return
+function valueFromConfig2(a,b){if(!utils$1.isUndefined(b)){return getMergedValue(undefined,b);}}// eslint-disable-next-line consistent-return
+function defaultToConfig2(a,b){if(!utils$1.isUndefined(b)){return getMergedValue(undefined,b);}else if(!utils$1.isUndefined(a)){return getMergedValue(undefined,a);}}function getMergedTransitionalOption(prop){var transitional2=utils$1.hasOwnProp(config2,'transitional')?config2.transitional:undefined;if(!utils$1.isUndefined(transitional2)){if(utils$1.isPlainObject(transitional2)){if(utils$1.hasOwnProp(transitional2,prop)){return transitional2[prop];}}else{return undefined;}}var transitional1=utils$1.hasOwnProp(config1,'transitional')?config1.transitional:undefined;if(utils$1.isPlainObject(transitional1)&&utils$1.hasOwnProp(transitional1,prop)){return transitional1[prop];}return undefined;}// eslint-disable-next-line consistent-return
+function mergeDirectKeys(a,b,prop){if(utils$1.hasOwnProp(config2,prop)){return getMergedValue(a,b);}else if(utils$1.hasOwnProp(config1,prop)){return getMergedValue(undefined,a);}}var mergeMap={url:valueFromConfig2,method:valueFromConfig2,data:valueFromConfig2,baseURL:defaultToConfig2,transformRequest:defaultToConfig2,transformResponse:defaultToConfig2,paramsSerializer:defaultToConfig2,timeout:defaultToConfig2,timeoutErrorMessage:defaultToConfig2,withCredentials:defaultToConfig2,withXSRFToken:defaultToConfig2,adapter:defaultToConfig2,responseType:defaultToConfig2,xsrfCookieName:defaultToConfig2,xsrfHeaderName:defaultToConfig2,onUploadProgress:defaultToConfig2,onDownloadProgress:defaultToConfig2,decompress:defaultToConfig2,maxContentLength:defaultToConfig2,maxBodyLength:defaultToConfig2,beforeRedirect:defaultToConfig2,transport:defaultToConfig2,httpAgent:defaultToConfig2,httpsAgent:defaultToConfig2,cancelToken:defaultToConfig2,socketPath:defaultToConfig2,allowedSocketPaths:defaultToConfig2,responseEncoding:defaultToConfig2,validateStatus:mergeDirectKeys,headers:function headers(a,b,prop){return mergeDeepProperties(headersToObject(a),headersToObject(b),prop,true);}};utils$1.forEach(ownEnumerableKeys(_objectSpread(_objectSpread({},config1),config2)),function computeConfigValue(prop){if(prop==='__proto__'||prop==='constructor'||prop==='prototype')return;var merge=utils$1.hasOwnProp(mergeMap,prop)?mergeMap[prop]:mergeDeepProperties;var a=utils$1.hasOwnProp(config1,prop)?config1[prop]:undefined;var b=utils$1.hasOwnProp(config2,prop)?config2[prop]:undefined;var configValue=merge(a,b,prop);utils$1.isUndefined(configValue)&&merge!==mergeDirectKeys||(config[prop]=configValue);});if(utils$1.hasOwnProp(config2,'validateStatus')&&utils$1.isUndefined(config2.validateStatus)&&getMergedTransitionalOption('validateStatusUndefinedResolves')===false){if(utils$1.hasOwnProp(config1,'validateStatus')){config.validateStatus=getMergedValue(undefined,config1.validateStatus);}else{delete config.validateStatus;}}return config;}var FORM_DATA_CONTENT_HEADERS=['content-type','content-length'];/**
+ * Apply the headers generated by a FormData implementation to the request headers,
+ * honoring the `formDataHeaderPolicy` option: with 'content-only', copy only the
+ * content-* headers; otherwise merge all of them.
+ *
+ * @param {AxiosHeaders} headers - the request headers to mutate
+ * @param {Object | null | undefined} formHeaders - headers produced by the FormData implementation
+ * @param {String} [policy] - the resolved `formDataHeaderPolicy` config value
+ *
+ * @returns {void}
+ */function setFormDataHeaders(headers,formHeaders,policy){if(policy!=='content-only'){headers.set(formHeaders);return;}Object.entries(formHeaders||{}).forEach(function(_ref1){var _ref10=_slicedToArray(_ref1,2),key=_ref10[0],val=_ref10[1];if(FORM_DATA_CONTENT_HEADERS.includes(key.toLowerCase())){headers.set(key,val);}});}/**
+ * Encode a UTF-8 string to a Latin-1 byte string for use with btoa().
+ * This is a modern replacement for the deprecated unescape(encodeURIComponent(str)) pattern.
+ *
+ * @param {string} str The string to encode
+ *
+ * @returns {string} UTF-8 bytes as a Latin-1 string
+ */var encodeUTF8$1=function encodeUTF8$1(str){return encodeURIComponent(str).replace(/%([0-9A-F]{2})/gi,function(_,hex){return String.fromCharCode(parseInt(hex,16));});};function resolveConfig(config){var newConfig=mergeConfig({},config);// Read only own properties to prevent prototype pollution gadgets
+// (e.g. Object.prototype.baseURL = 'https://evil.com').
+var own=function own(key){return utils$1.hasOwnProp(newConfig,key)?newConfig[key]:undefined;};var data=own('data');var withXSRFToken=own('withXSRFToken');var xsrfHeaderName=own('xsrfHeaderName');var xsrfCookieName=own('xsrfCookieName');var headers=own('headers');var auth=own('auth');var baseURL=own('baseURL');var allowAbsoluteUrls=own('allowAbsoluteUrls');var url=own('url');newConfig.headers=headers=AxiosHeaders$1.from(headers);newConfig.url=buildURL(buildFullPath(baseURL,url,allowAbsoluteUrls,newConfig),own('params'),own('paramsSerializer'));// HTTP basic authentication
+if(auth){var username=utils$1.getSafeProp(auth,'username')||'';var password=utils$1.getSafeProp(auth,'password')||'';try{headers.set('Authorization','Basic '+btoa(username+':'+(password?encodeUTF8$1(password):'')));}catch(e){throw AxiosError$1.from(e,AxiosError$1.ERR_BAD_OPTION_VALUE,config);}}if(utils$1.isFormData(data)){var getHeaders=utils$1.getSafeProp(data,'getHeaders');if(platform.hasStandardBrowserEnv||platform.hasStandardBrowserWebWorkerEnv||utils$1.isReactNative(data)){headers.setContentType(undefined);// browser/web worker/RN handles it
+}else if(utils$1.isFunction(getHeaders)){// Node.js FormData (like form-data package)
+setFormDataHeaders(headers,getHeaders.call(data),own('formDataHeaderPolicy'));}}// Add xsrf header
+// This is only done if running in a standard browser environment.
+// Specifically not if we're in a web worker, or react-native.
+if(platform.hasStandardBrowserEnv){if(utils$1.isFunction(withXSRFToken)){withXSRFToken=withXSRFToken(newConfig);}// Strict boolean check — prevents proto-pollution gadgets (e.g. Object.prototype.withXSRFToken = 1)
+// and misconfigurations (e.g. "false") from short-circuiting the same-origin check and leaking
+// the XSRF token cross-origin.
+var shouldSendXSRF=withXSRFToken===true||withXSRFToken==null&&isURLSameOrigin(newConfig.url);if(shouldSendXSRF){var xsrfValue=xsrfHeaderName&&xsrfCookieName&&cookies.read(xsrfCookieName);if(xsrfValue){headers.set(xsrfHeaderName,xsrfValue);}}}return newConfig;}var isXHRAdapterSupported=typeof XMLHttpRequest!=='undefined';var xhrAdapter=isXHRAdapterSupported&&function(config){return new Promise(function dispatchXhrRequest(resolve,reject){var _config=resolveConfig(config);var requestData=_config.data;var requestHeaders=AxiosHeaders$1.from(_config.headers).normalize();var responseType=_config.responseType,onUploadProgress=_config.onUploadProgress,onDownloadProgress=_config.onDownloadProgress;var onCanceled;var uploadThrottled,downloadThrottled;var flushUpload,flushDownload,flushDownloadWithEvent;function done(){flushUpload&&flushUpload();// flush events
+flushDownload&&flushDownload();// flush events
+_config.cancelToken&&_config.cancelToken.unsubscribe(onCanceled);_config.signal&&_config.signal.removeEventListener('abort',onCanceled);}var request=new XMLHttpRequest();request.open(_config.method.toUpperCase(),_config.url,true);// Set the request timeout in MS
+request.timeout=_config.timeout;function onloadend(event){if(!request){return;}// Status 0 means no response was received, which onerror and onabort normally
+// reject before this runs. Firefox 152 fires only readystatechange and loadend for
+// navigation-canceled requests (https://bugzilla.mozilla.org/show_bug.cgi?id=1505389),
+// leaving settle() to resolve them as an empty success. ECONNABORTED is the error
+// onabort raised on Firefox 151. Reads over file:, which some environments report as
+// status 0 on success, are excluded by the request URL's scheme after browser-style
+// preprocessing, by the page origin's scheme for relative URLs (which inherit it), or
+// by responseURL where implemented.
+if(request.status===0&&(parseProtocol(normalizeURLForProtocolCheck(_config.url))||parseProtocol(platform.origin))!=='file'&&!(request.responseURL&&request.responseURL.startsWith('file:'))){reject(new AxiosError$1('Request aborted',AxiosError$1.ECONNABORTED,config,request));done();// Clean up request
+request=null;return;}// When loadend is still dispatching, flushing with it gives progress
+// listeners a final delivery whose event has a live target. The legacy
+// ready-state fallback has no event, so replay its pending progress.
+// A throwing listener must not block settlement; rethrow asynchronously,
+// matching how listener errors surface on the throttle timer path.
+try{if(event){flushDownloadWithEvent&&flushDownloadWithEvent(event);}else{flushDownload&&flushDownload();}}catch(err){setTimeout(function(){throw err;});}// A final progress callback can cancel the request synchronously.
+if(!request){return;}// Prepare the response
+var responseHeaders=AxiosHeaders$1.from('getAllResponseHeaders'in request&&request.getAllResponseHeaders());var responseData=!responseType||responseType==='text'||responseType==='json'?request.responseText:request.response;var response={data:responseData,status:request.status,statusText:request.statusText,headers:responseHeaders,config:config,request:request};settle(function _resolve(value){resolve(value);done();},function _reject(err){reject(err);done();},response);// Clean up request
+request=null;}if('onloadend'in request){// Use onloadend if available
+request.onloadend=onloadend;}else{// Listen for ready state to emulate onloadend
+request.onreadystatechange=function handleLoad(){if(!request||request.readyState!==4){return;}// The request errored out and we didn't get a response, this will be
+// handled by onerror instead
+// With one exception: request that using file: protocol, most browsers
+// will return status as 0 even though it's a successful request
+if(request.status===0&&!(request.responseURL&&request.responseURL.startsWith('file:'))){return;}// readystate handler is calling before onerror or ontimeout handlers,
+// so we should call onloadend on the next 'tick'
+setTimeout(onloadend);};}// Handle browser request cancellation (as opposed to a manual cancellation)
+request.onabort=function handleAbort(){if(!request){return;}reject(new AxiosError$1('Request aborted',AxiosError$1.ECONNABORTED,config,request));done();// Clean up request
+request=null;};// Handle low level network errors
+request.onerror=function handleError(event){// Browsers deliver a ProgressEvent in XHR onerror
+// (message may be empty; when present, surface it)
+// See https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/error_event
+var msg=event&&event.message?event.message:'Network Error';var err=new AxiosError$1(msg,AxiosError$1.ERR_NETWORK,config,request);// attach the underlying event for consumers who want details
+err.event=event||null;reject(err);done();request=null;};// Handle timeout
+request.ontimeout=function handleTimeout(){var timeoutErrorMessage=_config.timeout?'timeout of '+_config.timeout+'ms exceeded':'timeout exceeded';var transitional=_config.transitional||transitionalDefaults;if(_config.timeoutErrorMessage){timeoutErrorMessage=_config.timeoutErrorMessage;}reject(new AxiosError$1(timeoutErrorMessage,transitional.clarifyTimeoutError?AxiosError$1.ETIMEDOUT:AxiosError$1.ECONNABORTED,config,request));done();// Clean up request
+request=null;};// Remove Content-Type if data is undefined
+requestData===undefined&&requestHeaders.setContentType(null);// Add headers to the request
+if('setRequestHeader'in request){utils$1.forEach(toByteStringHeaderObject(requestHeaders),function setRequestHeader(val,key){request.setRequestHeader(key,val);});}// Add withCredentials to request if needed
+if(!utils$1.isUndefined(_config.withCredentials)){request.withCredentials=!!_config.withCredentials;}// Add responseType to request if needed
+if(responseType&&responseType!=='json'){request.responseType=_config.responseType;}// Handle progress if needed
+if(onDownloadProgress){var _progressEventReducer=progressEventReducer(onDownloadProgress,true);var _progressEventReducer2=_slicedToArray(_progressEventReducer,3);downloadThrottled=_progressEventReducer2[0];flushDownload=_progressEventReducer2[1];flushDownloadWithEvent=_progressEventReducer2[2];request.addEventListener('progress',downloadThrottled);}// Not all browsers support upload events
+if(onUploadProgress&&request.upload){var _progressEventReducer3=progressEventReducer(onUploadProgress);var _progressEventReducer4=_slicedToArray(_progressEventReducer3,2);uploadThrottled=_progressEventReducer4[0];flushUpload=_progressEventReducer4[1];request.upload.addEventListener('progress',uploadThrottled);request.upload.addEventListener('loadend',flushUpload);}if(_config.cancelToken||_config.signal){// Handle cancellation
+// eslint-disable-next-line func-names
+onCanceled=function onCanceled(cancel){if(!request){return;}reject(!cancel||cancel.type?new CanceledError$1(null,config,request):cancel);request.abort();done();request=null;};_config.cancelToken&&_config.cancelToken.subscribe(onCanceled);if(_config.signal){_config.signal.aborted?onCanceled():_config.signal.addEventListener('abort',onCanceled);}}var protocol=parseProtocol(_config.url);if(protocol&&!platform.protocols.includes(protocol)){reject(new AxiosError$1('Unsupported protocol '+protocol+':',AxiosError$1.ERR_BAD_REQUEST,config));done();return;}// Send the request
+request.send(requestData||null);});};var composeSignals=function composeSignals(signals,timeout){signals=signals?signals.filter(Boolean):[];if(!timeout&&!signals.length){return;}var controller=new AbortController();var aborted=false;var onabort=function onabort(reason){if(!aborted){aborted=true;unsubscribe();var err=reason instanceof Error?reason:this.reason;controller.abort(err instanceof AxiosError$1?err:new CanceledError$1(err instanceof Error?err.message:err));}};var timer=timeout&&setTimeout(function(){timer=null;onabort(new AxiosError$1("timeout of ".concat(timeout,"ms exceeded"),AxiosError$1.ETIMEDOUT));},timeout);var unsubscribe=function unsubscribe(){if(!signals){return;}timer&&clearTimeout(timer);timer=null;signals.forEach(function(signal){signal.unsubscribe?signal.unsubscribe(onabort):signal.removeEventListener('abort',onabort);});signals=null;};signals.forEach(function(signal){if(aborted){return;}if(signal.aborted){onabort.call(signal);return;}signal.addEventListener('abort',onabort,{once:true});});var signal=controller.signal;signal.unsubscribe=function(){return utils$1.asap(unsubscribe);};return signal;};var composeSignals$1=composeSignals;var streamChunk=/*#__PURE__*/_regenerator().m(function streamChunk(chunk,chunkSize){var len,pos,end;return _regenerator().w(function(_context){while(1)switch(_context.n){case 0:len=chunk.byteLength;if(!(!chunkSize||len<chunkSize)){_context.n=2;break;}_context.n=1;return chunk;case 1:return _context.a(2);case 2:pos=0;case 3:if(!(pos<len)){_context.n=5;break;}end=pos+chunkSize;_context.n=4;return chunk.slice(pos,end);case 4:pos=end;_context.n=3;break;case 5:return _context.a(2);}},streamChunk);});var readBytes=/*#__PURE__*/function(){var _ref=_wrapAsyncGenerator(/*#__PURE__*/_regenerator().m(function _callee(iterable,chunkSize){var _iteratorAbruptCompletion,_didIteratorError,_iteratorError,_iterator2,_step,chunk,_t;return _regenerator().w(function(_context2){while(1)switch(_context2.p=_context2.n){case 0:_iteratorAbruptCompletion=false;_didIteratorError=false;_context2.p=1;_iterator2=_asyncIterator(readStream(iterable));case 2:_context2.n=3;return _awaitAsyncGenerator(_iterator2.next());case 3:if(!(_iteratorAbruptCompletion=!(_step=_context2.v).done)){_context2.n=5;break;}chunk=_step.value;return _context2.d(_regeneratorValues(_asyncGeneratorDelegate(_asyncIterator(streamChunk(chunk,chunkSize)),_awaitAsyncGenerator)),4);case 4:_iteratorAbruptCompletion=false;_context2.n=2;break;case 5:_context2.n=7;break;case 6:_context2.p=6;_t=_context2.v;_didIteratorError=true;_iteratorError=_t;case 7:_context2.p=7;_context2.p=8;if(!(_iteratorAbruptCompletion&&_iterator2["return"]!=null)){_context2.n=9;break;}_context2.n=9;return _awaitAsyncGenerator(_iterator2["return"]());case 9:_context2.p=9;if(!_didIteratorError){_context2.n=10;break;}throw _iteratorError;case 10:return _context2.f(9);case 11:return _context2.f(7);case 12:return _context2.a(2);}},_callee,null,[[8,,9,11],[1,6,7,12]]);}));return function readBytes(_x,_x2){return _ref.apply(this,arguments);};}();var readStream=/*#__PURE__*/function(){var _ref2=_wrapAsyncGenerator(/*#__PURE__*/_regenerator().m(function _callee2(stream){var reader,_yield$_awaitAsyncGen,done,value;return _regenerator().w(function(_context3){while(1)switch(_context3.p=_context3.n){case 0:if(!stream[Symbol.asyncIterator]){_context3.n=2;break;}return _context3.d(_regeneratorValues(_asyncGeneratorDelegate(_asyncIterator(stream),_awaitAsyncGenerator)),1);case 1:return _context3.a(2);case 2:reader=stream.getReader();_context3.p=3;case 4:_context3.n=5;return _awaitAsyncGenerator(reader.read());case 5:_yield$_awaitAsyncGen=_context3.v;done=_yield$_awaitAsyncGen.done;value=_yield$_awaitAsyncGen.value;if(!done){_context3.n=6;break;}return _context3.a(3,8);case 6:_context3.n=7;return value;case 7:_context3.n=4;break;case 8:_context3.p=8;_context3.n=9;return _awaitAsyncGenerator(reader.cancel());case 9:return _context3.f(8);case 10:return _context3.a(2);}},_callee2,null,[[3,,8,10]]);}));return function readStream(_x3){return _ref2.apply(this,arguments);};}();var trackStream=function trackStream(stream,chunkSize,onProgress,onFinish){var iterator=readBytes(stream,chunkSize);var bytes=0;var done;var _onFinish=function _onFinish(e){if(!done){done=true;onFinish&&onFinish(e);}};return new ReadableStream({pull:function pull(controller){return _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee3(){var _yield$iterator$next,_done,value,len,loadedBytes,_t2;return _regenerator().w(function(_context4){while(1)switch(_context4.p=_context4.n){case 0:_context4.p=0;_context4.n=1;return iterator.next();case 1:_yield$iterator$next=_context4.v;_done=_yield$iterator$next.done;value=_yield$iterator$next.value;if(!_done){_context4.n=2;break;}_onFinish();controller.close();return _context4.a(2);case 2:len=value.byteLength;if(onProgress){loadedBytes=bytes+=len;onProgress(loadedBytes);}controller.enqueue(new Uint8Array(value));_context4.n=4;break;case 3:_context4.p=3;_t2=_context4.v;_onFinish(_t2);throw _t2;case 4:return _context4.a(2);}},_callee3,null,[[0,3]]);}))();},cancel:function cancel(reason){_onFinish(reason);return iterator["return"]();}},{highWaterMark:2});};/**
+ * Estimate data: URL byte lengths *without* allocating large buffers.
+ * - Fetch percent-decodes a base64 body before decoding it.
+ * - Node's Buffer.from(body, 'base64') sizes its backing allocation from the
+ *   raw body, including ignored characters and content after padding.
+ * - Non-base64 data is percent-decoded and then encoded as UTF-8.
+ */var isHexDigit=function isHexDigit(charCode){return charCode>=48&&charCode<=57||charCode>=65&&charCode<=70||charCode>=97&&charCode<=102;};var isPercentEncodedByte=function isPercentEncodedByte(str,i,len){return i+2<len&&isHexDigit(str.charCodeAt(i+1))&&isHexDigit(str.charCodeAt(i+2));};var hexValue=function hexValue(charCode){return charCode<=57?charCode-48:(charCode&0xdf)-55;};var isBase64Char=function isBase64Char(charCode){return charCode>=65&&charCode<=90||// A-Z
+charCode>=97&&charCode<=122||// a-z
+charCode>=48&&charCode<=57||// 0-9
+charCode===43||// +
+charCode===47||// /
+charCode===45||// - (base64url)
+charCode===95;};// _ (base64url)
+var isBase64Whitespace=function isBase64Whitespace(charCode){return charCode===9||charCode===10||charCode===12||charCode===13||charCode===32;};var base64Bytes=function base64Bytes(significant){var groups=Math.floor(significant/4);var remainder=significant%4;return groups*3+(remainder===2?1:remainder===3?2:0);};// Buffer.byteLength(body, 'base64') uses the raw string length as an allocation
+// upper bound even when Buffer.from later ignores characters or stops at '='.
+var estimateBase64BufferAllocation=function estimateBase64BufferAllocation(body){var len=body.length;var padding=0;if(len>0&&body.charCodeAt(len-1)===61/* '=' */){padding++;if(len>1&&body.charCodeAt(len-2)===61/* '=' */){padding++;}}return Math.floor((len-padding)*3/4);};var estimatePercentDecodedBase64Bytes=function estimatePercentDecodedBase64Bytes(body){var len=body.length;var significant=0;var padding=0;var invalid=false;for(var i=0;i<len;i++){var code=body.charCodeAt(i);if(code===37/* '%' */&&isPercentEncodedByte(body,i,len)){code=hexValue(body.charCodeAt(i+1))*16+hexValue(body.charCodeAt(i+2));i+=2;}if(isBase64Whitespace(code)){continue;}if(code===61/* '=' */){padding++;continue;}if(!isBase64Char(code)||padding>0){invalid=true;continue;}significant++;}// Fetch rejects malformed forgiving-base64 input. Returning the raw-size
+// allocation bound keeps that invalid input from becoming a pre-check bypass.
+if(invalid||padding>2||padding>0&&(significant+padding)%4!==0||significant%4===1){return estimateBase64BufferAllocation(body);}return base64Bytes(significant);};var estimateDataURLBytes=function estimateDataURLBytes(url,estimateBase64){if(!url||typeof url!=='string')return 0;if(!url.startsWith('data:'))return 0;var comma=url.indexOf(',');if(comma<0)return 0;var meta=url.slice(5,comma);var body=url.slice(comma+1);var isBase64=/;base64/i.test(meta);if(isBase64){return estimateBase64(body);}// Compute UTF-8 byte length directly from UTF-16 code units without allocating
+// a byte buffer (TextEncoder.encode would defeat the DoS guard on large bodies).
+// Valid %XX triplets count as one decoded byte; this matches the bytes that
+// decodeURIComponent(body) would produce before Buffer re-encodes the string.
+var bytes=0;for(var i=0,len=body.length;i<len;i++){var c=body.charCodeAt(i);if(c===37/* '%' */&&isPercentEncodedByte(body,i,len)){bytes+=1;i+=2;}else if(c<0x80){bytes+=1;}else if(c<0x800){bytes+=2;}else if(c>=0xd800&&c<=0xdbff&&i+1<len){var next=body.charCodeAt(i+1);if(next>=0xdc00&&next<=0xdfff){bytes+=4;i++;}else{bytes+=3;}}else{bytes+=3;}}return bytes;};/**
+ * Estimate the percent-decoded payload size used by Fetch data: URLs.
+ *
+ * @param {string} url
+ * @returns {number}
+ */function estimateDataURLDecodedBytes(url){// Fetch removes URL fragments before processing a data: URL.
+var fragmentIndex=typeof url==='string'?url.indexOf('#'):-1;return estimateDataURLBytes(fragmentIndex===-1?url:url.slice(0,fragmentIndex),estimatePercentDecodedBase64Bytes);}var VERSION="1.20.0";var DEFAULT_CHUNK_SIZE=64*1024;var DEFAULT_REQUEST_OPTIONS={cache:'default',redirect:'follow',referrer:'about:client',referrerPolicy:'',mode:'cors',integrity:'',keepalive:false,priority:'auto',window:null};var isFunction=utils$1.isFunction;/**
+ * Encode a UTF-8 string to a Latin-1 byte string for use with btoa().
+ * This is a modern replacement for the deprecated unescape(encodeURIComponent(str)) pattern.
+ *
+ * @param {string} str The string to encode
+ *
+ * @returns {string} UTF-8 bytes as a Latin-1 string
+ */var encodeUTF8=function encodeUTF8(str){return encodeURIComponent(str).replace(/%([0-9A-F]{2})/gi,function(_,hex){return String.fromCharCode(parseInt(hex,16));});};// Node's WHATWG URL parser returns `username` and `password` percent-encoded.
+// Decode before composing the `auth` option so credentials such as
+// `my%40email.com:pass` are sent as `my@email.com:pass`. Falls back to the
+// original value for malformed input so a bad encoding never throws.
+var decodeURIComponentSafe=function decodeURIComponentSafe(value){if(!utils$1.isString(value)){return value;}try{return decodeURIComponent(value);}catch(error){return value;}};var test=function test(fn){try{for(var _len6=arguments.length,args=new Array(_len6>1?_len6-1:0),_key7=1;_key7<_len6;_key7++){args[_key7-1]=arguments[_key7];}return!!fn.apply(void 0,args);}catch(e){return false;}};var maybeWithAuthCredentials=function maybeWithAuthCredentials(url){var protocolIndex=url.indexOf('://');var urlToCheck=url;if(protocolIndex!==-1){urlToCheck=urlToCheck.slice(protocolIndex+3);}return urlToCheck.includes('@')||urlToCheck.includes(':');};var factory=function factory(env){var globalObject=utils$1.global!==undefined&&utils$1.global!==null?utils$1.global:globalThis;var ReadableStream=globalObject.ReadableStream,TextEncoder=globalObject.TextEncoder;env=utils$1.merge.call({skipUndefined:true},{Request:globalObject.Request,Response:globalObject.Response},env);var _env2=env,envFetch=_env2.fetch,Request=_env2.Request,Response=_env2.Response;var isFetchSupported=envFetch?isFunction(envFetch):typeof fetch==='function';var isRequestSupported=isFunction(Request);var isResponseSupported=isFunction(Response);if(!isFetchSupported){return false;}var isReadableStreamSupported=isFetchSupported&&isFunction(ReadableStream);var encodeText=isFetchSupported&&(typeof TextEncoder==='function'?function(encoder){return function(str){return encoder.encode(str);};}(new TextEncoder()):(/*#__PURE__*/function(){var _ref11=_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee4(str){var _t3,_t4;return _regenerator().w(function(_context5){while(1)switch(_context5.n){case 0:_t3=Uint8Array;_context5.n=1;return new Request(str).arrayBuffer();case 1:_t4=_context5.v;return _context5.a(2,new _t3(_t4));}},_callee4);}));return function(_x4){return _ref11.apply(this,arguments);};}()));var supportsRequestStream=isRequestSupported&&isReadableStreamSupported&&test(function(){var duplexAccessed=false;var request=new Request(platform.origin,{body:new ReadableStream(),method:'POST',get duplex(){duplexAccessed=true;return'half';}});var hasContentType=request.headers.has('Content-Type');if(request.body!=null){request.body.cancel();}return duplexAccessed&&!hasContentType;});var supportsResponseStream=isResponseSupported&&isReadableStreamSupported&&test(function(){return utils$1.isReadableStream(new Response('').body);});var resolvers={stream:supportsResponseStream&&function(res){return res.body;}};isFetchSupported&&function(){['text','arrayBuffer','blob','formData','stream'].forEach(function(type){!resolvers[type]&&(resolvers[type]=function(res,config){var method=res&&res[type];if(method){return method.call(res);}throw new AxiosError$1("Response type '".concat(type,"' is not supported"),AxiosError$1.ERR_NOT_SUPPORT,config);});});}();var getBodyLength=/*#__PURE__*/function(){var _ref12=_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee5(body){var _request;return _regenerator().w(function(_context6){while(1)switch(_context6.n){case 0:if(!(body==null)){_context6.n=1;break;}return _context6.a(2,0);case 1:if(!utils$1.isBlob(body)){_context6.n=2;break;}return _context6.a(2,body.size);case 2:if(!utils$1.isSpecCompliantForm(body)){_context6.n=4;break;}_request=new Request(platform.origin,{method:'POST',body:body});_context6.n=3;return _request.arrayBuffer();case 3:return _context6.a(2,_context6.v.byteLength);case 4:if(!(utils$1.isArrayBufferView(body)||utils$1.isArrayBuffer(body))){_context6.n=5;break;}return _context6.a(2,body.byteLength);case 5:if(utils$1.isURLSearchParams(body)){body=body+'';}if(!utils$1.isString(body)){_context6.n=7;break;}_context6.n=6;return encodeText(body);case 6:return _context6.a(2,_context6.v.byteLength);case 7:return _context6.a(2);}},_callee5);}));return function getBodyLength(_x5){return _ref12.apply(this,arguments);};}();var resolveBodyLength=/*#__PURE__*/function(){var _ref13=_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee6(headers,body){var length;return _regenerator().w(function(_context7){while(1)switch(_context7.n){case 0:length=utils$1.toFiniteNumber(headers.getContentLength());return _context7.a(2,length==null?getBodyLength(body):length);}},_callee6);}));return function resolveBodyLength(_x6,_x7){return _ref13.apply(this,arguments);};}();return/*#__PURE__*/function(){var _ref14=_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee7(config){var _resolveConfig,url,method,data,signal,cancelToken,timeout,onDownloadProgress,onUploadProgress,responseType,headers,_resolveConfig$withCr,withCredentials,fetchOptions,maxContentLength,maxBodyLength,maxRedirects,hasMaxContentLength,hasMaxBodyLength,own,_fetch,composedSignal,request,unsubscribe,requestContentLength,pendingBodyError,maxBodyLengthError,auth,configAuth,username,password,parsedURL,urlUsername,urlPassword,estimated,outboundLength,mustEnforceStreamBody,trackRequestStream,_request,contentTypeHeader,_ref15,_ref16,onProgress,flush,isCredentialsSupported,contentType,safeFetchOptions,resolvedOptions,response,responseHeaders,declaredLength,isStreamResponse,options,responseContentLength,_ref17,_ref18,_onProgress,_flush,bytesRead,onChunkProgress,responseData,materializedSize,canceledError,networkError,_t5,_t6;return _regenerator().w(function(_context8){while(1)switch(_context8.p=_context8.n){case 0:_resolveConfig=resolveConfig(config),url=_resolveConfig.url,method=_resolveConfig.method,data=_resolveConfig.data,signal=_resolveConfig.signal,cancelToken=_resolveConfig.cancelToken,timeout=_resolveConfig.timeout,onDownloadProgress=_resolveConfig.onDownloadProgress,onUploadProgress=_resolveConfig.onUploadProgress,responseType=_resolveConfig.responseType,headers=_resolveConfig.headers,_resolveConfig$withCr=_resolveConfig.withCredentials,withCredentials=_resolveConfig$withCr===void 0?'same-origin':_resolveConfig$withCr,fetchOptions=_resolveConfig.fetchOptions,maxContentLength=_resolveConfig.maxContentLength,maxBodyLength=_resolveConfig.maxBodyLength,maxRedirects=_resolveConfig.maxRedirects;hasMaxContentLength=utils$1.isNumber(maxContentLength)&&maxContentLength>-1;hasMaxBodyLength=utils$1.isNumber(maxBodyLength)&&maxBodyLength>-1;own=function own(key){return utils$1.hasOwnProp(config,key)?config[key]:undefined;};_fetch=envFetch||fetch;responseType=responseType?(responseType+'').toLowerCase():'text';composedSignal=composeSignals$1([signal,cancelToken&&cancelToken.toAbortSignal()],timeout);request=null;unsubscribe=composedSignal&&composedSignal.unsubscribe&&function(){composedSignal.unsubscribe();};// AxiosError we raise while the request body is being streamed. Captured
+// by identity so the catch block can surface it directly, regardless of
+// how the runtime wraps the resulting fetch rejection (undici exposes it
+// as `err.cause`; some browsers drop the original error entirely).
+pendingBodyError=null;maxBodyLengthError=function maxBodyLengthError(){return new AxiosError$1('Request body larger than maxBodyLength limit',AxiosError$1.ERR_BAD_REQUEST,config,request);};_context8.p=1;// HTTP basic authentication
+auth=undefined;configAuth=own('auth');if(configAuth){username=utils$1.getSafeProp(configAuth,'username')||'';password=utils$1.getSafeProp(configAuth,'password')||'';auth={username:username,password:password};}if(maybeWithAuthCredentials(url)){parsedURL=new URL(url,platform.origin);if(!auth&&(parsedURL.username||parsedURL.password)){urlUsername=decodeURIComponentSafe(parsedURL.username);urlPassword=decodeURIComponentSafe(parsedURL.password);auth={username:urlUsername,password:urlPassword};}if(parsedURL.username||parsedURL.password){parsedURL.username='';parsedURL.password='';url=parsedURL.href;}}if(auth){headers["delete"]('authorization');headers.set('Authorization','Basic '+btoa(encodeUTF8((auth.username||'')+':'+(auth.password||''))));}// Enforce maxContentLength for data: URLs up-front so we never materialize
+// an oversized payload. The HTTP adapter applies the same check (see http.js
+// "if (protocol === 'data:')" branch).
+if(!(hasMaxContentLength&&typeof url==='string'&&url.startsWith('data:'))){_context8.n=2;break;}estimated=estimateDataURLDecodedBytes(url);if(!(estimated>maxContentLength)){_context8.n=2;break;}throw new AxiosError$1('maxContentLength size of '+maxContentLength+' exceeded',AxiosError$1.ERR_BAD_RESPONSE,config,request);case 2:if(!(hasMaxBodyLength&&method!=='get'&&method!=='head')){_context8.n=4;break;}_context8.n=3;return getBodyLength(data);case 3:outboundLength=_context8.v;if(!(typeof outboundLength==='number'&&isFinite(outboundLength))){_context8.n=4;break;}requestContentLength=outboundLength;if(!(outboundLength>maxBodyLength)){_context8.n=4;break;}throw maxBodyLengthError();case 4:// A streamed body under maxBodyLength must be counted as fetch consumes
+// it; its size is never trusted from a caller-declared Content-Length.
+mustEnforceStreamBody=hasMaxBodyLength&&(utils$1.isReadableStream(data)||utils$1.isStream(data));trackRequestStream=function trackRequestStream(stream,onProgress,flush){return trackStream(stream,DEFAULT_CHUNK_SIZE,function(loadedBytes){if(hasMaxBodyLength&&loadedBytes>maxBodyLength){throw pendingBodyError=maxBodyLengthError();}onProgress&&onProgress(loadedBytes);},flush);};if(!(supportsRequestStream&&method!=='get'&&method!=='head'&&(onUploadProgress||mustEnforceStreamBody))){_context8.n=8;break;}if(!(requestContentLength==null)){_context8.n=6;break;}_context8.n=5;return resolveBodyLength(headers,data);case 5:_t5=_context8.v;_context8.n=7;break;case 6:_t5=requestContentLength;case 7:requestContentLength=_t5;// A declared length of 0 is only trusted to skip the wrap when we are
+// not enforcing a stream limit (which must not rely on that header).
+if(requestContentLength!==0||mustEnforceStreamBody){_request=new Request(url,{method:'POST',body:data,duplex:'half'});if(utils$1.isFormData(data)&&(contentTypeHeader=_request.headers.get('content-type'))){headers.setContentType(contentTypeHeader);}if(_request.body){_ref15=onUploadProgress&&progressEventDecorator(requestContentLength,progressEventReducer(asyncDecorator(onUploadProgress)))||[],_ref16=_slicedToArray(_ref15,2),onProgress=_ref16[0],flush=_ref16[1];data=trackRequestStream(_request.body,onProgress,flush);}}_context8.n=10;break;case 8:if(!(mustEnforceStreamBody&&!isRequestSupported&&isReadableStreamSupported&&method!=='get'&&method!=='head')){_context8.n=9;break;}data=trackRequestStream(data);_context8.n=10;break;case 9:if(!(mustEnforceStreamBody&&isRequestSupported&&!supportsRequestStream&&method!=='get'&&method!=='head')){_context8.n=10;break;}throw new AxiosError$1('Stream request bodies are not supported by the current fetch implementation',AxiosError$1.ERR_NOT_SUPPORT,config,request);case 10:if(!utils$1.isString(withCredentials)){withCredentials=withCredentials?'include':'omit';}// Cloudflare Workers throws when credentials are defined
+// see https://github.com/cloudflare/workerd/issues/902
+isCredentialsSupported=isRequestSupported&&'credentials'in Request.prototype;// If data is FormData and Content-Type is multipart/form-data without boundary,
+// delete it so fetch can set it correctly with the boundary
+if(utils$1.isFormData(data)){contentType=headers.getContentType();if(contentType&&/^multipart\/form-data/i.test(contentType)&&!/boundary=/i.test(contentType)){headers["delete"]('content-type');}}// Set User-Agent header if not already set (fetch defaults to 'node' in Node.js)
+headers.set('User-Agent','axios/'+VERSION,false);safeFetchOptions=fetchOptions==null?fetchOptions:Object.assign(Object.create(null),fetchOptions);if(safeFetchOptions){// These options are owned by Axios and are already reflected in the
+// resolved Request passed to fetch.
+delete safeFetchOptions.body;delete safeFetchOptions.headers;delete safeFetchOptions.method;delete safeFetchOptions.signal;delete safeFetchOptions.duplex;delete safeFetchOptions.credentials;}resolvedOptions=Object.assign(Object.create(null),safeFetchOptions,{signal:composedSignal,method:method.toUpperCase(),headers:toByteStringHeaderObject(headers.normalize()),body:data,duplex:'half',credentials:isCredentialsSupported?withCredentials:undefined});if(isRequestSupported){utils$1.forEach(DEFAULT_REQUEST_OPTIONS,function(value,key){if(resolvedOptions[key]===undefined){resolvedOptions[key]=value;}});if(resolvedOptions.signal===undefined){resolvedOptions.signal=null;}if(resolvedOptions.body===undefined){resolvedOptions.body=null;}}if(maxRedirects===0){resolvedOptions.redirect='manual';if(safeFetchOptions){safeFetchOptions.redirect='manual';}}request=isRequestSupported&&new Request(url,resolvedOptions);_context8.n=11;return isRequestSupported?_fetch(request,safeFetchOptions):_fetch(url,resolvedOptions);case 11:response=_context8.v;responseHeaders=AxiosHeaders$1.from(response.headers);// Cheap pre-check: if the server honestly declares a content-length that
+// already exceeds the cap, reject before we start streaming.
+if(!hasMaxContentLength){_context8.n=12;break;}declaredLength=utils$1.toFiniteNumber(responseHeaders.getContentLength());if(!(declaredLength!=null&&declaredLength>maxContentLength)){_context8.n=12;break;}throw new AxiosError$1('maxContentLength size of '+maxContentLength+' exceeded',AxiosError$1.ERR_BAD_RESPONSE,config,request);case 12:isStreamResponse=supportsResponseStream&&(responseType==='stream'||responseType==='response');if(supportsResponseStream&&response.body&&(onDownloadProgress||hasMaxContentLength||isStreamResponse&&unsubscribe)){options={};['status','statusText','headers'].forEach(function(prop){options[prop]=response[prop];});responseContentLength=utils$1.toFiniteNumber(responseHeaders.getContentLength());_ref17=onDownloadProgress&&progressEventDecorator(responseContentLength,progressEventReducer(asyncDecorator(onDownloadProgress),true))||[],_ref18=_slicedToArray(_ref17,2),_onProgress=_ref18[0],_flush=_ref18[1];bytesRead=0;onChunkProgress=function onChunkProgress(loadedBytes){if(hasMaxContentLength){bytesRead=loadedBytes;if(bytesRead>maxContentLength){throw new AxiosError$1('maxContentLength size of '+maxContentLength+' exceeded',AxiosError$1.ERR_BAD_RESPONSE,config,request);}}_onProgress&&_onProgress(loadedBytes);};response=new Response(trackStream(response.body,DEFAULT_CHUNK_SIZE,onChunkProgress,function(){_flush&&_flush();unsubscribe&&unsubscribe();}),options);}responseType=responseType||'text';_context8.n=13;return resolvers[utils$1.findKey(resolvers,responseType)||'text'](response,config);case 13:responseData=_context8.v;if(!(hasMaxContentLength&&!supportsResponseStream&&!isStreamResponse)){_context8.n=14;break;}if(responseData!=null){if(typeof responseData.byteLength==='number'){materializedSize=responseData.byteLength;}else if(typeof responseData.size==='number'){materializedSize=responseData.size;}else if(typeof responseData==='string'){materializedSize=typeof TextEncoder==='function'?new TextEncoder().encode(responseData).byteLength:responseData.length;}}if(!(typeof materializedSize==='number'&&materializedSize>maxContentLength)){_context8.n=14;break;}throw new AxiosError$1('maxContentLength size of '+maxContentLength+' exceeded',AxiosError$1.ERR_BAD_RESPONSE,config,request);case 14:!isStreamResponse&&unsubscribe&&unsubscribe();_context8.n=15;return new Promise(function(resolve,reject){settle(resolve,reject,{data:responseData,headers:AxiosHeaders$1.from(response.headers),status:response.status,statusText:response.statusText,config:config,request:request});});case 15:return _context8.a(2,_context8.v);case 16:_context8.p=16;_t6=_context8.v;unsubscribe&&unsubscribe();// Safari can surface fetch aborts as a DOMException-like object whose
+// branded getters throw. Prefer our composed signal reason before reading
+// the caught error, preserving timeout vs cancellation semantics.
+if(!(composedSignal&&composedSignal.aborted&&composedSignal.reason instanceof AxiosError$1)){_context8.n=17;break;}canceledError=composedSignal.reason;canceledError.config=config;request&&(canceledError.request=request);if(_t6!==canceledError){// Non-enumerable to match native Error `cause` semantics so loggers
+// don't recurse into circular fetch internals (see #7205).
+Object.defineProperty(canceledError,'cause',{__proto__:null,value:_t6,writable:true,enumerable:false,configurable:true});}throw canceledError;case 17:if(!pendingBodyError){_context8.n=18;break;}request&&!pendingBodyError.request&&(pendingBodyError.request=request);throw pendingBodyError;case 18:if(!(_t6 instanceof AxiosError$1)){_context8.n=19;break;}request&&!_t6.request&&(_t6.request=request);throw _t6;case 19:if(!(_t6&&_t6.name==='TypeError'&&/Load failed|fetch/i.test(_t6.message))){_context8.n=20;break;}networkError=new AxiosError$1('Network Error',AxiosError$1.ERR_NETWORK,config,request,_t6&&_t6.response);// Non-enumerable to match native Error `cause` semantics so loggers
+// don't recurse into circular fetch internals (see #7205).
+Object.defineProperty(networkError,'cause',{__proto__:null,value:_t6.cause||_t6,writable:true,enumerable:false,configurable:true});throw networkError;case 20:throw AxiosError$1.from(_t6,_t6&&_t6.code,config,request,_t6&&_t6.response);case 21:return _context8.a(2);}},_callee7,null,[[1,16]]);}));return function(_x8){return _ref14.apply(this,arguments);};}();};var seedCache=new Map();var getFetch=function getFetch(config){var env=config&&config.env||{};var fetch=env.fetch,Request=env.Request,Response=env.Response;var seeds=[Request,Response,fetch];var len=seeds.length,i=len,seed,target,map=seedCache;while(i--){seed=seeds[i];target=map.get(seed);target===undefined&&map.set(seed,target=i?new Map():factory(env));map=target;}return target;};getFetch();/**
+ * Known adapters mapping.
+ * Provides environment-specific adapters for Axios:
+ * - `http` for Node.js
+ * - `xhr` for browsers
+ * - `fetch` for fetch API-based requests
+ *
+ * @type {Object<string, Function|Object>}
+ */var knownAdapters={http:httpAdapter,xhr:xhrAdapter,fetch:{get:getFetch}};// Assign adapter names for easier debugging and identification
+utils$1.forEach(knownAdapters,function(fn,value){if(fn){try{// Null-proto descriptors so a polluted Object.prototype.get cannot turn
+// these data descriptors into accessor descriptors on the way in.
+Object.defineProperty(fn,'name',{__proto__:null,value:value});}catch(e){// eslint-disable-next-line no-empty
+}Object.defineProperty(fn,'adapterName',{__proto__:null,value:value});}});/**
+ * Render a rejection reason string for unknown or unsupported adapters
+ *
+ * @param {string} reason
+ * @returns {string}
+ */var renderReason=function renderReason(reason){return"- ".concat(reason);};/**
+ * Check if the adapter is resolved (function, null, or false)
+ *
+ * @param {Function|null|false} adapter
+ * @returns {boolean}
+ */var isResolvedHandle=function isResolvedHandle(adapter){return utils$1.isFunction(adapter)||adapter===null||adapter===false;};/**
+ * Get the first suitable adapter from the provided list.
+ * Tries each adapter in order until a supported one is found.
+ * Throws an AxiosError if no adapter is suitable.
+ *
+ * @param {Array<string|Function>|string|Function} adapters - Adapter(s) by name or function.
+ * @param {Object} config - Axios request configuration
+ * @throws {AxiosError} If no suitable adapter is available
+ * @returns {Function} The resolved adapter function
+ */function getAdapter(adapters,config){adapters=utils$1.isArray(adapters)?adapters:[adapters];var _adapters=adapters,length=_adapters.length;var nameOrAdapter;var adapter;var rejectedReasons={};for(var i=0;i<length;i++){nameOrAdapter=adapters[i];var id=void 0;adapter=nameOrAdapter;if(!isResolvedHandle(nameOrAdapter)){adapter=knownAdapters[(id=String(nameOrAdapter)).toLowerCase()];if(adapter===undefined){throw new AxiosError$1("Unknown adapter '".concat(id,"'"));}}if(adapter&&(utils$1.isFunction(adapter)||(adapter=adapter.get(config)))){break;}rejectedReasons[id||'#'+i]=adapter;}if(!adapter){var reasons=Object.entries(rejectedReasons).map(function(_ref19){var _ref20=_slicedToArray(_ref19,2),id=_ref20[0],state=_ref20[1];return"adapter ".concat(id," ")+(state===false?'is not supported by the environment':'is not available in the build');});var s=length?reasons.length>1?'since :\n'+reasons.map(renderReason).join('\n'):' '+renderReason(reasons[0]):'as no adapter specified';throw new AxiosError$1("There is no suitable adapter to dispatch the request "+s,AxiosError$1.ERR_NOT_SUPPORT);}return adapter;}/**
+ * Exports Axios adapters and utility to resolve an adapter
+ */var adapters={/**
+   * Resolve an adapter from a list of adapter names or functions.
+   * @type {Function}
+   */getAdapter:getAdapter,/**
+   * Exposes all known adapters
+   * @type {Object<string, Function|Object>}
+   */adapters:knownAdapters};/**
+ * Throws a `CanceledError` if cancellation has been requested.
+ *
+ * @param {Object} config The config that is to be used for the request
+ *
+ * @returns {void}
+ */function throwIfCancellationRequested(config){if(config.cancelToken){config.cancelToken.throwIfRequested();}if(config.signal&&config.signal.aborted){throw new CanceledError$1(null,config);}}/**
+ * Dispatch a request to the server using the configured adapter.
+ *
+ * @param {object} config The config that is to be used for the request
+ *
+ * @returns {Promise} The Promise to be fulfilled
+ */function dispatchRequest(_config){// Interceptors may replace the merged config with an ordinary object. Flatten
+// it at the dispatch boundary so shared prototype members cannot become
+// request behavior, while preserving intentional template/class members.
+var config=utils$1.toSafeFlatObject(_config);throwIfCancellationRequested(config);config.headers=AxiosHeaders$1.from(utils$1.getSafeProp(config,'headers'));// Transform request data
+config.data=transformData.call(config,config.transformRequest);if(['post','put','patch'].indexOf(config.method)!==-1){config.headers.setContentType('application/x-www-form-urlencoded',false);}var adapter=adapters.getAdapter(config.adapter||defaults$1.adapter,config);return adapter(config).then(function onAdapterResolution(response){throwIfCancellationRequested(config);// Expose the current response on config so that transformResponse can
+// attach it to any AxiosError it throws (e.g. on JSON parse failure).
+// We clean it up afterwards to avoid polluting the config object.
+config.response=response;try{response.data=transformData.call(config,config.transformResponse,response);}finally{delete config.response;}response.headers=AxiosHeaders$1.from(response.headers);return response;},function onAdapterRejection(reason){if(!isCancel(reason)){throwIfCancellationRequested(config);// Transform response data
+if(reason&&reason.response){config.response=reason.response;try{reason.response.data=transformData.call(config,config.transformResponse,reason.response);}finally{delete config.response;}reason.response.headers=AxiosHeaders$1.from(reason.response.headers);}}return Promise.reject(reason);});}var validators$1={};// eslint-disable-next-line func-names
+['object','boolean','number','function','string','symbol'].forEach(function(type,i){validators$1[type]=function validator(thing){return _typeof(thing)===type||'a'+(i<1?'n ':' ')+type;};});var deprecatedWarnings={};/**
+ * Transitional option validator
+ *
+ * @param {function|boolean?} validator - set to false if the transitional option has been removed
+ * @param {string?} version - deprecated version / removed since version
+ * @param {string?} message - some message with additional info
+ *
+ * @returns {function}
+ */validators$1.transitional=function transitional(validator,version,message){function formatMessage(opt,desc){return'[Axios v'+VERSION+"] Transitional option '"+opt+"'"+desc+(message?'. '+message:'');}// eslint-disable-next-line func-names
+return function(value,opt,opts){if(validator===false){throw new AxiosError$1(formatMessage(opt,' has been removed'+(version?' in '+version:'')),AxiosError$1.ERR_DEPRECATED);}if(version&&!deprecatedWarnings[opt]){deprecatedWarnings[opt]=true;// eslint-disable-next-line no-console
+console.warn(formatMessage(opt,' has been deprecated since v'+version+' and will be removed in the near future'));}return validator?validator(value,opt,opts):true;};};validators$1.spelling=function spelling(correctSpelling){return function(value,opt){// eslint-disable-next-line no-console
+console.warn("".concat(opt," is likely a misspelling of ").concat(correctSpelling));return true;};};/**
+ * Assert object's properties type
+ *
+ * @param {object} options
+ * @param {object} schema
+ * @param {boolean?} allowUnknown
+ *
+ * @returns {object}
+ */function assertOptions(options,schema,allowUnknown){if(_typeof(options)!=='object'||options===null){throw new AxiosError$1('options must be an object',AxiosError$1.ERR_BAD_OPTION_VALUE);}var keys=Object.keys(options);var i=keys.length;while(i-->0){var opt=keys[i];// Use hasOwnProperty so a polluted Object.prototype.<opt> cannot supply
+// a non-function validator and cause a TypeError.
+var _validator=Object.prototype.hasOwnProperty.call(schema,opt)?schema[opt]:undefined;if(_validator){var value=options[opt];var result=value===undefined||_validator(value,opt,options);if(result!==true){throw new AxiosError$1('option '+opt+' must be '+result,AxiosError$1.ERR_BAD_OPTION_VALUE);}continue;}if(allowUnknown!==true){throw new AxiosError$1('Unknown option '+opt,AxiosError$1.ERR_BAD_OPTION);}}}var validator={assertOptions:assertOptions,validators:validators$1};var validators=validator.validators;/**
+ * Create a new instance of Axios
+ *
+ * @param {Object} instanceConfig The default config for the instance
+ *
+ * @return {Axios} A new instance of Axios
+ */var Axios=/*#__PURE__*/function(){function Axios(instanceConfig){_classCallCheck(this,Axios);this.defaults=instanceConfig||{};this.interceptors={request:new InterceptorManager$1(),response:new InterceptorManager$1()};}/**
+   * Dispatch a request
+   *
+   * @param {String|Object} configOrUrl The config specific for this request (merged with this.defaults)
+   * @param {?Object} config
+   *
+   * @returns {Promise} The Promise to be fulfilled
+   */return _createClass(Axios,[{key:"request",value:(function(){var _request2=_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee8(configOrUrl,config){var dummy,dummyStack,stack,firstNewlineIndex,_firstNewlineIndex,secondNewlineIndex,stackWithoutTwoTopLines,_t7;return _regenerator().w(function(_context9){while(1)switch(_context9.p=_context9.n){case 0:_context9.p=0;_context9.n=1;return this._request(configOrUrl,config);case 1:return _context9.a(2,_context9.v);case 2:_context9.p=2;_t7=_context9.v;if(_t7 instanceof Error){try{dummy={};Error.captureStackTrace?Error.captureStackTrace(dummy):dummy=new Error();dummyStack=dummy.stack;stack='';// slice off the Error: ... line
+if(typeof dummyStack==='string'){firstNewlineIndex=dummyStack.indexOf('\n');stack=firstNewlineIndex===-1?'':dummyStack.slice(firstNewlineIndex+1);}if(!_t7.stack){_t7.stack=stack;// match without the 2 top stack lines
+}else if(stack){_firstNewlineIndex=stack.indexOf('\n');secondNewlineIndex=_firstNewlineIndex===-1?-1:stack.indexOf('\n',_firstNewlineIndex+1);stackWithoutTwoTopLines=secondNewlineIndex===-1?'':stack.slice(secondNewlineIndex+1);if(!String(_t7.stack).endsWith(stackWithoutTwoTopLines)){_t7.stack+='\n'+stack;}}}catch(e){// Ignore failures from custom stack hooks or un-writable stack properties.
+}}throw _t7;case 3:return _context9.a(2);}},_callee8,this,[[0,2]]);}));function request(_x9,_x0){return _request2.apply(this,arguments);}return request;}())},{key:"_request",value:function _request(configOrUrl,config){var _this4=this;/*eslint no-param-reassign:0*/// Allow for axios('example/url'[, config]) a la fetch API
+if(typeof configOrUrl==='string'){config=config||{};config.url=configOrUrl;}else{config=configOrUrl||{};}config=mergeConfig(this.defaults,config);var _config2=config,transitional=_config2.transitional,paramsSerializer=_config2.paramsSerializer,headers=_config2.headers;if(transitional!==undefined){validator.assertOptions(transitional,{silentJSONParsing:validators.transitional(validators["boolean"]),forcedJSONParsing:validators.transitional(validators["boolean"]),clarifyTimeoutError:validators.transitional(validators["boolean"]),legacyInterceptorReqResOrdering:validators.transitional(validators["boolean"]),advertiseZstdAcceptEncoding:validators.transitional(validators["boolean"]),validateStatusUndefinedResolves:validators.transitional(validators["boolean"])},false);}if(paramsSerializer!=null){if(utils$1.isFunction(paramsSerializer)){config.paramsSerializer={serialize:paramsSerializer};}else{validator.assertOptions(paramsSerializer,{encode:validators["function"],serialize:validators["function"]},true);}}// Set config.allowAbsoluteUrls
+if(config.allowAbsoluteUrls!==undefined);else if(this.defaults.allowAbsoluteUrls!==undefined){config.allowAbsoluteUrls=this.defaults.allowAbsoluteUrls;}else{config.allowAbsoluteUrls=true;}validator.assertOptions(config,{baseUrl:validators.spelling('baseURL'),withXsrfToken:validators.spelling('withXSRFToken')},true);// Set config.method
+config.method=(utils$1.getSafeProp(config,'method')||utils$1.getSafeProp(this.defaults,'method')||'get').toLowerCase();// Flatten headers
+var contextHeaders=headers&&utils$1.merge(headers.common,headers[config.method]);headers&&utils$1.forEach(methodList$1.concat('common'),function(method){delete headers[method];});config.headers=AxiosHeaders$1.concat(contextHeaders,headers);// filter out skipped interceptors
+var requestInterceptorChain=[];var synchronousRequestInterceptors=true;this.interceptors.request.forEach(function unshiftRequestInterceptors(interceptor){if(typeof interceptor.runWhen==='function'&&interceptor.runWhen(config)===false){return;}synchronousRequestInterceptors=synchronousRequestInterceptors&&interceptor.synchronous;var transitional=config.transitional||transitionalDefaults;var legacyInterceptorReqResOrdering=transitional&&transitional.legacyInterceptorReqResOrdering;if(legacyInterceptorReqResOrdering){requestInterceptorChain.unshift(interceptor.fulfilled,interceptor.rejected);}else{requestInterceptorChain.push(interceptor.fulfilled,interceptor.rejected);}});var responseInterceptorChain=[];this.interceptors.response.forEach(function pushResponseInterceptors(interceptor){responseInterceptorChain.push(interceptor.fulfilled,interceptor.rejected);});var promise;var i=0;var len;if(!synchronousRequestInterceptors){var chain=[dispatchRequest.bind(this),undefined];chain.unshift.apply(chain,requestInterceptorChain);chain.push.apply(chain,responseInterceptorChain);len=chain.length;promise=Promise.resolve(config);while(i<len){promise=promise.then(chain[i++],chain[i++]);}return promise;}len=requestInterceptorChain.length;var newConfig=config;while(i<len){var onFulfilled=requestInterceptorChain[i++];var onRejected=requestInterceptorChain[i++];try{newConfig=onFulfilled?onFulfilled(newConfig):newConfig;}catch(error){if(!onRejected){promise=Promise.reject(error);break;}try{var rejectedResult=onRejected.call(this,error);if(utils$1.isThenable(rejectedResult)){promise=Promise.resolve(rejectedResult).then(function(){return dispatchRequest.call(_this4,newConfig);});}}catch(rejectedError){promise=Promise.reject(rejectedError);}break;}}if(!promise){try{promise=dispatchRequest.call(this,newConfig);}catch(error){promise=Promise.reject(error);}}i=0;len=responseInterceptorChain.length;while(i<len){promise=promise.then(responseInterceptorChain[i++],responseInterceptorChain[i++]);}return promise;}},{key:"getUri",value:function getUri(config){config=mergeConfig(this.defaults,config);var fullPath=buildFullPath(config.baseURL,config.url,config.allowAbsoluteUrls,config);return buildURL(fullPath,config.params,config.paramsSerializer);}}]);}();// Provide aliases for supported request methods
+utils$1.forEach(['delete','get','head','options'],function forEachMethodNoData(method){/*eslint func-names:0*/Axios.prototype[method]=function(url,config){return this.request(mergeConfig(config||{},{method:method,url:url,data:config&&utils$1.hasOwnProp(config,'data')?config.data:undefined}));};});utils$1.forEach(['post','put','patch','query'],function forEachMethodWithData(method){function generateHTTPMethod(isForm){return function httpMethod(url,data,config){return this.request(mergeConfig(config||{},{method:method,headers:isForm?{'Content-Type':'multipart/form-data'}:{},url:url,data:data}));};}Axios.prototype[method]=generateHTTPMethod();// QUERY is a safe/idempotent read method; multipart form bodies don't fit
+// its semantics, so no queryForm shorthand is generated.
+if(method!=='query'){Axios.prototype[method+'Form']=generateHTTPMethod(true);}});var Axios$1=Axios;/**
+ * A `CancelToken` is an object that can be used to request cancellation of an operation.
+ *
+ * @param {Function} executor The executor function.
+ *
+ * @returns {CancelToken}
+ */var CancelToken=/*#__PURE__*/function(){function CancelToken(executor){_classCallCheck(this,CancelToken);if(typeof executor!=='function'){throw new TypeError('executor must be a function.');}var resolvePromise;this.promise=new Promise(function promiseExecutor(resolve){resolvePromise=resolve;});var token=this;// eslint-disable-next-line func-names
+this.promise.then(function(cancel){if(!token._listeners)return;var i=token._listeners.length;while(i-->0){token._listeners[i](cancel);}token._listeners=null;});// eslint-disable-next-line func-names
+this.promise.then=function(onfulfilled){var _resolve;// eslint-disable-next-line func-names
+var promise=new Promise(function(resolve){token.subscribe(resolve);_resolve=resolve;}).then(onfulfilled);promise.cancel=function reject(){token.unsubscribe(_resolve);};return promise;};executor(function cancel(message,config,request){if(token.reason){// Cancellation has already been requested
+return;}token.reason=new CanceledError$1(message,config,request);resolvePromise(token.reason);});}/**
+   * Throws a `CanceledError` if cancellation has been requested.
+   */return _createClass(CancelToken,[{key:"throwIfRequested",value:function throwIfRequested(){if(this.reason){throw this.reason;}}/**
+   * Subscribe to the cancel signal
+   */},{key:"subscribe",value:function subscribe(listener){if(this.reason){listener(this.reason);return;}if(this._listeners){this._listeners.push(listener);}else{this._listeners=[listener];}}/**
+   * Unsubscribe from the cancel signal
+   */},{key:"unsubscribe",value:function unsubscribe(listener){if(!this._listeners){return;}var index=this._listeners.indexOf(listener);if(index!==-1){this._listeners.splice(index,1);}}},{key:"toAbortSignal",value:function toAbortSignal(){var _this5=this;var controller=new AbortController();var abort=function abort(err){controller.abort(err);};this.subscribe(abort);controller.signal.unsubscribe=function(){return _this5.unsubscribe(abort);};return controller.signal;}/**
+   * Returns an object that contains a new `CancelToken` and a function that, when called,
+   * cancels the `CancelToken`.
+   */}],[{key:"source",value:function source(){var cancel;var token=new CancelToken(function executor(c){cancel=c;});return{token:token,cancel:cancel};}}]);}();var CancelToken$1=CancelToken;/**
+ * Syntactic sugar for invoking a function and expanding an array for arguments.
+ *
+ * Common use case would be to use `Function.prototype.apply`.
+ *
+ *  ```js
+ *  function f(x, y, z) {}
+ *  const args = [1, 2, 3];
+ *  f.apply(null, args);
+ *  ```
+ *
+ * With `spread` this example can be re-written.
+ *
+ *  ```js
+ *  spread(function(x, y, z) {})([1, 2, 3]);
+ *  ```
+ *
+ * @param {Function} callback
+ *
+ * @returns {Function}
+ */function spread(callback){return function wrap(arr){return callback.apply(null,arr);};}/**
+ * Determines whether the payload is an error thrown by Axios
+ *
+ * @param {*} payload The value to test
+ *
+ * @returns {boolean} True if the payload is an error thrown by Axios, otherwise false
+ */function isAxiosError(payload){return utils$1.isObject(payload)&&payload.isAxiosError===true;}var HttpStatusCode={Continue:100,SwitchingProtocols:101,Processing:102,EarlyHints:103,Ok:200,Created:201,Accepted:202,NonAuthoritativeInformation:203,NoContent:204,ResetContent:205,PartialContent:206,MultiStatus:207,AlreadyReported:208,ImUsed:226,MultipleChoices:300,MovedPermanently:301,Found:302,SeeOther:303,NotModified:304,UseProxy:305,Unused:306,TemporaryRedirect:307,PermanentRedirect:308,BadRequest:400,Unauthorized:401,PaymentRequired:402,Forbidden:403,NotFound:404,MethodNotAllowed:405,NotAcceptable:406,ProxyAuthenticationRequired:407,RequestTimeout:408,Conflict:409,Gone:410,LengthRequired:411,PreconditionFailed:412,/**
+   * @deprecated Use `ContentTooLarge` instead.
+   */PayloadTooLarge:413,ContentTooLarge:413,UriTooLong:414,UnsupportedMediaType:415,RangeNotSatisfiable:416,ExpectationFailed:417,ImATeapot:418,MisdirectedRequest:421,/**
+   * @deprecated Use `UnprocessableContent` instead.
+   */UnprocessableEntity:422,UnprocessableContent:422,Locked:423,FailedDependency:424,TooEarly:425,UpgradeRequired:426,PreconditionRequired:428,TooManyRequests:429,RequestHeaderFieldsTooLarge:431,UnavailableForLegalReasons:451,InternalServerError:500,NotImplemented:501,BadGateway:502,ServiceUnavailable:503,GatewayTimeout:504,HttpVersionNotSupported:505,VariantAlsoNegotiates:506,InsufficientStorage:507,LoopDetected:508,NotExtended:510,NetworkAuthenticationRequired:511,WebServerReturnsAnUnknownError:520,WebServerIsDown:521,ConnectionTimedOut:522,OriginIsUnreachable:523,TimeoutOccurred:524,SslHandshakeFailed:525,InvalidSslCertificate:526};Object.entries(HttpStatusCode).forEach(function(_ref21){var _ref22=_slicedToArray(_ref21,2),key=_ref22[0],value=_ref22[1];if(HttpStatusCode[value]===undefined){HttpStatusCode[value]=key;}});var HttpStatusCode$1=HttpStatusCode;/**
+ * Create an instance of Axios
+ *
+ * @param {Object} defaultConfig The default config for the instance
+ *
+ * @returns {Axios} A new instance of Axios
+ */function createInstance(defaultConfig){var context=new Axios$1(defaultConfig);var instance=bind(Axios$1.prototype.request,context);// Copy axios.prototype to instance
+utils$1.extend(instance,Axios$1.prototype,context,{allOwnKeys:true});// Copy context to instance
+utils$1.extend(instance,context,null,{allOwnKeys:true});// Factory for creating new instances
+instance.create=function create(instanceConfig){return createInstance(mergeConfig(defaultConfig,instanceConfig));};return instance;}// Create the default instance to be exported
+var axios=createInstance(defaults$1);// Expose Axios class to allow class inheritance
+axios.Axios=Axios$1;// Expose Cancel & CancelToken
+axios.CanceledError=CanceledError$1;axios.CancelToken=CancelToken$1;axios.isCancel=isCancel;axios.VERSION=VERSION;axios.toFormData=toFormData;// Expose AxiosError class
+axios.AxiosError=AxiosError$1;// alias for CanceledError for backward compatibility
+axios.Cancel=axios.CanceledError;// Expose all/spread
+axios.all=function all(promises){return Promise.all(promises);};axios.spread=spread;// Expose isAxiosError
+axios.isAxiosError=isAxiosError;// Expose mergeConfig
+axios.mergeConfig=mergeConfig;axios.AxiosHeaders=AxiosHeaders$1;axios.formToJSON=function(thing){return formDataToJSON(utils$1.isHTMLForm(thing)?new FormData(thing):thing);};axios.getAdapter=adapters.getAdapter;axios.HttpStatusCode=HttpStatusCode$1;axios["default"]=axios;// this module should only have a default export
+var axios$1=axios;var AbstractHttpClient=/*#__PURE__*/function(){function AbstractHttpClient(){_classCallCheck(this,AbstractHttpClient);this.timeout=16000;}return _createClass(AbstractHttpClient,[{key:"setTimeout",value:function setTimeout(timeout){if(timeout===null||timeout===undefined||typeof timeout!=='number'){throw new Error("The 'timeout' property must be a number");}this.timeout=timeout;}},{key:"setHttpsAgent",value:function setHttpsAgent(httpsAgent){if(httpsAgent&&_typeof(httpsAgent)!=='object'){throw new Error("The 'httpsAgent' property must be an object");}this.httpsAgent=httpsAgent;}},{key:"request",value:function request(httpRequestOptions){throw new Error("method must be implemented");}},{key:"enableHooks",value:function enableHooks(){throw new Error("method must be implemented");}/**
+   * Set a PreHook function that modifies the request config before execution.
+   * @param {(config: object) => object | Promise<object> | void} hookFunction
+   */},{key:"setPreHook",value:function setPreHook(hookFunction){if(typeof hookFunction!=="function"||hookFunction.length!==1){throw new Error("preHook must be a function that accepts (config)");}this.preHook=hookFunction;this.enableHooks();}/**
+   * Set a PostHook function that processes the response or error after execution.
+   * @param {(response: object | null, error: Error | null) => object | Promise<object> | void} hookFunction
+   */},{key:"setPostHook",value:function setPostHook(hookFunction){if(typeof hookFunction!=="function"||hookFunction.length!==1){throw new Error("postHook must be a function that accepts (response)");}this.postHook=hookFunction;this.enableHooks();}}]);}();var HttpRequestOptions=/*#__PURE__*/function(){function HttpRequestOptions(url,method,headers,params,data,timeout){_classCallCheck(this,HttpRequestOptions);this.setUrl(url);this.setMethod(method);if(headers){this.setHeaders(headers);}if(params){this.setParams(params);}if(data){this.setData(data);}if(timeout!==null&&timeout!==undefined)this.setTimeout(timeout);else this.timeout=16000;}// Mandatory fields with validation
+return _createClass(HttpRequestOptions,[{key:"setUrl",value:function setUrl(url){if(!url)throw new Error("The 'url' property is required");this.url=url;}},{key:"setMethod",value:function setMethod(method){var validMethods=['GET','POST','PUT','DELETE','PATCH','OPTIONS','HEAD'];if(!method||!validMethods.includes(method.toUpperCase())){throw new Error("The 'method' property is invalid or missing");}this.method=method.toUpperCase();}},{key:"setData",value:function setData(data){if(data===undefined||data===null){throw new Error("The 'data' property is required");}this.data=data;}// Optional fields
+},{key:"setParams",value:function setParams(params){if(params&&_typeof(params)!=='object'){throw new Error("The 'params' property must be an object");}this.params=params;}// Optional fields
+},{key:"setHeaders",value:function setHeaders(headers){if(headers&&_typeof(headers)!=='object'){throw new Error("The 'headers' property must be an object");}this.headers=headers;}},{key:"setTimeout",value:function setTimeout(timeout){if(timeout===undefined||timeout===null||typeof timeout!=='number'){throw new Error("The 'timeout' property must be a number");}this.timeout=timeout;}}]);}();// Default client is Axios
+var DefaultHttpClient=/*#__PURE__*/function(_AbstractHttpClient){function DefaultHttpClient(timeout,httpsAgent){var _this6;_classCallCheck(this,DefaultHttpClient);_this6=_callSuper(this,DefaultHttpClient);if(timeout!==null&&timeout!==undefined)_this6.setTimeout(timeout);else _this6.timeout=16000;if(httpsAgent!==null&&httpsAgent!==undefined)_this6.setHttpsAgent(httpsAgent);else _this6.httpsAgent;_this6._axiosInstance=axios$1.create({});return _this6;}_inherits(DefaultHttpClient,_AbstractHttpClient);return _createClass(DefaultHttpClient,[{key:"enableHooks",value:function enableHooks(){var _this7=this;if(this.preHook&&typeof this.preHook==='function'){if(this.requestInterceptorId!==undefined){axios$1.interceptors.request.eject(this.requestInterceptorId);}this.requestInterceptorId=this._axiosInstance.interceptors.request.use(/*#__PURE__*/function(){var _ref23=_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee9(config){return _regenerator().w(function(_context0){while(1)switch(_context0.n){case 0:_context0.n=1;return _this7.preHook(config);case 1:config=_context0.v;return _context0.a(2,config);}},_callee9);}));return function(_x1){return _ref23.apply(this,arguments);};}(),function(error){// Handle errors before the request is sent
+console.error('Request Pre-Hook Error:',error.message);return Promise.reject(error);});}if(this.postHook&&typeof this.postHook==='function'){// Response interceptor (for post-hooks)
+if(this.responseInterceptorId!==undefined){axios$1.interceptors.response.eject(this.responseInterceptorId);}this.responseInterceptorId=this._axiosInstance.interceptors.response.use(/*#__PURE__*/function(){var _ref24=_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee0(response){return _regenerator().w(function(_context1){while(1)switch(_context1.n){case 0:_context1.n=1;return _this7.postHook(response);case 1:response=_context1.v;return _context1.a(2,response);}},_callee0);}));return function(_x10){return _ref24.apply(this,arguments);};}(),/*#__PURE__*/function(){var _ref25=_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee1(error){return _regenerator().w(function(_context10){while(1)switch(_context10.n){case 0:console.error('Post-Hook: Response Error',error.message);// Optionally call post-hook in case of errors
+return _context10.a(2,Promise.reject(error));}},_callee1);}));return function(_x11){return _ref25.apply(this,arguments);};}());}}},{key:"request",value:function request(httpRequestOptions){if(!(httpRequestOptions instanceof HttpRequestOptions)){throw new Error("httpRequestOptions must be instance of HttpRequestOptions ");}var config=this.toAxiosConfig(httpRequestOptions);return this._axiosInstance.request(config);}// Method to generate Axios-compatible config
+},{key:"toAxiosConfig",value:function toAxiosConfig(httpRequestOptions){if(!httpRequestOptions.url||!httpRequestOptions.method){throw new Error("Mandatory fields 'url' and 'method' must be set before making a request");}var config={url:httpRequestOptions.url,method:httpRequestOptions.method};if(httpRequestOptions.params)config.params=httpRequestOptions.params;if(httpRequestOptions.headers)config.headers=httpRequestOptions.headers;if(httpRequestOptions.data)config.data=httpRequestOptions.data;if(this.timeout!=null&&this.timeout!=undefined)config.timeout=this.timeout;if(this.httpsAgent)config.httpsAgent=this.httpsAgent;return config;}}]);}(AbstractHttpClient);var lookup=[];var revLookup=[];var Arr=typeof Uint8Array!=='undefined'?Uint8Array:Array;var inited=false;function init(){inited=true;var code='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';for(var i=0,len=code.length;i<len;++i){lookup[i]=code[i];revLookup[code.charCodeAt(i)]=i;}revLookup['-'.charCodeAt(0)]=62;revLookup['_'.charCodeAt(0)]=63;}function toByteArray(b64){if(!inited){init();}var i,j,l,tmp,placeHolders,arr;var len=b64.length;if(len%4>0){throw new Error('Invalid string. Length must be a multiple of 4');}// the number of equal signs (place holders)
 // if there are two placeholders, than the two characters before it
 // represent one byte
 // if there is only one, then the three characters before it represent 2 bytes
@@ -3399,612 +4107,7 @@ byteArray.push(str.charCodeAt(i)&0xFF);}return byteArray;}function utf16leToByte
 // The _isBuffer check is for Safari 5-7 support, because it's missing
 // Object.prototype.constructor. Remove this eventually
 function isBuffer(obj){return obj!=null&&(!!obj._isBuffer||isFastBuffer(obj)||isSlowBuffer(obj));}function isFastBuffer(obj){return!!obj.constructor&&typeof obj.constructor.isBuffer==='function'&&obj.constructor.isBuffer(obj);}// For Node v0.10 support. Remove this eventually.
-function isSlowBuffer(obj){return typeof obj.readFloatLE==='function'&&typeof obj.slice==='function'&&isFastBuffer(obj.slice(0,0));}// RawAxiosHeaders whose duplicates are ignored by node
-// c.f. https://nodejs.org/api/http.html#http_message_headers
-var ignoreDuplicateOf=utils$1.toObjectSet(['age','authorization','content-length','content-type','etag','expires','from','host','if-modified-since','if-unmodified-since','last-modified','location','max-forwards','proxy-authorization','referer','retry-after','user-agent']);/**
- * Parse headers into an object
- *
- * ```
- * Date: Wed, 27 Aug 2014 08:58:49 GMT
- * Content-Type: application/json
- * Connection: keep-alive
- * Transfer-Encoding: chunked
- * ```
- *
- * @param {String} rawHeaders Headers needing to be parsed
- *
- * @returns {Object} Headers parsed into an object
- */var parseHeaders=function parseHeaders(rawHeaders){var parsed={};var key;var val;var i;rawHeaders&&rawHeaders.split('\n').forEach(function parser(line){i=line.indexOf(':');key=line.substring(0,i).trim().toLowerCase();val=line.substring(i+1).trim();if(!key||parsed[key]&&ignoreDuplicateOf[key]){return;}if(key==='set-cookie'){if(parsed[key]){parsed[key].push(val);}else{parsed[key]=[val];}}else{parsed[key]=parsed[key]?parsed[key]+', '+val:val;}});return parsed;};function trimSPorHTAB(str){var start=0;var end=str.length;while(start<end){var code=str.charCodeAt(start);if(code!==0x09&&code!==0x20){break;}start+=1;}while(end>start){var _code=str.charCodeAt(end-1);if(_code!==0x09&&_code!==0x20){break;}end-=1;}return start===0&&end===str.length?str:str.slice(start,end);}// The control-code ranges are intentional: header sanitization strips C0/DEL bytes.
-// eslint-disable-next-line no-control-regex
-var INVALID_UNICODE_HEADER_VALUE_CHARS=new RegExp("[\\u0000-\\u0008\\u000a-\\u001f\\u007f]+",'g');// eslint-disable-next-line no-control-regex
-var INVALID_BYTE_STRING_HEADER_VALUE_CHARS=new RegExp("[^\\u0009\\u0020-\\u007e\\u0080-\\u00ff]+",'g');function sanitizeValue(value,invalidChars){if(utils$1.isArray(value)){return value.map(function(item){return sanitizeValue(item,invalidChars);});}return trimSPorHTAB(String(value).replace(invalidChars,''));}var sanitizeHeaderValue=function sanitizeHeaderValue(value){return sanitizeValue(value,INVALID_UNICODE_HEADER_VALUE_CHARS);};var sanitizeByteStringHeaderValue=function sanitizeByteStringHeaderValue(value){return sanitizeValue(value,INVALID_BYTE_STRING_HEADER_VALUE_CHARS);};function toByteStringHeaderObject(headers){var byteStringHeaders=Object.create(null);utils$1.forEach(headers.toJSON(),function(value,header){byteStringHeaders[header]=sanitizeByteStringHeaderValue(value);});return byteStringHeaders;}var $internals=Symbol('internals');function normalizeHeader(header){return header&&String(header).trim().toLowerCase();}function normalizeValue(value){if(value===false||value==null){return value;}return utils$1.isArray(value)?value.map(normalizeValue):sanitizeHeaderValue(String(value));}function parseTokens(str){var tokens=Object.create(null);var tokensRE=/([^\s,;=]+)\s*(?:=\s*([^,;]+))?/g;var match;while(match=tokensRE.exec(str)){tokens[match[1]]=match[2];}return tokens;}var isValidHeaderName=function isValidHeaderName(str){return /^[-_a-zA-Z0-9^`|~,!#$%&'*+.]+$/.test(str.trim());};function matchHeaderValue(context,value,header,filter,isHeaderNameFilter){if(utils$1.isFunction(filter)){return filter.call(this,value,header);}if(isHeaderNameFilter){value=header;}if(!utils$1.isString(value))return;if(utils$1.isString(filter)){return value.indexOf(filter)!==-1;}if(utils$1.isRegExp(filter)){return filter.test(value);}}function formatHeader(header){return header.trim().toLowerCase().replace(/([a-z\d])(\w*)/g,function(w,_char,str){return _char.toUpperCase()+str;});}function buildAccessors(obj,header){var accessorName=utils$1.toCamelCase(' '+header);['get','set','has'].forEach(function(methodName){Object.defineProperty(obj,methodName+accessorName,{// Null-proto descriptor so a polluted Object.prototype.get cannot turn
-// this data descriptor into an accessor descriptor on the way in.
-__proto__:null,value:function value(arg1,arg2,arg3){return this[methodName].call(this,header,arg1,arg2,arg3);},configurable:true});});}var AxiosHeaders=/*#__PURE__*/function(){function AxiosHeaders(headers){_classCallCheck(this,AxiosHeaders);headers&&this.set(headers);}return _createClass(AxiosHeaders,[{key:"set",value:function set(header,valueOrRewrite,rewrite){var self=this;function setHeader(_value,_header,_rewrite){var lHeader=normalizeHeader(_header);if(!lHeader){return;}var key=utils$1.findKey(self,lHeader);if(!key||self[key]===undefined||_rewrite===true||_rewrite===undefined&&self[key]!==false){self[key||_header]=normalizeValue(_value);}}var setHeaders=function setHeaders(headers,_rewrite){return utils$1.forEach(headers,function(_value,_header){return setHeader(_value,_header,_rewrite);});};if(utils$1.isPlainObject(header)||header instanceof this.constructor){setHeaders(header,valueOrRewrite);}else if(utils$1.isString(header)&&(header=header.trim())&&!isValidHeaderName(header)){setHeaders(parseHeaders(header),valueOrRewrite);}else if(utils$1.isObject(header)&&utils$1.isSafeIterable(header)){var obj=Object.create(null),dest,key;var _iterator3=_createForOfIteratorHelper(header),_step2;try{for(_iterator3.s();!(_step2=_iterator3.n()).done;){var entry=_step2.value;if(!utils$1.isArray(entry)){throw new TypeError('Object iterator must return a key-value pair');}key=entry[0];if(utils$1.hasOwnProp(obj,key)){dest=obj[key];obj[key]=utils$1.isArray(dest)?[].concat(_toConsumableArray(dest),[entry[1]]):[dest,entry[1]];}else{obj[key]=entry[1];}}}catch(err){_iterator3.e(err);}finally{_iterator3.f();}setHeaders(obj,valueOrRewrite);}else{header!=null&&setHeader(valueOrRewrite,header,rewrite);}return this;}},{key:"get",value:function get(header,parser){header=normalizeHeader(header);if(header){var key=utils$1.findKey(this,header);if(key){var value=this[key];if(!parser){return value;}if(parser===true){return parseTokens(value);}if(utils$1.isFunction(parser)){return parser.call(this,value,key);}if(utils$1.isRegExp(parser)){return parser.exec(value);}throw new TypeError('parser must be boolean|regexp|function');}}}},{key:"has",value:function has(header,matcher){header=normalizeHeader(header);if(header){var key=utils$1.findKey(this,header);return!!(key&&this[key]!==undefined&&(!matcher||matchHeaderValue(this,this[key],key,matcher)));}return false;}},{key:"delete",value:function _delete(header,matcher){var self=this;var deleted=false;function deleteHeader(_header){_header=normalizeHeader(_header);if(_header){var key=utils$1.findKey(self,_header);if(key&&(!matcher||matchHeaderValue(self,self[key],key,matcher))){delete self[key];deleted=true;}}}if(utils$1.isArray(header)){header.forEach(deleteHeader);}else{deleteHeader(header);}return deleted;}},{key:"clear",value:function clear(matcher){var keys=Object.keys(this);var i=keys.length;var deleted=false;while(i--){var key=keys[i];if(!matcher||matchHeaderValue(this,this[key],key,matcher,true)){delete this[key];deleted=true;}}return deleted;}},{key:"normalize",value:function normalize(format){var self=this;var headers={};utils$1.forEach(this,function(value,header){var key=utils$1.findKey(headers,header);if(key){self[key]=normalizeValue(value);delete self[header];return;}var normalized=format?formatHeader(header):String(header).trim();if(normalized!==header){delete self[header];}self[normalized]=normalizeValue(value);headers[normalized]=true;});return this;}},{key:"concat",value:function concat(){var _this$constructor;for(var _len=arguments.length,targets=new Array(_len),_key2=0;_key2<_len;_key2++){targets[_key2]=arguments[_key2];}return(_this$constructor=this.constructor).concat.apply(_this$constructor,[this].concat(targets));}},{key:"toJSON",value:function toJSON(asStrings){var obj=Object.create(null);utils$1.forEach(this,function(value,header){value!=null&&value!==false&&(obj[header]=asStrings&&utils$1.isArray(value)?value.join(', '):value);});return obj;}},{key:Symbol.iterator,value:function value(){return Object.entries(this.toJSON())[Symbol.iterator]();}},{key:"toString",value:function toString(){return Object.entries(this.toJSON()).map(function(_ref8){var _ref9=_slicedToArray(_ref8,2),header=_ref9[0],value=_ref9[1];return header+': '+value;}).join('\n');}},{key:"getSetCookie",value:function getSetCookie(){return this.get('set-cookie')||[];}},{key:Symbol.toStringTag,get:function get(){return'AxiosHeaders';}}],[{key:"from",value:function from(thing){return thing instanceof this?thing:new this(thing);}},{key:"concat",value:function concat(first){var computed=new this(first);for(var _len2=arguments.length,targets=new Array(_len2>1?_len2-1:0),_key3=1;_key3<_len2;_key3++){targets[_key3-1]=arguments[_key3];}targets.forEach(function(target){return computed.set(target);});return computed;}},{key:"accessor",value:function accessor(header){var internals=this[$internals]=this[$internals]={accessors:{}};var accessors=internals.accessors;var prototype=this.prototype;function defineAccessor(_header){var lHeader=normalizeHeader(_header);if(!accessors[lHeader]){buildAccessors(prototype,_header);accessors[lHeader]=true;}}utils$1.isArray(header)?header.forEach(defineAccessor):defineAccessor(header);return this;}}]);}();AxiosHeaders.accessor(['Content-Type','Content-Length','Accept','Accept-Encoding','User-Agent','Authorization']);// reserved names hotfix
-utils$1.reduceDescriptors(AxiosHeaders.prototype,function(_ref0,key){var value=_ref0.value;var mapped=key[0].toUpperCase()+key.slice(1);// map `set` => `Set`
-return{get:function get(){return value;},set:function set(headerValue){this[mapped]=headerValue;}};});utils$1.freezeMethods(AxiosHeaders);var AxiosHeaders$1=AxiosHeaders;var REDACTED='[REDACTED ****]';function hasOwnOrPrototypeToJSON(source){if(utils$1.hasOwnProp(source,'toJSON')){return true;}var prototype=Object.getPrototypeOf(source);while(prototype&&prototype!==Object.prototype){if(utils$1.hasOwnProp(prototype,'toJSON')){return true;}prototype=Object.getPrototypeOf(prototype);}return false;}// Build a plain-object snapshot of `config` and replace the value of any key
-// (case-insensitive) listed in `redactKeys` with REDACTED. Walks through arrays
-// and AxiosHeaders, and short-circuits on circular references.
-function redactConfig(config,redactKeys){var lowerKeys=new Set(redactKeys.map(function(k){return String(k).toLowerCase();}));var seen=[];var _visit2=function visit(source){if(source===null||_typeof(source)!=='object')return source;if(utils$1.isBuffer(source))return source;if(seen.indexOf(source)!==-1)return undefined;if(source instanceof AxiosHeaders$1){source=source.toJSON();}seen.push(source);var result;if(utils$1.isArray(source)){result=[];source.forEach(function(v,i){var reducedValue=_visit2(v);if(!utils$1.isUndefined(reducedValue)){result[i]=reducedValue;}});}else{if(!utils$1.isPlainObject(source)&&hasOwnOrPrototypeToJSON(source)){seen.pop();return source;}result=Object.create(null);for(var _i=0,_Object$entries=Object.entries(source);_i<_Object$entries.length;_i++){var _Object$entries$_i=_slicedToArray(_Object$entries[_i],2),key=_Object$entries$_i[0],value=_Object$entries$_i[1];var reducedValue=lowerKeys.has(key.toLowerCase())?REDACTED:_visit2(value);if(!utils$1.isUndefined(reducedValue)){result[key]=reducedValue;}}}seen.pop();return result;};return _visit2(config);}var AxiosError=/*#__PURE__*/function(_Error){/**
-   * Create an Error with the specified message, config, error code, request and response.
-   *
-   * @param {string} message The error message.
-   * @param {string} [code] The error code (for example, 'ECONNABORTED').
-   * @param {Object} [config] The config.
-   * @param {Object} [request] The request.
-   * @param {Object} [response] The response.
-   *
-   * @returns {Error} The created error.
-   */function AxiosError(message,code,config,request,response){var _this;_classCallCheck(this,AxiosError);_this=_callSuper(this,AxiosError,[message]);// Make message enumerable to maintain backward compatibility
-// The native Error constructor sets message as non-enumerable,
-// but axios < v1.13.3 had it as enumerable
-Object.defineProperty(_this,'message',{// Null-proto descriptor so a polluted Object.prototype.get cannot turn
-// this data descriptor into an accessor descriptor on the way in.
-__proto__:null,value:message,enumerable:true,writable:true,configurable:true});_this.name='AxiosError';_this.isAxiosError=true;code&&(_this.code=code);config&&(_this.config=config);request&&(_this.request=request);if(response){_this.response=response;_this.status=response.status;}return _this;}_inherits(AxiosError,_Error);return _createClass(AxiosError,[{key:"toJSON",value:function toJSON(){// Opt-in redaction: when the request config carries a `redact` array, the
-// value of any matching key (case-insensitive, at any depth) is replaced
-// with REDACTED in the serialized snapshot. Undefined or empty leaves the
-// existing serialization behavior unchanged.
-var config=this.config;var redactKeys=config&&utils$1.hasOwnProp(config,'redact')?config.redact:undefined;var serializedConfig=utils$1.isArray(redactKeys)&&redactKeys.length>0?redactConfig(config,redactKeys):utils$1.toJSONObject(config);return{// Standard
-message:this.message,name:this.name,// Microsoft
-description:this.description,number:this.number,// Mozilla
-fileName:this.fileName,lineNumber:this.lineNumber,columnNumber:this.columnNumber,stack:this.stack,// Axios
-config:serializedConfig,code:this.code,status:this.status};}}],[{key:"from",value:function from(error,code,config,request,response,customProps){var axiosError=new AxiosError(error.message,code||error.code,config,request,response);// Match native `Error` `cause` semantics: non-enumerable. The wrapped
-// error often carries circular internals (sockets, requests, agents), so
-// an enumerable `cause` makes structured loggers (pino/winston) and any
-// own-property walk throw "Converting circular structure to JSON".
-// Regression from #6982; see #7205. `__proto__: null` mirrors the
-// `message` descriptor below (prototype-pollution-safe descriptor).
-Object.defineProperty(axiosError,'cause',{__proto__:null,value:error,writable:true,enumerable:false,configurable:true});axiosError.name=error.name;// Preserve status from the original error if not already set from response
-if(error.status!=null&&axiosError.status==null){axiosError.status=error.status;}customProps&&Object.assign(axiosError,customProps);return axiosError;}}]);}(/*#__PURE__*/_wrapNativeSuper(Error));// This can be changed to static properties as soon as the parser options in .eslint.cjs are updated.
-AxiosError.ERR_BAD_OPTION_VALUE='ERR_BAD_OPTION_VALUE';AxiosError.ERR_BAD_OPTION='ERR_BAD_OPTION';AxiosError.ECONNABORTED='ECONNABORTED';AxiosError.ETIMEDOUT='ETIMEDOUT';AxiosError.ECONNREFUSED='ECONNREFUSED';AxiosError.ERR_NETWORK='ERR_NETWORK';AxiosError.ERR_FR_TOO_MANY_REDIRECTS='ERR_FR_TOO_MANY_REDIRECTS';AxiosError.ERR_DEPRECATED='ERR_DEPRECATED';AxiosError.ERR_BAD_RESPONSE='ERR_BAD_RESPONSE';AxiosError.ERR_BAD_REQUEST='ERR_BAD_REQUEST';AxiosError.ERR_CANCELED='ERR_CANCELED';AxiosError.ERR_NOT_SUPPORT='ERR_NOT_SUPPORT';AxiosError.ERR_INVALID_URL='ERR_INVALID_URL';AxiosError.ERR_FORM_DATA_DEPTH_EXCEEDED='ERR_FORM_DATA_DEPTH_EXCEEDED';var AxiosError$1=AxiosError;// eslint-disable-next-line strict
-var httpAdapter=null;// Default nesting limit shared with the inverse transform (formDataToJSON) so
-// the FormData <-> JSON round-trip stays symmetric.
-var DEFAULT_FORM_DATA_MAX_DEPTH=100;/**
- * Determines if the given thing is a array or js object.
- *
- * @param {string} thing - The object or array to be visited.
- *
- * @returns {boolean}
- */function isVisitable(thing){return utils$1.isPlainObject(thing)||utils$1.isArray(thing);}/**
- * It removes the brackets from the end of a string
- *
- * @param {string} key - The key of the parameter.
- *
- * @returns {string} the key without the brackets.
- */function removeBrackets(key){return utils$1.endsWith(key,'[]')?key.slice(0,-2):key;}/**
- * It takes a path, a key, and a boolean, and returns a string
- *
- * @param {string} path - The path to the current key.
- * @param {string} key - The key of the current object being iterated over.
- * @param {string} dots - If true, the key will be rendered with dots instead of brackets.
- *
- * @returns {string} The path to the current key.
- */function renderKey(path,key,dots){if(!path)return key;return path.concat(key).map(function each(token,i){// eslint-disable-next-line no-param-reassign
-token=removeBrackets(token);return!dots&&i?'['+token+']':token;}).join(dots?'.':'');}/**
- * If the array is an array and none of its elements are visitable, then it's a flat array.
- *
- * @param {Array<any>} arr - The array to check
- *
- * @returns {boolean}
- */function isFlatArray(arr){return utils$1.isArray(arr)&&!arr.some(isVisitable);}var predicates=utils$1.toFlatObject(utils$1,{},null,function filter(prop){return /^is[A-Z]/.test(prop);});/**
- * Convert a data object to FormData
- *
- * @param {Object} obj
- * @param {?Object} [formData]
- * @param {?Object} [options]
- * @param {Function} [options.visitor]
- * @param {Boolean} [options.metaTokens = true]
- * @param {Boolean} [options.dots = false]
- * @param {?Boolean} [options.indexes = false]
- *
- * @returns {Object}
- **//**
- * It converts an object into a FormData object
- *
- * @param {Object<any, any>} obj - The object to convert to form data.
- * @param {string} formData - The FormData object to append to.
- * @param {Object<string, any>} options
- *
- * @returns
- */function toFormData(obj,formData,options){if(!utils$1.isObject(obj)){throw new TypeError('target must be an object');}// eslint-disable-next-line no-param-reassign
-formData=formData||new FormData();// eslint-disable-next-line no-param-reassign
-options=utils$1.toFlatObject(options,{metaTokens:true,dots:false,indexes:false},false,function defined(option,source){// eslint-disable-next-line no-eq-null,eqeqeq
-return!utils$1.isUndefined(source[option]);});var metaTokens=options.metaTokens;// eslint-disable-next-line no-use-before-define
-var visitor=options.visitor||defaultVisitor;var dots=options.dots;var indexes=options.indexes;var _Blob=options.Blob||typeof Blob!=='undefined'&&Blob;var maxDepth=options.maxDepth===undefined?DEFAULT_FORM_DATA_MAX_DEPTH:options.maxDepth;var useBlob=_Blob&&utils$1.isSpecCompliantForm(formData);var stack=[];if(!utils$1.isFunction(visitor)){throw new TypeError('visitor must be a function');}function convertValue(value){if(value===null)return'';if(utils$1.isDate(value)){return value.toISOString();}if(utils$1.isBoolean(value)){return value.toString();}if(!useBlob&&utils$1.isBlob(value)){throw new AxiosError$1('Blob is not supported. Use a Buffer instead.');}if(utils$1.isArrayBuffer(value)||utils$1.isTypedArray(value)){if(useBlob&&typeof _Blob==='function'){return new _Blob([value]);}if(typeof Buffer!=='undefined'){return Buffer.from(value);}throw new AxiosError$1('Blob is not supported. Use a Buffer instead.',AxiosError$1.ERR_NOT_SUPPORT);}return value;}function throwIfMaxDepthExceeded(depth){if(depth>maxDepth){throw new AxiosError$1('Object is too deeply nested ('+depth+' levels). Max depth: '+maxDepth,AxiosError$1.ERR_FORM_DATA_DEPTH_EXCEEDED);}}function stringifyWithDepthLimit(value,depth){if(maxDepth===Infinity){return JSON.stringify(value);}var ancestors=[];return JSON.stringify(value,function limitDepth(_key,currentValue){if(!utils$1.isObject(currentValue)){return currentValue;}while(ancestors.length&&ancestors[ancestors.length-1]!==this){ancestors.pop();}ancestors.push(currentValue);throwIfMaxDepthExceeded(depth+ancestors.length-1);return currentValue;});}/**
-   * Default visitor.
-   *
-   * @param {*} value
-   * @param {String|Number} key
-   * @param {Array<String|Number>} path
-   * @this {FormData}
-   *
-   * @returns {boolean} return true to visit the each prop of the value recursively
-   */function defaultVisitor(value,key,path){var arr=value;if(utils$1.isReactNative(formData)&&utils$1.isReactNativeBlob(value)){formData.append(renderKey(path,key,dots),convertValue(value));return false;}if(value&&!path&&_typeof(value)==='object'){if(utils$1.endsWith(key,'{}')){// eslint-disable-next-line no-param-reassign
-key=metaTokens?key:key.slice(0,-2);// eslint-disable-next-line no-param-reassign
-value=stringifyWithDepthLimit(value,1);}else if(utils$1.isArray(value)&&isFlatArray(value)||(utils$1.isFileList(value)||utils$1.endsWith(key,'[]'))&&(arr=utils$1.toArray(value))){// eslint-disable-next-line no-param-reassign
-key=removeBrackets(key);arr.forEach(function each(el,index){!(utils$1.isUndefined(el)||el===null)&&formData.append(// eslint-disable-next-line no-nested-ternary
-indexes===true?renderKey([key],index,dots):indexes===null?key:key+'[]',convertValue(el));});return false;}}if(isVisitable(value)){return true;}formData.append(renderKey(path,key,dots),convertValue(value));return false;}var exposedHelpers=Object.assign(predicates,{defaultVisitor:defaultVisitor,convertValue:convertValue,isVisitable:isVisitable});function build(value,path){var depth=arguments.length>2&&arguments[2]!==undefined?arguments[2]:0;if(utils$1.isUndefined(value))return;throwIfMaxDepthExceeded(depth);if(stack.indexOf(value)!==-1){throw new Error('Circular reference detected in '+path.join('.'));}stack.push(value);utils$1.forEach(value,function each(el,key){var result=!(utils$1.isUndefined(el)||el===null)&&visitor.call(formData,el,utils$1.isString(key)?key.trim():key,path,exposedHelpers);if(result===true){build(el,path?path.concat(key):[key],depth+1);}});stack.pop();}if(!utils$1.isObject(obj)){throw new TypeError('data must be an object');}build(obj);return formData;}/**
- * It encodes a string by replacing all characters that are not in the unreserved set with
- * their percent-encoded equivalents
- *
- * @param {string} str - The string to encode.
- *
- * @returns {string} The encoded string.
- */function encode$1(str){var charMap={'!':'%21',"'":'%27','(':'%28',')':'%29','~':'%7E','%20':'+'};return encodeURIComponent(str).replace(/[!'()~]|%20/g,function replacer(match){return charMap[match];});}/**
- * It takes a params object and converts it to a FormData object
- *
- * @param {Object<string, any>} params - The parameters to be converted to a FormData object.
- * @param {Object<string, any>} options - The options object passed to the Axios constructor.
- *
- * @returns {void}
- */function AxiosURLSearchParams(params,options){this._pairs=[];params&&toFormData(params,this,options);}var prototype=AxiosURLSearchParams.prototype;prototype.append=function append(name,value){this._pairs.push([name,value]);};prototype.toString=function toString(encoder){var _this2=this;var _encode=encoder?function(value){return encoder.call(_this2,value,encode$1);}:encode$1;return this._pairs.map(function each(pair){return _encode(pair[0])+'='+_encode(pair[1]);},'').join('&');};/**
- * It replaces URL-encoded forms of `:`, `$`, `,`, and spaces with
- * their plain counterparts (`:`, `$`, `,`, `+`).
- *
- * @param {string} val The value to be encoded.
- *
- * @returns {string} The encoded value.
- */function encode(val){return encodeURIComponent(val).replace(/%3A/gi,':').replace(/%24/g,'$').replace(/%2C/gi,',').replace(/%20/g,'+');}/**
- * Build a URL by appending params to the end
- *
- * @param {string} url The base of the url (e.g., http://www.google.com)
- * @param {object} [params] The params to be appended
- * @param {?(object|Function)} options
- *
- * @returns {string} The formatted url
- */function buildURL(url,params,options){if(!params){return url;}url=url||'';var _options=utils$1.isFunction(options)?{serialize:options}:options;// Read serializer options pollution-safely: own properties and methods on a
-// class/template prototype are honored, but values injected onto a polluted
-// Object.prototype are ignored.
-var _encode=utils$1.getSafeProp(_options,'encode')||encode;var serializeFn=utils$1.getSafeProp(_options,'serialize');var serializedParams;if(serializeFn){serializedParams=serializeFn(params,_options);}else{serializedParams=utils$1.isURLSearchParams(params)?params.toString():new AxiosURLSearchParams(params,_options).toString(_encode);}if(serializedParams){var hashmarkIndex=url.indexOf('#');if(hashmarkIndex!==-1){url=url.slice(0,hashmarkIndex);}url+=(url.indexOf('?')===-1?'?':'&')+serializedParams;}return url;}var InterceptorManager=/*#__PURE__*/function(){function InterceptorManager(){_classCallCheck(this,InterceptorManager);this.handlers=[];}/**
-   * Add a new interceptor to the stack
-   *
-   * @param {Function} fulfilled The function to handle `then` for a `Promise`
-   * @param {Function} rejected The function to handle `reject` for a `Promise`
-   * @param {Object} options The options for the interceptor, synchronous and runWhen
-   *
-   * @return {Number} An ID used to remove interceptor later
-   */return _createClass(InterceptorManager,[{key:"use",value:function use(fulfilled,rejected,options){this.handlers.push({fulfilled:fulfilled,rejected:rejected,synchronous:options?options.synchronous:false,runWhen:options?options.runWhen:null});return this.handlers.length-1;}/**
-   * Remove an interceptor from the stack
-   *
-   * @param {Number} id The ID that was returned by `use`
-   *
-   * @returns {void}
-   */},{key:"eject",value:function eject(id){if(this.handlers[id]){this.handlers[id]=null;}}/**
-   * Clear all interceptors from the stack
-   *
-   * @returns {void}
-   */},{key:"clear",value:function clear(){if(this.handlers){this.handlers=[];}}/**
-   * Iterate over all the registered interceptors
-   *
-   * This method is particularly useful for skipping over any
-   * interceptors that may have become `null` calling `eject`.
-   *
-   * @param {Function} fn The function to call for each interceptor
-   *
-   * @returns {void}
-   */},{key:"forEach",value:function forEach(fn){utils$1.forEach(this.handlers,function forEachHandler(h){if(h!==null){fn(h);}});}}]);}();var InterceptorManager$1=InterceptorManager;var transitionalDefaults={silentJSONParsing:true,forcedJSONParsing:true,clarifyTimeoutError:false,legacyInterceptorReqResOrdering:true,advertiseZstdAcceptEncoding:false,validateStatusUndefinedResolves:true};var URLSearchParams$1=typeof URLSearchParams!=='undefined'?URLSearchParams:AxiosURLSearchParams;var FormData$1=typeof FormData!=='undefined'?FormData:null;var Blob$1=typeof Blob!=='undefined'?Blob:null;var platform$1={isBrowser:true,classes:{URLSearchParams:URLSearchParams$1,FormData:FormData$1,Blob:Blob$1},protocols:['http','https','file','blob','url','data']};var hasBrowserEnv=typeof window!=='undefined'&&typeof document!=='undefined';var _navigator=(typeof navigator==="undefined"?"undefined":_typeof(navigator))==='object'&&navigator||undefined;/**
- * Determine if we're running in a standard browser environment
- *
- * This allows axios to run in a web worker, and react-native.
- * Both environments support XMLHttpRequest, but not fully standard globals.
- *
- * web workers:
- *  typeof window -> undefined
- *  typeof document -> undefined
- *
- * react-native:
- *  navigator.product -> 'ReactNative'
- * nativescript
- *  navigator.product -> 'NativeScript' or 'NS'
- *
- * @returns {boolean}
- */var hasStandardBrowserEnv=hasBrowserEnv&&(!_navigator||['ReactNative','NativeScript','NS'].indexOf(_navigator.product)<0);/**
- * Determine if we're running in a standard browser webWorker environment
- *
- * Although the `isStandardBrowserEnv` method indicates that
- * `allows axios to run in a web worker`, the WebWorker will still be
- * filtered out due to its judgment standard
- * `typeof window !== 'undefined' && typeof document !== 'undefined'`.
- * This leads to a problem when axios post `FormData` in webWorker
- */var hasStandardBrowserWebWorkerEnv=function(){return typeof WorkerGlobalScope!=='undefined'&&// eslint-disable-next-line no-undef
-self instanceof WorkerGlobalScope&&typeof self.importScripts==='function';}();var origin=hasBrowserEnv&&window.location.href||'http://localhost';var utils=/*#__PURE__*/Object.freeze({__proto__:null,hasBrowserEnv:hasBrowserEnv,hasStandardBrowserWebWorkerEnv:hasStandardBrowserWebWorkerEnv,hasStandardBrowserEnv:hasStandardBrowserEnv,navigator:_navigator,origin:origin});var platform=_objectSpread(_objectSpread({},utils),platform$1);function toURLEncodedForm(data,options){return toFormData(data,new platform.classes.URLSearchParams(),_objectSpread({visitor:function visitor(value,key,path,helpers){if(platform.isNode&&utils$1.isBuffer(value)){this.append(key,value.toString('base64'));return false;}return helpers.defaultVisitor.apply(this,arguments);}},options));}var MAX_DEPTH=DEFAULT_FORM_DATA_MAX_DEPTH;function throwIfDepthExceeded(index){if(index>MAX_DEPTH){throw new AxiosError$1('FormData field is too deeply nested ('+index+' levels). Max depth: '+MAX_DEPTH,AxiosError$1.ERR_FORM_DATA_DEPTH_EXCEEDED);}}/**
- * It takes a string like `foo[x][y][z]` and returns an array like `['foo', 'x', 'y', 'z']
- *
- * @param {string} name - The name of the property to get.
- *
- * @returns An array of strings.
- */function parsePropPath(name){// foo[x][y][z]
-// foo.x.y.z
-// foo-x-y-z
-// foo x y z
-var path=[];var pattern=/\w+|\[(\w*)]/g;var match;while((match=pattern.exec(name))!==null){throwIfDepthExceeded(path.length);path.push(match[0]==='[]'?'':match[1]||match[0]);}return path;}/**
- * Convert an array to an object.
- *
- * @param {Array<any>} arr - The array to convert to an object.
- *
- * @returns An object with the same keys and values as the array.
- */function arrayToObject(arr){var obj={};var keys=Object.keys(arr);var i;var len=keys.length;var key;for(i=0;i<len;i++){key=keys[i];obj[key]=arr[key];}return obj;}/**
- * It takes a FormData object and returns a JavaScript object
- *
- * @param {string} formData The FormData object to convert to JSON.
- *
- * @returns {Object<string, any> | null} The converted object.
- */function formDataToJSON(formData){function buildPath(path,value,target,index){throwIfDepthExceeded(index);var name=path[index++];if(name==='__proto__')return true;var isNumericKey=Number.isFinite(+name);var isLast=index>=path.length;name=!name&&utils$1.isArray(target)?target.length:name;if(isLast){if(utils$1.hasOwnProp(target,name)){target[name]=utils$1.isArray(target[name])?target[name].concat(value):[target[name],value];}else{target[name]=value;}return!isNumericKey;}if(!utils$1.hasOwnProp(target,name)||!utils$1.isObject(target[name])){target[name]=[];}var result=buildPath(path,value,target[name],index);if(result&&utils$1.isArray(target[name])){target[name]=arrayToObject(target[name]);}return!isNumericKey;}if(utils$1.isFormData(formData)&&utils$1.isFunction(formData.entries)){var obj={};utils$1.forEachEntry(formData,function(name,value){buildPath(parsePropPath(name),value,obj,0);});return obj;}return null;}var own=function own(obj,key){return obj!=null&&utils$1.hasOwnProp(obj,key)?obj[key]:undefined;};/**
- * It takes a string, tries to parse it, and if it fails, it returns the stringified version
- * of the input
- *
- * @param {any} rawValue - The value to be stringified.
- * @param {Function} parser - A function that parses a string into a JavaScript object.
- * @param {Function} encoder - A function that takes a value and returns a string.
- *
- * @returns {string} A stringified version of the rawValue.
- */function stringifySafely(rawValue,parser,encoder){if(utils$1.isString(rawValue)){try{(parser||JSON.parse)(rawValue);return utils$1.trim(rawValue);}catch(e){if(e.name!=='SyntaxError'){throw e;}}}return(encoder||JSON.stringify)(rawValue);}var defaults={transitional:transitionalDefaults,adapter:['xhr','http','fetch'],transformRequest:[function transformRequest(data,headers){var contentType=headers.getContentType()||'';var hasJSONContentType=contentType.indexOf('application/json')>-1;var isObjectPayload=utils$1.isObject(data);if(isObjectPayload&&utils$1.isHTMLForm(data)){data=new FormData(data);}var isFormData=utils$1.isFormData(data);if(isFormData){return hasJSONContentType?JSON.stringify(formDataToJSON(data)):data;}if(utils$1.isArrayBuffer(data)||utils$1.isBuffer(data)||utils$1.isStream(data)||utils$1.isFile(data)||utils$1.isBlob(data)||utils$1.isReadableStream(data)){return data;}if(utils$1.isArrayBufferView(data)){return data.buffer;}if(utils$1.isURLSearchParams(data)){headers.setContentType('application/x-www-form-urlencoded;charset=utf-8',false);return data.toString();}var isFileList;if(isObjectPayload){var formSerializer=own(this,'formSerializer');if(contentType.indexOf('application/x-www-form-urlencoded')>-1){return toURLEncodedForm(data,formSerializer).toString();}if((isFileList=utils$1.isFileList(data))||contentType.indexOf('multipart/form-data')>-1){var _env=own(this,'env');var _FormData=_env&&_env.FormData;return toFormData(isFileList?{'files[]':data}:data,_FormData&&new _FormData(),formSerializer);}}if(isObjectPayload||hasJSONContentType){headers.setContentType('application/json',false);return stringifySafely(data);}return data;}],transformResponse:[function transformResponse(data){var transitional=own(this,'transitional')||defaults.transitional;var forcedJSONParsing=transitional&&transitional.forcedJSONParsing;var responseType=own(this,'responseType');var JSONRequested=responseType==='json';if(utils$1.isResponse(data)||utils$1.isReadableStream(data)){return data;}if(data&&utils$1.isString(data)&&(forcedJSONParsing&&!responseType||JSONRequested)){var silentJSONParsing=transitional&&transitional.silentJSONParsing;var strictJSONParsing=!silentJSONParsing&&JSONRequested;try{return JSON.parse(data,own(this,'parseReviver'));}catch(e){if(strictJSONParsing){if(e.name==='SyntaxError'){throw AxiosError$1.from(e,AxiosError$1.ERR_BAD_RESPONSE,this,null,own(this,'response'));}throw e;}}}return data;}],/**
-   * A timeout in milliseconds to abort a request. If set to 0 (default) a
-   * timeout is not created.
-   */timeout:0,xsrfCookieName:'XSRF-TOKEN',xsrfHeaderName:'X-XSRF-TOKEN',maxContentLength:-1,maxBodyLength:-1,env:{FormData:platform.classes.FormData,Blob:platform.classes.Blob},validateStatus:function validateStatus(status){return status>=200&&status<300;},headers:{common:{Accept:'application/json, text/plain, */*','Content-Type':undefined}}};utils$1.forEach(['delete','get','head','post','put','patch','query'],function(method){defaults.headers[method]={};});var defaults$1=defaults;/**
- * Transform the data for a request or a response
- *
- * @param {Array|Function} fns A single function or Array of functions
- * @param {?Object} response The response object
- *
- * @returns {*} The resulting transformed data
- */function transformData(fns,response){var config=this||defaults$1;var context=response||config;var headers=AxiosHeaders$1.from(context.headers);var data=context.data;utils$1.forEach(fns,function transform(fn){data=fn.call(config,data,headers.normalize(),response?response.status:undefined);});headers.normalize();return data;}function isCancel(value){return!!(value&&value.__CANCEL__);}var CanceledError=/*#__PURE__*/function(_AxiosError$){/**
-   * A `CanceledError` is an object that is thrown when an operation is canceled.
-   *
-   * @param {string=} message The message.
-   * @param {Object=} config The config.
-   * @param {Object=} request The request.
-   *
-   * @returns {CanceledError} The created error.
-   */function CanceledError(message,config,request){var _this3;_classCallCheck(this,CanceledError);_this3=_callSuper(this,CanceledError,[message==null?'canceled':message,AxiosError$1.ERR_CANCELED,config,request]);_this3.name='CanceledError';_this3.__CANCEL__=true;return _this3;}_inherits(CanceledError,_AxiosError$);return _createClass(CanceledError);}(AxiosError$1);var CanceledError$1=CanceledError;/**
- * Resolve or reject a Promise based on response status.
- *
- * @param {Function} resolve A function that resolves the promise.
- * @param {Function} reject A function that rejects the promise.
- * @param {object} response The response.
- *
- * @returns {object} The response.
- */function settle(resolve,reject,response){var validateStatus=response.config.validateStatus;if(!response.status||!validateStatus||validateStatus(response.status)){resolve(response);}else{reject(new AxiosError$1('Request failed with status code '+response.status,response.status>=400&&response.status<500?AxiosError$1.ERR_BAD_REQUEST:AxiosError$1.ERR_BAD_RESPONSE,response.config,response.request,response));}}function parseProtocol(url){var match=/^([-+\w]{1,25}):(?:\/\/)?/.exec(url);return match&&match[1]||'';}/**
- * Calculate data maxRate
- * @param {Number} [samplesCount= 10]
- * @param {Number} [min= 1000]
- * @returns {Function}
- */function speedometer(samplesCount,min){samplesCount=samplesCount||10;var bytes=new Array(samplesCount);var timestamps=new Array(samplesCount);var head=0;var tail=0;var firstSampleTS;min=min!==undefined?min:1000;return function push(chunkLength){var now=Date.now();var startedAt=timestamps[tail];if(!firstSampleTS){firstSampleTS=now;}bytes[head]=chunkLength;timestamps[head]=now;var i=tail;var bytesCount=0;while(i!==head){bytesCount+=bytes[i++];i=i%samplesCount;}head=(head+1)%samplesCount;if(head===tail){tail=(tail+1)%samplesCount;}if(now-firstSampleTS<min){return;}var passed=startedAt&&now-startedAt;return passed?Math.round(bytesCount*1000/passed):undefined;};}/**
- * Throttle decorator
- * @param {Function} fn
- * @param {Number} freq
- * @return {Function}
- */function throttle(fn,freq){var timestamp=0;var threshold=1000/freq;var lastArgs;var timer;var invoke=function invoke(args){var now=arguments.length>1&&arguments[1]!==undefined?arguments[1]:Date.now();timestamp=now;lastArgs=null;if(timer){clearTimeout(timer);timer=null;}fn.apply(void 0,_toConsumableArray(args));};var throttled=function throttled(){var now=Date.now();var passed=now-timestamp;for(var _len3=arguments.length,args=new Array(_len3),_key4=0;_key4<_len3;_key4++){args[_key4]=arguments[_key4];}if(passed>=threshold){invoke(args,now);}else{lastArgs=args;if(!timer){timer=setTimeout(function(){timer=null;invoke(lastArgs);},threshold-passed);}}};var flush=function flush(){return lastArgs&&invoke(lastArgs);};return[throttled,flush];}var progressEventReducer=function progressEventReducer(listener,isDownloadStream){var freq=arguments.length>2&&arguments[2]!==undefined?arguments[2]:3;var bytesNotified=0;var _speedometer=speedometer(50,250);return throttle(function(e){if(!e||typeof e.loaded!=='number'){return;}var rawLoaded=e.loaded;var total=e.lengthComputable?e.total:undefined;var loaded=total!=null?Math.min(rawLoaded,total):rawLoaded;var progressBytes=Math.max(0,loaded-bytesNotified);var rate=_speedometer(progressBytes);bytesNotified=Math.max(bytesNotified,loaded);var data=_defineProperty({loaded:loaded,total:total,progress:total?loaded/total:undefined,bytes:progressBytes,rate:rate?rate:undefined,estimated:rate&&total?(total-loaded)/rate:undefined,event:e,lengthComputable:total!=null},isDownloadStream?'download':'upload',true);listener(data);},freq);};var progressEventDecorator=function progressEventDecorator(total,throttled){var lengthComputable=total!=null;return[function(loaded){return throttled[0]({lengthComputable:lengthComputable,total:total,loaded:loaded});},throttled[1]];};var asyncDecorator=function asyncDecorator(fn){return function(){for(var _len4=arguments.length,args=new Array(_len4),_key5=0;_key5<_len4;_key5++){args[_key5]=arguments[_key5];}return utils$1.asap(function(){return fn.apply(void 0,args);});};};var isURLSameOrigin=platform.hasStandardBrowserEnv?function(origin,isMSIE){return function(url){url=new URL(url,platform.origin);return origin.protocol===url.protocol&&origin.host===url.host&&(isMSIE||origin.port===url.port);};}(new URL(platform.origin),platform.navigator&&/(msie|trident)/i.test(platform.navigator.userAgent)):function(){return true;};var cookies=platform.hasStandardBrowserEnv?// Standard browser envs support document.cookie
-{write:function write(name,value,expires,path,domain,secure,sameSite){if(typeof document==='undefined')return;var cookie=["".concat(name,"=").concat(encodeURIComponent(value))];if(utils$1.isNumber(expires)){cookie.push("expires=".concat(new Date(expires).toUTCString()));}if(utils$1.isString(path)){cookie.push("path=".concat(path));}if(utils$1.isString(domain)){cookie.push("domain=".concat(domain));}if(secure===true){cookie.push('secure');}if(utils$1.isString(sameSite)){cookie.push("SameSite=".concat(sameSite));}document.cookie=cookie.join('; ');},read:function read(name){if(typeof document==='undefined')return null;// Match name=value by splitting on the semicolon separator instead of building a
-// RegExp from `name` — interpolating an unescaped string into a RegExp would let
-// metacharacters (e.g. `.+?` in an attacker-influenced cookie name) cause ReDoS or
-// match the wrong cookie. Browsers may serialize cookie pairs as either ";" or
-// "; ", so ignore optional whitespace before each cookie name.
-var cookies=document.cookie.split(';');for(var i=0;i<cookies.length;i++){var cookie=cookies[i].replace(/^\s+/,'');var eq=cookie.indexOf('=');if(eq!==-1&&cookie.slice(0,eq)===name){try{return decodeURIComponent(cookie.slice(eq+1));}catch(e){return cookie.slice(eq+1);}}}return null;},remove:function remove(name){this.write(name,'',Date.now()-86400000,'/');}}:// Non-standard browser env (web workers, react-native) lack needed support.
-{write:function write(){},read:function read(){return null;},remove:function remove(){}};/**
- * Determines whether the specified URL is absolute
- *
- * @param {string} url The URL to test
- *
- * @returns {boolean} True if the specified URL is absolute, otherwise false
- */function isAbsoluteURL(url){// A URL is considered absolute if it begins with "<scheme>://" or "//" (protocol-relative URL).
-// RFC 3986 defines scheme name as a sequence of characters beginning with a letter and followed
-// by any combination of letters, digits, plus, period, or hyphen.
-if(typeof url!=='string'){return false;}return /^([a-z][a-z\d+\-.]*:)?\/\//i.test(url);}/**
- * Creates a new URL by combining the specified URLs
- *
- * @param {string} baseURL The base URL
- * @param {string} relativeURL The relative URL
- *
- * @returns {string} The combined URL
- */function combineURLs(baseURL,relativeURL){return relativeURL?baseURL.replace(/\/?\/$/,'')+'/'+relativeURL.replace(/^\/+/,''):baseURL;}var malformedHttpProtocol=/^https?:(?!\/\/)/i;var httpProtocolControlCharacters=/[\t\n\r]/g;function stripLeadingC0ControlOrSpace(url){var i=0;while(i<url.length&&url.charCodeAt(i)<=0x20){i++;}return url.slice(i);}function normalizeURLForProtocolCheck(url){return stripLeadingC0ControlOrSpace(url).replace(httpProtocolControlCharacters,'');}function assertValidHttpProtocolURL(url,config){if(typeof url==='string'&&malformedHttpProtocol.test(normalizeURLForProtocolCheck(url))){throw new AxiosError$1('Invalid URL: missing "//" after protocol',AxiosError$1.ERR_INVALID_URL,config);}}/**
- * Creates a new URL by combining the baseURL with the requestedURL,
- * only when the requestedURL is not already an absolute URL.
- * If the requestURL is absolute, this function returns the requestedURL untouched.
- *
- * @param {string} baseURL The base URL
- * @param {string} requestedURL Absolute or relative URL to combine
- *
- * @returns {string} The combined full path
- */function buildFullPath(baseURL,requestedURL,allowAbsoluteUrls,config){assertValidHttpProtocolURL(requestedURL,config);var isRelativeUrl=!isAbsoluteURL(requestedURL);if(baseURL&&(isRelativeUrl||allowAbsoluteUrls===false)){assertValidHttpProtocolURL(baseURL,config);return combineURLs(baseURL,requestedURL);}return requestedURL;}var headersToObject=function headersToObject(thing){return thing instanceof AxiosHeaders$1?_objectSpread({},thing):thing;};/**
- * Config-specific merge-function which creates a new config-object
- * by merging two configuration objects together.
- *
- * @param {Object} config1
- * @param {Object} config2
- *
- * @returns {Object} New object resulting from merging config2 to config1
- */function mergeConfig(config1,config2){// eslint-disable-next-line no-param-reassign
-config1=config1||{};config2=config2||{};// Use a null-prototype object so that downstream reads such as `config.auth`
-// or `config.baseURL` cannot inherit polluted values from Object.prototype.
-// `hasOwnProperty` is restored as a non-enumerable own slot to preserve
-// ergonomics for user code that relies on it.
-var config=Object.create(null);Object.defineProperty(config,'hasOwnProperty',{// Null-proto descriptor so a polluted Object.prototype.get cannot turn
-// this data descriptor into an accessor descriptor on the way in.
-__proto__:null,value:Object.prototype.hasOwnProperty,enumerable:false,writable:true,configurable:true});function getMergedValue(target,source,prop,caseless){if(utils$1.isPlainObject(target)&&utils$1.isPlainObject(source)){return utils$1.merge.call({caseless:caseless},target,source);}else if(utils$1.isPlainObject(source)){return utils$1.merge({},source);}else if(utils$1.isArray(source)){return source.slice();}return source;}function mergeDeepProperties(a,b,prop,caseless){if(!utils$1.isUndefined(b)){return getMergedValue(a,b,prop,caseless);}else if(!utils$1.isUndefined(a)){return getMergedValue(undefined,a,prop,caseless);}}// eslint-disable-next-line consistent-return
-function valueFromConfig2(a,b){if(!utils$1.isUndefined(b)){return getMergedValue(undefined,b);}}// eslint-disable-next-line consistent-return
-function defaultToConfig2(a,b){if(!utils$1.isUndefined(b)){return getMergedValue(undefined,b);}else if(!utils$1.isUndefined(a)){return getMergedValue(undefined,a);}}function getMergedTransitionalOption(prop){var transitional2=utils$1.hasOwnProp(config2,'transitional')?config2.transitional:undefined;if(!utils$1.isUndefined(transitional2)){if(utils$1.isPlainObject(transitional2)){if(utils$1.hasOwnProp(transitional2,prop)){return transitional2[prop];}}else{return undefined;}}var transitional1=utils$1.hasOwnProp(config1,'transitional')?config1.transitional:undefined;if(utils$1.isPlainObject(transitional1)&&utils$1.hasOwnProp(transitional1,prop)){return transitional1[prop];}return undefined;}// eslint-disable-next-line consistent-return
-function mergeDirectKeys(a,b,prop){if(utils$1.hasOwnProp(config2,prop)){return getMergedValue(a,b);}else if(utils$1.hasOwnProp(config1,prop)){return getMergedValue(undefined,a);}}var mergeMap={url:valueFromConfig2,method:valueFromConfig2,data:valueFromConfig2,baseURL:defaultToConfig2,transformRequest:defaultToConfig2,transformResponse:defaultToConfig2,paramsSerializer:defaultToConfig2,timeout:defaultToConfig2,timeoutMessage:defaultToConfig2,withCredentials:defaultToConfig2,withXSRFToken:defaultToConfig2,adapter:defaultToConfig2,responseType:defaultToConfig2,xsrfCookieName:defaultToConfig2,xsrfHeaderName:defaultToConfig2,onUploadProgress:defaultToConfig2,onDownloadProgress:defaultToConfig2,decompress:defaultToConfig2,maxContentLength:defaultToConfig2,maxBodyLength:defaultToConfig2,beforeRedirect:defaultToConfig2,transport:defaultToConfig2,httpAgent:defaultToConfig2,httpsAgent:defaultToConfig2,cancelToken:defaultToConfig2,socketPath:defaultToConfig2,allowedSocketPaths:defaultToConfig2,responseEncoding:defaultToConfig2,validateStatus:mergeDirectKeys,headers:function headers(a,b,prop){return mergeDeepProperties(headersToObject(a),headersToObject(b),prop,true);}};utils$1.forEach(Object.keys(_objectSpread(_objectSpread({},config1),config2)),function computeConfigValue(prop){if(prop==='__proto__'||prop==='constructor'||prop==='prototype')return;var merge=utils$1.hasOwnProp(mergeMap,prop)?mergeMap[prop]:mergeDeepProperties;var a=utils$1.hasOwnProp(config1,prop)?config1[prop]:undefined;var b=utils$1.hasOwnProp(config2,prop)?config2[prop]:undefined;var configValue=merge(a,b,prop);utils$1.isUndefined(configValue)&&merge!==mergeDirectKeys||(config[prop]=configValue);});if(utils$1.hasOwnProp(config2,'validateStatus')&&utils$1.isUndefined(config2.validateStatus)&&getMergedTransitionalOption('validateStatusUndefinedResolves')===false){if(utils$1.hasOwnProp(config1,'validateStatus')){config.validateStatus=getMergedValue(undefined,config1.validateStatus);}else{delete config.validateStatus;}}return config;}var FORM_DATA_CONTENT_HEADERS=['content-type','content-length'];function setFormDataHeaders(headers,formHeaders,policy){if(policy!=='content-only'){headers.set(formHeaders);return;}Object.entries(formHeaders||{}).forEach(function(_ref1){var _ref10=_slicedToArray(_ref1,2),key=_ref10[0],val=_ref10[1];if(FORM_DATA_CONTENT_HEADERS.includes(key.toLowerCase())){headers.set(key,val);}});}/**
- * Encode a UTF-8 string to a Latin-1 byte string for use with btoa().
- * This is a modern replacement for the deprecated unescape(encodeURIComponent(str)) pattern.
- *
- * @param {string} str The string to encode
- *
- * @returns {string} UTF-8 bytes as a Latin-1 string
- */var encodeUTF8$1=function encodeUTF8$1(str){return encodeURIComponent(str).replace(/%([0-9A-F]{2})/gi,function(_,hex){return String.fromCharCode(parseInt(hex,16));});};function resolveConfig(config){var newConfig=mergeConfig({},config);// Read only own properties to prevent prototype pollution gadgets
-// (e.g. Object.prototype.baseURL = 'https://evil.com').
-var own=function own(key){return utils$1.hasOwnProp(newConfig,key)?newConfig[key]:undefined;};var data=own('data');var withXSRFToken=own('withXSRFToken');var xsrfHeaderName=own('xsrfHeaderName');var xsrfCookieName=own('xsrfCookieName');var headers=own('headers');var auth=own('auth');var baseURL=own('baseURL');var allowAbsoluteUrls=own('allowAbsoluteUrls');var url=own('url');newConfig.headers=headers=AxiosHeaders$1.from(headers);newConfig.url=buildURL(buildFullPath(baseURL,url,allowAbsoluteUrls,newConfig),own('params'),own('paramsSerializer'));// HTTP basic authentication
-if(auth){var username=utils$1.getSafeProp(auth,'username')||'';var password=utils$1.getSafeProp(auth,'password')||'';try{headers.set('Authorization','Basic '+btoa(username+':'+(password?encodeUTF8$1(password):'')));}catch(e){throw AxiosError$1.from(e,AxiosError$1.ERR_BAD_OPTION_VALUE,config);}}if(utils$1.isFormData(data)){if(platform.hasStandardBrowserEnv||platform.hasStandardBrowserWebWorkerEnv||utils$1.isReactNative(data)){headers.setContentType(undefined);// browser/web worker/RN handles it
-}else if(utils$1.isFunction(data.getHeaders)){// Node.js FormData (like form-data package)
-setFormDataHeaders(headers,data.getHeaders(),own('formDataHeaderPolicy'));}}// Add xsrf header
-// This is only done if running in a standard browser environment.
-// Specifically not if we're in a web worker, or react-native.
-if(platform.hasStandardBrowserEnv){if(utils$1.isFunction(withXSRFToken)){withXSRFToken=withXSRFToken(newConfig);}// Strict boolean check — prevents proto-pollution gadgets (e.g. Object.prototype.withXSRFToken = 1)
-// and misconfigurations (e.g. "false") from short-circuiting the same-origin check and leaking
-// the XSRF token cross-origin.
-var shouldSendXSRF=withXSRFToken===true||withXSRFToken==null&&isURLSameOrigin(newConfig.url);if(shouldSendXSRF){var xsrfValue=xsrfHeaderName&&xsrfCookieName&&cookies.read(xsrfCookieName);if(xsrfValue){headers.set(xsrfHeaderName,xsrfValue);}}}return newConfig;}var isXHRAdapterSupported=typeof XMLHttpRequest!=='undefined';var xhrAdapter=isXHRAdapterSupported&&function(config){return new Promise(function dispatchXhrRequest(resolve,reject){var _config=resolveConfig(config);var requestData=_config.data;var requestHeaders=AxiosHeaders$1.from(_config.headers).normalize();var responseType=_config.responseType,onUploadProgress=_config.onUploadProgress,onDownloadProgress=_config.onDownloadProgress;var onCanceled;var uploadThrottled,downloadThrottled;var flushUpload,flushDownload;function done(){flushUpload&&flushUpload();// flush events
-flushDownload&&flushDownload();// flush events
-_config.cancelToken&&_config.cancelToken.unsubscribe(onCanceled);_config.signal&&_config.signal.removeEventListener('abort',onCanceled);}var request=new XMLHttpRequest();request.open(_config.method.toUpperCase(),_config.url,true);// Set the request timeout in MS
-request.timeout=_config.timeout;function onloadend(){if(!request){return;}// Prepare the response
-var responseHeaders=AxiosHeaders$1.from('getAllResponseHeaders'in request&&request.getAllResponseHeaders());var responseData=!responseType||responseType==='text'||responseType==='json'?request.responseText:request.response;var response={data:responseData,status:request.status,statusText:request.statusText,headers:responseHeaders,config:config,request:request};settle(function _resolve(value){resolve(value);done();},function _reject(err){reject(err);done();},response);// Clean up request
-request=null;}if('onloadend'in request){// Use onloadend if available
-request.onloadend=onloadend;}else{// Listen for ready state to emulate onloadend
-request.onreadystatechange=function handleLoad(){if(!request||request.readyState!==4){return;}// The request errored out and we didn't get a response, this will be
-// handled by onerror instead
-// With one exception: request that using file: protocol, most browsers
-// will return status as 0 even though it's a successful request
-if(request.status===0&&!(request.responseURL&&request.responseURL.startsWith('file:'))){return;}// readystate handler is calling before onerror or ontimeout handlers,
-// so we should call onloadend on the next 'tick'
-setTimeout(onloadend);};}// Handle browser request cancellation (as opposed to a manual cancellation)
-request.onabort=function handleAbort(){if(!request){return;}reject(new AxiosError$1('Request aborted',AxiosError$1.ECONNABORTED,config,request));done();// Clean up request
-request=null;};// Handle low level network errors
-request.onerror=function handleError(event){// Browsers deliver a ProgressEvent in XHR onerror
-// (message may be empty; when present, surface it)
-// See https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/error_event
-var msg=event&&event.message?event.message:'Network Error';var err=new AxiosError$1(msg,AxiosError$1.ERR_NETWORK,config,request);// attach the underlying event for consumers who want details
-err.event=event||null;reject(err);done();request=null;};// Handle timeout
-request.ontimeout=function handleTimeout(){var timeoutErrorMessage=_config.timeout?'timeout of '+_config.timeout+'ms exceeded':'timeout exceeded';var transitional=_config.transitional||transitionalDefaults;if(_config.timeoutErrorMessage){timeoutErrorMessage=_config.timeoutErrorMessage;}reject(new AxiosError$1(timeoutErrorMessage,transitional.clarifyTimeoutError?AxiosError$1.ETIMEDOUT:AxiosError$1.ECONNABORTED,config,request));done();// Clean up request
-request=null;};// Remove Content-Type if data is undefined
-requestData===undefined&&requestHeaders.setContentType(null);// Add headers to the request
-if('setRequestHeader'in request){utils$1.forEach(toByteStringHeaderObject(requestHeaders),function setRequestHeader(val,key){request.setRequestHeader(key,val);});}// Add withCredentials to request if needed
-if(!utils$1.isUndefined(_config.withCredentials)){request.withCredentials=!!_config.withCredentials;}// Add responseType to request if needed
-if(responseType&&responseType!=='json'){request.responseType=_config.responseType;}// Handle progress if needed
-if(onDownloadProgress){var _progressEventReducer=progressEventReducer(onDownloadProgress,true);var _progressEventReducer2=_slicedToArray(_progressEventReducer,2);downloadThrottled=_progressEventReducer2[0];flushDownload=_progressEventReducer2[1];request.addEventListener('progress',downloadThrottled);}// Not all browsers support upload events
-if(onUploadProgress&&request.upload){var _progressEventReducer3=progressEventReducer(onUploadProgress);var _progressEventReducer4=_slicedToArray(_progressEventReducer3,2);uploadThrottled=_progressEventReducer4[0];flushUpload=_progressEventReducer4[1];request.upload.addEventListener('progress',uploadThrottled);request.upload.addEventListener('loadend',flushUpload);}if(_config.cancelToken||_config.signal){// Handle cancellation
-// eslint-disable-next-line func-names
-onCanceled=function onCanceled(cancel){if(!request){return;}reject(!cancel||cancel.type?new CanceledError$1(null,config,request):cancel);request.abort();done();request=null;};_config.cancelToken&&_config.cancelToken.subscribe(onCanceled);if(_config.signal){_config.signal.aborted?onCanceled():_config.signal.addEventListener('abort',onCanceled);}}var protocol=parseProtocol(_config.url);if(protocol&&!platform.protocols.includes(protocol)){reject(new AxiosError$1('Unsupported protocol '+protocol+':',AxiosError$1.ERR_BAD_REQUEST,config));done();return;}// Send the request
-request.send(requestData||null);});};var composeSignals=function composeSignals(signals,timeout){signals=signals?signals.filter(Boolean):[];if(!timeout&&!signals.length){return;}var controller=new AbortController();var aborted=false;var onabort=function onabort(reason){if(!aborted){aborted=true;unsubscribe();var err=reason instanceof Error?reason:this.reason;controller.abort(err instanceof AxiosError$1?err:new CanceledError$1(err instanceof Error?err.message:err));}};var timer=timeout&&setTimeout(function(){timer=null;onabort(new AxiosError$1("timeout of ".concat(timeout,"ms exceeded"),AxiosError$1.ETIMEDOUT));},timeout);var unsubscribe=function unsubscribe(){if(!signals){return;}timer&&clearTimeout(timer);timer=null;signals.forEach(function(signal){signal.unsubscribe?signal.unsubscribe(onabort):signal.removeEventListener('abort',onabort);});signals=null;};signals.forEach(function(signal){return signal.addEventListener('abort',onabort,{once:true});});var signal=controller.signal;signal.unsubscribe=function(){return utils$1.asap(unsubscribe);};return signal;};var composeSignals$1=composeSignals;var streamChunk=/*#__PURE__*/_regenerator().m(function streamChunk(chunk,chunkSize){var len,pos,end;return _regenerator().w(function(_context){while(1)switch(_context.n){case 0:len=chunk.byteLength;if(!(!chunkSize||len<chunkSize)){_context.n=2;break;}_context.n=1;return chunk;case 1:return _context.a(2);case 2:pos=0;case 3:if(!(pos<len)){_context.n=5;break;}end=pos+chunkSize;_context.n=4;return chunk.slice(pos,end);case 4:pos=end;_context.n=3;break;case 5:return _context.a(2);}},streamChunk);});var readBytes=/*#__PURE__*/function(){var _ref=_wrapAsyncGenerator(/*#__PURE__*/_regenerator().m(function _callee(iterable,chunkSize){var _iteratorAbruptCompletion,_didIteratorError,_iteratorError,_iterator2,_step,chunk,_t;return _regenerator().w(function(_context2){while(1)switch(_context2.p=_context2.n){case 0:_iteratorAbruptCompletion=false;_didIteratorError=false;_context2.p=1;_iterator2=_asyncIterator(readStream(iterable));case 2:_context2.n=3;return _awaitAsyncGenerator(_iterator2.next());case 3:if(!(_iteratorAbruptCompletion=!(_step=_context2.v).done)){_context2.n=5;break;}chunk=_step.value;return _context2.d(_regeneratorValues(_asyncGeneratorDelegate(_asyncIterator(streamChunk(chunk,chunkSize)),_awaitAsyncGenerator)),4);case 4:_iteratorAbruptCompletion=false;_context2.n=2;break;case 5:_context2.n=7;break;case 6:_context2.p=6;_t=_context2.v;_didIteratorError=true;_iteratorError=_t;case 7:_context2.p=7;_context2.p=8;if(!(_iteratorAbruptCompletion&&_iterator2["return"]!=null)){_context2.n=9;break;}_context2.n=9;return _awaitAsyncGenerator(_iterator2["return"]());case 9:_context2.p=9;if(!_didIteratorError){_context2.n=10;break;}throw _iteratorError;case 10:return _context2.f(9);case 11:return _context2.f(7);case 12:return _context2.a(2);}},_callee,null,[[8,,9,11],[1,6,7,12]]);}));return function readBytes(_x,_x2){return _ref.apply(this,arguments);};}();var readStream=/*#__PURE__*/function(){var _ref2=_wrapAsyncGenerator(/*#__PURE__*/_regenerator().m(function _callee2(stream){var reader,_yield$_awaitAsyncGen,done,value;return _regenerator().w(function(_context3){while(1)switch(_context3.p=_context3.n){case 0:if(!stream[Symbol.asyncIterator]){_context3.n=2;break;}return _context3.d(_regeneratorValues(_asyncGeneratorDelegate(_asyncIterator(stream),_awaitAsyncGenerator)),1);case 1:return _context3.a(2);case 2:reader=stream.getReader();_context3.p=3;case 4:_context3.n=5;return _awaitAsyncGenerator(reader.read());case 5:_yield$_awaitAsyncGen=_context3.v;done=_yield$_awaitAsyncGen.done;value=_yield$_awaitAsyncGen.value;if(!done){_context3.n=6;break;}return _context3.a(3,8);case 6:_context3.n=7;return value;case 7:_context3.n=4;break;case 8:_context3.p=8;_context3.n=9;return _awaitAsyncGenerator(reader.cancel());case 9:return _context3.f(8);case 10:return _context3.a(2);}},_callee2,null,[[3,,8,10]]);}));return function readStream(_x3){return _ref2.apply(this,arguments);};}();var trackStream=function trackStream(stream,chunkSize,onProgress,onFinish){var iterator=readBytes(stream,chunkSize);var bytes=0;var done;var _onFinish=function _onFinish(e){if(!done){done=true;onFinish&&onFinish(e);}};return new ReadableStream({pull:function pull(controller){return _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee3(){var _yield$iterator$next,_done,value,len,loadedBytes,_t2;return _regenerator().w(function(_context4){while(1)switch(_context4.p=_context4.n){case 0:_context4.p=0;_context4.n=1;return iterator.next();case 1:_yield$iterator$next=_context4.v;_done=_yield$iterator$next.done;value=_yield$iterator$next.value;if(!_done){_context4.n=2;break;}_onFinish();controller.close();return _context4.a(2);case 2:len=value.byteLength;if(onProgress){loadedBytes=bytes+=len;onProgress(loadedBytes);}controller.enqueue(new Uint8Array(value));_context4.n=4;break;case 3:_context4.p=3;_t2=_context4.v;_onFinish(_t2);throw _t2;case 4:return _context4.a(2);}},_callee3,null,[[0,3]]);}))();},cancel:function cancel(reason){_onFinish(reason);return iterator["return"]();}},{highWaterMark:2});};/**
- * Estimate decoded byte length of a data:// URL *without* allocating large buffers.
- * - For base64: compute exact decoded size using length and padding;
- *               handle %XX at the character-count level (no string allocation).
- * - For non-base64: compute the exact percent-decoded UTF-8 byte length.
- *
- * @param {string} url
- * @returns {number}
- */var isHexDigit=function isHexDigit(charCode){return charCode>=48&&charCode<=57||charCode>=65&&charCode<=70||charCode>=97&&charCode<=102;};var isPercentEncodedByte=function isPercentEncodedByte(str,i,len){return i+2<len&&isHexDigit(str.charCodeAt(i+1))&&isHexDigit(str.charCodeAt(i+2));};function estimateDataURLDecodedBytes(url){if(!url||typeof url!=='string')return 0;if(!url.startsWith('data:'))return 0;var comma=url.indexOf(',');if(comma<0)return 0;var meta=url.slice(5,comma);var body=url.slice(comma+1);var isBase64=/;base64/i.test(meta);if(isBase64){var effectiveLen=body.length;var len=body.length;// cache length
-for(var i=0;i<len;i++){if(body.charCodeAt(i)===37/* '%' */&&i+2<len){var a=body.charCodeAt(i+1);var b=body.charCodeAt(i+2);var isHex=isHexDigit(a)&&isHexDigit(b);if(isHex){effectiveLen-=2;i+=2;}}}var pad=0;var idx=len-1;var tailIsPct3D=function tailIsPct3D(j){return j>=2&&body.charCodeAt(j-2)===37&&// '%'
-body.charCodeAt(j-1)===51&&(// '3'
-body.charCodeAt(j)===68||body.charCodeAt(j)===100);};// 'D' or 'd'
-if(idx>=0){if(body.charCodeAt(idx)===61/* '=' */){pad++;idx--;}else if(tailIsPct3D(idx)){pad++;idx-=3;}}if(pad===1&&idx>=0){if(body.charCodeAt(idx)===61/* '=' */){pad++;}else if(tailIsPct3D(idx)){pad++;}}var groups=Math.floor(effectiveLen/4);var _bytes=groups*3-(pad||0);return _bytes>0?_bytes:0;}// Compute UTF-8 byte length directly from UTF-16 code units without allocating
-// a byte buffer (TextEncoder.encode would defeat the DoS guard on large bodies).
-// Valid %XX triplets count as one decoded byte; this matches the bytes that
-// decodeURIComponent(body) would produce before Buffer re-encodes the string.
-var bytes=0;for(var _i2=0,_len5=body.length;_i2<_len5;_i2++){var c=body.charCodeAt(_i2);if(c===37/* '%' */&&isPercentEncodedByte(body,_i2,_len5)){bytes+=1;_i2+=2;}else if(c<0x80){bytes+=1;}else if(c<0x800){bytes+=2;}else if(c>=0xd800&&c<=0xdbff&&_i2+1<_len5){var next=body.charCodeAt(_i2+1);if(next>=0xdc00&&next<=0xdfff){bytes+=4;_i2++;}else{bytes+=3;}}else{bytes+=3;}}return bytes;}var VERSION="1.18.1";var DEFAULT_CHUNK_SIZE=64*1024;var isFunction=utils$1.isFunction;/**
- * Encode a UTF-8 string to a Latin-1 byte string for use with btoa().
- * This is a modern replacement for the deprecated unescape(encodeURIComponent(str)) pattern.
- *
- * @param {string} str The string to encode
- *
- * @returns {string} UTF-8 bytes as a Latin-1 string
- */var encodeUTF8=function encodeUTF8(str){return encodeURIComponent(str).replace(/%([0-9A-F]{2})/gi,function(_,hex){return String.fromCharCode(parseInt(hex,16));});};// Node's WHATWG URL parser returns `username` and `password` percent-encoded.
-// Decode before composing the `auth` option so credentials such as
-// `my%40email.com:pass` are sent as `my@email.com:pass`. Falls back to the
-// original value for malformed input so a bad encoding never throws.
-var decodeURIComponentSafe=function decodeURIComponentSafe(value){if(!utils$1.isString(value)){return value;}try{return decodeURIComponent(value);}catch(error){return value;}};var test=function test(fn){try{for(var _len6=arguments.length,args=new Array(_len6>1?_len6-1:0),_key6=1;_key6<_len6;_key6++){args[_key6-1]=arguments[_key6];}return!!fn.apply(void 0,args);}catch(e){return false;}};var maybeWithAuthCredentials=function maybeWithAuthCredentials(url){var protocolIndex=url.indexOf('://');var urlToCheck=url;if(protocolIndex!==-1){urlToCheck=urlToCheck.slice(protocolIndex+3);}return urlToCheck.includes('@')||urlToCheck.includes(':');};var factory=function factory(env){var globalObject=utils$1.global!==undefined&&utils$1.global!==null?utils$1.global:globalThis;var ReadableStream=globalObject.ReadableStream,TextEncoder=globalObject.TextEncoder;env=utils$1.merge.call({skipUndefined:true},{Request:globalObject.Request,Response:globalObject.Response},env);var _env2=env,envFetch=_env2.fetch,Request=_env2.Request,Response=_env2.Response;var isFetchSupported=envFetch?isFunction(envFetch):typeof fetch==='function';var isRequestSupported=isFunction(Request);var isResponseSupported=isFunction(Response);if(!isFetchSupported){return false;}var isReadableStreamSupported=isFetchSupported&&isFunction(ReadableStream);var encodeText=isFetchSupported&&(typeof TextEncoder==='function'?function(encoder){return function(str){return encoder.encode(str);};}(new TextEncoder()):(/*#__PURE__*/function(){var _ref11=_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee4(str){var _t3,_t4;return _regenerator().w(function(_context5){while(1)switch(_context5.n){case 0:_t3=Uint8Array;_context5.n=1;return new Request(str).arrayBuffer();case 1:_t4=_context5.v;return _context5.a(2,new _t3(_t4));}},_callee4);}));return function(_x4){return _ref11.apply(this,arguments);};}()));var supportsRequestStream=isRequestSupported&&isReadableStreamSupported&&test(function(){var duplexAccessed=false;var request=new Request(platform.origin,{body:new ReadableStream(),method:'POST',get duplex(){duplexAccessed=true;return'half';}});var hasContentType=request.headers.has('Content-Type');if(request.body!=null){request.body.cancel();}return duplexAccessed&&!hasContentType;});var supportsResponseStream=isResponseSupported&&isReadableStreamSupported&&test(function(){return utils$1.isReadableStream(new Response('').body);});var resolvers={stream:supportsResponseStream&&function(res){return res.body;}};isFetchSupported&&function(){['text','arrayBuffer','blob','formData','stream'].forEach(function(type){!resolvers[type]&&(resolvers[type]=function(res,config){var method=res&&res[type];if(method){return method.call(res);}throw new AxiosError$1("Response type '".concat(type,"' is not supported"),AxiosError$1.ERR_NOT_SUPPORT,config);});});}();var getBodyLength=/*#__PURE__*/function(){var _ref12=_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee5(body){var _request;return _regenerator().w(function(_context6){while(1)switch(_context6.n){case 0:if(!(body==null)){_context6.n=1;break;}return _context6.a(2,0);case 1:if(!utils$1.isBlob(body)){_context6.n=2;break;}return _context6.a(2,body.size);case 2:if(!utils$1.isSpecCompliantForm(body)){_context6.n=4;break;}_request=new Request(platform.origin,{method:'POST',body:body});_context6.n=3;return _request.arrayBuffer();case 3:return _context6.a(2,_context6.v.byteLength);case 4:if(!(utils$1.isArrayBufferView(body)||utils$1.isArrayBuffer(body))){_context6.n=5;break;}return _context6.a(2,body.byteLength);case 5:if(utils$1.isURLSearchParams(body)){body=body+'';}if(!utils$1.isString(body)){_context6.n=7;break;}_context6.n=6;return encodeText(body);case 6:return _context6.a(2,_context6.v.byteLength);case 7:return _context6.a(2);}},_callee5);}));return function getBodyLength(_x5){return _ref12.apply(this,arguments);};}();var resolveBodyLength=/*#__PURE__*/function(){var _ref13=_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee6(headers,body){var length;return _regenerator().w(function(_context7){while(1)switch(_context7.n){case 0:length=utils$1.toFiniteNumber(headers.getContentLength());return _context7.a(2,length==null?getBodyLength(body):length);}},_callee6);}));return function resolveBodyLength(_x6,_x7){return _ref13.apply(this,arguments);};}();return/*#__PURE__*/function(){var _ref14=_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee7(config){var _resolveConfig,url,method,data,signal,cancelToken,timeout,onDownloadProgress,onUploadProgress,responseType,headers,_resolveConfig$withCr,withCredentials,fetchOptions,maxContentLength,maxBodyLength,hasMaxContentLength,hasMaxBodyLength,own,_fetch,composedSignal,request,unsubscribe,requestContentLength,pendingBodyError,maxBodyLengthError,auth,configAuth,username,password,parsedURL,urlUsername,urlPassword,estimated,outboundLength,mustEnforceStreamBody,trackRequestStream,_request,contentTypeHeader,_ref15,_ref16,onProgress,flush,isCredentialsSupported,contentType,resolvedOptions,response,responseHeaders,declaredLength,isStreamResponse,options,responseContentLength,_ref17,_ref18,_onProgress,_flush,bytesRead,onChunkProgress,responseData,materializedSize,canceledError,networkError,_t5,_t6;return _regenerator().w(function(_context8){while(1)switch(_context8.p=_context8.n){case 0:_resolveConfig=resolveConfig(config),url=_resolveConfig.url,method=_resolveConfig.method,data=_resolveConfig.data,signal=_resolveConfig.signal,cancelToken=_resolveConfig.cancelToken,timeout=_resolveConfig.timeout,onDownloadProgress=_resolveConfig.onDownloadProgress,onUploadProgress=_resolveConfig.onUploadProgress,responseType=_resolveConfig.responseType,headers=_resolveConfig.headers,_resolveConfig$withCr=_resolveConfig.withCredentials,withCredentials=_resolveConfig$withCr===void 0?'same-origin':_resolveConfig$withCr,fetchOptions=_resolveConfig.fetchOptions,maxContentLength=_resolveConfig.maxContentLength,maxBodyLength=_resolveConfig.maxBodyLength;hasMaxContentLength=utils$1.isNumber(maxContentLength)&&maxContentLength>-1;hasMaxBodyLength=utils$1.isNumber(maxBodyLength)&&maxBodyLength>-1;own=function own(key){return utils$1.hasOwnProp(config,key)?config[key]:undefined;};_fetch=envFetch||fetch;responseType=responseType?(responseType+'').toLowerCase():'text';composedSignal=composeSignals$1([signal,cancelToken&&cancelToken.toAbortSignal()],timeout);request=null;unsubscribe=composedSignal&&composedSignal.unsubscribe&&function(){composedSignal.unsubscribe();};// AxiosError we raise while the request body is being streamed. Captured
-// by identity so the catch block can surface it directly, regardless of
-// how the runtime wraps the resulting fetch rejection (undici exposes it
-// as `err.cause`; some browsers drop the original error entirely).
-pendingBodyError=null;maxBodyLengthError=function maxBodyLengthError(){return new AxiosError$1('Request body larger than maxBodyLength limit',AxiosError$1.ERR_BAD_REQUEST,config,request);};_context8.p=1;// HTTP basic authentication
-auth=undefined;configAuth=own('auth');if(configAuth){username=utils$1.getSafeProp(configAuth,'username')||'';password=utils$1.getSafeProp(configAuth,'password')||'';auth={username:username,password:password};}if(maybeWithAuthCredentials(url)){parsedURL=new URL(url,platform.origin);if(!auth&&(parsedURL.username||parsedURL.password)){urlUsername=decodeURIComponentSafe(parsedURL.username);urlPassword=decodeURIComponentSafe(parsedURL.password);auth={username:urlUsername,password:urlPassword};}if(parsedURL.username||parsedURL.password){parsedURL.username='';parsedURL.password='';url=parsedURL.href;}}if(auth){headers["delete"]('authorization');headers.set('Authorization','Basic '+btoa(encodeUTF8((auth.username||'')+':'+(auth.password||''))));}// Enforce maxContentLength for data: URLs up-front so we never materialize
-// an oversized payload. The HTTP adapter applies the same check (see http.js
-// "if (protocol === 'data:')" branch).
-if(!(hasMaxContentLength&&typeof url==='string'&&url.startsWith('data:'))){_context8.n=2;break;}estimated=estimateDataURLDecodedBytes(url);if(!(estimated>maxContentLength)){_context8.n=2;break;}throw new AxiosError$1('maxContentLength size of '+maxContentLength+' exceeded',AxiosError$1.ERR_BAD_RESPONSE,config,request);case 2:if(!(hasMaxBodyLength&&method!=='get'&&method!=='head')){_context8.n=4;break;}_context8.n=3;return getBodyLength(data);case 3:outboundLength=_context8.v;if(!(typeof outboundLength==='number'&&isFinite(outboundLength))){_context8.n=4;break;}requestContentLength=outboundLength;if(!(outboundLength>maxBodyLength)){_context8.n=4;break;}throw maxBodyLengthError();case 4:// A streamed body under maxBodyLength must be counted as fetch consumes
-// it; its size is never trusted from a caller-declared Content-Length.
-mustEnforceStreamBody=hasMaxBodyLength&&(utils$1.isReadableStream(data)||utils$1.isStream(data));trackRequestStream=function trackRequestStream(stream,onProgress,flush){return trackStream(stream,DEFAULT_CHUNK_SIZE,function(loadedBytes){if(hasMaxBodyLength&&loadedBytes>maxBodyLength){throw pendingBodyError=maxBodyLengthError();}onProgress&&onProgress(loadedBytes);},flush);};if(!(supportsRequestStream&&method!=='get'&&method!=='head'&&(onUploadProgress||mustEnforceStreamBody))){_context8.n=8;break;}if(!(requestContentLength==null)){_context8.n=6;break;}_context8.n=5;return resolveBodyLength(headers,data);case 5:_t5=_context8.v;_context8.n=7;break;case 6:_t5=requestContentLength;case 7:requestContentLength=_t5;// A declared length of 0 is only trusted to skip the wrap when we are
-// not enforcing a stream limit (which must not rely on that header).
-if(requestContentLength!==0||mustEnforceStreamBody){_request=new Request(url,{method:'POST',body:data,duplex:'half'});if(utils$1.isFormData(data)&&(contentTypeHeader=_request.headers.get('content-type'))){headers.setContentType(contentTypeHeader);}if(_request.body){_ref15=onUploadProgress&&progressEventDecorator(requestContentLength,progressEventReducer(asyncDecorator(onUploadProgress)))||[],_ref16=_slicedToArray(_ref15,2),onProgress=_ref16[0],flush=_ref16[1];data=trackRequestStream(_request.body,onProgress,flush);}}_context8.n=10;break;case 8:if(!(mustEnforceStreamBody&&!isRequestSupported&&isReadableStreamSupported&&method!=='get'&&method!=='head')){_context8.n=9;break;}data=trackRequestStream(data);_context8.n=10;break;case 9:if(!(mustEnforceStreamBody&&isRequestSupported&&!supportsRequestStream&&method!=='get'&&method!=='head')){_context8.n=10;break;}throw new AxiosError$1('Stream request bodies are not supported by the current fetch implementation',AxiosError$1.ERR_NOT_SUPPORT,config,request);case 10:if(!utils$1.isString(withCredentials)){withCredentials=withCredentials?'include':'omit';}// Cloudflare Workers throws when credentials are defined
-// see https://github.com/cloudflare/workerd/issues/902
-isCredentialsSupported=isRequestSupported&&'credentials'in Request.prototype;// If data is FormData and Content-Type is multipart/form-data without boundary,
-// delete it so fetch can set it correctly with the boundary
-if(utils$1.isFormData(data)){contentType=headers.getContentType();if(contentType&&/^multipart\/form-data/i.test(contentType)&&!/boundary=/i.test(contentType)){headers["delete"]('content-type');}}// Set User-Agent header if not already set (fetch defaults to 'node' in Node.js)
-headers.set('User-Agent','axios/'+VERSION,false);resolvedOptions=_objectSpread(_objectSpread({},fetchOptions),{},{signal:composedSignal,method:method.toUpperCase(),headers:toByteStringHeaderObject(headers.normalize()),body:data,duplex:'half',credentials:isCredentialsSupported?withCredentials:undefined});request=isRequestSupported&&new Request(url,resolvedOptions);_context8.n=11;return isRequestSupported?_fetch(request,fetchOptions):_fetch(url,resolvedOptions);case 11:response=_context8.v;responseHeaders=AxiosHeaders$1.from(response.headers);// Cheap pre-check: if the server honestly declares a content-length that
-// already exceeds the cap, reject before we start streaming.
-if(!hasMaxContentLength){_context8.n=12;break;}declaredLength=utils$1.toFiniteNumber(responseHeaders.getContentLength());if(!(declaredLength!=null&&declaredLength>maxContentLength)){_context8.n=12;break;}throw new AxiosError$1('maxContentLength size of '+maxContentLength+' exceeded',AxiosError$1.ERR_BAD_RESPONSE,config,request);case 12:isStreamResponse=supportsResponseStream&&(responseType==='stream'||responseType==='response');if(supportsResponseStream&&response.body&&(onDownloadProgress||hasMaxContentLength||isStreamResponse&&unsubscribe)){options={};['status','statusText','headers'].forEach(function(prop){options[prop]=response[prop];});responseContentLength=utils$1.toFiniteNumber(responseHeaders.getContentLength());_ref17=onDownloadProgress&&progressEventDecorator(responseContentLength,progressEventReducer(asyncDecorator(onDownloadProgress),true))||[],_ref18=_slicedToArray(_ref17,2),_onProgress=_ref18[0],_flush=_ref18[1];bytesRead=0;onChunkProgress=function onChunkProgress(loadedBytes){if(hasMaxContentLength){bytesRead=loadedBytes;if(bytesRead>maxContentLength){throw new AxiosError$1('maxContentLength size of '+maxContentLength+' exceeded',AxiosError$1.ERR_BAD_RESPONSE,config,request);}}_onProgress&&_onProgress(loadedBytes);};response=new Response(trackStream(response.body,DEFAULT_CHUNK_SIZE,onChunkProgress,function(){_flush&&_flush();unsubscribe&&unsubscribe();}),options);}responseType=responseType||'text';_context8.n=13;return resolvers[utils$1.findKey(resolvers,responseType)||'text'](response,config);case 13:responseData=_context8.v;if(!(hasMaxContentLength&&!supportsResponseStream&&!isStreamResponse)){_context8.n=14;break;}if(responseData!=null){if(typeof responseData.byteLength==='number'){materializedSize=responseData.byteLength;}else if(typeof responseData.size==='number'){materializedSize=responseData.size;}else if(typeof responseData==='string'){materializedSize=typeof TextEncoder==='function'?new TextEncoder().encode(responseData).byteLength:responseData.length;}}if(!(typeof materializedSize==='number'&&materializedSize>maxContentLength)){_context8.n=14;break;}throw new AxiosError$1('maxContentLength size of '+maxContentLength+' exceeded',AxiosError$1.ERR_BAD_RESPONSE,config,request);case 14:!isStreamResponse&&unsubscribe&&unsubscribe();_context8.n=15;return new Promise(function(resolve,reject){settle(resolve,reject,{data:responseData,headers:AxiosHeaders$1.from(response.headers),status:response.status,statusText:response.statusText,config:config,request:request});});case 15:return _context8.a(2,_context8.v);case 16:_context8.p=16;_t6=_context8.v;unsubscribe&&unsubscribe();// Safari can surface fetch aborts as a DOMException-like object whose
-// branded getters throw. Prefer our composed signal reason before reading
-// the caught error, preserving timeout vs cancellation semantics.
-if(!(composedSignal&&composedSignal.aborted&&composedSignal.reason instanceof AxiosError$1)){_context8.n=17;break;}canceledError=composedSignal.reason;canceledError.config=config;request&&(canceledError.request=request);if(_t6!==canceledError){// Non-enumerable to match native Error `cause` semantics so loggers
-// don't recurse into circular fetch internals (see #7205).
-Object.defineProperty(canceledError,'cause',{__proto__:null,value:_t6,writable:true,enumerable:false,configurable:true});}throw canceledError;case 17:if(!pendingBodyError){_context8.n=18;break;}request&&!pendingBodyError.request&&(pendingBodyError.request=request);throw pendingBodyError;case 18:if(!(_t6 instanceof AxiosError$1)){_context8.n=19;break;}request&&!_t6.request&&(_t6.request=request);throw _t6;case 19:if(!(_t6&&_t6.name==='TypeError'&&/Load failed|fetch/i.test(_t6.message))){_context8.n=20;break;}networkError=new AxiosError$1('Network Error',AxiosError$1.ERR_NETWORK,config,request,_t6&&_t6.response);// Non-enumerable to match native Error `cause` semantics so loggers
-// don't recurse into circular fetch internals (see #7205).
-Object.defineProperty(networkError,'cause',{__proto__:null,value:_t6.cause||_t6,writable:true,enumerable:false,configurable:true});throw networkError;case 20:throw AxiosError$1.from(_t6,_t6&&_t6.code,config,request,_t6&&_t6.response);case 21:return _context8.a(2);}},_callee7,null,[[1,16]]);}));return function(_x8){return _ref14.apply(this,arguments);};}();};var seedCache=new Map();var getFetch=function getFetch(config){var env=config&&config.env||{};var fetch=env.fetch,Request=env.Request,Response=env.Response;var seeds=[Request,Response,fetch];var len=seeds.length,i=len,seed,target,map=seedCache;while(i--){seed=seeds[i];target=map.get(seed);target===undefined&&map.set(seed,target=i?new Map():factory(env));map=target;}return target;};getFetch();/**
- * Known adapters mapping.
- * Provides environment-specific adapters for Axios:
- * - `http` for Node.js
- * - `xhr` for browsers
- * - `fetch` for fetch API-based requests
- *
- * @type {Object<string, Function|Object>}
- */var knownAdapters={http:httpAdapter,xhr:xhrAdapter,fetch:{get:getFetch}};// Assign adapter names for easier debugging and identification
-utils$1.forEach(knownAdapters,function(fn,value){if(fn){try{// Null-proto descriptors so a polluted Object.prototype.get cannot turn
-// these data descriptors into accessor descriptors on the way in.
-Object.defineProperty(fn,'name',{__proto__:null,value:value});}catch(e){// eslint-disable-next-line no-empty
-}Object.defineProperty(fn,'adapterName',{__proto__:null,value:value});}});/**
- * Render a rejection reason string for unknown or unsupported adapters
- *
- * @param {string} reason
- * @returns {string}
- */var renderReason=function renderReason(reason){return"- ".concat(reason);};/**
- * Check if the adapter is resolved (function, null, or false)
- *
- * @param {Function|null|false} adapter
- * @returns {boolean}
- */var isResolvedHandle=function isResolvedHandle(adapter){return utils$1.isFunction(adapter)||adapter===null||adapter===false;};/**
- * Get the first suitable adapter from the provided list.
- * Tries each adapter in order until a supported one is found.
- * Throws an AxiosError if no adapter is suitable.
- *
- * @param {Array<string|Function>|string|Function} adapters - Adapter(s) by name or function.
- * @param {Object} config - Axios request configuration
- * @throws {AxiosError} If no suitable adapter is available
- * @returns {Function} The resolved adapter function
- */function getAdapter(adapters,config){adapters=utils$1.isArray(adapters)?adapters:[adapters];var _adapters=adapters,length=_adapters.length;var nameOrAdapter;var adapter;var rejectedReasons={};for(var i=0;i<length;i++){nameOrAdapter=adapters[i];var id=void 0;adapter=nameOrAdapter;if(!isResolvedHandle(nameOrAdapter)){adapter=knownAdapters[(id=String(nameOrAdapter)).toLowerCase()];if(adapter===undefined){throw new AxiosError$1("Unknown adapter '".concat(id,"'"));}}if(adapter&&(utils$1.isFunction(adapter)||(adapter=adapter.get(config)))){break;}rejectedReasons[id||'#'+i]=adapter;}if(!adapter){var reasons=Object.entries(rejectedReasons).map(function(_ref19){var _ref20=_slicedToArray(_ref19,2),id=_ref20[0],state=_ref20[1];return"adapter ".concat(id," ")+(state===false?'is not supported by the environment':'is not available in the build');});var s=length?reasons.length>1?'since :\n'+reasons.map(renderReason).join('\n'):' '+renderReason(reasons[0]):'as no adapter specified';throw new AxiosError$1("There is no suitable adapter to dispatch the request "+s,AxiosError$1.ERR_NOT_SUPPORT);}return adapter;}/**
- * Exports Axios adapters and utility to resolve an adapter
- */var adapters={/**
-   * Resolve an adapter from a list of adapter names or functions.
-   * @type {Function}
-   */getAdapter:getAdapter,/**
-   * Exposes all known adapters
-   * @type {Object<string, Function|Object>}
-   */adapters:knownAdapters};/**
- * Throws a `CanceledError` if cancellation has been requested.
- *
- * @param {Object} config The config that is to be used for the request
- *
- * @returns {void}
- */function throwIfCancellationRequested(config){if(config.cancelToken){config.cancelToken.throwIfRequested();}if(config.signal&&config.signal.aborted){throw new CanceledError$1(null,config);}}/**
- * Dispatch a request to the server using the configured adapter.
- *
- * @param {object} config The config that is to be used for the request
- *
- * @returns {Promise} The Promise to be fulfilled
- */function dispatchRequest(config){throwIfCancellationRequested(config);config.headers=AxiosHeaders$1.from(config.headers);// Transform request data
-config.data=transformData.call(config,config.transformRequest);if(['post','put','patch'].indexOf(config.method)!==-1){config.headers.setContentType('application/x-www-form-urlencoded',false);}var adapter=adapters.getAdapter(config.adapter||defaults$1.adapter,config);return adapter(config).then(function onAdapterResolution(response){throwIfCancellationRequested(config);// Expose the current response on config so that transformResponse can
-// attach it to any AxiosError it throws (e.g. on JSON parse failure).
-// We clean it up afterwards to avoid polluting the config object.
-config.response=response;try{response.data=transformData.call(config,config.transformResponse,response);}finally{delete config.response;}response.headers=AxiosHeaders$1.from(response.headers);return response;},function onAdapterRejection(reason){if(!isCancel(reason)){throwIfCancellationRequested(config);// Transform response data
-if(reason&&reason.response){config.response=reason.response;try{reason.response.data=transformData.call(config,config.transformResponse,reason.response);}finally{delete config.response;}reason.response.headers=AxiosHeaders$1.from(reason.response.headers);}}return Promise.reject(reason);});}var validators$1={};// eslint-disable-next-line func-names
-['object','boolean','number','function','string','symbol'].forEach(function(type,i){validators$1[type]=function validator(thing){return _typeof(thing)===type||'a'+(i<1?'n ':' ')+type;};});var deprecatedWarnings={};/**
- * Transitional option validator
- *
- * @param {function|boolean?} validator - set to false if the transitional option has been removed
- * @param {string?} version - deprecated version / removed since version
- * @param {string?} message - some message with additional info
- *
- * @returns {function}
- */validators$1.transitional=function transitional(validator,version,message){function formatMessage(opt,desc){return'[Axios v'+VERSION+"] Transitional option '"+opt+"'"+desc+(message?'. '+message:'');}// eslint-disable-next-line func-names
-return function(value,opt,opts){if(validator===false){throw new AxiosError$1(formatMessage(opt,' has been removed'+(version?' in '+version:'')),AxiosError$1.ERR_DEPRECATED);}if(version&&!deprecatedWarnings[opt]){deprecatedWarnings[opt]=true;// eslint-disable-next-line no-console
-console.warn(formatMessage(opt,' has been deprecated since v'+version+' and will be removed in the near future'));}return validator?validator(value,opt,opts):true;};};validators$1.spelling=function spelling(correctSpelling){return function(value,opt){// eslint-disable-next-line no-console
-console.warn("".concat(opt," is likely a misspelling of ").concat(correctSpelling));return true;};};/**
- * Assert object's properties type
- *
- * @param {object} options
- * @param {object} schema
- * @param {boolean?} allowUnknown
- *
- * @returns {object}
- */function assertOptions(options,schema,allowUnknown){if(_typeof(options)!=='object'||options===null){throw new AxiosError$1('options must be an object',AxiosError$1.ERR_BAD_OPTION_VALUE);}var keys=Object.keys(options);var i=keys.length;while(i-->0){var opt=keys[i];// Use hasOwnProperty so a polluted Object.prototype.<opt> cannot supply
-// a non-function validator and cause a TypeError.
-var _validator=Object.prototype.hasOwnProperty.call(schema,opt)?schema[opt]:undefined;if(_validator){var value=options[opt];var result=value===undefined||_validator(value,opt,options);if(result!==true){throw new AxiosError$1('option '+opt+' must be '+result,AxiosError$1.ERR_BAD_OPTION_VALUE);}continue;}if(allowUnknown!==true){throw new AxiosError$1('Unknown option '+opt,AxiosError$1.ERR_BAD_OPTION);}}}var validator={assertOptions:assertOptions,validators:validators$1};var validators=validator.validators;/**
- * Create a new instance of Axios
- *
- * @param {Object} instanceConfig The default config for the instance
- *
- * @return {Axios} A new instance of Axios
- */var Axios=/*#__PURE__*/function(){function Axios(instanceConfig){_classCallCheck(this,Axios);this.defaults=instanceConfig||{};this.interceptors={request:new InterceptorManager$1(),response:new InterceptorManager$1()};}/**
-   * Dispatch a request
-   *
-   * @param {String|Object} configOrUrl The config specific for this request (merged with this.defaults)
-   * @param {?Object} config
-   *
-   * @returns {Promise} The Promise to be fulfilled
-   */return _createClass(Axios,[{key:"request",value:(function(){var _request2=_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee8(configOrUrl,config){var dummy,stack,firstNewlineIndex,secondNewlineIndex,stackWithoutTwoTopLines,_t7;return _regenerator().w(function(_context9){while(1)switch(_context9.p=_context9.n){case 0:_context9.p=0;_context9.n=1;return this._request(configOrUrl,config);case 1:return _context9.a(2,_context9.v);case 2:_context9.p=2;_t7=_context9.v;if(_t7 instanceof Error){dummy={};Error.captureStackTrace?Error.captureStackTrace(dummy):dummy=new Error();// slice off the Error: ... line
-stack=function(){if(!dummy.stack){return'';}var firstNewlineIndex=dummy.stack.indexOf('\n');return firstNewlineIndex===-1?'':dummy.stack.slice(firstNewlineIndex+1);}();try{if(!_t7.stack){_t7.stack=stack;// match without the 2 top stack lines
-}else if(stack){firstNewlineIndex=stack.indexOf('\n');secondNewlineIndex=firstNewlineIndex===-1?-1:stack.indexOf('\n',firstNewlineIndex+1);stackWithoutTwoTopLines=secondNewlineIndex===-1?'':stack.slice(secondNewlineIndex+1);if(!String(_t7.stack).endsWith(stackWithoutTwoTopLines)){_t7.stack+='\n'+stack;}}}catch(e){// ignore the case where "stack" is an un-writable property
-}}throw _t7;case 3:return _context9.a(2);}},_callee8,this,[[0,2]]);}));function request(_x9,_x0){return _request2.apply(this,arguments);}return request;}())},{key:"_request",value:function _request(configOrUrl,config){/*eslint no-param-reassign:0*/// Allow for axios('example/url'[, config]) a la fetch API
-if(typeof configOrUrl==='string'){config=config||{};config.url=configOrUrl;}else{config=configOrUrl||{};}config=mergeConfig(this.defaults,config);var _config2=config,transitional=_config2.transitional,paramsSerializer=_config2.paramsSerializer,headers=_config2.headers;if(transitional!==undefined){validator.assertOptions(transitional,{silentJSONParsing:validators.transitional(validators["boolean"]),forcedJSONParsing:validators.transitional(validators["boolean"]),clarifyTimeoutError:validators.transitional(validators["boolean"]),legacyInterceptorReqResOrdering:validators.transitional(validators["boolean"]),advertiseZstdAcceptEncoding:validators.transitional(validators["boolean"]),validateStatusUndefinedResolves:validators.transitional(validators["boolean"])},false);}if(paramsSerializer!=null){if(utils$1.isFunction(paramsSerializer)){config.paramsSerializer={serialize:paramsSerializer};}else{validator.assertOptions(paramsSerializer,{encode:validators["function"],serialize:validators["function"]},true);}}// Set config.allowAbsoluteUrls
-if(config.allowAbsoluteUrls!==undefined);else if(this.defaults.allowAbsoluteUrls!==undefined){config.allowAbsoluteUrls=this.defaults.allowAbsoluteUrls;}else{config.allowAbsoluteUrls=true;}validator.assertOptions(config,{baseUrl:validators.spelling('baseURL'),withXsrfToken:validators.spelling('withXSRFToken')},true);// Set config.method
-config.method=(config.method||this.defaults.method||'get').toLowerCase();// Flatten headers
-var contextHeaders=headers&&utils$1.merge(headers.common,headers[config.method]);headers&&utils$1.forEach(['delete','get','head','post','put','patch','query','common'],function(method){delete headers[method];});config.headers=AxiosHeaders$1.concat(contextHeaders,headers);// filter out skipped interceptors
-var requestInterceptorChain=[];var synchronousRequestInterceptors=true;this.interceptors.request.forEach(function unshiftRequestInterceptors(interceptor){if(typeof interceptor.runWhen==='function'&&interceptor.runWhen(config)===false){return;}synchronousRequestInterceptors=synchronousRequestInterceptors&&interceptor.synchronous;var transitional=config.transitional||transitionalDefaults;var legacyInterceptorReqResOrdering=transitional&&transitional.legacyInterceptorReqResOrdering;if(legacyInterceptorReqResOrdering){requestInterceptorChain.unshift(interceptor.fulfilled,interceptor.rejected);}else{requestInterceptorChain.push(interceptor.fulfilled,interceptor.rejected);}});var responseInterceptorChain=[];this.interceptors.response.forEach(function pushResponseInterceptors(interceptor){responseInterceptorChain.push(interceptor.fulfilled,interceptor.rejected);});var promise;var i=0;var len;if(!synchronousRequestInterceptors){var chain=[dispatchRequest.bind(this),undefined];chain.unshift.apply(chain,requestInterceptorChain);chain.push.apply(chain,responseInterceptorChain);len=chain.length;promise=Promise.resolve(config);while(i<len){promise=promise.then(chain[i++],chain[i++]);}return promise;}len=requestInterceptorChain.length;var newConfig=config;while(i<len){var onFulfilled=requestInterceptorChain[i++];var onRejected=requestInterceptorChain[i++];try{newConfig=onFulfilled(newConfig);}catch(error){onRejected.call(this,error);break;}}try{promise=dispatchRequest.call(this,newConfig);}catch(error){return Promise.reject(error);}i=0;len=responseInterceptorChain.length;while(i<len){promise=promise.then(responseInterceptorChain[i++],responseInterceptorChain[i++]);}return promise;}},{key:"getUri",value:function getUri(config){config=mergeConfig(this.defaults,config);var fullPath=buildFullPath(config.baseURL,config.url,config.allowAbsoluteUrls,config);return buildURL(fullPath,config.params,config.paramsSerializer);}}]);}();// Provide aliases for supported request methods
-utils$1.forEach(['delete','get','head','options'],function forEachMethodNoData(method){/*eslint func-names:0*/Axios.prototype[method]=function(url,config){return this.request(mergeConfig(config||{},{method:method,url:url,data:config&&utils$1.hasOwnProp(config,'data')?config.data:undefined}));};});utils$1.forEach(['post','put','patch','query'],function forEachMethodWithData(method){function generateHTTPMethod(isForm){return function httpMethod(url,data,config){return this.request(mergeConfig(config||{},{method:method,headers:isForm?{'Content-Type':'multipart/form-data'}:{},url:url,data:data}));};}Axios.prototype[method]=generateHTTPMethod();// QUERY is a safe/idempotent read method; multipart form bodies don't fit
-// its semantics, so no queryForm shorthand is generated.
-if(method!=='query'){Axios.prototype[method+'Form']=generateHTTPMethod(true);}});var Axios$1=Axios;/**
- * A `CancelToken` is an object that can be used to request cancellation of an operation.
- *
- * @param {Function} executor The executor function.
- *
- * @returns {CancelToken}
- */var CancelToken=/*#__PURE__*/function(){function CancelToken(executor){_classCallCheck(this,CancelToken);if(typeof executor!=='function'){throw new TypeError('executor must be a function.');}var resolvePromise;this.promise=new Promise(function promiseExecutor(resolve){resolvePromise=resolve;});var token=this;// eslint-disable-next-line func-names
-this.promise.then(function(cancel){if(!token._listeners)return;var i=token._listeners.length;while(i-->0){token._listeners[i](cancel);}token._listeners=null;});// eslint-disable-next-line func-names
-this.promise.then=function(onfulfilled){var _resolve;// eslint-disable-next-line func-names
-var promise=new Promise(function(resolve){token.subscribe(resolve);_resolve=resolve;}).then(onfulfilled);promise.cancel=function reject(){token.unsubscribe(_resolve);};return promise;};executor(function cancel(message,config,request){if(token.reason){// Cancellation has already been requested
-return;}token.reason=new CanceledError$1(message,config,request);resolvePromise(token.reason);});}/**
-   * Throws a `CanceledError` if cancellation has been requested.
-   */return _createClass(CancelToken,[{key:"throwIfRequested",value:function throwIfRequested(){if(this.reason){throw this.reason;}}/**
-   * Subscribe to the cancel signal
-   */},{key:"subscribe",value:function subscribe(listener){if(this.reason){listener(this.reason);return;}if(this._listeners){this._listeners.push(listener);}else{this._listeners=[listener];}}/**
-   * Unsubscribe from the cancel signal
-   */},{key:"unsubscribe",value:function unsubscribe(listener){if(!this._listeners){return;}var index=this._listeners.indexOf(listener);if(index!==-1){this._listeners.splice(index,1);}}},{key:"toAbortSignal",value:function toAbortSignal(){var _this4=this;var controller=new AbortController();var abort=function abort(err){controller.abort(err);};this.subscribe(abort);controller.signal.unsubscribe=function(){return _this4.unsubscribe(abort);};return controller.signal;}/**
-   * Returns an object that contains a new `CancelToken` and a function that, when called,
-   * cancels the `CancelToken`.
-   */}],[{key:"source",value:function source(){var cancel;var token=new CancelToken(function executor(c){cancel=c;});return{token:token,cancel:cancel};}}]);}();var CancelToken$1=CancelToken;/**
- * Syntactic sugar for invoking a function and expanding an array for arguments.
- *
- * Common use case would be to use `Function.prototype.apply`.
- *
- *  ```js
- *  function f(x, y, z) {}
- *  const args = [1, 2, 3];
- *  f.apply(null, args);
- *  ```
- *
- * With `spread` this example can be re-written.
- *
- *  ```js
- *  spread(function(x, y, z) {})([1, 2, 3]);
- *  ```
- *
- * @param {Function} callback
- *
- * @returns {Function}
- */function spread(callback){return function wrap(arr){return callback.apply(null,arr);};}/**
- * Determines whether the payload is an error thrown by Axios
- *
- * @param {*} payload The value to test
- *
- * @returns {boolean} True if the payload is an error thrown by Axios, otherwise false
- */function isAxiosError(payload){return utils$1.isObject(payload)&&payload.isAxiosError===true;}var HttpStatusCode={Continue:100,SwitchingProtocols:101,Processing:102,EarlyHints:103,Ok:200,Created:201,Accepted:202,NonAuthoritativeInformation:203,NoContent:204,ResetContent:205,PartialContent:206,MultiStatus:207,AlreadyReported:208,ImUsed:226,MultipleChoices:300,MovedPermanently:301,Found:302,SeeOther:303,NotModified:304,UseProxy:305,Unused:306,TemporaryRedirect:307,PermanentRedirect:308,BadRequest:400,Unauthorized:401,PaymentRequired:402,Forbidden:403,NotFound:404,MethodNotAllowed:405,NotAcceptable:406,ProxyAuthenticationRequired:407,RequestTimeout:408,Conflict:409,Gone:410,LengthRequired:411,PreconditionFailed:412,PayloadTooLarge:413,UriTooLong:414,UnsupportedMediaType:415,RangeNotSatisfiable:416,ExpectationFailed:417,ImATeapot:418,MisdirectedRequest:421,UnprocessableEntity:422,Locked:423,FailedDependency:424,TooEarly:425,UpgradeRequired:426,PreconditionRequired:428,TooManyRequests:429,RequestHeaderFieldsTooLarge:431,UnavailableForLegalReasons:451,InternalServerError:500,NotImplemented:501,BadGateway:502,ServiceUnavailable:503,GatewayTimeout:504,HttpVersionNotSupported:505,VariantAlsoNegotiates:506,InsufficientStorage:507,LoopDetected:508,NotExtended:510,NetworkAuthenticationRequired:511,WebServerIsDown:521,ConnectionTimedOut:522,OriginIsUnreachable:523,TimeoutOccurred:524,SslHandshakeFailed:525,InvalidSslCertificate:526};Object.entries(HttpStatusCode).forEach(function(_ref21){var _ref22=_slicedToArray(_ref21,2),key=_ref22[0],value=_ref22[1];HttpStatusCode[value]=key;});var HttpStatusCode$1=HttpStatusCode;/**
- * Create an instance of Axios
- *
- * @param {Object} defaultConfig The default config for the instance
- *
- * @returns {Axios} A new instance of Axios
- */function createInstance(defaultConfig){var context=new Axios$1(defaultConfig);var instance=bind(Axios$1.prototype.request,context);// Copy axios.prototype to instance
-utils$1.extend(instance,Axios$1.prototype,context,{allOwnKeys:true});// Copy context to instance
-utils$1.extend(instance,context,null,{allOwnKeys:true});// Factory for creating new instances
-instance.create=function create(instanceConfig){return createInstance(mergeConfig(defaultConfig,instanceConfig));};return instance;}// Create the default instance to be exported
-var axios=createInstance(defaults$1);// Expose Axios class to allow class inheritance
-axios.Axios=Axios$1;// Expose Cancel & CancelToken
-axios.CanceledError=CanceledError$1;axios.CancelToken=CancelToken$1;axios.isCancel=isCancel;axios.VERSION=VERSION;axios.toFormData=toFormData;// Expose AxiosError class
-axios.AxiosError=AxiosError$1;// alias for CanceledError for backward compatibility
-axios.Cancel=axios.CanceledError;// Expose all/spread
-axios.all=function all(promises){return Promise.all(promises);};axios.spread=spread;// Expose isAxiosError
-axios.isAxiosError=isAxiosError;// Expose mergeConfig
-axios.mergeConfig=mergeConfig;axios.AxiosHeaders=AxiosHeaders$1;axios.formToJSON=function(thing){return formDataToJSON(utils$1.isHTMLForm(thing)?new FormData(thing):thing);};axios.getAdapter=adapters.getAdapter;axios.HttpStatusCode=HttpStatusCode$1;axios["default"]=axios;// this module should only have a default export
-var axios$1=axios;var AbstractHttpClient=/*#__PURE__*/function(){function AbstractHttpClient(){_classCallCheck(this,AbstractHttpClient);this.timeout=16000;}return _createClass(AbstractHttpClient,[{key:"setTimeout",value:function setTimeout(timeout){if(timeout===null||timeout===undefined||typeof timeout!=='number'){throw new Error("The 'timeout' property must be a number");}this.timeout=timeout;}},{key:"setHttpsAgent",value:function setHttpsAgent(httpsAgent){if(httpsAgent&&_typeof(httpsAgent)!=='object'){throw new Error("The 'httpsAgent' property must be an object");}this.httpsAgent=httpsAgent;}},{key:"request",value:function request(httpRequestOptions){throw new Error("method must be implemented");}},{key:"enableHooks",value:function enableHooks(){throw new Error("method must be implemented");}/**
-   * Set a PreHook function that modifies the request config before execution.
-   * @param {(config: object) => object | Promise<object> | void} hookFunction
-   */},{key:"setPreHook",value:function setPreHook(hookFunction){if(typeof hookFunction!=="function"||hookFunction.length!==1){throw new Error("preHook must be a function that accepts (config)");}this.preHook=hookFunction;this.enableHooks();}/**
-   * Set a PostHook function that processes the response or error after execution.
-   * @param {(response: object | null, error: Error | null) => object | Promise<object> | void} hookFunction
-   */},{key:"setPostHook",value:function setPostHook(hookFunction){if(typeof hookFunction!=="function"||hookFunction.length!==1){throw new Error("postHook must be a function that accepts (response)");}this.postHook=hookFunction;this.enableHooks();}}]);}();var HttpRequestOptions=/*#__PURE__*/function(){function HttpRequestOptions(url,method,headers,params,data,timeout){_classCallCheck(this,HttpRequestOptions);this.setUrl(url);this.setMethod(method);if(headers){this.setHeaders(headers);}if(params){this.setParams(params);}if(data){this.setData(data);}if(timeout!==null&&timeout!==undefined)this.setTimeout(timeout);else this.timeout=16000;}// Mandatory fields with validation
-return _createClass(HttpRequestOptions,[{key:"setUrl",value:function setUrl(url){if(!url)throw new Error("The 'url' property is required");this.url=url;}},{key:"setMethod",value:function setMethod(method){var validMethods=['GET','POST','PUT','DELETE','PATCH','OPTIONS','HEAD'];if(!method||!validMethods.includes(method.toUpperCase())){throw new Error("The 'method' property is invalid or missing");}this.method=method.toUpperCase();}},{key:"setData",value:function setData(data){if(data===undefined||data===null){throw new Error("The 'data' property is required");}this.data=data;}// Optional fields
-},{key:"setParams",value:function setParams(params){if(params&&_typeof(params)!=='object'){throw new Error("The 'params' property must be an object");}this.params=params;}// Optional fields
-},{key:"setHeaders",value:function setHeaders(headers){if(headers&&_typeof(headers)!=='object'){throw new Error("The 'headers' property must be an object");}this.headers=headers;}},{key:"setTimeout",value:function setTimeout(timeout){if(timeout===undefined||timeout===null||typeof timeout!=='number'){throw new Error("The 'timeout' property must be a number");}this.timeout=timeout;}}]);}();// Default client is Axios
-var DefaultHttpClient=/*#__PURE__*/function(_AbstractHttpClient){function DefaultHttpClient(timeout,httpsAgent){var _this5;_classCallCheck(this,DefaultHttpClient);_this5=_callSuper(this,DefaultHttpClient);if(timeout!==null&&timeout!==undefined)_this5.setTimeout(timeout);else _this5.timeout=16000;if(httpsAgent!==null&&httpsAgent!==undefined)_this5.setHttpsAgent(httpsAgent);else _this5.httpsAgent;_this5._axiosInstance=axios$1.create({});return _this5;}_inherits(DefaultHttpClient,_AbstractHttpClient);return _createClass(DefaultHttpClient,[{key:"enableHooks",value:function enableHooks(){var _this6=this;if(this.preHook&&typeof this.preHook==='function'){if(this.requestInterceptorId!==undefined){axios$1.interceptors.request.eject(this.requestInterceptorId);}this.requestInterceptorId=this._axiosInstance.interceptors.request.use(/*#__PURE__*/function(){var _ref23=_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee9(config){return _regenerator().w(function(_context0){while(1)switch(_context0.n){case 0:_context0.n=1;return _this6.preHook(config);case 1:config=_context0.v;return _context0.a(2,config);}},_callee9);}));return function(_x1){return _ref23.apply(this,arguments);};}(),function(error){// Handle errors before the request is sent
-console.error('Request Pre-Hook Error:',error.message);return Promise.reject(error);});}if(this.postHook&&typeof this.postHook==='function'){// Response interceptor (for post-hooks)
-if(this.responseInterceptorId!==undefined){axios$1.interceptors.response.eject(this.responseInterceptorId);}this.responseInterceptorId=this._axiosInstance.interceptors.response.use(/*#__PURE__*/function(){var _ref24=_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee0(response){return _regenerator().w(function(_context1){while(1)switch(_context1.n){case 0:_context1.n=1;return _this6.postHook(response);case 1:response=_context1.v;return _context1.a(2,response);}},_callee0);}));return function(_x10){return _ref24.apply(this,arguments);};}(),/*#__PURE__*/function(){var _ref25=_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee1(error){return _regenerator().w(function(_context10){while(1)switch(_context10.n){case 0:console.error('Post-Hook: Response Error',error.message);// Optionally call post-hook in case of errors
-return _context10.a(2,Promise.reject(error));}},_callee1);}));return function(_x11){return _ref25.apply(this,arguments);};}());}}},{key:"request",value:function request(httpRequestOptions){if(!(httpRequestOptions instanceof HttpRequestOptions)){throw new Error("httpRequestOptions must be instance of HttpRequestOptions ");}var config=this.toAxiosConfig(httpRequestOptions);return this._axiosInstance.request(config);}// Method to generate Axios-compatible config
-},{key:"toAxiosConfig",value:function toAxiosConfig(httpRequestOptions){if(!httpRequestOptions.url||!httpRequestOptions.method){throw new Error("Mandatory fields 'url' and 'method' must be set before making a request");}var config={url:httpRequestOptions.url,method:httpRequestOptions.method};if(httpRequestOptions.params)config.params=httpRequestOptions.params;if(httpRequestOptions.headers)config.headers=httpRequestOptions.headers;if(httpRequestOptions.data)config.data=httpRequestOptions.data;if(this.timeout!=null&&this.timeout!=undefined)config.timeout=this.timeout;if(this.httpsAgent)config.httpsAgent=this.httpsAgent;return config;}}]);}(AbstractHttpClient);var logLevelEnum={level:{LNone:'none',LError:'error',LDebug:'debug',LTrace:'trace'}};var logFormatEnum={formats:{JSON:'json',TEXT:'text'}};var Logger=/*#__PURE__*/function(){function Logger(){_classCallCheck(this,Logger);this.log_level=logLevelEnum.level.LNone;this.log_format=logFormatEnum.formats.TEXT;this.log_to_console=true;this.log_file_path;this.log_response_body=false;this.log_request_body=false;this.setLogger();}return _createClass(Logger,[{key:"logLevelEnum",get:function get(){return logLevelEnum;}},{key:"logFormatEnum",get:function get(){return logFormatEnum;}},{key:"setLogger",value:function setLogger(){}},{key:"log",value:function log(level,statusCode,method,url,requestHeaders,responseHeaders,requestBody,responseBody){var content=this.formatLog(level,statusCode,method,url,requestHeaders,responseHeaders,requestBody,responseBody);if(typeof window!=='undefined'){var shouldLog=this.calculateLogLevel(level);if(shouldLog>0&&this.log_to_console===true){if(this.log_format===this.logFormatEnum.formats.JSON){console.log(content);}else{console.log("".concat(level.toUpperCase(),": ").concat(content));}}}else{if(this.logger.transports.length>0)this.logger.log(level,content);}}},{key:"calculateLogLevel",value:function calculateLogLevel(level){switch(this.log_level){case this.logLevelEnum.level.LError:if(level!==this.logLevelEnum.level.LError){return-1;}return 1;case this.logLevelEnum.level.LDebug:if(level===this.logLevelEnum.level.LTrace){return-1;}return 1;case this.logLevelEnum.level.LTrace:return 1;default:return-1;}}},{key:"formatLog",value:function formatLog(level,statusCode,method,url,requestHeaders,responseHeaders,requestBody,responseBody){var result;var localRequestHeaders=requestHeaders?JSON.parse(JSON.stringify(requestHeaders)):null;var localResponseHeaders=responseHeaders?JSON.parse(JSON.stringify(responseHeaders)):null;var localRequestBody=requestBody?JSON.parse(JSON.stringify(requestBody)):null;var localResponseBody=responseBody?JSON.parse(JSON.stringify(responseBody)):null;if(requestHeaders)localRequestHeaders['Authorization']='[REDACTED]';if(!this.log_request_body)localRequestBody=undefined;if(!this.log_response_body)localResponseBody=undefined;if(this.log_format&&this.log_format===logFormatEnum.formats.JSON){result={level:level,date:new Date().toISOString(),method:method,url:decodeURIComponent(url),correlationId:localResponseHeaders?localResponseHeaders['inin-correlation-id']?localResponseHeaders['inin-correlation-id']:'':'',statusCode:statusCode};if(localRequestHeaders)result.requestHeaders=localRequestHeaders;if(localResponseHeaders)result.responseHeaders=localResponseHeaders;if(localRequestBody)result.requestBody=localRequestBody;if(localResponseBody)result.responseBody=localResponseBody;}else{result="".concat(new Date().toISOString(),"\n=== REQUEST === \n").concat(this.formatValue('URL',decodeURIComponent(url))).concat(this.formatValue('Method',method)).concat(this.formatValue('Headers',this.formatHeaderString(localRequestHeaders))).concat(this.formatValue('Body',localRequestBody?JSON.stringify(localRequestBody,null,2):''),"\n=== RESPONSE ===\n").concat(this.formatValue('Status',statusCode)).concat(this.formatValue('Headers',this.formatHeaderString(localResponseHeaders))).concat(this.formatValue('CorrelationId',localResponseHeaders?localResponseHeaders['inin-correlation-id']?localResponseHeaders['inin-correlation-id']:'':'')).concat(this.formatValue('Body',localResponseBody?JSON.stringify(localResponseBody,null,2):''));}return result;}},{key:"formatHeaderString",value:function formatHeaderString(headers){var headerString='';if(!headers)return headerString;for(var _i3=0,_Object$entries2=Object.entries(headers);_i3<_Object$entries2.length;_i3++){var _Object$entries2$_i=_slicedToArray(_Object$entries2[_i3],2),key=_Object$entries2$_i[0],value=_Object$entries2$_i[1];headerString+="\n\t".concat(key,": ").concat(value);}return headerString;}},{key:"formatValue",value:function formatValue(key,value){if(!value||value===''||value==='{}')return'';return"".concat(key,": ").concat(value,"\n");}},{key:"getLogLevel",value:function getLogLevel(level){switch(level){case'error':return logLevelEnum.level.LError;case'debug':return logLevelEnum.level.LDebug;case'trace':return logLevelEnum.level.LTrace;default:return logLevelEnum.level.LNone;}}},{key:"getLogFormat",value:function getLogFormat(format){switch(format){case'json':return logFormatEnum.formats.JSON;default:return logFormatEnum.formats.TEXT;}}}]);}();var Configuration=/*#__PURE__*/function(){function Configuration(){_classCallCheck(this,Configuration);if(!Configuration.instance){Configuration.instance=this;}if(typeof window!=='undefined'){this.configPath='';}else{var os=require('os');var path=require('path');this.configPath=path.join(os.homedir(),'.genesyscloudjavascript','config');}this.watchedConfigPath;this.refresh_access_token=true;this.refresh_token_wait_max=10;this._live_reload_config=true;this.host;this.environment;this.basePath;this.authUrl;this.config;this.gateway=undefined;// Default Values for authPopupConfiguration
+function isSlowBuffer(obj){return typeof obj.readFloatLE==='function'&&typeof obj.slice==='function'&&isFastBuffer(obj.slice(0,0));}var logLevelEnum={level:{LNone:'none',LError:'error',LDebug:'debug',LTrace:'trace'}};var logFormatEnum={formats:{JSON:'json',TEXT:'text'}};var Logger=/*#__PURE__*/function(){function Logger(){_classCallCheck(this,Logger);this.log_level=logLevelEnum.level.LNone;this.log_format=logFormatEnum.formats.TEXT;this.log_to_console=true;this.log_file_path;this.log_response_body=false;this.log_request_body=false;this.setLogger();}return _createClass(Logger,[{key:"logLevelEnum",get:function get(){return logLevelEnum;}},{key:"logFormatEnum",get:function get(){return logFormatEnum;}},{key:"setLogger",value:function setLogger(){}},{key:"log",value:function log(level,statusCode,method,url,requestHeaders,responseHeaders,requestBody,responseBody){var content=this.formatLog(level,statusCode,method,url,requestHeaders,responseHeaders,requestBody,responseBody);if(typeof window!=='undefined'){var shouldLog=this.calculateLogLevel(level);if(shouldLog>0&&this.log_to_console===true){if(this.log_format===this.logFormatEnum.formats.JSON){console.log(content);}else{console.log("".concat(level.toUpperCase(),": ").concat(content));}}}else{if(this.logger.transports.length>0)this.logger.log(level,content);}}},{key:"calculateLogLevel",value:function calculateLogLevel(level){switch(this.log_level){case this.logLevelEnum.level.LError:if(level!==this.logLevelEnum.level.LError){return-1;}return 1;case this.logLevelEnum.level.LDebug:if(level===this.logLevelEnum.level.LTrace){return-1;}return 1;case this.logLevelEnum.level.LTrace:return 1;default:return-1;}}},{key:"formatLog",value:function formatLog(level,statusCode,method,url,requestHeaders,responseHeaders,requestBody,responseBody){var result;var localRequestHeaders=requestHeaders?JSON.parse(JSON.stringify(requestHeaders)):null;var localResponseHeaders=responseHeaders?JSON.parse(JSON.stringify(responseHeaders)):null;var localRequestBody=requestBody?JSON.parse(JSON.stringify(requestBody)):null;var localResponseBody=responseBody?JSON.parse(JSON.stringify(responseBody)):null;if(requestHeaders)localRequestHeaders['Authorization']='[REDACTED]';if(!this.log_request_body)localRequestBody=undefined;if(!this.log_response_body)localResponseBody=undefined;if(this.log_format&&this.log_format===logFormatEnum.formats.JSON){result={level:level,date:new Date().toISOString(),method:method,url:decodeURIComponent(url),correlationId:localResponseHeaders?localResponseHeaders['inin-correlation-id']?localResponseHeaders['inin-correlation-id']:'':'',statusCode:statusCode};if(localRequestHeaders)result.requestHeaders=localRequestHeaders;if(localResponseHeaders)result.responseHeaders=localResponseHeaders;if(localRequestBody)result.requestBody=localRequestBody;if(localResponseBody)result.responseBody=localResponseBody;}else{result="".concat(new Date().toISOString(),"\n=== REQUEST === \n").concat(this.formatValue('URL',decodeURIComponent(url))).concat(this.formatValue('Method',method)).concat(this.formatValue('Headers',this.formatHeaderString(localRequestHeaders))).concat(this.formatValue('Body',localRequestBody?JSON.stringify(localRequestBody,null,2):''),"\n=== RESPONSE ===\n").concat(this.formatValue('Status',statusCode)).concat(this.formatValue('Headers',this.formatHeaderString(localResponseHeaders))).concat(this.formatValue('CorrelationId',localResponseHeaders?localResponseHeaders['inin-correlation-id']?localResponseHeaders['inin-correlation-id']:'':'')).concat(this.formatValue('Body',localResponseBody?JSON.stringify(localResponseBody,null,2):''));}return result;}},{key:"formatHeaderString",value:function formatHeaderString(headers){var headerString='';if(!headers)return headerString;for(var _i2=0,_Object$entries2=Object.entries(headers);_i2<_Object$entries2.length;_i2++){var _Object$entries2$_i=_slicedToArray(_Object$entries2[_i2],2),key=_Object$entries2$_i[0],value=_Object$entries2$_i[1];headerString+="\n\t".concat(key,": ").concat(value);}return headerString;}},{key:"formatValue",value:function formatValue(key,value){if(!value||value===''||value==='{}')return'';return"".concat(key,": ").concat(value,"\n");}},{key:"getLogLevel",value:function getLogLevel(level){switch(level){case'error':return logLevelEnum.level.LError;case'debug':return logLevelEnum.level.LDebug;case'trace':return logLevelEnum.level.LTrace;default:return logLevelEnum.level.LNone;}}},{key:"getLogFormat",value:function getLogFormat(format){switch(format){case'json':return logFormatEnum.formats.JSON;default:return logFormatEnum.formats.TEXT;}}}]);}();var Configuration=/*#__PURE__*/function(){function Configuration(){_classCallCheck(this,Configuration);if(!Configuration.instance){Configuration.instance=this;}if(typeof window!=='undefined'){this.configPath='';}else{var os=require('os');var path=require('path');this.configPath=path.join(os.homedir(),'.genesyscloudjavascript','config');}this.watchedConfigPath;this.refresh_access_token=true;this.refresh_token_wait_max=10;this._live_reload_config=true;this.host;this.environment;this.basePath;this.authUrl;this.config;this.gateway=undefined;// Default Values for authPopupConfiguration
 this.authPopupConfiguration=this._getDefaultAuthPopupConfiguration();this.logger=new Logger();this.setEnvironment();this.liveLoadConfig();}/**
    * live_reload_config getter
    */return _createClass(Configuration,[{key:"instance",get:/**
@@ -4073,7 +4176,7 @@ if(env)this.environment=env;else this.environment=this.host?this.host:'mypureclo
 this.environment=this.environment.replace(/\/+$/,'');// Strip protocol and subdomain
 if(this.environment.startsWith('https://'))this.environment=this.environment.substring(8);if(this.environment.startsWith('http://'))this.environment=this.environment.substring(7);if(this.environment.startsWith('api.'))this.environment=this.environment.substring(4);this.basePath="https://api.".concat(this.environment);this.authUrl="https://login.".concat(this.environment);}},{key:"getConfUrl",value:function getConfUrl(pathType,regionUrl){if(!this.gateway)return regionUrl;if(!this.gateway.host)return regionUrl;var url=this.gateway.protocol+'://'+this.gateway.host;if(this.gateway.port>-1)url=url+':'+this.gateway.port.toString();if(pathType==='login'){if(this.gateway.path_params_login){if(this.gateway.path_params_login.startsWith('/'))url=url+this.gateway.path_params_login;else url=url+'/'+this.gateway.path_params_login;}}else{if(this.gateway.path_params_api){if(this.gateway.path_params_api.startsWith('/'))url=url+this.gateway.path_params_api;else url=url+'/'+this.gateway.path_params_api;}}return url;}},{key:"getConfigString",value:function getConfigString(section,key){if(this.config._sections[section])return this.config._sections[section][key];}},{key:"getConfigBoolean",value:function getConfigBoolean(section,key){if(this.config._sections[section]&&this.config._sections[section][key]!==undefined){if(typeof this.config._sections[section][key]==='string'){return this.config._sections[section][key]==='true';}else return this.config._sections[section][key];}}},{key:"getConfigInt",value:function getConfigInt(section,key){if(this.config._sections[section]&&this.config._sections[section][key]){if(typeof this.config._sections[section][key]==='string'){return parseInt(this.config._sections[section][key]);}else return this.config._sections[section][key];}}}]);}();/**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 263.0.0
+ * @version 263.1.0
  */var ApiClient=/*#__PURE__*/function(){/**
    * Manages low level client-server communications, parameter marshalling, etc. There should not be any need for an
    * application to use this class directly - the *Api and model classes provide the public API for the service. The
@@ -4232,17 +4335,17 @@ localStorage.setItem("".concat(this.settingsPrefix,"_auth_data"),JSON.stringify(
    * @param {string} gateway.password - (optional) Not used at this stage (for a possible future use).
    */},{key:"setGateway",value:function setGateway(gateway){this.config.setGateway(gateway);}// Authorization Popup
 },{key:"addAuthPopupStatusListener",value:function addAuthPopupStatusListener(listener){if(typeof listener==='function'&&listener){if(!this._listenersAuthPopupStatus)this._listenersAuthPopupStatus=[];this._listenersAuthPopupStatus.push(listener);}}},{key:"removeAuthPopupStatusListener",value:function removeAuthPopupStatusListener(listener){if(listener){if(!this._listenersAuthPopupStatus||this._listenersAuthPopupStatus.length==0)return;this._listenersAuthPopupStatus=this._listenersAuthPopupStatus.filter(function(l){return l!==listener;});}}},{key:"removeAllAuthPopupStatusListeners",value:function removeAllAuthPopupStatusListeners(){if(this._listenersAuthPopupStatus)this._listenersAuthPopupStatus=[];}},{key:"_emitAuthPopupStatus",value:function _emitAuthPopupStatus(status,msg,identifier){if(this.onAuthPopupStatus)this.onAuthPopupStatus(status,msg,identifier);if(!this._listenersAuthPopupStatus||this._listenersAuthPopupStatus.length==0)return;this._listenersAuthPopupStatus.forEach(function(listener){return listener(status,msg,identifier);});}},{key:"_generatePopupIdentifier",value:function _generatePopupIdentifier(nChar){if(nChar<8||nChar>64){throw new Error("Popup Identifier (length) must be between 8 and 64 characters");}// Check for window
-{var unreservedCharacters="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-._~";var randomString=Array.from(crypto.getRandomValues(new Uint32Array(nChar))).map(function(x){return unreservedCharacters[x%unreservedCharacters.length];}).join('');return randomString;}}},{key:"_startAuthPopup",value:function _startAuthPopup(url,query,loginPopupConfiguration){var _this7=this;try{if(!loginPopupConfiguration)loginPopupConfiguration={};// Stop timers, reset values/variables if necessary
+{var unreservedCharacters="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-._~";var randomString=Array.from(crypto.getRandomValues(new Uint32Array(nChar))).map(function(x){return unreservedCharacters[x%unreservedCharacters.length];}).join('');return randomString;}}},{key:"_startAuthPopup",value:function _startAuthPopup(url,query,loginPopupConfiguration){var _this8=this;try{if(!loginPopupConfiguration)loginPopupConfiguration={};// Stop timers, reset values/variables if necessary
 if(this._checkPopupTimeout)clearTimeout(this._checkPopupTimeout);this._checkPopupTimeout=null;if(this._notifyPopupInterval)clearInterval(this._notifyPopupInterval);this._notifyPopupInterval=null;// Remove Event Listener
 if(this._listenerAuthPopupMessage){window.removeEventListener('message',this._listenerAuthPopupMessage);this._listenerAuthPopupMessage=null;}if(this._authPopupWindow){if(loginPopupConfiguration.autoClosePopup===true&&!this._authPopupWindow.closed){this._authPopupWindow.close();}if(this._popupIdentifier)this._emitAuthPopupStatus("ABORTED","Previous Authorization Popup aborted.",this._popupIdentifier);this._popupIdentifier=null;}this._authPopupWindow=null;// Start
-this._popupIdentifier=this._generatePopupIdentifier(16);this._emitAuthPopupStatus("INIT","Authorization Popup Starting",this._popupIdentifier);var popupUrl=url;if(loginPopupConfiguration.overridePopupUrl){var overrideQuery=null;if(loginPopupConfiguration.overridePopupUrlAuthParameters===true&&query){if(loginPopupConfiguration.overridePopupUrlParameters){overrideQuery=_objectSpread(_objectSpread({},query),loginPopupConfiguration.overridePopupUrlParameters);}else{overrideQuery=query;}}else if(loginPopupConfiguration.overridePopupUrlParameters){overrideQuery=loginPopupConfiguration.overridePopupUrlParameters;}if(overrideQuery){popupUrl="".concat(loginPopupConfiguration.overridePopupUrl,"?").concat(new URLSearchParams(overrideQuery).toString());}else{popupUrl=loginPopupConfiguration.overridePopupUrl;}}return new Promise(function(resolve,reject){_this7._listenerAuthPopupMessage=function(event){_this7._handleAuthPopupMessage(event,loginPopupConfiguration,resolve,reject);};window.addEventListener('message',_this7._listenerAuthPopupMessage);_this7._authPopupWindow=window.open(popupUrl,loginPopupConfiguration.popupTarget,loginPopupConfiguration.popupWindowFeatures);if(loginPopupConfiguration.notifyPopup===true){_this7._notifyPopupInterval=setInterval(function(){if(this._authPopupWindow){var popupLocationOrigin=new URL(this.redirectUri);// Genesys Cloud Auth Popup Notify Event
-var popupNotifyMessage={name:"gc_auth_popup",type:"notify"};if(loginPopupConfiguration.usePopupIdentifier===true&&this._popupIdentifier)popupNotifyMessage.identifier=this._popupIdentifier;this._authPopupWindow.postMessage(popupNotifyMessage,"".concat(popupLocationOrigin.protocol,"//").concat(popupLocationOrigin.host));}else{clearInterval(this.notifyPopupInterval);this._notifyPopupInterval=null;}}.bind(_this7),1000);}_this7._checkPopupTimeout=setTimeout(function(){// Authorization Popup Timeout
+this._popupIdentifier=this._generatePopupIdentifier(16);this._emitAuthPopupStatus("INIT","Authorization Popup Starting",this._popupIdentifier);var popupUrl=url;if(loginPopupConfiguration.overridePopupUrl){var overrideQuery=null;if(loginPopupConfiguration.overridePopupUrlAuthParameters===true&&query){if(loginPopupConfiguration.overridePopupUrlParameters){overrideQuery=_objectSpread(_objectSpread({},query),loginPopupConfiguration.overridePopupUrlParameters);}else{overrideQuery=query;}}else if(loginPopupConfiguration.overridePopupUrlParameters){overrideQuery=loginPopupConfiguration.overridePopupUrlParameters;}if(overrideQuery){popupUrl="".concat(loginPopupConfiguration.overridePopupUrl,"?").concat(new URLSearchParams(overrideQuery).toString());}else{popupUrl=loginPopupConfiguration.overridePopupUrl;}}return new Promise(function(resolve,reject){_this8._listenerAuthPopupMessage=function(event){_this8._handleAuthPopupMessage(event,loginPopupConfiguration,resolve,reject);};window.addEventListener('message',_this8._listenerAuthPopupMessage);_this8._authPopupWindow=window.open(popupUrl,loginPopupConfiguration.popupTarget,loginPopupConfiguration.popupWindowFeatures);if(loginPopupConfiguration.notifyPopup===true){_this8._notifyPopupInterval=setInterval(function(){if(this._authPopupWindow){var popupLocationOrigin=new URL(this.redirectUri);// Genesys Cloud Auth Popup Notify Event
+var popupNotifyMessage={name:"gc_auth_popup",type:"notify"};if(loginPopupConfiguration.usePopupIdentifier===true&&this._popupIdentifier)popupNotifyMessage.identifier=this._popupIdentifier;this._authPopupWindow.postMessage(popupNotifyMessage,"".concat(popupLocationOrigin.protocol,"//").concat(popupLocationOrigin.host));}else{clearInterval(this.notifyPopupInterval);this._notifyPopupInterval=null;}}.bind(_this8),1000);}_this8._checkPopupTimeout=setTimeout(function(){// Authorization Popup Timeout
 this._emitAuthPopupStatus("TIMEOUT","Authorization Popup Timeout",this._popupIdentifier);// Remove event listener
 if(this._listenerAuthPopupMessage){window.removeEventListener('message',this._listenerAuthPopupMessage);this._listenerAuthPopupMessage=null;}// Close popup automatically if requested
 if(loginPopupConfiguration.autoClosePopup===true&&loginPopupConfiguration.autoClosePopupDelay>0){setTimeout(function(){if(this._authPopupWindow){if(!this._authPopupWindow.closed){this._authPopupWindow.close();}this._authPopupWindow=null;}}.bind(this),loginPopupConfiguration.autoClosePopupDelay);}else{if(loginPopupConfiguration.autoClosePopup===true){if(this._authPopupWindow){if(!this._authPopupWindow.closed){this._authPopupWindow.close();}}}this._authPopupWindow=null;}// Clear timeout
 this._checkPopupTimeout=null;// Clear Notify Popup
 if(this._notifyPopupInterval)clearInterval(this._notifyPopupInterval);this._notifyPopupInterval=null;// Raise error/reject
-return reject(new Error('Authentication Popup Timeout'));}.bind(_this7),loginPopupConfiguration.popupTimeout);});}catch(error){console.error(error);throw error;}}},{key:"_extractValuesFromSearchAndHash",value:function _extractValuesFromSearchAndHash(search,hash){var authInfo={};if(search&&search!=='?'){var queryParams=new URLSearchParams(search);var code=queryParams.get('code');if(code)authInfo.code=code;var state=queryParams.get('state');if(state)authInfo.state=state;var error=queryParams.get('error');if(error)authInfo.error=error;var errorDescription=queryParams.get('error_description');if(errorDescription)authInfo.error_description=errorDescription;}if(hash&&hash!=='#'){var hashParams=new URLSearchParams(hash.substring(1));var accessToken=hashParams.get('access_token');if(accessToken)authInfo.accessToken=accessToken;var expiresIn=hashParams.get('expires_in');if(expiresIn){authInfo.tokenExpiryTime=new Date().getTime()+parseInt(expiresIn)*1000;authInfo.tokenExpiryTimeString=new Date(authInfo.tokenExpiryTime).toUTCString();}var _state=hashParams.get('state');if(_state)authInfo.state=_state;var _error=hashParams.get('error');if(_error)authInfo.error=_error;var _errorDescription=hashParams.get('error_description');if(_errorDescription)authInfo.error_description=_errorDescription;}return authInfo;}},{key:"_handleAuthPopupMessage",value:function _handleAuthPopupMessage(event,loginPopupConfiguration,resolve,reject){var _this8=this;// Verify source/origin
+return reject(new Error('Authentication Popup Timeout'));}.bind(_this8),loginPopupConfiguration.popupTimeout);});}catch(error){console.error(error);throw error;}}},{key:"_extractValuesFromSearchAndHash",value:function _extractValuesFromSearchAndHash(search,hash){var authInfo={};if(search&&search!=='?'){var queryParams=new URLSearchParams(search);var code=queryParams.get('code');if(code)authInfo.code=code;var state=queryParams.get('state');if(state)authInfo.state=state;var error=queryParams.get('error');if(error)authInfo.error=error;var errorDescription=queryParams.get('error_description');if(errorDescription)authInfo.error_description=errorDescription;}if(hash&&hash!=='#'){var hashParams=new URLSearchParams(hash.substring(1));var accessToken=hashParams.get('access_token');if(accessToken)authInfo.accessToken=accessToken;var expiresIn=hashParams.get('expires_in');if(expiresIn){authInfo.tokenExpiryTime=new Date().getTime()+parseInt(expiresIn)*1000;authInfo.tokenExpiryTimeString=new Date(authInfo.tokenExpiryTime).toUTCString();}var _state=hashParams.get('state');if(_state)authInfo.state=_state;var _error=hashParams.get('error');if(_error)authInfo.error=_error;var _errorDescription=hashParams.get('error_description');if(_errorDescription)authInfo.error_description=_errorDescription;}return authInfo;}},{key:"_handleAuthPopupMessage",value:function _handleAuthPopupMessage(event,loginPopupConfiguration,resolve,reject){var _this9=this;// Verify source/origin
 if(this.redirectUri.startsWith(event.origin)){// Verify format and message type
 if(event.data&&_typeof(event.data)==='object'){var jsonMessage=JSON.parse(JSON.stringify(event.data));// Genesys Cloud Auth Popup Message
 if(jsonMessage&&jsonMessage.name==="gc_auth_popup"&&jsonMessage.type==="message"){// Clear the _checkPopupTimeout and the _notifyPopupInterval
@@ -4256,19 +4359,19 @@ authResult.error="InvalidAuthParams";authResult.error_description="Missing Auth 
 this._emitAuthPopupStatus("AUTH_ERROR","Auth Error: [".concat(authResult.error,"] ").concat(authResult.error_description),this._popupIdentifier);authResult.accessToken=undefined;this._saveSettings(authResult);return reject(new Error("Auth Error: [".concat(authResult.error,"] ").concat(authResult.error_description)));}// Strategies for auth completion
 if(loginPopupConfiguration.useWindowReplace===true){// Access Token received
 this._emitAuthPopupStatus("REDIRECTING","Authorization Popup Completed",this._popupIdentifier);this._popupIdentifier=null;if(loginPopupConfiguration.overrideWindowReplaceUri){window.location.replace("".concat(loginPopupConfiguration.overrideWindowReplaceUri).concat(popupSearch?popupSearch:'').concat(popupHash?popupHash:''));}else{window.location.replace("".concat(window.location.origin).concat(window.location.pathname).concat(popupSearch?popupSearch:'').concat(popupHash?popupHash:''));}resolve(null);}else{if(authResult&&authResult.accessToken){this._saveSettings(authResult);this._testTokenAccess().then(function(){// Valid Access Token received
-_this8._emitAuthPopupStatus("AUTHENTICATED","Authorization Popup Completed",_this8._popupIdentifier);_this8._popupIdentifier=null;resolve(authResult);})["catch"](function(error){// Invalid Access Token received
-_this8._emitAuthPopupStatus("AUTH_ERROR","Auth Error: [".concat(error.name,"] ").concat(error.message),_this8._popupIdentifier);_this8._popupIdentifier=null;// Handle failure response
-_this8._saveSettings({accessToken:undefined});return reject(new Error("[".concat(error.name,"] ").concat(error.message)));});}else if(authResult&&authResult.code){if(!this.codeVerifier){// load codeVerifier from session storage
+_this9._emitAuthPopupStatus("AUTHENTICATED","Authorization Popup Completed",_this9._popupIdentifier);_this9._popupIdentifier=null;resolve(authResult);})["catch"](function(error){// Invalid Access Token received
+_this9._emitAuthPopupStatus("AUTH_ERROR","Auth Error: [".concat(error.name,"] ").concat(error.message),_this9._popupIdentifier);_this9._popupIdentifier=null;// Handle failure response
+_this9._saveSettings({accessToken:undefined});return reject(new Error("[".concat(error.name,"] ").concat(error.message)));});}else if(authResult&&authResult.code){if(!this.codeVerifier){// load codeVerifier from session storage
 if(this.hasLocalStorage){this.codeVerifier=sessionStorage.getItem("".concat(this.settingsPrefix,"_pkce_code_verifier"));}}this.authorizePKCEGrant(this.clientId,this.codeVerifier,authResult.code,this.redirectUri).then(function(){// Do authenticated things
-_this8._testTokenAccess().then(function(){// Valid Access Token received
-_this8._emitAuthPopupStatus("AUTHENTICATED","Authorization Popup Completed",_this8._popupIdentifier);_this8._popupIdentifier=null;if(!_this8.authData.state&&authResult.state)_this8.authData.state=authResult.state;// remove codeVerifier from session storage
-if(_this8.hasLocalStorage){sessionStorage.removeItem("genesys_cloud_sdk_pkce_code_verifier");sessionStorage.removeItem("".concat(_this8.settingsPrefix,"_pkce_code_verifier"));}resolve(_this8.authData);})["catch"](function(error){// Invalid Access Token received
-_this8._emitAuthPopupStatus("AUTH_ERROR","Auth Error: [".concat(error.name,"] ").concat(error.message),_this8._popupIdentifier);_this8._popupIdentifier=null;// Handle failure response
-_this8._saveSettings({accessToken:undefined});// remove codeVerifier from session storage
-if(_this8.hasLocalStorage){sessionStorage.removeItem("genesys_cloud_sdk_pkce_code_verifier");sessionStorage.removeItem("".concat(_this8.settingsPrefix,"_pkce_code_verifier"));}return reject(new Error("[".concat(error.name,"] ").concat(error.message)));});})["catch"](function(error){// Error in PKCE Token
-_this8._emitAuthPopupStatus("AUTH_ERROR","Auth Error: [".concat(error.name,"] ").concat(error.message),_this8._popupIdentifier);_this8._popupIdentifier=null;// Handle failure response
-_this8._saveSettings({accessToken:undefined});// remove codeVerifier from session storage
-if(_this8.hasLocalStorage){sessionStorage.removeItem("genesys_cloud_sdk_pkce_code_verifier");sessionStorage.removeItem("".concat(_this8.settingsPrefix,"_pkce_code_verifier"));}return reject(new Error("[".concat(error.name,"] ").concat(error.message)));});}}}}}}/**
+_this9._testTokenAccess().then(function(){// Valid Access Token received
+_this9._emitAuthPopupStatus("AUTHENTICATED","Authorization Popup Completed",_this9._popupIdentifier);_this9._popupIdentifier=null;if(!_this9.authData.state&&authResult.state)_this9.authData.state=authResult.state;// remove codeVerifier from session storage
+if(_this9.hasLocalStorage){sessionStorage.removeItem("genesys_cloud_sdk_pkce_code_verifier");sessionStorage.removeItem("".concat(_this9.settingsPrefix,"_pkce_code_verifier"));}resolve(_this9.authData);})["catch"](function(error){// Invalid Access Token received
+_this9._emitAuthPopupStatus("AUTH_ERROR","Auth Error: [".concat(error.name,"] ").concat(error.message),_this9._popupIdentifier);_this9._popupIdentifier=null;// Handle failure response
+_this9._saveSettings({accessToken:undefined});// remove codeVerifier from session storage
+if(_this9.hasLocalStorage){sessionStorage.removeItem("genesys_cloud_sdk_pkce_code_verifier");sessionStorage.removeItem("".concat(_this9.settingsPrefix,"_pkce_code_verifier"));}return reject(new Error("[".concat(error.name,"] ").concat(error.message)));});})["catch"](function(error){// Error in PKCE Token
+_this9._emitAuthPopupStatus("AUTH_ERROR","Auth Error: [".concat(error.name,"] ").concat(error.message),_this9._popupIdentifier);_this9._popupIdentifier=null;// Handle failure response
+_this9._saveSettings({accessToken:undefined});// remove codeVerifier from session storage
+if(_this9.hasLocalStorage){sessionStorage.removeItem("genesys_cloud_sdk_pkce_code_verifier");sessionStorage.removeItem("".concat(_this9.settingsPrefix,"_pkce_code_verifier"));}return reject(new Error("[".concat(error.name,"] ").concat(error.message)));});}}}}}}/**
    * @description Initiates the implicit grant login flow. Will attempt to load the token from local storage, if enabled.
    * @param {string} clientId - The client ID of an OAuth Implicit Grant client
    * @param {string} redirectUri - The redirect URI of the OAuth Implicit Grant client
@@ -4280,44 +4383,44 @@ if(_this8.hasLocalStorage){sessionStorage.removeItem("genesys_cloud_sdk_pkce_cod
    * @param {string} opts.login_hint - (optional) The login_hint allows an application to pass the email address and/or the org name values to the authorization server (email:orgName, email, orgName).
    * @param {string} opts.prompt - (optional) Use the prompt=login parameter to require that the user be prompted to enter credentials at the Gensys Cloud login screen and ignore any remembered sessions (auth cookies).
    * @param {object} opts.authPopupConfiguration - (optional) Overrides Authorization Popup Configuration.
-   */},{key:"loginImplicitGrant",value:function loginImplicitGrant(clientId,redirectUri,opts){var _this9=this;// Check for auth token in hash
+   */},{key:"loginImplicitGrant",value:function loginImplicitGrant(clientId,redirectUri,opts){var _this0=this;// Check for auth token in hash
 var hash=this._setValuesFromUrlHash();this.clientId=clientId;this.redirectUri=redirectUri;if(!opts)opts={};return new Promise(function(resolve,reject){// Abort if org and provider are not set together
 if(opts.org&&!opts.provider){reject(new Error('opts.provider must be set if opts.org is set'));}else if(opts.provider&&!opts.org){reject(new Error('opts.org must be set if opts.provider is set'));}// Abort on auth error
-if(hash&&hash.error){hash.accessToken=undefined;_this9._saveSettings(hash);return reject(new Error("[".concat(hash.error,"] ").concat(hash.error_description)));}// Test token and proceed with login
-_this9._testTokenAccess().then(function(){if(!_this9.authData.state&&opts.state)_this9.authData.state=opts.state;resolve(_this9.authData);})["catch"](function(error){var query={client_id:_this9.clientId,redirect_uri:_this9.redirectUri,response_type:'token'};if(opts.state)query.state=opts.state;if(opts.org)query.org=opts.org;if(opts.provider)query.provider=opts.provider;if(opts.target)query.target=opts.target;if(opts.login_hint)query.login_hint=opts.login_hint;if(opts.prompt&&opts.prompt=='login')query.prompt=opts.prompt;// Overrides AuthPopupConfiguration locally
-var loginPopupConfiguration=_this9.config.mergeWithAuthPopupConfiguration(opts.authPopupConfiguration);var url=_this9._buildAuthUrl('oauth/authorize',query);if(loginPopupConfiguration.usePopup===true){_this9._startAuthPopup(url,query,loginPopupConfiguration).then(function(authData){resolve(authData);})["catch"](function(error){return reject(new Error("[".concat(error.name,"] ").concat(error.message)));});}else{window.location.replace(url);}});});}/**
+if(hash&&hash.error){hash.accessToken=undefined;_this0._saveSettings(hash);return reject(new Error("[".concat(hash.error,"] ").concat(hash.error_description)));}// Test token and proceed with login
+_this0._testTokenAccess().then(function(){if(!_this0.authData.state&&opts.state)_this0.authData.state=opts.state;resolve(_this0.authData);})["catch"](function(error){var query={client_id:_this0.clientId,redirect_uri:_this0.redirectUri,response_type:'token'};if(opts.state)query.state=opts.state;if(opts.org)query.org=opts.org;if(opts.provider)query.provider=opts.provider;if(opts.target)query.target=opts.target;if(opts.login_hint)query.login_hint=opts.login_hint;if(opts.prompt&&opts.prompt=='login')query.prompt=opts.prompt;// Overrides AuthPopupConfiguration locally
+var loginPopupConfiguration=_this0.config.mergeWithAuthPopupConfiguration(opts.authPopupConfiguration);var url=_this0._buildAuthUrl('oauth/authorize',query);if(loginPopupConfiguration.usePopup===true){_this0._startAuthPopup(url,query,loginPopupConfiguration).then(function(authData){resolve(authData);})["catch"](function(error){return reject(new Error("[".concat(error.name,"] ").concat(error.message)));});}else{window.location.replace(url);}});});}/**
    * @description Initiates the client credentials login flow. Only available in node apps.
    * @param {string} clientId - The client ID of an OAuth Implicit Grant client
    * @param {string} clientSecret - The client secret of an OAuth Implicit Grant client
-   */},{key:"loginClientCredentialsGrant",value:function loginClientCredentialsGrant(clientId,clientSecret){var _this0=this;this.clientId=clientId;var authHeader=Buffer.from("".concat(clientId,":").concat(clientSecret)).toString('base64');var loginBasePath=this.config.getConfUrl('login',"https://login.".concat(this.config.environment));return new Promise(function(resolve,reject){// Block browsers from using client credentials
-if(typeof window!=='undefined'){reject(new Error('The client credentials grant is not supported in a browser.'));return;}var headers={'Authorization':"Basic ".concat(authHeader)};var requestOptions=new HttpRequestOptions("".concat(loginBasePath,"/oauth/token"),"POST",headers,null,'grant_type=client_credentials',_this0.timeout);var httpClient=_this0.getHttpClient();httpClient.request(requestOptions).then(function(response){// Logging
-_this0.config.logger.log('trace',response.status,'POST',"".concat(loginBasePath,"/oauth/token"),headers,response.headers,{grant_type:'client_credentials'},undefined);_this0.config.logger.log('debug',response.status,'POST',"".concat(loginBasePath,"/oauth/token"),headers,undefined,{grant_type:'client_credentials'},undefined);// Save access token
-_this0.setAccessToken(response.data['access_token']);// Set expiry time
-_this0.authData.tokenExpiryTime=new Date().getTime()+response.data['expires_in']*1000;_this0.authData.tokenExpiryTimeString=new Date(_this0.authData.tokenExpiryTime).toUTCString();// Return auth data
-resolve(_this0.authData);})["catch"](function(error){// Log error
-if(error.response){_this0.config.logger.log('error',error.response.status,'POST',"".concat(loginBasePath,"/oauth/token"),headers,error.response.headers,{grant_type:'client_credentials'},error.response.data);}reject(error);});});}/**
+   */},{key:"loginClientCredentialsGrant",value:function loginClientCredentialsGrant(clientId,clientSecret){var _this1=this;this.clientId=clientId;var authHeader=Buffer.from("".concat(clientId,":").concat(clientSecret)).toString('base64');var loginBasePath=this.config.getConfUrl('login',"https://login.".concat(this.config.environment));return new Promise(function(resolve,reject){// Block browsers from using client credentials
+if(typeof window!=='undefined'){reject(new Error('The client credentials grant is not supported in a browser.'));return;}var headers={'Authorization':"Basic ".concat(authHeader)};var requestOptions=new HttpRequestOptions("".concat(loginBasePath,"/oauth/token"),"POST",headers,null,'grant_type=client_credentials',_this1.timeout);var httpClient=_this1.getHttpClient();httpClient.request(requestOptions).then(function(response){// Logging
+_this1.config.logger.log('trace',response.status,'POST',"".concat(loginBasePath,"/oauth/token"),headers,response.headers,{grant_type:'client_credentials'},undefined);_this1.config.logger.log('debug',response.status,'POST',"".concat(loginBasePath,"/oauth/token"),headers,undefined,{grant_type:'client_credentials'},undefined);// Save access token
+_this1.setAccessToken(response.data['access_token']);// Set expiry time
+_this1.authData.tokenExpiryTime=new Date().getTime()+response.data['expires_in']*1000;_this1.authData.tokenExpiryTimeString=new Date(_this1.authData.tokenExpiryTime).toUTCString();// Return auth data
+resolve(_this1.authData);})["catch"](function(error){// Log error
+if(error.response){_this1.config.logger.log('error',error.response.status,'POST',"".concat(loginBasePath,"/oauth/token"),headers,error.response.headers,{grant_type:'client_credentials'},error.response.data);}reject(error);});});}/**
    * @description Initiates the Saml2Bearerflow. Only available in node apps.
    * @param {string} clientId - The client ID of an OAuth Implicit Grant client
    * @param {string} clientSecret - The client secret of an OAuth Implicit Grant client
    * @param {string} orgName - The orgName of an OAuth Implicit Grant client
    * @param {string} assertion - The saml2bearer assertion
-   */},{key:"loginSaml2BearerGrant",value:function loginSaml2BearerGrant(clientId,clientSecret,orgName,assertion){var _this1=this;this.clientId=clientId;var loginBasePath=this.config.getConfUrl('login',"https://login.".concat(this.config.environment));return new Promise(function(resolve,reject){if(typeof window!=='undefined'){reject(new Error('The saml2bearer grant is not supported in a browser.'));return;}var encodedData=Buffer.from(clientId+':'+clientSecret).toString('base64');var request=_this1._formAuthRequest(encodedData,{grant_type:'urn:ietf:params:oauth:grant-type:saml2-bearer',orgName:orgName,assertion:assertion});request.proxy=_this1.proxy;var bodyParam={grant_type:'urn:ietf:params:oauth:grant-type:saml2-bearer',orgName:orgName,assertion:assertion};// Handle response
+   */},{key:"loginSaml2BearerGrant",value:function loginSaml2BearerGrant(clientId,clientSecret,orgName,assertion){var _this10=this;this.clientId=clientId;var loginBasePath=this.config.getConfUrl('login',"https://login.".concat(this.config.environment));return new Promise(function(resolve,reject){if(typeof window!=='undefined'){reject(new Error('The saml2bearer grant is not supported in a browser.'));return;}var encodedData=Buffer.from(clientId+':'+clientSecret).toString('base64');var request=_this10._formAuthRequest(encodedData,{grant_type:'urn:ietf:params:oauth:grant-type:saml2-bearer',orgName:orgName,assertion:assertion});request.proxy=_this10.proxy;var bodyParam={grant_type:'urn:ietf:params:oauth:grant-type:saml2-bearer',orgName:orgName,assertion:assertion};// Handle response
 request.then(function(response){// Logging
-_this1.config.logger.log('trace',response.status,'POST',"".concat(loginBasePath,"/oauth/token"),request.headers,response.headers,bodyParam,undefined);_this1.config.logger.log('debug',response.status,'POST',"".concat(loginBasePath,"/oauth/token"),request.headers,undefined,bodyParam,undefined);// Get access token from response
-var access_token=response.data.access_token;_this1.setAccessToken(access_token);_this1.authData.tokenExpiryTime=new Date().getTime()+response.data['expires_in']*1000;_this1.authData.tokenExpiryTimeString=new Date(_this1.authData.tokenExpiryTime).toUTCString();// Return auth data
-resolve(_this1.authData);})["catch"](function(error){// Log error
-if(error.response){_this1.config.logger.log('error',error.response.status,'POST',"".concat(loginBasePath,"/oauth/token"),request.headers,error.response.headers,bodyParam,error.response.data);}reject(error);});});}/**
+_this10.config.logger.log('trace',response.status,'POST',"".concat(loginBasePath,"/oauth/token"),request.headers,response.headers,bodyParam,undefined);_this10.config.logger.log('debug',response.status,'POST',"".concat(loginBasePath,"/oauth/token"),request.headers,undefined,bodyParam,undefined);// Get access token from response
+var access_token=response.data.access_token;_this10.setAccessToken(access_token);_this10.authData.tokenExpiryTime=new Date().getTime()+response.data['expires_in']*1000;_this10.authData.tokenExpiryTimeString=new Date(_this10.authData.tokenExpiryTime).toUTCString();// Return auth data
+resolve(_this10.authData);})["catch"](function(error){// Log error
+if(error.response){_this10.config.logger.log('error',error.response.status,'POST',"".concat(loginBasePath,"/oauth/token"),request.headers,error.response.headers,bodyParam,error.response.data);}reject(error);});});}/**
    * @description Completes the PKCE Code Authorization.
    * @param {string} clientId - The client ID of an OAuth Code Authorization Grant client
    * @param {string} codeVerifier - code verifier used to generate the code challenge
    * @param {string} authCode - Authorization code
    * @param {string} redirectUri - Authorized redirect URI for your Code Authorization client
-   */},{key:"authorizePKCEGrant",value:function authorizePKCEGrant(clientId,codeVerifier,authCode,redirectUri){var _this10=this;this.clientId=clientId;var loginBasePath=this.config.getConfUrl('login',"https://login.".concat(this.config.environment));return new Promise(function(resolve,reject){var headers={'Content-Type':'application/x-www-form-urlencoded'};var data=new URLSearchParams({grant_type:'authorization_code',code:authCode,code_verifier:codeVerifier,client_id:clientId,redirect_uri:redirectUri}).toString();var requestOptions=new HttpRequestOptions("".concat(loginBasePath,"/oauth/token"),"POST",headers,null,data,_this10.timeout);var httpClient=_this10.getHttpClient();var bodyParam={grant_type:'authorization_code',code:authCode,code_verifier:codeVerifier,client_id:clientId,redirect_uri:redirectUri};// Handle response
+   */},{key:"authorizePKCEGrant",value:function authorizePKCEGrant(clientId,codeVerifier,authCode,redirectUri){var _this11=this;this.clientId=clientId;var loginBasePath=this.config.getConfUrl('login',"https://login.".concat(this.config.environment));return new Promise(function(resolve,reject){var headers={'Content-Type':'application/x-www-form-urlencoded'};var data=new URLSearchParams({grant_type:'authorization_code',code:authCode,code_verifier:codeVerifier,client_id:clientId,redirect_uri:redirectUri}).toString();var requestOptions=new HttpRequestOptions("".concat(loginBasePath,"/oauth/token"),"POST",headers,null,data,_this11.timeout);var httpClient=_this11.getHttpClient();var bodyParam={grant_type:'authorization_code',code:authCode,code_verifier:codeVerifier,client_id:clientId,redirect_uri:redirectUri};// Handle response
 httpClient.request(requestOptions).then(function(response){// Logging
-_this10.config.logger.log('trace',response.status,'POST',"".concat(loginBasePath,"/oauth/token"),requestOptions.headers,response.headers,bodyParam,undefined);_this10.config.logger.log('debug',response.status,'POST',"".concat(loginBasePath,"/oauth/token"),requestOptions.headers,undefined,bodyParam,undefined);// Get access token from response
-var access_token=response.data.access_token;var optsSettings={accessToken:access_token};if(response.data['expires_in']!==null&&response.data['expires_in']!==undefined){optsSettings.tokenExpiryTime=new Date().getTime()+response.data['expires_in']*1000;optsSettings.tokenExpiryTimeString=new Date(optsSettings.tokenExpiryTime).toUTCString();}_this10._saveSettings(optsSettings);// Return auth data
-resolve(_this10.authData);})["catch"](function(error){// Log error
-if(error.response){_this10.config.logger.log('error',error.response.status,'POST',"".concat(loginBasePath,"/oauth/token"),requestOptions.headers,error.response.headers,bodyParam,error.response.data);}reject(error);});});}/**
+_this11.config.logger.log('trace',response.status,'POST',"".concat(loginBasePath,"/oauth/token"),requestOptions.headers,response.headers,bodyParam,undefined);_this11.config.logger.log('debug',response.status,'POST',"".concat(loginBasePath,"/oauth/token"),requestOptions.headers,undefined,bodyParam,undefined);// Get access token from response
+var access_token=response.data.access_token;var optsSettings={accessToken:access_token};if(response.data['expires_in']!==null&&response.data['expires_in']!==undefined){optsSettings.tokenExpiryTime=new Date().getTime()+response.data['expires_in']*1000;optsSettings.tokenExpiryTimeString=new Date(optsSettings.tokenExpiryTime).toUTCString();}_this11._saveSettings(optsSettings);// Return auth data
+resolve(_this11.authData);})["catch"](function(error){// Log error
+if(error.response){_this11.config.logger.log('error',error.response.status,'POST',"".concat(loginBasePath,"/oauth/token"),requestOptions.headers,error.response.headers,bodyParam,error.response.data);}reject(error);});});}/**
    * @description Generate a random string used as PKCE Code Verifier - length = 43 to 128.
    * @param {number} nChar - code length
    */},{key:"generatePKCECodeVerifier",value:function generatePKCECodeVerifier(nChar){if(nChar<43||nChar>128){throw new Error("PKCE Code Verifier (length) must be between 43 and 128 characters");}// Check for window
@@ -4341,24 +4444,24 @@ return reject(new Error("Code Challenge Error ".concat(error)));});});}}/**
   * @param {object} opts.authPopupConfiguration - (optional) Overrides Authorization Popup Configuration.
   * @param {boolean} opts.skipTest - (optional) Default: false. If true, proceeds to OAuth Grant flow regardless of existing token (skip test of token).
      * @param {string} codeVerifier - (optional) code verifier used to generate the code challenge
-     */},{key:"loginPKCEGrant",value:function loginPKCEGrant(clientId,redirectUri,opts,codeVerifier){var _this11=this;// Need Local Storage or non null codeVerifier as parameter
+     */},{key:"loginPKCEGrant",value:function loginPKCEGrant(clientId,redirectUri,opts,codeVerifier){var _this12=this;// Need Local Storage or non null codeVerifier as parameter
 if(!this.hasLocalStorage&&!codeVerifier){throw new Error("loginPKCEGrant requires Local Storage or codeVerifier as input parameter");}// Check for auth code in query
 var query=this._setValuesFromUrlQuery();this.clientId=clientId;this.redirectUri=redirectUri;this.codeVerifier=codeVerifier;if(!opts)opts={};return new Promise(function(resolve,reject){// Abort if org and provider are not set together
 if(opts.org&&!opts.provider){return reject(new Error('opts.provider must be set if opts.org is set'));}else if(opts.provider&&!opts.org){return reject(new Error('opts.org must be set if opts.provider is set'));}// Abort on auth error
 if(query&&query.error){// remove codeVerifier from session storage
-if(_this11.hasLocalStorage){sessionStorage.removeItem("genesys_cloud_sdk_pkce_code_verifier");sessionStorage.removeItem("".concat(_this11.settingsPrefix,"_pkce_code_verifier"));}// reset access token if any was stored
-_this11._saveSettings({accessToken:undefined});return reject(new Error("[".concat(query.error,"] ").concat(query.error_description)));}// Get token on auth code
-if(query&&query.code){if(!_this11.codeVerifier){// load codeVerifier from session storage
-if(_this11.hasLocalStorage){_this11.codeVerifier=sessionStorage.getItem("".concat(_this11.settingsPrefix,"_pkce_code_verifier"));}}_this11.authorizePKCEGrant(_this11.clientId,_this11.codeVerifier,query.code,_this11.redirectUri).then(function(){// Do authenticated things
-_this11._testTokenAccess().then(function(){if(!_this11.authData.state&&query.state)_this11.authData.state=query.state;// remove codeVerifier from session storage
-if(_this11.hasLocalStorage){sessionStorage.removeItem("genesys_cloud_sdk_pkce_code_verifier");sessionStorage.removeItem("".concat(_this11.settingsPrefix,"_pkce_code_verifier"));}resolve(_this11.authData);})["catch"](function(error){// Handle failure response
-_this11._saveSettings({accessToken:undefined});// remove codeVerifier from session storage
-if(_this11.hasLocalStorage){sessionStorage.removeItem("genesys_cloud_sdk_pkce_code_verifier");sessionStorage.removeItem("".concat(_this11.settingsPrefix,"_pkce_code_verifier"));}return reject(new Error("[".concat(error.name,"] ").concat(error.message)));});})["catch"](function(error){// Handle failure response
-_this11._saveSettings({accessToken:undefined});// remove codeVerifier from session storage
-if(_this11.hasLocalStorage){sessionStorage.removeItem("genesys_cloud_sdk_pkce_code_verifier");sessionStorage.removeItem("".concat(_this11.settingsPrefix,"_pkce_code_verifier"));}return reject(new Error("[".concat(error.name,"] ").concat(error.message)));});}else{// Test token (if previously stored) and proceed with login
-_this11._testTokenAccess(opts.skipTest).then(function(){if(!_this11.authData.state&&opts.state)_this11.authData.state=opts.state;resolve(_this11.authData);})["catch"](function(error){if(!_this11.codeVerifier){_this11.codeVerifier=_this11.generatePKCECodeVerifier(128);// save codeVerifier in session storage
-if(_this11.hasLocalStorage){sessionStorage.setItem("genesys_cloud_sdk_pkce_code_verifier",_this11.codeVerifier);sessionStorage.setItem("".concat(_this11.settingsPrefix,"_pkce_code_verifier"),_this11.codeVerifier);}}_this11.computePKCECodeChallenge(_this11.codeVerifier).then(function(codeChallenge){var tokenQuery={client_id:_this11.clientId,redirect_uri:_this11.redirectUri,code_challenge:codeChallenge,response_type:'code',code_challenge_method:'S256'};if(opts.state)tokenQuery.state=opts.state;if(opts.org)tokenQuery.org=opts.org;if(opts.provider)tokenQuery.provider=opts.provider;if(opts.target)tokenQuery.target=opts.target;if(opts.login_hint)tokenQuery.login_hint=opts.login_hint;if(opts.prompt&&opts.prompt=='login')tokenQuery.prompt=opts.prompt;// Overrides AuthPopupConfiguration locally
-var loginPopupConfiguration=_this11.config.mergeWithAuthPopupConfiguration(opts.authPopupConfiguration);var url=_this11._buildAuthUrl('oauth/authorize',tokenQuery);if(loginPopupConfiguration.usePopup===true){_this11._startAuthPopup(url,tokenQuery,loginPopupConfiguration).then(function(authData){resolve(authData);})["catch"](function(error){return reject(new Error("[".concat(error.name,"] ").concat(error.message)));});}else{window.location.replace(url);}})["catch"](function(err){return reject(new Error("[".concat(err.name,"]")));});});}});}/**
+if(_this12.hasLocalStorage){sessionStorage.removeItem("genesys_cloud_sdk_pkce_code_verifier");sessionStorage.removeItem("".concat(_this12.settingsPrefix,"_pkce_code_verifier"));}// reset access token if any was stored
+_this12._saveSettings({accessToken:undefined});return reject(new Error("[".concat(query.error,"] ").concat(query.error_description)));}// Get token on auth code
+if(query&&query.code){if(!_this12.codeVerifier){// load codeVerifier from session storage
+if(_this12.hasLocalStorage){_this12.codeVerifier=sessionStorage.getItem("".concat(_this12.settingsPrefix,"_pkce_code_verifier"));}}_this12.authorizePKCEGrant(_this12.clientId,_this12.codeVerifier,query.code,_this12.redirectUri).then(function(){// Do authenticated things
+_this12._testTokenAccess().then(function(){if(!_this12.authData.state&&query.state)_this12.authData.state=query.state;// remove codeVerifier from session storage
+if(_this12.hasLocalStorage){sessionStorage.removeItem("genesys_cloud_sdk_pkce_code_verifier");sessionStorage.removeItem("".concat(_this12.settingsPrefix,"_pkce_code_verifier"));}resolve(_this12.authData);})["catch"](function(error){// Handle failure response
+_this12._saveSettings({accessToken:undefined});// remove codeVerifier from session storage
+if(_this12.hasLocalStorage){sessionStorage.removeItem("genesys_cloud_sdk_pkce_code_verifier");sessionStorage.removeItem("".concat(_this12.settingsPrefix,"_pkce_code_verifier"));}return reject(new Error("[".concat(error.name,"] ").concat(error.message)));});})["catch"](function(error){// Handle failure response
+_this12._saveSettings({accessToken:undefined});// remove codeVerifier from session storage
+if(_this12.hasLocalStorage){sessionStorage.removeItem("genesys_cloud_sdk_pkce_code_verifier");sessionStorage.removeItem("".concat(_this12.settingsPrefix,"_pkce_code_verifier"));}return reject(new Error("[".concat(error.name,"] ").concat(error.message)));});}else{// Test token (if previously stored) and proceed with login
+_this12._testTokenAccess(opts.skipTest).then(function(){if(!_this12.authData.state&&opts.state)_this12.authData.state=opts.state;resolve(_this12.authData);})["catch"](function(error){if(!_this12.codeVerifier){_this12.codeVerifier=_this12.generatePKCECodeVerifier(128);// save codeVerifier in session storage
+if(_this12.hasLocalStorage){sessionStorage.setItem("genesys_cloud_sdk_pkce_code_verifier",_this12.codeVerifier);sessionStorage.setItem("".concat(_this12.settingsPrefix,"_pkce_code_verifier"),_this12.codeVerifier);}}_this12.computePKCECodeChallenge(_this12.codeVerifier).then(function(codeChallenge){var tokenQuery={client_id:_this12.clientId,redirect_uri:_this12.redirectUri,code_challenge:codeChallenge,response_type:'code',code_challenge_method:'S256'};if(opts.state)tokenQuery.state=opts.state;if(opts.org)tokenQuery.org=opts.org;if(opts.provider)tokenQuery.provider=opts.provider;if(opts.target)tokenQuery.target=opts.target;if(opts.login_hint)tokenQuery.login_hint=opts.login_hint;if(opts.prompt&&opts.prompt=='login')tokenQuery.prompt=opts.prompt;// Overrides AuthPopupConfiguration locally
+var loginPopupConfiguration=_this12.config.mergeWithAuthPopupConfiguration(opts.authPopupConfiguration);var url=_this12._buildAuthUrl('oauth/authorize',tokenQuery);if(loginPopupConfiguration.usePopup===true){_this12._startAuthPopup(url,tokenQuery,loginPopupConfiguration).then(function(authData){resolve(authData);})["catch"](function(error){return reject(new Error("[".concat(error.name,"] ").concat(error.message)));});}else{window.location.replace(url);}})["catch"](function(err){return reject(new Error("[".concat(err.name,"]")));});});}});}/**
   * @description Parses the URL Query, grabs the code, and clears the query param. If no code is found, no action is taken.
   */},{key:"_setValuesFromUrlQuery",value:function _setValuesFromUrlQuery(){// Check for window
 if(!(typeof window!=='undefined'&&window.location.search))return;// Process query string
@@ -4375,42 +4478,42 @@ document.body.scrollTop=scrollV;document.body.scrollLeft=scrollH;}return query;}
    * @param {string} clientSecret - The client secret of an OAuth Code Authorization Grant client
    * @param {string} authCode - Authorization code
    * @param {string} redirectUri - Authorized redirect URI for your Code Authorization client
-   */},{key:"loginCodeAuthorizationGrant",value:function loginCodeAuthorizationGrant(clientId,clientSecret,authCode,redirectUri){var _this12=this;this.clientId=clientId;this.clientSecret=clientSecret;return new Promise(function(resolve,reject){if(typeof window!=='undefined'){reject(new Error('The Code Authorization grant is not supported in a browser.'));return;}var encodedData=Buffer.from(clientId+':'+clientSecret).toString('base64');var request=_this12._formAuthRequest(encodedData,{grant_type:'authorization_code',code:authCode,redirect_uri:redirectUri});request.proxy=_this12.proxy;var bodyParam={grant_type:'authorization_code',code:authCode,redirect_uri:redirectUri};// Handle response
-_this12._handleCodeAuthorizationResponse(request,bodyParam,resolve,reject);});}/**
+   */},{key:"loginCodeAuthorizationGrant",value:function loginCodeAuthorizationGrant(clientId,clientSecret,authCode,redirectUri){var _this13=this;this.clientId=clientId;this.clientSecret=clientSecret;return new Promise(function(resolve,reject){if(typeof window!=='undefined'){reject(new Error('The Code Authorization grant is not supported in a browser.'));return;}var encodedData=Buffer.from(clientId+':'+clientSecret).toString('base64');var request=_this13._formAuthRequest(encodedData,{grant_type:'authorization_code',code:authCode,redirect_uri:redirectUri});request.proxy=_this13.proxy;var bodyParam={grant_type:'authorization_code',code:authCode,redirect_uri:redirectUri};// Handle response
+_this13._handleCodeAuthorizationResponse(request,bodyParam,resolve,reject);});}/**
    * @description Requests a new access token for Code Authorization. Only available in node apps.
    * @param {string} clientId - The client ID of an OAuth Code Authorization Grant client
    * @param {string} clientSecret - The client secret of an OAuth Code Authorization Grant client
    * @param {string} authCode - Authorization code
    * @param {string} redirectUri - Authorized redirect URI for your Code Authorization client
-   */},{key:"refreshCodeAuthorizationGrant",value:function refreshCodeAuthorizationGrant(clientId,clientSecret,refreshToken){var _this13=this;return new Promise(function(resolve,reject){if(typeof window!=='undefined'){reject(new Error('The Code Authorization grant is not supported in a browser.'));return;}var encodedData=Buffer.from(clientId+':'+clientSecret).toString('base64');var request=_this13._formAuthRequest(encodedData,{grant_type:'refresh_token',refresh_token:refreshToken});request.proxy=_this13.proxy;var bodyParam={grant_type:'refresh_token',refresh_token:refreshToken};// Handle response
-_this13._handleCodeAuthorizationResponse(request,bodyParam,resolve,reject);});}/**
+   */},{key:"refreshCodeAuthorizationGrant",value:function refreshCodeAuthorizationGrant(clientId,clientSecret,refreshToken){var _this14=this;return new Promise(function(resolve,reject){if(typeof window!=='undefined'){reject(new Error('The Code Authorization grant is not supported in a browser.'));return;}var encodedData=Buffer.from(clientId+':'+clientSecret).toString('base64');var request=_this14._formAuthRequest(encodedData,{grant_type:'refresh_token',refresh_token:refreshToken});request.proxy=_this14.proxy;var bodyParam={grant_type:'refresh_token',refresh_token:refreshToken};// Handle response
+_this14._handleCodeAuthorizationResponse(request,bodyParam,resolve,reject);});}/**
    * @description Handles the response for code auth requests
    * @param {object} request - Authorization request object
    * @param {object} bodyParam - Input body data for authorization request
    * @param {function} resolve - Promise resolve callback
    * @param {function} reject - Promise reject callback
-   */},{key:"_handleCodeAuthorizationResponse",value:function _handleCodeAuthorizationResponse(request,bodyParam,resolve,reject){var _this14=this;var loginBasePath=this.config.getConfUrl('login',"https://login.".concat(this.config.environment));request.then(function(response){// Logging
-_this14.config.logger.log('trace',response.status,'POST',"".concat(loginBasePath,"/oauth/token"),request.headers,response.headers,bodyParam,undefined);_this14.config.logger.log('debug',response.status,'POST',"".concat(loginBasePath,"/oauth/token"),request.headers,undefined,bodyParam,undefined);// Get access token from response
-var access_token=response.data.access_token;var refresh_token=response.data.refresh_token;_this14.setAccessToken(access_token);_this14.authData.refreshToken=refresh_token;_this14.authData.tokenExpiryTime=new Date().getTime()+response.data['expires_in']*1000;_this14.authData.tokenExpiryTimeString=new Date(_this14.authData.tokenExpiryTime).toUTCString();// Return auth data
-resolve(_this14.authData);})["catch"](function(error){// Log error
-if(error.response){_this14.config.logger.log('error',error.response.status,'POST',"".concat(loginBasePath,"/oauth/token"),request.headers,error.response.headers,bodyParam,error.response.data);}reject(error);});}/**
+   */},{key:"_handleCodeAuthorizationResponse",value:function _handleCodeAuthorizationResponse(request,bodyParam,resolve,reject){var _this15=this;var loginBasePath=this.config.getConfUrl('login',"https://login.".concat(this.config.environment));request.then(function(response){// Logging
+_this15.config.logger.log('trace',response.status,'POST',"".concat(loginBasePath,"/oauth/token"),request.headers,response.headers,bodyParam,undefined);_this15.config.logger.log('debug',response.status,'POST',"".concat(loginBasePath,"/oauth/token"),request.headers,undefined,bodyParam,undefined);// Get access token from response
+var access_token=response.data.access_token;var refresh_token=response.data.refresh_token;_this15.setAccessToken(access_token);_this15.authData.refreshToken=refresh_token;_this15.authData.tokenExpiryTime=new Date().getTime()+response.data['expires_in']*1000;_this15.authData.tokenExpiryTimeString=new Date(_this15.authData.tokenExpiryTime).toUTCString();// Return auth data
+resolve(_this15.authData);})["catch"](function(error){// Log error
+if(error.response){_this15.config.logger.log('error',error.response.status,'POST',"".concat(loginBasePath,"/oauth/token"),request.headers,error.response.headers,bodyParam,error.response.data);}reject(error);});}/**
    * @description Utility function to create the request for auth requests
    * @param {string} encodedData - Base64 encoded client and clientSecret pair
    * @param {object} data - data to url form encode
    */},{key:"_formAuthRequest",value:function _formAuthRequest(encodedData,data){var loginBasePath=this.config.getConfUrl('login',"https://login.".concat(this.config.environment));var headers={'Authorization':'Basic '+encodedData,'Content-Type':'application/x-www-form-urlencoded'};var queryData=new URLSearchParams(data).toString();var requestOptions=new HttpRequestOptions("".concat(loginBasePath,"/oauth/token"),"POST",headers,null,queryData,this.timeout);var httpClient=this.getHttpClient();return httpClient.request(requestOptions);}/**
    * @description Handles an expired access token. Only available in node apps.
    * @param {string} statusCode - The status code of a request
-   */},{key:"_handleExpiredAccessToken",value:function _handleExpiredAccessToken(){var _this15=this;return new Promise(function(resolve,reject){if(typeof window!=='undefined'){reject(new Error('This method is not supported in a browser.'));return;}if(!_this15.refreshInProgress){_this15.refreshInProgress=true;_this15.refreshCodeAuthorizationGrant(_this15.clientId,_this15.clientSecret,_this15.authData.refreshToken).then(function(){_this15.refreshInProgress=false;resolve();})["catch"](function(err){// Handle failure response
-_this15.refreshInProgress=false;reject(err);});}else{// Wait refresh_token_wait_max seconds for other thread to complete refresh
-_this15._sleep(_this15.config.refresh_token_wait_max).then(function(){if(_this15.refreshInProgress)reject(new Error("Token refresh took longer than ".concat(_this15.config.refresh_token_wait_max," seconds")));else resolve();});}});}/**
+   */},{key:"_handleExpiredAccessToken",value:function _handleExpiredAccessToken(){var _this16=this;return new Promise(function(resolve,reject){if(typeof window!=='undefined'){reject(new Error('This method is not supported in a browser.'));return;}if(!_this16.refreshInProgress){_this16.refreshInProgress=true;_this16.refreshCodeAuthorizationGrant(_this16.clientId,_this16.clientSecret,_this16.authData.refreshToken).then(function(){_this16.refreshInProgress=false;resolve();})["catch"](function(err){// Handle failure response
+_this16.refreshInProgress=false;reject(err);});}else{// Wait refresh_token_wait_max seconds for other thread to complete refresh
+_this16._sleep(_this16.config.refresh_token_wait_max).then(function(){if(_this16.refreshInProgress)reject(new Error("Token refresh took longer than ".concat(_this16.config.refresh_token_wait_max," seconds")));else resolve();});}});}/**
    * @description Sleeps for a defined length
    * @param {int} millis - Length to sleep in milliseconds
    */},{key:"_sleep",value:function _sleep(millis){return new Promise(function(resolve){return setTimeout(resolve,millis);});}/**
    * @description Loads token from storage, if enabled, and checks to ensure it works.
-   */},{key:"_testTokenAccess",value:function _testTokenAccess(skipTest){var _this16=this;return new Promise(function(resolve,reject){if(typeof skipTest==="boolean"&&skipTest===true){reject(new Error('Skipping Test Token'));return;}// Load from storage
-_this16._loadSettings();// Check if there is a token to test
-if(!_this16.authentications['PureCloud OAuth'].accessToken){reject(new Error('Token is not set'));return;}// Test token
-_this16.callApi('/api/v2/tokens/me','GET',null,null,null,null,null,['PureCloud OAuth'],['application/json'],['application/json']).then(function(){resolve();})["catch"](function(error){_this16._saveSettings({accessToken:undefined});reject(error);});});}/**
+   */},{key:"_testTokenAccess",value:function _testTokenAccess(skipTest){var _this17=this;return new Promise(function(resolve,reject){if(typeof skipTest==="boolean"&&skipTest===true){reject(new Error('Skipping Test Token'));return;}// Load from storage
+_this17._loadSettings();// Check if there is a token to test
+if(!_this17.authentications['PureCloud OAuth'].accessToken){reject(new Error('Token is not set'));return;}// Test token
+_this17.callApi('/api/v2/tokens/me','GET',null,null,null,null,null,['PureCloud OAuth'],['application/json'],['application/json']).then(function(){resolve();})["catch"](function(error){_this17._saveSettings({accessToken:undefined});reject(error);});});}/**
    * @description Parses the URL hash, grabs the access token, and clears the hash. If no access token is found, no action is taken.
    */},{key:"_setValuesFromUrlHash",value:function _setValuesFromUrlHash(){// Check for window
 if(!(typeof window!=='undefined'&&window.location.hash))return;// Process hash string into object
@@ -4454,13 +4557,13 @@ this.setAccessToken(this.authentications['PureCloud OAuth'].accessToken);}/**
    * @param existingHeaders The existing header object.
    * @param newHeaders New headers.
    * @returns {Object} The combination of all headers.
-   */},{key:"addHeaders",value:function addHeaders(existingHeaders){for(var _len7=arguments.length,newHeaders=new Array(_len7>1?_len7-1:0),_key7=1;_key7<_len7;_key7++){newHeaders[_key7-1]=arguments[_key7];}if(existingHeaders){existingHeaders=Object.assign.apply(Object,[existingHeaders].concat(newHeaders));}else{existingHeaders=Object.assign.apply(Object,newHeaders);}return existingHeaders;}/**
+   */},{key:"addHeaders",value:function addHeaders(existingHeaders){for(var _len7=arguments.length,newHeaders=new Array(_len7>1?_len7-1:0),_key8=1;_key8<_len7;_key8++){newHeaders[_key8-1]=arguments[_key8];}if(existingHeaders){existingHeaders=Object.assign.apply(Object,[existingHeaders].concat(newHeaders));}else{existingHeaders=Object.assign.apply(Object,newHeaders);}return existingHeaders;}/**
    * Builds full URL by appending the given path to the base URL and replacing path parameter place-holders with parameter values.
    * NOTE: query parameters are not handled here.
    * @param {String} path The path to append to the base URL.
    * @param {Object} pathParams The parameter values to append.
    * @returns {String} The encoded path with parameter values substituted.
-   */},{key:"buildUrl",value:function buildUrl(path,pathParams){var _this17=this;if(!path.match(/^\//)){path="/".concat(path);}var url=this.config.getConfUrl('api',this.config.basePath)+path;url=url.replace(/\{([\w-]+)\}/g,function(fullMatch,key){var value;if(pathParams.hasOwnProperty(key)){value=_this17.paramToString(pathParams[key]);}else{value=fullMatch;}return encodeURIComponent(value);});return url;}/**
+   */},{key:"buildUrl",value:function buildUrl(path,pathParams){var _this18=this;if(!path.match(/^\//)){path="/".concat(path);}var url=this.config.getConfUrl('api',this.config.basePath)+path;url=url.replace(/\{([\w-]+)\}/g,function(fullMatch,key){var value;if(pathParams.hasOwnProperty(key)){value=_this18.paramToString(pathParams[key]);}else{value=fullMatch;}return encodeURIComponent(value);});return url;}/**
    * Checks whether the given content type represents JSON.<br>
    * JSON content type examples:<br>
    * <ul>
@@ -4496,12 +4599,12 @@ if(typeof File==='function'&&param instanceof File){return true;}return false;}/
    * @param {module:purecloud-platform-client-v2/ApiClient.CollectionFormatEnum} collectionFormat The array element separator strategy.
    * @returns {String|Array} A string representation of the supplied collection, using the specified delimiter. Returns
    * <code>param</code> as is if <code>collectionFormat</code> is <code>multi</code>.
-   */},{key:"buildCollectionParam",value:function buildCollectionParam(param,collectionFormat){var _this18=this;if(!param)return;if(!Array.isArray(param)){param=[param];}switch(collectionFormat){case'csv':return param.map(function(x){return _this18.paramToString(x);}).join(',');case'ssv':return param.map(function(x){return _this18.paramToString(x);}).join(' ');case'tsv':return param.map(function(x){return _this18.paramToString(x);}).join('\t');case'pipes':return param.map(function(x){return _this18.paramToString(x);}).join('|');case'multi':// return the array directly as axios will handle it as expected
-return param.map(function(x){return _this18.paramToString(x);});default:throw new Error("Unknown collection format: ".concat(collectionFormat));}}/**
+   */},{key:"buildCollectionParam",value:function buildCollectionParam(param,collectionFormat){var _this19=this;if(!param)return;if(!Array.isArray(param)){param=[param];}switch(collectionFormat){case'csv':return param.map(function(x){return _this19.paramToString(x);}).join(',');case'ssv':return param.map(function(x){return _this19.paramToString(x);}).join(' ');case'tsv':return param.map(function(x){return _this19.paramToString(x);}).join('\t');case'pipes':return param.map(function(x){return _this19.paramToString(x);}).join('|');case'multi':// return the array directly as axios will handle it as expected
+return param.map(function(x){return _this19.paramToString(x);});default:throw new Error("Unknown collection format: ".concat(collectionFormat));}}/**
    * Applies authentication headers to the request.
    * @param {Object} request The axios request config object.
    * @param {Array.<String>} authNames An array of authentication method names.
-   */},{key:"applyAuthToRequest",value:function applyAuthToRequest(request,authNames){var _this19=this;authNames.forEach(function(authName){var auth=_this19.authentications[authName];switch(auth.type){case'basic':if(auth.username||auth.password){request.auth={username:auth.username||'',password:auth.password||''};}break;case'apiKey':if(auth.apiKey){var data={};if(auth.apiKeyPrefix){data[auth.name]="".concat(auth.apiKeyPrefix," ").concat(auth.apiKey);}else{data[auth.name]=auth.apiKey;}if(auth['in']==='header'){request.headers=_this19.addHeaders(request.headers,data);}else{request.setParams(_this19.serialize(data));request.headers=_this19.addHeaders(request.headers,{});}}else{request.headers=_this19.addHeaders(request.headers,{});}break;case'oauth2':if(auth.accessToken){request.headers=_this19.addHeaders(request.headers,{'Authorization':"Bearer ".concat(auth.accessToken)});}else{request.headers=_this19.addHeaders(request.headers,{});}break;default:throw new Error("Unknown authentication type: ".concat(auth.type));}});}/**
+   */},{key:"applyAuthToRequest",value:function applyAuthToRequest(request,authNames){var _this20=this;authNames.forEach(function(authName){var auth=_this20.authentications[authName];switch(auth.type){case'basic':if(auth.username||auth.password){request.auth={username:auth.username||'',password:auth.password||''};}break;case'apiKey':if(auth.apiKey){var data={};if(auth.apiKeyPrefix){data[auth.name]="".concat(auth.apiKeyPrefix," ").concat(auth.apiKey);}else{data[auth.name]=auth.apiKey;}if(auth['in']==='header'){request.headers=_this20.addHeaders(request.headers,data);}else{request.setParams(_this20.serialize(data));request.headers=_this20.addHeaders(request.headers,{});}}else{request.headers=_this20.addHeaders(request.headers,{});}break;case'oauth2':if(auth.accessToken){request.headers=_this20.addHeaders(request.headers,{'Authorization':"Bearer ".concat(auth.accessToken)});}else{request.headers=_this20.addHeaders(request.headers,{});}break;default:throw new Error("Unknown authentication type: ".concat(auth.type));}});}/**
    * @description Sets the proxy agent axios will use for requests
    * @param {any} agent - The proxy agent
    */},{key:"setProxyAgent",value:function setProxyAgent(agent){this.proxyAgent=agent;var httpClient=this.getHttpClient();httpClient.setHttpsAgent(this.proxyAgent);}/**
@@ -4519,9 +4622,9 @@ return param.map(function(x){return _this18.paramToString(x);});default:throw ne
    * constructor for a complex type.
    * @param {Object.<string, string>} customHeaders Optional per-request headers to include with the API call.
    * @returns {Promise} A Promise object.
-   */},{key:"callApi",value:function callApi(path,httpMethod,pathParams,queryParams,headerParams,formParams,bodyParam,authNames,contentTypes,accepts,customHeaders){var _this20=this;return new Promise(function(resolve,reject){sendRequest(_this20);function sendRequest(that){var url=that.buildUrl(path,pathParams);var request=new HttpRequestOptions(url,httpMethod,null,that.serialize(queryParams),null,that.timeout);// apply authentications
+   */},{key:"callApi",value:function callApi(path,httpMethod,pathParams,queryParams,headerParams,formParams,bodyParam,authNames,contentTypes,accepts,customHeaders){var _this21=this;return new Promise(function(resolve,reject){sendRequest(_this21);function sendRequest(that){var url=that.buildUrl(path,pathParams);var request=new HttpRequestOptions(url,httpMethod,null,that.serialize(queryParams),null,that.timeout);// apply authentications
 that.applyAuthToRequest(request,authNames);// set header parameters
-var defaultHeaders=that.defaultHeaders;var normalizedHeaderParams=that.normalizeParams(headerParams);request.headers=that.addHeaders(request.headers,defaultHeaders,normalizedHeaderParams);if(customHeaders){if(_typeof(customHeaders)!=='object'){throw new Error('Per-request headers must be a valid object');}for(var _i4=0,_Object$entries3=Object.entries(customHeaders);_i4<_Object$entries3.length;_i4++){var _Object$entries3$_i=_slicedToArray(_Object$entries3[_i4],2),name=_Object$entries3$_i[0],value=_Object$entries3$_i[1];if(typeof name!=='string'||typeof value!=='string'){throw new Error("Invalid header: \"".concat(name,"\" must have string name and value"));}// Basic header name validation (RFC 7230)
+var defaultHeaders=that.defaultHeaders;var normalizedHeaderParams=that.normalizeParams(headerParams);request.headers=that.addHeaders(request.headers,defaultHeaders,normalizedHeaderParams);if(customHeaders){if(_typeof(customHeaders)!=='object'){throw new Error('Per-request headers must be a valid object');}for(var _i3=0,_Object$entries3=Object.entries(customHeaders);_i3<_Object$entries3.length;_i3++){var _Object$entries3$_i=_slicedToArray(_Object$entries3[_i3],2),name=_Object$entries3$_i[0],value=_Object$entries3$_i[1];if(typeof name!=='string'||typeof value!=='string'){throw new Error("Invalid header: \"".concat(name,"\" must have string name and value"));}// Basic header name validation (RFC 7230)
 if(!/^[!#$%&'*+\-.0-9A-Z^_`a-z|~]+$/.test(name)){throw new Error("Invalid header name: \"".concat(name,"\" - must be a valid HTTP token"));}// Basic header value validation
 for(var i=0;i<value.length;i++){var charCode=value.charCodeAt(i);if(!(charCode>=0x21&&charCode<=0x7E||charCode===0x20||charCode===0x09||charCode>=0x80&&charCode<=0xFF)){throw new Error("Invalid header value for \"".concat(name,"\": contains invalid characters"));}}request.headers[name]=value;}}var contentType=that.jsonPreferredMime(contentTypes);if(contentType){request.headers['Content-Type']=contentType;}else if(!request.headers['Content-Type']){request.headers['Content-Type']='application/json';}if(contentType==='application/x-www-form-urlencoded'){request.setData(that.normalizeParams(formParams));}else if(contentType=='multipart/form-data'){var _formParams=that.normalizeParams(formParams);for(var key in _formParams){if(_formParams.hasOwnProperty(key)){// Looks like axios handles files and forms the same way
 var formData=new FormData();formData.set(key,_formParams[key]);request.setData(formData);}}}else if(bodyParam){request.setData(bodyParam);}var accept=that.jsonPreferredMime(accepts);if(accept){request.headers['Accept']=accept;}var httpClient=that.getHttpClient();httpClient.request(request).then(function(response){// Build response object
@@ -4531,7 +4634,7 @@ resolve(data);})["catch"](function(error){var data=error;if(error.response&&erro
 that.config.logger.log('error',error.response.status,httpMethod,url,request.headers,error.response.headers,bodyParam,error.response.data);data=that.returnExtended===true?{status:error.response.status,statusText:error.response.statusText,headers:error.response.headers,body:error.response.data,text:error.response.text,error:error}:error.response.data?error.response.data:error.response.text;}reject(data);});}});}}]);}();var AIStudioApi=/*#__PURE__*/function(){/**
    * AIStudio service.
    * @module purecloud-platform-client-v2/api/AIStudioApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new AIStudioApi. 
    * @alias module:purecloud-platform-client-v2/api/AIStudioApi
@@ -4784,7 +4887,7 @@ if(summarySettingId===undefined||summarySettingId===null||summarySettingId==='')
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putConversationsSummariesSetting';}return this.apiClient.callApi('/api/v2/conversations/summaries/settings/{summarySettingId}','PUT',{'summarySettingId':summarySettingId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var AgentAssistantsApi=/*#__PURE__*/function(){/**
    * AgentAssistants service.
    * @module purecloud-platform-client-v2/api/AgentAssistantsApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new AgentAssistantsApi. 
    * @alias module:purecloud-platform-client-v2/api/AgentAssistantsApi
@@ -5010,7 +5113,7 @@ if(agentChecklistId===undefined||agentChecklistId===null||agentChecklistId==='')
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putAssistantsAgentchecklist';}return this.apiClient.callApi('/api/v2/assistants/agentchecklists/{agentChecklistId}','PUT',{'agentChecklistId':agentChecklistId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var AgentCopilotApi=/*#__PURE__*/function(){/**
    * AgentCopilot service.
    * @module purecloud-platform-client-v2/api/AgentCopilotApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new AgentCopilotApi. 
    * @alias module:purecloud-platform-client-v2/api/AgentCopilotApi
@@ -5042,7 +5145,7 @@ if(assistantId===undefined||assistantId===null||assistantId===''){throw'Missing 
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putAssistantCopilot';}return this.apiClient.callApi('/api/v2/assistants/{assistantId}/copilot','PUT',{'assistantId':assistantId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var AgentUIApi=/*#__PURE__*/function(){/**
    * AgentUI service.
    * @module purecloud-platform-client-v2/api/AgentUIApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new AgentUIApi. 
    * @alias module:purecloud-platform-client-v2/api/AgentUIApi
@@ -5084,7 +5187,7 @@ if(agentId===undefined||agentId===null||agentId===''){throw'Missing the required
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putUsersAgentuiAgentsAutoanswerAgentIdSettings';}return this.apiClient.callApi('/api/v2/users/agentui/agents/autoanswer/{agentId}/settings','PUT',{'agentId':agentId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var AlertingApi=/*#__PURE__*/function(){/**
    * Alerting service.
    * @module purecloud-platform-client-v2/api/AlertingApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new AlertingApi. 
    * @alias module:purecloud-platform-client-v2/api/AlertingApi
@@ -5198,7 +5301,7 @@ if(ruleId===undefined||ruleId===null||ruleId===''){throw'Missing the required pa
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putAlertingRule';}return this.apiClient.callApi('/api/v2/alerting/rules/{ruleId}','PUT',{'ruleId':ruleId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var AnalyticsApi=/*#__PURE__*/function(){/**
    * Analytics service.
    * @module purecloud-platform-client-v2/api/AnalyticsApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new AnalyticsApi. 
    * @alias module:purecloud-platform-client-v2/api/AnalyticsApi
@@ -6252,7 +6355,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putAnalyticsDataretentionSettings';}return this.apiClient.callApi('/api/v2/analytics/dataretention/settings','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var ArchitectApi=/*#__PURE__*/function(){/**
    * Architect service.
    * @module purecloud-platform-client-v2/api/ArchitectApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new ArchitectApi. 
    * @alias module:purecloud-platform-client-v2/api/ArchitectApi
@@ -7651,7 +7754,7 @@ if(milestoneId===undefined||milestoneId===null||milestoneId===''){throw'Missing 
 if(flowOutcomeId===undefined||flowOutcomeId===null||flowOutcomeId===''){throw'Missing the required parameter "flowOutcomeId" when calling putFlowsOutcome';}return this.apiClient.callApi('/api/v2/flows/outcomes/{flowOutcomeId}','PUT',{'flowOutcomeId':flowOutcomeId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var AssistantCopilotVariationsApi=/*#__PURE__*/function(){/**
    * AssistantCopilotVariations service.
    * @module purecloud-platform-client-v2/api/AssistantCopilotVariationsApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new AssistantCopilotVariationsApi. 
    * @alias module:purecloud-platform-client-v2/api/AssistantCopilotVariationsApi
@@ -7706,7 +7809,7 @@ if(variationId===undefined||variationId===null||variationId===''){throw'Missing 
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putAssistantVariation';}return this.apiClient.callApi('/api/v2/assistants/{assistantId}/variations/{variationId}','PUT',{'assistantId':assistantId,'variationId':variationId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var AuditApi=/*#__PURE__*/function(){/**
    * Audit service.
    * @module purecloud-platform-client-v2/api/AuditApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new AuditApi. 
    * @alias module:purecloud-platform-client-v2/api/AuditApi
@@ -7767,7 +7870,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postAuditsQueryRealtimeRelated';}return this.apiClient.callApi('/api/v2/audits/query/realtime/related','POST',{},{'expand':this.apiClient.buildCollectionParam(opts['expand'],'multi')},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var AuthorizationApi=/*#__PURE__*/function(){/**
    * Authorization service.
    * @module purecloud-platform-client-v2/api/AuthorizationApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new AuthorizationApi. 
    * @alias module:purecloud-platform-client-v2/api/AuthorizationApi
@@ -8285,7 +8388,7 @@ if(subjectId===undefined||subjectId===null||subjectId===''){throw'Missing the re
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putUserRoles';}return this.apiClient.callApi('/api/v2/users/{subjectId}/roles','PUT',{'subjectId':subjectId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var BackgroundAssistantApi=/*#__PURE__*/function(){/**
    * BackgroundAssistant service.
    * @module purecloud-platform-client-v2/api/BackgroundAssistantApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new BackgroundAssistantApi. 
    * @alias module:purecloud-platform-client-v2/api/BackgroundAssistantApi
@@ -8308,7 +8411,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
    */},{key:"postScreenrecordingToken",value:function postScreenrecordingToken(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/screenrecording/token','POST',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var BillingApi=/*#__PURE__*/function(){/**
    * Billing service.
    * @module purecloud-platform-client-v2/api/BillingApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new BillingApi. 
    * @alias module:purecloud-platform-client-v2/api/BillingApi
@@ -8397,7 +8500,7 @@ if(endDate===undefined||endDate===null){throw'Missing the required parameter "en
 if(trustorOrgId===undefined||trustorOrgId===null||trustorOrgId===''){throw'Missing the required parameter "trustorOrgId" when calling getBillingTrusteebillingoverviewTrustorOrgId';}return this.apiClient.callApi('/api/v2/billing/trusteebillingoverview/{trustorOrgId}','GET',{'trustorOrgId':trustorOrgId},{'billingPeriodIndex':opts['billingPeriodIndex']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var BusinessRulesApi=/*#__PURE__*/function(){/**
    * BusinessRules service.
    * @module purecloud-platform-client-v2/api/BusinessRulesApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new BusinessRulesApi. 
    * @alias module:purecloud-platform-client-v2/api/BusinessRulesApi
@@ -8838,7 +8941,7 @@ if(schemaId===undefined||schemaId===null||schemaId===''){throw'Missing the requi
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putBusinessrulesSchema';}return this.apiClient.callApi('/api/v2/businessrules/schemas/{schemaId}','PUT',{'schemaId':schemaId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var CarrierServicesApi=/*#__PURE__*/function(){/**
    * CarrierServices service.
    * @module purecloud-platform-client-v2/api/CarrierServicesApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new CarrierServicesApi. 
    * @alias module:purecloud-platform-client-v2/api/CarrierServicesApi
@@ -8861,7 +8964,7 @@ if(phoneNumber===undefined||phoneNumber===null){throw'Missing the required param
    */},{key:"postCarrierservicesIntegrationsEmergencylocationsMe",value:function postCarrierservicesIntegrationsEmergencylocationsMe(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/carrierservices/integrations/emergencylocations/me','POST',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var CaseManagementApi=/*#__PURE__*/function(){/**
    * CaseManagement service.
    * @module purecloud-platform-client-v2/api/CaseManagementApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new CaseManagementApi. 
    * @alias module:purecloud-platform-client-v2/api/CaseManagementApi
@@ -9354,7 +9457,7 @@ if(caseplanId===undefined||caseplanId===null||caseplanId===''){throw'Missing the
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putCasemanagementCaseplanIntakesettings';}return this.apiClient.callApi('/api/v2/casemanagement/caseplans/{caseplanId}/intakesettings','PUT',{'caseplanId':caseplanId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var ChatApi=/*#__PURE__*/function(){/**
    * Chat service.
    * @module purecloud-platform-client-v2/api/ChatApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new ChatApi. 
    * @alias module:purecloud-platform-client-v2/api/ChatApi
@@ -9649,7 +9752,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putChatsSettings';}return this.apiClient.callApi('/api/v2/chats/settings','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var CoachingApi=/*#__PURE__*/function(){/**
    * Coaching service.
    * @module purecloud-platform-client-v2/api/CoachingApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new CoachingApi. 
    * @alias module:purecloud-platform-client-v2/api/CoachingApi
@@ -9848,7 +9951,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postCoachingScheduleslotsQuery';}return this.apiClient.callApi('/api/v2/coaching/scheduleslots/query','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var ContentManagementApi=/*#__PURE__*/function(){/**
    * ContentManagement service.
    * @module purecloud-platform-client-v2/api/ContentManagementApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new ContentManagementApi. 
    * @alias module:purecloud-platform-client-v2/api/ContentManagementApi
@@ -10180,7 +10283,7 @@ if(tagId===undefined||tagId===null||tagId===''){throw'Missing the required param
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putContentmanagementWorkspaceTagvalue';}return this.apiClient.callApi('/api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}','PUT',{'workspaceId':workspaceId,'tagId':tagId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var ConversationsApi=/*#__PURE__*/function(){/**
    * Conversations service.
    * @module purecloud-platform-client-v2/api/ConversationsApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new ConversationsApi. 
    * @alias module:purecloud-platform-client-v2/api/ConversationsApi
@@ -12991,7 +13094,7 @@ if(conversationId===undefined||conversationId===null||conversationId===''){throw
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putConversationsVideoRecordingstate';}return this.apiClient.callApi('/api/v2/conversations/videos/{conversationId}/recordingstate','PUT',{'conversationId':conversationId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var DataExtensionsApi=/*#__PURE__*/function(){/**
    * DataExtensions service.
    * @module purecloud-platform-client-v2/api/DataExtensionsApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new DataExtensionsApi. 
    * @alias module:purecloud-platform-client-v2/api/DataExtensionsApi
@@ -13018,7 +13121,7 @@ if(coretypeName===undefined||coretypeName===null||coretypeName===''){throw'Missi
    */},{key:"getDataextensionsLimits",value:function getDataextensionsLimits(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/dataextensions/limits','GET',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var DataPrivacyApi=/*#__PURE__*/function(){/**
    * DataPrivacy service.
    * @module purecloud-platform-client-v2/api/DataPrivacyApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new DataPrivacyApi. 
    * @alias module:purecloud-platform-client-v2/api/DataPrivacyApi
@@ -13069,7 +13172,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postDataprivacyMaskingrulesValidate';}return this.apiClient.callApi('/api/v2/dataprivacy/maskingrules/validate','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var DependenciesApi=/*#__PURE__*/function(){/**
    * Dependencies service.
    * @module purecloud-platform-client-v2/api/DependenciesApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new DependenciesApi. 
    * @alias module:purecloud-platform-client-v2/api/DependenciesApi
@@ -13116,7 +13219,7 @@ if(entityType===undefined||entityType===null||entityType===''){throw'Missing the
 if(entityId===undefined||entityId===null||entityId===''){throw'Missing the required parameter "entityId" when calling getDependenciesTypeEntityTypeIdEntityIdConnectionsRequires';}return this.apiClient.callApi('/api/v2/dependencies/type/{entityType}/id/{entityId}/connections/requires','GET',{'entityType':entityType,'entityId':entityId},{'pageSize':opts['pageSize'],'beforeSourceType':opts['beforeSourceType'],'beforeSourceId':opts['beforeSourceId'],'afterSourceType':opts['afterSourceType'],'afterSourceId':opts['afterSourceId']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var DownloadsApi=/*#__PURE__*/function(){/**
    * Downloads service.
    * @module purecloud-platform-client-v2/api/DownloadsApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new DownloadsApi. 
    * @alias module:purecloud-platform-client-v2/api/DownloadsApi
@@ -13136,7 +13239,7 @@ if(entityId===undefined||entityId===null||entityId===''){throw'Missing the requi
 if(downloadId===undefined||downloadId===null||downloadId===''){throw'Missing the required parameter "downloadId" when calling getDownload';}return this.apiClient.callApi('/api/v2/downloads/{downloadId}','GET',{'downloadId':downloadId},{'contentDisposition':opts['contentDisposition'],'issueRedirect':opts['issueRedirect'],'redirectToAuth':opts['redirectToAuth']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var EmailsApi=/*#__PURE__*/function(){/**
    * Emails service.
    * @module purecloud-platform-client-v2/api/EmailsApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new EmailsApi. 
    * @alias module:purecloud-platform-client-v2/api/EmailsApi
@@ -13173,7 +13276,7 @@ if(downloadId===undefined||downloadId===null||downloadId===''){throw'Missing the
    */},{key:"patchEmailsSettingsThreading",value:function patchEmailsSettingsThreading(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/emails/settings/threading','PATCH',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var EmployeeEngagementApi=/*#__PURE__*/function(){/**
    * EmployeeEngagement service.
    * @module purecloud-platform-client-v2/api/EmployeeEngagementApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new EmployeeEngagementApi. 
    * @alias module:purecloud-platform-client-v2/api/EmployeeEngagementApi
@@ -13231,7 +13334,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postEmployeeengagementRecognitions';}return this.apiClient.callApi('/api/v2/employeeengagement/recognitions','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var EventsApi=/*#__PURE__*/function(){/**
    * Events service.
    * @module purecloud-platform-client-v2/api/EventsApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new EventsApi. 
    * @alias module:purecloud-platform-client-v2/api/EventsApi
@@ -13269,7 +13372,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postEventsUsersRoutingstatus';}return this.apiClient.callApi('/api/v2/events/users/routingstatus','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var ExternalContactsApi=/*#__PURE__*/function(){/**
    * ExternalContacts service.
    * @module purecloud-platform-client-v2/api/ExternalContactsApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new ExternalContactsApi. 
    * @alias module:purecloud-platform-client-v2/api/ExternalContactsApi
@@ -14429,7 +14532,7 @@ if(relationshipId===undefined||relationshipId===null||relationshipId===''){throw
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putExternalcontactsRelationship';}return this.apiClient.callApi('/api/v2/externalcontacts/relationships/{relationshipId}','PUT',{'relationshipId':relationshipId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var FaxApi=/*#__PURE__*/function(){/**
    * Fax service.
    * @module purecloud-platform-client-v2/api/FaxApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new FaxApi. 
    * @alias module:purecloud-platform-client-v2/api/FaxApi
@@ -14499,7 +14602,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
    */},{key:"putFaxSettings",value:function putFaxSettings(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/fax/settings','PUT',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var FlowsApi=/*#__PURE__*/function(){/**
    * Flows service.
    * @module purecloud-platform-client-v2/api/FlowsApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new FlowsApi. 
    * @alias module:purecloud-platform-client-v2/api/FlowsApi
@@ -14561,7 +14664,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postAnalyticsFlowsObservationsQuery';}return this.apiClient.callApi('/api/v2/analytics/flows/observations/query','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var GamificationApi=/*#__PURE__*/function(){/**
    * Gamification service.
    * @module purecloud-platform-client-v2/api/GamificationApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new GamificationApi. 
    * @alias module:purecloud-platform-client-v2/api/GamificationApi
@@ -15356,7 +15459,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(status===undefined||status===null){throw'Missing the required parameter "status" when calling putGamificationStatus';}return this.apiClient.callApi('/api/v2/gamification/status','PUT',{},{},{},{},status,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var GeneralDataProtectionRegulationApi=/*#__PURE__*/function(){/**
    * GeneralDataProtectionRegulation service.
    * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new GeneralDataProtectionRegulationApi. 
    * @alias module:purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
@@ -15397,7 +15500,7 @@ if(searchValue===undefined||searchValue===null){throw'Missing the required param
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postGdprRequests';}return this.apiClient.callApi('/api/v2/gdpr/requests','POST',{},{'deleteConfirmed':opts['deleteConfirmed']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var GeolocationApi=/*#__PURE__*/function(){/**
    * Geolocation service.
    * @module purecloud-platform-client-v2/api/GeolocationApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new GeolocationApi. 
    * @alias module:purecloud-platform-client-v2/api/GeolocationApi
@@ -15439,7 +15542,7 @@ if(clientId===undefined||clientId===null||clientId===''){throw'Missing the requi
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchUserGeolocation';}return this.apiClient.callApi('/api/v2/users/{userId}/geolocations/{clientId}','PATCH',{'userId':userId,'clientId':clientId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var GreetingsApi=/*#__PURE__*/function(){/**
    * Greetings service.
    * @module purecloud-platform-client-v2/api/GreetingsApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new GreetingsApi. 
    * @alias module:purecloud-platform-client-v2/api/GreetingsApi
@@ -15598,7 +15701,7 @@ if(userId===undefined||userId===null||userId===''){throw'Missing the required pa
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putUserGreetingsDefaults';}return this.apiClient.callApi('/api/v2/users/{userId}/greetings/defaults','PUT',{'userId':userId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var GroupsApi=/*#__PURE__*/function(){/**
    * Groups service.
    * @module purecloud-platform-client-v2/api/GroupsApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new GroupsApi. 
    * @alias module:purecloud-platform-client-v2/api/GroupsApi
@@ -15761,7 +15864,7 @@ if(groupId===undefined||groupId===null||groupId===''){throw'Missing the required
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putGroupDynamicsettings';}return this.apiClient.callApi('/api/v2/groups/{groupId}/dynamicsettings','PUT',{'groupId':groupId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var IdentityProviderApi=/*#__PURE__*/function(){/**
    * IdentityProvider service.
    * @module purecloud-platform-client-v2/api/IdentityProviderApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new IdentityProviderApi. 
    * @alias module:purecloud-platform-client-v2/api/IdentityProviderApi
@@ -15993,7 +16096,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putIdentityprovidersSalesforce';}return this.apiClient.callApi('/api/v2/identityproviders/salesforce','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var InfrastructureAsCodeApi=/*#__PURE__*/function(){/**
    * InfrastructureAsCode service.
    * @module purecloud-platform-client-v2/api/InfrastructureAsCodeApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new InfrastructureAsCodeApi. 
    * @alias module:purecloud-platform-client-v2/api/InfrastructureAsCodeApi
@@ -16053,7 +16156,7 @@ if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required param
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postInfrastructureascodeJobs';}return this.apiClient.callApi('/api/v2/infrastructureascode/jobs','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var IntegrationsApi=/*#__PURE__*/function(){/**
    * Integrations service.
    * @module purecloud-platform-client-v2/api/IntegrationsApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new IntegrationsApi. 
    * @alias module:purecloud-platform-client-v2/api/IntegrationsApi
@@ -16872,7 +16975,7 @@ if(ucIntegrationId===undefined||ucIntegrationId===null||ucIntegrationId===''){th
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putIntegrationsUnifiedcommunicationThirdpartypresences';}return this.apiClient.callApi('/api/v2/integrations/unifiedcommunications/{ucIntegrationId}/thirdpartypresences','PUT',{'ucIntegrationId':ucIntegrationId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var IntentsApi=/*#__PURE__*/function(){/**
    * Intents service.
    * @module purecloud-platform-client-v2/api/IntentsApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new IntentsApi. 
    * @alias module:purecloud-platform-client-v2/api/IntentsApi
@@ -17023,7 +17126,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postIntentsCustomerintentsBulkRetrieve';}return this.apiClient.callApi('/api/v2/intents/customerintents/bulk/retrieve','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var JourneyApi=/*#__PURE__*/function(){/**
    * Journey service.
    * @module purecloud-platform-client-v2/api/JourneyApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new JourneyApi. 
    * @alias module:purecloud-platform-client-v2/api/JourneyApi
@@ -17794,7 +17897,7 @@ if(eventDefinitionId===undefined||eventDefinitionId===null||eventDefinitionId===
 if(eventDefinitionId===undefined||eventDefinitionId===null||eventDefinitionId===''){throw'Missing the required parameter "eventDefinitionId" when calling putJourneyViewsEventdefinitionActivate';}return this.apiClient.callApi('/api/v2/journey/views/eventdefinitions/{eventDefinitionId}/activate','PUT',{'eventDefinitionId':eventDefinitionId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var KnowledgeApi=/*#__PURE__*/function(){/**
    * Knowledge service.
    * @module purecloud-platform-client-v2/api/KnowledgeApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new KnowledgeApi. 
    * @alias module:purecloud-platform-client-v2/api/KnowledgeApi
@@ -19068,7 +19171,7 @@ if(sourceId===undefined||sourceId===null||sourceId===''){throw'Missing the requi
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putKnowledgeSource';}return this.apiClient.callApi('/api/v2/knowledge/sources/{sourceId}','PUT',{'sourceId':sourceId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var LanguageUnderstandingApi=/*#__PURE__*/function(){/**
    * LanguageUnderstanding service.
    * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new LanguageUnderstandingApi. 
    * @alias module:purecloud-platform-client-v2/api/LanguageUnderstandingApi
@@ -19442,7 +19545,7 @@ if(domainVersionId===undefined||domainVersionId===null||domainVersionId===''){th
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putLanguageunderstandingDomainVersion';}return this.apiClient.callApi('/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}','PUT',{'domainId':domainId,'domainVersionId':domainVersionId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var LanguagesApi=/*#__PURE__*/function(){/**
    * Languages service.
    * @module purecloud-platform-client-v2/api/LanguagesApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new LanguagesApi. 
    * @alias module:purecloud-platform-client-v2/api/LanguagesApi
@@ -19512,7 +19615,7 @@ if(userId===undefined||userId===null||userId===''){throw'Missing the required pa
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postLanguages';}return this.apiClient.callApi('/api/v2/languages','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var LearningApi=/*#__PURE__*/function(){/**
    * Learning service.
    * @module purecloud-platform-client-v2/api/LearningApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new LearningApi. 
    * @alias module:purecloud-platform-client-v2/api/LearningApi
@@ -19858,7 +19961,7 @@ if(moduleId===undefined||moduleId===null||moduleId===''){throw'Missing the requi
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putLearningModuleRule';}return this.apiClient.callApi('/api/v2/learning/modules/{moduleId}/rule','PUT',{'moduleId':moduleId},{'assign':opts['assign']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var LicenseApi=/*#__PURE__*/function(){/**
    * License service.
    * @module purecloud-platform-client-v2/api/LicenseApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new LicenseApi. 
    * @alias module:purecloud-platform-client-v2/api/LicenseApi
@@ -19933,7 +20036,7 @@ if(featureName===undefined||featureName===null||featureName===''){throw'Missing 
    */},{key:"postLicenseUsers",value:function postLicenseUsers(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/license/users','POST',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var LocationsApi=/*#__PURE__*/function(){/**
    * Locations service.
    * @module purecloud-platform-client-v2/api/LocationsApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new LocationsApi. 
    * @alias module:purecloud-platform-client-v2/api/LocationsApi
@@ -20005,7 +20108,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postLocationsSearch';}return this.apiClient.callApi('/api/v2/locations/search','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var LogCaptureApi=/*#__PURE__*/function(){/**
    * LogCapture service.
    * @module purecloud-platform-client-v2/api/LogCaptureApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new LogCaptureApi. 
    * @alias module:purecloud-platform-client-v2/api/LogCaptureApi
@@ -20064,7 +20167,7 @@ if(userId===undefined||userId===null||userId===''){throw'Missing the required pa
 if(userId===undefined||userId===null||userId===''){throw'Missing the required parameter "userId" when calling postDiagnosticsLogcaptureBrowserUser';}return this.apiClient.callApi('/api/v2/diagnostics/logcapture/browser/users/{userId}','POST',{'userId':userId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var MessagingApi=/*#__PURE__*/function(){/**
    * Messaging service.
    * @module purecloud-platform-client-v2/api/MessagingApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new MessagingApi. 
    * @alias module:purecloud-platform-client-v2/api/MessagingApi
@@ -20178,7 +20281,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putMessagingSettingsDefault';}return this.apiClient.callApi('/api/v2/messaging/settings/default','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var MobileDevicesApi=/*#__PURE__*/function(){/**
    * MobileDevices service.
    * @module purecloud-platform-client-v2/api/MobileDevicesApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new MobileDevicesApi. 
    * @alias module:purecloud-platform-client-v2/api/MobileDevicesApi
@@ -20230,7 +20333,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(deviceId===undefined||deviceId===null||deviceId===''){throw'Missing the required parameter "deviceId" when calling putMobiledevice';}return this.apiClient.callApi('/api/v2/mobiledevices/{deviceId}','PUT',{'deviceId':deviceId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var NotificationsApi=/*#__PURE__*/function(){/**
    * Notifications service.
    * @module purecloud-platform-client-v2/api/NotificationsApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new NotificationsApi. 
    * @alias module:purecloud-platform-client-v2/api/NotificationsApi
@@ -20299,7 +20402,7 @@ if(channelId===undefined||channelId===null||channelId===''){throw'Missing the re
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putNotificationsChannelSubscriptions';}return this.apiClient.callApi('/api/v2/notifications/channels/{channelId}/subscriptions','PUT',{'channelId':channelId},{'ignoreErrors':opts['ignoreErrors']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var OAuthApi=/*#__PURE__*/function(){/**
    * OAuth service.
    * @module purecloud-platform-client-v2/api/OAuthApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new OAuthApi. 
    * @alias module:purecloud-platform-client-v2/api/OAuthApi
@@ -20405,7 +20508,7 @@ if(clientId===undefined||clientId===null||clientId===''){throw'Missing the requi
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putOauthClient';}return this.apiClient.callApi('/api/v2/oauth/clients/{clientId}','PUT',{'clientId':clientId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var ObjectsApi=/*#__PURE__*/function(){/**
    * Objects service.
    * @module purecloud-platform-client-v2/api/ObjectsApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new ObjectsApi. 
    * @alias module:purecloud-platform-client-v2/api/ObjectsApi
@@ -20508,7 +20611,7 @@ if(divisionId===undefined||divisionId===null||divisionId===''){throw'Missing the
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putAuthorizationDivision';}return this.apiClient.callApi('/api/v2/authorization/divisions/{divisionId}','PUT',{'divisionId':divisionId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var OperationalEventsApi=/*#__PURE__*/function(){/**
    * OperationalEvents service.
    * @module purecloud-platform-client-v2/api/OperationalEventsApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new OperationalEventsApi. 
    * @alias module:purecloud-platform-client-v2/api/OperationalEventsApi
@@ -20545,7 +20648,7 @@ if(eventDefinitionId===undefined||eventDefinitionId===null||eventDefinitionId===
    */},{key:"postUsageEventsQuery",value:function postUsageEventsQuery(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/usage/events/query','POST',{},{'before':opts['before'],'after':opts['after'],'pageSize':opts['pageSize']},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var OrganizationApi=/*#__PURE__*/function(){/**
    * Organization service.
    * @module purecloud-platform-client-v2/api/OrganizationApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new OrganizationApi. 
    * @alias module:purecloud-platform-client-v2/api/OrganizationApi
@@ -20685,7 +20788,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putOrganizationsWhitelist';}return this.apiClient.callApi('/api/v2/organizations/whitelist','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var OrganizationAuthorizationApi=/*#__PURE__*/function(){/**
    * OrganizationAuthorization service.
    * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new OrganizationAuthorizationApi. 
    * @alias module:purecloud-platform-client-v2/api/OrganizationAuthorizationApi
@@ -21105,7 +21208,7 @@ if(trustorOrgId===undefined||trustorOrgId===null||trustorOrgId===''){throw'Missi
 if(trusteeUserId===undefined||trusteeUserId===null||trusteeUserId===''){throw'Missing the required parameter "trusteeUserId" when calling putOrgauthorizationTrustorUser';}return this.apiClient.callApi('/api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId}','PUT',{'trustorOrgId':trustorOrgId,'trusteeUserId':trusteeUserId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var OutboundApi=/*#__PURE__*/function(){/**
    * Outbound service.
    * @module purecloud-platform-client-v2/api/OutboundApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new OutboundApi. 
    * @alias module:purecloud-platform-client-v2/api/OutboundApi
@@ -22601,7 +22704,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putOutboundWrapupcodemappings';}return this.apiClient.callApi('/api/v2/outbound/wrapupcodemappings','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var PresenceApi=/*#__PURE__*/function(){/**
    * Presence service.
    * @module purecloud-platform-client-v2/api/PresenceApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new PresenceApi. 
    * @alias module:purecloud-platform-client-v2/api/PresenceApi
@@ -22821,7 +22924,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putUsersPresencesBulk';}return this.apiClient.callApi('/api/v2/users/presences/bulk','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var ProcessAutomationApi=/*#__PURE__*/function(){/**
    * ProcessAutomation service.
    * @module purecloud-platform-client-v2/api/ProcessAutomationApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new ProcessAutomationApi. 
    * @alias module:purecloud-platform-client-v2/api/ProcessAutomationApi
@@ -22935,7 +23038,7 @@ if(triggerId===undefined||triggerId===null||triggerId===''){throw'Missing the re
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putProcessautomationTrigger';}return this.apiClient.callApi('/api/v2/processautomation/triggers/{triggerId}','PUT',{'triggerId':triggerId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var QualityApi=/*#__PURE__*/function(){/**
    * Quality service.
    * @module purecloud-platform-client-v2/api/QualityApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new QualityApi. 
    * @alias module:purecloud-platform-client-v2/api/QualityApi
@@ -23627,7 +23730,7 @@ if(customerSurveyUrl===undefined||customerSurveyUrl===null){throw'Missing the re
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putQualitySurveysScorable';}return this.apiClient.callApi('/api/v2/quality/surveys/scorable','PUT',{},{'customerSurveyUrl':customerSurveyUrl},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var RecordingApi=/*#__PURE__*/function(){/**
    * Recording service.
    * @module purecloud-platform-client-v2/api/RecordingApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new RecordingApi. 
    * @alias module:purecloud-platform-client-v2/api/RecordingApi
@@ -24126,7 +24229,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
    */},{key:"putRecordingsDeletionprotection",value:function putRecordingsDeletionprotection(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/recordings/deletionprotection','PUT',{},{'protect':opts['protect']},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var ResponseManagementApi=/*#__PURE__*/function(){/**
    * ResponseManagement service.
    * @module purecloud-platform-client-v2/api/ResponseManagementApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new ResponseManagementApi. 
    * @alias module:purecloud-platform-client-v2/api/ResponseManagementApi
@@ -24323,7 +24426,7 @@ if(responseAssetId===undefined||responseAssetId===null||responseAssetId===''){th
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putResponsemanagementResponseasset';}return this.apiClient.callApi('/api/v2/responsemanagement/responseassets/{responseAssetId}','PUT',{'responseAssetId':responseAssetId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var RoutingApi=/*#__PURE__*/function(){/**
    * Routing service.
    * @module purecloud-platform-client-v2/api/RoutingApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new RoutingApi. 
    * @alias module:purecloud-platform-client-v2/api/RoutingApi
@@ -25787,7 +25890,7 @@ if(userId===undefined||userId===null||userId===''){throw'Missing the required pa
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putUserRoutingskillsBulk';}return this.apiClient.callApi('/api/v2/users/{userId}/routingskills/bulk','PUT',{'userId':userId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var SCIMApi=/*#__PURE__*/function(){/**
    * SCIM service.
    * @module purecloud-platform-client-v2/api/SCIMApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new SCIMApi. 
    * @alias module:purecloud-platform-client-v2/api/SCIMApi
@@ -26050,7 +26153,7 @@ if(userId===undefined||userId===null||userId===''){throw'Missing the required pa
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putScimV2User';}return this.apiClient.callApi('/api/v2/scim/v2/users/{userId}','PUT',{'userId':userId},{},{'If-Match':opts['ifMatch']},{},body,['PureCloud OAuth'],['application/scim+json','application/json'],['application/scim+json','application/json'],opts['customHeaders']);}}]);}();var ScreenMonitoringApi=/*#__PURE__*/function(){/**
    * ScreenMonitoring service.
    * @module purecloud-platform-client-v2/api/ScreenMonitoringApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new ScreenMonitoringApi. 
    * @alias module:purecloud-platform-client-v2/api/ScreenMonitoringApi
@@ -26147,7 +26250,7 @@ if(userId===undefined||userId===null||userId===''){throw'Missing the required pa
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putScreenmonitorsSettings';}return this.apiClient.callApi('/api/v2/screenmonitors/settings','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var ScriptsApi=/*#__PURE__*/function(){/**
    * Scripts service.
    * @module purecloud-platform-client-v2/api/ScriptsApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new ScriptsApi. 
    * @alias module:purecloud-platform-client-v2/api/ScriptsApi
@@ -26309,7 +26412,7 @@ if(scriptId===undefined||scriptId===null||scriptId===''){throw'Missing the requi
    */},{key:"postScriptsPublished",value:function postScriptsPublished(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/scripts/published','POST',{},{'scriptDataVersion':opts['scriptDataVersion']},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var SearchApi=/*#__PURE__*/function(){/**
    * Search service.
    * @module purecloud-platform-client-v2/api/SearchApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new SearchApi. 
    * @alias module:purecloud-platform-client-v2/api/SearchApi
@@ -26516,7 +26619,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postVoicemailSearch';}return this.apiClient.callApi('/api/v2/voicemail/search','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var SettingsApi=/*#__PURE__*/function(){/**
    * Settings service.
    * @module purecloud-platform-client-v2/api/SettingsApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new SettingsApi. 
    * @alias module:purecloud-platform-client-v2/api/SettingsApi
@@ -26613,7 +26716,7 @@ if(agentId===undefined||agentId===null||agentId===''){throw'Missing the required
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putUsersAgentuiAgentsAutoanswerAgentIdSettings';}return this.apiClient.callApi('/api/v2/users/agentui/agents/autoanswer/{agentId}/settings','PUT',{'agentId':agentId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var SocialMediaApi=/*#__PURE__*/function(){/**
    * SocialMedia service.
    * @module purecloud-platform-client-v2/api/SocialMediaApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new SocialMediaApi. 
    * @alias module:purecloud-platform-client-v2/api/SocialMediaApi
@@ -27168,7 +27271,7 @@ if(topicId===undefined||topicId===null||topicId===''){throw'Missing the required
 if(twitterIngestionRuleId===undefined||twitterIngestionRuleId===null||twitterIngestionRuleId===''){throw'Missing the required parameter "twitterIngestionRuleId" when calling putSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId';}return this.apiClient.callApi('/api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter/{twitterIngestionRuleId}','PUT',{'topicId':topicId,'twitterIngestionRuleId':twitterIngestionRuleId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var SpeechTextAnalyticsApi=/*#__PURE__*/function(){/**
    * SpeechTextAnalytics service.
    * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new SpeechTextAnalyticsApi. 
    * @alias module:purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
@@ -27699,7 +27802,7 @@ if(topicId===undefined||topicId===null||topicId===''){throw'Missing the required
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putSpeechandtextanalyticsTopic';}return this.apiClient.callApi('/api/v2/speechandtextanalytics/topics/{topicId}','PUT',{'topicId':topicId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var StationsApi=/*#__PURE__*/function(){/**
    * Stations service.
    * @module purecloud-platform-client-v2/api/StationsApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new StationsApi. 
    * @alias module:purecloud-platform-client-v2/api/StationsApi
@@ -27736,7 +27839,7 @@ if(stationId===undefined||stationId===null||stationId===''){throw'Missing the re
    */},{key:"getStations",value:function getStations(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/stations','GET',{},{'pageSize':opts['pageSize'],'pageNumber':opts['pageNumber'],'sortBy':opts['sortBy'],'name':opts['name'],'userSelectable':opts['userSelectable'],'webRtcUserId':opts['webRtcUserId'],'id':opts['id'],'lineAppearanceId':opts['lineAppearanceId']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var SuggestApi=/*#__PURE__*/function(){/**
    * Suggest service.
    * @module purecloud-platform-client-v2/api/SuggestApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new SuggestApi. 
    * @alias module:purecloud-platform-client-v2/api/SuggestApi
@@ -27780,7 +27883,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postSearchSuggest';}return this.apiClient.callApi('/api/v2/search/suggest','POST',{},{'profile':opts['profile']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var TaskManagementApi=/*#__PURE__*/function(){/**
    * TaskManagement service.
    * @module purecloud-platform-client-v2/api/TaskManagementApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new TaskManagementApi. 
    * @alias module:purecloud-platform-client-v2/api/TaskManagementApi
@@ -28424,7 +28527,7 @@ if(schemaId===undefined||schemaId===null||schemaId===''){throw'Missing the requi
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putTaskmanagementWorkitemsSchema';}return this.apiClient.callApi('/api/v2/taskmanagement/workitems/schemas/{schemaId}','PUT',{'schemaId':schemaId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var TeamsApi=/*#__PURE__*/function(){/**
    * Teams service.
    * @module purecloud-platform-client-v2/api/TeamsApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new TeamsApi. 
    * @alias module:purecloud-platform-client-v2/api/TeamsApi
@@ -28520,7 +28623,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postTeamsSearch';}return this.apiClient.callApi('/api/v2/teams/search','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var TelephonyApi=/*#__PURE__*/function(){/**
    * Telephony service.
    * @module purecloud-platform-client-v2/api/TelephonyApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new TelephonyApi. 
    * @alias module:purecloud-platform-client-v2/api/TelephonyApi
@@ -28714,7 +28817,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putTelephonySettings';}return this.apiClient.callApi('/api/v2/telephony/settings','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var TelephonyProvidersEdgeApi=/*#__PURE__*/function(){/**
    * TelephonyProvidersEdge service.
    * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new TelephonyProvidersEdgeApi. 
    * @alias module:purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
@@ -29801,7 +29904,7 @@ if(trunkBaseSettingsId===undefined||trunkBaseSettingsId===null||trunkBaseSetting
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putTelephonyProvidersEdgesTrunkbasesetting';}return this.apiClient.callApi('/api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId}','PUT',{'trunkBaseSettingsId':trunkBaseSettingsId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var TextbotsApi=/*#__PURE__*/function(){/**
    * Textbots service.
    * @module purecloud-platform-client-v2/api/TextbotsApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new TextbotsApi. 
    * @alias module:purecloud-platform-client-v2/api/TextbotsApi
@@ -29844,7 +29947,7 @@ if(launchRequest===undefined||launchRequest===null){throw'Missing the required p
 if(postTextRequest===undefined||postTextRequest===null){throw'Missing the required parameter "postTextRequest" when calling postTextbotsBotsExecute';}return this.apiClient.callApi('/api/v2/textbots/bots/execute','POST',{},{},{},{},postTextRequest,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var TokensApi=/*#__PURE__*/function(){/**
    * Tokens service.
    * @module purecloud-platform-client-v2/api/TokensApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new TokensApi. 
    * @alias module:purecloud-platform-client-v2/api/TokensApi
@@ -29888,7 +29991,7 @@ if(userId===undefined||userId===null||userId===''){throw'Missing the required pa
    */},{key:"putTokensTimeout",value:function putTokensTimeout(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/tokens/timeout','PUT',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var UploadsApi=/*#__PURE__*/function(){/**
    * Uploads service.
    * @module purecloud-platform-client-v2/api/UploadsApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new UploadsApi. 
    * @alias module:purecloud-platform-client-v2/api/UploadsApi
@@ -29983,7 +30086,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postUploadsWorkforcemanagementHistoricaldataCsv';}return this.apiClient.callApi('/api/v2/uploads/workforcemanagement/historicaldata/csv','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var UsageApi=/*#__PURE__*/function(){/**
    * Usage service.
    * @module purecloud-platform-client-v2/api/UsageApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new UsageApi. 
    * @alias module:purecloud-platform-client-v2/api/UsageApi
@@ -30085,7 +30188,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postUsageSimplesearch';}return this.apiClient.callApi('/api/v2/usage/simplesearch','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var UserRecordingsApi=/*#__PURE__*/function(){/**
    * UserRecordings service.
    * @module purecloud-platform-client-v2/api/UserRecordingsApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new UserRecordingsApi. 
    * @alias module:purecloud-platform-client-v2/api/UserRecordingsApi
@@ -30141,7 +30244,7 @@ if(recordingId===undefined||recordingId===null||recordingId===''){throw'Missing 
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putUserrecording';}return this.apiClient.callApi('/api/v2/userrecordings/{recordingId}','PUT',{'recordingId':recordingId},{'expand':this.apiClient.buildCollectionParam(opts['expand'],'multi')},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var UsersApi=/*#__PURE__*/function(){/**
    * Users service.
    * @module purecloud-platform-client-v2/api/UsersApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new UsersApi. 
    * @alias module:purecloud-platform-client-v2/api/UsersApi
@@ -31248,7 +31351,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(stationId===undefined||stationId===null||stationId===''){throw'Missing the required parameter "stationId" when calling putUsersStationsMeAssociatedstationStationId';}return this.apiClient.callApi('/api/v2/users/stations/me/associatedstation/{stationId}','PUT',{'stationId':stationId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var UsersRulesApi=/*#__PURE__*/function(){/**
    * UsersRules service.
    * @module purecloud-platform-client-v2/api/UsersRulesApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new UsersRulesApi. 
    * @alias module:purecloud-platform-client-v2/api/UsersRulesApi
@@ -31338,7 +31441,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postUsersRulesQuery';}return this.apiClient.callApi('/api/v2/users/rules/query','POST',{},{'pageNumber':opts['pageNumber'],'pageSize':opts['pageSize']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var UtilitiesApi=/*#__PURE__*/function(){/**
    * Utilities service.
    * @module purecloud-platform-client-v2/api/UtilitiesApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new UtilitiesApi. 
    * @alias module:purecloud-platform-client-v2/api/UtilitiesApi
@@ -31372,7 +31475,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postCertificateDetails';}return this.apiClient.callApi('/api/v2/certificate/details','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var VirtualAgentsApi=/*#__PURE__*/function(){/**
    * VirtualAgents service.
    * @module purecloud-platform-client-v2/api/VirtualAgentsApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new VirtualAgentsApi. 
    * @alias module:purecloud-platform-client-v2/api/VirtualAgentsApi
@@ -31444,7 +31547,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postAgenticVirtualagents';}return this.apiClient.callApi('/api/v2/agentic/virtualagents','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var VoicemailApi=/*#__PURE__*/function(){/**
    * Voicemail service.
    * @module purecloud-platform-client-v2/api/VoicemailApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new VoicemailApi. 
    * @alias module:purecloud-platform-client-v2/api/VoicemailApi
@@ -31651,7 +31754,7 @@ if(userId===undefined||userId===null||userId===''){throw'Missing the required pa
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putVoicemailUserpolicy';}return this.apiClient.callApi('/api/v2/voicemail/userpolicies/{userId}','PUT',{'userId':userId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var WebDeploymentsApi=/*#__PURE__*/function(){/**
    * WebDeployments service.
    * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new WebDeploymentsApi. 
    * @alias module:purecloud-platform-client-v2/api/WebDeploymentsApi
@@ -31829,7 +31932,7 @@ if(deploymentId===undefined||deploymentId===null||deploymentId===''){throw'Missi
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putWebdeploymentsDeploymentIdentityresolution';}return this.apiClient.callApi('/api/v2/webdeployments/deployments/{deploymentId}/identityresolution','PUT',{'deploymentId':deploymentId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var WebMessagingApi=/*#__PURE__*/function(){/**
    * WebMessaging service.
    * @module purecloud-platform-client-v2/api/WebMessagingApi
-   * @version 263.0.0
+   * @version 263.1.0
    *//**
    * Constructs a new WebMessagingApi. 
    * @alias module:purecloud-platform-client-v2/api/WebMessagingApi
@@ -31877,7 +31980,7 @@ if(tokenId===undefined||tokenId===null||tokenId===''){throw'Missing the required
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWebmessagingDeploymentPushdevice';}return this.apiClient.callApi('/api/v2/webmessaging/deployments/{deploymentId}/pushdevices/{tokenId}','POST',{'deploymentId':deploymentId,'tokenId':tokenId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json'],opts['customHeaders']);}}]);}();var WorkforceManagementApi=/*#__PURE__*/function(){/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 263.0.0
+	 * @version 263.1.0
 	 *//**
 	 * Constructs a new WorkforceManagementApi. 
 	 * @alias module:purecloud-platform-client-v2/api/WorkforceManagementApi
@@ -35497,7 +35600,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 263.0.0
+ * @version 263.1.0
  */var platformClient=/*#__PURE__*/_createClass(function platformClient(){_classCallCheck(this,platformClient);/**
      * The ApiClient constructor.
      * @property {module:purecloud-platform-client-v2/ApiClient}

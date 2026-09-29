@@ -881,6 +881,10 @@
       "class": "V2WfmMainForecastExportSnapshotEventMainForecastExportNotification"
     },
     {
+      "topic": "v2.workforcemanagement.businessunits.{id}.mainforecast.continuousforecast.session",
+      "class": "V2WfmContinuousForecastSessionEventContinuousForecastSessionNotification"
+    },
+    {
       "topic": "v2.workforcemanagement.businessunits.{id}.opportunities",
       "class": "V2WfmOpportunityTopicOpportunityNotification"
     },

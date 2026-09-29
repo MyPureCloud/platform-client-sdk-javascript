@@ -21762,6 +21762,7 @@ declare namespace Models {
 		"conversationExternalContactIds"?: Array<string>;
 		"conversationExternalOrganizationIds"?: Array<string>;
 		"communications"?: Array<Models.AttributeDetailEventTopicCommunication>;
+		"participantStartTime"?: number;
 	}
 	
 	export interface AttributeDetailEventTopicCommunication { 
@@ -28763,7 +28764,7 @@ declare namespace Models {
 		"priority"?: number;
 		"skills"?: Array<Models.ConversationCallEventTopicUriReference>;
 		"scoredAgents"?: Array<Models.ConversationCallEventTopicScoredAgent>;
-		"skillExpressionId"?: Models.ConversationCallEventTopicUriReference;
+		"skillExpressionId"?: string;
 	}
 	
 	export interface ConversationCallEventTopicDetail { 
@@ -28969,7 +28970,7 @@ declare namespace Models {
 		"priority"?: number;
 		"skills"?: Array<Models.ConversationCallbackEventTopicUriReference>;
 		"scoredAgents"?: Array<Models.ConversationCallbackEventTopicScoredAgent>;
-		"skillExpressionId"?: Models.ConversationCallbackEventTopicUriReference;
+		"skillExpressionId"?: string;
 	}
 	
 	export interface ConversationCallbackEventTopicDetail { 
@@ -29207,7 +29208,7 @@ declare namespace Models {
 		"priority"?: number;
 		"skills"?: Array<Models.ConversationChatEventTopicUriReference>;
 		"scoredAgents"?: Array<Models.ConversationChatEventTopicScoredAgent>;
-		"skillExpressionId"?: Models.ConversationChatEventTopicUriReference;
+		"skillExpressionId"?: string;
 	}
 	
 	export interface ConversationChatEventTopicDetail { 
@@ -29423,7 +29424,7 @@ declare namespace Models {
 		"priority"?: number;
 		"skills"?: Array<Models.ConversationCobrowseEventTopicUriReference>;
 		"scoredAgents"?: Array<Models.ConversationCobrowseEventTopicScoredAgent>;
-		"skillExpressionId"?: Models.ConversationCobrowseEventTopicUriReference;
+		"skillExpressionId"?: string;
 	}
 	
 	export interface ConversationCobrowseEventTopicDetail { 
@@ -29864,7 +29865,7 @@ declare namespace Models {
 		"priority"?: number;
 		"skills"?: Array<Models.ConversationEmailEventTopicUriReference>;
 		"scoredAgents"?: Array<Models.ConversationEmailEventTopicScoredAgent>;
-		"skillExpressionId"?: Models.ConversationEmailEventTopicUriReference;
+		"skillExpressionId"?: string;
 	}
 	
 	export interface ConversationEmailEventTopicDetail { 
@@ -30231,7 +30232,7 @@ declare namespace Models {
 		"priority"?: number;
 		"skills"?: Array<Models.ConversationEventTopicUriReference>;
 		"scoredAgents"?: Array<Models.ConversationEventTopicScoredAgent>;
-		"skillExpressionId"?: Models.ConversationEventTopicUriReference;
+		"skillExpressionId"?: string;
 	}
 	
 	export interface ConversationEventTopicDialerPreview { 
@@ -30931,7 +30932,7 @@ declare namespace Models {
 		"priority"?: number;
 		"skills"?: Array<Models.ConversationMessageEventTopicUriReference>;
 		"scoredAgents"?: Array<Models.ConversationMessageEventTopicScoredAgent>;
-		"skillExpressionId"?: Models.ConversationMessageEventTopicUriReference;
+		"skillExpressionId"?: string;
 	}
 	
 	export interface ConversationMessageEventTopicDetail { 
@@ -31545,7 +31546,7 @@ declare namespace Models {
 		"priority"?: number;
 		"skills"?: Array<Models.ConversationScreenShareEventTopicUriReference>;
 		"scoredAgents"?: Array<Models.ConversationScreenShareEventTopicScoredAgent>;
-		"skillExpressionId"?: Models.ConversationScreenShareEventTopicUriReference;
+		"skillExpressionId"?: string;
 	}
 	
 	export interface ConversationScreenShareEventTopicDetail { 
@@ -31785,7 +31786,7 @@ declare namespace Models {
 		"priority"?: number;
 		"skills"?: Array<Models.ConversationSocialExpressionEventTopicUriReference>;
 		"scoredAgents"?: Array<Models.ConversationSocialExpressionEventTopicScoredAgent>;
-		"skillExpressionId"?: Models.ConversationSocialExpressionEventTopicUriReference;
+		"skillExpressionId"?: string;
 	}
 	
 	export interface ConversationSocialExpressionEventTopicDetail { 
@@ -32281,7 +32282,7 @@ declare namespace Models {
 		"priority"?: number;
 		"skills"?: Array<Models.ConversationVideoEventTopicUriReference>;
 		"scoredAgents"?: Array<Models.ConversationVideoEventTopicScoredAgent>;
-		"skillExpressionId"?: Models.ConversationVideoEventTopicUriReference;
+		"skillExpressionId"?: string;
 	}
 	
 	export interface ConversationVideoEventTopicDetail { 
@@ -44572,7 +44573,6 @@ declare namespace Models {
 		"session"?: Models.JourneyAppEventsNotificationSession;
 		"eventType"?: string;
 		"appEvent"?: Models.JourneyAppEventsNotificationAppMessage;
-		"outcomeAchievedEvent"?: Models.JourneyAppEventsNotificationOutcomeAchievedMessage;
 		"segmentAssignmentEvent"?: Models.JourneyAppEventsNotificationSegmentAssignmentMessage;
 		"webActionEvent"?: Models.JourneyAppEventsNotificationWebActionMessage;
 	}
@@ -44591,11 +44591,6 @@ declare namespace Models {
 		"searchQuery"?: string;
 		"attributes"?: { [key: string]: Models.JourneyAppEventsNotificationCustomEventAttribute; };
 		"traits"?: { [key: string]: Models.JourneyAppEventsNotificationCustomEventAttribute; };
-	}
-	
-	export interface JourneyAppEventsNotificationAssociatedValue { 
-		"dataType"?: string;
-		"value"?: number;
 	}
 	
 	export interface JourneyAppEventsNotificationBrowser { 
@@ -44670,27 +44665,6 @@ declare namespace Models {
 		"bluetoothEnabled"?: boolean;
 		"cellularEnabled"?: boolean;
 		"wifiEnabled"?: boolean;
-	}
-	
-	export interface JourneyAppEventsNotificationOutcome { 
-		"id"?: string;
-		"selfUri"?: string;
-		"displayName"?: string;
-		"version"?: string;
-	}
-	
-	export interface JourneyAppEventsNotificationOutcomeAchievedMessage { 
-		"outcome"?: Models.JourneyAppEventsNotificationOutcome;
-		"browser"?: Models.JourneyAppEventsNotificationBrowser;
-		"visitCreatedDate"?: string;
-		"ipAddress"?: string;
-		"ipOrganization"?: string;
-		"userAgentString"?: string;
-		"device"?: Models.JourneyAppEventsNotificationDevice;
-		"geolocation"?: Models.JourneyAppEventsNotificationGeoLocation;
-		"mktCampaign"?: Models.JourneyAppEventsNotificationMktCampaign;
-		"visitReferrer"?: Models.JourneyAppEventsNotificationReferrer;
-		"associatedValue"?: Models.JourneyAppEventsNotificationAssociatedValue;
 	}
 	
 	export interface JourneyAppEventsNotificationReferrer { 
@@ -44883,78 +44857,15 @@ declare namespace Models {
 		"value"?: number;
 	}
 	
-	export interface JourneyOutcomeEventsNotificationBrowser { 
-		"family"?: string;
-		"version"?: string;
-		"lang"?: string;
-		"fingerprint"?: string;
-		"viewHeight"?: number;
-		"viewWidth"?: number;
-		"featuresFlash"?: boolean;
-		"featuresJava"?: boolean;
-		"featuresPdf"?: boolean;
-		"featuresWebrtc"?: boolean;
-	}
-	
-	export interface JourneyOutcomeEventsNotificationDevice { 
-		"type"?: string;
-		"isMobile"?: boolean;
-		"screenHeight"?: number;
-		"screenWidth"?: number;
-		"screenDensity"?: number;
-		"fingerprint"?: string;
-		"osFamily"?: string;
-		"osVersion"?: string;
-		"category"?: string;
-		"manufacturer"?: string;
-	}
-	
 	export interface JourneyOutcomeEventsNotificationExternalContact { 
 		"id"?: string;
 		"selfUri"?: string;
-	}
-	
-	export interface JourneyOutcomeEventsNotificationGeoLocation { 
-		"country"?: string;
-		"countryName"?: string;
-		"latitude"?: number;
-		"longitude"?: number;
-		"locality"?: string;
-		"postalCode"?: string;
-		"region"?: string;
-		"regionName"?: string;
-		"timezone"?: string;
-		"source"?: string;
-	}
-	
-	export interface JourneyOutcomeEventsNotificationMktCampaign { 
-		"content"?: string;
-		"medium"?: string;
-		"name"?: string;
-		"source"?: string;
-		"term"?: string;
-		"clickId"?: string;
-		"network"?: string;
 	}
 	
 	export interface JourneyOutcomeEventsNotificationOutcome { 
 		"id"?: string;
 		"selfUri"?: string;
 		"displayName"?: string;
-	}
-	
-	export interface JourneyOutcomeEventsNotificationOutcomeAchievedMessage { 
-		"outcome"?: Models.JourneyOutcomeEventsNotificationOutcome;
-		"browser"?: Models.JourneyOutcomeEventsNotificationBrowser;
-		"visitCreatedDate"?: string;
-		"ipAddress"?: string;
-		"ipOrganization"?: string;
-		"userAgentString"?: string;
-		"device"?: Models.JourneyOutcomeEventsNotificationDevice;
-		"geolocation"?: Models.JourneyOutcomeEventsNotificationGeoLocation;
-		"mktCampaign"?: Models.JourneyOutcomeEventsNotificationMktCampaign;
-		"visitReferrer"?: Models.JourneyOutcomeEventsNotificationReferrer;
-		"associatedValue"?: Models.JourneyOutcomeEventsNotificationAssociatedValue;
 	}
 	
 	export interface JourneyOutcomeEventsNotificationOutcomeAttributionMessage { 
@@ -44973,7 +44884,6 @@ declare namespace Models {
 		"customerIdType"?: string;
 		"session"?: Models.JourneyOutcomeEventsNotificationSession;
 		"eventType"?: string;
-		"outcomeAchievedEvent"?: Models.JourneyOutcomeEventsNotificationOutcomeAchievedMessage;
 		"outcomeAttributionEventMessage"?: Models.JourneyOutcomeEventsNotificationOutcomeAttributionMessage;
 	}
 	
@@ -44986,18 +44896,6 @@ declare namespace Models {
 	
 	export interface JourneyOutcomeEventsNotificationOutcomeTouchpointChannel { 
 		"type"?: string;
-	}
-	
-	export interface JourneyOutcomeEventsNotificationReferrer { 
-		"url"?: string;
-		"domain"?: string;
-		"hostname"?: string;
-		"keywords"?: string;
-		"pathname"?: string;
-		"queryString"?: string;
-		"fragment"?: string;
-		"name"?: string;
-		"medium"?: string;
 	}
 	
 	export interface JourneyOutcomeEventsNotificationSegment { 
@@ -45714,11 +45612,6 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
-	export interface JourneyWebEventsNotificationAssociatedValue { 
-		"dataType"?: string;
-		"value"?: number;
-	}
-	
 	export interface JourneyWebEventsNotificationBrowser { 
 		"family"?: string;
 		"version"?: string;
@@ -45784,27 +45677,6 @@ declare namespace Models {
 		"term"?: string;
 		"clickId"?: string;
 		"network"?: string;
-	}
-	
-	export interface JourneyWebEventsNotificationOutcome { 
-		"id"?: string;
-		"selfUri"?: string;
-		"displayName"?: string;
-		"version"?: string;
-	}
-	
-	export interface JourneyWebEventsNotificationOutcomeAchievedMessage { 
-		"outcome"?: Models.JourneyWebEventsNotificationOutcome;
-		"browser"?: Models.JourneyWebEventsNotificationBrowser;
-		"visitCreatedDate"?: string;
-		"ipAddress"?: string;
-		"ipOrganization"?: string;
-		"userAgentString"?: string;
-		"device"?: Models.JourneyWebEventsNotificationDevice;
-		"geolocation"?: Models.JourneyWebEventsNotificationGeoLocation;
-		"mktCampaign"?: Models.JourneyWebEventsNotificationMktCampaign;
-		"visitReferrer"?: Models.JourneyWebEventsNotificationReferrer;
-		"associatedValue"?: Models.JourneyWebEventsNotificationAssociatedValue;
 	}
 	
 	export interface JourneyWebEventsNotificationPage { 
@@ -45878,7 +45750,6 @@ declare namespace Models {
 		"eventType"?: string;
 		"webEvent"?: Models.JourneyWebEventsNotificationWebMessage;
 		"webActionEvent"?: Models.JourneyWebEventsNotificationWebActionMessage;
-		"outcomeAchievedEvent"?: Models.JourneyWebEventsNotificationOutcomeAchievedMessage;
 		"segmentAssignmentEvent"?: Models.JourneyWebEventsNotificationSegmentAssignmentMessage;
 	}
 	
@@ -51388,6 +51259,8 @@ declare namespace Models {
 		"entityToken"?: string;
 		"phoneNumber"?: string;
 		"externalContactId"?: string;
+		"entityModifiedDate"?: string;
+		"entityModifiedBy"?: string;
 		"timestamp"?: number;
 	}
 	
@@ -55112,7 +54985,7 @@ declare namespace Models {
 		"priority"?: number;
 		"skills"?: Array<Models.QueueConversationCallEventTopicUriReference>;
 		"scoredAgents"?: Array<Models.QueueConversationCallEventTopicScoredAgent>;
-		"skillExpressionId"?: Models.QueueConversationCallEventTopicUriReference;
+		"skillExpressionId"?: string;
 	}
 	
 	export interface QueueConversationCallEventTopicDetail { 
@@ -55318,7 +55191,7 @@ declare namespace Models {
 		"priority"?: number;
 		"skills"?: Array<Models.QueueConversationCallbackEventTopicUriReference>;
 		"scoredAgents"?: Array<Models.QueueConversationCallbackEventTopicScoredAgent>;
-		"skillExpressionId"?: Models.QueueConversationCallbackEventTopicUriReference;
+		"skillExpressionId"?: string;
 	}
 	
 	export interface QueueConversationCallbackEventTopicDetail { 
@@ -55497,7 +55370,7 @@ declare namespace Models {
 		"priority"?: number;
 		"skills"?: Array<Models.QueueConversationChatEventTopicUriReference>;
 		"scoredAgents"?: Array<Models.QueueConversationChatEventTopicScoredAgent>;
-		"skillExpressionId"?: Models.QueueConversationChatEventTopicUriReference;
+		"skillExpressionId"?: string;
 	}
 	
 	export interface QueueConversationChatEventTopicDetail { 
@@ -55661,7 +55534,7 @@ declare namespace Models {
 		"priority"?: number;
 		"skills"?: Array<Models.QueueConversationCobrowseEventTopicUriReference>;
 		"scoredAgents"?: Array<Models.QueueConversationCobrowseEventTopicScoredAgent>;
-		"skillExpressionId"?: Models.QueueConversationCobrowseEventTopicUriReference;
+		"skillExpressionId"?: string;
 	}
 	
 	export interface QueueConversationCobrowseEventTopicDetail { 
@@ -55773,7 +55646,7 @@ declare namespace Models {
 		"priority"?: number;
 		"skills"?: Array<Models.QueueConversationEmailEventTopicUriReference>;
 		"scoredAgents"?: Array<Models.QueueConversationEmailEventTopicScoredAgent>;
-		"skillExpressionId"?: Models.QueueConversationEmailEventTopicUriReference;
+		"skillExpressionId"?: string;
 	}
 	
 	export interface QueueConversationEmailEventTopicDetail { 
@@ -56088,7 +55961,7 @@ declare namespace Models {
 		"priority"?: number;
 		"skills"?: Array<Models.QueueConversationEventTopicUriReference>;
 		"scoredAgents"?: Array<Models.QueueConversationEventTopicScoredAgent>;
-		"skillExpressionId"?: Models.QueueConversationEventTopicUriReference;
+		"skillExpressionId"?: string;
 	}
 	
 	export interface QueueConversationEventTopicDialerPreview { 
@@ -56513,7 +56386,7 @@ declare namespace Models {
 		"priority"?: number;
 		"skills"?: Array<Models.QueueConversationMessageEventTopicUriReference>;
 		"scoredAgents"?: Array<Models.QueueConversationMessageEventTopicScoredAgent>;
-		"skillExpressionId"?: Models.QueueConversationMessageEventTopicUriReference;
+		"skillExpressionId"?: string;
 	}
 	
 	export interface QueueConversationMessageEventTopicDetail { 
@@ -56730,7 +56603,7 @@ declare namespace Models {
 		"priority"?: number;
 		"skills"?: Array<Models.QueueConversationScreenShareEventTopicUriReference>;
 		"scoredAgents"?: Array<Models.QueueConversationScreenShareEventTopicScoredAgent>;
-		"skillExpressionId"?: Models.QueueConversationScreenShareEventTopicUriReference;
+		"skillExpressionId"?: string;
 	}
 	
 	export interface QueueConversationScreenShareEventTopicDetail { 
@@ -57042,7 +56915,7 @@ declare namespace Models {
 		"priority"?: number;
 		"skills"?: Array<Models.QueueConversationSocialExpressionEventTopicUriReference>;
 		"scoredAgents"?: Array<Models.QueueConversationSocialExpressionEventTopicScoredAgent>;
-		"skillExpressionId"?: Models.QueueConversationSocialExpressionEventTopicUriReference;
+		"skillExpressionId"?: string;
 	}
 	
 	export interface QueueConversationSocialExpressionEventTopicDialerPreview { 
@@ -57617,7 +57490,7 @@ declare namespace Models {
 		"priority"?: number;
 		"skills"?: Array<Models.QueueConversationVideoEventTopicUriReference>;
 		"scoredAgents"?: Array<Models.QueueConversationVideoEventTopicScoredAgent>;
-		"skillExpressionId"?: Models.QueueConversationVideoEventTopicUriReference;
+		"skillExpressionId"?: string;
 	}
 	
 	export interface QueueConversationVideoEventTopicDialerPreview { 
@@ -68966,6 +68839,14 @@ declare namespace Models {
 		"denialCode"?: string;
 		"reviewNote"?: string;
 		"remainingSpaces"?: number;
+	}
+	
+	export interface V2WfmContinuousForecastSessionEventContinuousForecastSessionNotification { 
+		"sessionId"?: string;
+		"lastSuccessfulSessionId"?: string;
+		"state"?: string;
+		"errorCode"?: string;
+		"forecastDataState"?: string;
 	}
 	
 	export interface V2WfmMainForecastExportForecastEventMainForecastErrorBody { 
