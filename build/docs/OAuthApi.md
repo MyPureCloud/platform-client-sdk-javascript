@@ -779,4 +779,4 @@ apiInstance.putOauthClient(clientId, body, opts)
 **OAuthClient**
 
 
-_purecloud-platform-client-v2@263.1.0_
+_purecloud-platform-client-v2@263.2.0_
