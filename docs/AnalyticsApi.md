@@ -559,8 +559,6 @@ DELETE /api/v2/analytics/copilots/aggregates/jobs/{jobId}
 
 Delete/cancel an async request for copilot aggregates
 
-deleteAnalyticsCopilotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:copilotsAggregate:view
@@ -2569,8 +2567,6 @@ GET /api/v2/analytics/copilots/aggregates/jobs/{jobId}
 
 Get status for async query for copilot aggregates
 
-getAnalyticsCopilotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:copilotsAggregate:view
@@ -2627,8 +2623,6 @@ apiInstance.getAnalyticsCopilotsAggregatesJob(jobId, opts)
 GET /api/v2/analytics/copilots/aggregates/jobs/{jobId}/results
 
 Fetch a page of results for an async aggregates query
-
-getAnalyticsCopilotsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -5843,8 +5837,6 @@ POST /api/v2/analytics/copilots/aggregates/jobs
 
 Query for copilot aggregates asynchronously
 
-postAnalyticsCopilotsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:copilotsAggregate:view
@@ -5901,8 +5893,6 @@ apiInstance.postAnalyticsCopilotsAggregatesJobs(body, opts)
 POST /api/v2/analytics/copilots/aggregates/query
 
 Query for copilot aggregates
-
-postAnalyticsCopilotsAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -8200,4 +8190,4 @@ apiInstance.putAnalyticsDataretentionSettings(body, opts)
 **AnalyticsDataRetentionResponse**
 
 
-_purecloud-platform-client-v2@263.2.0_
+_purecloud-platform-client-v2@264.0.0_
