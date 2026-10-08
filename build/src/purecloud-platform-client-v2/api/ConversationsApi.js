@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 263.2.0
+	 * @version 264.0.0
 	 */
 
 	/**
@@ -5990,7 +5990,7 @@ class ConversationsApi {
 
 	/**
 	 * Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow
-	 * Supply the two-step verification PIN. Embedded Signup v2: phoneNumber (E.164 from availablePhoneNumbers) and pin. Embedded Signup v4: pin only. Poll GET until status is Active.
+	 * Supply the two-step verification PIN. Embedded Signup v2: phoneNumber (E.164 from availablePhoneNumbers) and pin. Embedded Signup v4: pin and name are required; the name replaces the temporary name the backend assigned at creation with the desired integration name. Poll GET until status is Active.
 	 * @param {String} integrationId Integration ID
 	 * @param {Object} body WhatsAppEmbeddedSignupIntegrationActivationRequest
 	 * @param {Object} opts Optional parameters

@@ -517,4 +517,4 @@ apiInstance.putFaxSettings(opts)
 **FaxConfig**
 
 
-_purecloud-platform-client-v2@263.2.0_
+_purecloud-platform-client-v2@264.0.0_

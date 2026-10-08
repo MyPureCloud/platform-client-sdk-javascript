@@ -5,7 +5,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 263.2.0
+	 * @version 264.0.0
 	 */
 
 	/**
@@ -237,7 +237,6 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * deleteAnalyticsCopilotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteAnalyticsCopilotsAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -1279,7 +1278,6 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsCopilotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsCopilotsAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -1311,7 +1309,6 @@ class AnalyticsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsCopilotsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsCopilotsAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -2981,7 +2978,6 @@ class AnalyticsApi {
 	 * @param {Object} body query
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postAnalyticsCopilotsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsCopilotsAggregatesJobs(body, opts) { 
 		opts = opts || {};
@@ -3012,7 +3008,6 @@ class AnalyticsApi {
 	 * @param {Object} body query
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postAnalyticsCopilotsAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsCopilotsAggregatesQuery(body, opts) { 
 		opts = opts || {};

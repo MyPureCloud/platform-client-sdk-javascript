@@ -5,7 +5,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 263.2.0
+	 * @version 264.0.0
 	 */
 
 	/**
@@ -954,6 +954,7 @@ class AuthorizationApi {
 	 * @param {String} subjectId Subject ID (user or group)
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.includeDuplicates Include multiple entries with the same role and division but different subjects (default to false)
+	 * @param {Object} opts.includeFullRoles Include full role data with permission policies for each grant (default to true)
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getAuthorizationSubject(subjectId, opts) { 
@@ -968,7 +969,7 @@ class AuthorizationApi {
 			'/api/v2/authorization/subjects/{subjectId}', 
 			'GET', 
 			{ 'subjectId': subjectId },
-			{ 'includeDuplicates': opts['includeDuplicates'] },
+			{ 'includeDuplicates': opts['includeDuplicates'],'includeFullRoles': opts['includeFullRoles'] },
 			{  },
 			{  },
 			null, 
@@ -984,6 +985,7 @@ class AuthorizationApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.includeDuplicates Include multiple entries with the same role and division but different subjects (default to false)
+	 * @param {Object} opts.includeFullRoles Include full role data with permission policies for each grant (default to true)
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getAuthorizationSubjectsMe(opts) { 
@@ -994,7 +996,7 @@ class AuthorizationApi {
 			'/api/v2/authorization/subjects/me', 
 			'GET', 
 			{  },
-			{ 'includeDuplicates': opts['includeDuplicates'] },
+			{ 'includeDuplicates': opts['includeDuplicates'],'includeFullRoles': opts['includeFullRoles'] },
 			{  },
 			{  },
 			null, 

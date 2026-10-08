@@ -5,7 +5,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 263.2.0
+	 * @version 264.0.0
 	 */
 
 	/**

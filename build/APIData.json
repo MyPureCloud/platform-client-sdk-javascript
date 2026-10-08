@@ -8144,7 +8144,7 @@
   "getauthorizationsubject": {
     "operationId": "getauthorizationsubject",
     "functionName": "getAuthorizationSubject",
-    "signature": "getAuthorizationSubject(subjectId, includeDuplicates)",
+    "signature": "getAuthorizationSubject(subjectId, includeDuplicates, includeFullRoles)",
     "parameters": [
       {
         "name": "subjectId",
@@ -8155,24 +8155,34 @@
         "name": "includeDuplicates",
         "type": "Boolean",
         "required": "false"
-      }
-    ],
-    "return": "AuthzSubject",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.UsersApi();\n\nlet subjectId = \"subjectId_example\"; // String | Subject ID (user or group)\nlet opts = { \n  \"includeDuplicates\": false, // Boolean | Include multiple entries with the same role and division but different subjects\n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Returns a listing of roles and permissions for a user.\napiInstance.getAuthorizationSubject(subjectId, opts)\n  .then((data) => {\n    console.log(`getAuthorizationSubject success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getAuthorizationSubject\");\n    console.error(err);\n  });"
-  },
-  "getauthorizationsubjectsme": {
-    "operationId": "getauthorizationsubjectsme",
-    "functionName": "getAuthorizationSubjectsMe",
-    "signature": "getAuthorizationSubjectsMe(includeDuplicates)",
-    "parameters": [
+      },
       {
-        "name": "includeDuplicates",
+        "name": "includeFullRoles",
         "type": "Boolean",
         "required": "false"
       }
     ],
     "return": "AuthzSubject",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.UsersApi();\n\nlet opts = { \n  \"includeDuplicates\": false, // Boolean | Include multiple entries with the same role and division but different subjects\n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Returns a listing of roles and permissions for the currently authenticated user.\napiInstance.getAuthorizationSubjectsMe(opts)\n  .then((data) => {\n    console.log(`getAuthorizationSubjectsMe success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getAuthorizationSubjectsMe\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.UsersApi();\n\nlet subjectId = \"subjectId_example\"; // String | Subject ID (user or group)\nlet opts = { \n  \"includeDuplicates\": false, // Boolean | Include multiple entries with the same role and division but different subjects\n  \"includeFullRoles\": true, // Boolean | Include full role data with permission policies for each grant\n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Returns a listing of roles and permissions for a user.\napiInstance.getAuthorizationSubject(subjectId, opts)\n  .then((data) => {\n    console.log(`getAuthorizationSubject success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getAuthorizationSubject\");\n    console.error(err);\n  });"
+  },
+  "getauthorizationsubjectsme": {
+    "operationId": "getauthorizationsubjectsme",
+    "functionName": "getAuthorizationSubjectsMe",
+    "signature": "getAuthorizationSubjectsMe(includeDuplicates, includeFullRoles)",
+    "parameters": [
+      {
+        "name": "includeDuplicates",
+        "type": "Boolean",
+        "required": "false"
+      },
+      {
+        "name": "includeFullRoles",
+        "type": "Boolean",
+        "required": "false"
+      }
+    ],
+    "return": "AuthzSubject",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.UsersApi();\n\nlet opts = { \n  \"includeDuplicates\": false, // Boolean | Include multiple entries with the same role and division but different subjects\n  \"includeFullRoles\": true, // Boolean | Include full role data with permission policies for each grant\n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Returns a listing of roles and permissions for the currently authenticated user.\napiInstance.getAuthorizationSubjectsMe(opts)\n  .then((data) => {\n    console.log(`getAuthorizationSubjectsMe success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getAuthorizationSubjectsMe\");\n    console.error(err);\n  });"
   },
   "getauthorizationsubjectsrolecounts": {
     "operationId": "getauthorizationsubjectsrolecounts",
@@ -42310,7 +42320,7 @@
       }
     ],
     "return": "OrphanRecordingListing",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RecordingApi();\n\nlet opts = { \n  \"pageSize\": 25, // Number | The total page size requested\n  \"pageNumber\": 1, // Number | The page number requested\n  \"sortBy\": \"sortBy_example\", // String | variable name requested to sort by\n  \"expand\": [\"expand_example\"], // [String] | variable name requested by expand list\n  \"nextPage\": \"nextPage_example\", // String | next page token\n  \"previousPage\": \"previousPage_example\", // String | Previous page token\n  \"hasConversation\": false, // Boolean | Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization.\n  \"media\": \"media_example\", // String | Filter resulting orphans based on their media type\n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Gets all orphan recordings\napiInstance.getOrphanrecordings(opts)\n  .then((data) => {\n    console.log(`getOrphanrecordings success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getOrphanrecordings\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RecordingApi();\n\nlet opts = { \n  \"pageSize\": 25, // Number | The total page size requested\n  \"pageNumber\": 1, // Number | The page number requested\n  \"sortBy\": \"sortBy_example\", // String | variable name requested to sort by\n  \"expand\": [\"expand_example\"], // [String] | variable name requested by expand list\n  \"nextPage\": \"nextPage_example\", // String | next page token\n  \"previousPage\": \"previousPage_example\", // String | Previous page token\n  \"hasConversation\": false, // Boolean | Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization, capped at 500 results.\n  \"media\": \"media_example\", // String | Filter resulting orphans based on their media type\n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Gets all orphan recordings. When querying without 'hasConversation = true', the results are capped at 500 orphan recordings\napiInstance.getOrphanrecordings(opts)\n  .then((data) => {\n    console.log(`getOrphanrecordings success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getOrphanrecordings\");\n    console.error(err);\n  });"
   },
   "getrecordingbatchrequest": {
     "operationId": "getrecordingbatchrequest",

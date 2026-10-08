@@ -5,7 +5,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 263.2.0
+	 * @version 264.0.0
 	 */
 
 	/**
@@ -527,7 +527,7 @@ class RecordingApi {
 	}
 
 	/**
-	 * Gets all orphan recordings
+	 * Gets all orphan recordings. When querying without 'hasConversation = true', the results are capped at 500 orphan recordings
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
@@ -536,7 +536,7 @@ class RecordingApi {
 	 * @param {Array.<String>} opts.expand variable name requested by expand list
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
-	 * @param {Boolean} opts.hasConversation Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization. (default to false)
+	 * @param {Boolean} opts.hasConversation Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization, capped at 500 results. (default to false)
 	 * @param {Object} opts.media Filter resulting orphans based on their media type
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */

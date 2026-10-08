@@ -10961,7 +10961,7 @@ PATCH /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup/{inte
 
 Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow
 
-Supply the two-step verification PIN. Embedded Signup v2: phoneNumber (E.164 from availablePhoneNumbers) and pin. Embedded Signup v4: pin only. Poll GET until status is Active.
+Supply the two-step verification PIN. Embedded Signup v2: phoneNumber (E.164 from availablePhoneNumbers) and pin. Embedded Signup v4: pin and name are required; the name replaces the temporary name the backend assigned at creation with the desired integration name. Poll GET until status is Active.
 
 Requires ALL permissions:
 
@@ -19040,4 +19040,4 @@ apiInstance.putConversationsVideoRecordingstate(conversationId, body, opts)
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@263.2.0_
+_purecloud-platform-client-v2@264.0.0_

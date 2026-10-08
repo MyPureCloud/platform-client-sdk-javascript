@@ -1911,6 +1911,7 @@ let apiInstance = new platformClient.AuthorizationApi();
 let subjectId = "subjectId_example"; // String | Subject ID (user or group)
 let opts = { 
   'includeDuplicates': false, // Boolean | Include multiple entries with the same role and division but different subjects
+  'includeFullRoles': true, // Boolean | Include full role data with permission policies for each grant
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
     'X-Request-ID': 'req-12345'
@@ -1934,6 +1935,7 @@ apiInstance.getAuthorizationSubject(subjectId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **subjectId** | **String** | Subject ID (user or group) |  |
  **includeDuplicates** | **Boolean** | Include multiple entries with the same role and division but different subjects | [optional] [default to false]<br />**Values**: true, false |
+ **includeFullRoles** | **Boolean** | Include full role data with permission policies for each grant | [optional] [default to true]<br />**Values**: true, false |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -1967,6 +1969,7 @@ let apiInstance = new platformClient.AuthorizationApi();
 
 let opts = { 
   'includeDuplicates': false, // Boolean | Include multiple entries with the same role and division but different subjects
+  'includeFullRoles': true, // Boolean | Include full role data with permission policies for each grant
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
     'X-Request-ID': 'req-12345'
@@ -1989,6 +1992,7 @@ apiInstance.getAuthorizationSubjectsMe(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **includeDuplicates** | **Boolean** | Include multiple entries with the same role and division but different subjects | [optional] [default to false]<br />**Values**: true, false |
+ **includeFullRoles** | **Boolean** | Include full role data with permission policies for each grant | [optional] [default to true]<br />**Values**: true, false |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -3612,4 +3616,4 @@ apiInstance.putUserRoles(subjectId, body, opts)
 **UserAuthorization**
 
 
-_purecloud-platform-client-v2@263.2.0_
+_purecloud-platform-client-v2@264.0.0_

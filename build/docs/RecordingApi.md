@@ -21,7 +21,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getConversationRecordings**](RecordingApi#getConversationRecordings) | **GET** /api/v2/conversations/{conversationId}/recordings | Get all of a Conversation's Recordings.
 [**getOrphanrecording**](RecordingApi#getOrphanrecording) | **GET** /api/v2/orphanrecordings/{orphanId} | Gets a single orphan recording
 [**getOrphanrecordingMedia**](RecordingApi#getOrphanrecordingMedia) | **GET** /api/v2/orphanrecordings/{orphanId}/media | Gets the media of a single orphan recording
-[**getOrphanrecordings**](RecordingApi#getOrphanrecordings) | **GET** /api/v2/orphanrecordings | Gets all orphan recordings
+[**getOrphanrecordings**](RecordingApi#getOrphanrecordings) | **GET** /api/v2/orphanrecordings | Gets all orphan recordings. When querying without 'hasConversation = true', the results are capped at 500 orphan recordings
 [**getRecordingBatchrequest**](RecordingApi#getRecordingBatchrequest) | **GET** /api/v2/recording/batchrequests/{jobId} | Get the status and results for a batch request job, only the user that submitted the job may retrieve results. Each result may contain either a URL to a recording or an error; additionally, a recording could be associated with multiple results.
 [**getRecordingCrossplatformMediaretentionpolicies**](RecordingApi#getRecordingCrossplatformMediaretentionpolicies) | **GET** /api/v2/recording/crossplatform/mediaretentionpolicies | Gets media retention policy list with query options to filter on name and enabled.
 [**getRecordingCrossplatformMediaretentionpolicy**](RecordingApi#getRecordingCrossplatformMediaretentionpolicy) | **GET** /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId} | Get a media retention policy
@@ -1018,7 +1018,7 @@ apiInstance.getOrphanrecordingMedia(orphanId, opts)
 
 GET /api/v2/orphanrecordings
 
-Gets all orphan recordings
+Gets all orphan recordings. When querying without 'hasConversation = true', the results are capped at 500 orphan recordings
 
 Requires ANY permissions:
 
@@ -1044,7 +1044,7 @@ let opts = {
   'expand': ["expand_example"], // [String] | variable name requested by expand list
   'nextPage': "nextPage_example", // String | next page token
   'previousPage': "previousPage_example", // String | Previous page token
-  'hasConversation': false, // Boolean | Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization.
+  'hasConversation': false, // Boolean | Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization, capped at 500 results.
   'media': "media_example", // String | Filter resulting orphans based on their media type
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
@@ -1073,7 +1073,7 @@ apiInstance.getOrphanrecordings(opts)
  **expand** | **[String]** | variable name requested by expand list | [optional]  |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
- **hasConversation** | **Boolean** | Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization. | [optional] [default to false] |
+ **hasConversation** | **Boolean** | Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization, capped at 500 results. | [optional] [default to false] |
  **media** | **String** | Filter resulting orphans based on their media type | [optional] <br />**Values**: Call, Screen |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
@@ -3550,4 +3550,4 @@ apiInstance.putRecordingsDeletionprotection(opts)
 **ManageDeleteProtectionResult**
 
 
-_purecloud-platform-client-v2@263.2.0_
+_purecloud-platform-client-v2@264.0.0_
