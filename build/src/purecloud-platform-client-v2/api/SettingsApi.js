@@ -5,7 +5,7 @@ class SettingsApi {
 	/**
 	 * Settings service.
 	 * @module purecloud-platform-client-v2/api/SettingsApi
-	 * @version 264.0.0
+	 * @version 265.0.0
 	 */
 
 	/**
@@ -176,6 +176,32 @@ class SettingsApi {
 	}
 
 	/**
+	 * Get the organization's search settings
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * getSearchSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getSearchSettings(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/search/settings', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Get the execution history enabled setting.
 	 * Get the execution history enabled setting.
 	 * @param {Object} opts Optional parameters
@@ -275,6 +301,68 @@ class SettingsApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Patch the organization's search settings
+	 * 
+	 * @param {Object} body Search Settings
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * patchSearchSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	patchSearchSettings(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchSearchSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/search/settings', 
+			'PATCH', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Patch the organization's content search settings
+	 * 
+	 * @param {Object} body Content search setting
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * patchSearchSettingsContentsearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	patchSearchSettingsContentsearch(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchSearchSettingsContentsearch';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/search/settings/contentsearch', 
+			'PATCH', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json'],

@@ -5,7 +5,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 264.0.0
+	 * @version 265.0.0
 	 */
 
 	/**
@@ -912,7 +912,6 @@ class ExternalContactsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand which fields, if any, to expand
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getExternalcontactsGraphsClusterscan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getExternalcontactsGraphsClusterscan(scanId, opts) { 
 		opts = opts || {};
@@ -944,7 +943,6 @@ class ExternalContactsApi {
 	 * @param {String} clusterId Cluster ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getExternalcontactsGraphsClusterscanCluster is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getExternalcontactsGraphsClusterscanCluster(scanId, clusterId, opts) { 
 		opts = opts || {};
@@ -983,7 +981,6 @@ class ExternalContactsApi {
 	 * @param {Array.<String>} opts.divisionIds which divisions to filter results to, up to 50 (defaults to all divisions use has access to)
 	 * @param {Object} opts.mergeInfoStatus which merge statuses to filter results to
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getExternalcontactsGraphsClusterscanClusters is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getExternalcontactsGraphsClusterscanClusters(scanId, opts) { 
 		opts = opts || {};
@@ -1014,7 +1011,6 @@ class ExternalContactsApi {
 	 * @param {String} scanId Cluster scan ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getExternalcontactsGraphsClusterscanStatistics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getExternalcontactsGraphsClusterscanStatistics(scanId, opts) { 
 		opts = opts || {};
@@ -1047,7 +1043,6 @@ class ExternalContactsApi {
 	 * @param {String} opts.cursor Cursor to continue scanning
 	 * @param {Array.<String>} opts.expand which fields, if any, to expand
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getExternalcontactsGraphsClusterscans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getExternalcontactsGraphsClusterscans(opts) { 
 		opts = opts || {};
@@ -1074,7 +1069,6 @@ class ExternalContactsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand which fields, if any, to expand
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getExternalcontactsGraphsClusterscansLatest is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getExternalcontactsGraphsClusterscansLatest(opts) { 
 		opts = opts || {};
@@ -1100,7 +1094,6 @@ class ExternalContactsApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getExternalcontactsGraphsClusterscansLatestStatistics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getExternalcontactsGraphsClusterscansLatestStatistics(opts) { 
 		opts = opts || {};
@@ -1126,7 +1119,6 @@ class ExternalContactsApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getExternalcontactsGraphsSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getExternalcontactsGraphsSettings(opts) { 
 		opts = opts || {};
@@ -4178,7 +4170,6 @@ class ExternalContactsApi {
 	 * @param {String} clusterId Cluster ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * putExternalcontactsGraphsClusterscanClusterMerge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putExternalcontactsGraphsClusterscanClusterMerge(scanId, clusterId, opts) { 
 		opts = opts || {};
@@ -4213,7 +4204,6 @@ class ExternalContactsApi {
 	 * @param {Object} body OrgConfiguration
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * putExternalcontactsGraphsSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putExternalcontactsGraphsSettings(body, opts) { 
 		opts = opts || {};

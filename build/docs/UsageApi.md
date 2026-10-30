@@ -24,10 +24,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 > ApiUsageQueryResult getOauthClientUsageQueryResult(executionId, clientId, opts)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/oauth/clients/{clientId}/usage/query/results/{executionId}
 
 Get the results of a usage query
+
+Deprecated - use GET /api/v2/usage/client/{clientId}/aggregates/query/jobs/{jobId} instead.
 
 Requires ANY permissions:
 
@@ -84,12 +89,15 @@ apiInstance.getOauthClientUsageQueryResult(executionId, clientId, opts)
 
 > UsageExecutionResult getOauthClientUsageSummary(clientId, opts)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/oauth/clients/{clientId}/usage/summary
 
 Get a summary of OAuth client API usage
 
-After calling this method, you will then need to poll for the query results based on the returned execution Id
+Deprecated - use POST /api/v2/usage/client/{clientId}/aggregates/query/jobs instead. After calling this method, you will then need to poll for the query results based on the returned execution Id
 
 Requires ANY permissions:
 
@@ -270,10 +278,15 @@ apiInstance.getUsageClientClientIdAggregatesQueryJob(clientId, jobId, opts)
 
 > ApiUsageQueryResult getUsageQueryExecutionIdResults(executionId, opts)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/usage/query/{executionId}/results
 
 Get the results of a usage query
+
+Deprecated - use GET /api/v2/usage/aggregates/query/jobs/{jobId} instead.
 
 Requires ANY permissions:
 
@@ -328,10 +341,15 @@ apiInstance.getUsageQueryExecutionIdResults(executionId, opts)
 
 > ApiUsageQueryResult getUsageSimplesearchExecutionIdResults(executionId, opts)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/usage/simplesearch/{executionId}/results
 
 Get the results of a usage search. Number of records to be returned is limited to 20,000 results.
+
+Deprecated - use GET /api/v2/usage/aggregates/query/jobs/{jobId} instead.
 
 Requires ANY permissions:
 
@@ -390,12 +408,15 @@ apiInstance.getUsageSimplesearchExecutionIdResults(executionId, opts)
 
 > UsageExecutionResult postOauthClientUsageQuery(clientId, body, opts)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/oauth/clients/{clientId}/usage/query
 
 Query for OAuth client API usage
 
-After calling this method, you will then need to poll for the query results based on the returned execution Id
+Deprecated - use POST /api/v2/usage/client/{clientId}/aggregates/query/jobs instead. After calling this method, you will then need to poll for the query results based on the returned execution Id
 
 Requires ANY permissions:
 
@@ -572,12 +593,15 @@ apiInstance.postUsageClientClientIdAggregatesQueryJobs(clientId, body, opts)
 
 > UsageExecutionResult postUsageQuery(body, opts)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/usage/query
 
 Query organization API Usage - 
 
-After calling this method, you will then need to poll for the query results based on the returned execution Id
+Deprecated - use POST /api/v2/usage/aggregates/query/jobs instead. After calling this method, you will then need to poll for the query results based on the returned execution Id
 
 Requires ANY permissions:
 
@@ -632,12 +656,15 @@ apiInstance.postUsageQuery(body, opts)
 
 > UsageExecutionResult postUsageSimplesearch(body, opts)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/usage/simplesearch
 
 Search organization API Usage
 
-After calling this method, you will then need to poll for the query results based on the returned execution Id. The number of records is limited to 20,000 results
+Deprecated - use POST /api/v2/usage/aggregates/query/jobs instead. After calling this method, you will then need to poll for the query results based on the returned execution Id. The number of records is limited to 20,000 results
 
 Requires ANY permissions:
 
@@ -688,4 +715,4 @@ apiInstance.postUsageSimplesearch(body, opts)
 **UsageExecutionResult**
 
 
-_purecloud-platform-client-v2@264.0.0_
+_purecloud-platform-client-v2@265.0.0_

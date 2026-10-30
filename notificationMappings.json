@@ -225,6 +225,10 @@
       "class": "ExternalContactsRelationshipChangedTopicRelationship"
     },
     {
+      "topic": "v2.externalevents.contacts.{id}",
+      "class": "V2ExternalEventsContactExternalEventBody"
+    },
+    {
       "topic": "v2.flows.instances.flow.{id}",
       "class": "V2FlowExecutionDataFlowidTopicFlowExecutionHistory"
     },
@@ -485,8 +489,16 @@
       "class": "V2StaEmpathyOverallTopicOverallEmpathyMessage"
     },
     {
+      "topic": "v2.speechandtextanalytics.conversation.{id}.realtimetopics",
+      "class": "V2StaTopicsDetectedRealtimeTopicTopicSpottingRealTimeNotification"
+    },
+    {
       "topic": "v2.speechandtextanalytics.conversation.{id}.sentiment",
       "class": "V2StaSentimentOverallTopicOverallSentimentMessage"
+    },
+    {
+      "topic": "v2.speechandtextanalytics.conversation.{id}.sentiment.realtime",
+      "class": "V2StaRealtimeCustomerSentimentTopicRealTimeCustomerSentimentMessage"
     },
     {
       "topic": "v2.speechandtextanalytics.conversation.{id}.topics",
@@ -797,8 +809,52 @@
       "class": "WfmAgentScheduleUpdateTopicAgentScheduleUpdateNotification"
     },
     {
+      "topic": "v2.users.{id}.workforcemanagement.selfschedule.jobs",
+      "class": "WfmSelfScheduleCompleteEventSelfScheduleCompleteNotification"
+    },
+    {
       "topic": "v2.users.{id}.workforcemanagement.shift.trading.jobs",
       "class": "WfmShiftTradingJobCompleteEventShiftTradingJobCompleteNotification"
+    },
+    {
+      "topic": "v2.users.{id}.workforcemanagement.shifttrading.jobs.addTrade",
+      "class": "WfmShifttradingAddTradeJobEventShiftTradingAddTradeJobNotification"
+    },
+    {
+      "topic": "v2.users.{id}.workforcemanagement.shifttrading.jobs.bulkUpdateTradeStates",
+      "class": "WfmShifttradingBulkUpdateTradeStatesJobEventShiftTradingJobCompleteNotificationV2"
+    },
+    {
+      "topic": "v2.users.{id}.workforcemanagement.shifttrading.jobs.evaluateTrades",
+      "class": "WfmShifttradingEvaluateTradesJobEventShiftTradingJobCompleteNotificationV2"
+    },
+    {
+      "topic": "v2.users.{id}.workforcemanagement.shifttrading.jobs.matchTrade",
+      "class": "WfmShifttradingMatchTradeJobEventShiftTradingJobCompleteNotificationV2"
+    },
+    {
+      "topic": "v2.users.{id}.workforcemanagement.shifttrading.jobs.queryAgentTrades",
+      "class": "WfmShifttradingQueryAgentTradesJobEventShiftTradingJobCompleteNotificationV2"
+    },
+    {
+      "topic": "v2.users.{id}.workforcemanagement.shifttrading.jobs.queryTrades",
+      "class": "WfmShifttradingQueryTradesJobEventShiftTradingJobCompleteNotificationV2"
+    },
+    {
+      "topic": "v2.users.{id}.workforcemanagement.shifttrading.jobs.queryWeekSummaries",
+      "class": "WfmShifttradingQueryWeekSummariesJobEventShiftTradingQueryWeekSummariesJobNotification"
+    },
+    {
+      "topic": "v2.users.{id}.workforcemanagement.shifttrading.jobs.searchUnmatchedTrades",
+      "class": "WfmShifttradingSearchUnmatchedTradesJobEventShiftTradingJobCompleteNotificationV2"
+    },
+    {
+      "topic": "v2.users.{id}.workforcemanagement.shifttrading.jobs.updateTrade",
+      "class": "WfmShifttradingUpdateTradeJobEventShiftTradingUpdateTradeJobNotification"
+    },
+    {
+      "topic": "v2.users.{id}.workforcemanagement.shifttrading.jobs.updateTradeState",
+      "class": "WfmShifttradingUpdateTradeStateJobEventShiftTradingJobCompleteNotificationV2"
     },
     {
       "topic": "v2.users.{id}.workforcemanagement.shrinkage.jobs",
@@ -955,6 +1011,10 @@
     {
       "topic": "v2.workforcemanagement.managementunits.{id}.shifttrades.state.bulk",
       "class": "WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateNotification"
+    },
+    {
+      "topic": "v2.workforcemanagement.managementunits.{id}.timeoffrequests",
+      "class": "WfmTimeOffRequestUpdateMuTopicTimeOffRequestUpdate"
     },
     {
       "topic": "v2.workforcemanagement.performanceprediction.schedules.{id}",

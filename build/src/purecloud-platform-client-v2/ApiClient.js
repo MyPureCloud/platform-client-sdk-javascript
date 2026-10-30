@@ -5,7 +5,7 @@ import HttpRequestOptions from './HttpRequestOptions.js';
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 264.0.0
+ * @version 265.0.0
  */
 class ApiClient {
 	/**
@@ -1677,6 +1677,23 @@ class ApiClient {
 				.catch((error) => {
 					this._saveSettings({ accessToken: undefined });
 					reject(error);
+				});
+		});
+	}
+
+	/**
+	 * @description Loads token from storage, if enabled, and checks to ensure it works.
+	 * @returns {Object} AuthData if a saved token could be loaded from storage, and is still valid.
+	 */
+	restoreSavedAccess() {
+		return new Promise((resolve, reject) => {
+			// Test token
+			this._testTokenAccess()
+				.then(() => {
+					resolve(this.authData);
+				})
+				.catch((error) => {
+					reject(new Error(`Auth Session could not be restored.`));
 				});
 		});
 	}

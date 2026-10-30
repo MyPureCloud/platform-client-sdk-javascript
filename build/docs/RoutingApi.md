@@ -3597,6 +3597,7 @@ let apiInstance = new platformClient.RoutingApi();
 let queueId = "queueId_example"; // String | Queue ID
 let opts = { 
   'expand': ["expand_example"], // [String] | Which fields, if any, to expand
+  'forceMemberRecount': false, // Boolean | Force a recount of queue membership. This is an expensive, opt-in operation intended for repairing out-of-sync membership counters.
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
     'X-Request-ID': 'req-12345'
@@ -3620,6 +3621,7 @@ apiInstance.getRoutingQueue(queueId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **queueId** | **String** | Queue ID |  |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: identityresolution |
+ **forceMemberRecount** | **Boolean** | Force a recount of queue membership. This is an expensive, opt-in operation intended for repairing out-of-sync membership counters. | [optional] [default to false] |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -10621,4 +10623,4 @@ apiInstance.putUserRoutingskillsBulk(userId, body, opts)
 **UserSkillEntityListing**
 
 
-_purecloud-platform-client-v2@264.0.0_
+_purecloud-platform-client-v2@265.0.0_

@@ -94,8 +94,6 @@ docs/LogCaptureApi.json
 docs/LogCaptureApi.md
 docs/MessagingApi.json
 docs/MessagingApi.md
-docs/MobileDevicesApi.json
-docs/MobileDevicesApi.md
 docs/NotificationsApi.json
 docs/NotificationsApi.md
 docs/OAuthApi.json
@@ -363,7 +361,6 @@ docs/deleteLocation-example.txt
 docs/deleteMessagingSetting-example.txt
 docs/deleteMessagingSettingsDefault-example.txt
 docs/deleteMessagingSupportedcontentSupportedContentId-example.txt
-docs/deleteMobiledevice-example.txt
 docs/deleteNotificationsChannelSubscriptions-example.txt
 docs/deleteOauthClient-example.txt
 docs/deleteOrgauthorizationTrustee-example.txt
@@ -1342,6 +1339,8 @@ docs/getKnowledgeSourceSynchronizationUploads-example.txt
 docs/getKnowledgeSourceSynchronizations-example.txt
 docs/getKnowledgeSources-example.txt
 docs/getKnowledgeSourcesSynchronizations-example.txt
+docs/getKnowledgeSourcesTags-example.txt
+docs/getKnowledgeSourcesTagsGrouped-example.txt
 docs/getLanguage-example.txt
 docs/getLanguages-example.txt
 docs/getLanguagesTranslations-example.txt
@@ -1396,8 +1395,6 @@ docs/getMessagingSettings-example.txt
 docs/getMessagingSettingsDefault-example.txt
 docs/getMessagingSupportedcontent-example.txt
 docs/getMessagingSupportedcontentSupportedContentId-example.txt
-docs/getMobiledevice-example.txt
-docs/getMobiledevices-example.txt
 docs/getNotificationsAvailabletopics-example.txt
 docs/getNotificationsChannelSubscriptions-example.txt
 docs/getNotificationsChannels-example.txt
@@ -1707,6 +1704,8 @@ docs/getScriptsPublishedScriptIdVariables-example.txt
 docs/getScriptsUploadStatus-example.txt
 docs/getSearch-example.txt
 docs/getSearch-example.txt
+docs/getSearchSettings-example.txt
+docs/getSearchSettings-example.txt
 docs/getSearchSuggest-example.txt
 docs/getSearchSuggest-example.txt
 docs/getSettingsExecutiondata-example.txt
@@ -2127,6 +2126,7 @@ docs/getWorkforcemanagementManagementunitAdherence-example.txt
 docs/getWorkforcemanagementManagementunitAgent-example.txt
 docs/getWorkforcemanagementManagementunitAgentShifttrades-example.txt
 docs/getWorkforcemanagementManagementunitDecisionmetrics-example.txt
+docs/getWorkforcemanagementManagementunitSelfscheduleSettings-example.txt
 docs/getWorkforcemanagementManagementunitShifttradesMatched-example.txt
 docs/getWorkforcemanagementManagementunitShifttradesUsers-example.txt
 docs/getWorkforcemanagementManagementunitTimeofflimit-example.txt
@@ -2152,6 +2152,11 @@ docs/getWorkforcemanagementSchedulebidSchedulesets-example.txt
 docs/getWorkforcemanagementSchedulebids-example.txt
 docs/getWorkforcemanagementSchedulingjob-example.txt
 docs/getWorkforcemanagementSchedulingpreferencesSettings-example.txt
+docs/getWorkforcemanagementSelfscheduleActivitymove-example.txt
+docs/getWorkforcemanagementSelfscheduleJob-example.txt
+docs/getWorkforcemanagementSelfscheduleOffersJob-example.txt
+docs/getWorkforcemanagementSelfscheduleQuery-example.txt
+docs/getWorkforcemanagementSelfscheduleSettings-example.txt
 docs/getWorkforcemanagementShifttrades-example.txt
 docs/getWorkforcemanagementShifttradingTradeJob-example.txt
 docs/getWorkforcemanagementShifttradingTradeMatchJob-example.txt
@@ -2343,6 +2348,10 @@ docs/patchScimGroup-example.txt
 docs/patchScimUser-example.txt
 docs/patchScimV2Group-example.txt
 docs/patchScimV2User-example.txt
+docs/patchSearchSettings-example.txt
+docs/patchSearchSettings-example.txt
+docs/patchSearchSettingsContentsearch-example.txt
+docs/patchSearchSettingsContentsearch-example.txt
 docs/patchSettingsExecutiondata-example.txt
 docs/patchSocialmediaTopic-example.txt
 docs/patchSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId-example.txt
@@ -2428,6 +2437,7 @@ docs/patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences-example.txt
 docs/patchWorkforcemanagementManagementunit-example.txt
 docs/patchWorkforcemanagementManagementunitAgents-example.txt
 docs/patchWorkforcemanagementManagementunitAgentsWorkplansBulk-example.txt
+docs/patchWorkforcemanagementManagementunitSelfscheduleSettings-example.txt
 docs/patchWorkforcemanagementManagementunitTimeofflimit-example.txt
 docs/patchWorkforcemanagementManagementunitTimeoffplan-example.txt
 docs/patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus-example.txt
@@ -2870,10 +2880,12 @@ docs/postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate-example.t
 docs/postIntegrationsWebhookEvents-example.txt
 docs/postIntentsAssignmentsExternalcontactCustomerintentAssignment-example.txt
 docs/postIntentsCategories-example.txt
+docs/postIntentsCategoriesSimilar-example.txt
 docs/postIntentsCustomerintentSourceintentsBulkAdd-example.txt
 docs/postIntentsCustomerintentSourceintentsBulkRemove-example.txt
 docs/postIntentsCustomerintents-example.txt
 docs/postIntentsCustomerintentsBulkRetrieve-example.txt
+docs/postIntentsCustomerintentsSimilar-example.txt
 docs/postJourneyActionmaps-example.txt
 docs/postJourneyActionmapsEstimatesJobs-example.txt
 docs/postJourneyActiontemplates-example.txt
@@ -2940,6 +2952,7 @@ docs/postKnowledgeSourceSynchronizationDeletions-example.txt
 docs/postKnowledgeSourceSynchronizationUploads-example.txt
 docs/postKnowledgeSourceSynchronizations-example.txt
 docs/postKnowledgeSources-example.txt
+docs/postKnowledgeSourcesFilesCounts-example.txt
 docs/postLanguages-example.txt
 docs/postLanguageunderstandingDomainFeedback-example.txt
 docs/postLanguageunderstandingDomainVersionDetect-example.txt
@@ -2980,7 +2993,6 @@ docs/postLocationsSearch-example.txt
 docs/postLocationsSearch-example.txt
 docs/postMessagingSettings-example.txt
 docs/postMessagingSupportedcontent-example.txt
-docs/postMobiledevices-example.txt
 docs/postNotificationsChannelSubscriptions-example.txt
 docs/postNotificationsChannels-example.txt
 docs/postOauthClientSecret-example.txt
@@ -3383,6 +3395,8 @@ docs/postWorkforcemanagementManagementunits-example.txt
 docs/postWorkforcemanagementNotificationsUpdate-example.txt
 docs/postWorkforcemanagementSchedules-example.txt
 docs/postWorkforcemanagementSchedulingpreferencesQuery-example.txt
+docs/postWorkforcemanagementSelfscheduleJobs-example.txt
+docs/postWorkforcemanagementSelfscheduleOffersJobs-example.txt
 docs/postWorkforcemanagementShifttradingTradeJobs-example.txt
 docs/postWorkforcemanagementShifttradingTradeMatchJobs-example.txt
 docs/postWorkforcemanagementShifttradingTradeStateJobs-example.txt
@@ -3528,7 +3542,6 @@ docs/putLearningModule-example.txt
 docs/putLearningModulePreview-example.txt
 docs/putLearningModuleRule-example.txt
 docs/putMessagingSettingsDefault-example.txt
-docs/putMobiledevice-example.txt
 docs/putNotificationsChannelSubscriptions-example.txt
 docs/putOauthClient-example.txt
 docs/putOrganizationsEmbeddedintegration-example.txt
@@ -3736,7 +3749,6 @@ src/purecloud-platform-client-v2/api/LicenseApi.js
 src/purecloud-platform-client-v2/api/LocationsApi.js
 src/purecloud-platform-client-v2/api/LogCaptureApi.js
 src/purecloud-platform-client-v2/api/MessagingApi.js
-src/purecloud-platform-client-v2/api/MobileDevicesApi.js
 src/purecloud-platform-client-v2/api/NotificationsApi.js
 src/purecloud-platform-client-v2/api/OAuthApi.js
 src/purecloud-platform-client-v2/api/ObjectsApi.js

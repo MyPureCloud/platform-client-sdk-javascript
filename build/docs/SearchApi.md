@@ -11,10 +11,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getGroupsSearch**](SearchApi#getGroupsSearch) | **GET** /api/v2/groups/search | Search groups using the q64 value returned from a previous search
 [**getLocationsSearch**](SearchApi#getLocationsSearch) | **GET** /api/v2/locations/search | Search locations using the q64 value returned from a previous search
 [**getSearch**](SearchApi#getSearch) | **GET** /api/v2/search | Search using the q64 value returned from a previous search.
+[**getSearchSettings**](SearchApi#getSearchSettings) | **GET** /api/v2/search/settings | Get the organization's search settings
 [**getSearchSuggest**](SearchApi#getSearchSuggest) | **GET** /api/v2/search/suggest | Suggest resources using the q64 value returned from a previous suggest query.
 [**getTelephonyProvidersEdgesSitesSearch**](SearchApi#getTelephonyProvidersEdgesSitesSearch) | **GET** /api/v2/telephony/providers/edges/sites/search | Search sites using the q64 value returned from a previous search
 [**getUsersSearch**](SearchApi#getUsersSearch) | **GET** /api/v2/users/search | Search users using the q64 value returned from a previous search
 [**getVoicemailSearch**](SearchApi#getVoicemailSearch) | **GET** /api/v2/voicemail/search | Search voicemails using the q64 value returned from a previous search
+[**patchSearchSettings**](SearchApi#patchSearchSettings) | **PATCH** /api/v2/search/settings | Patch the organization's search settings
+[**patchSearchSettingsContentsearch**](SearchApi#patchSearchSettingsContentsearch) | **PATCH** /api/v2/search/settings/contentsearch | Patch the organization's content search settings
 [**postConversationsCustomattributesSearch**](SearchApi#postConversationsCustomattributesSearch) | **POST** /api/v2/conversations/customattributes/search | Search resources.
 [**postConversationsParticipantsAttributesSearch**](SearchApi#postConversationsParticipantsAttributesSearch) | **POST** /api/v2/conversations/participants/attributes/search | Search conversations
 [**postDocumentationAllSearch**](SearchApi#postDocumentationAllSearch) | **POST** /api/v2/documentation/all/search | Search all documents
@@ -314,6 +317,63 @@ apiInstance.getSearch(q64, opts)
 **JsonNodeSearchResponse**
 
 
+## getSearchSettings
+
+> OrgSettings getSearchSettings(opts)
+
+
+GET /api/v2/search/settings
+
+Get the organization's search settings
+
+getSearchSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* directory:organization:admin
+* analytics:transcriptsearchsetting:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SearchApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getSearchSettings(opts)
+  .then((data) => {
+    console.log(`getSearchSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getSearchSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**OrgSettings**
+
+
 ## getSearchSuggest
 
 > JsonNodeSearchResponse getSearchSuggest(q64, opts)
@@ -551,6 +611,124 @@ apiInstance.getVoicemailSearch(q64, opts)
 ### Return type
 
 **VoicemailsSearchResponse**
+
+
+## patchSearchSettings
+
+> OrgSettings patchSearchSettings(body, opts)
+
+
+PATCH /api/v2/search/settings
+
+Patch the organization's search settings
+
+patchSearchSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* directory:organization:admin
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SearchApi();
+
+let body = {}; // Object | Search Settings
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchSearchSettings(body, opts)
+  .then((data) => {
+    console.log(`patchSearchSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchSearchSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Search Settings |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**OrgSettings**
+
+
+## patchSearchSettingsContentsearch
+
+> ContentSearchSetting patchSearchSettingsContentsearch(body, opts)
+
+
+PATCH /api/v2/search/settings/contentsearch
+
+Patch the organization's content search settings
+
+patchSearchSettingsContentsearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:transcriptsearchsetting:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SearchApi();
+
+let body = {}; // Object | Content search setting
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchSearchSettingsContentsearch(body, opts)
+  .then((data) => {
+    console.log(`patchSearchSettingsContentsearch success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchSearchSettingsContentsearch');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Content search setting |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ContentSearchSetting**
 
 
 ## postConversationsCustomattributesSearch
@@ -1068,6 +1246,8 @@ Requires ANY permissions:
 * analytics:conversationDetail:view
 * recording:recording:view
 * recording:recordingSegment:view
+* analytics:transcriptcontent:search
+* speechAndTextAnalytics:data:view
 
 ### Example Usage
 
@@ -1516,4 +1696,4 @@ apiInstance.postVoicemailSearch(body, opts)
 **VoicemailsSearchResponse**
 
 
-_purecloud-platform-client-v2@264.0.0_
+_purecloud-platform-client-v2@265.0.0_

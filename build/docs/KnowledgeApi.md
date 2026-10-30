@@ -69,6 +69,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getKnowledgeSourceSynchronizations**](KnowledgeApi#getKnowledgeSourceSynchronizations) | **GET** /api/v2/knowledge/sources/{sourceId}/synchronizations | Get synchronizations of a source.
 [**getKnowledgeSources**](KnowledgeApi#getKnowledgeSources) | **GET** /api/v2/knowledge/sources | List sources
 [**getKnowledgeSourcesSynchronizations**](KnowledgeApi#getKnowledgeSourcesSynchronizations) | **GET** /api/v2/knowledge/sources/synchronizations | Get synchronizations of all sources of the organization.
+[**getKnowledgeSourcesTags**](KnowledgeApi#getKnowledgeSourcesTags) | **GET** /api/v2/knowledge/sources/tags | Get tags across sources for the organization
+[**getKnowledgeSourcesTagsGrouped**](KnowledgeApi#getKnowledgeSourcesTagsGrouped) | **GET** /api/v2/knowledge/sources/tags/grouped | Get tags grouped by source for the organization
 [**patchKnowledgeConnection**](KnowledgeApi#patchKnowledgeConnection) | **PATCH** /api/v2/knowledge/connections/{connectionId} | Update connection
 [**patchKnowledgeGuestSessionDocumentsSearchSearchId**](KnowledgeApi#patchKnowledgeGuestSessionDocumentsSearchSearchId) | **PATCH** /api/v2/knowledge/guest/sessions/{sessionId}/documents/search/{searchId} | Update search result.
 [**patchKnowledgeKnowledgebase**](KnowledgeApi#patchKnowledgeKnowledgebase) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId} | Update knowledge base
@@ -130,6 +132,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postKnowledgeSourceSynchronizationUploads**](KnowledgeApi#postKnowledgeSourceSynchronizationUploads) | **POST** /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/uploads | Create presigned URL for uploading a file in the synchronization.
 [**postKnowledgeSourceSynchronizations**](KnowledgeApi#postKnowledgeSourceSynchronizations) | **POST** /api/v2/knowledge/sources/{sourceId}/synchronizations | Start a manual synchronization from a source.
 [**postKnowledgeSources**](KnowledgeApi#postKnowledgeSources) | **POST** /api/v2/knowledge/sources | Create a new source
+[**postKnowledgeSourcesFilesCounts**](KnowledgeApi#postKnowledgeSourcesFilesCounts) | **POST** /api/v2/knowledge/sources/files/counts | Get per-source file counts for the selected tag filter
 [**putKnowledgeKnowledgebaseSourcesSalesforceSourceId**](KnowledgeApi#putKnowledgeKnowledgebaseSourcesSalesforceSourceId) | **PUT** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId} | Update Salesforce Knowledge integration source
 [**putKnowledgeKnowledgebaseSourcesServicenowSourceId**](KnowledgeApi#putKnowledgeKnowledgebaseSourcesServicenowSourceId) | **PUT** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId} | Update ServiceNow Knowledge integration source
 [**putKnowledgeSource**](KnowledgeApi#putKnowledgeSource) | **PUT** /api/v2/knowledge/sources/{sourceId} | Update the source
@@ -4068,6 +4071,130 @@ apiInstance.getKnowledgeSourcesSynchronizations(opts)
 **V3SynchronizationListing**
 
 
+## getKnowledgeSourcesTags
+
+> OrgV3SourcesTagsResponse getKnowledgeSourcesTags(opts)
+
+
+GET /api/v2/knowledge/sources/tags
+
+Get tags across sources for the organization
+
+Requires ALL permissions:
+
+* knowledge:sourceTagList:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 100, // Number | Number of items per page. Maximum is 200.
+  'tagName': "tagName_example", // String | Optional substring filter for tag names.
+  'sourceIds': "sourceIds_example", // String | Optional comma-separated source IDs to scope tags.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getKnowledgeSourcesTags(opts)
+  .then((data) => {
+    console.log(`getKnowledgeSourcesTags success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getKnowledgeSourcesTags');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Number of items per page. Maximum is 200. | [optional] [default to 100] |
+ **tagName** | **String** | Optional substring filter for tag names. | [optional]  |
+ **sourceIds** | **String** | Optional comma-separated source IDs to scope tags. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**OrgV3SourcesTagsResponse**
+
+
+## getKnowledgeSourcesTagsGrouped
+
+> V3SourceTagsGroupedResponse getKnowledgeSourcesTagsGrouped(opts)
+
+
+GET /api/v2/knowledge/sources/tags/grouped
+
+Get tags grouped by source for the organization
+
+Requires ALL permissions:
+
+* knowledge:sourceTagList:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 100, // Number | Number of items per page. Maximum is 200.
+  'tagName': "tagName_example", // String | Optional substring filter for tag names.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getKnowledgeSourcesTagsGrouped(opts)
+  .then((data) => {
+    console.log(`getKnowledgeSourcesTagsGrouped success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getKnowledgeSourcesTagsGrouped');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Number of items per page. Maximum is 200. | [optional] [default to 100] |
+ **tagName** | **String** | Optional substring filter for tag names. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**V3SourceTagsGroupedResponse**
+
+
 ## patchKnowledgeConnection
 
 > ConnectionResponse patchKnowledgeConnection(connectionId, opts)
@@ -7673,6 +7800,63 @@ apiInstance.postKnowledgeSources(body, opts)
 **V3SourceDetailedResponse**
 
 
+## postKnowledgeSourcesFilesCounts
+
+> V3SourceFileCountsResponse postKnowledgeSourcesFilesCounts(opts)
+
+
+POST /api/v2/knowledge/sources/files/counts
+
+Get per-source file counts for the selected tag filter
+
+Requires ALL permissions:
+
+* knowledge:sourceFileCount:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let opts = { 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postKnowledgeSourcesFilesCounts(opts)
+  .then((data) => {
+    console.log(`postKnowledgeSourcesFilesCounts success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeSourcesFilesCounts');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**V3SourceFileCountsResponse**
+
+
 ## putKnowledgeKnowledgebaseSourcesSalesforceSourceId
 
 > SalesforceSourceResponse putKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, sourceId, body, opts)
@@ -7854,4 +8038,4 @@ apiInstance.putKnowledgeSource(sourceId, body, opts)
 **V3SourceDetailedResponse**
 
 
-_purecloud-platform-client-v2@264.0.0_
+_purecloud-platform-client-v2@265.0.0_

@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 264.0.0
+	 * @version 265.0.0
 	 */
 
 	/**
@@ -1773,6 +1773,7 @@ class RoutingApi {
 	 * @param {String} queueId Queue ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 * @param {Boolean} opts.forceMemberRecount Force a recount of queue membership. This is an expensive, opt-in operation intended for repairing out-of-sync membership counters. (default to false)
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getRoutingQueue(queueId, opts) { 
@@ -1787,7 +1788,7 @@ class RoutingApi {
 			'/api/v2/routing/queues/{queueId}', 
 			'GET', 
 			{ 'queueId': queueId },
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'forceMemberRecount': opts['forceMemberRecount'] },
 			{  },
 			{  },
 			null, 

@@ -5,7 +5,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 264.0.0
+	 * @version 265.0.0
 	 */
 
 	/**
@@ -22,11 +22,12 @@ class UsageApi {
 
 	/**
 	 * Get the results of a usage query
-	 * 
+	 * Deprecated - use GET /api/v2/usage/client/{clientId}/aggregates/query/jobs/{jobId} instead.
 	 * @param {String} executionId ID of the query execution
 	 * @param {String} clientId Client ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	getOauthClientUsageQueryResult(executionId, clientId, opts) { 
 		opts = opts || {};
@@ -57,11 +58,12 @@ class UsageApi {
 
 	/**
 	 * Get a summary of OAuth client API usage
-	 * After calling this method, you will then need to poll for the query results based on the returned execution Id
+	 * Deprecated - use POST /api/v2/usage/client/{clientId}/aggregates/query/jobs instead. After calling this method, you will then need to poll for the query results based on the returned execution Id
 	 * @param {String} clientId Client ID
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.days Previous number of days to query (default to 7)
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	getOauthClientUsageSummary(clientId, opts) { 
 		opts = opts || {};
@@ -157,10 +159,11 @@ class UsageApi {
 
 	/**
 	 * Get the results of a usage query
-	 * 
+	 * Deprecated - use GET /api/v2/usage/aggregates/query/jobs/{jobId} instead.
 	 * @param {String} executionId ID of the query execution
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	getUsageQueryExecutionIdResults(executionId, opts) { 
 		opts = opts || {};
@@ -187,12 +190,13 @@ class UsageApi {
 
 	/**
 	 * Get the results of a usage search. Number of records to be returned is limited to 20,000 results.
-	 * 
+	 * Deprecated - use GET /api/v2/usage/aggregates/query/jobs/{jobId} instead.
 	 * @param {String} executionId ID of the search execution
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned
 	 * @param {Number} opts.pageSize The max number of entities to be returned per request. Maximum page size of 1000
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	getUsageSimplesearchExecutionIdResults(executionId, opts) { 
 		opts = opts || {};
@@ -219,11 +223,12 @@ class UsageApi {
 
 	/**
 	 * Query for OAuth client API usage
-	 * After calling this method, you will then need to poll for the query results based on the returned execution Id
+	 * Deprecated - use POST /api/v2/usage/client/{clientId}/aggregates/query/jobs instead. After calling this method, you will then need to poll for the query results based on the returned execution Id
 	 * @param {String} clientId Client ID
 	 * @param {Object} body Query
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	postOauthClientUsageQuery(clientId, body, opts) { 
 		opts = opts || {};
@@ -319,10 +324,11 @@ class UsageApi {
 
 	/**
 	 * Query organization API Usage - 
-	 * After calling this method, you will then need to poll for the query results based on the returned execution Id
+	 * Deprecated - use POST /api/v2/usage/aggregates/query/jobs instead. After calling this method, you will then need to poll for the query results based on the returned execution Id
 	 * @param {Object} body Query
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	postUsageQuery(body, opts) { 
 		opts = opts || {};
@@ -349,10 +355,11 @@ class UsageApi {
 
 	/**
 	 * Search organization API Usage
-	 * After calling this method, you will then need to poll for the query results based on the returned execution Id. The number of records is limited to 20,000 results
+	 * Deprecated - use POST /api/v2/usage/aggregates/query/jobs instead. After calling this method, you will then need to poll for the query results based on the returned execution Id. The number of records is limited to 20,000 results
 	 * @param {Object} body SimpleSearch
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	postUsageSimplesearch(body, opts) { 
 		opts = opts || {};

@@ -1,162 +1,504 @@
-Platform API version: 10857
+Platform API version: 10912
 
 
+## Release Notes
+
+A restoreSavedAccess() method is added at ApiClient level. The method attempts to retrieve an existing token from storage, test its validity, sets it as the ApiClient token and return (throws an error otherwise).
 
 
-# Major Changes (4 changes)
+# Major Changes (22 changes)
 
-**GET /api/v2/authorization/subjects/me** (1 change)
+**/api/v2/mobiledevices/{deviceId}** (1 change)
 
-* Parameter includeFullRoles was added
+* Path /api/v2/mobiledevices/{deviceId} was removed
 
-**GET /api/v2/authorization/subjects/{subjectId}** (1 change)
+**/api/v2/mobiledevices** (1 change)
 
-* Parameter includeFullRoles was added
+* Path /api/v2/mobiledevices was removed
 
-**Case** (1 change)
+**GET /api/v2/externalcontacts/graphs/clusterscans/latest** (1 change)
 
-* Property name was removed
+* Response 200 type was changed from ClusterScan to LatestClusterScan
 
-**ActivityPlanJobResponse** (1 change)
+**POST /api/v2/oauth/clients/{clientId}/usage/query** (1 change)
 
-* Enum value MaximizeOccurrence was removed from property type
+* Has been deprecated
+
+**GET /api/v2/oauth/clients/{clientId}/usage/summary** (1 change)
+
+* Has been deprecated
+
+**GET /api/v2/oauth/clients/{clientId}/usage/query/results/{executionId}** (1 change)
+
+* Has been deprecated
+
+**GET /api/v2/routing/queues/{queueId}** (1 change)
+
+* Parameter forceMemberRecount was added
+
+**POST /api/v2/usage/query** (1 change)
+
+* Has been deprecated
+
+**GET /api/v2/usage/query/{executionId}/results** (1 change)
+
+* Has been deprecated
+
+**POST /api/v2/usage/simplesearch** (1 change)
+
+* Has been deprecated
+
+**GET /api/v2/usage/simplesearch/{executionId}/results** (1 change)
+
+* Has been deprecated
+
+**GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans** (1 change)
+
+* Parameter forceDownloadService was added
+
+**UserDevice** (1 change)
+
+* Model UserDevice was removed
+
+**DirectoryUserDevicesListing** (1 change)
+
+* Model DirectoryUserDevicesListing was removed
+
+**ExtensionPool** (1 change)
+
+* Property division was changed from Division to WritableDivision
+
+**ReschedulingOptionsRunResponse** (3 changes)
+
+* Required property activitySmoothingType was added
+* Required property induceScheduleVariability was added
+* Required property useUnavailableTimesSnapshot was added
+
+**WorkitemOnAttributeChangeCondition** (2 changes)
+
+* Property value was removed
+* Enum value wrapup was removed from property attribute
+
+**WorkitemOnAttributeChangeConditionUpdate** (2 changes)
+
+* Property value was removed
+* Enum value wrapup was removed from property attribute
 
 
-# Minor Changes (32 changes)
+# Minor Changes (112 changes)
 
-**ViewFilter** (1 change)
+**/api/v2/knowledge/sources/files/counts** (2 changes)
 
-* Enum value LinkedIn was added to property socialChannels
+* Path was added
+* Operation POST was added
 
-**ChecklistTransferConfig** (1 change)
+**/api/v2/knowledge/sources/tags** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/knowledge/sources/tags/grouped** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/workforcemanagement/managementunits/{managementUnitId}/selfschedule/settings** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation PATCH was added
+
+**/api/v2/workforcemanagement/selfschedule/activitymoves/{activityMoveId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/workforcemanagement/selfschedule/jobs** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/workforcemanagement/selfschedule/jobs/{jobId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/workforcemanagement/selfschedule/offers/jobs** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/workforcemanagement/selfschedule/offers/jobs/{jobId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/workforcemanagement/selfschedule/query** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/workforcemanagement/selfschedule/settings** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/intents/categories/similar** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/intents/customerintents/similar** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/search/settings** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation PATCH was added
+
+**/api/v2/search/settings/contentsearch** (2 changes)
+
+* Path was added
+* Operation PATCH was added
+
+**MessagingInitialConfiguration** (1 change)
+
+* Enum value LinkedIn was added to property messageType
+
+**Limit** (1 change)
+
+* Enum value agentic.intent.classifier was added to property namespace
+
+**AgenticVirtualAgentTypeDefinition** (1 change)
+
+* Enum value A2AError was added to property type
+
+**AgentStateSegmentTypeCount** (1 change)
+
+* Enum value video was added to property segmentType
+
+**AnalyticsAgentStateAgentSessionResult** (1 change)
+
+* Enum value video was added to property segmentType
+
+**AnalyticsConversationSegment** (1 change)
+
+* Enum value video was added to property segmentType
+
+**ConversationAggregationQuery** (1 change)
+
+* Enum value tActiveVideo was added to property metrics
+
+**ConversationAggregationSort** (1 change)
+
+* Enum value tActiveVideo was added to property name
+
+**ConversationAggregationView** (1 change)
+
+* Enum value tActiveVideo was added to property target
+
+**ConversationAsyncAggregationQuery** (1 change)
+
+* Enum value tActiveVideo was added to property metrics
+
+**ConversationDetailQueryPredicate** (1 change)
+
+* Enum value tActiveVideo was added to property metric
+
+**ReportingTurnKnowledgeMetadata** (1 change)
+
+* Enum value DelegatedToAgenticVirtualAgent was added to property answerGenerationStatus
+
+**ViewFilter** (2 changes)
+
+* Enum value YouTube was added to property socialChannels
+* Enum value video was added to property segmentTypes
+
+**Widget** (1 change)
+
+* Enum value video was added to property selectedSegmentTypes
+
+**CaseplanFilter** (1 change)
+
+* Enum value EQ was added to property operator
+
+**CaseQueryJobCreate** (3 changes)
+
+* Optional property filterGroups was added
+* Enum value externalId was added to property attributes
+* Enum value description was added to property attributes
+
+**CaseQueryJobFilter** (1 change)
+
+* Optional property caseSensitive was added
+
+**CaseQueryJobFilterGroup** (1 change)
 
 * Model was added
 
-**SummaryTransferConfig** (1 change)
+**InitiateVideoChatRecording** (1 change)
 
 * Model was added
 
-**RoleSettings** (1 change)
-
-* Optional property genesysOrgPolicyBypass was added
-
-**ConversationContentThumbnail** (1 change)
+**ClusterScanGraphSettings** (1 change)
 
 * Model was added
 
-**MessageData** (1 change)
-
-* Enum value linkedin was added to property messengerType
-
-**SocialMediaMessageData** (1 change)
-
-* Enum value linkedin was added to property messengerType
-
-**OpenContentAttachment** (1 change)
-
-* Optional property thumbnail was added
-
-**OpenContentThumbnail** (1 change)
+**LatestClusterScan** (1 change)
 
 * Model was added
 
-**MessagingIntegration** (1 change)
+**CsvMappingEntry** (1 change)
 
-* Enum value linkedin was added to property messengerType
+* Optional property valueFormat was added
 
-**ConversationThreadingWindowSetting** (1 change)
+**ActivationTrigger** (1 change)
 
-* Enum value linkedin was added to property messengerType
+* Enum value Sentiment was added to property triggerType
 
-**WhatsAppEmbeddedSignupIntegrationActivationRequest** (1 change)
+**ChecklistActivationPayload** (1 change)
 
-* name is no longer readonly
+* Enum value Sentiment was added to property activationTriggerType
 
-**SuggestionContext** (1 change)
+**ConversationCustomAttributesSearchRequest** (2 changes)
 
-* Optional property language was added
+* Optional property queryReservedFields was added
+* Optional property queryCustomAttributes was added
 
-**SummarySettingParticipantLabels** (1 change)
+**EmailMessage** (1 change)
 
-* Optional property virtualAgent was added
+* Optional property recipientWarnings was added
 
-**CustomConversationAttributeOutput** (1 change)
-
-* Model was added
-
-**CustomConversationAttributeUpdate** (1 change)
+**RecipientWarning** (1 change)
 
 * Model was added
 
-**GuideSessionTurnResponse** (1 change)
+**EmailMessagePreview** (1 change)
 
-* Optional property context was added
+* Optional property recipientWarnings was added
 
-**GuideSessionTurnResponseContext** (1 change)
+**EmailMessageReply** (1 change)
+
+* Optional property recipientWarnings was added
+
+**ConversationNormalizedMessage** (1 change)
+
+* Enum value Modified was added to property status
+
+**OpenNormalizedMessage** (1 change)
+
+* Enum value Modified was added to property status
+
+**AttemptLimits** (1 change)
+
+* Optional property phoneTypeRecallEntries was added
+
+**V3SourceTagResponse** (1 change)
 
 * Model was added
 
-**CustomConversationAttributeInput** (1 change)
+**V3SourceFileCountEntry** (1 change)
 
 * Model was added
 
-**GuideSessionMessage** (1 change)
+**V3SourceFileCountsResponse** (1 change)
 
 * Model was added
 
-**GuideSessionTurnRequest** (1 change)
-
-* Optional property context was added
-
-**GuideSessionTurnRequestContext** (1 change)
+**V3SourceFileCountsRequest** (1 change)
 
 * Model was added
 
-**TtsVoiceEntity** (2 changes)
+**OrgV3SourcesTagsResponse** (1 change)
 
-* Enum value LongForm was added to property voiceType
-* Enum value Unknown was added to property voiceType
+* Model was added
 
-**Recipient** (1 change)
+**V3SourceTagsGroupedEntry** (1 change)
 
-* Enum value linkedin was added to property messengerType
+* Model was added
 
-**ActivityPlanJobResponse** (1 change)
+**V3SourceTagsGroupedResponse** (1 change)
 
-* Enum value RunOccurrence was added to property type
+* Model was added
 
-**AlternativeShiftTradeResponse** (1 change)
+**ApprovalNamespace** (1 change)
 
-* Optional property reviewNote was added
+* Enum value agentic.intent.classifier was added to property namespace
 
-**CreateAlternativeShiftTradeRequest** (1 change)
+**LimitChangeRequestDetails** (1 change)
 
-* Optional property reviewNote was added
+* Enum value agentic.intent.classifier was added to property namespace
 
-**AgentUpdateAlternativeShiftTradeRequest** (1 change)
+**StatusChange** (1 change)
 
-* Optional property reviewNote was added
+* Enum value agentic.intent.classifier was added to property namespace
 
-**ShiftTradeInitiatingSideResponseItem** (1 change)
+**RecordingMessageReceipt** (1 change)
 
-* Optional property reviewNote was added
+* Enum value Modified was added to property status
 
-**AddShiftTradeJobRequest** (1 change)
+**RecordingSettings** (1 change)
 
-* Optional property reviewNote was added
+* Optional property hierarchyAccessControlEnabled was added
 
-**UpdateShiftTradeJobRequest** (1 change)
+**DataIngestionRuleCriteria** (1 change)
 
-* Optional property reviewNote was added
+* Enum value YouTube was added to property effectivePlatform
+
+**ExportDetails** (1 change)
+
+* Enum value FlowInfoSpec was added to property exportType
+
+**Dependency** (1 change)
+
+* Enum value EXTERNALMCPSERVERINTEGRATION was added to property type
+
+**DependencyObject** (1 change)
+
+* Enum value EXTERNALMCPSERVERINTEGRATION was added to property type
+
+**WorkPlanListResponse** (1 change)
+
+* Optional property downloadUrl was added
+
+**SelfScheduleManagementUnitSettings** (1 change)
+
+* Model was added
+
+**SelfScheduleManagementUnitSettingsRequest** (1 change)
+
+* Model was added
+
+**SetWrapperActivityCategory** (1 change)
+
+* Model was added
+
+**SelfScheduleActivityMoveListItem** (1 change)
+
+* Model was added
+
+**SelfScheduleJob** (1 change)
+
+* Model was added
+
+**SelfScheduleActivityMoveRequestItem** (1 change)
+
+* Model was added
+
+**SelfScheduleJobRequest** (1 change)
+
+* Model was added
+
+**SelfScheduleOffersActivityMoveTemplate** (1 change)
+
+* Model was added
+
+**SelfScheduleOffersJob** (1 change)
+
+* Model was added
+
+**SelfScheduleOffersResultTemplate** (1 change)
+
+* Model was added
+
+**SelfScheduleOffersJobRequest** (1 change)
+
+* Model was added
+
+**SelfScheduleQuery** (1 change)
+
+* Model was added
+
+**SelfScheduleAgentManagementUnitSettings** (1 change)
+
+* Model was added
+
+**WorkitemOnAttributeChangeConditionGroup** (1 change)
+
+* Model was added
+
+**WorkitemOnAttributeChangeMatch** (1 change)
+
+* Model was added
+
+**WorkitemOnAttributeChangeRule** (1 change)
+
+* Optional property match was added
+
+**WorkitemOnAttributeChangeRuleUpdate** (1 change)
+
+* Optional property match was added
+
+**WorkitemOnAttributeChangeRuleCreate** (1 change)
+
+* Optional property match was added
+
+**SimilarCategoriesResponse** (1 change)
+
+* Model was added
+
+**SimilarCategoryResult** (1 change)
+
+* Model was added
+
+**SimilarCustomerIntentResult** (1 change)
+
+* Model was added
+
+**SimilarCustomerIntentsResponse** (1 change)
+
+* Model was added
+
+**SimilarEntityRef** (1 change)
+
+* Model was added
+
+**SimilarCustomerIntentsRequest** (1 change)
+
+* Model was added
+
+**OrgSettings** (1 change)
+
+* Model was added
+
+**ContentSearchSetting** (1 change)
+
+* Model was added
+
+**AgentSchedulingPreferencesTiebreaker** (1 change)
+
+* Model was added
 
 
-# Point Changes (3 changes)
+# Point Changes (7 changes)
 
-**PATCH /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup/{integrationId}** (1 change)
+**POST /api/v2/oauth/clients/{clientId}/usage/query** (1 change)
 
 * Description was changed
 
-**GET /api/v2/orphanrecordings** (2 changes)
+**GET /api/v2/oauth/clients/{clientId}/usage/summary** (1 change)
 
-* Summary was changed
-* Description was changed for parameter hasConversation
+* Description was changed
+
+**GET /api/v2/oauth/clients/{clientId}/usage/query/results/{executionId}** (1 change)
+
+* Description was changed
+
+**POST /api/v2/usage/query** (1 change)
+
+* Description was changed
+
+**GET /api/v2/usage/query/{executionId}/results** (1 change)
+
+* Description was changed
+
+**POST /api/v2/usage/simplesearch** (1 change)
+
+* Description was changed
+
+**GET /api/v2/usage/simplesearch/{executionId}/results** (1 change)
+
+* Description was changed

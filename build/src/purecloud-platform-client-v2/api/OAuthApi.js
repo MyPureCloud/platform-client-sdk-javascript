@@ -5,7 +5,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 264.0.0
+	 * @version 265.0.0
 	 */
 
 	/**
@@ -139,11 +139,12 @@ class OAuthApi {
 
 	/**
 	 * Get the results of a usage query
-	 * 
+	 * Deprecated - use GET /api/v2/usage/client/{clientId}/aggregates/query/jobs/{jobId} instead.
 	 * @param {String} executionId ID of the query execution
 	 * @param {String} clientId Client ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	getOauthClientUsageQueryResult(executionId, clientId, opts) { 
 		opts = opts || {};
@@ -174,11 +175,12 @@ class OAuthApi {
 
 	/**
 	 * Get a summary of OAuth client API usage
-	 * After calling this method, you will then need to poll for the query results based on the returned execution Id
+	 * Deprecated - use POST /api/v2/usage/client/{clientId}/aggregates/query/jobs instead. After calling this method, you will then need to poll for the query results based on the returned execution Id
 	 * @param {String} clientId Client ID
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.days Previous number of days to query (default to 7)
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	getOauthClientUsageSummary(clientId, opts) { 
 		opts = opts || {};
@@ -317,11 +319,12 @@ class OAuthApi {
 
 	/**
 	 * Query for OAuth client API usage
-	 * After calling this method, you will then need to poll for the query results based on the returned execution Id
+	 * Deprecated - use POST /api/v2/usage/client/{clientId}/aggregates/query/jobs instead. After calling this method, you will then need to poll for the query results based on the returned execution Id
 	 * @param {String} clientId Client ID
 	 * @param {Object} body Query
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	postOauthClientUsageQuery(clientId, body, opts) { 
 		opts = opts || {};

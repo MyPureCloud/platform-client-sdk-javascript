@@ -302,8 +302,6 @@ DELETE /api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId}
 
 Delete a Stageplan from a draft Caseplan.
 
-deleteCasemanagementCaseplanStageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * caseManagement:stageplan:delete
@@ -2604,8 +2602,6 @@ POST /api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId}/repo
 
 Reposition a Stageplan within a draft Caseplan.
 
-postCasemanagementCaseplanStageplanReposition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * caseManagement:stageplan:reposition
@@ -2666,8 +2662,6 @@ apiInstance.postCasemanagementCaseplanStageplanReposition(caseplanId, stageplanI
 POST /api/v2/casemanagement/caseplans/{caseplanId}/stageplans
 
 Create a Stageplan on a draft Caseplan.
-
-postCasemanagementCaseplanStageplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -3183,4 +3177,4 @@ apiInstance.putCasemanagementCaseplanIntakesettings(caseplanId, body, opts)
 **IntakeSettingsListing**
 
 
-_purecloud-platform-client-v2@264.0.0_
+_purecloud-platform-client-v2@265.0.0_

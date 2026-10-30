@@ -12,10 +12,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getEmailsSettings**](SettingsApi#getEmailsSettings) | **GET** /api/v2/emails/settings | Get email Contact Center settings
 [**getEmailsSettingsThreading**](SettingsApi#getEmailsSettingsThreading) | **GET** /api/v2/emails/settings/threading | Get email threading settings
 [**getExternalcontactsSettings**](SettingsApi#getExternalcontactsSettings) | **GET** /api/v2/externalcontacts/settings | Get settings
+[**getSearchSettings**](SettingsApi#getSearchSettings) | **GET** /api/v2/search/settings | Get the organization's search settings
 [**getSettingsExecutiondata**](SettingsApi#getSettingsExecutiondata) | **GET** /api/v2/settings/executiondata | Get the execution history enabled setting.
 [**getUsersAgentuiAgentsAutoanswerAgentIdSettings**](SettingsApi#getUsersAgentuiAgentsAutoanswerAgentIdSettings) | **GET** /api/v2/users/agentui/agents/autoanswer/{agentId}/settings | Get agent auto answer settings
 [**patchEmailsSettings**](SettingsApi#patchEmailsSettings) | **PATCH** /api/v2/emails/settings | Patch email Contact Center settings
 [**patchEmailsSettingsThreading**](SettingsApi#patchEmailsSettingsThreading) | **PATCH** /api/v2/emails/settings/threading | Patch email threading settings
+[**patchSearchSettings**](SettingsApi#patchSearchSettings) | **PATCH** /api/v2/search/settings | Patch the organization's search settings
+[**patchSearchSettingsContentsearch**](SettingsApi#patchSearchSettingsContentsearch) | **PATCH** /api/v2/search/settings/contentsearch | Patch the organization's content search settings
 [**patchSettingsExecutiondata**](SettingsApi#patchSettingsExecutiondata) | **PATCH** /api/v2/settings/executiondata | Edit the execution history on off setting.
 [**patchUsersAgentuiAgentsAutoanswerAgentIdSettings**](SettingsApi#patchUsersAgentuiAgentsAutoanswerAgentIdSettings) | **PATCH** /api/v2/users/agentui/agents/autoanswer/{agentId}/settings | Update agent auto answer settings
 [**putExternalcontactsSettings**](SettingsApi#putExternalcontactsSettings) | **PUT** /api/v2/externalcontacts/settings | Set settings
@@ -350,6 +353,63 @@ apiInstance.getExternalcontactsSettings(opts)
 **ExternalContactsSettings**
 
 
+## getSearchSettings
+
+> OrgSettings getSearchSettings(opts)
+
+
+GET /api/v2/search/settings
+
+Get the organization's search settings
+
+getSearchSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* directory:organization:admin
+* analytics:transcriptsearchsetting:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SettingsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getSearchSettings(opts)
+  .then((data) => {
+    console.log(`getSearchSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getSearchSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**OrgSettings**
+
+
 ## getSettingsExecutiondata
 
 > ExecutionDataGlobalSettingsResponse getSettingsExecutiondata(opts)
@@ -575,6 +635,124 @@ apiInstance.patchEmailsSettingsThreading(opts)
 ### Return type
 
 **EmailThreadingSettings**
+
+
+## patchSearchSettings
+
+> OrgSettings patchSearchSettings(body, opts)
+
+
+PATCH /api/v2/search/settings
+
+Patch the organization's search settings
+
+patchSearchSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* directory:organization:admin
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SettingsApi();
+
+let body = {}; // Object | Search Settings
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchSearchSettings(body, opts)
+  .then((data) => {
+    console.log(`patchSearchSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchSearchSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Search Settings |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**OrgSettings**
+
+
+## patchSearchSettingsContentsearch
+
+> ContentSearchSetting patchSearchSettingsContentsearch(body, opts)
+
+
+PATCH /api/v2/search/settings/contentsearch
+
+Patch the organization's content search settings
+
+patchSearchSettingsContentsearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:transcriptsearchsetting:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SettingsApi();
+
+let body = {}; // Object | Content search setting
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchSearchSettingsContentsearch(body, opts)
+  .then((data) => {
+    console.log(`patchSearchSettingsContentsearch success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchSearchSettingsContentsearch');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Content search setting |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ContentSearchSetting**
 
 
 ## patchSettingsExecutiondata
@@ -811,4 +989,4 @@ apiInstance.putUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body, opts)
 **AutoAnswerSettings**
 
 
-_purecloud-platform-client-v2@264.0.0_
+_purecloud-platform-client-v2@265.0.0_

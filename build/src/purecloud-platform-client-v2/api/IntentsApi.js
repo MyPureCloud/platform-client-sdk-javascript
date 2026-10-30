@@ -5,7 +5,7 @@ class IntentsApi {
 	/**
 	 * Intents service.
 	 * @module purecloud-platform-client-v2/api/IntentsApi
-	 * @version 264.0.0
+	 * @version 265.0.0
 	 */
 
 	/**
@@ -432,6 +432,37 @@ class IntentsApi {
 	}
 
 	/**
+	 * Find similar categories
+	 * 
+	 * @param {Object} body Similarity search criteria
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * postIntentsCategoriesSimilar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postIntentsCategoriesSimilar(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postIntentsCategoriesSimilar';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/intents/categories/similar', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Bulk add source intents to a customer intent
 	 * 
 	 * @param {String} customerIntentId Customer Intent id
@@ -548,6 +579,37 @@ class IntentsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/intents/customerintents/bulk/retrieve', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Find similar customer intents
+	 * 
+	 * @param {Object} body Similarity search criteria
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * postIntentsCustomerintentsSimilar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postIntentsCustomerintentsSimilar(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postIntentsCustomerintentsSimilar';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/intents/customerintents/similar', 
 			'POST', 
 			{  },
 			{  },

@@ -256,10 +256,15 @@ apiInstance.getOauthClient(clientId, opts)
 
 > ApiUsageQueryResult getOauthClientUsageQueryResult(executionId, clientId, opts)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/oauth/clients/{clientId}/usage/query/results/{executionId}
 
 Get the results of a usage query
+
+Deprecated - use GET /api/v2/usage/client/{clientId}/aggregates/query/jobs/{jobId} instead.
 
 Requires ANY permissions:
 
@@ -316,12 +321,15 @@ apiInstance.getOauthClientUsageQueryResult(executionId, clientId, opts)
 
 > UsageExecutionResult getOauthClientUsageSummary(clientId, opts)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/oauth/clients/{clientId}/usage/summary
 
 Get a summary of OAuth client API usage
 
-After calling this method, you will then need to poll for the query results based on the returned execution Id
+Deprecated - use POST /api/v2/usage/client/{clientId}/aggregates/query/jobs instead. After calling this method, you will then need to poll for the query results based on the returned execution Id
 
 Requires ANY permissions:
 
@@ -603,12 +611,15 @@ apiInstance.postOauthClientSecret(clientId, opts)
 
 > UsageExecutionResult postOauthClientUsageQuery(clientId, body, opts)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/oauth/clients/{clientId}/usage/query
 
 Query for OAuth client API usage
 
-After calling this method, you will then need to poll for the query results based on the returned execution Id
+Deprecated - use POST /api/v2/usage/client/{clientId}/aggregates/query/jobs instead. After calling this method, you will then need to poll for the query results based on the returned execution Id
 
 Requires ANY permissions:
 
@@ -779,4 +790,4 @@ apiInstance.putOauthClient(clientId, body, opts)
 **OAuthClient**
 
 
-_purecloud-platform-client-v2@264.0.0_
+_purecloud-platform-client-v2@265.0.0_

@@ -5,7 +5,7 @@ class CaseManagementApi {
 	/**
 	 * CaseManagement service.
 	 * @module purecloud-platform-client-v2/api/CaseManagementApi
-	 * @version 264.0.0
+	 * @version 265.0.0
 	 */
 
 	/**
@@ -157,7 +157,6 @@ class CaseManagementApi {
 	 * @param {String} stageplanId Stageplan identifier.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * deleteCasemanagementCaseplanStageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteCasemanagementCaseplanStageplan(caseplanId, stageplanId, opts) { 
 		opts = opts || {};
@@ -1498,7 +1497,6 @@ class CaseManagementApi {
 	 * @param {Object} body Stageplan reposition request.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postCasemanagementCaseplanStageplanReposition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postCasemanagementCaseplanStageplanReposition(caseplanId, stageplanId, body, opts) { 
 		opts = opts || {};
@@ -1538,7 +1536,6 @@ class CaseManagementApi {
 	 * @param {Object} body Stageplan create request.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postCasemanagementCaseplanStageplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postCasemanagementCaseplanStageplans(caseplanId, body, opts) { 
 		opts = opts || {};

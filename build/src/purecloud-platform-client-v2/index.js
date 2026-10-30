@@ -51,7 +51,6 @@ import LicenseApi from './api/LicenseApi.js';
 import LocationsApi from './api/LocationsApi.js';
 import LogCaptureApi from './api/LogCaptureApi.js';
 import MessagingApi from './api/MessagingApi.js';
-import MobileDevicesApi from './api/MobileDevicesApi.js';
 import NotificationsApi from './api/NotificationsApi.js';
 import OAuthApi from './api/OAuthApi.js';
 import ObjectsApi from './api/ObjectsApi.js';
@@ -123,7 +122,7 @@ import WorkforceManagementApi from './api/WorkforceManagementApi.js';
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 264.0.0
+ * @version 265.0.0
  */
 class platformClient {
 	constructor() {
@@ -372,11 +371,6 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/MessagingApi}
 		 */
 		this.MessagingApi = MessagingApi;
-		/**
-		 * The MobileDevicesApi service constructor.
-		 * @property {module:purecloud-platform-client-v2/api/MobileDevicesApi}
-		 */
-		this.MobileDevicesApi = MobileDevicesApi;
 		/**
 		 * The NotificationsApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/NotificationsApi}
