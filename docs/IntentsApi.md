@@ -19,10 +19,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchIntentsCustomerintent**](IntentsApi#patchIntentsCustomerintent) | **PATCH** /api/v2/intents/customerintents/{customerIntentId} | Patch customer intent for customerIntentId
 [**postIntentsAssignmentsExternalcontactCustomerintentAssignment**](IntentsApi#postIntentsAssignmentsExternalcontactCustomerintentAssignment) | **POST** /api/v2/intents/assignments/externalcontacts/{externalContactId}/customerintents/{customerIntentId}/assignment | Create customer intent assignment for external contact
 [**postIntentsCategories**](IntentsApi#postIntentsCategories) | **POST** /api/v2/intents/categories | Create category
+[**postIntentsCategoriesSimilar**](IntentsApi#postIntentsCategoriesSimilar) | **POST** /api/v2/intents/categories/similar | Find similar categories
 [**postIntentsCustomerintentSourceintentsBulkAdd**](IntentsApi#postIntentsCustomerintentSourceintentsBulkAdd) | **POST** /api/v2/intents/customerintents/{customerIntentId}/sourceintents/bulk/add | Bulk add source intents to a customer intent
 [**postIntentsCustomerintentSourceintentsBulkRemove**](IntentsApi#postIntentsCustomerintentSourceintentsBulkRemove) | **POST** /api/v2/intents/customerintents/{customerIntentId}/sourceintents/bulk/remove | Bulk remove source intents mapped to a customer intent
 [**postIntentsCustomerintents**](IntentsApi#postIntentsCustomerintents) | **POST** /api/v2/intents/customerintents | Create customer intents
 [**postIntentsCustomerintentsBulkRetrieve**](IntentsApi#postIntentsCustomerintentsBulkRetrieve) | **POST** /api/v2/intents/customerintents/bulk/retrieve | Get customer intents by IDs
+[**postIntentsCustomerintentsSimilar**](IntentsApi#postIntentsCustomerintentsSimilar) | **POST** /api/v2/intents/customerintents/similar | Find similar customer intents
 
 
 
@@ -801,6 +803,65 @@ apiInstance.postIntentsCategories(body, opts)
 **IntentsCategory**
 
 
+## postIntentsCategoriesSimilar
+
+> SimilarCategoriesResponse postIntentsCategoriesSimilar(body, opts)
+
+
+POST /api/v2/intents/categories/similar
+
+Find similar categories
+
+postIntentsCategoriesSimilar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* externalContacts:customerIntentTaxonomy:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntentsApi();
+
+let body = {}; // Object | Similarity search criteria
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postIntentsCategoriesSimilar(body, opts)
+  .then((data) => {
+    console.log(`postIntentsCategoriesSimilar success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postIntentsCategoriesSimilar');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Similarity search criteria |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**SimilarCategoriesResponse**
+
+
 ## postIntentsCustomerintentSourceintentsBulkAdd
 
 > BulkSourceIntentsResponse postIntentsCustomerintentSourceintentsBulkAdd(customerIntentId, body, opts)
@@ -1033,4 +1094,63 @@ apiInstance.postIntentsCustomerintentsBulkRetrieve(body, opts)
 **[CustomerIntentResponse]**
 
 
-_purecloud-platform-client-v2@264.0.0_
+## postIntentsCustomerintentsSimilar
+
+> SimilarCustomerIntentsResponse postIntentsCustomerintentsSimilar(body, opts)
+
+
+POST /api/v2/intents/customerintents/similar
+
+Find similar customer intents
+
+postIntentsCustomerintentsSimilar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* externalContacts:customerIntentTaxonomy:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntentsApi();
+
+let body = {}; // Object | Similarity search criteria
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postIntentsCustomerintentsSimilar(body, opts)
+  .then((data) => {
+    console.log(`postIntentsCustomerintentsSimilar success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postIntentsCustomerintentsSimilar');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Similarity search criteria |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**SimilarCustomerIntentsResponse**
+
+
+_purecloud-platform-client-v2@265.0.0_

@@ -820,4 +820,4 @@ apiInstance.putMessagingSettingsDefault(body, opts)
 **MessagingSetting**
 
 
-_purecloud-platform-client-v2@264.0.0_
+_purecloud-platform-client-v2@265.0.0_

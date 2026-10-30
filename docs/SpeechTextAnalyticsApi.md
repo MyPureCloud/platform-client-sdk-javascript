@@ -3592,6 +3592,8 @@ Requires ANY permissions:
 * analytics:conversationDetail:view
 * recording:recording:view
 * recording:recordingSegment:view
+* analytics:transcriptcontent:search
+* speechAndTextAnalytics:data:view
 
 ### Example Usage
 
@@ -4108,4 +4110,4 @@ apiInstance.putSpeechandtextanalyticsTopic(topicId, body, opts)
 **Topic**
 
 
-_purecloud-platform-client-v2@264.0.0_
+_purecloud-platform-client-v2@265.0.0_
