@@ -5,7 +5,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 265.0.0
+	 * @version 266.0.0
 	 */
 
 	/**
@@ -195,6 +195,7 @@ class BillingApi {
 	 * @param {String} opts.dateStart Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} opts.dateEnd End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} opts.paymentStatus Payment Status
+	 * @param {String} opts.agreementId Filter invoices by agreement ID.
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getBillingContractsInvoices is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
@@ -206,7 +207,7 @@ class BillingApi {
 			'/api/v2/billing/contracts/invoices', 
 			'GET', 
 			{  },
-			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'dateStart': opts['dateStart'],'dateEnd': opts['dateEnd'],'paymentStatus': opts['paymentStatus'] },
+			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'dateStart': opts['dateStart'],'dateEnd': opts['dateEnd'],'paymentStatus': opts['paymentStatus'],'agreementId': opts['agreementId'] },
 			{  },
 			{  },
 			null, 

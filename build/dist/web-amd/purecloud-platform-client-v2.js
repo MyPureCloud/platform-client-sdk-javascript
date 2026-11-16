@@ -847,7 +847,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
 	/**
 	 * @module purecloud-platform-client-v2/ApiClient
-	 * @version 265.0.0
+	 * @version 266.0.0
 	 */
 	class ApiClient {
 		/**
@@ -3071,7 +3071,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * AIStudio service.
 		 * @module purecloud-platform-client-v2/api/AIStudioApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -4018,7 +4018,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * AgentAssistants service.
 		 * @module purecloud-platform-client-v2/api/AgentAssistantsApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -4823,7 +4823,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * AgentCopilot service.
 		 * @module purecloud-platform-client-v2/api/AgentCopilotApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -4935,7 +4935,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * AgentUI service.
 		 * @module purecloud-platform-client-v2/api/AgentUIApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -5086,7 +5086,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Alerting service.
 		 * @module purecloud-platform-client-v2/api/AlertingApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -5547,7 +5547,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Analytics service.
 		 * @module purecloud-platform-client-v2/api/AnalyticsApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -9760,7 +9760,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Architect service.
 		 * @module purecloud-platform-client-v2/api/ArchitectApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -12831,7 +12831,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Object} opts Optional parameters
 		 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
 		 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-		 * getFlowsValidateJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		getFlowsValidateJob(jobId, opts) { 
 			opts = opts || {};
@@ -14161,7 +14160,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Object} body 
 		 * @param {Object} opts Optional parameters
 		 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-		 * postFlowsValidateJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		postFlowsValidateJobs(body, opts) { 
 			opts = opts || {};
@@ -14718,7 +14716,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * AssistantCopilotVariations service.
 		 * @module purecloud-platform-client-v2/api/AssistantCopilotVariationsApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -14914,7 +14912,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Audit service.
 		 * @module purecloud-platform-client-v2/api/AuditApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -15141,7 +15139,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Authorization service.
 		 * @module purecloud-platform-client-v2/api/AuthorizationApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -17068,7 +17066,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * BackgroundAssistant service.
 		 * @module purecloud-platform-client-v2/api/BackgroundAssistantApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -17142,7 +17140,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Billing service.
 		 * @module purecloud-platform-client-v2/api/BillingApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -17332,6 +17330,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} opts.dateStart Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 		 * @param {String} opts.dateEnd End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 		 * @param {Object} opts.paymentStatus Payment Status
+		 * @param {String} opts.agreementId Filter invoices by agreement ID.
 		 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 		 * getBillingContractsInvoices is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
@@ -17343,7 +17342,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/billing/contracts/invoices', 
 				'GET', 
 				{  },
-				{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'dateStart': opts['dateStart'],'dateEnd': opts['dateEnd'],'paymentStatus': opts['paymentStatus'] },
+				{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'dateStart': opts['dateStart'],'dateEnd': opts['dateEnd'],'paymentStatus': opts['paymentStatus'],'agreementId': opts['agreementId'] },
 				{  },
 				{  },
 				null, 
@@ -17426,7 +17425,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * BusinessRules service.
 		 * @module purecloud-platform-client-v2/api/BusinessRulesApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -19056,7 +19055,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * CarrierServices service.
 		 * @module purecloud-platform-client-v2/api/CarrierServicesApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -19133,7 +19132,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * CaseManagement service.
 		 * @module purecloud-platform-client-v2/api/CaseManagementApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -19384,9 +19383,8 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * 
 		 * @param {String} caseId Case identifier.
 		 * @param {Object} opts Optional parameters
-		 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
-		 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-		 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+		 * @param {String} opts.after Cursor that points to the end of the previously returned page.
+		 * @param {Number} opts.pageSize Number of entities to return. Maximum is 200.
 		 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 		 */
 		getCasemanagementCaseAssociations(caseId, opts) { 
@@ -19401,7 +19399,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/casemanagement/cases/{caseId}/associations', 
 				'GET', 
 				{ 'caseId': caseId },
-				{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'] },
+				{ 'after': opts['after'],'pageSize': opts['pageSize'] },
 				{  },
 				{  },
 				null, 
@@ -19561,9 +19559,8 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} caseId Case identifier.
 		 * @param {String} stageId Stage identifier.
 		 * @param {Object} opts Optional parameters
-		 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
-		 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-		 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+		 * @param {String} opts.after Cursor that points to the end of the previously returned page.
+		 * @param {Number} opts.pageSize Number of entities to return. Maximum is 200.
 		 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 		 */
 		getCasemanagementCaseStageSteps(caseId, stageId, opts) { 
@@ -19582,7 +19579,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/casemanagement/cases/{caseId}/stages/{stageId}/steps', 
 				'GET', 
 				{ 'caseId': caseId,'stageId': stageId },
-				{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'] },
+				{ 'after': opts['after'],'pageSize': opts['pageSize'] },
 				{  },
 				{  },
 				null, 
@@ -19598,9 +19595,8 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * 
 		 * @param {String} caseId Case identifier.
 		 * @param {Object} opts Optional parameters
-		 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
-		 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-		 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+		 * @param {String} opts.after Cursor that points to the end of the previously returned page.
+		 * @param {Number} opts.pageSize Number of entities to return. Maximum is 200.
 		 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 		 */
 		getCasemanagementCaseStages(caseId, opts) { 
@@ -19615,7 +19611,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/casemanagement/cases/{caseId}/stages', 
 				'GET', 
 				{ 'caseId': caseId },
-				{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'] },
+				{ 'after': opts['after'],'pageSize': opts['pageSize'] },
 				{  },
 				{  },
 				null, 
@@ -19890,9 +19886,8 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} versionId Caseplan version identifier.
 		 * @param {String} stageplanId Stageplan identifier.
 		 * @param {Object} opts Optional parameters
-		 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
-		 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-		 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+		 * @param {String} opts.after Cursor that points to the end of the previously returned page.
+		 * @param {Number} opts.pageSize Number of entities to return. Maximum is 200.
 		 * @param {Array.<String>} opts.expands Fields to expand.
 		 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 		 */
@@ -19916,7 +19911,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/stageplans/{stageplanId}/stepplans', 
 				'GET', 
 				{ 'caseplanId': caseplanId,'versionId': versionId,'stageplanId': stageplanId },
-				{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'expands': this.apiClient.buildCollectionParam(opts['expands'], 'multi') },
+				{ 'after': opts['after'],'pageSize': opts['pageSize'],'expands': this.apiClient.buildCollectionParam(opts['expands'], 'multi') },
 				{  },
 				{  },
 				null, 
@@ -19933,9 +19928,8 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} caseplanId Caseplan identifier.
 		 * @param {String} versionId Caseplan version identifier.
 		 * @param {Object} opts Optional parameters
-		 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
-		 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-		 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+		 * @param {String} opts.after Cursor that points to the end of the previously returned page.
+		 * @param {Number} opts.pageSize Number of entities to return. Maximum is 200.
 		 * @param {Array.<String>} opts.expands Fields to expand.
 		 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 		 */
@@ -19955,7 +19949,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/stageplans', 
 				'GET', 
 				{ 'caseplanId': caseplanId,'versionId': versionId },
-				{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'expands': this.apiClient.buildCollectionParam(opts['expands'], 'multi') },
+				{ 'after': opts['after'],'pageSize': opts['pageSize'],'expands': this.apiClient.buildCollectionParam(opts['expands'], 'multi') },
 				{  },
 				{  },
 				null, 
@@ -20953,7 +20947,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Chat service.
 		 * @module purecloud-platform-client-v2/api/ChatApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -22092,7 +22086,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Coaching service.
 		 * @module purecloud-platform-client-v2/api/CoachingApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -22806,7 +22800,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ContentManagement service.
 		 * @module purecloud-platform-client-v2/api/ContentManagementApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -24001,7 +23995,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Conversations service.
 		 * @module purecloud-platform-client-v2/api/ConversationsApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -28054,6 +28048,61 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
 			return this.apiClient.callApi(
 				'/api/v2/conversations/messaging/threadingtimeline', 
+				'GET', 
+				{  },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json'],
+				opts['customHeaders']
+			);
+		}
+
+		/**
+		 * Get screen monitoring conversation
+		 * 
+		 * @param {String} conversationId conversationId
+		 * @param {Object} opts Optional parameters
+		 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+		 */
+		getConversationsScreenmonitor(conversationId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'conversationId' is set
+			if (conversationId === undefined || conversationId === null || conversationId === '') {
+				throw 'Missing the required parameter "conversationId" when calling getConversationsScreenmonitor';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/screenmonitors/{conversationId}', 
+				'GET', 
+				{ 'conversationId': conversationId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json'],
+				opts['customHeaders']
+			);
+		}
+
+		/**
+		 * Get active screen monitoring conversations for the logged in user
+		 * 
+		 * @param {Object} opts Optional parameters
+		 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+		 */
+		getConversationsScreenmonitors(opts) { 
+			opts = opts || {};
+			
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/screenmonitors', 
 				'GET', 
 				{  },
 				{  },
@@ -32619,42 +32668,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
-		 * Create media
-		 * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
-		 * @param {String} conversationId conversationId
-		 * @param {String} communicationId communicationId
-		 * @param {Object} opts Optional parameters
-		 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-		 * @deprecated
-		 */
-		postConversationsMessageCommunicationMessagesMedia(conversationId, communicationId, opts) { 
-			opts = opts || {};
-			
-			// verify the required parameter 'conversationId' is set
-			if (conversationId === undefined || conversationId === null || conversationId === '') {
-				throw 'Missing the required parameter "conversationId" when calling postConversationsMessageCommunicationMessagesMedia';
-			}
-			// verify the required parameter 'communicationId' is set
-			if (communicationId === undefined || communicationId === null || communicationId === '') {
-				throw 'Missing the required parameter "communicationId" when calling postConversationsMessageCommunicationMessagesMedia';
-			}
-
-			return this.apiClient.callApi(
-				'/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media', 
-				'POST', 
-				{ 'conversationId': conversationId,'communicationId': communicationId },
-				{  },
-				{  },
-				{  },
-				null, 
-				['PureCloud OAuth'], 
-				['application/json'],
-				['application/json'],
-				opts['customHeaders']
-			);
-		}
-
-		/**
 		 * Create a URL to upload a message media file
 		 * See https://developer.genesys.cloud/commdigital/digital/messagemediaupload/ for example usage.
 		 * @param {String} conversationId conversationId
@@ -34723,7 +34736,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * DataExtensions service.
 		 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -34824,7 +34837,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * DataPrivacy service.
 		 * @module purecloud-platform-client-v2/api/DataPrivacyApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -35021,7 +35034,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Dependencies service.
 		 * @module purecloud-platform-client-v2/api/DependenciesApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -35157,7 +35170,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Downloads service.
 		 * @module purecloud-platform-client-v2/api/DownloadsApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -35211,7 +35224,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Emails service.
 		 * @module purecloud-platform-client-v2/api/EmailsApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -35359,7 +35372,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * EmployeeEngagement service.
 		 * @module purecloud-platform-client-v2/api/EmployeeEngagementApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -35563,7 +35576,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Events service.
 		 * @module purecloud-platform-client-v2/api/EventsApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -35704,7 +35717,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ExternalContacts service.
 		 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -36097,6 +36110,8 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Object} opts Optional parameters
 		 * @param {Boolean} opts.includeMerged Indicates whether to return segment assignments from all external contacts in the merge-set of the given one.
 		 * @param {Number} opts.limit Number of entities to return. Default of 25, maximum of 500.
+		 * @param {Array.<String>} opts.expand Expand the response with additional fields.
+		 * @param {Array.<String>} opts.segmentIds IDs of segments to return. Maximum of 5
 		 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 		 */
 		getExternalcontactsContactJourneySegments(contactId, opts) { 
@@ -36111,7 +36126,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/externalcontacts/contacts/{contactId}/journey/segments', 
 				'GET', 
 				{ 'contactId': contactId },
-				{ 'includeMerged': opts['includeMerged'],'limit': opts['limit'] },
+				{ 'includeMerged': opts['includeMerged'],'limit': opts['limit'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'segmentIds': this.apiClient.buildCollectionParam(opts['segmentIds'], 'multi') },
 				{  },
 				{  },
 				null, 
@@ -40218,7 +40233,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Fax service.
 		 * @module purecloud-platform-client-v2/api/FaxApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -40497,7 +40512,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Flows service.
 		 * @module purecloud-platform-client-v2/api/FlowsApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -40731,7 +40746,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Gamification service.
 		 * @module purecloud-platform-client-v2/api/GamificationApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -43583,7 +43598,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * GeneralDataProtectionRegulation service.
 		 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -43727,7 +43742,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Geolocation service.
 		 * @module purecloud-platform-client-v2/api/GeolocationApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -43878,7 +43893,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Greetings service.
 		 * @module purecloud-platform-client-v2/api/GreetingsApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -44494,7 +44509,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Groups service.
 		 * @module purecloud-platform-client-v2/api/GroupsApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -45085,7 +45100,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * IdentityProvider service.
 		 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -46136,7 +46151,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * InfrastructureAsCode service.
 		 * @module purecloud-platform-client-v2/api/InfrastructureAsCodeApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -46316,7 +46331,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Integrations service.
 		 * @module purecloud-platform-client-v2/api/IntegrationsApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -49257,7 +49272,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Intents service.
 		 * @module purecloud-platform-client-v2/api/IntentsApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -49397,6 +49412,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * 
 		 * @param {String} categoryId Category id
 		 * @param {Object} opts Optional parameters
+		 * @param {Boolean} opts.includeUsage When usage tracking is enabled, usage is absent when includeUsage is false or omitted, empty when no usage exists, and populated when usage exists. includeUsage is ignored when usage tracking is off.
 		 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 		 */
 		getIntentsCategory(categoryId, opts) { 
@@ -49411,7 +49427,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/intents/categories/{categoryId}', 
 				'GET', 
 				{ 'categoryId': categoryId },
-				{  },
+				{ 'includeUsage': opts['includeUsage'] },
 				{  },
 				{  },
 				null, 
@@ -49427,6 +49443,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * 
 		 * @param {String} customerIntentId Customer Intent id
 		 * @param {Object} opts Optional parameters
+		 * @param {Boolean} opts.includeUsage When usage tracking is enabled, usage is absent when includeUsage is false or omitted, empty when no usage exists, and populated when usage exists. includeUsage is ignored when usage tracking is off.
 		 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 		 */
 		getIntentsCustomerintent(customerIntentId, opts) { 
@@ -49441,7 +49458,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/intents/customerintents/{customerIntentId}', 
 				'GET', 
 				{ 'customerIntentId': customerIntentId },
-				{  },
+				{ 'includeUsage': opts['includeUsage'] },
 				{  },
 				{  },
 				null, 
@@ -49881,7 +49898,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Journey service.
 		 * @module purecloud-platform-client-v2/api/JourneyApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -50267,6 +50284,8 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Object} opts Optional parameters
 		 * @param {Boolean} opts.includeMerged Indicates whether to return segment assignments from all external contacts in the merge-set of the given one.
 		 * @param {Number} opts.limit Number of entities to return. Default of 25, maximum of 500.
+		 * @param {Array.<String>} opts.expand Expand the response with additional fields.
+		 * @param {Array.<String>} opts.segmentIds IDs of segments to return. Maximum of 5
 		 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 		 */
 		getExternalcontactsContactJourneySegments(contactId, opts) { 
@@ -50281,7 +50300,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/externalcontacts/contacts/{contactId}/journey/segments', 
 				'GET', 
 				{ 'contactId': contactId },
-				{ 'includeMerged': opts['includeMerged'],'limit': opts['limit'] },
+				{ 'includeMerged': opts['includeMerged'],'limit': opts['limit'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'segmentIds': this.apiClient.buildCollectionParam(opts['segmentIds'], 'multi') },
 				{  },
 				{  },
 				null, 
@@ -51093,6 +51112,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Array.<String>} opts.segmentIds IDs of segments to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 100 segments are allowed per request.
 		 * @param {Array.<String>} opts.queryFields Segment field(s) to query on. Requires 'queryValue' to also be set.
 		 * @param {String} opts.queryValue Value to query on using fuzzy matching. Requires 'queryFields' to also be set.
+		 * @param {Array.<String>} opts.displayNames Display names of segments to return. Case-insensitive matching. Maximum of 5. Must not contain exact duplicates (case-sensitive). Use of this parameter is not compatible with pagination or sorting or querying or segmentIds.
 		 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 		 */
 		getJourneySegments(opts) { 
@@ -51103,7 +51123,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/journey/segments', 
 				'GET', 
 				{  },
-				{ 'sortBy': opts['sortBy'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'isActive': opts['isActive'],'segmentIds': this.apiClient.buildCollectionParam(opts['segmentIds'], 'multi'),'queryFields': this.apiClient.buildCollectionParam(opts['queryFields'], 'multi'),'queryValue': opts['queryValue'] },
+				{ 'sortBy': opts['sortBy'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'isActive': opts['isActive'],'segmentIds': this.apiClient.buildCollectionParam(opts['segmentIds'], 'multi'),'queryFields': this.apiClient.buildCollectionParam(opts['queryFields'], 'multi'),'queryValue': opts['queryValue'],'displayNames': this.apiClient.buildCollectionParam(opts['displayNames'], 'multi') },
 				{  },
 				{  },
 				null, 
@@ -52825,7 +52845,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Knowledge service.
 		 * @module purecloud-platform-client-v2/api/KnowledgeApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -57435,7 +57455,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * LanguageUnderstanding service.
 		 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -58809,7 +58829,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Languages service.
 		 * @module purecloud-platform-client-v2/api/LanguagesApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -59068,7 +59088,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Learning service.
 		 * @module purecloud-platform-client-v2/api/LearningApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -60314,7 +60334,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * License service.
 		 * @module purecloud-platform-client-v2/api/LicenseApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -60612,7 +60632,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Locations service.
 		 * @module purecloud-platform-client-v2/api/LocationsApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -60879,7 +60899,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * LogCapture service.
 		 * @module purecloud-platform-client-v2/api/LogCaptureApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -61101,7 +61121,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Messaging service.
 		 * @module purecloud-platform-client-v2/api/MessagingApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -61519,7 +61539,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Notifications service.
 		 * @module purecloud-platform-client-v2/api/NotificationsApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -61780,7 +61800,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * OAuth service.
 		 * @module purecloud-platform-client-v2/api/OAuthApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -62199,7 +62219,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Objects service.
 		 * @module purecloud-platform-client-v2/api/ObjectsApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -62563,7 +62583,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * OperationalEvents service.
 		 * @module purecloud-platform-client-v2/api/OperationalEventsApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -62694,7 +62714,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Organization service.
 		 * @module purecloud-platform-client-v2/api/OrganizationApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -63255,7 +63275,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * OrganizationAuthorization service.
 		 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -64859,7 +64879,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Outbound service.
 		 * @module purecloud-platform-client-v2/api/OutboundApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -70479,7 +70499,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Presence service.
 		 * @module purecloud-platform-client-v2/api/PresenceApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -71337,7 +71357,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ProcessAutomation service.
 		 * @module purecloud-platform-client-v2/api/ProcessAutomationApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -71758,7 +71778,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Quality service.
 		 * @module purecloud-platform-client-v2/api/QualityApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -74236,7 +74256,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Recording service.
 		 * @module purecloud-platform-client-v2/api/RecordingApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -76084,7 +76104,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ResponseManagement service.
 		 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -76847,7 +76867,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Routing service.
 		 * @module purecloud-platform-client-v2/api/RoutingApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -82405,7 +82425,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * SCIM service.
 		 * @module purecloud-platform-client-v2/api/SCIMApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -83019,6 +83039,8 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Object} body The information used to modify a group.
 		 * @param {Object} opts Optional parameters
 		 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: 42. If the ETag is different from the version on the server, returns 400 with a scimType of invalidVers.
+		 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the id, active, and meta attributes. Use attributes to avoid expensive secondary calls for the default attributes.
+		 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus excludedAttributes. Always returns id, active, and meta attributes. Use excludedAttributes to avoid expensive secondary calls for the default attributes.
 		 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 		 */
 		patchScimGroup(groupId, body, opts) { 
@@ -83037,7 +83059,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/scim/groups/{groupId}', 
 				'PATCH', 
 				{ 'groupId': groupId },
-				{  },
+				{ 'attributes': this.apiClient.buildCollectionParam(opts['attributes'], 'multi'),'excludedAttributes': this.apiClient.buildCollectionParam(opts['excludedAttributes'], 'multi') },
 				{ 'If-Match': opts['ifMatch'] },
 				{  },
 				body, 
@@ -83091,6 +83113,8 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Object} body The information used to modify a group.
 		 * @param {Object} opts Optional parameters
 		 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: 42. If the ETag is different from the version on the server, returns 400 with a scimType of invalidVers.
+		 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the id, active, and meta attributes. Use attributes to avoid expensive secondary calls for the default attributes.
+		 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus excludedAttributes. Always returns id, active, and meta attributes. Use excludedAttributes to avoid expensive secondary calls for the default attributes.
 		 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 		 */
 		patchScimV2Group(groupId, body, opts) { 
@@ -83109,7 +83133,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/scim/v2/groups/{groupId}', 
 				'PATCH', 
 				{ 'groupId': groupId },
-				{  },
+				{ 'attributes': this.apiClient.buildCollectionParam(opts['attributes'], 'multi'),'excludedAttributes': this.apiClient.buildCollectionParam(opts['excludedAttributes'], 'multi') },
 				{ 'If-Match': opts['ifMatch'] },
 				{  },
 				body, 
@@ -83366,7 +83390,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ScreenMonitoring service.
 		 * @module purecloud-platform-client-v2/api/ScreenMonitoringApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -83742,7 +83766,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Scripts service.
 		 * @module purecloud-platform-client-v2/api/ScriptsApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -84251,7 +84275,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Search service.
 		 * @module purecloud-platform-client-v2/api/SearchApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -85155,7 +85179,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Settings service.
 		 * @module purecloud-platform-client-v2/api/SettingsApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -85652,7 +85676,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * SocialMedia service.
 		 * @module purecloud-platform-client-v2/api/SocialMediaApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -87637,7 +87661,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * SpeechTextAnalytics service.
 		 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -87972,6 +87996,41 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'GET', 
 				{ 'conversationId': conversationId },
 				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json'],
+				opts['customHeaders']
+			);
+		}
+
+		/**
+		 * Get the transcript outline for a specific conversation and communication.
+		 * 
+		 * @param {String} conversationId The ID of the conversation
+		 * @param {String} communicationId The ID of the communication
+		 * @param {Object} opts Optional parameters
+		 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+		 */
+		getSpeechandtextanalyticsConversationCommunicationTranscriptoutline(conversationId, communicationId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'conversationId' is set
+			if (conversationId === undefined || conversationId === null || conversationId === '') {
+				throw 'Missing the required parameter "conversationId" when calling getSpeechandtextanalyticsConversationCommunicationTranscriptoutline';
+			}
+			// verify the required parameter 'communicationId' is set
+			if (communicationId === undefined || communicationId === null || communicationId === '') {
+				throw 'Missing the required parameter "communicationId" when calling getSpeechandtextanalyticsConversationCommunicationTranscriptoutline';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/speechandtextanalytics/conversations/{conversationId}/communications/{communicationId}/transcriptoutline', 
+				'GET', 
+				{ 'conversationId': conversationId,'communicationId': communicationId },
+				{  },
 				{  },
 				{  },
 				null, 
@@ -89742,7 +89801,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Stations service.
 		 * @module purecloud-platform-client-v2/api/StationsApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -89856,7 +89915,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Suggest service.
 		 * @module purecloud-platform-client-v2/api/SuggestApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -90003,7 +90062,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * TaskManagement service.
 		 * @module purecloud-platform-client-v2/api/TaskManagementApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -92499,7 +92558,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Teams service.
 		 * @module purecloud-platform-client-v2/api/TeamsApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -92842,7 +92901,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Telephony service.
 		 * @module purecloud-platform-client-v2/api/TelephonyApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -93610,7 +93669,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * TelephonyProvidersEdge service.
 		 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -96245,6 +96304,66 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Get the trunkbase metrics.
+		 * 
+		 * @param {String} trunkBaseId TrunkBase Id
+		 * @param {Object} opts Optional parameters
+		 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+		 */
+		getTelephonyTrunkbasesettingMetrics(trunkBaseId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'trunkBaseId' is set
+			if (trunkBaseId === undefined || trunkBaseId === null || trunkBaseId === '') {
+				throw 'Missing the required parameter "trunkBaseId" when calling getTelephonyTrunkbasesettingMetrics';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/telephony/trunkbasesettings/{trunkBaseId}/metrics', 
+				'GET', 
+				{ 'trunkBaseId': trunkBaseId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json'],
+				opts['customHeaders']
+			);
+		}
+
+		/**
+		 * Get the trunkbase metrics for the specified ids.
+		 * 
+		 * @param {String} ids TrunkBase Ids
+		 * @param {Object} opts Optional parameters
+		 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+		 */
+		getTelephonyTrunkbasesettingsMetrics(ids, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'ids' is set
+			if (ids === undefined || ids === null) {
+				throw 'Missing the required parameter "ids" when calling getTelephonyTrunkbasesettingsMetrics';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/telephony/trunkbasesettings/metrics', 
+				'GET', 
+				{  },
+				{ 'ids': ids },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json'],
+				opts['customHeaders']
+			);
+		}
+
+		/**
 		 * Disable site connections for a site.
 		 * 
 		 * @param {String} siteId Site ID
@@ -97717,7 +97836,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Textbots service.
 		 * @module purecloud-platform-client-v2/api/TextbotsApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -97863,7 +97982,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Tokens service.
 		 * @module purecloud-platform-client-v2/api/TokensApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -98041,7 +98160,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Uploads service.
 		 * @module purecloud-platform-client-v2/api/UploadsApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -98412,7 +98531,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Usage service.
 		 * @module purecloud-platform-client-v2/api/UsageApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -98797,7 +98916,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * UserRecordings service.
 		 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -98999,7 +99118,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Users service.
 		 * @module purecloud-platform-client-v2/api/UsersApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -99504,6 +99623,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * 
 		 * @param {String} verifierId Verifier ID
 		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.replacementDefaultVerifierId The ID of an enabled verifier to make the default after deleting the current default
 		 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 		 */
 		deleteUsersMeVerifier(verifierId, opts) { 
@@ -99518,7 +99638,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/users/me/verifiers/{verifierId}', 
 				'DELETE', 
 				{ 'verifierId': verifierId },
-				{  },
+				{ 'replacementDefaultVerifierId': opts['replacementDefaultVerifierId'] },
 				{  },
 				{  },
 				null, 
@@ -100742,6 +100862,41 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'GET', 
 				{ 'userId': userId },
 				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json'],
+				opts['customHeaders']
+			);
+		}
+
+		/**
+		 * Get a verifier
+		 * 
+		 * @param {String} userId User ID
+		 * @param {String} verifierId Verifier ID
+		 * @param {Object} opts Optional parameters
+		 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+		 */
+		getUserVerifier(userId, verifierId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'userId' is set
+			if (userId === undefined || userId === null || userId === '') {
+				throw 'Missing the required parameter "userId" when calling getUserVerifier';
+			}
+			// verify the required parameter 'verifierId' is set
+			if (verifierId === undefined || verifierId === null || verifierId === '') {
+				throw 'Missing the required parameter "verifierId" when calling getUserVerifier';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/users/{userId}/verifiers/{verifierId}', 
+				'GET', 
+				{ 'userId': userId,'verifierId': verifierId },
+				{  },
 				{  },
 				{  },
 				null, 
@@ -103226,7 +103381,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * UsersRules service.
 		 * @module purecloud-platform-client-v2/api/UsersRulesApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -103543,7 +103698,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Utilities service.
 		 * @module purecloud-platform-client-v2/api/UtilitiesApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -103671,7 +103826,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * VirtualAgents service.
 		 * @module purecloud-platform-client-v2/api/VirtualAgentsApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -103924,7 +104079,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Voicemail service.
 		 * @module purecloud-platform-client-v2/api/VoicemailApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -104754,7 +104909,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WebDeployments service.
 		 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -105432,7 +105587,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WebMessaging service.
 		 * @module purecloud-platform-client-v2/api/WebMessagingApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -105595,7 +105750,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WorkforceManagement service.
 		 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-		 * @version 265.0.0
+		 * @version 266.0.0
 		 */
 
 		/**
@@ -107193,6 +107348,91 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Get a specific occurrence for the activity plan
+		 * 
+		 * @param {String} businessUnitId The ID of the business unit
+		 * @param {String} activityPlanId The ID of the activity plan
+		 * @param {String} occurrenceId The ID of the activity plan occurrence
+		 * @param {Object} opts Optional parameters
+		 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+		 */
+		getWorkforcemanagementBusinessunitActivityplanOccurrence(businessUnitId, activityPlanId, occurrenceId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'businessUnitId' is set
+			if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+				throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivityplanOccurrence';
+			}
+			// verify the required parameter 'activityPlanId' is set
+			if (activityPlanId === undefined || activityPlanId === null || activityPlanId === '') {
+				throw 'Missing the required parameter "activityPlanId" when calling getWorkforcemanagementBusinessunitActivityplanOccurrence';
+			}
+			// verify the required parameter 'occurrenceId' is set
+			if (occurrenceId === undefined || occurrenceId === null || occurrenceId === '') {
+				throw 'Missing the required parameter "occurrenceId" when calling getWorkforcemanagementBusinessunitActivityplanOccurrence';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}', 
+				'GET', 
+				{ 'businessUnitId': businessUnitId,'activityPlanId': activityPlanId,'occurrenceId': occurrenceId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json'],
+				opts['customHeaders']
+			);
+		}
+
+		/**
+		 * Gets an occurrence deletion job
+		 * 
+		 * @param {String} businessUnitId The ID of the business unit
+		 * @param {String} activityPlanId The ID of the activity plan
+		 * @param {String} occurrenceId The ID of the activity plan occurrence
+		 * @param {String} jobId The ID of the activity plan occurrence deletion job
+		 * @param {Object} opts Optional parameters
+		 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+		 */
+		getWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJob(businessUnitId, activityPlanId, occurrenceId, jobId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'businessUnitId' is set
+			if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+				throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJob';
+			}
+			// verify the required parameter 'activityPlanId' is set
+			if (activityPlanId === undefined || activityPlanId === null || activityPlanId === '') {
+				throw 'Missing the required parameter "activityPlanId" when calling getWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJob';
+			}
+			// verify the required parameter 'occurrenceId' is set
+			if (occurrenceId === undefined || occurrenceId === null || occurrenceId === '') {
+				throw 'Missing the required parameter "occurrenceId" when calling getWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJob';
+			}
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null || jobId === '') {
+				throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJob';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/deletions/jobs/{jobId}', 
+				'GET', 
+				{ 'businessUnitId': businessUnitId,'activityPlanId': activityPlanId,'occurrenceId': occurrenceId,'jobId': jobId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json'],
+				opts['customHeaders']
+			);
+		}
+
+		/**
 		 * Gets a session users deletion job
 		 * 
 		 * @param {String} businessUnitId The ID of the business unit
@@ -107276,6 +107516,41 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/sessions/deletions/jobs/{jobId}', 
 				'GET', 
 				{ 'businessUnitId': businessUnitId,'activityPlanId': activityPlanId,'occurrenceId': occurrenceId,'jobId': jobId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json'],
+				opts['customHeaders']
+			);
+		}
+
+		/**
+		 * Get all occurrences for an activity plan
+		 * 
+		 * @param {String} businessUnitId The ID of the business unit
+		 * @param {String} activityPlanId The ID of the activity plan
+		 * @param {Object} opts Optional parameters
+		 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+		 */
+		getWorkforcemanagementBusinessunitActivityplanOccurrences(businessUnitId, activityPlanId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'businessUnitId' is set
+			if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+				throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivityplanOccurrences';
+			}
+			// verify the required parameter 'activityPlanId' is set
+			if (activityPlanId === undefined || activityPlanId === null || activityPlanId === '') {
+				throw 'Missing the required parameter "activityPlanId" when calling getWorkforcemanagementBusinessunitActivityplanOccurrences';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences', 
+				'GET', 
+				{ 'businessUnitId': businessUnitId,'activityPlanId': activityPlanId },
 				{  },
 				{  },
 				{  },
@@ -114509,6 +114784,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * 
 		 * @param {Object} body body
 		 * @param {Object} opts Optional parameters
+		 * @param {Array.<String>} opts.expand Include to access additional data on the agent schedules
 		 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 		 */
 		postWorkforcemanagementAgentschedulesMine(body, opts) { 
@@ -114523,7 +114799,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/workforcemanagement/agentschedules/mine', 
 				'POST', 
 				{  },
-				{  },
+				{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 				{  },
 				{  },
 				body, 
@@ -114683,6 +114959,46 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/deletions/jobs', 
 				'POST', 
 				{ 'businessUnitId': businessUnitId,'activityPlanId': activityPlanId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json'],
+				opts['customHeaders']
+			);
+		}
+
+		/**
+		 * Delete an occurrence for the activity plan
+		 * Triggers a job to delete an occurrence of the activity plan. The activity plan cannot be updated until the job completes
+		 * @param {String} businessUnitId The ID of the business unit
+		 * @param {String} activityPlanId The ID of the activity plan
+		 * @param {String} occurrenceId The ID of the activity plan occurrence
+		 * @param {Object} opts Optional parameters
+		 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+		 */
+		postWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobs(businessUnitId, activityPlanId, occurrenceId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'businessUnitId' is set
+			if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+				throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobs';
+			}
+			// verify the required parameter 'activityPlanId' is set
+			if (activityPlanId === undefined || activityPlanId === null || activityPlanId === '') {
+				throw 'Missing the required parameter "activityPlanId" when calling postWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobs';
+			}
+			// verify the required parameter 'occurrenceId' is set
+			if (occurrenceId === undefined || occurrenceId === null || occurrenceId === '') {
+				throw 'Missing the required parameter "occurrenceId" when calling postWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobs';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/deletions/jobs', 
+				'POST', 
+				{ 'businessUnitId': businessUnitId,'activityPlanId': activityPlanId,'occurrenceId': occurrenceId },
 				{  },
 				{  },
 				{  },
@@ -115404,6 +115720,41 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
 			return this.apiClient.callApi(
 				'/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/bulk/remove', 
+				'POST', 
+				{ 'businessUnitId': businessUnitId },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json'],
+				opts['customHeaders']
+			);
+		}
+
+		/**
+		 * Creates signed upload URLs for importing hourly and daily forecasts for a capacity plan
+		 * Returns two upload URLs, one for the hourly forecast and one for the daily forecast. Once both uploads are complete, call POST /capacityplans (new capacity plan) or PATCH /capacityplans/{capacityPlanId} (existing capacity plan) or POST /capacityplans/{capacityPlanId}/copy (copy capacity plan) with both upload keys in importedForecast
+		 * @param {String} businessUnitId The ID of the business unit
+		 * @param {Object} body body
+		 * @param {Object} opts Optional parameters
+		 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+		 */
+		postWorkforcemanagementBusinessunitCapacityplansForecastUploadurls(businessUnitId, body, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'businessUnitId' is set
+			if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+				throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitCapacityplansForecastUploadurls';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitCapacityplansForecastUploadurls';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/forecast/uploadurls', 
 				'POST', 
 				{ 'businessUnitId': businessUnitId },
 				{  },
@@ -119452,7 +119803,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 	 * </pre>
 	 * </p>
 	 * @module purecloud-platform-client-v2/index
-	 * @version 265.0.0
+	 * @version 266.0.0
 	 */
 	class platformClient {
 		constructor() {

@@ -5,7 +5,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 265.0.0
+	 * @version 266.0.0
 	 */
 
 	/**
@@ -391,6 +391,8 @@ class JourneyApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeMerged Indicates whether to return segment assignments from all external contacts in the merge-set of the given one.
 	 * @param {Number} opts.limit Number of entities to return. Default of 25, maximum of 500.
+	 * @param {Array.<String>} opts.expand Expand the response with additional fields.
+	 * @param {Array.<String>} opts.segmentIds IDs of segments to return. Maximum of 5
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getExternalcontactsContactJourneySegments(contactId, opts) { 
@@ -405,7 +407,7 @@ class JourneyApi {
 			'/api/v2/externalcontacts/contacts/{contactId}/journey/segments', 
 			'GET', 
 			{ 'contactId': contactId },
-			{ 'includeMerged': opts['includeMerged'],'limit': opts['limit'] },
+			{ 'includeMerged': opts['includeMerged'],'limit': opts['limit'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'segmentIds': this.apiClient.buildCollectionParam(opts['segmentIds'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -1217,6 +1219,7 @@ class JourneyApi {
 	 * @param {Array.<String>} opts.segmentIds IDs of segments to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 100 segments are allowed per request.
 	 * @param {Array.<String>} opts.queryFields Segment field(s) to query on. Requires 'queryValue' to also be set.
 	 * @param {String} opts.queryValue Value to query on using fuzzy matching. Requires 'queryFields' to also be set.
+	 * @param {Array.<String>} opts.displayNames Display names of segments to return. Case-insensitive matching. Maximum of 5. Must not contain exact duplicates (case-sensitive). Use of this parameter is not compatible with pagination or sorting or querying or segmentIds.
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getJourneySegments(opts) { 
@@ -1227,7 +1230,7 @@ class JourneyApi {
 			'/api/v2/journey/segments', 
 			'GET', 
 			{  },
-			{ 'sortBy': opts['sortBy'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'isActive': opts['isActive'],'segmentIds': this.apiClient.buildCollectionParam(opts['segmentIds'], 'multi'),'queryFields': this.apiClient.buildCollectionParam(opts['queryFields'], 'multi'),'queryValue': opts['queryValue'] },
+			{ 'sortBy': opts['sortBy'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'isActive': opts['isActive'],'segmentIds': this.apiClient.buildCollectionParam(opts['segmentIds'], 'multi'),'queryFields': this.apiClient.buildCollectionParam(opts['queryFields'], 'multi'),'queryValue': opts['queryValue'],'displayNames': this.apiClient.buildCollectionParam(opts['displayNames'], 'multi') },
 			{  },
 			{  },
 			null, 

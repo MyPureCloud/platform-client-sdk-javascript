@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 265.0.0
+	 * @version 266.0.0
 	 */
 
 	/**
@@ -3076,7 +3076,6 @@ class ArchitectApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getFlowsValidateJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getFlowsValidateJob(jobId, opts) { 
 		opts = opts || {};
@@ -4406,7 +4405,6 @@ class ArchitectApi {
 	 * @param {Object} body 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postFlowsValidateJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postFlowsValidateJobs(body, opts) { 
 		opts = opts || {};

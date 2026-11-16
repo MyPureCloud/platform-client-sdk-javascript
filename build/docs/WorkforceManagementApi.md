@@ -54,8 +54,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getWorkforcemanagementBusinessunitActivityplan**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplan) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId} | Get an activity plan
 [**getWorkforcemanagementBusinessunitActivityplanDeletionsJob**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplanDeletionsJob) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/deletions/jobs/{jobId} | Gets an activity plan deletion job
 [**getWorkforcemanagementBusinessunitActivityplanJobs**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplanJobs) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/jobs | Gets the latest job for an activity plan in the business unit
+[**getWorkforcemanagementBusinessunitActivityplanOccurrence**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplanOccurrence) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId} | Get a specific occurrence for the activity plan
+[**getWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJob**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJob) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/deletions/jobs/{jobId} | Gets an occurrence deletion job
 [**getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJob**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJob) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/sessions/{sessionId}/users/deletions/jobs/{jobId} | Gets a session users deletion job
 [**getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJob**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJob) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/sessions/deletions/jobs/{jobId} | Gets an activity plan sessions deletion job
+[**getWorkforcemanagementBusinessunitActivityplanOccurrences**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplanOccurrences) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences | Get all occurrences for an activity plan
 [**getWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJob**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJob) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/deletions/jobs/{jobId} | Gets an occurrences deletion job
 [**getWorkforcemanagementBusinessunitActivityplanRunsJob**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplanRunsJob) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/runs/jobs/{jobId} | Gets an activity plan run job
 [**getWorkforcemanagementBusinessunitActivityplans**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplans) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans | Get activity plans
@@ -272,6 +275,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postWorkforcemanagementAlternativeshiftsTrades**](WorkforceManagementApi#postWorkforcemanagementAlternativeshiftsTrades) | **POST** /api/v2/workforcemanagement/alternativeshifts/trades | Create my alternative shift trade using an existing offer's jobId
 [**postWorkforcemanagementBusinessunitActivitycodes**](WorkforceManagementApi#postWorkforcemanagementBusinessunitActivitycodes) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes | Create a new activity code
 [**postWorkforcemanagementBusinessunitActivityplanDeletionsJobs**](WorkforceManagementApi#postWorkforcemanagementBusinessunitActivityplanDeletionsJobs) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/deletions/jobs | Delete an activity plan
+[**postWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobs**](WorkforceManagementApi#postWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobs) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/deletions/jobs | Delete an occurrence for the activity plan
 [**postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobs**](WorkforceManagementApi#postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobs) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/sessions/{sessionId}/users/deletions/jobs | Triggers a job to delete users from a session in the activity plan occurrence
 [**postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobs**](WorkforceManagementApi#postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobs) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/sessions/deletions/jobs | Triggers a job to delete sessions for the activity plan occurrence
 [**postWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobs**](WorkforceManagementApi#postWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobs) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/deletions/jobs | Delete occurrences for the activity plan
@@ -291,6 +295,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate**](WorkforceManagementApi#postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplanning/longtermrequirements/automaticbestmethod/weeks/{weekDateId}/forecasts/{forecastId}/forceregenerate | Force regenerate the latest long term staffing requirements for a business unit
 [**postWorkforcemanagementBusinessunitCapacityplans**](WorkforceManagementApi#postWorkforcemanagementBusinessunitCapacityplans) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans | Create a new capacity plan
 [**postWorkforcemanagementBusinessunitCapacityplansBulkRemove**](WorkforceManagementApi#postWorkforcemanagementBusinessunitCapacityplansBulkRemove) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/bulk/remove | Delete capacity plans in a business unit
+[**postWorkforcemanagementBusinessunitCapacityplansForecastUploadurls**](WorkforceManagementApi#postWorkforcemanagementBusinessunitCapacityplansForecastUploadurls) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/forecast/uploadurls | Creates signed upload URLs for importing hourly and daily forecasts for a capacity plan
 [**postWorkforcemanagementBusinessunitDecisionmetricsUpdate**](WorkforceManagementApi#postWorkforcemanagementBusinessunitDecisionmetricsUpdate) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/decisionmetrics/update | Initiates the decision metrics update process
 [**postWorkforcemanagementBusinessunitDecisionmetricsUpdateUploadurl**](WorkforceManagementApi#postWorkforcemanagementBusinessunitDecisionmetricsUpdateUploadurl) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/decisionmetrics/update/uploadurl | Creates a signed upload URL for updating decision metrics
 [**postWorkforcemanagementBusinessunitIntraday**](WorkforceManagementApi#postWorkforcemanagementBusinessunitIntraday) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday | Get intraday data for the given date for the requested planningGroupIds
@@ -3438,6 +3443,130 @@ apiInstance.getWorkforcemanagementBusinessunitActivityplanJobs(businessUnitId, a
 **ActivityPlanJobResponse**
 
 
+## getWorkforcemanagementBusinessunitActivityplanOccurrence
+
+> ActivityPlanOccurrenceResponse getWorkforcemanagementBusinessunitActivityplanOccurrence(businessUnitId, activityPlanId, occurrenceId, opts)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}
+
+Get a specific occurrence for the activity plan
+
+Requires ANY permissions:
+
+* wfm:activityPlan:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let activityPlanId = "activityPlanId_example"; // String | The ID of the activity plan
+let occurrenceId = "occurrenceId_example"; // String | The ID of the activity plan occurrence
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getWorkforcemanagementBusinessunitActivityplanOccurrence(businessUnitId, activityPlanId, occurrenceId, opts)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitActivityplanOccurrence success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitActivityplanOccurrence');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **activityPlanId** | **String** | The ID of the activity plan |  |
+ **occurrenceId** | **String** | The ID of the activity plan occurrence |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ActivityPlanOccurrenceResponse**
+
+
+## getWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJob
+
+> ActivityPlanJobResponse getWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJob(businessUnitId, activityPlanId, occurrenceId, jobId, opts)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/deletions/jobs/{jobId}
+
+Gets an occurrence deletion job
+
+Requires ANY permissions:
+
+* wfm:activityPlanOccurrenceDeletionJob:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let activityPlanId = "activityPlanId_example"; // String | The ID of the activity plan
+let occurrenceId = "occurrenceId_example"; // String | The ID of the activity plan occurrence
+let jobId = "jobId_example"; // String | The ID of the activity plan occurrence deletion job
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJob(businessUnitId, activityPlanId, occurrenceId, jobId, opts)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **activityPlanId** | **String** | The ID of the activity plan |  |
+ **occurrenceId** | **String** | The ID of the activity plan occurrence |  |
+ **jobId** | **String** | The ID of the activity plan occurrence deletion job |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ActivityPlanJobResponse**
+
+
 ## getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJob
 
 > ActivityPlanJobResponse getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJob(businessUnitId, activityPlanId, occurrenceId, sessionId, jobId, opts)
@@ -3564,6 +3693,65 @@ apiInstance.getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDele
 ### Return type
 
 **ActivityPlanJobResponse**
+
+
+## getWorkforcemanagementBusinessunitActivityplanOccurrences
+
+> ActivityPlanOccurrenceListing getWorkforcemanagementBusinessunitActivityplanOccurrences(businessUnitId, activityPlanId, opts)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences
+
+Get all occurrences for an activity plan
+
+Requires ANY permissions:
+
+* wfm:activityPlan:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let activityPlanId = "activityPlanId_example"; // String | The ID of the activity plan
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getWorkforcemanagementBusinessunitActivityplanOccurrences(businessUnitId, activityPlanId, opts)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitActivityplanOccurrences success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitActivityplanOccurrences');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **activityPlanId** | **String** | The ID of the activity plan |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ActivityPlanOccurrenceListing**
 
 
 ## getWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJob
@@ -5278,7 +5466,7 @@ apiInstance.getWorkforcemanagementBusinessunitManagementunits(businessUnitId, op
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit, or 'mine' for the business unit of the logged-in user. |  |
- **feature** | **String** | If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentAdherenceAdjustments, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AgentShiftTrade, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentSelfScheduleJob, AgentSelfScheduleOffers, AgentSelfScheduleQuery, AgentSelfScheduleActivityMove, SelfScheduleSettings, AgentSelfScheduleSettings, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, AgentSchedulingPreferencesQuery, AgentSchedulingPreferences, AgentSchedulingPreferencesSettings, ActivityCodes, ActivityPlans, AdherenceAdjustmentsSettings, AdherenceAdjustmentsReasonCodes, AdherenceAdjustments, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, CapacityPlanForecast, CapacityPlanForecastInputs, CapacityPlanPerformancePrediction, ContinuousForecast, MainForecastDiagnostics, PredictionsForecastingScenarioJobs, PredictionsForecastingScenarios, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, Opportunities, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses, SchedulingPreferencesQuery, SchedulingPreferencesSettings, SchedulingPreferencesSchedulesQuery, SchedulingPreferencesSettingsQuery, DecisionMetrics |
+ **feature** | **String** | If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentAdherenceAdjustments, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AgentScheduleChangeConstraint, AgentShiftActivityRule, AgentShiftTrade, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentSelfScheduleJob, AgentSelfScheduleOffers, AgentSelfScheduleQuery, AgentSelfScheduleActivityMove, SelfScheduleSettings, AgentSelfScheduleSettings, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, AgentOpportunitySettings, AgentSchedulingPreferencesQuery, AgentSchedulingPreferences, AgentSchedulingPreferencesSettings, ActivityCodes, ActivityPlans, AdherenceAdjustmentsSettings, AdherenceAdjustmentsReasonCodes, AdherenceAdjustments, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, CapacityPlanForecast, CapacityPlanForecastInputs, CapacityPlanPerformancePrediction, ContinuousForecast, MainForecastDiagnostics, PredictionsForecastingScenarioJobs, PredictionsForecastingScenarios, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, PlanningGroupsRoutePathsActuals, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, ScheduleChangeConstraint, ScheduleChangeConstraintBulk, ScheduleChangeConstraintListing, ScheduleChangeConstraintWorkPlans, ShiftActivityRule, ShiftActivityRuleBulk, ShiftActivityRuleListing, ShiftActivityRuleWorkPlans, Opportunities, OpportunitySettings, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses, SchedulingPreferencesQuery, SchedulingPreferencesSettings, SchedulingPreferencesSchedulesQuery, SchedulingPreferencesSettingsQuery, DecisionMetrics |
  **divisionId** | **String** | If specified, the list of management units belonging to the specified division will be returned | [optional]  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
@@ -8340,7 +8528,7 @@ apiInstance.getWorkforcemanagementBusinessunits(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **feature** | **String** | If specified, the list of business units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentAdherenceAdjustments, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AgentShiftTrade, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentSelfScheduleJob, AgentSelfScheduleOffers, AgentSelfScheduleQuery, AgentSelfScheduleActivityMove, SelfScheduleSettings, AgentSelfScheduleSettings, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, AgentSchedulingPreferencesQuery, AgentSchedulingPreferences, AgentSchedulingPreferencesSettings, ActivityCodes, ActivityPlans, AdherenceAdjustmentsSettings, AdherenceAdjustmentsReasonCodes, AdherenceAdjustments, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, CapacityPlanForecast, CapacityPlanForecastInputs, CapacityPlanPerformancePrediction, ContinuousForecast, MainForecastDiagnostics, PredictionsForecastingScenarioJobs, PredictionsForecastingScenarios, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, Opportunities, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses, SchedulingPreferencesQuery, SchedulingPreferencesSettings, SchedulingPreferencesSchedulesQuery, SchedulingPreferencesSettingsQuery, DecisionMetrics |
+ **feature** | **String** | If specified, the list of business units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentAdherenceAdjustments, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AgentScheduleChangeConstraint, AgentShiftActivityRule, AgentShiftTrade, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentSelfScheduleJob, AgentSelfScheduleOffers, AgentSelfScheduleQuery, AgentSelfScheduleActivityMove, SelfScheduleSettings, AgentSelfScheduleSettings, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, AgentOpportunitySettings, AgentSchedulingPreferencesQuery, AgentSchedulingPreferences, AgentSchedulingPreferencesSettings, ActivityCodes, ActivityPlans, AdherenceAdjustmentsSettings, AdherenceAdjustmentsReasonCodes, AdherenceAdjustments, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, CapacityPlanForecast, CapacityPlanForecastInputs, CapacityPlanPerformancePrediction, ContinuousForecast, MainForecastDiagnostics, PredictionsForecastingScenarioJobs, PredictionsForecastingScenarios, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, PlanningGroupsRoutePathsActuals, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, ScheduleChangeConstraint, ScheduleChangeConstraintBulk, ScheduleChangeConstraintListing, ScheduleChangeConstraintWorkPlans, ShiftActivityRule, ShiftActivityRuleBulk, ShiftActivityRuleListing, ShiftActivityRuleWorkPlans, Opportunities, OpportunitySettings, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses, SchedulingPreferencesQuery, SchedulingPreferencesSettings, SchedulingPreferencesSchedulesQuery, SchedulingPreferencesSettingsQuery, DecisionMetrics |
  **divisionId** | **String** | If specified, the list of business units belonging to the specified division will be returned | [optional]  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
@@ -10515,7 +10703,7 @@ apiInstance.getWorkforcemanagementManagementunits(opts)
  **pageSize** | **Number** | Deprecated, paging is not supported | [optional]  |
  **pageNumber** | **Number** | Deprecated, paging is not supported | [optional]  |
  **expand** | **String** | Deprecated, expand settings on the single MU route | [optional] <br />**Values**: details |
- **feature** | **String** | If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentAdherenceAdjustments, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AgentShiftTrade, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentSelfScheduleJob, AgentSelfScheduleOffers, AgentSelfScheduleQuery, AgentSelfScheduleActivityMove, SelfScheduleSettings, AgentSelfScheduleSettings, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, AgentSchedulingPreferencesQuery, AgentSchedulingPreferences, AgentSchedulingPreferencesSettings, ActivityCodes, ActivityPlans, AdherenceAdjustmentsSettings, AdherenceAdjustmentsReasonCodes, AdherenceAdjustments, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, CapacityPlanForecast, CapacityPlanForecastInputs, CapacityPlanPerformancePrediction, ContinuousForecast, MainForecastDiagnostics, PredictionsForecastingScenarioJobs, PredictionsForecastingScenarios, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, Opportunities, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses, SchedulingPreferencesQuery, SchedulingPreferencesSettings, SchedulingPreferencesSchedulesQuery, SchedulingPreferencesSettingsQuery, DecisionMetrics |
+ **feature** | **String** | If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentAdherenceAdjustments, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AgentScheduleChangeConstraint, AgentShiftActivityRule, AgentShiftTrade, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentSelfScheduleJob, AgentSelfScheduleOffers, AgentSelfScheduleQuery, AgentSelfScheduleActivityMove, SelfScheduleSettings, AgentSelfScheduleSettings, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, AgentOpportunitySettings, AgentSchedulingPreferencesQuery, AgentSchedulingPreferences, AgentSchedulingPreferencesSettings, ActivityCodes, ActivityPlans, AdherenceAdjustmentsSettings, AdherenceAdjustmentsReasonCodes, AdherenceAdjustments, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, CapacityPlanForecast, CapacityPlanForecastInputs, CapacityPlanPerformancePrediction, ContinuousForecast, MainForecastDiagnostics, PredictionsForecastingScenarioJobs, PredictionsForecastingScenarios, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, PlanningGroupsRoutePathsActuals, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, ScheduleChangeConstraint, ScheduleChangeConstraintBulk, ScheduleChangeConstraintListing, ScheduleChangeConstraintWorkPlans, ShiftActivityRule, ShiftActivityRuleBulk, ShiftActivityRuleListing, ShiftActivityRuleWorkPlans, Opportunities, OpportunitySettings, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses, SchedulingPreferencesQuery, SchedulingPreferencesSettings, SchedulingPreferencesSchedulesQuery, SchedulingPreferencesSettingsQuery, DecisionMetrics |
  **divisionId** | **String** | If specified, the list of management units belonging to the specified division will be returned | [optional]  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
@@ -16316,6 +16504,7 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let body = {}; // Object | body
 let opts = { 
+  'expand': ["expand_example"], // [String] | Include to access additional data on the agent schedules
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
     'X-Request-ID': 'req-12345'
@@ -16338,6 +16527,7 @@ apiInstance.postWorkforcemanagementAgentschedulesMine(body, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | body |  |
+ **expand** | **[String]** | Include to access additional data on the agent schedules | [optional] <br />**Values**: agentSchedules.workPlansPerWeek |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -16629,6 +16819,69 @@ apiInstance.postWorkforcemanagementBusinessunitActivityplanDeletionsJobs(busines
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **activityPlanId** | **String** | The ID of the activity plan to delete |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ActivityPlanJobResponse**
+
+
+## postWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobs
+
+> ActivityPlanJobResponse postWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobs(businessUnitId, activityPlanId, occurrenceId, opts)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/deletions/jobs
+
+Delete an occurrence for the activity plan
+
+Triggers a job to delete an occurrence of the activity plan. The activity plan cannot be updated until the job completes
+
+Requires ANY permissions:
+
+* wfm:activityPlanOccurrenceDeletionJob:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let activityPlanId = "activityPlanId_example"; // String | The ID of the activity plan
+let occurrenceId = "occurrenceId_example"; // String | The ID of the activity plan occurrence
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobs(businessUnitId, activityPlanId, occurrenceId, opts)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **activityPlanId** | **String** | The ID of the activity plan |  |
+ **occurrenceId** | **String** | The ID of the activity plan occurrence |  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -17796,6 +18049,67 @@ apiInstance.postWorkforcemanagementBusinessunitCapacityplansBulkRemove(businessU
 ### Return type
 
 void (no response body)
+
+
+## postWorkforcemanagementBusinessunitCapacityplansForecastUploadurls
+
+> CapacityPlanForecastImportUploadResponse postWorkforcemanagementBusinessunitCapacityplansForecastUploadurls(businessUnitId, body, opts)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/forecast/uploadurls
+
+Creates signed upload URLs for importing hourly and daily forecasts for a capacity plan
+
+Returns two upload URLs, one for the hourly forecast and one for the daily forecast. Once both uploads are complete, call POST /capacityplans (new capacity plan) or PATCH /capacityplans/{capacityPlanId} (existing capacity plan) or POST /capacityplans/{capacityPlanId}/copy (copy capacity plan) with both upload keys in importedForecast
+
+Requires ANY permissions:
+
+* wfm:capacityPlanForecast:upload
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postWorkforcemanagementBusinessunitCapacityplansForecastUploadurls(businessUnitId, body, opts)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitCapacityplansForecastUploadurls success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitCapacityplansForecastUploadurls');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**CapacityPlanForecastImportUploadResponse**
 
 
 ## postWorkforcemanagementBusinessunitDecisionmetricsUpdate
@@ -24505,4 +24819,4 @@ apiInstance.putWorkforcemanagementSchedulebidPreference(bidId, body, opts)
 **AgentScheduleBiddingPreferenceResponse**
 
 
-_purecloud-platform-client-v2@265.0.0_
+_purecloud-platform-client-v2@266.0.0_

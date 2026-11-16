@@ -5,7 +5,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 265.0.0
+	 * @version 266.0.0
 	 */
 
 	/**
@@ -398,6 +398,8 @@ class ExternalContactsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeMerged Indicates whether to return segment assignments from all external contacts in the merge-set of the given one.
 	 * @param {Number} opts.limit Number of entities to return. Default of 25, maximum of 500.
+	 * @param {Array.<String>} opts.expand Expand the response with additional fields.
+	 * @param {Array.<String>} opts.segmentIds IDs of segments to return. Maximum of 5
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getExternalcontactsContactJourneySegments(contactId, opts) { 
@@ -412,7 +414,7 @@ class ExternalContactsApi {
 			'/api/v2/externalcontacts/contacts/{contactId}/journey/segments', 
 			'GET', 
 			{ 'contactId': contactId },
-			{ 'includeMerged': opts['includeMerged'],'limit': opts['limit'] },
+			{ 'includeMerged': opts['includeMerged'],'limit': opts['limit'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'segmentIds': this.apiClient.buildCollectionParam(opts['segmentIds'], 'multi') },
 			{  },
 			{  },
 			null, 

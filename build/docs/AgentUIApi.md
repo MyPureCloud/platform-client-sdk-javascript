@@ -245,4 +245,4 @@ apiInstance.putUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body, opts)
 **AutoAnswerSettings**
 
 
-_purecloud-platform-client-v2@265.0.0_
+_purecloud-platform-client-v2@266.0.0_

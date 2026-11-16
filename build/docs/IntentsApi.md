@@ -292,6 +292,7 @@ let apiInstance = new platformClient.IntentsApi();
 
 let categoryId = "categoryId_example"; // String | Category id
 let opts = { 
+  'includeUsage': true, // Boolean | When usage tracking is enabled, usage is absent when includeUsage is false or omitted, empty when no usage exists, and populated when usage exists. includeUsage is ignored when usage tracking is off.
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
     'X-Request-ID': 'req-12345'
@@ -314,6 +315,7 @@ apiInstance.getIntentsCategory(categoryId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **categoryId** | **String** | Category id |  |
+ **includeUsage** | **Boolean** | When usage tracking is enabled, usage is absent when includeUsage is false or omitted, empty when no usage exists, and populated when usage exists. includeUsage is ignored when usage tracking is off. | [optional]  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -349,6 +351,7 @@ let apiInstance = new platformClient.IntentsApi();
 
 let customerIntentId = "customerIntentId_example"; // String | Customer Intent id
 let opts = { 
+  'includeUsage': true, // Boolean | When usage tracking is enabled, usage is absent when includeUsage is false or omitted, empty when no usage exists, and populated when usage exists. includeUsage is ignored when usage tracking is off.
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
     'X-Request-ID': 'req-12345'
@@ -371,6 +374,7 @@ apiInstance.getIntentsCustomerintent(customerIntentId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **customerIntentId** | **String** | Customer Intent id |  |
+ **includeUsage** | **Boolean** | When usage tracking is enabled, usage is absent when includeUsage is false or omitted, empty when no usage exists, and populated when usage exists. includeUsage is ignored when usage tracking is off. | [optional]  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -1153,4 +1157,4 @@ apiInstance.postIntentsCustomerintentsSimilar(body, opts)
 **SimilarCustomerIntentsResponse**
 
 
-_purecloud-platform-client-v2@265.0.0_
+_purecloud-platform-client-v2@266.0.0_

@@ -5,7 +5,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 265.0.0
+	 * @version 266.0.0
 	 */
 
 	/**
@@ -2629,6 +2629,66 @@ class TelephonyProvidersEdgeApi {
 			'GET', 
 			{  },
 			{ 'trunkType': opts['trunkType'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get the trunkbase metrics.
+	 * 
+	 * @param {String} trunkBaseId TrunkBase Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getTelephonyTrunkbasesettingMetrics(trunkBaseId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'trunkBaseId' is set
+		if (trunkBaseId === undefined || trunkBaseId === null || trunkBaseId === '') {
+			throw 'Missing the required parameter "trunkBaseId" when calling getTelephonyTrunkbasesettingMetrics';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/trunkbasesettings/{trunkBaseId}/metrics', 
+			'GET', 
+			{ 'trunkBaseId': trunkBaseId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get the trunkbase metrics for the specified ids.
+	 * 
+	 * @param {String} ids TrunkBase Ids
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getTelephonyTrunkbasesettingsMetrics(ids, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'ids' is set
+		if (ids === undefined || ids === null) {
+			throw 'Missing the required parameter "ids" when calling getTelephonyTrunkbasesettingsMetrics';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/trunkbasesettings/metrics', 
+			'GET', 
+			{  },
+			{ 'ids': ids },
 			{  },
 			{  },
 			null, 

@@ -5,7 +5,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 265.0.0
+	 * @version 266.0.0
 	 */
 
 	/**
@@ -619,6 +619,8 @@ class SCIMApi {
 	 * @param {Object} body The information used to modify a group.
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: 42. If the ETag is different from the version on the server, returns 400 with a scimType of invalidVers.
+	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the id, active, and meta attributes. Use attributes to avoid expensive secondary calls for the default attributes.
+	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus excludedAttributes. Always returns id, active, and meta attributes. Use excludedAttributes to avoid expensive secondary calls for the default attributes.
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	patchScimGroup(groupId, body, opts) { 
@@ -637,7 +639,7 @@ class SCIMApi {
 			'/api/v2/scim/groups/{groupId}', 
 			'PATCH', 
 			{ 'groupId': groupId },
-			{  },
+			{ 'attributes': this.apiClient.buildCollectionParam(opts['attributes'], 'multi'),'excludedAttributes': this.apiClient.buildCollectionParam(opts['excludedAttributes'], 'multi') },
 			{ 'If-Match': opts['ifMatch'] },
 			{  },
 			body, 
@@ -691,6 +693,8 @@ class SCIMApi {
 	 * @param {Object} body The information used to modify a group.
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: 42. If the ETag is different from the version on the server, returns 400 with a scimType of invalidVers.
+	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the id, active, and meta attributes. Use attributes to avoid expensive secondary calls for the default attributes.
+	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus excludedAttributes. Always returns id, active, and meta attributes. Use excludedAttributes to avoid expensive secondary calls for the default attributes.
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	patchScimV2Group(groupId, body, opts) { 
@@ -709,7 +713,7 @@ class SCIMApi {
 			'/api/v2/scim/v2/groups/{groupId}', 
 			'PATCH', 
 			{ 'groupId': groupId },
-			{  },
+			{ 'attributes': this.apiClient.buildCollectionParam(opts['attributes'], 'multi'),'excludedAttributes': this.apiClient.buildCollectionParam(opts['excludedAttributes'], 'multi') },
 			{ 'If-Match': opts['ifMatch'] },
 			{  },
 			body, 

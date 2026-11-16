@@ -5,7 +5,7 @@ class CaseManagementApi {
 	/**
 	 * CaseManagement service.
 	 * @module purecloud-platform-client-v2/api/CaseManagementApi
-	 * @version 265.0.0
+	 * @version 266.0.0
 	 */
 
 	/**
@@ -256,9 +256,8 @@ class CaseManagementApi {
 	 * 
 	 * @param {String} caseId Case identifier.
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
-	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {String} opts.after Cursor that points to the end of the previously returned page.
+	 * @param {Number} opts.pageSize Number of entities to return. Maximum is 200.
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getCasemanagementCaseAssociations(caseId, opts) { 
@@ -273,7 +272,7 @@ class CaseManagementApi {
 			'/api/v2/casemanagement/cases/{caseId}/associations', 
 			'GET', 
 			{ 'caseId': caseId },
-			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'] },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'] },
 			{  },
 			{  },
 			null, 
@@ -433,9 +432,8 @@ class CaseManagementApi {
 	 * @param {String} caseId Case identifier.
 	 * @param {String} stageId Stage identifier.
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
-	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {String} opts.after Cursor that points to the end of the previously returned page.
+	 * @param {Number} opts.pageSize Number of entities to return. Maximum is 200.
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getCasemanagementCaseStageSteps(caseId, stageId, opts) { 
@@ -454,7 +452,7 @@ class CaseManagementApi {
 			'/api/v2/casemanagement/cases/{caseId}/stages/{stageId}/steps', 
 			'GET', 
 			{ 'caseId': caseId,'stageId': stageId },
-			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'] },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'] },
 			{  },
 			{  },
 			null, 
@@ -470,9 +468,8 @@ class CaseManagementApi {
 	 * 
 	 * @param {String} caseId Case identifier.
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
-	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {String} opts.after Cursor that points to the end of the previously returned page.
+	 * @param {Number} opts.pageSize Number of entities to return. Maximum is 200.
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getCasemanagementCaseStages(caseId, opts) { 
@@ -487,7 +484,7 @@ class CaseManagementApi {
 			'/api/v2/casemanagement/cases/{caseId}/stages', 
 			'GET', 
 			{ 'caseId': caseId },
-			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'] },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'] },
 			{  },
 			{  },
 			null, 
@@ -762,9 +759,8 @@ class CaseManagementApi {
 	 * @param {String} versionId Caseplan version identifier.
 	 * @param {String} stageplanId Stageplan identifier.
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
-	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {String} opts.after Cursor that points to the end of the previously returned page.
+	 * @param {Number} opts.pageSize Number of entities to return. Maximum is 200.
 	 * @param {Array.<String>} opts.expands Fields to expand.
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
@@ -788,7 +784,7 @@ class CaseManagementApi {
 			'/api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/stageplans/{stageplanId}/stepplans', 
 			'GET', 
 			{ 'caseplanId': caseplanId,'versionId': versionId,'stageplanId': stageplanId },
-			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'expands': this.apiClient.buildCollectionParam(opts['expands'], 'multi') },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'],'expands': this.apiClient.buildCollectionParam(opts['expands'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -805,9 +801,8 @@ class CaseManagementApi {
 	 * @param {String} caseplanId Caseplan identifier.
 	 * @param {String} versionId Caseplan version identifier.
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
-	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {String} opts.after Cursor that points to the end of the previously returned page.
+	 * @param {Number} opts.pageSize Number of entities to return. Maximum is 200.
 	 * @param {Array.<String>} opts.expands Fields to expand.
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
@@ -827,7 +822,7 @@ class CaseManagementApi {
 			'/api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/stageplans', 
 			'GET', 
 			{ 'caseplanId': caseplanId,'versionId': versionId },
-			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'expands': this.apiClient.buildCollectionParam(opts['expands'], 'multi') },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'],'expands': this.apiClient.buildCollectionParam(opts['expands'], 'multi') },
 			{  },
 			{  },
 			null, 

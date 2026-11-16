@@ -17,6 +17,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getSpeechandtextanalyticsCategory**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsCategory) | **GET** /api/v2/speechandtextanalytics/categories/{categoryId} | Get a Speech and Text Analytics Category by ID
 [**getSpeechandtextanalyticsConversation**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsConversation) | **GET** /api/v2/speechandtextanalytics/conversations/{conversationId} | Get Speech and Text Analytics for a specific conversation
 [**getSpeechandtextanalyticsConversationCategories**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsConversationCategories) | **GET** /api/v2/speechandtextanalytics/conversations/{conversationId}/categories | Get the list of detected Speech and Text Analytics categories of conversation
+[**getSpeechandtextanalyticsConversationCommunicationTranscriptoutline**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsConversationCommunicationTranscriptoutline) | **GET** /api/v2/speechandtextanalytics/conversations/{conversationId}/communications/{communicationId}/transcriptoutline | Get the transcript outline for a specific conversation and communication.
 [**getSpeechandtextanalyticsConversationCommunicationTranscripturl**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsConversationCommunicationTranscripturl) | **GET** /api/v2/speechandtextanalytics/conversations/{conversationId}/communications/{communicationId}/transcripturl | Get the pre-signed S3 URL for the transcript of a specific communication of a conversation
 [**getSpeechandtextanalyticsConversationCommunicationTranscripturls**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsConversationCommunicationTranscripturls) | **GET** /api/v2/speechandtextanalytics/conversations/{conversationId}/communications/{communicationId}/transcripturls | Get the list of pre-signed S3 URL for the transcripts of a specific communication of a conversation
 [**getSpeechandtextanalyticsConversationSentiments**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsConversationSentiments) | **GET** /api/v2/speechandtextanalytics/conversations/{conversationId}/sentiments | Get sentiment data
@@ -719,6 +720,65 @@ apiInstance.getSpeechandtextanalyticsConversationCategories(conversationId, opts
 ### Return type
 
 **ConversationCategoriesEntityListing**
+
+
+## getSpeechandtextanalyticsConversationCommunicationTranscriptoutline
+
+> TranscriptOutlineResponse getSpeechandtextanalyticsConversationCommunicationTranscriptoutline(conversationId, communicationId, opts)
+
+
+GET /api/v2/speechandtextanalytics/conversations/{conversationId}/communications/{communicationId}/transcriptoutline
+
+Get the transcript outline for a specific conversation and communication.
+
+Requires ALL permissions:
+
+* speechAndTextAnalytics:aiOutline:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SpeechTextAnalyticsApi();
+
+let conversationId = "conversationId_example"; // String | The ID of the conversation
+let communicationId = "communicationId_example"; // String | The ID of the communication
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getSpeechandtextanalyticsConversationCommunicationTranscriptoutline(conversationId, communicationId, opts)
+  .then((data) => {
+    console.log(`getSpeechandtextanalyticsConversationCommunicationTranscriptoutline success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getSpeechandtextanalyticsConversationCommunicationTranscriptoutline');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | The ID of the conversation |  |
+ **communicationId** | **String** | The ID of the communication |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**TranscriptOutlineResponse**
 
 
 ## getSpeechandtextanalyticsConversationCommunicationTranscripturl
@@ -4110,4 +4170,4 @@ apiInstance.putSpeechandtextanalyticsTopic(topicId, body, opts)
 **Topic**
 
 
-_purecloud-platform-client-v2@265.0.0_
+_purecloud-platform-client-v2@266.0.0_

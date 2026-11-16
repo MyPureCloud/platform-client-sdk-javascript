@@ -135,6 +135,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getConversationsMessagingSupportedcontentDefault**](ConversationsApi#getConversationsMessagingSupportedcontentDefault) | **GET** /api/v2/conversations/messaging/supportedcontent/default | Get the organization's default supported content profile that will be used as the default when creating an integration.
 [**getConversationsMessagingSupportedcontentSupportedContentId**](ConversationsApi#getConversationsMessagingSupportedcontentSupportedContentId) | **GET** /api/v2/conversations/messaging/supportedcontent/{supportedContentId} | Get a supported content profile
 [**getConversationsMessagingThreadingtimeline**](ConversationsApi#getConversationsMessagingThreadingtimeline) | **GET** /api/v2/conversations/messaging/threadingtimeline | Get conversation threading window timeline for each messaging type
+[**getConversationsScreenmonitor**](ConversationsApi#getConversationsScreenmonitor) | **GET** /api/v2/conversations/screenmonitors/{conversationId} | Get screen monitoring conversation
+[**getConversationsScreenmonitors**](ConversationsApi#getConversationsScreenmonitors) | **GET** /api/v2/conversations/screenmonitors | Get active screen monitoring conversations for the logged in user
 [**getConversationsScreenshareParticipantCommunicationWrapup**](ConversationsApi#getConversationsScreenshareParticipantCommunicationWrapup) | **GET** /api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Get the wrap-up for this conversation communication. 
 [**getConversationsSettings**](ConversationsApi#getConversationsSettings) | **GET** /api/v2/conversations/settings | Get Settings
 [**getConversationsSocialParticipantCommunicationWrapup**](ConversationsApi#getConversationsSocialParticipantCommunicationWrapup) | **GET** /api/v2/conversations/socials/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Get the wrap-up for this conversation communication. 
@@ -259,7 +261,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationsKeyconfigurations**](ConversationsApi#postConversationsKeyconfigurations) | **POST** /api/v2/conversations/keyconfigurations | Setup configurations for encryption key creation
 [**postConversationsKeyconfigurationsValidate**](ConversationsApi#postConversationsKeyconfigurationsValidate) | **POST** /api/v2/conversations/keyconfigurations/validate | Validate encryption key configurations without saving it
 [**postConversationsMessageCommunicationMessages**](ConversationsApi#postConversationsMessageCommunicationMessages) | **POST** /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages | Send message
-[**postConversationsMessageCommunicationMessagesMedia**](ConversationsApi#postConversationsMessageCommunicationMessagesMedia) | **POST** /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media | Create media
 [**postConversationsMessageCommunicationMessagesMediaUploads**](ConversationsApi#postConversationsMessageCommunicationMessagesMediaUploads) | **POST** /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/uploads | Create a URL to upload a message media file
 [**postConversationsMessageCommunicationSocialmediaMessages**](ConversationsApi#postConversationsMessageCommunicationSocialmediaMessages) | **POST** /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/socialmedia/messages | Send a social media message
 [**postConversationsMessageCommunicationTyping**](ConversationsApi#postConversationsMessageCommunicationTyping) | **POST** /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/typing | Send message typing event
@@ -7850,6 +7851,117 @@ apiInstance.getConversationsMessagingThreadingtimeline(opts)
 **ConversationThreadingWindow**
 
 
+## getConversationsScreenmonitor
+
+> ScreenMonitoringConversation getConversationsScreenmonitor(conversationId, opts)
+
+
+GET /api/v2/conversations/screenmonitors/{conversationId}
+
+Get screen monitoring conversation
+
+Requires ANY permissions:
+
+* conversation:screenMonitor:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getConversationsScreenmonitor(conversationId, opts)
+  .then((data) => {
+    console.log(`getConversationsScreenmonitor success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsScreenmonitor');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ScreenMonitoringConversation**
+
+
+## getConversationsScreenmonitors
+
+> ScreenMonitoringConversationEntityListing getConversationsScreenmonitors(opts)
+
+
+GET /api/v2/conversations/screenmonitors
+
+Get active screen monitoring conversations for the logged in user
+
+Requires ANY permissions:
+
+* conversation:screenMonitor:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getConversationsScreenmonitors(opts)
+  .then((data) => {
+    console.log(`getConversationsScreenmonitors success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsScreenmonitors');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ScreenMonitoringConversationEntityListing**
+
+
 ## getConversationsScreenshareParticipantCommunicationWrapup
 
 > AssignedWrapupCode getConversationsScreenshareParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
@@ -8045,6 +8157,8 @@ getConversationsVideoDetails is a preview method and is subject to both breaking
 Requires ANY permissions:
 
 * video:video:access
+* conversation:video:add
+* conversation:videoVoice:add
 
 ### Example Usage
 
@@ -15367,72 +15481,6 @@ apiInstance.postConversationsMessageCommunicationMessages(conversationId, commun
 **MessageData**
 
 
-## postConversationsMessageCommunicationMessagesMedia
-
-> MessageMediaData postConversationsMessageCommunicationMessagesMedia(conversationId, communicationId, opts)
-
-:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
-This resource has been deprecated
-:::
-
-POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media
-
-Create media
-
-See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
-
-Requires ANY permissions:
-
-* conversation:message:create
-* conversation:webmessaging:create
-* conversation:socialmedia:create
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.ConversationsApi();
-
-let conversationId = "conversationId_example"; // String | conversationId
-let communicationId = "communicationId_example"; // String | communicationId
-let opts = { 
-  'customHeaders': {  // Object.<string, string> | Request Custom Headers
-    'X-Service-Name': 'customer-service',
-    'X-Request-ID': 'req-12345'
-  }
-};
-
-apiInstance.postConversationsMessageCommunicationMessagesMedia(conversationId, communicationId, opts)
-  .then((data) => {
-    console.log(`postConversationsMessageCommunicationMessagesMedia success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling postConversationsMessageCommunicationMessagesMedia');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String** | conversationId |  |
- **communicationId** | **String** | communicationId |  |
- **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
-
-### Return type
-
-**MessageMediaData**
-
-
 ## postConversationsMessageCommunicationMessagesMediaUploads
 
 > MessageMediaUploadData postConversationsMessageCommunicationMessagesMediaUploads(conversationId, communicationId, body, opts)
@@ -17266,6 +17314,7 @@ postConversationsVideoAgentconferenceCommunication is a preview method and is su
 Requires ANY permissions:
 
 * conversation:video:add
+* conversation:videoVoice:add
 
 ### Example Usage
 
@@ -19042,4 +19091,4 @@ apiInstance.putConversationsVideoRecordingstate(conversationId, body, opts)
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@265.0.0_
+_purecloud-platform-client-v2@266.0.0_

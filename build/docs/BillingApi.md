@@ -379,6 +379,7 @@ let opts = {
   'dateStart': "dateStart_example", // String | Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
   'dateEnd': "dateEnd_example", // String | End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
   'paymentStatus': "paymentStatus_example", // String | Payment Status
+  'agreementId': "agreementId_example", // String | Filter invoices by agreement ID.
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
     'X-Request-ID': 'req-12345'
@@ -406,6 +407,7 @@ apiInstance.getBillingContractsInvoices(opts)
  **dateStart** | **String** | Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
  **dateEnd** | **String** | End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
  **paymentStatus** | **String** | Payment Status | [optional] <br />**Values**: Paid, UnPaid |
+ **agreementId** | **String** | Filter invoices by agreement ID. | [optional]  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -536,4 +538,4 @@ apiInstance.getBillingTrusteebillingoverviewTrustorOrgId(trustorOrgId, opts)
 **TrusteeBillingOverview**
 
 
-_purecloud-platform-client-v2@265.0.0_
+_purecloud-platform-client-v2@266.0.0_

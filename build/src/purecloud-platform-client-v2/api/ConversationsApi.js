@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 265.0.0
+	 * @version 266.0.0
 	 */
 
 	/**
@@ -4058,6 +4058,61 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/threadingtimeline', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get screen monitoring conversation
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getConversationsScreenmonitor(conversationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling getConversationsScreenmonitor';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/screenmonitors/{conversationId}', 
+			'GET', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get active screen monitoring conversations for the logged in user
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getConversationsScreenmonitors(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/screenmonitors', 
 			'GET', 
 			{  },
 			{  },
@@ -8615,42 +8670,6 @@ class ConversationsApi {
 			{  },
 			{  },
 			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Create media
-	 * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
-	 * @param {String} conversationId conversationId
-	 * @param {String} communicationId communicationId
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * @deprecated
-	 */
-	postConversationsMessageCommunicationMessagesMedia(conversationId, communicationId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null || conversationId === '') {
-			throw 'Missing the required parameter "conversationId" when calling postConversationsMessageCommunicationMessagesMedia';
-		}
-		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null || communicationId === '') {
-			throw 'Missing the required parameter "communicationId" when calling postConversationsMessageCommunicationMessagesMedia';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media', 
-			'POST', 
-			{ 'conversationId': conversationId,'communicationId': communicationId },
-			{  },
-			{  },
-			{  },
-			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json'],

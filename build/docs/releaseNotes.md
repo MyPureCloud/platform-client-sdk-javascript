@@ -1,504 +1,807 @@
-Platform API version: 10912
+Platform API version: 10972
 
 
-## Release Notes
-
-A restoreSavedAccess() method is added at ApiClient level. The method attempts to retrieve an existing token from storage, test its validity, sets it as the ApiClient token and return (throws an error otherwise).
 
 
-# Major Changes (22 changes)
+# Major Changes (98 changes)
 
-**/api/v2/mobiledevices/{deviceId}** (1 change)
+**DELETE /api/v2/users/me/verifiers/{verifierId}** (3 changes)
 
-* Path /api/v2/mobiledevices/{deviceId} was removed
+* Parameter replacementDefaultVerifierId was added
+* Response 204 was removed
+* Response 409 type was changed from ErrorBody to _undefined_
 
-**/api/v2/mobiledevices** (1 change)
+**GET /api/v2/casemanagement/cases/{caseId}/associations** (2 changes)
 
-* Path /api/v2/mobiledevices was removed
+* Parameter before was removed
+* Parameter pageSize was changed from string to integer
 
-**GET /api/v2/externalcontacts/graphs/clusterscans/latest** (1 change)
+**GET /api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/stageplans** (2 changes)
 
-* Response 200 type was changed from ClusterScan to LatestClusterScan
+* Parameter before was removed
+* Parameter pageSize was changed from string to integer
 
-**POST /api/v2/oauth/clients/{clientId}/usage/query** (1 change)
+**GET /api/v2/casemanagement/cases/{caseId}/stages** (2 changes)
 
-* Has been deprecated
+* Parameter before was removed
+* Parameter pageSize was changed from string to integer
 
-**GET /api/v2/oauth/clients/{clientId}/usage/summary** (1 change)
+**GET /api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/stageplans/{stageplanId}/stepplans** (2 changes)
 
-* Has been deprecated
+* Parameter before was removed
+* Parameter pageSize was changed from string to integer
 
-**GET /api/v2/oauth/clients/{clientId}/usage/query/results/{executionId}** (1 change)
+**GET /api/v2/casemanagement/cases/{caseId}/stages/{stageId}/steps** (2 changes)
 
-* Has been deprecated
+* Parameter before was removed
+* Parameter pageSize was changed from string to integer
 
-**GET /api/v2/routing/queues/{queueId}** (1 change)
+**GET /api/v2/externalcontacts/contacts/{contactId}/journey/segments** (2 changes)
 
-* Parameter forceMemberRecount was added
+* Parameter expand was added
+* Parameter segmentIds was added
 
-**POST /api/v2/usage/query** (1 change)
+**/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media** (1 change)
 
-* Has been deprecated
+* Operation POST was removed
 
-**GET /api/v2/usage/query/{executionId}/results** (1 change)
+**GET /api/v2/intents/categories/{categoryId}** (1 change)
 
-* Has been deprecated
+* Parameter includeUsage was added
 
-**POST /api/v2/usage/simplesearch** (1 change)
+**GET /api/v2/intents/customerintents/{customerIntentId}** (1 change)
 
-* Has been deprecated
+* Parameter includeUsage was added
 
-**GET /api/v2/usage/simplesearch/{executionId}/results** (1 change)
+**GET /api/v2/journey/segments** (1 change)
 
-* Has been deprecated
+* Parameter displayNames was added
 
-**GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans** (1 change)
+**PATCH /api/v2/scim/groups/{groupId}** (2 changes)
 
-* Parameter forceDownloadService was added
+* Parameter attributes was added
+* Parameter excludedAttributes was added
 
-**UserDevice** (1 change)
+**PATCH /api/v2/scim/v2/groups/{groupId}** (2 changes)
 
-* Model UserDevice was removed
+* Parameter attributes was added
+* Parameter excludedAttributes was added
 
-**DirectoryUserDevicesListing** (1 change)
+**POST /api/v2/workforcemanagement/agentschedules/mine** (1 change)
 
-* Model DirectoryUserDevicesListing was removed
+* Parameter expand was added
 
-**ExtensionPool** (1 change)
+**GET /api/v2/billing/contracts/invoices** (1 change)
 
-* Property division was changed from Division to WritableDivision
+* Parameter agreementId was added
 
-**ReschedulingOptionsRunResponse** (3 changes)
+**BuAgentSchedulesSearchResponse** (1 change)
 
-* Required property activitySmoothingType was added
-* Required property induceScheduleVariability was added
-* Required property useUnavailableTimesSnapshot was added
+* Model BuAgentSchedulesSearchResponse was removed
 
-**WorkitemOnAttributeChangeCondition** (2 changes)
+**PublicKeyCredentialCreationResponse** (1 change)
 
-* Property value was removed
-* Enum value wrapup was removed from property attribute
+* Property clientExtensionResults was changed from Map<object, object> to ClientExtensionResults
 
-**WorkitemOnAttributeChangeConditionUpdate** (2 changes)
+**CaseAssociationQueryEntityListing** (3 changes)
 
-* Property value was removed
-* Enum value wrapup was removed from property attribute
+* Property nextUri was removed
+* Property selfUri was removed
+* Property previousUri was removed
+
+**CaseAssociationListing** (2 changes)
+
+* Property selfUri was removed
+* Property previousUri was removed
+
+**CaseplanQueryEntityListing** (3 changes)
+
+* Property nextUri was removed
+* Property selfUri was removed
+* Property previousUri was removed
+
+**CaseplanListing** (2 changes)
+
+* Property selfUri was removed
+* Property previousUri was removed
+
+**CaseListing** (2 changes)
+
+* Property selfUri was removed
+* Property previousUri was removed
+
+**CommentListing** (2 changes)
+
+* Property selfUri was removed
+* Property previousUri was removed
+
+**StageplanListing** (2 changes)
+
+* Property selfUri was removed
+* Property previousUri was removed
+
+**StageListing** (2 changes)
+
+* Property selfUri was removed
+* Property previousUri was removed
+
+**StepplanListing** (2 changes)
+
+* Property selfUri was removed
+* Property previousUri was removed
+
+**StepListing** (2 changes)
+
+* Property selfUri was removed
+* Property previousUri was removed
+
+**WhatsAppBusinessScopedId** (1 change)
+
+* Required property bsuid was added
+
+**TestTopicPhrasePhrase** (7 changes)
+
+* Property strictness was changed from string to integer
+* Enum value 1 was removed from property strictness
+* Enum value 55 was removed from property strictness
+* Enum value 65 was removed from property strictness
+* Enum value 72 was removed from property strictness
+* Enum value 85 was removed from property strictness
+* Enum value 90 was removed from property strictness
+
+**TestTopicPhraseTopic** (7 changes)
+
+* Property strictness was changed from string to integer
+* Enum value 1 was removed from property strictness
+* Enum value 55 was removed from property strictness
+* Enum value 65 was removed from property strictness
+* Enum value 72 was removed from property strictness
+* Enum value 85 was removed from property strictness
+* Enum value 90 was removed from property strictness
+
+**Phrase** (7 changes)
+
+* Property strictness was changed from string to integer
+* Enum value 1 was removed from property strictness
+* Enum value 55 was removed from property strictness
+* Enum value 65 was removed from property strictness
+* Enum value 72 was removed from property strictness
+* Enum value 85 was removed from property strictness
+* Enum value 90 was removed from property strictness
+
+**Topic** (7 changes)
+
+* Property strictness was changed from string to integer
+* Enum value 1 was removed from property strictness
+* Enum value 55 was removed from property strictness
+* Enum value 65 was removed from property strictness
+* Enum value 72 was removed from property strictness
+* Enum value 85 was removed from property strictness
+* Enum value 90 was removed from property strictness
+
+**TopicRequest** (7 changes)
+
+* Property strictness was changed from string to integer
+* Enum value 1 was removed from property strictness
+* Enum value 55 was removed from property strictness
+* Enum value 65 was removed from property strictness
+* Enum value 72 was removed from property strictness
+* Enum value 85 was removed from property strictness
+* Enum value 90 was removed from property strictness
+
+**ListedTopic** (7 changes)
+
+* Property strictness was changed from string to integer
+* Enum value 1 was removed from property strictness
+* Enum value 55 was removed from property strictness
+* Enum value 65 was removed from property strictness
+* Enum value 72 was removed from property strictness
+* Enum value 85 was removed from property strictness
+* Enum value 90 was removed from property strictness
+
+**BuCurrentAgentScheduleSearchResponse** (1 change)
+
+* Property agentSchedules was changed from BuAgentScheduleSearchResponse[] to BuScheduleSearchAgentScheduleResponse[]
+
+**BuAsyncAgentSchedulesSearchResponse** (1 change)
+
+* Property result was changed from BuAgentSchedulesSearchResponse to BuAgentSchedulesSearchResponseBuAgentScheduleSearchResponse
+
+**BillingCharge** (1 change)
+
+* Property fairuseQuantity was removed
+
+**BillingContractPeriodDetail** (1 change)
+
+* Property wallets was removed
+
+**BillingContractListing** (1 change)
+
+* Property entities was changed from BillingContract[] to BillingContractSummary[]
+
+**BillingInvoiceItem** (1 change)
+
+* Property quantity was changed from integer to number
 
 
-# Minor Changes (112 changes)
+# Minor Changes (206 changes)
 
-**/api/v2/knowledge/sources/files/counts** (2 changes)
+**DELETE /api/v2/users/me/verifiers/{verifierId}** (1 change)
+
+* Response 200 was added
+
+**/api/v2/users/{userId}/verifiers/{verifierId}** (1 change)
+
+* Operation get was added. Summary: Get a verifier
+
+**PATCH /api/v2/agentic/virtualagents/{virtualAgentId}/versions/{versionId}** (1 change)
+
+* Response 501 was added
+
+**POST /api/v2/agentic/virtualagents/{virtualAgentId}/versions** (1 change)
+
+* Response 501 was added
+
+**/api/v2/conversations/screenmonitors** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/conversations/screenmonitors/{conversationId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/speechandtextanalytics/conversations/{conversationId}/communications/{communicationId}/transcriptoutline** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/telephony/trunkbasesettings/metrics** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/telephony/trunkbasesettings/{trunkBaseId}/metrics** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/deletions/jobs** (2 changes)
 
 * Path was added
 * Operation POST was added
 
-**/api/v2/knowledge/sources/tags** (2 changes)
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/deletions/jobs/{jobId}** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**/api/v2/knowledge/sources/tags/grouped** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/workforcemanagement/managementunits/{managementUnitId}/selfschedule/settings** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PATCH was added
-
-**/api/v2/workforcemanagement/selfschedule/activitymoves/{activityMoveId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/workforcemanagement/selfschedule/jobs** (2 changes)
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/forecast/uploadurls** (2 changes)
 
 * Path was added
 * Operation POST was added
 
-**/api/v2/workforcemanagement/selfschedule/jobs/{jobId}** (2 changes)
+**AuthenticationExtensionsLargeBlobOutputs** (1 change)
 
-* Path was added
-* Operation GET was added
+* Model was added
 
-**/api/v2/workforcemanagement/selfschedule/offers/jobs** (2 changes)
+**AuthenticationExtensionsPRFOutputs** (1 change)
 
-* Path was added
-* Operation POST was added
+* Model was added
 
-**/api/v2/workforcemanagement/selfschedule/offers/jobs/{jobId}** (2 changes)
+**ClientExtensionResults** (1 change)
 
-* Path was added
-* Operation GET was added
+* Model was added
 
-**/api/v2/workforcemanagement/selfschedule/query** (2 changes)
+**CredentialPropertiesOutput** (1 change)
 
-* Path was added
-* Operation GET was added
+* Model was added
 
-**/api/v2/workforcemanagement/selfschedule/settings** (2 changes)
+**DeleteVerifierResponse** (1 change)
 
-* Path was added
-* Operation GET was added
+* Model was added
 
-**/api/v2/intents/categories/similar** (2 changes)
+**PureCloud** (2 changes)
 
-* Path was added
-* Operation POST was added
+* Optional property nativeLoginExceptionsEnabled was added
+* Optional property nativeLoginExceptionGroupIds was added
 
-**/api/v2/intents/customerintents/similar** (2 changes)
+**OrgAuthSettings** (1 change)
 
-* Path was added
-* Operation POST was added
+* Optional property ssoLoginFirst was added
 
-**/api/v2/search/settings** (3 changes)
+**AgenticVirtualAgentMcpSchemas** (1 change)
 
-* Path was added
-* Operation GET was added
-* Operation PATCH was added
+* Model was added
 
-**/api/v2/search/settings/contentsearch** (2 changes)
+**AgenticVirtualAgentRepetitionCheck** (1 change)
 
-* Path was added
-* Operation PATCH was added
+* Enum value VeryLoose was added to property similarity
 
-**MessagingInitialConfiguration** (1 change)
+**AgenticVirtualAgentTool** (1 change)
 
-* Enum value LinkedIn was added to property messageType
+* Enum value MCP was added to property type
 
-**Limit** (1 change)
+**AgenticVirtualAgentToolInput** (1 change)
 
-* Enum value agentic.intent.classifier was added to property namespace
+* Optional property dependencyOnly was added
 
-**AgenticVirtualAgentTypeDefinition** (1 change)
+**AnalyticsAgentStateAgentWorkitemResult** (1 change)
 
-* Enum value A2AError was added to property type
+* Model was added
 
-**AgentStateSegmentTypeCount** (1 change)
+**AgentStateQueryRequest** (5 changes)
 
-* Enum value video was added to property segmentType
+* Enum value workitemDateDue was added to property userOrderBy
+* Enum value workitemDateExpires was added to property userOrderBy
+* Enum value workitemDateStatusChanged was added to property userOrderBy
+* Enum value workitemDateAssignmentStateChanged was added to property userOrderBy
+* Enum value workitemDateCreated was added to property userOrderBy
 
-**AnalyticsAgentStateAgentSessionResult** (1 change)
+**AgentStateWorkitemFilter** (1 change)
 
-* Enum value video was added to property segmentType
+* Model was added
 
-**AnalyticsConversationSegment** (1 change)
+**AgentStateWorkitemQueryClause** (1 change)
 
-* Enum value video was added to property segmentType
+* Model was added
 
-**ConversationAggregationQuery** (1 change)
+**AgentStateWorkitemQueryPredicate** (1 change)
 
-* Enum value tActiveVideo was added to property metrics
+* Model was added
 
-**ConversationAggregationSort** (1 change)
+**AgentStateWorkitemAssignmentStateCount** (1 change)
 
-* Enum value tActiveVideo was added to property name
+* Model was added
 
-**ConversationAggregationView** (1 change)
+**AgentStateWorkitemStatusCategoryCount** (1 change)
 
-* Enum value tActiveVideo was added to property target
+* Model was added
 
-**ConversationAsyncAggregationQuery** (1 change)
+**ReportingTurn** (5 changes)
 
-* Enum value tActiveVideo was added to property metrics
+* Optional property botFlowInvocationEvents was added
+* Optional property dateInputStarted was added
+* Optional property toolCalls was added
+* Optional property guardrailEvents was added
+* Optional property executionFrameId was added
 
-**ConversationDetailQueryPredicate** (1 change)
+**ReportingTurnToolCall** (1 change)
 
-* Enum value tActiveVideo was added to property metric
-
-**ReportingTurnKnowledgeMetadata** (1 change)
-
-* Enum value DelegatedToAgenticVirtualAgent was added to property answerGenerationStatus
+* Enum value MCP was added to property toolType
 
 **ViewFilter** (2 changes)
 
-* Enum value YouTube was added to property socialChannels
-* Enum value video was added to property segmentTypes
+* Enum value linkedin was added to property messageTypes
+* Enum value LinkedIn was added to property botMessageTypes
 
-**Widget** (1 change)
+**ReportingExportJobResponse** (4 changes)
 
-* Enum value video was added to property selectedSegmentTypes
+* Enum value CASE_PERFORMANCE_SUMMARY_VIEW was added to property viewType
+* Enum value CASE_PERFORMANCE_DETAIL_VIEW was added to property viewType
+* Enum value AGENT_CASE_PERFORMANCE_SUMMARY_VIEW was added to property viewType
+* Enum value AGENT_CASE_PERFORMANCE_DETAIL_VIEW was added to property viewType
 
-**CaseplanFilter** (1 change)
+**ReportingExportMetadataJobResponse** (4 changes)
 
-* Enum value EQ was added to property operator
+* Enum value CASE_PERFORMANCE_SUMMARY_VIEW was added to property viewType
+* Enum value CASE_PERFORMANCE_DETAIL_VIEW was added to property viewType
+* Enum value AGENT_CASE_PERFORMANCE_SUMMARY_VIEW was added to property viewType
+* Enum value AGENT_CASE_PERFORMANCE_DETAIL_VIEW was added to property viewType
 
-**CaseQueryJobCreate** (3 changes)
+**ReportingExportJobRequest** (4 changes)
 
-* Optional property filterGroups was added
-* Enum value externalId was added to property attributes
-* Enum value description was added to property attributes
+* Enum value CASE_PERFORMANCE_SUMMARY_VIEW was added to property viewType
+* Enum value CASE_PERFORMANCE_DETAIL_VIEW was added to property viewType
+* Enum value AGENT_CASE_PERFORMANCE_SUMMARY_VIEW was added to property viewType
+* Enum value AGENT_CASE_PERFORMANCE_DETAIL_VIEW was added to property viewType
 
-**CaseQueryJobFilter** (1 change)
+**Copilot** (1 change)
 
-* Optional property caseSensitive was added
+* Optional property emailSummaryGenerationConfig was added
 
-**CaseQueryJobFilterGroup** (1 change)
+**CopilotCondition** (1 change)
 
-* Model was added
+* Enum value ConsultJoin was added to property conditionType
 
-**InitiateVideoChatRecording** (1 change)
+**KnowledgeBaseWithDialectReference** (6 changes)
 
-* Model was added
+* Enum value ca-ES was added to property languageCode
+* Enum value en-NZ was added to property languageCode
+* Enum value zh-HK was added to property languageCode
+* Enum value zh-TW was added to property languageCode
+* Enum value zh-CN was added to property languageCode
+* Enum value ar-SA was added to property languageCode
 
-**ClusterScanGraphSettings** (1 change)
+**OutboundBlendingSettings** (1 change)
 
-* Model was added
+* Optional property active was added
 
-**LatestClusterScan** (1 change)
+**ContactIdentifier** (1 change)
 
-* Model was added
+* Optional property portfolioId was added
 
-**CsvMappingEntry** (1 change)
+**WhatsAppBusinessScopedId** (2 changes)
 
-* Optional property valueFormat was added
+* Optional property parent was added
+* Optional property portfolioId was added
 
-**ActivationTrigger** (1 change)
+**WhatsAppId** (2 changes)
 
-* Enum value Sentiment was added to property triggerType
+* Optional property username was added
+* Optional property whatsAppBusinessScopedIds was added
 
-**ChecklistActivationPayload** (1 change)
+**Callback** (1 change)
 
-* Enum value Sentiment was added to property activationTriggerType
+* Optional property clientIpAddress was added
 
-**ConversationCustomAttributesSearchRequest** (2 changes)
+**Message** (1 change)
 
-* Optional property queryReservedFields was added
-* Optional property queryCustomAttributes was added
+* Enum value linkedin was added to property type
 
-**EmailMessage** (1 change)
-
-* Optional property recipientWarnings was added
-
-**RecipientWarning** (1 change)
-
-* Model was added
-
-**EmailMessagePreview** (1 change)
-
-* Optional property recipientWarnings was added
-
-**EmailMessageReply** (1 change)
-
-* Optional property recipientWarnings was added
-
-**ConversationNormalizedMessage** (1 change)
-
-* Enum value Modified was added to property status
-
-**OpenNormalizedMessage** (1 change)
-
-* Enum value Modified was added to property status
-
-**AttemptLimits** (1 change)
-
-* Optional property phoneTypeRecallEntries was added
-
-**V3SourceTagResponse** (1 change)
+**CampaignIdentityResolutionConfig** (1 change)
 
 * Model was added
 
-**V3SourceFileCountEntry** (1 change)
+**CallbackMediaParticipant** (1 change)
+
+* Optional property clientIpAddress was added
+
+**MessageMediaParticipant** (1 change)
+
+* Enum value linkedin was added to property type
+
+**ScreenMonitoringConversation** (1 change)
 
 * Model was added
 
-**V3SourceFileCountsResponse** (1 change)
+**ScreenMonitoringConversationEntityListing** (1 change)
 
 * Model was added
 
-**V3SourceFileCountsRequest** (1 change)
+**ScreenMonitoringParticipant** (1 change)
 
 * Model was added
 
-**OrgV3SourcesTagsResponse** (1 change)
+**Suggestion** (2 changes)
+
+* Enum value ConsultJoin was added to property triggerType
+* Optional property suggestedKnowledgeAnswer was added
+
+**ConversationSessionSummary** (7 changes)
+
+* Optional property latestCommunication was added
+* Optional property labels was added
+* Optional property queue was added
+* Optional property triggerSource was added
+* Optional property summarySourceType was added
+* Optional property triggerType was added
+* Optional property lastEditedBy was added
+
+**ConversationSummary** (7 changes)
+
+* Optional property latestCommunication was added
+* Optional property labels was added
+* Optional property queue was added
+* Optional property triggerSource was added
+* Optional property summarySourceType was added
+* Optional property triggerType was added
+* Optional property lastEditedBy was added
+
+**CallbackBasic** (1 change)
+
+* Optional property clientIpAddress was added
+
+**CampaignRuleOutboundBlendingSettings** (1 change)
 
 * Model was added
 
-**V3SourceTagsGroupedEntry** (1 change)
+**EventMessage** (2 changes)
+
+* Enum value AGENT_APPROACHING_ACTIVE_CAMPAIGNS_LIMIT was added to property code
+* Enum value CAMPAIGN_STOPPED_AGENT_ACTIVE_LIMIT_EXCEEDED was added to property code
+
+**GuideSessionTurnRequest** (1 change)
+
+* Optional property conversationId was added
+
+**CustomerIntentUsage** (1 change)
 
 * Model was added
 
-**V3SourceTagsGroupedResponse** (1 change)
+**IntentsCategory** (1 change)
+
+* Optional property usage was added
+
+**CustomerIntentResponse** (1 change)
+
+* Optional property usage was added
+
+**KnowledgeSearchResult** (2 changes)
+
+* Optional property failureReason was added
+* Optional property message was added
+
+**OperationalEvent** (2 changes)
+
+* Optional property referenceId was added
+* Optional property referenceType was added
+
+**QualityAuditLogMessage** (3 changes)
+
+* Enum value VideoConsentGranted was added to property action
+* Enum value VideoConsentDenied was added to property action
+* Enum value VideoConsentNotCollected was added to property action
+
+**CommonRule** (3 changes)
+
+* Optional property muted was added
+* Optional property dateStartMute was added
+* Optional property dateEndMute was added
+
+**ModifiableRuleProperties** (3 changes)
+
+* Optional property muted was added
+* Optional property dateStartMute was added
+* Optional property dateEndMute was added
+
+**SpeechTextAnalyticsConversationSummary** (2 changes)
+
+* Optional property communicationId was added
+* Optional property labels was added
+
+**TestTopicPhrasePhrase** (6 changes)
+
+* Enum value 1 was added to property strictness
+* Enum value 55 was added to property strictness
+* Enum value 65 was added to property strictness
+* Enum value 72 was added to property strictness
+* Enum value 85 was added to property strictness
+* Enum value 90 was added to property strictness
+
+**TestTopicPhraseTopic** (6 changes)
+
+* Enum value 1 was added to property strictness
+* Enum value 55 was added to property strictness
+* Enum value 65 was added to property strictness
+* Enum value 72 was added to property strictness
+* Enum value 85 was added to property strictness
+* Enum value 90 was added to property strictness
+
+**Phrase** (6 changes)
+
+* Enum value 1 was added to property strictness
+* Enum value 55 was added to property strictness
+* Enum value 65 was added to property strictness
+* Enum value 72 was added to property strictness
+* Enum value 85 was added to property strictness
+* Enum value 90 was added to property strictness
+
+**Topic** (6 changes)
+
+* Enum value 1 was added to property strictness
+* Enum value 55 was added to property strictness
+* Enum value 65 was added to property strictness
+* Enum value 72 was added to property strictness
+* Enum value 85 was added to property strictness
+* Enum value 90 was added to property strictness
+
+**TopicRequest** (6 changes)
+
+* Enum value 1 was added to property strictness
+* Enum value 55 was added to property strictness
+* Enum value 65 was added to property strictness
+* Enum value 72 was added to property strictness
+* Enum value 85 was added to property strictness
+* Enum value 90 was added to property strictness
+
+**ListedTopic** (6 changes)
+
+* Enum value 1 was added to property strictness
+* Enum value 55 was added to property strictness
+* Enum value 65 was added to property strictness
+* Enum value 72 was added to property strictness
+* Enum value 85 was added to property strictness
+* Enum value 90 was added to property strictness
+
+**TranscriptOutlineResponse** (1 change)
 
 * Model was added
 
-**ApprovalNamespace** (1 change)
+**TranscriptOutlineSegment** (1 change)
 
-* Enum value agentic.intent.classifier was added to property namespace
+* Model was added
 
-**LimitChangeRequestDetails** (1 change)
+**TrunkBaseMetrics** (1 change)
 
-* Enum value agentic.intent.classifier was added to property namespace
+* Model was added
 
-**StatusChange** (1 change)
+**TrunkBaseMetricsEntityListing** (1 change)
 
-* Enum value agentic.intent.classifier was added to property namespace
-
-**RecordingMessageReceipt** (1 change)
-
-* Enum value Modified was added to property status
-
-**RecordingSettings** (1 change)
-
-* Optional property hierarchyAccessControlEnabled was added
-
-**DataIngestionRuleCriteria** (1 change)
-
-* Enum value YouTube was added to property effectivePlatform
-
-**ExportDetails** (1 change)
-
-* Enum value FlowInfoSpec was added to property exportType
+* Model was added
 
 **Dependency** (1 change)
 
-* Enum value EXTERNALMCPSERVERINTEGRATION was added to property type
+* Enum value SURVEYFORMCONTEXT was added to property type
 
 **DependencyObject** (1 change)
 
-* Enum value EXTERNALMCPSERVERINTEGRATION was added to property type
+* Enum value SURVEYFORMCONTEXT was added to property type
 
-**WorkPlanListResponse** (1 change)
+**MessengerSettings** (1 change)
 
-* Optional property downloadUrl was added
+* Optional property richSurveyEnabled was added
 
-**SelfScheduleManagementUnitSettings** (1 change)
-
-* Model was added
-
-**SelfScheduleManagementUnitSettingsRequest** (1 change)
+**ActivityPlanOccurrenceListItem** (1 change)
 
 * Model was added
 
-**SetWrapperActivityCategory** (1 change)
+**ActivityPlanOccurrenceListing** (1 change)
 
 * Model was added
 
-**SelfScheduleActivityMoveListItem** (1 change)
+**BuScheduleSummary** (1 change)
 
 * Model was added
 
-**SelfScheduleJob** (1 change)
+**ActivityPlanOccurrenceResponse** (1 change)
 
 * Model was added
 
-**SelfScheduleActivityMoveRequestItem** (1 change)
+**ActivityPlanOccurrenceSessionWithAttendees** (1 change)
 
 * Model was added
 
-**SelfScheduleJobRequest** (1 change)
+**ActivityPlanOccurrenceViolation** (1 change)
 
 * Model was added
 
-**SelfScheduleOffersActivityMoveTemplate** (1 change)
+**ActivityPlanSessionViolation** (1 change)
 
 * Model was added
 
-**SelfScheduleOffersJob** (1 change)
+**ActivityPlanUnscheduledAttendee** (1 change)
 
 * Model was added
 
-**SelfScheduleOffersResultTemplate** (1 change)
+**ActivityPlanViolationDetails** (1 change)
 
 * Model was added
 
-**SelfScheduleOffersJobRequest** (1 change)
+**CapacityPlanResponse** (1 change)
+
+* Optional property importedForecast was added
+
+**CapacityPlanRequest** (1 change)
+
+* Optional property importedForecast was added
+
+**UpdateCapacityPlanRequest** (1 change)
+
+* Optional property importedForecast was added
+
+**CopyCapacityPlanRequest** (1 change)
+
+* Optional property importedForecast was added
+
+**CapacityPlanForecastActualValues** (1 change)
 
 * Model was added
 
-**SelfScheduleQuery** (1 change)
+**CapacityPlanForecastDistribution** (1 change)
 
 * Model was added
 
-**SelfScheduleAgentManagementUnitSettings** (1 change)
+**CapacityPlanForecastDistributionValues** (1 change)
 
 * Model was added
 
-**WorkitemOnAttributeChangeConditionGroup** (1 change)
+**CapacityPlanForecastImportSchema** (1 change)
 
 * Model was added
 
-**WorkitemOnAttributeChangeMatch** (1 change)
+**CapacityPlanForecastImportUpload** (1 change)
 
 * Model was added
 
-**WorkitemOnAttributeChangeRule** (1 change)
-
-* Optional property match was added
-
-**WorkitemOnAttributeChangeRuleUpdate** (1 change)
-
-* Optional property match was added
-
-**WorkitemOnAttributeChangeRuleCreate** (1 change)
-
-* Optional property match was added
-
-**SimilarCategoriesResponse** (1 change)
+**CapacityPlanForecastImportUploadResponse** (1 change)
 
 * Model was added
+
+**CapacityPlanForecastPlanningGroup** (1 change)
+
+* Model was added
+
+**CapacityPlanForecastImportUploadRequest** (1 change)
+
+* Model was added
+
+**BuCurrentAgentScheduleSearchResponse** (1 change)
+
+* Optional property visibilityRange was added
+
+**BuScheduleSearchAgentScheduleResponse** (1 change)
+
+* Model was added
+
+**AgentMuScheduleResult** (1 change)
+
+* Optional property visibilityRange was added
+
+**BuAgentScheduleSearchResponse** (1 change)
+
+* Optional property workPlansPerWeek was added
+
+**BuAgentSchedulesSearchResponseBuAgentScheduleSearchResponse** (1 change)
+
+* Model was added
+
+**BillingAiSubItem** (1 change)
+
+* Model was added
+
+**BillingCharge** (3 changes)
+
+* Optional property fairuseAllocation was added
+* Optional property fairuseAmount was added
+* Optional property aiSubItems was added
+
+**BillingContract** (2 changes)
+
+* Optional property organizations was added
+* Optional property wallets was added
+
+**BillingContractSummary** (1 change)
+
+* Model was added
+
+**BillingInvoice** (1 change)
+
+* Optional property agreementIds was added
 
 **SimilarCategoryResult** (1 change)
 
-* Model was added
-
-**SimilarCustomerIntentResult** (1 change)
-
-* Model was added
-
-**SimilarCustomerIntentsResponse** (1 change)
-
-* Model was added
-
-**SimilarEntityRef** (1 change)
-
-* Model was added
-
-**SimilarCustomerIntentsRequest** (1 change)
-
-* Model was added
-
-**OrgSettings** (1 change)
-
-* Model was added
-
-**ContentSearchSetting** (1 change)
-
-* Model was added
-
-**AgentSchedulingPreferencesTiebreaker** (1 change)
-
-* Model was added
+* Optional property usage was added
 
 
-# Point Changes (7 changes)
+# Point Changes (11 changes)
 
-**POST /api/v2/oauth/clients/{clientId}/usage/query** (1 change)
+**DELETE /api/v2/users/me/verifiers/{verifierId}** (1 change)
 
-* Description was changed
+* Response 409 was changed from The request conflicts with the current state of the target resource. to The verifier state changed during deletion
 
-**GET /api/v2/oauth/clients/{clientId}/usage/summary** (1 change)
+**GET /api/v2/casemanagement/cases/{caseId}/associations** (2 changes)
 
-* Description was changed
+* Description was changed for parameter after
+* Description was changed for parameter pageSize
 
-**GET /api/v2/oauth/clients/{clientId}/usage/query/results/{executionId}** (1 change)
+**GET /api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/stageplans** (2 changes)
 
-* Description was changed
+* Description was changed for parameter after
+* Description was changed for parameter pageSize
 
-**POST /api/v2/usage/query** (1 change)
+**GET /api/v2/casemanagement/cases/{caseId}/stages** (2 changes)
 
-* Description was changed
+* Description was changed for parameter after
+* Description was changed for parameter pageSize
 
-**GET /api/v2/usage/query/{executionId}/results** (1 change)
+**GET /api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/stageplans/{stageplanId}/stepplans** (2 changes)
 
-* Description was changed
+* Description was changed for parameter after
+* Description was changed for parameter pageSize
 
-**POST /api/v2/usage/simplesearch** (1 change)
+**GET /api/v2/casemanagement/cases/{caseId}/stages/{stageId}/steps** (2 changes)
 
-* Description was changed
-
-**GET /api/v2/usage/simplesearch/{executionId}/results** (1 change)
-
-* Description was changed
+* Description was changed for parameter after
+* Description was changed for parameter pageSize

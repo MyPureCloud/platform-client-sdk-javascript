@@ -485,6 +485,26 @@
       "class": "QueueUserEventTopicQueueMember"
     },
     {
+      "topic": "v2.signals.monitored.queues.{id}.added",
+      "class": "V2MonitoredQueueAddedEventMonitoredQueueNotification"
+    },
+    {
+      "topic": "v2.signals.monitored.queues.{id}.evaluated",
+      "class": "V2MonitoredQueueEvaluatedEventMonitoredQueueNotification"
+    },
+    {
+      "topic": "v2.signals.monitored.queues.{id}.removed",
+      "class": "V2MonitoredQueueRemovedEventMonitoredQueueNotification"
+    },
+    {
+      "topic": "v2.signals.queue.anomaly.export.jobs.{id}",
+      "class": "V2QueueAnomalyExportJobEventQueueAnomalyExportJobNotification"
+    },
+    {
+      "topic": "v2.signals.queues.{id}.anomalies",
+      "class": "V2QueueAnomalyEventQueueAnomalyNotification"
+    },
+    {
       "topic": "v2.speechandtextanalytics.conversation.{id}.empathy",
       "class": "V2StaEmpathyOverallTopicOverallEmpathyMessage"
     },
@@ -1003,10 +1023,6 @@
     {
       "topic": "v2.workforcemanagement.managementunits.{id}.agentschedules.changed",
       "class": "WfmAgentManagementUnitScheduleChangedTopicAgentMuScheduleChangedNotification"
-    },
-    {
-      "topic": "v2.workforcemanagement.managementunits.{id}.schedules",
-      "class": "WfmScheduleTopicWfmScheduleNotification"
     },
     {
       "topic": "v2.workforcemanagement.managementunits.{id}.shifttrades.state.bulk",

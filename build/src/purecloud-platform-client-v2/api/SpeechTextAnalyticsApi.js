@@ -5,7 +5,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 265.0.0
+	 * @version 266.0.0
 	 */
 
 	/**
@@ -340,6 +340,41 @@ class SpeechTextAnalyticsApi {
 			'GET', 
 			{ 'conversationId': conversationId },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get the transcript outline for a specific conversation and communication.
+	 * 
+	 * @param {String} conversationId The ID of the conversation
+	 * @param {String} communicationId The ID of the communication
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getSpeechandtextanalyticsConversationCommunicationTranscriptoutline(conversationId, communicationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling getSpeechandtextanalyticsConversationCommunicationTranscriptoutline';
+		}
+		// verify the required parameter 'communicationId' is set
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
+			throw 'Missing the required parameter "communicationId" when calling getSpeechandtextanalyticsConversationCommunicationTranscriptoutline';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/conversations/{conversationId}/communications/{communicationId}/transcriptoutline', 
+			'GET', 
+			{ 'conversationId': conversationId,'communicationId': communicationId },
+			{  },
 			{  },
 			{  },
 			null, 

@@ -91,6 +91,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getTelephonyProvidersEdgesTrunks**](TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesTrunks) | **GET** /api/v2/telephony/providers/edges/trunks | Get the list of available trunks.
 [**getTelephonyProvidersEdgesTrunksMetrics**](TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesTrunksMetrics) | **GET** /api/v2/telephony/providers/edges/trunks/metrics | Get the metrics for a list of trunks.
 [**getTelephonyProvidersEdgesTrunkswithrecording**](TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesTrunkswithrecording) | **GET** /api/v2/telephony/providers/edges/trunkswithrecording | Get Counts of trunks that have recording disabled or enabled
+[**getTelephonyTrunkbasesettingMetrics**](TelephonyProvidersEdgeApi#getTelephonyTrunkbasesettingMetrics) | **GET** /api/v2/telephony/trunkbasesettings/{trunkBaseId}/metrics | Get the trunkbase metrics.
+[**getTelephonyTrunkbasesettingsMetrics**](TelephonyProvidersEdgeApi#getTelephonyTrunkbasesettingsMetrics) | **GET** /api/v2/telephony/trunkbasesettings/metrics | Get the trunkbase metrics for the specified ids.
 [**patchTelephonyProvidersEdgesSiteSiteconnections**](TelephonyProvidersEdgeApi#patchTelephonyProvidersEdgesSiteSiteconnections) | **PATCH** /api/v2/telephony/providers/edges/sites/{siteId}/siteconnections | Disable site connections for a site.
 [**postTelephonyProvidersEdgeDiagnosticNslookup**](TelephonyProvidersEdgeApi#postTelephonyProvidersEdgeDiagnosticNslookup) | **POST** /api/v2/telephony/providers/edges/{edgeId}/diagnostic/nslookup | Nslookup request command to collect networking-related information from an Edge for a target IP or host.
 [**postTelephonyProvidersEdgeDiagnosticPing**](TelephonyProvidersEdgeApi#postTelephonyProvidersEdgeDiagnosticPing) | **POST** /api/v2/telephony/providers/edges/{edgeId}/diagnostic/ping | Ping Request command to collect networking-related information from an Edge for a target IP or host.
@@ -5252,6 +5254,120 @@ apiInstance.getTelephonyProvidersEdgesTrunkswithrecording(opts)
 **TrunkRecordingEnabledCount**
 
 
+## getTelephonyTrunkbasesettingMetrics
+
+> TrunkBaseMetrics getTelephonyTrunkbasesettingMetrics(trunkBaseId, opts)
+
+
+GET /api/v2/telephony/trunkbasesettings/{trunkBaseId}/metrics
+
+Get the trunkbase metrics.
+
+Requires ANY permissions:
+
+* telephony:plugin:all
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+
+let trunkBaseId = "trunkBaseId_example"; // String | TrunkBase Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getTelephonyTrunkbasesettingMetrics(trunkBaseId, opts)
+  .then((data) => {
+    console.log(`getTelephonyTrunkbasesettingMetrics success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyTrunkbasesettingMetrics');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **trunkBaseId** | **String** | TrunkBase Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**TrunkBaseMetrics**
+
+
+## getTelephonyTrunkbasesettingsMetrics
+
+> TrunkBaseMetricsEntityListing getTelephonyTrunkbasesettingsMetrics(ids, opts)
+
+
+GET /api/v2/telephony/trunkbasesettings/metrics
+
+Get the trunkbase metrics for the specified ids.
+
+Requires ANY permissions:
+
+* telephony:plugin:all
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+
+let ids = "ids_example"; // String | TrunkBase Ids
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getTelephonyTrunkbasesettingsMetrics(ids, opts)
+  .then((data) => {
+    console.log(`getTelephonyTrunkbasesettingsMetrics success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyTrunkbasesettingsMetrics');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **ids** | **String** | TrunkBase Ids |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**TrunkBaseMetricsEntityListing**
+
+
 ## patchTelephonyProvidersEdgesSiteSiteconnections
 
 > SiteConnections patchTelephonyProvidersEdgesSiteSiteconnections(siteId, body, opts)
@@ -7823,4 +7939,4 @@ apiInstance.putTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, body
 **TrunkBase**
 
 
-_purecloud-platform-client-v2@265.0.0_
+_purecloud-platform-client-v2@266.0.0_

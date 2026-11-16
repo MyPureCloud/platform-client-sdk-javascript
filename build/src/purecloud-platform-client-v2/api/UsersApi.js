@@ -5,7 +5,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 265.0.0
+	 * @version 266.0.0
 	 */
 
 	/**
@@ -510,6 +510,7 @@ class UsersApi {
 	 * 
 	 * @param {String} verifierId Verifier ID
 	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.replacementDefaultVerifierId The ID of an enabled verifier to make the default after deleting the current default
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	deleteUsersMeVerifier(verifierId, opts) { 
@@ -524,7 +525,7 @@ class UsersApi {
 			'/api/v2/users/me/verifiers/{verifierId}', 
 			'DELETE', 
 			{ 'verifierId': verifierId },
-			{  },
+			{ 'replacementDefaultVerifierId': opts['replacementDefaultVerifierId'] },
 			{  },
 			{  },
 			null, 
@@ -1748,6 +1749,41 @@ class UsersApi {
 			'GET', 
 			{ 'userId': userId },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get a verifier
+	 * 
+	 * @param {String} userId User ID
+	 * @param {String} verifierId Verifier ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getUserVerifier(userId, verifierId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null || userId === '') {
+			throw 'Missing the required parameter "userId" when calling getUserVerifier';
+		}
+		// verify the required parameter 'verifierId' is set
+		if (verifierId === undefined || verifierId === null || verifierId === '') {
+			throw 'Missing the required parameter "verifierId" when calling getUserVerifier';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/{userId}/verifiers/{verifierId}', 
+			'GET', 
+			{ 'userId': userId,'verifierId': verifierId },
+			{  },
 			{  },
 			{  },
 			null, 

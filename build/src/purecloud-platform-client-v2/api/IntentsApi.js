@@ -5,7 +5,7 @@ class IntentsApi {
 	/**
 	 * Intents service.
 	 * @module purecloud-platform-client-v2/api/IntentsApi
-	 * @version 265.0.0
+	 * @version 266.0.0
 	 */
 
 	/**
@@ -145,6 +145,7 @@ class IntentsApi {
 	 * 
 	 * @param {String} categoryId Category id
 	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.includeUsage When usage tracking is enabled, usage is absent when includeUsage is false or omitted, empty when no usage exists, and populated when usage exists. includeUsage is ignored when usage tracking is off.
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getIntentsCategory(categoryId, opts) { 
@@ -159,7 +160,7 @@ class IntentsApi {
 			'/api/v2/intents/categories/{categoryId}', 
 			'GET', 
 			{ 'categoryId': categoryId },
-			{  },
+			{ 'includeUsage': opts['includeUsage'] },
 			{  },
 			{  },
 			null, 
@@ -175,6 +176,7 @@ class IntentsApi {
 	 * 
 	 * @param {String} customerIntentId Customer Intent id
 	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.includeUsage When usage tracking is enabled, usage is absent when includeUsage is false or omitted, empty when no usage exists, and populated when usage exists. includeUsage is ignored when usage tracking is off.
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getIntentsCustomerintent(customerIntentId, opts) { 
@@ -189,7 +191,7 @@ class IntentsApi {
 			'/api/v2/intents/customerintents/{customerIntentId}', 
 			'GET', 
 			{ 'customerIntentId': customerIntentId },
-			{  },
+			{ 'includeUsage': opts['includeUsage'] },
 			{  },
 			{  },
 			null, 

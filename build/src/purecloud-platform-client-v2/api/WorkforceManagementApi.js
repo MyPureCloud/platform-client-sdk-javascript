@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 265.0.0
+	 * @version 266.0.0
 	 */
 
 	/**
@@ -1603,6 +1603,91 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Get a specific occurrence for the activity plan
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} activityPlanId The ID of the activity plan
+	 * @param {String} occurrenceId The ID of the activity plan occurrence
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementBusinessunitActivityplanOccurrence(businessUnitId, activityPlanId, occurrenceId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivityplanOccurrence';
+		}
+		// verify the required parameter 'activityPlanId' is set
+		if (activityPlanId === undefined || activityPlanId === null || activityPlanId === '') {
+			throw 'Missing the required parameter "activityPlanId" when calling getWorkforcemanagementBusinessunitActivityplanOccurrence';
+		}
+		// verify the required parameter 'occurrenceId' is set
+		if (occurrenceId === undefined || occurrenceId === null || occurrenceId === '') {
+			throw 'Missing the required parameter "occurrenceId" when calling getWorkforcemanagementBusinessunitActivityplanOccurrence';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'activityPlanId': activityPlanId,'occurrenceId': occurrenceId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Gets an occurrence deletion job
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} activityPlanId The ID of the activity plan
+	 * @param {String} occurrenceId The ID of the activity plan occurrence
+	 * @param {String} jobId The ID of the activity plan occurrence deletion job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJob(businessUnitId, activityPlanId, occurrenceId, jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJob';
+		}
+		// verify the required parameter 'activityPlanId' is set
+		if (activityPlanId === undefined || activityPlanId === null || activityPlanId === '') {
+			throw 'Missing the required parameter "activityPlanId" when calling getWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJob';
+		}
+		// verify the required parameter 'occurrenceId' is set
+		if (occurrenceId === undefined || occurrenceId === null || occurrenceId === '') {
+			throw 'Missing the required parameter "occurrenceId" when calling getWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/deletions/jobs/{jobId}', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'activityPlanId': activityPlanId,'occurrenceId': occurrenceId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Gets a session users deletion job
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
@@ -1686,6 +1771,41 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/sessions/deletions/jobs/{jobId}', 
 			'GET', 
 			{ 'businessUnitId': businessUnitId,'activityPlanId': activityPlanId,'occurrenceId': occurrenceId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get all occurrences for an activity plan
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} activityPlanId The ID of the activity plan
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementBusinessunitActivityplanOccurrences(businessUnitId, activityPlanId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivityplanOccurrences';
+		}
+		// verify the required parameter 'activityPlanId' is set
+		if (activityPlanId === undefined || activityPlanId === null || activityPlanId === '') {
+			throw 'Missing the required parameter "activityPlanId" when calling getWorkforcemanagementBusinessunitActivityplanOccurrences';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'activityPlanId': activityPlanId },
 			{  },
 			{  },
 			{  },
@@ -8919,6 +9039,7 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Include to access additional data on the agent schedules
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postWorkforcemanagementAgentschedulesMine(body, opts) { 
@@ -8933,7 +9054,7 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/agentschedules/mine', 
 			'POST', 
 			{  },
-			{  },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			body, 
@@ -9093,6 +9214,46 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/deletions/jobs', 
 			'POST', 
 			{ 'businessUnitId': businessUnitId,'activityPlanId': activityPlanId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Delete an occurrence for the activity plan
+	 * Triggers a job to delete an occurrence of the activity plan. The activity plan cannot be updated until the job completes
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} activityPlanId The ID of the activity plan
+	 * @param {String} occurrenceId The ID of the activity plan occurrence
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobs(businessUnitId, activityPlanId, occurrenceId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobs';
+		}
+		// verify the required parameter 'activityPlanId' is set
+		if (activityPlanId === undefined || activityPlanId === null || activityPlanId === '') {
+			throw 'Missing the required parameter "activityPlanId" when calling postWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobs';
+		}
+		// verify the required parameter 'occurrenceId' is set
+		if (occurrenceId === undefined || occurrenceId === null || occurrenceId === '') {
+			throw 'Missing the required parameter "occurrenceId" when calling postWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/deletions/jobs', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId,'activityPlanId': activityPlanId,'occurrenceId': occurrenceId },
 			{  },
 			{  },
 			{  },
@@ -9814,6 +9975,41 @@ class WorkforceManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/bulk/remove', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Creates signed upload URLs for importing hourly and daily forecasts for a capacity plan
+	 * Returns two upload URLs, one for the hourly forecast and one for the daily forecast. Once both uploads are complete, call POST /capacityplans (new capacity plan) or PATCH /capacityplans/{capacityPlanId} (existing capacity plan) or POST /capacityplans/{capacityPlanId}/copy (copy capacity plan) with both upload keys in importedForecast
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementBusinessunitCapacityplansForecastUploadurls(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitCapacityplansForecastUploadurls';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitCapacityplansForecastUploadurls';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/forecast/uploadurls', 
 			'POST', 
 			{ 'businessUnitId': businessUnitId },
 			{  },
