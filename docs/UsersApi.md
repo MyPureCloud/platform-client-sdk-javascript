@@ -61,6 +61,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getUserStation**](UsersApi#getUserStation) | **GET** /api/v2/users/{userId}/station | Get station information for user
 [**getUserSuperiors**](UsersApi#getUserSuperiors) | **GET** /api/v2/users/{userId}/superiors | Get superiors
 [**getUserTrustors**](UsersApi#getUserTrustors) | **GET** /api/v2/users/{userId}/trustors | List the organizations that have authorized/trusted the user.
+[**getUserVerifier**](UsersApi#getUserVerifier) | **GET** /api/v2/users/{userId}/verifiers/{verifierId} | Get a verifier
 [**getUserVerifiers**](UsersApi#getUserVerifiers) | **GET** /api/v2/users/{userId}/verifiers | Get a list of verifiers
 [**getUsers**](UsersApi#getUsers) | **GET** /api/v2/users | Get the list of available users.
 [**getUsersChatsMe**](UsersApi#getUsersChatsMe) | **GET** /api/v2/users/chats/me | Get chats for a user
@@ -1014,7 +1015,7 @@ void (no response body)
 
 ## deleteUsersMeVerifier
 
-> void deleteUsersMeVerifier(verifierId, opts)
+> DeleteVerifierResponse deleteUsersMeVerifier(verifierId, opts)
 
 
 DELETE /api/v2/users/me/verifiers/{verifierId}
@@ -1038,6 +1039,7 @@ let apiInstance = new platformClient.UsersApi();
 
 let verifierId = "verifierId_example"; // String | Verifier ID
 let opts = { 
+  'replacementDefaultVerifierId': "replacementDefaultVerifierId_example", // String | The ID of an enabled verifier to make the default after deleting the current default
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
     'X-Request-ID': 'req-12345'
@@ -1045,8 +1047,8 @@ let opts = {
 };
 
 apiInstance.deleteUsersMeVerifier(verifierId, opts)
-  .then(() => {
-    console.log('deleteUsersMeVerifier returned successfully.');
+  .then((data) => {
+    console.log(`deleteUsersMeVerifier success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch((err) => {
     console.log('There was a failure calling deleteUsersMeVerifier');
@@ -1060,11 +1062,12 @@ apiInstance.deleteUsersMeVerifier(verifierId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **verifierId** | **String** | Verifier ID |  |
+ **replacementDefaultVerifierId** | **String** | The ID of an enabled verifier to make the default after deleting the current default | [optional]  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
-void (no response body)
+**DeleteVerifierResponse**
 
 
 ## deleteUsersStationsMeAssociatedstation
@@ -3372,6 +3375,65 @@ apiInstance.getUserTrustors(userId, opts)
 **TrustorEntityListing**
 
 
+## getUserVerifier
+
+> Verifier getUserVerifier(userId, verifierId, opts)
+
+
+GET /api/v2/users/{userId}/verifiers/{verifierId}
+
+Get a verifier
+
+Requires ANY permissions:
+
+* mfa:verifier:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let userId = "userId_example"; // String | User ID
+let verifierId = "verifierId_example"; // String | Verifier ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getUserVerifier(userId, verifierId, opts)
+  .then((data) => {
+    console.log(`getUserVerifier success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getUserVerifier');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+ **verifierId** | **String** | Verifier ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**Verifier**
+
+
 ## getUserVerifiers
 
 > VerifierEntityListing getUserVerifiers(userId, opts)
@@ -5093,7 +5155,7 @@ PATCH /api/v2/users/{userId}/routingskills/bulk
 
 Assign multiple routing skills to a user
 
-Requires ANY permissions:
+Requires ALL permissions:
 
 * routing:skill:assign
 
@@ -7319,7 +7381,7 @@ PUT /api/v2/users/{userId}/routingskills/bulk
 
 Assign multiple routing skills to a user, replacing any current assignments
 
-Requires ANY permissions:
+Requires ALL permissions:
 
 * routing:skill:assign
 
@@ -7838,4 +7900,4 @@ apiInstance.putUsersStationsMeAssociatedstationStationId(stationId, opts)
 void (no response body)
 
 
-_purecloud-platform-client-v2@265.0.0_
+_purecloud-platform-client-v2@266.0.0_

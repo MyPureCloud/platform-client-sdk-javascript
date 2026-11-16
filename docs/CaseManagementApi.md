@@ -498,9 +498,8 @@ let apiInstance = new platformClient.CaseManagementApi();
 
 let caseId = "caseId_example"; // String | Case identifier.
 let opts = { 
-  'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
-  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
-  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'after': "after_example", // String | Cursor that points to the end of the previously returned page.
+  'pageSize': 3.4, // Number | Number of entities to return. Maximum is 200.
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
     'X-Request-ID': 'req-12345'
@@ -523,9 +522,8 @@ apiInstance.getCasemanagementCaseAssociations(caseId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **caseId** | **String** | Case identifier. |  |
- **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
- **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
- **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **after** | **String** | Cursor that points to the end of the previously returned page. | [optional]  |
+ **pageSize** | **Number** | Number of entities to return. Maximum is 200. | [optional]  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -804,9 +802,8 @@ let apiInstance = new platformClient.CaseManagementApi();
 let caseId = "caseId_example"; // String | Case identifier.
 let stageId = "stageId_example"; // String | Stage identifier.
 let opts = { 
-  'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
-  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
-  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'after': "after_example", // String | Cursor that points to the end of the previously returned page.
+  'pageSize': 3.4, // Number | Number of entities to return. Maximum is 200.
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
     'X-Request-ID': 'req-12345'
@@ -830,9 +827,8 @@ apiInstance.getCasemanagementCaseStageSteps(caseId, stageId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **caseId** | **String** | Case identifier. |  |
  **stageId** | **String** | Stage identifier. |  |
- **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
- **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
- **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **after** | **String** | Cursor that points to the end of the previously returned page. | [optional]  |
+ **pageSize** | **Number** | Number of entities to return. Maximum is 200. | [optional]  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -868,9 +864,8 @@ let apiInstance = new platformClient.CaseManagementApi();
 
 let caseId = "caseId_example"; // String | Case identifier.
 let opts = { 
-  'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
-  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
-  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'after': "after_example", // String | Cursor that points to the end of the previously returned page.
+  'pageSize': 3.4, // Number | Number of entities to return. Maximum is 200.
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
     'X-Request-ID': 'req-12345'
@@ -893,9 +888,8 @@ apiInstance.getCasemanagementCaseStages(caseId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **caseId** | **String** | Case identifier. |  |
- **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
- **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
- **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **after** | **String** | Cursor that points to the end of the previously returned page. | [optional]  |
+ **pageSize** | **Number** | Number of entities to return. Maximum is 200. | [optional]  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -1354,9 +1348,8 @@ let caseplanId = "caseplanId_example"; // String | Caseplan identifier.
 let versionId = "versionId_example"; // String | Caseplan version identifier.
 let stageplanId = "stageplanId_example"; // String | Stageplan identifier.
 let opts = { 
-  'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
-  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
-  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'after': "after_example", // String | Cursor that points to the end of the previously returned page.
+  'pageSize': 3.4, // Number | Number of entities to return. Maximum is 200.
   'expands': ["expands_example"], // [String] | Fields to expand.
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
@@ -1382,9 +1375,8 @@ apiInstance.getCasemanagementCaseplanVersionStageplanStepplans(caseplanId, versi
  **caseplanId** | **String** | Caseplan identifier. |  |
  **versionId** | **String** | Caseplan version identifier. |  |
  **stageplanId** | **String** | Stageplan identifier. |  |
- **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
- **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
- **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **after** | **String** | Cursor that points to the end of the previously returned page. | [optional]  |
+ **pageSize** | **Number** | Number of entities to return. Maximum is 200. | [optional]  |
  **expands** | **[String]** | Fields to expand. | [optional] <br />**Values**: caseplan, stageplan, worktype |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
@@ -1422,9 +1414,8 @@ let apiInstance = new platformClient.CaseManagementApi();
 let caseplanId = "caseplanId_example"; // String | Caseplan identifier.
 let versionId = "versionId_example"; // String | Caseplan version identifier.
 let opts = { 
-  'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
-  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
-  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'after': "after_example", // String | Cursor that points to the end of the previously returned page.
+  'pageSize': 3.4, // Number | Number of entities to return. Maximum is 200.
   'expands': ["expands_example"], // [String] | Fields to expand.
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
@@ -1449,9 +1440,8 @@ apiInstance.getCasemanagementCaseplanVersionStageplans(caseplanId, versionId, op
 | ------------- | ------------- | ------------- | ------------- |
  **caseplanId** | **String** | Caseplan identifier. |  |
  **versionId** | **String** | Caseplan version identifier. |  |
- **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
- **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
- **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **after** | **String** | Cursor that points to the end of the previously returned page. | [optional]  |
+ **pageSize** | **Number** | Number of entities to return. Maximum is 200. | [optional]  |
  **expands** | **[String]** | Fields to expand. | [optional] <br />**Values**: caseplan |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
@@ -3177,4 +3167,4 @@ apiInstance.putCasemanagementCaseplanIntakesettings(caseplanId, body, opts)
 **IntakeSettingsListing**
 
 
-_purecloud-platform-client-v2@265.0.0_
+_purecloud-platform-client-v2@266.0.0_

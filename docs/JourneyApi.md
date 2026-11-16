@@ -833,6 +833,8 @@ let contactId = "contactId_example"; // String | ExternalContact ID
 let opts = { 
   'includeMerged': true, // Boolean | Indicates whether to return segment assignments from all external contacts in the merge-set of the given one.
   'limit': 3.4, // Number | Number of entities to return. Default of 25, maximum of 500.
+  'expand': ["expand_example"], // [String] | Expand the response with additional fields.
+  'segmentIds': ["segmentIds_example"], // [String] | IDs of segments to return. Maximum of 5
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
     'X-Request-ID': 'req-12345'
@@ -857,6 +859,8 @@ apiInstance.getExternalcontactsContactJourneySegments(contactId, opts)
  **contactId** | **String** | ExternalContact ID |  |
  **includeMerged** | **Boolean** | Indicates whether to return segment assignments from all external contacts in the merge-set of the given one. | [optional]  |
  **limit** | **Number** | Number of entities to return. Default of 25, maximum of 500. | [optional]  |
+ **expand** | **[String]** | Expand the response with additional fields. | [optional] <br />**Values**: segment |
+ **segmentIds** | **[String]** | IDs of segments to return. Maximum of 5 | [optional]  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -2477,6 +2481,7 @@ let opts = {
   'segmentIds': ["segmentIds_example"], // [String] | IDs of segments to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 100 segments are allowed per request.
   'queryFields': ["queryFields_example"], // [String] | Segment field(s) to query on. Requires 'queryValue' to also be set.
   'queryValue': "queryValue_example", // String | Value to query on using fuzzy matching. Requires 'queryFields' to also be set.
+  'displayNames': ["displayNames_example"], // [String] | Display names of segments to return. Case-insensitive matching. Maximum of 5. Must not contain exact duplicates (case-sensitive). Use of this parameter is not compatible with pagination or sorting or querying or segmentIds.
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
     'X-Request-ID': 'req-12345'
@@ -2505,6 +2510,7 @@ apiInstance.getJourneySegments(opts)
  **segmentIds** | **[String]** | IDs of segments to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 100 segments are allowed per request. | [optional]  |
  **queryFields** | **[String]** | Segment field(s) to query on. Requires 'queryValue' to also be set. | [optional]  |
  **queryValue** | **String** | Value to query on using fuzzy matching. Requires 'queryFields' to also be set. | [optional]  |
+ **displayNames** | **[String]** | Display names of segments to return. Case-insensitive matching. Maximum of 5. Must not contain exact duplicates (case-sensitive). Use of this parameter is not compatible with pagination or sorting or querying or segmentIds. | [optional]  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -5707,4 +5713,4 @@ apiInstance.putJourneyViewsEventdefinitionActivate(eventDefinitionId, opts)
 **ActivateExternalEventResponse**
 
 
-_purecloud-platform-client-v2@265.0.0_
+_purecloud-platform-client-v2@266.0.0_
