@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 266.0.0
+	 * @version 267.0.0
 	 */
 
 	/**
@@ -642,6 +642,33 @@ class ArchitectApi {
 			'DELETE', 
 			{ 'milestoneId': milestoneId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get Architect capabilities such as actions, data types, flow types, functions, and languages
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Categories to return
+	 * @param {Array.<String>} opts.language Language ID
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getArchitectCapabilities(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/architect/capabilities', 
+			'GET', 
+			{  },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'language': this.apiClient.buildCollectionParam(opts['language'], 'multi') },
 			{  },
 			{  },
 			null, 

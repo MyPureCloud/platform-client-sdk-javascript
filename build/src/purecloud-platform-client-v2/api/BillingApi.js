@@ -5,7 +5,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 266.0.0
+	 * @version 267.0.0
 	 */
 
 	/**
@@ -94,8 +94,8 @@ class BillingApi {
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 10.
-	 * @param {String} opts.dateStart Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-	 * @param {String} opts.dateEnd End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} opts.dateStart Start date for the query. When dateEnd is also supplied, dateStart must be on or before dateEnd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} opts.dateEnd End date for the query. When dateStart is also supplied, dateEnd must be on or after dateStart. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} opts.status Filter by the status of contracts
 	 * @param {String} opts.externalNumber Filter by the unique external number.
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
@@ -192,8 +192,8 @@ class BillingApi {
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
-	 * @param {String} opts.dateStart Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-	 * @param {String} opts.dateEnd End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} opts.dateStart Start date for the query. When dateEnd is also supplied, dateStart must be on or before dateEnd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} opts.dateEnd End date for the query. When dateStart is also supplied, dateEnd must be on or after dateStart. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} opts.paymentStatus Payment Status
 	 * @param {String} opts.agreementId Filter invoices by agreement ID.
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers

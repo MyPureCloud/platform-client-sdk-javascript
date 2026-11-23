@@ -8,6 +8,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- | ------------- |
 [**deleteAnalyticsActionsAggregatesJob**](AnalyticsApi#deleteAnalyticsActionsAggregatesJob) | **DELETE** /api/v2/analytics/actions/aggregates/jobs/{jobId} | Delete/cancel an async request for action aggregates
 [**deleteAnalyticsAgentcopilotsAggregatesJob**](AnalyticsApi#deleteAnalyticsAgentcopilotsAggregatesJob) | **DELETE** /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId} | Delete/cancel an async request for agent copilot aggregates
+[**deleteAnalyticsAgenticvirtualagentsAggregatesJob**](AnalyticsApi#deleteAnalyticsAgenticvirtualagentsAggregatesJob) | **DELETE** /api/v2/analytics/agenticvirtualagents/aggregates/jobs/{jobId} | Delete/cancel an async request for agentic virtual agent aggregates
 [**deleteAnalyticsAgentutilizationsAggregatesJob**](AnalyticsApi#deleteAnalyticsAgentutilizationsAggregatesJob) | **DELETE** /api/v2/analytics/agentutilizations/aggregates/jobs/{jobId} | Delete/cancel an async request for agent utilization aggregates
 [**deleteAnalyticsBotsAggregatesJob**](AnalyticsApi#deleteAnalyticsBotsAggregatesJob) | **DELETE** /api/v2/analytics/bots/aggregates/jobs/{jobId} | Delete/cancel an async request for bot aggregates
 [**deleteAnalyticsCasemanagementAggregatesJob**](AnalyticsApi#deleteAnalyticsCasemanagementAggregatesJob) | **DELETE** /api/v2/analytics/casemanagement/aggregates/jobs/{jobId} | Delete/cancel an async request for case management aggregates
@@ -19,6 +20,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteAnalyticsFlowsAggregatesJob**](AnalyticsApi#deleteAnalyticsFlowsAggregatesJob) | **DELETE** /api/v2/analytics/flows/aggregates/jobs/{jobId} | Delete/cancel an async request for flow aggregates
 [**deleteAnalyticsJourneysAggregatesJob**](AnalyticsApi#deleteAnalyticsJourneysAggregatesJob) | **DELETE** /api/v2/analytics/journeys/aggregates/jobs/{jobId} | Delete/cancel an async request for journey aggregates
 [**deleteAnalyticsKnowledgeAggregatesJob**](AnalyticsApi#deleteAnalyticsKnowledgeAggregatesJob) | **DELETE** /api/v2/analytics/knowledge/aggregates/jobs/{jobId} | Delete/cancel an async request for knowledge aggregates
+[**deleteAnalyticsKpiattributionsAggregatesJob**](AnalyticsApi#deleteAnalyticsKpiattributionsAggregatesJob) | **DELETE** /api/v2/analytics/kpiattributions/aggregates/jobs/{jobId} | Delete/cancel an async request for KPI attribution aggregates
 [**deleteAnalyticsResolutionsAggregatesJob**](AnalyticsApi#deleteAnalyticsResolutionsAggregatesJob) | **DELETE** /api/v2/analytics/resolutions/aggregates/jobs/{jobId} | Delete/cancel an async request for resolution aggregates
 [**deleteAnalyticsSummariesAggregatesJob**](AnalyticsApi#deleteAnalyticsSummariesAggregatesJob) | **DELETE** /api/v2/analytics/summaries/aggregates/jobs/{jobId} | Delete/cancel an async request for summary aggregates
 [**deleteAnalyticsSurveysAggregatesJob**](AnalyticsApi#deleteAnalyticsSurveysAggregatesJob) | **DELETE** /api/v2/analytics/surveys/aggregates/jobs/{jobId} | Delete/cancel an async request for survey aggregates
@@ -31,6 +33,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getAnalyticsAgentStatus**](AnalyticsApi#getAnalyticsAgentStatus) | **GET** /api/v2/analytics/agents/{userId}/status | Get an agent and their active sessions by user ID
 [**getAnalyticsAgentcopilotsAggregatesJob**](AnalyticsApi#getAnalyticsAgentcopilotsAggregatesJob) | **GET** /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId} | Get status for async query for agent copilot aggregates
 [**getAnalyticsAgentcopilotsAggregatesJobResults**](AnalyticsApi#getAnalyticsAgentcopilotsAggregatesJobResults) | **GET** /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
+[**getAnalyticsAgenticvirtualagentsAggregatesJob**](AnalyticsApi#getAnalyticsAgenticvirtualagentsAggregatesJob) | **GET** /api/v2/analytics/agenticvirtualagents/aggregates/jobs/{jobId} | Get status for async query for agentic virtual agent aggregates
+[**getAnalyticsAgenticvirtualagentsAggregatesJobResults**](AnalyticsApi#getAnalyticsAgenticvirtualagentsAggregatesJobResults) | **GET** /api/v2/analytics/agenticvirtualagents/aggregates/jobs/{jobId}/results | Fetch a page of results for an async agentic virtual agent aggregates query
 [**getAnalyticsAgentutilizationsAggregatesJob**](AnalyticsApi#getAnalyticsAgentutilizationsAggregatesJob) | **GET** /api/v2/analytics/agentutilizations/aggregates/jobs/{jobId} | Get status for async query for agent utilization aggregates
 [**getAnalyticsAgentutilizationsAggregatesJobResults**](AnalyticsApi#getAnalyticsAgentutilizationsAggregatesJobResults) | **GET** /api/v2/analytics/agentutilizations/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
 [**getAnalyticsBotflowDivisionsReportingturns**](AnalyticsApi#getAnalyticsBotflowDivisionsReportingturns) | **GET** /api/v2/analytics/botflows/{botFlowId}/divisions/reportingturns | Get Reporting Turns (division aware).
@@ -62,6 +66,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getAnalyticsJourneysAggregatesJobResults**](AnalyticsApi#getAnalyticsJourneysAggregatesJobResults) | **GET** /api/v2/analytics/journeys/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
 [**getAnalyticsKnowledgeAggregatesJob**](AnalyticsApi#getAnalyticsKnowledgeAggregatesJob) | **GET** /api/v2/analytics/knowledge/aggregates/jobs/{jobId} | Get status for async query for knowledge aggregates
 [**getAnalyticsKnowledgeAggregatesJobResults**](AnalyticsApi#getAnalyticsKnowledgeAggregatesJobResults) | **GET** /api/v2/analytics/knowledge/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
+[**getAnalyticsKpiattributionsAggregatesJob**](AnalyticsApi#getAnalyticsKpiattributionsAggregatesJob) | **GET** /api/v2/analytics/kpiattributions/aggregates/jobs/{jobId} | Get status for async query for KPI attribution aggregates
+[**getAnalyticsKpiattributionsAggregatesJobResults**](AnalyticsApi#getAnalyticsKpiattributionsAggregatesJobResults) | **GET** /api/v2/analytics/kpiattributions/aggregates/jobs/{jobId}/results | Fetch a page of results for an async KPI attribution aggregates query
 [**getAnalyticsReportingDashboardsUser**](AnalyticsApi#getAnalyticsReportingDashboardsUser) | **GET** /api/v2/analytics/reporting/dashboards/users/{userId} | Get dashboards summary for a user
 [**getAnalyticsReportingDashboardsUsers**](AnalyticsApi#getAnalyticsReportingDashboardsUsers) | **GET** /api/v2/analytics/reporting/dashboards/users | Get dashboards summary for users in a org
 [**getAnalyticsReportingExports**](AnalyticsApi#getAnalyticsReportingExports) | **GET** /api/v2/analytics/reporting/exports | Get all view export requests for a user
@@ -89,6 +95,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postAnalyticsActionsAggregatesQuery**](AnalyticsApi#postAnalyticsActionsAggregatesQuery) | **POST** /api/v2/analytics/actions/aggregates/query | Query for action aggregates
 [**postAnalyticsAgentcopilotsAggregatesJobs**](AnalyticsApi#postAnalyticsAgentcopilotsAggregatesJobs) | **POST** /api/v2/analytics/agentcopilots/aggregates/jobs | Query for agent copilot aggregates asynchronously
 [**postAnalyticsAgentcopilotsAggregatesQuery**](AnalyticsApi#postAnalyticsAgentcopilotsAggregatesQuery) | **POST** /api/v2/analytics/agentcopilots/aggregates/query | Query for agent copilot aggregates
+[**postAnalyticsAgenticvirtualagentsAggregatesJobs**](AnalyticsApi#postAnalyticsAgenticvirtualagentsAggregatesJobs) | **POST** /api/v2/analytics/agenticvirtualagents/aggregates/jobs | Query for agentic virtual agent aggregates asynchronously
+[**postAnalyticsAgenticvirtualagentsAggregatesQuery**](AnalyticsApi#postAnalyticsAgenticvirtualagentsAggregatesQuery) | **POST** /api/v2/analytics/agenticvirtualagents/aggregates/query | Query for agentic virtual agent aggregates
 [**postAnalyticsAgentsStatusCounts**](AnalyticsApi#postAnalyticsAgentsStatusCounts) | **POST** /api/v2/analytics/agents/status/counts | Count agents by different groupings
 [**postAnalyticsAgentsStatusQuery**](AnalyticsApi#postAnalyticsAgentsStatusQuery) | **POST** /api/v2/analytics/agents/status/query | Retrieve the top 50 agents matching the query filters
 [**postAnalyticsAgentutilizationsAggregatesJobs**](AnalyticsApi#postAnalyticsAgentutilizationsAggregatesJobs) | **POST** /api/v2/analytics/agentutilizations/aggregates/jobs | Query for agent utilization aggregates asynchronously
@@ -118,6 +126,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postAnalyticsJourneysAggregatesQuery**](AnalyticsApi#postAnalyticsJourneysAggregatesQuery) | **POST** /api/v2/analytics/journeys/aggregates/query | Query for journey aggregates
 [**postAnalyticsKnowledgeAggregatesJobs**](AnalyticsApi#postAnalyticsKnowledgeAggregatesJobs) | **POST** /api/v2/analytics/knowledge/aggregates/jobs | Query for knowledge aggregates asynchronously
 [**postAnalyticsKnowledgeAggregatesQuery**](AnalyticsApi#postAnalyticsKnowledgeAggregatesQuery) | **POST** /api/v2/analytics/knowledge/aggregates/query | Query for knowledge aggregates
+[**postAnalyticsKpiattributionsAggregatesJobs**](AnalyticsApi#postAnalyticsKpiattributionsAggregatesJobs) | **POST** /api/v2/analytics/kpiattributions/aggregates/jobs | Query for KPI attribution aggregates asynchronously
+[**postAnalyticsKpiattributionsAggregatesQuery**](AnalyticsApi#postAnalyticsKpiattributionsAggregatesQuery) | **POST** /api/v2/analytics/kpiattributions/aggregates/query | Query for KPI attribution aggregates
 [**postAnalyticsQueuesObservationsQuery**](AnalyticsApi#postAnalyticsQueuesObservationsQuery) | **POST** /api/v2/analytics/queues/observations/query | Query for queue observations
 [**postAnalyticsRatelimitsAggregatesQuery**](AnalyticsApi#postAnalyticsRatelimitsAggregatesQuery) | **POST** /api/v2/analytics/ratelimits/aggregates/query | Query for limits rate limit aggregates. Data populated when limits reach 90% of the maximum. Not a source of truth for limits hit but a best effort estimate.
 [**postAnalyticsReportingDashboardsUsersBulkRemove**](AnalyticsApi#postAnalyticsReportingDashboardsUsersBulkRemove) | **POST** /api/v2/analytics/reporting/dashboards/users/bulk/remove | Bulk soft delete dashboards owned by other user(s)
@@ -245,6 +255,63 @@ apiInstance.deleteAnalyticsAgentcopilotsAggregatesJob(jobId, opts)
   })
   .catch((err) => {
     console.log('There was a failure calling deleteAnalyticsAgentcopilotsAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+void (no response body)
+
+
+## deleteAnalyticsAgenticvirtualagentsAggregatesJob
+
+> void deleteAnalyticsAgenticvirtualagentsAggregatesJob(jobId, opts)
+
+
+DELETE /api/v2/analytics/agenticvirtualagents/aggregates/jobs/{jobId}
+
+Delete/cancel an async request for agentic virtual agent aggregates
+
+Requires ANY permissions:
+
+* analytics:agenticVirtualAgentAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.deleteAnalyticsAgenticvirtualagentsAggregatesJob(jobId, opts)
+  .then(() => {
+    console.log('deleteAnalyticsAgenticvirtualagentsAggregatesJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsAgenticvirtualagentsAggregatesJob');
     console.error(err);
   });
 ```
@@ -875,6 +942,63 @@ apiInstance.deleteAnalyticsKnowledgeAggregatesJob(jobId, opts)
   })
   .catch((err) => {
     console.log('There was a failure calling deleteAnalyticsKnowledgeAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+void (no response body)
+
+
+## deleteAnalyticsKpiattributionsAggregatesJob
+
+> void deleteAnalyticsKpiattributionsAggregatesJob(jobId, opts)
+
+
+DELETE /api/v2/analytics/kpiattributions/aggregates/jobs/{jobId}
+
+Delete/cancel an async request for KPI attribution aggregates
+
+Requires ANY permissions:
+
+* analytics:customKpiAttributionAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.deleteAnalyticsKpiattributionsAggregatesJob(jobId, opts)
+  .then(() => {
+    console.log('deleteAnalyticsKpiattributionsAggregatesJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsKpiattributionsAggregatesJob');
     console.error(err);
   });
 ```
@@ -1580,6 +1704,122 @@ apiInstance.getAnalyticsAgentcopilotsAggregatesJobResults(jobId, opts)
 ### Return type
 
 **AgentCopilotAsyncAggregateQueryResponse**
+
+
+## getAnalyticsAgenticvirtualagentsAggregatesJob
+
+> AsyncQueryStatus getAnalyticsAgenticvirtualagentsAggregatesJob(jobId, opts)
+
+
+GET /api/v2/analytics/agenticvirtualagents/aggregates/jobs/{jobId}
+
+Get status for async query for agentic virtual agent aggregates
+
+Requires ANY permissions:
+
+* analytics:agenticVirtualAgentAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getAnalyticsAgenticvirtualagentsAggregatesJob(jobId, opts)
+  .then((data) => {
+    console.log(`getAnalyticsAgenticvirtualagentsAggregatesJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsAgenticvirtualagentsAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AsyncQueryStatus**
+
+
+## getAnalyticsAgenticvirtualagentsAggregatesJobResults
+
+> AgenticVirtualAgentAsyncAggregateQueryResponse getAnalyticsAgenticvirtualagentsAggregatesJobResults(jobId, opts)
+
+
+GET /api/v2/analytics/agenticvirtualagents/aggregates/jobs/{jobId}/results
+
+Fetch a page of results for an async agentic virtual agent aggregates query
+
+Requires ANY permissions:
+
+* analytics:agenticVirtualAgentAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'cursor': "cursor_example", // String | Cursor token to retrieve next page
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getAnalyticsAgenticvirtualagentsAggregatesJobResults(jobId, opts)
+  .then((data) => {
+    console.log(`getAnalyticsAgenticvirtualagentsAggregatesJobResults success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsAgenticvirtualagentsAggregatesJobResults');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+ **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AgenticVirtualAgentAsyncAggregateQueryResponse**
 
 
 ## getAnalyticsAgentutilizationsAggregatesJob
@@ -3432,6 +3672,122 @@ apiInstance.getAnalyticsKnowledgeAggregatesJobResults(jobId, opts)
 **KnowledgeAsyncAggregateQueryResponse**
 
 
+## getAnalyticsKpiattributionsAggregatesJob
+
+> AsyncQueryStatus getAnalyticsKpiattributionsAggregatesJob(jobId, opts)
+
+
+GET /api/v2/analytics/kpiattributions/aggregates/jobs/{jobId}
+
+Get status for async query for KPI attribution aggregates
+
+Requires ANY permissions:
+
+* analytics:customKpiAttributionAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getAnalyticsKpiattributionsAggregatesJob(jobId, opts)
+  .then((data) => {
+    console.log(`getAnalyticsKpiattributionsAggregatesJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsKpiattributionsAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AsyncQueryStatus**
+
+
+## getAnalyticsKpiattributionsAggregatesJobResults
+
+> KpiAttributionAsyncAggregateQueryResponse getAnalyticsKpiattributionsAggregatesJobResults(jobId, opts)
+
+
+GET /api/v2/analytics/kpiattributions/aggregates/jobs/{jobId}/results
+
+Fetch a page of results for an async KPI attribution aggregates query
+
+Requires ANY permissions:
+
+* analytics:customKpiAttributionAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'cursor': "cursor_example", // String | Cursor token to retrieve next page
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getAnalyticsKpiattributionsAggregatesJobResults(jobId, opts)
+  .then((data) => {
+    console.log(`getAnalyticsKpiattributionsAggregatesJobResults success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsKpiattributionsAggregatesJobResults');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+ **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**KpiAttributionAsyncAggregateQueryResponse**
+
+
 ## getAnalyticsReportingDashboardsUser
 
 > DashboardUser getAnalyticsReportingDashboardsUser(userId, opts)
@@ -5014,6 +5370,120 @@ apiInstance.postAnalyticsAgentcopilotsAggregatesQuery(body, opts)
 ### Return type
 
 **AgentCopilotAggregateQueryResponse**
+
+
+## postAnalyticsAgenticvirtualagentsAggregatesJobs
+
+> AsyncQueryResponse postAnalyticsAgenticvirtualagentsAggregatesJobs(body, opts)
+
+
+POST /api/v2/analytics/agenticvirtualagents/aggregates/jobs
+
+Query for agentic virtual agent aggregates asynchronously
+
+Requires ANY permissions:
+
+* analytics:agenticVirtualAgentAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postAnalyticsAgenticvirtualagentsAggregatesJobs(body, opts)
+  .then((data) => {
+    console.log(`postAnalyticsAgenticvirtualagentsAggregatesJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsAgenticvirtualagentsAggregatesJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AsyncQueryResponse**
+
+
+## postAnalyticsAgenticvirtualagentsAggregatesQuery
+
+> AgenticVirtualAgentAggregateQueryResponse postAnalyticsAgenticvirtualagentsAggregatesQuery(body, opts)
+
+
+POST /api/v2/analytics/agenticvirtualagents/aggregates/query
+
+Query for agentic virtual agent aggregates
+
+Requires ANY permissions:
+
+* analytics:agenticVirtualAgentAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postAnalyticsAgenticvirtualagentsAggregatesQuery(body, opts)
+  .then((data) => {
+    console.log(`postAnalyticsAgenticvirtualagentsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsAgenticvirtualagentsAggregatesQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AgenticVirtualAgentAggregateQueryResponse**
 
 
 ## postAnalyticsAgentsStatusCounts
@@ -6689,6 +7159,120 @@ apiInstance.postAnalyticsKnowledgeAggregatesQuery(body, opts)
 **KnowledgeAggregateQueryResponse**
 
 
+## postAnalyticsKpiattributionsAggregatesJobs
+
+> AsyncQueryResponse postAnalyticsKpiattributionsAggregatesJobs(body, opts)
+
+
+POST /api/v2/analytics/kpiattributions/aggregates/jobs
+
+Query for KPI attribution aggregates asynchronously
+
+Requires ANY permissions:
+
+* analytics:customKpiAttributionAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postAnalyticsKpiattributionsAggregatesJobs(body, opts)
+  .then((data) => {
+    console.log(`postAnalyticsKpiattributionsAggregatesJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsKpiattributionsAggregatesJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AsyncQueryResponse**
+
+
+## postAnalyticsKpiattributionsAggregatesQuery
+
+> KpiAttributionAggregateQueryResponse postAnalyticsKpiattributionsAggregatesQuery(body, opts)
+
+
+POST /api/v2/analytics/kpiattributions/aggregates/query
+
+Query for KPI attribution aggregates
+
+Requires ANY permissions:
+
+* analytics:customKpiAttributionAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postAnalyticsKpiattributionsAggregatesQuery(body, opts)
+  .then((data) => {
+    console.log(`postAnalyticsKpiattributionsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsKpiattributionsAggregatesQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**KpiAttributionAggregateQueryResponse**
+
+
 ## postAnalyticsQueuesObservationsQuery
 
 > QueueObservationQueryResponse postAnalyticsQueuesObservationsQuery(body, opts)
@@ -8192,4 +8776,4 @@ apiInstance.putAnalyticsDataretentionSettings(body, opts)
 **AnalyticsDataRetentionResponse**
 
 
-_purecloud-platform-client-v2@266.0.0_
+_purecloud-platform-client-v2@267.0.0_

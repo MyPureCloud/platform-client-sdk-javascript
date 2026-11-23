@@ -5,7 +5,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 266.0.0
+	 * @version 267.0.0
 	 */
 
 	/**
@@ -19,6 +19,36 @@ class AuthorizationApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
+
+	/**
+	 * Delete the default search criteria for an itemType.
+	 * 
+	 * @param {Object} itemType Item Type
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	deleteAuthorizationCustomattributesItemtype(itemType, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'itemType' is set
+		if (itemType === undefined || itemType === null || itemType === '') {
+			throw 'Missing the required parameter "itemType" when calling deleteAuthorizationCustomattributesItemtype';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/customattributes/itemtypes/{itemType}', 
+			'DELETE', 
+			{ 'itemType': itemType },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
 
 	/**
 	 * Delete a division.
@@ -145,6 +175,36 @@ class AuthorizationApi {
 			'/api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}', 
 			'DELETE', 
 			{ 'subjectId': subjectId,'divisionId': divisionId,'roleId': roleId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get the default search criteria for an itemType.
+	 * 
+	 * @param {Object} itemType Item Type
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getAuthorizationCustomattributesItemtype(itemType, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'itemType' is set
+		if (itemType === undefined || itemType === null || itemType === '') {
+			throw 'Missing the required parameter "itemType" when calling getAuthorizationCustomattributesItemtype';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/customattributes/itemtypes/{itemType}', 
+			'GET', 
+			{ 'itemType': itemType },
 			{  },
 			{  },
 			{  },
@@ -1129,6 +1189,41 @@ class AuthorizationApi {
 	}
 
 	/**
+	 * Add a new default search criteria for an itemType.
+	 * 
+	 * @param {Object} itemType Item Type
+	 * @param {Object} body The custom attribute meta data object
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postAuthorizationCustomattributesItemtype(itemType, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'itemType' is set
+		if (itemType === undefined || itemType === null || itemType === '') {
+			throw 'Missing the required parameter "itemType" when calling postAuthorizationCustomattributesItemtype';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAuthorizationCustomattributesItemtype';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/customattributes/itemtypes/{itemType}', 
+			'POST', 
+			{ 'itemType': itemType },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Assign a list of objects to a division
 	 * Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, DATATABLES or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. ["206ce31f-61ec-40ed-a8b1-be6f06303998","250a754e-f5e4-4f51-800f-a92f09d3bf8c"]
 	 * @param {String} divisionId Division ID
@@ -1612,6 +1707,41 @@ class AuthorizationApi {
 			{  },
 			{  },
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Gets all divisions for a particular user in an org.
+	 * 
+	 * @param {String} subjectId Subject ID (user or group)
+	 * @param {Array.<String>} body DivisionPermissionQuery
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postAuthorizationSubjectDivisionsQuery(subjectId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'subjectId' is set
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
+			throw 'Missing the required parameter "subjectId" when calling postAuthorizationSubjectDivisionsQuery';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAuthorizationSubjectDivisionsQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/subjects/{subjectId}/divisions/query', 
+			'POST', 
+			{ 'subjectId': subjectId },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json'],

@@ -5,7 +5,7 @@ class CaseManagementApi {
 	/**
 	 * CaseManagement service.
 	 * @module purecloud-platform-client-v2/api/CaseManagementApi
-	 * @version 266.0.0
+	 * @version 267.0.0
 	 */
 
 	/**
@@ -1153,6 +1153,47 @@ class CaseManagementApi {
 			'/api/v2/casemanagement/cases/{caseId}/priority', 
 			'PATCH', 
 			{ 'caseId': caseId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update the attributes of a Stage.
+	 * 
+	 * @param {String} caseId Case identifier.
+	 * @param {String} stageId Stage identifier.
+	 * @param {Object} body Stage update.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * patchCasemanagementCaseStage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	patchCasemanagementCaseStage(caseId, stageId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'caseId' is set
+		if (caseId === undefined || caseId === null || caseId === '') {
+			throw 'Missing the required parameter "caseId" when calling patchCasemanagementCaseStage';
+		}
+		// verify the required parameter 'stageId' is set
+		if (stageId === undefined || stageId === null || stageId === '') {
+			throw 'Missing the required parameter "stageId" when calling patchCasemanagementCaseStage';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchCasemanagementCaseStage';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/casemanagement/cases/{caseId}/stages/{stageId}', 
+			'PATCH', 
+			{ 'caseId': caseId,'stageId': stageId },
 			{  },
 			{  },
 			{  },

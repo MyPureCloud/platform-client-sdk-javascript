@@ -39,6 +39,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchCasemanagementCaseExternalid**](CaseManagementApi#patchCasemanagementCaseExternalid) | **PATCH** /api/v2/casemanagement/cases/{caseId}/externalid | Update the external identifier of a Case.
 [**patchCasemanagementCaseOwner**](CaseManagementApi#patchCasemanagementCaseOwner) | **PATCH** /api/v2/casemanagement/cases/{caseId}/owner | Update the ownerId of a Case
 [**patchCasemanagementCasePriority**](CaseManagementApi#patchCasemanagementCasePriority) | **PATCH** /api/v2/casemanagement/cases/{caseId}/priority | Update priority of a Case.
+[**patchCasemanagementCaseStage**](CaseManagementApi#patchCasemanagementCaseStage) | **PATCH** /api/v2/casemanagement/cases/{caseId}/stages/{stageId} | Update the attributes of a Stage.
 [**patchCasemanagementCaseSummary**](CaseManagementApi#patchCasemanagementCaseSummary) | **PATCH** /api/v2/casemanagement/cases/{caseId}/summary | Update summary of a Case.
 [**patchCasemanagementCaseplan**](CaseManagementApi#patchCasemanagementCaseplan) | **PATCH** /api/v2/casemanagement/caseplans/{caseplanId} | Update the attributes of a Caseplan.
 [**patchCasemanagementCaseplanStageplan**](CaseManagementApi#patchCasemanagementCaseplanStageplan) | **PATCH** /api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId} | Update the attributes of a Stageplan.
@@ -2050,6 +2051,69 @@ apiInstance.patchCasemanagementCasePriority(caseId, body, opts)
 **Case**
 
 
+## patchCasemanagementCaseStage
+
+> Stage patchCasemanagementCaseStage(caseId, stageId, body, opts)
+
+
+PATCH /api/v2/casemanagement/cases/{caseId}/stages/{stageId}
+
+Update the attributes of a Stage.
+
+patchCasemanagementCaseStage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* caseManagement:stage:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.CaseManagementApi();
+
+let caseId = "caseId_example"; // String | Case identifier.
+let stageId = "stageId_example"; // String | Stage identifier.
+let body = {}; // Object | Stage update.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchCasemanagementCaseStage(caseId, stageId, body, opts)
+  .then((data) => {
+    console.log(`patchCasemanagementCaseStage success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchCasemanagementCaseStage');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **caseId** | **String** | Case identifier. |  |
+ **stageId** | **String** | Stage identifier. |  |
+ **body** | **Object** | Stage update. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**Stage**
+
+
 ## patchCasemanagementCaseSummary
 
 > Case patchCasemanagementCaseSummary(caseId, body, opts)
@@ -3167,4 +3231,4 @@ apiInstance.putCasemanagementCaseplanIntakesettings(caseplanId, body, opts)
 **IntakeSettingsListing**
 
 
-_purecloud-platform-client-v2@266.0.0_
+_purecloud-platform-client-v2@267.0.0_

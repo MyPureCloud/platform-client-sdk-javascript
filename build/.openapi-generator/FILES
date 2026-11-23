@@ -12,6 +12,8 @@ docs/AlertingApi.json
 docs/AlertingApi.md
 docs/AnalyticsApi.json
 docs/AnalyticsApi.md
+docs/AnomalyDetectionApi.json
+docs/AnomalyDetectionApi.md
 docs/ArchitectApi.json
 docs/ArchitectApi.md
 docs/AssistantCopilotVariationsApi.json
@@ -179,6 +181,7 @@ docs/deleteAlertingAlertsAll-example.txt
 docs/deleteAlertingRule-example.txt
 docs/deleteAnalyticsActionsAggregatesJob-example.txt
 docs/deleteAnalyticsAgentcopilotsAggregatesJob-example.txt
+docs/deleteAnalyticsAgenticvirtualagentsAggregatesJob-example.txt
 docs/deleteAnalyticsAgentutilizationsAggregatesJob-example.txt
 docs/deleteAnalyticsBotsAggregatesJob-example.txt
 docs/deleteAnalyticsCasemanagementAggregatesJob-example.txt
@@ -195,6 +198,7 @@ docs/deleteAnalyticsFlowsAggregatesJob-example.txt
 docs/deleteAnalyticsJourneysAggregatesJob-example.txt
 docs/deleteAnalyticsJourneysAggregatesJob-example.txt
 docs/deleteAnalyticsKnowledgeAggregatesJob-example.txt
+docs/deleteAnalyticsKpiattributionsAggregatesJob-example.txt
 docs/deleteAnalyticsResolutionsAggregatesJob-example.txt
 docs/deleteAnalyticsSummariesAggregatesJob-example.txt
 docs/deleteAnalyticsSurveysAggregatesJob-example.txt
@@ -223,6 +227,8 @@ docs/deleteAssistantQueue-example.txt
 docs/deleteAssistantQueues-example.txt
 docs/deleteAssistantVariation-example.txt
 docs/deleteAssistantsAgentchecklist-example.txt
+docs/deleteAuthorizationCustomattributesItemtype-example.txt
+docs/deleteAuthorizationCustomattributesItemtype-example.txt
 docs/deleteAuthorizationDivision-example.txt
 docs/deleteAuthorizationDivision-example.txt
 docs/deleteAuthorizationPoliciesTargetSubjectSubjectId-example.txt
@@ -263,6 +269,7 @@ docs/deleteConversationParticipantScreenmonitorsSession-example.txt
 docs/deleteConversationRecordingAnnotation-example.txt
 docs/deleteConversationsCallParticipantCommunicationPostflowaction-example.txt
 docs/deleteConversationsCallParticipantConsult-example.txt
+docs/deleteConversationsEmailDraft-example.txt
 docs/deleteConversationsEmailMessagesDraftAttachment-example.txt
 docs/deleteConversationsMessagesCachedmediaCachedMediaItemId-example.txt
 docs/deleteConversationsMessagingIntegrationsAppleIntegrationId-example.txt
@@ -563,6 +570,8 @@ docs/getAnalyticsActionsAggregatesJobResults-example.txt
 docs/getAnalyticsAgentStatus-example.txt
 docs/getAnalyticsAgentcopilotsAggregatesJob-example.txt
 docs/getAnalyticsAgentcopilotsAggregatesJobResults-example.txt
+docs/getAnalyticsAgenticvirtualagentsAggregatesJob-example.txt
+docs/getAnalyticsAgenticvirtualagentsAggregatesJobResults-example.txt
 docs/getAnalyticsAgentutilizationsAggregatesJob-example.txt
 docs/getAnalyticsAgentutilizationsAggregatesJobResults-example.txt
 docs/getAnalyticsBotflowDivisionsReportingturns-example.txt
@@ -607,6 +616,8 @@ docs/getAnalyticsJourneysAggregatesJobResults-example.txt
 docs/getAnalyticsJourneysAggregatesJobResults-example.txt
 docs/getAnalyticsKnowledgeAggregatesJob-example.txt
 docs/getAnalyticsKnowledgeAggregatesJobResults-example.txt
+docs/getAnalyticsKpiattributionsAggregatesJob-example.txt
+docs/getAnalyticsKpiattributionsAggregatesJobResults-example.txt
 docs/getAnalyticsReportingDashboardsUser-example.txt
 docs/getAnalyticsReportingDashboardsUsers-example.txt
 docs/getAnalyticsReportingExports-example.txt
@@ -636,6 +647,7 @@ docs/getAnalyticsUsersDetailsJobResults-example.txt
 docs/getAnalyticsUsersDetailsJobResults-example.txt
 docs/getAnalyticsUsersDetailsJobsAvailability-example.txt
 docs/getAnalyticsUsersDetailsJobsAvailability-example.txt
+docs/getArchitectCapabilities-example.txt
 docs/getArchitectDependencytracking-example.txt
 docs/getArchitectDependencytrackingBuild-example.txt
 docs/getArchitectDependencytrackingConsumedresources-example.txt
@@ -688,6 +700,8 @@ docs/getAuditsQueryRealtimeServicemapping-example.txt
 docs/getAuditsQueryServicemapping-example.txt
 docs/getAuditsQueryTransactionId-example.txt
 docs/getAuditsQueryTransactionIdResults-example.txt
+docs/getAuthorizationCustomattributesItemtype-example.txt
+docs/getAuthorizationCustomattributesItemtype-example.txt
 docs/getAuthorizationDivision-example.txt
 docs/getAuthorizationDivision-example.txt
 docs/getAuthorizationDivisionGrants-example.txt
@@ -1159,6 +1173,8 @@ docs/getGuideVersion-example.txt
 docs/getGuideVersionJob-example.txt
 docs/getGuides-example.txt
 docs/getGuidesJob-example.txt
+docs/getGuidesTranscriptsDiscoverySnapshotId-example.txt
+docs/getGuidesTranscriptsSnapshotGenerate-example.txt
 docs/getIdentityprovider-example.txt
 docs/getIdentityproviders-example.txt
 docs/getIdentityprovidersAdfs-example.txt
@@ -1582,6 +1598,7 @@ docs/getRecordingMediaretentionpolicy-example.txt
 docs/getRecordingRecordingkeys-example.txt
 docs/getRecordingRecordingkeysRotationschedule-example.txt
 docs/getRecordingSettings-example.txt
+docs/getRecordingSnippetsSettings-example.txt
 docs/getRecordingUploadsReport-example.txt
 docs/getRecordingsRetentionQuery-example.txt
 docs/getRecordingsScreensessionsDetails-example.txt
@@ -1711,6 +1728,12 @@ docs/getSearchSettings-example.txt
 docs/getSearchSuggest-example.txt
 docs/getSearchSuggest-example.txt
 docs/getSettingsExecutiondata-example.txt
+docs/getSignalsAnomalydetectionQueueAnalysis-example.txt
+docs/getSignalsAnomalydetectionQueueAnomaliesExportsJob-example.txt
+docs/getSignalsAnomalydetectionQueueAnomaly-example.txt
+docs/getSignalsAnomalydetectionQueuesAvailable-example.txt
+docs/getSignalsAnomalydetectionQueuesMonitored-example.txt
+docs/getSignalsAnomalydetectionSettings-example.txt
 docs/getSocialmediaAnalyticsAggregatesJob-example.txt
 docs/getSocialmediaAnalyticsAggregatesJobResults-example.txt
 docs/getSocialmediaAnalyticsMessagesJob-example.txt
@@ -1973,6 +1996,7 @@ docs/getUsersDevelopmentActivitiesMe-example.txt
 docs/getUsersDevelopmentActivity-example.txt
 docs/getUsersExternalidAuthorityNameExternalKey-example.txt
 docs/getUsersMe-example.txt
+docs/getUsersMeTrustors-example.txt
 docs/getUsersMeVerifiers-example.txt
 docs/getUsersPresenceBulk-example.txt
 docs/getUsersPresencesPurecloudBulk-example.txt
@@ -2178,6 +2202,7 @@ docs/getWorkforcemanagementTimeoffbalanceJob-example.txt
 docs/getWorkforcemanagementTimeoffrequest-example.txt
 docs/getWorkforcemanagementTimeoffrequestWaitlistpositions-example.txt
 docs/getWorkforcemanagementTimeoffrequests-example.txt
+docs/getWorkforcemanagementTimeoffrequestsEvaluateJob-example.txt
 docs/getWorkforcemanagementUnavailabletimesSettings-example.txt
 docs/getWorkforcemanagementUnavailabletimesValidationJob-example.txt
 docs/getWorkforcemanagementUserWorkplanbidranks-example.txt
@@ -2207,6 +2232,7 @@ docs/patchCasemanagementCaseDescription-example.txt
 docs/patchCasemanagementCaseExternalid-example.txt
 docs/patchCasemanagementCaseOwner-example.txt
 docs/patchCasemanagementCasePriority-example.txt
+docs/patchCasemanagementCaseStage-example.txt
 docs/patchCasemanagementCaseSummary-example.txt
 docs/patchCasemanagementCaseplan-example.txt
 docs/patchCasemanagementCaseplanStageplan-example.txt
@@ -2250,6 +2276,7 @@ docs/patchConversationsCobrowsesessionParticipant-example.txt
 docs/patchConversationsCobrowsesessionParticipantAttributes-example.txt
 docs/patchConversationsCobrowsesessionParticipantCommunication-example.txt
 docs/patchConversationsEmail-example.txt
+docs/patchConversationsEmailDraft-example.txt
 docs/patchConversationsEmailMessagesDraft-example.txt
 docs/patchConversationsEmailParticipant-example.txt
 docs/patchConversationsEmailParticipantAttributes-example.txt
@@ -2362,6 +2389,8 @@ docs/patchSearchSettings-example.txt
 docs/patchSearchSettingsContentsearch-example.txt
 docs/patchSearchSettingsContentsearch-example.txt
 docs/patchSettingsExecutiondata-example.txt
+docs/patchSignalsAnomalydetectionQueueAnomaly-example.txt
+docs/patchSignalsAnomalydetectionQueuesMonitored-example.txt
 docs/patchSocialmediaTopic-example.txt
 docs/patchSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId-example.txt
 docs/patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId-example.txt
@@ -2457,6 +2486,7 @@ docs/patchWorkforcemanagementManagementunitWorkplan-example.txt
 docs/patchWorkforcemanagementManagementunitWorkplanrotation-example.txt
 docs/patchWorkforcemanagementSchedulingpreferences-example.txt
 docs/patchWorkforcemanagementTimeoffrequest-example.txt
+docs/patchWorkforcemanagementTimeoffrequestsEvaluateJobStatus-example.txt
 docs/patchWorkforcemanagementUnavailabletimes-example.txt
 docs/patchWorkforcemanagementUserWorkplanbidranks-example.txt
 docs/patchWorkforcemanagementUsersWorkplanbidranksBulk-example.txt
@@ -2473,6 +2503,8 @@ docs/postAnalyticsActionsAggregatesJobs-example.txt
 docs/postAnalyticsActionsAggregatesQuery-example.txt
 docs/postAnalyticsAgentcopilotsAggregatesJobs-example.txt
 docs/postAnalyticsAgentcopilotsAggregatesQuery-example.txt
+docs/postAnalyticsAgenticvirtualagentsAggregatesJobs-example.txt
+docs/postAnalyticsAgenticvirtualagentsAggregatesQuery-example.txt
 docs/postAnalyticsAgentsStatusCounts-example.txt
 docs/postAnalyticsAgentsStatusQuery-example.txt
 docs/postAnalyticsAgentutilizationsAggregatesJobs-example.txt
@@ -2516,6 +2548,8 @@ docs/postAnalyticsJourneysAggregatesQuery-example.txt
 docs/postAnalyticsJourneysAggregatesQuery-example.txt
 docs/postAnalyticsKnowledgeAggregatesJobs-example.txt
 docs/postAnalyticsKnowledgeAggregatesQuery-example.txt
+docs/postAnalyticsKpiattributionsAggregatesJobs-example.txt
+docs/postAnalyticsKpiattributionsAggregatesQuery-example.txt
 docs/postAnalyticsQueuesObservationsQuery-example.txt
 docs/postAnalyticsQueuesObservationsQuery-example.txt
 docs/postAnalyticsRatelimitsAggregatesQuery-example.txt
@@ -2578,6 +2612,8 @@ docs/postAssistantsAgentchecklists-example.txt
 docs/postAuditsQuery-example.txt
 docs/postAuditsQueryRealtime-example.txt
 docs/postAuditsQueryRealtimeRelated-example.txt
+docs/postAuthorizationCustomattributesItemtype-example.txt
+docs/postAuthorizationCustomattributesItemtype-example.txt
 docs/postAuthorizationDivisionObject-example.txt
 docs/postAuthorizationDivisionObject-example.txt
 docs/postAuthorizationDivisionRestore-example.txt
@@ -2599,6 +2635,8 @@ docs/postAuthorizationSubjectBulkreplace-example.txt
 docs/postAuthorizationSubjectBulkreplace-example.txt
 docs/postAuthorizationSubjectDivisionRole-example.txt
 docs/postAuthorizationSubjectDivisionRole-example.txt
+docs/postAuthorizationSubjectDivisionsQuery-example.txt
+docs/postAuthorizationSubjectDivisionsQuery-example.txt
 docs/postBackgroundassistantToken-example.txt
 docs/postBusinessrulesDecisiontableExecute-example.txt
 docs/postBusinessrulesDecisiontableExports-example.txt
@@ -2704,6 +2742,7 @@ docs/postConversationsCobrowsesessionParticipantReplace-example.txt
 docs/postConversationsCustomattributesSchemas-example.txt
 docs/postConversationsCustomattributesSearch-example.txt
 docs/postConversationsCustomattributesSearch-example.txt
+docs/postConversationsEmailDraft-example.txt
 docs/postConversationsEmailInboundmessages-example.txt
 docs/postConversationsEmailMessages-example.txt
 docs/postConversationsEmailMessagesDraftAttachmentsCopy-example.txt
@@ -2865,6 +2904,8 @@ docs/postGuideVersionJobs-example.txt
 docs/postGuideVersions-example.txt
 docs/postGuides-example.txt
 docs/postGuidesJobs-example.txt
+docs/postGuidesTranscriptsDiscovery-example.txt
+docs/postGuidesTranscriptsSnapshotGenerate-example.txt
 docs/postGuidesUploads-example.txt
 docs/postGuidesUploads-example.txt
 docs/postIdentityproviders-example.txt
@@ -3140,6 +3181,9 @@ docs/postSearch-example.txt
 docs/postSearch-example.txt
 docs/postSearchSuggest-example.txt
 docs/postSearchSuggest-example.txt
+docs/postSignalsAnomalydetectionQueueAnomaliesExportsJobs-example.txt
+docs/postSignalsAnomalydetectionQueueAnomaliesQuery-example.txt
+docs/postSignalsAnomalydetectionQueueAnomaliesSummary-example.txt
 docs/postSocialmediaAnalyticsAggregatesJobs-example.txt
 docs/postSocialmediaAnalyticsMessagesJobs-example.txt
 docs/postSocialmediaEscalationrules-example.txt
@@ -3386,6 +3430,7 @@ docs/postWorkforcemanagementManagementunitTimeofflimits-example.txt
 docs/postWorkforcemanagementManagementunitTimeofflimitsValuesQuery-example.txt
 docs/postWorkforcemanagementManagementunitTimeoffplans-example.txt
 docs/postWorkforcemanagementManagementunitTimeoffrequests-example.txt
+docs/postWorkforcemanagementManagementunitTimeoffrequestsEvaluateJobs-example.txt
 docs/postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery-example.txt
 docs/postWorkforcemanagementManagementunitTimeoffrequestsQuery-example.txt
 docs/postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery-example.txt
@@ -3611,6 +3656,7 @@ docs/putRecordingKeyconfiguration-example.txt
 docs/putRecordingMediaretentionpolicy-example.txt
 docs/putRecordingRecordingkeysRotationschedule-example.txt
 docs/putRecordingSettings-example.txt
+docs/putRecordingSnippetsSettings-example.txt
 docs/putRecordingsDeletionprotection-example.txt
 docs/putResponsemanagementLibrary-example.txt
 docs/putResponsemanagementResponse-example.txt
@@ -3638,6 +3684,7 @@ docs/putScimUser-example.txt
 docs/putScimV2Group-example.txt
 docs/putScimV2User-example.txt
 docs/putScreenmonitorsSettings-example.txt
+docs/putSignalsAnomalydetectionSettings-example.txt
 docs/putSocialmediaEscalationrule-example.txt
 docs/putSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId-example.txt
 docs/putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId-example.txt
@@ -3652,6 +3699,7 @@ docs/putSpeechandtextanalyticsProgramSettingsInsights-example.txt
 docs/putSpeechandtextanalyticsProgramTranscriptionengines-example.txt
 docs/putSpeechandtextanalyticsSettings-example.txt
 docs/putSpeechandtextanalyticsTopic-example.txt
+docs/putTaskmanagementWorkitemAccessattributes-example.txt
 docs/putTaskmanagementWorkitemsSchema-example.txt
 docs/putTelephonyAgentGreetings-example.txt
 docs/putTelephonyAgentsGreetingsMe-example.txt
@@ -3718,6 +3766,7 @@ src/purecloud-platform-client-v2/api/AgentCopilotApi.js
 src/purecloud-platform-client-v2/api/AgentUIApi.js
 src/purecloud-platform-client-v2/api/AlertingApi.js
 src/purecloud-platform-client-v2/api/AnalyticsApi.js
+src/purecloud-platform-client-v2/api/AnomalyDetectionApi.js
 src/purecloud-platform-client-v2/api/ArchitectApi.js
 src/purecloud-platform-client-v2/api/AssistantCopilotVariationsApi.js
 src/purecloud-platform-client-v2/api/AuditApi.js

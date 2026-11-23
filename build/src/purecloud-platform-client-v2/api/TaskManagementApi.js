@@ -5,7 +5,7 @@ class TaskManagementApi {
 	/**
 	 * TaskManagement service.
 	 * @module purecloud-platform-client-v2/api/TaskManagementApi
-	 * @version 266.0.0
+	 * @version 267.0.0
 	 */
 
 	/**
@@ -2449,6 +2449,42 @@ class TaskManagementApi {
 			'/api/v2/taskmanagement/worktypes/query', 
 			'POST', 
 			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Set the access attributes on a workitem
+	 * 
+	 * @param {String} workitemId Workitem ID
+	 * @param {Object} body Access attributes
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * putTaskmanagementWorkitemAccessattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	putTaskmanagementWorkitemAccessattributes(workitemId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'workitemId' is set
+		if (workitemId === undefined || workitemId === null || workitemId === '') {
+			throw 'Missing the required parameter "workitemId" when calling putTaskmanagementWorkitemAccessattributes';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putTaskmanagementWorkitemAccessattributes';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/workitems/{workitemId}/accessattributes', 
+			'PUT', 
+			{ 'workitemId': workitemId },
 			{  },
 			{  },
 			{  },

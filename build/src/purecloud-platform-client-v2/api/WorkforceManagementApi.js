@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 266.0.0
+	 * @version 267.0.0
 	 */
 
 	/**
@@ -6426,6 +6426,36 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Query the status of time-off request evaluation job operation. Only the user who started the operation can query the status
+	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
+	 * @param {String} jobId The job id.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementTimeoffrequestsEvaluateJob(jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementTimeoffrequestsEvaluateJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/timeoffrequests/evaluate/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Get availability management unit's settings for agent
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -8316,6 +8346,41 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}', 
 			'PATCH', 
 			{ 'timeOffRequestId': timeOffRequestId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update status of time-off request evaluation job operation
+	 * This endpoint acknowledges the cancellation request, but does not wait for the job to stop. A successful response only indicates that the cancellation has been requested. The job may continue running until it reaches a cancellation point and terminates
+	 * @param {String} jobId The job id.
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	patchWorkforcemanagementTimeoffrequestsEvaluateJobStatus(jobId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling patchWorkforcemanagementTimeoffrequestsEvaluateJobStatus';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchWorkforcemanagementTimeoffrequestsEvaluateJobStatus';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/timeoffrequests/evaluate/jobs/{jobId}/status', 
+			'PATCH', 
+			{ 'jobId': jobId },
 			{  },
 			{  },
 			{  },
@@ -12613,6 +12678,41 @@ class WorkforceManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests', 
+			'POST', 
+			{ 'managementUnitId': managementUnitId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Evaluate a list of time-off requests for auto-approval
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit.
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementManagementunitTimeoffrequestsEvaluateJobs(managementUnitId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
+			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffrequestsEvaluateJobs';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitTimeoffrequestsEvaluateJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/evaluate/jobs', 
 			'POST', 
 			{ 'managementUnitId': managementUnitId },
 			{  },

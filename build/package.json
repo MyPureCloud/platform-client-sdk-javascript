@@ -1,6 +1,6 @@
 {
   "name": "purecloud-platform-client-v2",
-  "version": "266.0.0",
+  "version": "267.0.0",
   "description": "A JavaScript library to interface with the PureCloud Platform API",
   "license": "MIT",
   "main": "dist/node/purecloud-platform-client-v2.js",
@@ -30,7 +30,7 @@
     "url": "https://developer.genesys.cloud/"
   },
   "dependencies": {
-    "axios": "^1.20.0",
+    "axios": "^1.21.1",
     "configparser": "^0.3.10",
     "winston": "^3.19.0"
   },
@@ -42,7 +42,7 @@
     "@babel/preset-env": "^7.23.3",
     "@babel/plugin-transform-nullish-coalescing-operator": "^7.23.4",
     "rollup": "^2.79.1",
-    "uglify-es": "^3.3.9",
+    "uglify-js": "^3.19.3",
     "browserify": "^17.0.0",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",

@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 266.0.0
+	 * @version 267.0.0
 	 */
 
 	/**
@@ -284,6 +284,36 @@ class ConversationsApi {
 			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult', 
 			'DELETE', 
 			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Discard an email draft and reset to initial state
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	deleteConversationsEmailDraft(conversationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling deleteConversationsEmailDraft';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/emails/{conversationId}/draft', 
+			'DELETE', 
+			{ 'conversationId': conversationId },
 			{  },
 			{  },
 			{  },
@@ -896,7 +926,6 @@ class ConversationsApi {
 	 * @param {String} conversationId conversation ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getConversationAccessattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getConversationAccessattributes(conversationId, opts) { 
 		opts = opts || {};
@@ -5443,6 +5472,41 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Update email draft headers or include message history
+	 * Update email draft recipients (To, CC, BCC), subject, or custom override headers and include message history in the draft. Supports both user context and non-user context (OAuth client credentials). With user context: all operations are supported and the user must be an active participant on the conversation. Without user context: historyIncluded cannot be used.
+	 * @param {String} conversationId conversationId
+	 * @param {Object} body Patch Draft Request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	patchConversationsEmailDraft(conversationId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling patchConversationsEmailDraft';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchConversationsEmailDraft';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/emails/{conversationId}/draft', 
+			'PATCH', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Reset conversation draft to its initial state and/or auto-fill draft content
 	 * 
 	 * @param {String} conversationId conversationId
@@ -8237,6 +8301,37 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Create and initialize an email draft
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body Create Draft Request
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postConversationsEmailDraft(conversationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling postConversationsEmailDraft';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/emails/{conversationId}/draft', 
+			'POST', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based. This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
 	 * 
 	 * @param {String} conversationId conversationId
@@ -9812,7 +9907,6 @@ class ConversationsApi {
 	 * @param {Object} body Conversation Access Attributes
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * putConversationAccessattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putConversationAccessattributes(conversationId, body, opts) { 
 		opts = opts || {};

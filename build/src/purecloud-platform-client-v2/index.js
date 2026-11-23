@@ -10,6 +10,7 @@ import AgentCopilotApi from './api/AgentCopilotApi.js';
 import AgentUIApi from './api/AgentUIApi.js';
 import AlertingApi from './api/AlertingApi.js';
 import AnalyticsApi from './api/AnalyticsApi.js';
+import AnomalyDetectionApi from './api/AnomalyDetectionApi.js';
 import ArchitectApi from './api/ArchitectApi.js';
 import AssistantCopilotVariationsApi from './api/AssistantCopilotVariationsApi.js';
 import AuditApi from './api/AuditApi.js';
@@ -122,7 +123,7 @@ import WorkforceManagementApi from './api/WorkforceManagementApi.js';
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 266.0.0
+ * @version 267.0.0
  */
 class platformClient {
 	constructor() {
@@ -166,6 +167,11 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/AnalyticsApi}
 		 */
 		this.AnalyticsApi = AnalyticsApi;
+		/**
+		 * The AnomalyDetectionApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/AnomalyDetectionApi}
+		 */
+		this.AnomalyDetectionApi = AnomalyDetectionApi;
 		/**
 		 * The ArchitectApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/ArchitectApi}

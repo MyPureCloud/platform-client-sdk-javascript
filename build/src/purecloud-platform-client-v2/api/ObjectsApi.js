@@ -5,7 +5,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 266.0.0
+	 * @version 267.0.0
 	 */
 
 	/**
@@ -19,6 +19,36 @@ class ObjectsApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
+
+	/**
+	 * Delete the default search criteria for an itemType.
+	 * 
+	 * @param {Object} itemType Item Type
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	deleteAuthorizationCustomattributesItemtype(itemType, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'itemType' is set
+		if (itemType === undefined || itemType === null || itemType === '') {
+			throw 'Missing the required parameter "itemType" when calling deleteAuthorizationCustomattributesItemtype';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/customattributes/itemtypes/{itemType}', 
+			'DELETE', 
+			{ 'itemType': itemType },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
 
 	/**
 	 * Delete a division.
@@ -41,6 +71,36 @@ class ObjectsApi {
 			'DELETE', 
 			{ 'divisionId': divisionId },
 			{ 'force': opts['force'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get the default search criteria for an itemType.
+	 * 
+	 * @param {Object} itemType Item Type
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getAuthorizationCustomattributesItemtype(itemType, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'itemType' is set
+		if (itemType === undefined || itemType === null || itemType === '') {
+			throw 'Missing the required parameter "itemType" when calling getAuthorizationCustomattributesItemtype';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/customattributes/itemtypes/{itemType}', 
+			'GET', 
+			{ 'itemType': itemType },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -216,6 +276,41 @@ class ObjectsApi {
 			{  },
 			{  },
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Add a new default search criteria for an itemType.
+	 * 
+	 * @param {Object} itemType Item Type
+	 * @param {Object} body The custom attribute meta data object
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postAuthorizationCustomattributesItemtype(itemType, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'itemType' is set
+		if (itemType === undefined || itemType === null || itemType === '') {
+			throw 'Missing the required parameter "itemType" when calling postAuthorizationCustomattributesItemtype';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAuthorizationCustomattributesItemtype';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/customattributes/itemtypes/{itemType}', 
+			'POST', 
+			{ 'itemType': itemType },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json'],

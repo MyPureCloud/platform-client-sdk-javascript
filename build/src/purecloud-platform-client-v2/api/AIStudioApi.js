@@ -5,7 +5,7 @@ class AIStudioApi {
 	/**
 	 * AIStudio service.
 	 * @module purecloud-platform-client-v2/api/AIStudioApi
-	 * @version 266.0.0
+	 * @version 267.0.0
 	 */
 
 	/**
@@ -471,6 +471,71 @@ class AIStudioApi {
 	}
 
 	/**
+	 * Get the status of a discovery snapshot.
+	 * 
+	 * @param {String} snapshotId Snapshot ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getGuidesTranscriptsDiscoverySnapshotId(snapshotId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'snapshotId' is set
+		if (snapshotId === undefined || snapshotId === null || snapshotId === '') {
+			throw 'Missing the required parameter "snapshotId" when calling getGuidesTranscriptsDiscoverySnapshotId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/guides/transcripts/discovery/{snapshotId}', 
+			'GET', 
+			{ 'snapshotId': snapshotId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get the status of a guide generation job.
+	 * 
+	 * @param {String} snapshotId Snapshot ID
+	 * @param {String} rfcName RFC name
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getGuidesTranscriptsSnapshotGenerate(snapshotId, rfcName, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'snapshotId' is set
+		if (snapshotId === undefined || snapshotId === null || snapshotId === '') {
+			throw 'Missing the required parameter "snapshotId" when calling getGuidesTranscriptsSnapshotGenerate';
+		}
+		// verify the required parameter 'rfcName' is set
+		if (rfcName === undefined || rfcName === null) {
+			throw 'Missing the required parameter "rfcName" when calling getGuidesTranscriptsSnapshotGenerate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/guides/transcripts/snapshots/{snapshotId}/generate', 
+			'GET', 
+			{ 'snapshotId': snapshotId },
+			{ 'rfcName': rfcName },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Update a virtual agent.
 	 * 
 	 * @param {String} virtualAgentId Virtual Agent ID
@@ -870,6 +935,71 @@ class AIStudioApi {
 			'/api/v2/guides/jobs', 
 			'POST', 
 			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Create a discovery job.
+	 * 
+	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postGuidesTranscriptsDiscovery(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postGuidesTranscriptsDiscovery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/guides/transcripts/discovery', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Create a guide generation job.
+	 * 
+	 * @param {String} snapshotId Snapshot ID
+	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postGuidesTranscriptsSnapshotGenerate(snapshotId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'snapshotId' is set
+		if (snapshotId === undefined || snapshotId === null || snapshotId === '') {
+			throw 'Missing the required parameter "snapshotId" when calling postGuidesTranscriptsSnapshotGenerate';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postGuidesTranscriptsSnapshotGenerate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/guides/transcripts/snapshots/{snapshotId}/generate', 
+			'POST', 
+			{ 'snapshotId': snapshotId },
 			{  },
 			{  },
 			{  },

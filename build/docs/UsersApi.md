@@ -77,6 +77,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getUsersDevelopmentActivity**](UsersApi#getUsersDevelopmentActivity) | **GET** /api/v2/users/development/activities/{activityId} | Get a Development Activity
 [**getUsersExternalidAuthorityNameExternalKey**](UsersApi#getUsersExternalidAuthorityNameExternalKey) | **GET** /api/v2/users/externalid/{authorityName}/{externalKey} | Get the user associated with external identifier.
 [**getUsersMe**](UsersApi#getUsersMe) | **GET** /api/v2/users/me | Get current user details.
+[**getUsersMeTrustors**](UsersApi#getUsersMeTrustors) | **GET** /api/v2/users/me/trustors | List the organizations that have authorized/trusted the current user.
 [**getUsersMeVerifiers**](UsersApi#getUsersMeVerifiers) | **GET** /api/v2/users/me/verifiers | Get a list of my verifiers
 [**getUsersQuery**](UsersApi#getUsersQuery) | **GET** /api/v2/users/query | Get list of available users, paged by cursor token, No division filtering available so directory:user:view permission for all divisions is required
 [**getUsersSearch**](UsersApi#getUsersSearch) | **GET** /api/v2/users/search | Search users using the q64 value returned from a previous search
@@ -102,6 +103,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postAuthorizationSubjectBulkremove**](UsersApi#postAuthorizationSubjectBulkremove) | **POST** /api/v2/authorization/subjects/{subjectId}/bulkremove | Bulk-remove grants from a subject.
 [**postAuthorizationSubjectBulkreplace**](UsersApi#postAuthorizationSubjectBulkreplace) | **POST** /api/v2/authorization/subjects/{subjectId}/bulkreplace | Replace subject's roles and divisions with the exact list supplied in the request.
 [**postAuthorizationSubjectDivisionRole**](UsersApi#postAuthorizationSubjectDivisionRole) | **POST** /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId} | Make a grant of a role in a division
+[**postAuthorizationSubjectDivisionsQuery**](UsersApi#postAuthorizationSubjectDivisionsQuery) | **POST** /api/v2/authorization/subjects/{subjectId}/divisions/query | Gets all divisions for a particular user in an org.
 [**postUserExternalid**](UsersApi#postUserExternalid) | **POST** /api/v2/users/{userId}/externalid | Create mapping between external identifier and user. Limit 100 per entity.
 [**postUserInvite**](UsersApi#postUserInvite) | **POST** /api/v2/users/{userId}/invite | Send an activation email to the user
 [**postUserPassword**](UsersApi#postUserPassword) | **POST** /api/v2/users/{userId}/password | Change a users password
@@ -4361,6 +4363,67 @@ apiInstance.getUsersMe(opts)
 **UserMe**
 
 
+## getUsersMeTrustors
+
+> TrustorEntityListing getUsersMeTrustors(opts)
+
+
+GET /api/v2/users/me/trustors
+
+List the organizations that have authorized/trusted the current user.
+
+This request is not valid when using the Client Credentials OAuth grant.
+
+getUsersMeTrustors is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1, // Number | Page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getUsersMeTrustors(opts)
+  .then((data) => {
+    console.log(`getUsersMeTrustors success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getUsersMeTrustors');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**TrustorEntityListing**
+
+
 ## getUsersMeVerifiers
 
 > VerifierEntityListing getUsersMeVerifiers(opts)
@@ -5854,6 +5917,65 @@ apiInstance.postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, 
 ### Return type
 
 void (no response body)
+
+
+## postAuthorizationSubjectDivisionsQuery
+
+> DomainUserDivisionsResultListing postAuthorizationSubjectDivisionsQuery(subjectId, body, opts)
+
+
+POST /api/v2/authorization/subjects/{subjectId}/divisions/query
+
+Gets all divisions for a particular user in an org.
+
+Requires ANY permissions:
+
+* authorization:grant:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let subjectId = "subjectId_example"; // String | Subject ID (user or group)
+let body = ["body_example"]; // [String] | DivisionPermissionQuery
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postAuthorizationSubjectDivisionsQuery(subjectId, body, opts)
+  .then((data) => {
+    console.log(`postAuthorizationSubjectDivisionsQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAuthorizationSubjectDivisionsQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **subjectId** | **String** | Subject ID (user or group) |  |
+ **body** | **[String]** | DivisionPermissionQuery |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**DomainUserDivisionsResultListing**
 
 
 ## postUserExternalid
@@ -7900,4 +8022,4 @@ apiInstance.putUsersStationsMeAssociatedstationStationId(stationId, opts)
 void (no response body)
 
 
-_purecloud-platform-client-v2@266.0.0_
+_purecloud-platform-client-v2@267.0.0_

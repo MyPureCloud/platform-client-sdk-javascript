@@ -20,12 +20,12 @@ class Configuration {
 			Configuration.instance = this;
 		}
 
-		if (typeof window !== 'undefined') {
-			this.configPath = '';
-		} else {
+		if (typeof window === 'undefined') {
 			const os = require('os');
 			const path = require('path');
 			this.configPath = path.join(os.homedir(), '.genesyscloudjavascript', 'config');
+		} else {
+			this.configPath = '';
 		}
 		this.watchedConfigPath;
 		this.refresh_access_token = true;

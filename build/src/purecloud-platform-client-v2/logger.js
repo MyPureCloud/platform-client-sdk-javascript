@@ -91,7 +91,9 @@ class Logger {
 
 	log(level, statusCode, method, url, requestHeaders, responseHeaders, requestBody, responseBody) {
 		var content = this.formatLog(level, statusCode, method, url, requestHeaders, responseHeaders, requestBody, responseBody);
-		if (typeof window !== 'undefined') {
+		if (typeof window === 'undefined') {
+			if (this.logger.transports.length > 0) this.logger.log(level, content);
+		} else {
 			var shouldLog = this.calculateLogLevel(level);
 			if (shouldLog > 0 && this.log_to_console === true) {
 				if(this.log_format === this.logFormatEnum.formats.JSON) {
@@ -100,8 +102,6 @@ class Logger {
 			 		console.log(`${level.toUpperCase()}: ${content}`);
 				}
 			}
-		} else {
-			if (this.logger.transports.length > 0) this.logger.log(level, content);
 		}
 	}
 

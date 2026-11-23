@@ -35,6 +35,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRecordingRecordingkeys**](RecordingApi#getRecordingRecordingkeys) | **GET** /api/v2/recording/recordingkeys | Get encryption key list
 [**getRecordingRecordingkeysRotationschedule**](RecordingApi#getRecordingRecordingkeysRotationschedule) | **GET** /api/v2/recording/recordingkeys/rotationschedule | Get key rotation schedule
 [**getRecordingSettings**](RecordingApi#getRecordingSettings) | **GET** /api/v2/recording/settings | Get the Recording Settings for the Organization
+[**getRecordingSnippetsSettings**](RecordingApi#getRecordingSnippetsSettings) | **GET** /api/v2/recording/snippets/settings | Get the Snippet Recording Settings for the Organization
 [**getRecordingUploadsReport**](RecordingApi#getRecordingUploadsReport) | **GET** /api/v2/recording/uploads/reports/{reportId} | Get the status of a recording upload status report
 [**getRecordingsRetentionQuery**](RecordingApi#getRecordingsRetentionQuery) | **GET** /api/v2/recordings/retention/query | Query for recording retention data
 [**getRecordingsScreensessionsDetails**](RecordingApi#getRecordingsScreensessionsDetails) | **GET** /api/v2/recordings/screensessions/details | Retrieves an object containing the total number of concurrent active screen recordings
@@ -62,6 +63,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putRecordingMediaretentionpolicy**](RecordingApi#putRecordingMediaretentionpolicy) | **PUT** /api/v2/recording/mediaretentionpolicies/{policyId} | Update a media retention policy
 [**putRecordingRecordingkeysRotationschedule**](RecordingApi#putRecordingRecordingkeysRotationschedule) | **PUT** /api/v2/recording/recordingkeys/rotationschedule | Update key rotation schedule
 [**putRecordingSettings**](RecordingApi#putRecordingSettings) | **PUT** /api/v2/recording/settings | Update the Recording Settings for the Organization
+[**putRecordingSnippetsSettings**](RecordingApi#putRecordingSnippetsSettings) | **PUT** /api/v2/recording/snippets/settings | Update the Snippet Recording Settings for the Organization
 [**putRecordingsDeletionprotection**](RecordingApi#putRecordingsDeletionprotection) | **PUT** /api/v2/recordings/deletionprotection | Apply or revoke recording protection for conversations
 
 
@@ -1881,6 +1883,60 @@ apiInstance.getRecordingSettings(opts)
 **RecordingSettings**
 
 
+## getRecordingSnippetsSettings
+
+> SnippetRecordingSettings getRecordingSnippetsSettings(opts)
+
+
+GET /api/v2/recording/snippets/settings
+
+Get the Snippet Recording Settings for the Organization
+
+Requires ALL permissions:
+
+* recording:snippetRecordingSettings:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RecordingApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getRecordingSnippetsSettings(opts)
+  .then((data) => {
+    console.log(`getRecordingSnippetsSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRecordingSnippetsSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**SnippetRecordingSettings**
+
+
 ## getRecordingUploadsReport
 
 > RecordingUploadReport getRecordingUploadsReport(reportId, opts)
@@ -3490,6 +3546,63 @@ apiInstance.putRecordingSettings(body, opts)
 **RecordingSettings**
 
 
+## putRecordingSnippetsSettings
+
+> SnippetRecordingSettings putRecordingSnippetsSettings(body, opts)
+
+
+PUT /api/v2/recording/snippets/settings
+
+Update the Snippet Recording Settings for the Organization
+
+Requires ALL permissions:
+
+* recording:snippetRecordingSettings:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RecordingApi();
+
+let body = {}; // Object | Snippet recording settings
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.putRecordingSnippetsSettings(body, opts)
+  .then((data) => {
+    console.log(`putRecordingSnippetsSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putRecordingSnippetsSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Snippet recording settings |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**SnippetRecordingSettings**
+
+
 ## putRecordingsDeletionprotection
 
 > ManageDeleteProtectionResult putRecordingsDeletionprotection(opts)
@@ -3550,4 +3663,4 @@ apiInstance.putRecordingsDeletionprotection(opts)
 **ManageDeleteProtectionResult**
 
 
-_purecloud-platform-client-v2@266.0.0_
+_purecloud-platform-client-v2@267.0.0_

@@ -81,6 +81,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postTaskmanagementWorktypeStatuses**](TaskManagementApi#postTaskmanagementWorktypeStatuses) | **POST** /api/v2/taskmanagement/worktypes/{worktypeId}/statuses | Add a status to a worktype
 [**postTaskmanagementWorktypes**](TaskManagementApi#postTaskmanagementWorktypes) | **POST** /api/v2/taskmanagement/worktypes | Create a worktype
 [**postTaskmanagementWorktypesQuery**](TaskManagementApi#postTaskmanagementWorktypesQuery) | **POST** /api/v2/taskmanagement/worktypes/query | Query for worktypes
+[**putTaskmanagementWorkitemAccessattributes**](TaskManagementApi#putTaskmanagementWorkitemAccessattributes) | **PUT** /api/v2/taskmanagement/workitems/{workitemId}/accessattributes | Set the access attributes on a workitem
 [**putTaskmanagementWorkitemsSchema**](TaskManagementApi#putTaskmanagementWorkitemsSchema) | **PUT** /api/v2/taskmanagement/workitems/schemas/{schemaId} | Update a schema
 
 
@@ -4503,6 +4504,67 @@ apiInstance.postTaskmanagementWorktypesQuery(body, opts)
 **WorktypeQueryEntityListing**
 
 
+## putTaskmanagementWorkitemAccessattributes
+
+> void putTaskmanagementWorkitemAccessattributes(workitemId, body, opts)
+
+
+PUT /api/v2/taskmanagement/workitems/{workitemId}/accessattributes
+
+Set the access attributes on a workitem
+
+putTaskmanagementWorkitemAccessattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* workitems:workitemAccessAttributes:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TaskManagementApi();
+
+let workitemId = "workitemId_example"; // String | Workitem ID
+let body = {}; // Object | Access attributes
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.putTaskmanagementWorkitemAccessattributes(workitemId, body, opts)
+  .then(() => {
+    console.log('putTaskmanagementWorkitemAccessattributes returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putTaskmanagementWorkitemAccessattributes');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **workitemId** | **String** | Workitem ID |  |
+ **body** | **Object** | Access attributes |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+void (no response body)
+
+
 ## putTaskmanagementWorkitemsSchema
 
 > DataSchema putTaskmanagementWorkitemsSchema(schemaId, body, opts)
@@ -4562,4 +4624,4 @@ apiInstance.putTaskmanagementWorkitemsSchema(schemaId, body, opts)
 **DataSchema**
 
 
-_purecloud-platform-client-v2@266.0.0_
+_purecloud-platform-client-v2@267.0.0_

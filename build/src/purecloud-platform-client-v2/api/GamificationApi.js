@@ -5,7 +5,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 266.0.0
+	 * @version 267.0.0
 	 */
 
 	/**

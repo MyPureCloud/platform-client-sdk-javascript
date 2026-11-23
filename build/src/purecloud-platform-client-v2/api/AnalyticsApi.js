@@ -5,7 +5,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 266.0.0
+	 * @version 267.0.0
 	 */
 
 	/**
@@ -67,6 +67,36 @@ class AnalyticsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}', 
+			'DELETE', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Delete/cancel an async request for agentic virtual agent aggregates
+	 * 
+	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	deleteAnalyticsAgenticvirtualagentsAggregatesJob(jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsAgenticvirtualagentsAggregatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/agenticvirtualagents/aggregates/jobs/{jobId}', 
 			'DELETE', 
 			{ 'jobId': jobId },
 			{  },
@@ -398,6 +428,36 @@ class AnalyticsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/analytics/knowledge/aggregates/jobs/{jobId}', 
+			'DELETE', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Delete/cancel an async request for KPI attribution aggregates
+	 * 
+	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	deleteAnalyticsKpiattributionsAggregatesJob(jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsKpiattributionsAggregatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/kpiattributions/aggregates/jobs/{jobId}', 
 			'DELETE', 
 			{ 'jobId': jobId },
 			{  },
@@ -760,6 +820,67 @@ class AnalyticsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}/results', 
+			'GET', 
+			{ 'jobId': jobId },
+			{ 'cursor': opts['cursor'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get status for async query for agentic virtual agent aggregates
+	 * 
+	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getAnalyticsAgenticvirtualagentsAggregatesJob(jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getAnalyticsAgenticvirtualagentsAggregatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/agenticvirtualagents/aggregates/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Fetch a page of results for an async agentic virtual agent aggregates query
+	 * 
+	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.cursor Cursor token to retrieve next page
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getAnalyticsAgenticvirtualagentsAggregatesJobResults(jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getAnalyticsAgenticvirtualagentsAggregatesJobResults';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/agenticvirtualagents/aggregates/jobs/{jobId}/results', 
 			'GET', 
 			{ 'jobId': jobId },
 			{ 'cursor': opts['cursor'] },
@@ -1725,6 +1846,67 @@ class AnalyticsApi {
 	}
 
 	/**
+	 * Get status for async query for KPI attribution aggregates
+	 * 
+	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getAnalyticsKpiattributionsAggregatesJob(jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getAnalyticsKpiattributionsAggregatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/kpiattributions/aggregates/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Fetch a page of results for an async KPI attribution aggregates query
+	 * 
+	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.cursor Cursor token to retrieve next page
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getAnalyticsKpiattributionsAggregatesJobResults(jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getAnalyticsKpiattributionsAggregatesJobResults';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/kpiattributions/aggregates/jobs/{jobId}/results', 
+			'GET', 
+			{ 'jobId': jobId },
+			{ 'cursor': opts['cursor'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Get dashboards summary for a user
 	 * 
 	 * @param {String} userId User ID
@@ -2529,6 +2711,66 @@ class AnalyticsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/analytics/agentcopilots/aggregates/query', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Query for agentic virtual agent aggregates asynchronously
+	 * 
+	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postAnalyticsAgenticvirtualagentsAggregatesJobs(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsAgenticvirtualagentsAggregatesJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/agenticvirtualagents/aggregates/jobs', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Query for agentic virtual agent aggregates
+	 * 
+	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postAnalyticsAgenticvirtualagentsAggregatesQuery(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsAgenticvirtualagentsAggregatesQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/agenticvirtualagents/aggregates/query', 
 			'POST', 
 			{  },
 			{  },
@@ -3411,6 +3653,66 @@ class AnalyticsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/analytics/knowledge/aggregates/query', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Query for KPI attribution aggregates asynchronously
+	 * 
+	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postAnalyticsKpiattributionsAggregatesJobs(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsKpiattributionsAggregatesJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/kpiattributions/aggregates/jobs', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Query for KPI attribution aggregates
+	 * 
+	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postAnalyticsKpiattributionsAggregatesQuery(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsKpiattributionsAggregatesQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/kpiattributions/aggregates/query', 
 			'POST', 
 			{  },
 			{  },

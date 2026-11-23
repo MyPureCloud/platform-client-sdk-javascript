@@ -20,6 +20,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getGuideVersionJob**](AIStudioApi#getGuideVersionJob) | **GET** /api/v2/guides/{guideId}/versions/{versionId}/jobs/{jobId} | Get the status of the publishing job for this guide version.
 [**getGuides**](AIStudioApi#getGuides) | **GET** /api/v2/guides | Get all guides.
 [**getGuidesJob**](AIStudioApi#getGuidesJob) | **GET** /api/v2/guides/jobs/{jobId} | Get the status of the guide content generation job.
+[**getGuidesTranscriptsDiscoverySnapshotId**](AIStudioApi#getGuidesTranscriptsDiscoverySnapshotId) | **GET** /api/v2/guides/transcripts/discovery/{snapshotId} | Get the status of a discovery snapshot.
+[**getGuidesTranscriptsSnapshotGenerate**](AIStudioApi#getGuidesTranscriptsSnapshotGenerate) | **GET** /api/v2/guides/transcripts/snapshots/{snapshotId}/generate | Get the status of a guide generation job.
 [**patchAgenticVirtualagent**](AIStudioApi#patchAgenticVirtualagent) | **PATCH** /api/v2/agentic/virtualagents/{virtualAgentId} | Update a virtual agent.
 [**patchGuide**](AIStudioApi#patchGuide) | **PATCH** /api/v2/guides/{guideId} | Update a guide.
 [**patchGuideVersion**](AIStudioApi#patchGuideVersion) | **PATCH** /api/v2/guides/{guideId}/versions/{versionId} | Update a guide version.
@@ -32,6 +34,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postGuideVersions**](AIStudioApi#postGuideVersions) | **POST** /api/v2/guides/{guideId}/versions | Create a guide version.
 [**postGuides**](AIStudioApi#postGuides) | **POST** /api/v2/guides | Create a guide.
 [**postGuidesJobs**](AIStudioApi#postGuidesJobs) | **POST** /api/v2/guides/jobs | Start a guide content generation job.
+[**postGuidesTranscriptsDiscovery**](AIStudioApi#postGuidesTranscriptsDiscovery) | **POST** /api/v2/guides/transcripts/discovery | Create a discovery job.
+[**postGuidesTranscriptsSnapshotGenerate**](AIStudioApi#postGuidesTranscriptsSnapshotGenerate) | **POST** /api/v2/guides/transcripts/snapshots/{snapshotId}/generate | Create a guide generation job.
 [**postGuidesUploads**](AIStudioApi#postGuidesUploads) | **POST** /api/v2/guides/uploads | Generate presigned URL for uploading a file content to generate guide
 [**putConversationsSummariesSetting**](AIStudioApi#putConversationsSummariesSetting) | **PUT** /api/v2/conversations/summaries/settings/{summarySettingId} | Update a summary setting.
 
@@ -879,6 +883,122 @@ apiInstance.getGuidesJob(jobId, opts)
 **GuideContentGenerationJob**
 
 
+## getGuidesTranscriptsDiscoverySnapshotId
+
+> GetDiscoveryResponse getGuidesTranscriptsDiscoverySnapshotId(snapshotId, opts)
+
+
+GET /api/v2/guides/transcripts/discovery/{snapshotId}
+
+Get the status of a discovery snapshot.
+
+Requires ALL permissions:
+
+* aiStudio:guideJob:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AIStudioApi();
+
+let snapshotId = "snapshotId_example"; // String | Snapshot ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getGuidesTranscriptsDiscoverySnapshotId(snapshotId, opts)
+  .then((data) => {
+    console.log(`getGuidesTranscriptsDiscoverySnapshotId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGuidesTranscriptsDiscoverySnapshotId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **snapshotId** | **String** | Snapshot ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**GetDiscoveryResponse**
+
+
+## getGuidesTranscriptsSnapshotGenerate
+
+> GetGenerationResponse getGuidesTranscriptsSnapshotGenerate(snapshotId, rfcName, opts)
+
+
+GET /api/v2/guides/transcripts/snapshots/{snapshotId}/generate
+
+Get the status of a guide generation job.
+
+Requires ALL permissions:
+
+* aiStudio:guideJob:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AIStudioApi();
+
+let snapshotId = "snapshotId_example"; // String | Snapshot ID
+let rfcName = "rfcName_example"; // String | RFC name
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getGuidesTranscriptsSnapshotGenerate(snapshotId, rfcName, opts)
+  .then((data) => {
+    console.log(`getGuidesTranscriptsSnapshotGenerate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGuidesTranscriptsSnapshotGenerate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **snapshotId** | **String** | Snapshot ID |  |
+ **rfcName** | **String** | RFC name |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**GetGenerationResponse**
+
+
 ## patchAgenticVirtualagent
 
 > AgenticVirtualAgent patchAgenticVirtualagent(virtualAgentId, body, opts)
@@ -1587,6 +1707,122 @@ apiInstance.postGuidesJobs(body, opts)
 **GuideContentGenerationJob**
 
 
+## postGuidesTranscriptsDiscovery
+
+> DiscoveryResponse postGuidesTranscriptsDiscovery(body, opts)
+
+
+POST /api/v2/guides/transcripts/discovery
+
+Create a discovery job.
+
+Requires ALL permissions:
+
+* aiStudio:guideJob:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AIStudioApi();
+
+let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postGuidesTranscriptsDiscovery(body, opts)
+  .then((data) => {
+    console.log(`postGuidesTranscriptsDiscovery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postGuidesTranscriptsDiscovery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**DiscoveryResponse**
+
+
+## postGuidesTranscriptsSnapshotGenerate
+
+> GenerateEntryResponse postGuidesTranscriptsSnapshotGenerate(snapshotId, body, opts)
+
+
+POST /api/v2/guides/transcripts/snapshots/{snapshotId}/generate
+
+Create a guide generation job.
+
+Requires ALL permissions:
+
+* aiStudio:guideJob:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AIStudioApi();
+
+let snapshotId = "snapshotId_example"; // String | Snapshot ID
+let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postGuidesTranscriptsSnapshotGenerate(snapshotId, body, opts)
+  .then((data) => {
+    console.log(`postGuidesTranscriptsSnapshotGenerate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postGuidesTranscriptsSnapshotGenerate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **snapshotId** | **String** | Snapshot ID |  |
+ **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**GenerateEntryResponse**
+
+
 ## postGuidesUploads
 
 > UploadUrlResponse postGuidesUploads(body, opts)
@@ -1703,4 +1939,4 @@ apiInstance.putConversationsSummariesSetting(summarySettingId, body, opts)
 **SummarySetting**
 
 
-_purecloud-platform-client-v2@266.0.0_
+_purecloud-platform-client-v2@267.0.0_

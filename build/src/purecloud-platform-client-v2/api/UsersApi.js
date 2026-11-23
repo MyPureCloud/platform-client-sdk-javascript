@@ -5,7 +5,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 266.0.0
+	 * @version 267.0.0
 	 */
 
 	/**
@@ -2260,6 +2260,34 @@ class UsersApi {
 	}
 
 	/**
+	 * List the organizations that have authorized/trusted the current user.
+	 * This request is not valid when using the Client Credentials OAuth grant.
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * getUsersMeTrustors is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getUsersMeTrustors(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/users/me/trustors', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Get a list of my verifiers
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -3092,6 +3120,41 @@ class UsersApi {
 			{  },
 			{  },
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Gets all divisions for a particular user in an org.
+	 * 
+	 * @param {String} subjectId Subject ID (user or group)
+	 * @param {Array.<String>} body DivisionPermissionQuery
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postAuthorizationSubjectDivisionsQuery(subjectId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'subjectId' is set
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
+			throw 'Missing the required parameter "subjectId" when calling postAuthorizationSubjectDivisionsQuery';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAuthorizationSubjectDivisionsQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/subjects/{subjectId}/divisions/query', 
+			'POST', 
+			{ 'subjectId': subjectId },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json'],

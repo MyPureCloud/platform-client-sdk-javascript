@@ -5,7 +5,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 266.0.0
+	 * @version 267.0.0
 	 */
 
 	/**
@@ -952,6 +952,31 @@ class RecordingApi {
 	}
 
 	/**
+	 * Get the Snippet Recording Settings for the Organization
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getRecordingSnippetsSettings(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/recording/snippets/settings', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Get the status of a recording upload status report
 	 * 
 	 * @param {String} reportId reportId
@@ -1807,6 +1832,36 @@ class RecordingApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/recording/settings', 
+			'PUT', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update the Snippet Recording Settings for the Organization
+	 * 
+	 * @param {Object} body Snippet recording settings
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	putRecordingSnippetsSettings(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putRecordingSnippetsSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/recording/snippets/settings', 
 			'PUT', 
 			{  },
 			{  },
