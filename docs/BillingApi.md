@@ -175,8 +175,8 @@ let opts = {
   'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 10.
-  'dateStart': "dateStart_example", // String | Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-  'dateEnd': "dateEnd_example", // String | End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'dateStart': "dateStart_example", // String | Start date for the query. When dateEnd is also supplied, dateStart must be on or before dateEnd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'dateEnd': "dateEnd_example", // String | End date for the query. When dateStart is also supplied, dateEnd must be on or after dateStart. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
   'status': "status_example", // String | Filter by the status of contracts
   'externalNumber': "externalNumber_example", // String | Filter by the unique external number.
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
@@ -203,8 +203,8 @@ apiInstance.getBillingContracts(opts)
  **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 10. | [optional]  |
- **dateStart** | **String** | Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
- **dateEnd** | **String** | End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+ **dateStart** | **String** | Start date for the query. When dateEnd is also supplied, dateStart must be on or before dateEnd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+ **dateEnd** | **String** | End date for the query. When dateStart is also supplied, dateEnd must be on or after dateStart. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
  **status** | **String** | Filter by the status of contracts | [optional] <br />**Values**: Active, Inactive |
  **externalNumber** | **String** | Filter by the unique external number. | [optional]  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
@@ -376,8 +376,8 @@ let opts = {
   'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
-  'dateStart': "dateStart_example", // String | Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-  'dateEnd': "dateEnd_example", // String | End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'dateStart': "dateStart_example", // String | Start date for the query. When dateEnd is also supplied, dateStart must be on or before dateEnd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'dateEnd': "dateEnd_example", // String | End date for the query. When dateStart is also supplied, dateEnd must be on or after dateStart. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
   'paymentStatus': "paymentStatus_example", // String | Payment Status
   'agreementId': "agreementId_example", // String | Filter invoices by agreement ID.
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
@@ -404,8 +404,8 @@ apiInstance.getBillingContractsInvoices(opts)
  **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
- **dateStart** | **String** | Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
- **dateEnd** | **String** | End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+ **dateStart** | **String** | Start date for the query. When dateEnd is also supplied, dateStart must be on or before dateEnd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+ **dateEnd** | **String** | End date for the query. When dateStart is also supplied, dateEnd must be on or after dateStart. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
  **paymentStatus** | **String** | Payment Status | [optional] <br />**Values**: Paid, UnPaid |
  **agreementId** | **String** | Filter invoices by agreement ID. | [optional]  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
@@ -538,4 +538,4 @@ apiInstance.getBillingTrusteebillingoverviewTrustorOrgId(trustorOrgId, opts)
 **TrusteeBillingOverview**
 
 
-_purecloud-platform-client-v2@266.0.0_
+_purecloud-platform-client-v2@267.0.0_

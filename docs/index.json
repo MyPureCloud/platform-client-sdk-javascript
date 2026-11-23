@@ -5,6 +5,7 @@
   "AgentUIApi.md",
   "AlertingApi.md",
   "AnalyticsApi.md",
+  "AnomalyDetectionApi.md",
   "ArchitectApi.md",
   "AssistantCopilotVariationsApi.md",
   "AuditApi.md",

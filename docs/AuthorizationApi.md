@@ -6,10 +6,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+[**deleteAuthorizationCustomattributesItemtype**](AuthorizationApi#deleteAuthorizationCustomattributesItemtype) | **DELETE** /api/v2/authorization/customattributes/itemtypes/{itemType} | Delete the default search criteria for an itemType.
 [**deleteAuthorizationDivision**](AuthorizationApi#deleteAuthorizationDivision) | **DELETE** /api/v2/authorization/divisions/{divisionId} | Delete a division.
 [**deleteAuthorizationPoliciesTargetSubjectSubjectId**](AuthorizationApi#deleteAuthorizationPoliciesTargetSubjectSubjectId) | **DELETE** /api/v2/authorization/policies/targets/{targetName}/subject/{subjectId} | Delete an access control policy
 [**deleteAuthorizationRole**](AuthorizationApi#deleteAuthorizationRole) | **DELETE** /api/v2/authorization/roles/{roleId} | Delete an organization role.
 [**deleteAuthorizationSubjectDivisionRole**](AuthorizationApi#deleteAuthorizationSubjectDivisionRole) | **DELETE** /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId} | Delete a grant of a role in a division
+[**getAuthorizationCustomattributesItemtype**](AuthorizationApi#getAuthorizationCustomattributesItemtype) | **GET** /api/v2/authorization/customattributes/itemtypes/{itemType} | Get the default search criteria for an itemType.
 [**getAuthorizationDivision**](AuthorizationApi#getAuthorizationDivision) | **GET** /api/v2/authorization/divisions/{divisionId} | Returns an authorization division.
 [**getAuthorizationDivisionGrants**](AuthorizationApi#getAuthorizationDivisionGrants) | **GET** /api/v2/authorization/divisions/{divisionId}/grants | Gets all grants for a given division.
 [**getAuthorizationDivisions**](AuthorizationApi#getAuthorizationDivisions) | **GET** /api/v2/authorization/divisions | Retrieve a list of all divisions defined for the organization
@@ -42,6 +44,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getUserRoles**](AuthorizationApi#getUserRoles) | **GET** /api/v2/users/{subjectId}/roles | Returns a listing of roles and permissions for a user.
 [**patchAuthorizationRole**](AuthorizationApi#patchAuthorizationRole) | **PATCH** /api/v2/authorization/roles/{roleId} | Patch Organization Role for needsUpdate Field
 [**patchAuthorizationSettings**](AuthorizationApi#patchAuthorizationSettings) | **PATCH** /api/v2/authorization/settings | Change authorization settings
+[**postAuthorizationCustomattributesItemtype**](AuthorizationApi#postAuthorizationCustomattributesItemtype) | **POST** /api/v2/authorization/customattributes/itemtypes/{itemType} | Add a new default search criteria for an itemType.
 [**postAuthorizationDivisionObject**](AuthorizationApi#postAuthorizationDivisionObject) | **POST** /api/v2/authorization/divisions/{divisionId}/objects/{objectType} | Assign a list of objects to a division
 [**postAuthorizationDivisionRestore**](AuthorizationApi#postAuthorizationDivisionRestore) | **POST** /api/v2/authorization/divisions/{divisionId}/restore | Recreate a previously deleted division.
 [**postAuthorizationDivisions**](AuthorizationApi#postAuthorizationDivisions) | **POST** /api/v2/authorization/divisions | Create a division.
@@ -56,6 +59,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postAuthorizationSubjectBulkremove**](AuthorizationApi#postAuthorizationSubjectBulkremove) | **POST** /api/v2/authorization/subjects/{subjectId}/bulkremove | Bulk-remove grants from a subject.
 [**postAuthorizationSubjectBulkreplace**](AuthorizationApi#postAuthorizationSubjectBulkreplace) | **POST** /api/v2/authorization/subjects/{subjectId}/bulkreplace | Replace subject's roles and divisions with the exact list supplied in the request.
 [**postAuthorizationSubjectDivisionRole**](AuthorizationApi#postAuthorizationSubjectDivisionRole) | **POST** /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId} | Make a grant of a role in a division
+[**postAuthorizationSubjectDivisionsQuery**](AuthorizationApi#postAuthorizationSubjectDivisionsQuery) | **POST** /api/v2/authorization/subjects/{subjectId}/divisions/query | Gets all divisions for a particular user in an org.
 [**putAuthorizationDivision**](AuthorizationApi#putAuthorizationDivision) | **PUT** /api/v2/authorization/divisions/{divisionId} | Update a division.
 [**putAuthorizationPoliciesTarget**](AuthorizationApi#putAuthorizationPoliciesTarget) | **PUT** /api/v2/authorization/policies/targets/{targetName} | Add an access control policy for a specified resource target and subject, overwriting any existing policy
 [**putAuthorizationPolicy**](AuthorizationApi#putAuthorizationPolicy) | **PUT** /api/v2/authorization/policies/{policyId} | Update an access control policy with a given ID
@@ -66,6 +70,63 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putAuthorizationRolesSettings**](AuthorizationApi#putAuthorizationRolesSettings) | **PUT** /api/v2/authorization/roles/settings | Change authorization role settings
 [**putUserRoles**](AuthorizationApi#putUserRoles) | **PUT** /api/v2/users/{subjectId}/roles | Sets the user's roles
 
+
+
+## deleteAuthorizationCustomattributesItemtype
+
+> void deleteAuthorizationCustomattributesItemtype(itemType, opts)
+
+
+DELETE /api/v2/authorization/customattributes/itemtypes/{itemType}
+
+Delete the default search criteria for an itemType.
+
+Requires ANY permissions:
+
+* authorization:defaultSearchCriteria:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AuthorizationApi();
+
+let itemType = "itemType_example"; // String | Item Type
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.deleteAuthorizationCustomattributesItemtype(itemType, opts)
+  .then(() => {
+    console.log('deleteAuthorizationCustomattributesItemtype returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAuthorizationCustomattributesItemtype');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **itemType** | **String** | Item Type | <br />**Values**: conversation, transcript, evaluation, workitem |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+void (no response body)
 
 
 ## deleteAuthorizationDivision
@@ -302,6 +363,63 @@ apiInstance.deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId
 ### Return type
 
 void (no response body)
+
+
+## getAuthorizationCustomattributesItemtype
+
+> AuthzDefaultSearchResponse getAuthorizationCustomattributesItemtype(itemType, opts)
+
+
+GET /api/v2/authorization/customattributes/itemtypes/{itemType}
+
+Get the default search criteria for an itemType.
+
+Requires ANY permissions:
+
+* authorization:defaultSearchCriteria:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AuthorizationApi();
+
+let itemType = "itemType_example"; // String | Item Type
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getAuthorizationCustomattributesItemtype(itemType, opts)
+  .then((data) => {
+    console.log(`getAuthorizationCustomattributesItemtype success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAuthorizationCustomattributesItemtype');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **itemType** | **String** | Item Type | <br />**Values**: conversation, transcript, evaluation, workitem |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AuthzDefaultSearchResponse**
 
 
 ## getAuthorizationDivision
@@ -2235,6 +2353,65 @@ apiInstance.patchAuthorizationSettings(body, opts)
 **AuthorizationSettings**
 
 
+## postAuthorizationCustomattributesItemtype
+
+> AuthzDefaultSearchResponse postAuthorizationCustomattributesItemtype(itemType, body, opts)
+
+
+POST /api/v2/authorization/customattributes/itemtypes/{itemType}
+
+Add a new default search criteria for an itemType.
+
+Requires ANY permissions:
+
+* authorization:defaultSearchCriteria:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AuthorizationApi();
+
+let itemType = "itemType_example"; // String | Item Type
+let body = {}; // Object | The custom attribute meta data object
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postAuthorizationCustomattributesItemtype(itemType, body, opts)
+  .then((data) => {
+    console.log(`postAuthorizationCustomattributesItemtype success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAuthorizationCustomattributesItemtype');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **itemType** | **String** | Item Type | <br />**Values**: conversation, transcript, evaluation, workitem |
+ **body** | **Object** | The custom attribute meta data object |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AuthzDefaultSearchResponse**
+
+
 ## postAuthorizationDivisionObject
 
 > void postAuthorizationDivisionObject(divisionId, objectType, body, opts)
@@ -3079,6 +3256,65 @@ apiInstance.postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, 
 void (no response body)
 
 
+## postAuthorizationSubjectDivisionsQuery
+
+> DomainUserDivisionsResultListing postAuthorizationSubjectDivisionsQuery(subjectId, body, opts)
+
+
+POST /api/v2/authorization/subjects/{subjectId}/divisions/query
+
+Gets all divisions for a particular user in an org.
+
+Requires ANY permissions:
+
+* authorization:grant:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AuthorizationApi();
+
+let subjectId = "subjectId_example"; // String | Subject ID (user or group)
+let body = ["body_example"]; // [String] | DivisionPermissionQuery
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postAuthorizationSubjectDivisionsQuery(subjectId, body, opts)
+  .then((data) => {
+    console.log(`postAuthorizationSubjectDivisionsQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAuthorizationSubjectDivisionsQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **subjectId** | **String** | Subject ID (user or group) |  |
+ **body** | **[String]** | DivisionPermissionQuery |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**DomainUserDivisionsResultListing**
+
+
 ## putAuthorizationDivision
 
 > AuthzDivision putAuthorizationDivision(divisionId, body, opts)
@@ -3616,4 +3852,4 @@ apiInstance.putUserRoles(subjectId, body, opts)
 **UserAuthorization**
 
 
-_purecloud-platform-client-v2@266.0.0_
+_purecloud-platform-client-v2@267.0.0_

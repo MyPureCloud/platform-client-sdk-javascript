@@ -6,18 +6,78 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+[**deleteAuthorizationCustomattributesItemtype**](ObjectsApi#deleteAuthorizationCustomattributesItemtype) | **DELETE** /api/v2/authorization/customattributes/itemtypes/{itemType} | Delete the default search criteria for an itemType.
 [**deleteAuthorizationDivision**](ObjectsApi#deleteAuthorizationDivision) | **DELETE** /api/v2/authorization/divisions/{divisionId} | Delete a division.
+[**getAuthorizationCustomattributesItemtype**](ObjectsApi#getAuthorizationCustomattributesItemtype) | **GET** /api/v2/authorization/customattributes/itemtypes/{itemType} | Get the default search criteria for an itemType.
 [**getAuthorizationDivision**](ObjectsApi#getAuthorizationDivision) | **GET** /api/v2/authorization/divisions/{divisionId} | Returns an authorization division.
 [**getAuthorizationDivisions**](ObjectsApi#getAuthorizationDivisions) | **GET** /api/v2/authorization/divisions | Retrieve a list of all divisions defined for the organization
 [**getAuthorizationDivisionsDeleted**](ObjectsApi#getAuthorizationDivisionsDeleted) | **GET** /api/v2/authorization/divisions/deleted | Get a list of soft deleted divisions for the org
 [**getAuthorizationDivisionsHome**](ObjectsApi#getAuthorizationDivisionsHome) | **GET** /api/v2/authorization/divisions/home | Retrieve the home division for the organization.
 [**getAuthorizationDivisionsLimit**](ObjectsApi#getAuthorizationDivisionsLimit) | **GET** /api/v2/authorization/divisions/limit | Returns the maximum allowed number of divisions.
 [**getAuthorizationDivisionsQuery**](ObjectsApi#getAuthorizationDivisionsQuery) | **GET** /api/v2/authorization/divisions/query | Retrieve a list of all divisions defined for the organization with cursor
+[**postAuthorizationCustomattributesItemtype**](ObjectsApi#postAuthorizationCustomattributesItemtype) | **POST** /api/v2/authorization/customattributes/itemtypes/{itemType} | Add a new default search criteria for an itemType.
 [**postAuthorizationDivisionObject**](ObjectsApi#postAuthorizationDivisionObject) | **POST** /api/v2/authorization/divisions/{divisionId}/objects/{objectType} | Assign a list of objects to a division
 [**postAuthorizationDivisionRestore**](ObjectsApi#postAuthorizationDivisionRestore) | **POST** /api/v2/authorization/divisions/{divisionId}/restore | Recreate a previously deleted division.
 [**postAuthorizationDivisions**](ObjectsApi#postAuthorizationDivisions) | **POST** /api/v2/authorization/divisions | Create a division.
 [**putAuthorizationDivision**](ObjectsApi#putAuthorizationDivision) | **PUT** /api/v2/authorization/divisions/{divisionId} | Update a division.
 
+
+
+## deleteAuthorizationCustomattributesItemtype
+
+> void deleteAuthorizationCustomattributesItemtype(itemType, opts)
+
+
+DELETE /api/v2/authorization/customattributes/itemtypes/{itemType}
+
+Delete the default search criteria for an itemType.
+
+Requires ANY permissions:
+
+* authorization:defaultSearchCriteria:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ObjectsApi();
+
+let itemType = "itemType_example"; // String | Item Type
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.deleteAuthorizationCustomattributesItemtype(itemType, opts)
+  .then(() => {
+    console.log('deleteAuthorizationCustomattributesItemtype returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAuthorizationCustomattributesItemtype');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **itemType** | **String** | Item Type | <br />**Values**: conversation, transcript, evaluation, workitem |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+void (no response body)
 
 
 ## deleteAuthorizationDivision
@@ -77,6 +137,63 @@ apiInstance.deleteAuthorizationDivision(divisionId, opts)
 ### Return type
 
 void (no response body)
+
+
+## getAuthorizationCustomattributesItemtype
+
+> AuthzDefaultSearchResponse getAuthorizationCustomattributesItemtype(itemType, opts)
+
+
+GET /api/v2/authorization/customattributes/itemtypes/{itemType}
+
+Get the default search criteria for an itemType.
+
+Requires ANY permissions:
+
+* authorization:defaultSearchCriteria:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ObjectsApi();
+
+let itemType = "itemType_example"; // String | Item Type
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getAuthorizationCustomattributesItemtype(itemType, opts)
+  .then((data) => {
+    console.log(`getAuthorizationCustomattributesItemtype success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAuthorizationCustomattributesItemtype');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **itemType** | **String** | Item Type | <br />**Values**: conversation, transcript, evaluation, workitem |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AuthzDefaultSearchResponse**
 
 
 ## getAuthorizationDivision
@@ -439,6 +556,65 @@ apiInstance.getAuthorizationDivisionsQuery(opts)
 **AuthzDivisionCursorListing**
 
 
+## postAuthorizationCustomattributesItemtype
+
+> AuthzDefaultSearchResponse postAuthorizationCustomattributesItemtype(itemType, body, opts)
+
+
+POST /api/v2/authorization/customattributes/itemtypes/{itemType}
+
+Add a new default search criteria for an itemType.
+
+Requires ANY permissions:
+
+* authorization:defaultSearchCriteria:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ObjectsApi();
+
+let itemType = "itemType_example"; // String | Item Type
+let body = {}; // Object | The custom attribute meta data object
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postAuthorizationCustomattributesItemtype(itemType, body, opts)
+  .then((data) => {
+    console.log(`postAuthorizationCustomattributesItemtype success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAuthorizationCustomattributesItemtype');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **itemType** | **String** | Item Type | <br />**Values**: conversation, transcript, evaluation, workitem |
+ **body** | **Object** | The custom attribute meta data object |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AuthzDefaultSearchResponse**
+
+
 ## postAuthorizationDivisionObject
 
 > void postAuthorizationDivisionObject(divisionId, objectType, body, opts)
@@ -676,4 +852,4 @@ apiInstance.putAuthorizationDivision(divisionId, body, opts)
 **AuthzDivision**
 
 
-_purecloud-platform-client-v2@266.0.0_
+_purecloud-platform-client-v2@267.0.0_

@@ -14,6 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteConversationParticipantFlaggedreason**](ConversationsApi#deleteConversationParticipantFlaggedreason) | **DELETE** /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason | Remove flagged reason from conversation participant.
 [**deleteConversationsCallParticipantCommunicationPostflowaction**](ConversationsApi#deleteConversationsCallParticipantCommunicationPostflowaction) | **DELETE** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/postflowaction | Remove mandatory post call actions.
 [**deleteConversationsCallParticipantConsult**](ConversationsApi#deleteConversationsCallParticipantConsult) | **DELETE** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult | Cancel the transfer
+[**deleteConversationsEmailDraft**](ConversationsApi#deleteConversationsEmailDraft) | **DELETE** /api/v2/conversations/emails/{conversationId}/draft | Discard an email draft and reset to initial state
 [**deleteConversationsEmailMessagesDraftAttachment**](ConversationsApi#deleteConversationsEmailMessagesDraftAttachment) | **DELETE** /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/{attachmentId} | Delete attachment from draft
 [**deleteConversationsMessagesCachedmediaCachedMediaItemId**](ConversationsApi#deleteConversationsMessagesCachedmediaCachedMediaItemId) | **DELETE** /api/v2/conversations/messages/cachedmedia/{cachedMediaItemId} | Remove a cached media item asychronously
 [**deleteConversationsMessagingIntegrationsAppleIntegrationId**](ConversationsApi#deleteConversationsMessagingIntegrationsAppleIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/apple/{integrationId} | Delete an Apple messaging integration
@@ -172,6 +173,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchConversationsCobrowsesessionParticipantAttributes**](ConversationsApi#patchConversationsCobrowsesessionParticipantAttributes) | **PATCH** /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
 [**patchConversationsCobrowsesessionParticipantCommunication**](ConversationsApi#patchConversationsCobrowsesessionParticipantCommunication) | **PATCH** /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant's communication by disconnecting it.
 [**patchConversationsEmail**](ConversationsApi#patchConversationsEmail) | **PATCH** /api/v2/conversations/emails/{conversationId} | Update a conversation by disconnecting all of the participants
+[**patchConversationsEmailDraft**](ConversationsApi#patchConversationsEmailDraft) | **PATCH** /api/v2/conversations/emails/{conversationId}/draft | Update email draft headers or include message history
 [**patchConversationsEmailMessagesDraft**](ConversationsApi#patchConversationsEmailMessagesDraft) | **PATCH** /api/v2/conversations/emails/{conversationId}/messages/draft | Reset conversation draft to its initial state and/or auto-fill draft content
 [**patchConversationsEmailParticipant**](ConversationsApi#patchConversationsEmailParticipant) | **PATCH** /api/v2/conversations/emails/{conversationId}/participants/{participantId} | Update conversation participant
 [**patchConversationsEmailParticipantAttributes**](ConversationsApi#patchConversationsEmailParticipantAttributes) | **PATCH** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
@@ -248,6 +250,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationsCobrowsesessionParticipantReplace**](ConversationsApi#postConversationsCobrowsesessionParticipantReplace) | **POST** /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
 [**postConversationsCustomattributesSchemas**](ConversationsApi#postConversationsCustomattributesSchemas) | **POST** /api/v2/conversations/customattributes/schemas | Create a schema
 [**postConversationsCustomattributesSearch**](ConversationsApi#postConversationsCustomattributesSearch) | **POST** /api/v2/conversations/customattributes/search | Search resources.
+[**postConversationsEmailDraft**](ConversationsApi#postConversationsEmailDraft) | **POST** /api/v2/conversations/emails/{conversationId}/draft | Create and initialize an email draft
 [**postConversationsEmailInboundmessages**](ConversationsApi#postConversationsEmailInboundmessages) | **POST** /api/v2/conversations/emails/{conversationId}/inboundmessages | Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based. This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
 [**postConversationsEmailMessages**](ConversationsApi#postConversationsEmailMessages) | **POST** /api/v2/conversations/emails/{conversationId}/messages | Send an email reply
 [**postConversationsEmailMessagesDraftAttachmentsCopy**](ConversationsApi#postConversationsEmailMessagesDraftAttachmentsCopy) | **POST** /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/copy | Copy attachments from an email message to the current draft.
@@ -782,6 +785,63 @@ apiInstance.deleteConversationsCallParticipantConsult(conversationId, participan
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+void (no response body)
+
+
+## deleteConversationsEmailDraft
+
+> void deleteConversationsEmailDraft(conversationId, opts)
+
+
+DELETE /api/v2/conversations/emails/{conversationId}/draft
+
+Discard an email draft and reset to initial state
+
+Requires ANY permissions:
+
+* conversation:emailDraft:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.deleteConversationsEmailDraft(conversationId, opts)
+  .then(() => {
+    console.log('deleteConversationsEmailDraft returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteConversationsEmailDraft');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -1949,8 +2009,6 @@ apiInstance.getConversation(conversationId, opts)
 GET /api/v2/conversations/{conversationId}/accessattributes
 
 Get the access attributes on a conversation.
-
-getConversationAccessattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -10096,6 +10154,67 @@ apiInstance.patchConversationsEmail(conversationId, body, opts)
 **Conversation**
 
 
+## patchConversationsEmailDraft
+
+> EmailMessage patchConversationsEmailDraft(conversationId, body, opts)
+
+
+PATCH /api/v2/conversations/emails/{conversationId}/draft
+
+Update email draft headers or include message history
+
+Update email draft recipients (To, CC, BCC), subject, or custom override headers and include message history in the draft. Supports both user context and non-user context (OAuth client credentials). With user context: all operations are supported and the user must be an active participant on the conversation. Without user context: historyIncluded cannot be used.
+
+Requires ANY permissions:
+
+* conversation:emailDraft:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let body = {}; // Object | Patch Draft Request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchConversationsEmailDraft(conversationId, body, opts)
+  .then((data) => {
+    console.log(`patchConversationsEmailDraft success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsEmailDraft');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **body** | **Object** | Patch Draft Request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**EmailMessage**
+
+
 ## patchConversationsEmailMessagesDraft
 
 > EmailMessage patchConversationsEmailMessagesDraft(conversationId, opts)
@@ -14714,6 +14833,65 @@ apiInstance.postConversationsCustomattributesSearch(body, opts)
 **JsonSearchResponse**
 
 
+## postConversationsEmailDraft
+
+> EmailMessage postConversationsEmailDraft(conversationId, opts)
+
+
+POST /api/v2/conversations/emails/{conversationId}/draft
+
+Create and initialize an email draft
+
+Requires ANY permissions:
+
+* conversation:emailDraft:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let opts = { 
+  'body': {}, // Object | Create Draft Request
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postConversationsEmailDraft(conversationId, opts)
+  .then((data) => {
+    console.log(`postConversationsEmailDraft success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsEmailDraft');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **body** | **Object** | Create Draft Request | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**EmailMessage**
+
+
 ## postConversationsEmailInboundmessages
 
 > EmailConversation postConversationsEmailInboundmessages(conversationId, body, opts)
@@ -17491,8 +17669,6 @@ PUT /api/v2/conversations/{conversationId}/accessattributes
 
 Set the access attributes on a conversation.
 
-putConversationAccessattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * conversation:accessAttributes:edit
@@ -19091,4 +19267,4 @@ apiInstance.putConversationsVideoRecordingstate(conversationId, body, opts)
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@266.0.0_
+_purecloud-platform-client-v2@267.0.0_
