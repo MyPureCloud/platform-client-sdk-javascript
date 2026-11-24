@@ -11,6 +11,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteGuideJobs**](AIStudioApi#deleteGuideJobs) | **DELETE** /api/v2/guides/{guideId}/jobs | Start the deletion of a guide.
 [**getAgenticVirtualagent**](AIStudioApi#getAgenticVirtualagent) | **GET** /api/v2/agentic/virtualagents/{virtualAgentId} | Get virtual agent.
 [**getAgenticVirtualagentJob**](AIStudioApi#getAgenticVirtualagentJob) | **GET** /api/v2/agentic/virtualagents/{virtualAgentId}/jobs/{jobId} | Get a virtualAgent job.
+[**getAgenticVirtualagentVersion**](AIStudioApi#getAgenticVirtualagentVersion) | **GET** /api/v2/agentic/virtualagents/{virtualAgentId}/versions/{versionId} | Get a virtual agent version.
+[**getAgenticVirtualagentVersionJob**](AIStudioApi#getAgenticVirtualagentVersionJob) | **GET** /api/v2/agentic/virtualagents/{virtualAgentId}/versions/{versionId}/jobs/{jobId} | Get the status of the publishing job for this virtual agent version.
 [**getAgenticVirtualagents**](AIStudioApi#getAgenticVirtualagents) | **GET** /api/v2/agentic/virtualagents | Get all virtual agents.
 [**getConversationsSummariesSetting**](AIStudioApi#getConversationsSummariesSetting) | **GET** /api/v2/conversations/summaries/settings/{summarySettingId} | Receive a summary setting.
 [**getConversationsSummariesSettings**](AIStudioApi#getConversationsSummariesSettings) | **GET** /api/v2/conversations/summaries/settings | Get all summary settings.
@@ -23,9 +25,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getGuidesTranscriptsDiscoverySnapshotId**](AIStudioApi#getGuidesTranscriptsDiscoverySnapshotId) | **GET** /api/v2/guides/transcripts/discovery/{snapshotId} | Get the status of a discovery snapshot.
 [**getGuidesTranscriptsSnapshotGenerate**](AIStudioApi#getGuidesTranscriptsSnapshotGenerate) | **GET** /api/v2/guides/transcripts/snapshots/{snapshotId}/generate | Get the status of a guide generation job.
 [**patchAgenticVirtualagent**](AIStudioApi#patchAgenticVirtualagent) | **PATCH** /api/v2/agentic/virtualagents/{virtualAgentId} | Update a virtual agent.
+[**patchAgenticVirtualagentVersion**](AIStudioApi#patchAgenticVirtualagentVersion) | **PATCH** /api/v2/agentic/virtualagents/{virtualAgentId}/versions/{versionId} | Update a virtual agent version.
 [**patchGuide**](AIStudioApi#patchGuide) | **PATCH** /api/v2/guides/{guideId} | Update a guide.
 [**patchGuideVersion**](AIStudioApi#patchGuideVersion) | **PATCH** /api/v2/guides/{guideId}/versions/{versionId} | Update a guide version.
 [**postAgenticVirtualagentVersionJobs**](AIStudioApi#postAgenticVirtualagentVersionJobs) | **POST** /api/v2/agentic/virtualagents/{virtualAgentId}/versions/{versionId}/jobs | Start the publishing of a virtual agent version.
+[**postAgenticVirtualagentVersions**](AIStudioApi#postAgenticVirtualagentVersions) | **POST** /api/v2/agentic/virtualagents/{virtualAgentId}/versions | Create a virtual agent version.
 [**postAgenticVirtualagents**](AIStudioApi#postAgenticVirtualagents) | **POST** /api/v2/agentic/virtualagents | Create a virtual agent.
 [**postConversationsSummariesPreview**](AIStudioApi#postConversationsSummariesPreview) | **POST** /api/v2/conversations/summaries/preview | Trigger summary preview event generation.
 [**postConversationsSummariesSettings**](AIStudioApi#postConversationsSummariesSettings) | **POST** /api/v2/conversations/summaries/settings | Create a summary setting.
@@ -326,6 +330,126 @@ apiInstance.getAgenticVirtualagentJob(virtualAgentId, jobId, opts)
 ### Return type
 
 **AgenticVirtualAgentJob**
+
+
+## getAgenticVirtualagentVersion
+
+> AgenticVirtualAgentVersion getAgenticVirtualagentVersion(virtualAgentId, versionId, opts)
+
+
+GET /api/v2/agentic/virtualagents/{virtualAgentId}/versions/{versionId}
+
+Get a virtual agent version.
+
+Requires ALL permissions:
+
+* agentic:virtualAgentVersion:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AIStudioApi();
+
+let virtualAgentId = "virtualAgentId_example"; // String | Virtual Agent ID
+let versionId = "versionId_example"; // String | Version ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getAgenticVirtualagentVersion(virtualAgentId, versionId, opts)
+  .then((data) => {
+    console.log(`getAgenticVirtualagentVersion success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAgenticVirtualagentVersion');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **virtualAgentId** | **String** | Virtual Agent ID |  |
+ **versionId** | **String** | Version ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AgenticVirtualAgentVersion**
+
+
+## getAgenticVirtualagentVersionJob
+
+> AgenticVirtualAgentVersionJob getAgenticVirtualagentVersionJob(virtualAgentId, versionId, jobId, opts)
+
+
+GET /api/v2/agentic/virtualagents/{virtualAgentId}/versions/{versionId}/jobs/{jobId}
+
+Get the status of the publishing job for this virtual agent version.
+
+Requires ALL permissions:
+
+* agentic:virtualAgentVersionJob:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AIStudioApi();
+
+let virtualAgentId = "virtualAgentId_example"; // String | Virtual Agent ID
+let versionId = "versionId_example"; // String | Version ID
+let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getAgenticVirtualagentVersionJob(virtualAgentId, versionId, jobId, opts)
+  .then((data) => {
+    console.log(`getAgenticVirtualagentVersionJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAgenticVirtualagentVersionJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **virtualAgentId** | **String** | Virtual Agent ID |  |
+ **versionId** | **String** | Version ID |  |
+ **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AgenticVirtualAgentVersionJob**
 
 
 ## getAgenticVirtualagents
@@ -1058,6 +1182,71 @@ apiInstance.patchAgenticVirtualagent(virtualAgentId, body, opts)
 **AgenticVirtualAgent**
 
 
+## patchAgenticVirtualagentVersion
+
+> AgenticVirtualAgentVersion patchAgenticVirtualagentVersion(virtualAgentId, versionId, body, opts)
+
+
+PATCH /api/v2/agentic/virtualagents/{virtualAgentId}/versions/{versionId}
+
+Update a virtual agent version.
+
+When validateOnly is true, the update is validated without saving the version.
+
+Requires ALL permissions:
+
+* agentic:virtualAgentVersion:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AIStudioApi();
+
+let virtualAgentId = "virtualAgentId_example"; // String | Virtual Agent ID
+let versionId = "versionId_example"; // String | Version ID
+let body = {}; // Object | 
+let opts = { 
+  'validateOnly': false, // Boolean | Validate the update without saving the version.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchAgenticVirtualagentVersion(virtualAgentId, versionId, body, opts)
+  .then((data) => {
+    console.log(`patchAgenticVirtualagentVersion success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchAgenticVirtualagentVersion');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **virtualAgentId** | **String** | Virtual Agent ID |  |
+ **versionId** | **String** | Version ID |  |
+ **body** | **Object** |  |  |
+ **validateOnly** | **Boolean** | Validate the update without saving the version. | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AgenticVirtualAgentVersion**
+
+
 ## patchGuide
 
 > Guide patchGuide(guideId, body, opts)
@@ -1237,6 +1426,69 @@ apiInstance.postAgenticVirtualagentVersionJobs(virtualAgentId, versionId, body, 
 ### Return type
 
 **AgenticVirtualAgentVersionPublishJob**
+
+
+## postAgenticVirtualagentVersions
+
+> AgenticVirtualAgentVersion postAgenticVirtualagentVersions(virtualAgentId, body, opts)
+
+
+POST /api/v2/agentic/virtualagents/{virtualAgentId}/versions
+
+Create a virtual agent version.
+
+When validateOnly is true, the request is validated without creating a version.
+
+Requires ALL permissions:
+
+* agentic:virtualAgentVersion:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AIStudioApi();
+
+let virtualAgentId = "virtualAgentId_example"; // String | Virtual Agent ID
+let body = {}; // Object | 
+let opts = { 
+  'validateOnly': false, // Boolean | Validate the request without creating the version.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postAgenticVirtualagentVersions(virtualAgentId, body, opts)
+  .then((data) => {
+    console.log(`postAgenticVirtualagentVersions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAgenticVirtualagentVersions');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **virtualAgentId** | **String** | Virtual Agent ID |  |
+ **body** | **Object** |  |  |
+ **validateOnly** | **Boolean** | Validate the request without creating the version. | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AgenticVirtualAgentVersion**
 
 
 ## postAgenticVirtualagents
@@ -1939,4 +2191,4 @@ apiInstance.putConversationsSummariesSetting(summarySettingId, body, opts)
 **SummarySetting**
 
 
-_purecloud-platform-client-v2@267.0.0_
+_purecloud-platform-client-v2@267.1.0_

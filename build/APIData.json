@@ -73,6 +73,49 @@
     "return": "AgenticVirtualAgentJob",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.VirtualAgentsApi();\n\nlet virtualAgentId = \"virtualAgentId_example\"; // String | Virtual Agent ID\nlet jobId = \"jobId_example\"; // String | jobId\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Get a virtualAgent job.\napiInstance.getAgenticVirtualagentJob(virtualAgentId, jobId, opts)\n  .then((data) => {\n    console.log(`getAgenticVirtualagentJob success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getAgenticVirtualagentJob\");\n    console.error(err);\n  });"
   },
+  "getagenticvirtualagentversion": {
+    "operationId": "getagenticvirtualagentversion",
+    "functionName": "getAgenticVirtualagentVersion",
+    "signature": "getAgenticVirtualagentVersion(virtualAgentId, versionId)",
+    "parameters": [
+      {
+        "name": "virtualAgentId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "versionId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "AgenticVirtualAgentVersion",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.VirtualAgentsApi();\n\nlet virtualAgentId = \"virtualAgentId_example\"; // String | Virtual Agent ID\nlet versionId = \"versionId_example\"; // String | Version ID\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Get a virtual agent version.\napiInstance.getAgenticVirtualagentVersion(virtualAgentId, versionId, opts)\n  .then((data) => {\n    console.log(`getAgenticVirtualagentVersion success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getAgenticVirtualagentVersion\");\n    console.error(err);\n  });"
+  },
+  "getagenticvirtualagentversionjob": {
+    "operationId": "getagenticvirtualagentversionjob",
+    "functionName": "getAgenticVirtualagentVersionJob",
+    "signature": "getAgenticVirtualagentVersionJob(virtualAgentId, versionId, jobId)",
+    "parameters": [
+      {
+        "name": "virtualAgentId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "versionId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "jobId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "AgenticVirtualAgentVersionJob",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.VirtualAgentsApi();\n\nlet virtualAgentId = \"virtualAgentId_example\"; // String | Virtual Agent ID\nlet versionId = \"versionId_example\"; // String | Version ID\nlet jobId = \"jobId_example\"; // String | jobId\nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Get the status of the publishing job for this virtual agent version.\napiInstance.getAgenticVirtualagentVersionJob(virtualAgentId, versionId, jobId, opts)\n  .then((data) => {\n    console.log(`getAgenticVirtualagentVersionJob success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getAgenticVirtualagentVersionJob\");\n    console.error(err);\n  });"
+  },
   "getagenticvirtualagents": {
     "operationId": "getagenticvirtualagents",
     "functionName": "getAgenticVirtualagents",
@@ -356,6 +399,35 @@
     "return": "AgenticVirtualAgent",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.VirtualAgentsApi();\n\nlet virtualAgentId = \"virtualAgentId_example\"; // String | Virtual Agent ID\nlet body = {}; // Object | \nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Update a virtual agent.\napiInstance.patchAgenticVirtualagent(virtualAgentId, body, opts)\n  .then((data) => {\n    console.log(`patchAgenticVirtualagent success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchAgenticVirtualagent\");\n    console.error(err);\n  });"
   },
+  "patchagenticvirtualagentversion": {
+    "operationId": "patchagenticvirtualagentversion",
+    "functionName": "patchAgenticVirtualagentVersion",
+    "signature": "patchAgenticVirtualagentVersion(virtualAgentId, versionId, body, validateOnly)",
+    "parameters": [
+      {
+        "name": "virtualAgentId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "versionId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      },
+      {
+        "name": "validateOnly",
+        "type": "Boolean",
+        "required": "false"
+      }
+    ],
+    "return": "AgenticVirtualAgentVersion",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.VirtualAgentsApi();\n\nlet virtualAgentId = \"virtualAgentId_example\"; // String | Virtual Agent ID\nlet versionId = \"versionId_example\"; // String | Version ID\nlet body = {}; // Object | \nlet opts = { \n  \"validateOnly\": false, // Boolean | Validate the update without saving the version.\n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Update a virtual agent version.\napiInstance.patchAgenticVirtualagentVersion(virtualAgentId, versionId, body, opts)\n  .then((data) => {\n    console.log(`patchAgenticVirtualagentVersion success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchAgenticVirtualagentVersion\");\n    console.error(err);\n  });"
+  },
   "patchguide": {
     "operationId": "patchguide",
     "functionName": "patchGuide",
@@ -422,6 +494,30 @@
     ],
     "return": "AgenticVirtualAgentVersionPublishJob",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.VirtualAgentsApi();\n\nlet virtualAgentId = \"virtualAgentId_example\"; // String | Virtual Agent ID\nlet versionId = \"versionId_example\"; // String | Version ID\nlet body = {}; // Object | \nlet opts = { \n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Start the publishing of a virtual agent version.\napiInstance.postAgenticVirtualagentVersionJobs(virtualAgentId, versionId, body, opts)\n  .then((data) => {\n    console.log(`postAgenticVirtualagentVersionJobs success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postAgenticVirtualagentVersionJobs\");\n    console.error(err);\n  });"
+  },
+  "postagenticvirtualagentversions": {
+    "operationId": "postagenticvirtualagentversions",
+    "functionName": "postAgenticVirtualagentVersions",
+    "signature": "postAgenticVirtualagentVersions(virtualAgentId, body, validateOnly)",
+    "parameters": [
+      {
+        "name": "virtualAgentId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      },
+      {
+        "name": "validateOnly",
+        "type": "Boolean",
+        "required": "false"
+      }
+    ],
+    "return": "AgenticVirtualAgentVersion",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.VirtualAgentsApi();\n\nlet virtualAgentId = \"virtualAgentId_example\"; // String | Virtual Agent ID\nlet body = {}; // Object | \nlet opts = { \n  \"validateOnly\": false, // Boolean | Validate the request without creating the version.\n  \"customHeaders\": {  // Object.<string, string> | Request Custom Headers\n    'X-Service-Name': 'customer-service',\n    'X-Request-ID': 'req-12345'\n  }\n};\n\n// Create a virtual agent version.\napiInstance.postAgenticVirtualagentVersions(virtualAgentId, body, opts)\n  .then((data) => {\n    console.log(`postAgenticVirtualagentVersions success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postAgenticVirtualagentVersions\");\n    console.error(err);\n  });"
   },
   "postagenticvirtualagents": {
     "operationId": "postagenticvirtualagents",

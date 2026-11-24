@@ -5,7 +5,7 @@ class AnomalyDetectionApi {
 	/**
 	 * AnomalyDetection service.
 	 * @module purecloud-platform-client-v2/api/AnomalyDetectionApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**

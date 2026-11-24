@@ -5,7 +5,7 @@ class AIStudioApi {
 	/**
 	 * AIStudio service.
 	 * @module purecloud-platform-client-v2/api/AIStudioApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -164,6 +164,81 @@ class AIStudioApi {
 			'/api/v2/agentic/virtualagents/{virtualAgentId}/jobs/{jobId}', 
 			'GET', 
 			{ 'virtualAgentId': virtualAgentId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get a virtual agent version.
+	 * 
+	 * @param {String} virtualAgentId Virtual Agent ID
+	 * @param {String} versionId Version ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getAgenticVirtualagentVersion(virtualAgentId, versionId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'virtualAgentId' is set
+		if (virtualAgentId === undefined || virtualAgentId === null || virtualAgentId === '') {
+			throw 'Missing the required parameter "virtualAgentId" when calling getAgenticVirtualagentVersion';
+		}
+		// verify the required parameter 'versionId' is set
+		if (versionId === undefined || versionId === null || versionId === '') {
+			throw 'Missing the required parameter "versionId" when calling getAgenticVirtualagentVersion';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/agentic/virtualagents/{virtualAgentId}/versions/{versionId}', 
+			'GET', 
+			{ 'virtualAgentId': virtualAgentId,'versionId': versionId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get the status of the publishing job for this virtual agent version.
+	 * 
+	 * @param {String} virtualAgentId Virtual Agent ID
+	 * @param {String} versionId Version ID
+	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getAgenticVirtualagentVersionJob(virtualAgentId, versionId, jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'virtualAgentId' is set
+		if (virtualAgentId === undefined || virtualAgentId === null || virtualAgentId === '') {
+			throw 'Missing the required parameter "virtualAgentId" when calling getAgenticVirtualagentVersionJob';
+		}
+		// verify the required parameter 'versionId' is set
+		if (versionId === undefined || versionId === null || versionId === '') {
+			throw 'Missing the required parameter "versionId" when calling getAgenticVirtualagentVersionJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getAgenticVirtualagentVersionJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/agentic/virtualagents/{virtualAgentId}/versions/{versionId}/jobs/{jobId}', 
+			'GET', 
+			{ 'virtualAgentId': virtualAgentId,'versionId': versionId,'jobId': jobId },
 			{  },
 			{  },
 			{  },
@@ -571,6 +646,47 @@ class AIStudioApi {
 	}
 
 	/**
+	 * Update a virtual agent version.
+	 * When validateOnly is true, the update is validated without saving the version.
+	 * @param {String} virtualAgentId Virtual Agent ID
+	 * @param {String} versionId Version ID
+	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.validateOnly Validate the update without saving the version. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	patchAgenticVirtualagentVersion(virtualAgentId, versionId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'virtualAgentId' is set
+		if (virtualAgentId === undefined || virtualAgentId === null || virtualAgentId === '') {
+			throw 'Missing the required parameter "virtualAgentId" when calling patchAgenticVirtualagentVersion';
+		}
+		// verify the required parameter 'versionId' is set
+		if (versionId === undefined || versionId === null || versionId === '') {
+			throw 'Missing the required parameter "versionId" when calling patchAgenticVirtualagentVersion';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchAgenticVirtualagentVersion';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/agentic/virtualagents/{virtualAgentId}/versions/{versionId}', 
+			'PATCH', 
+			{ 'virtualAgentId': virtualAgentId,'versionId': versionId },
+			{ 'validateOnly': opts['validateOnly'] },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Update a guide.
 	 * 
 	 * @param {String} guideId Guide ID
@@ -675,6 +791,42 @@ class AIStudioApi {
 			'POST', 
 			{ 'virtualAgentId': virtualAgentId,'versionId': versionId },
 			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Create a virtual agent version.
+	 * When validateOnly is true, the request is validated without creating a version.
+	 * @param {String} virtualAgentId Virtual Agent ID
+	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.validateOnly Validate the request without creating the version. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postAgenticVirtualagentVersions(virtualAgentId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'virtualAgentId' is set
+		if (virtualAgentId === undefined || virtualAgentId === null || virtualAgentId === '') {
+			throw 'Missing the required parameter "virtualAgentId" when calling postAgenticVirtualagentVersions';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAgenticVirtualagentVersions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/agentic/virtualagents/{virtualAgentId}/versions', 
+			'POST', 
+			{ 'virtualAgentId': virtualAgentId },
+			{ 'validateOnly': opts['validateOnly'] },
 			{  },
 			{  },
 			body, 

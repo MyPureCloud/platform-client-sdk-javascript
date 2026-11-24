@@ -1,173 +1,346 @@
 Platform API version: 11033
 
 
+## Release Notes
+
+Fixing issue introduced in the Web CJS library of the version 267.0.0
 
 
-# Major Changes (1 change)
-
-**CopilotSentimentSettings** (1 change)
-
-* Model CopilotSentimentSettings was removed
+# Major Changes (0 changes)
 
 
-# Minor Changes (268 changes)
-
-**/api/v2/authorization/customattributes/itemtypes/{itemType}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-* Operation DELETE was added
-
-**/api/v2/analytics/agenticvirtualagents/aggregates/query** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/analytics/agenticvirtualagents/aggregates/jobs** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/analytics/agenticvirtualagents/aggregates/jobs/{jobId}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-
-**/api/v2/analytics/agenticvirtualagents/aggregates/jobs/{jobId}/results** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/analytics/kpiattributions/aggregates/query** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/analytics/kpiattributions/aggregates/jobs** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/analytics/kpiattributions/aggregates/jobs/{jobId}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-
-**/api/v2/analytics/kpiattributions/aggregates/jobs/{jobId}/results** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/signals/anomalydetection/queues/{queueId}/analysis** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/signals/anomalydetection/queues/available** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/signals/anomalydetection/queues/monitored** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PATCH was added
-
-**/api/v2/signals/anomalydetection/settings** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-
-**/api/v2/signals/anomalydetection/queue/anomalies/{anomalyId}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PATCH was added
-
-**/api/v2/signals/anomalydetection/queue/anomalies/query** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/signals/anomalydetection/queue/anomalies/summary** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/signals/anomalydetection/queue/anomalies/exports/jobs** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/signals/anomalydetection/queue/anomalies/exports/jobs/{jobId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/authorization/subjects/{subjectId}/divisions/query** (2 changes)
-
-* Path was added
-* Operation POST was added
+# Minor Changes (287 changes)
 
 **/api/v2/casemanagement/cases/{caseId}/stages/{stageId}** (1 change)
 
 * Operation patch was added. Summary: Update the attributes of a Stage.
 
-**/api/v2/conversations/emails/{conversationId}/draft** (4 changes)
+**/api/v2/orgauthorization/trustors** (1 change)
+
+* Operation delete was added. Summary: Delete Bulk Org Trustors
+
+**/api/v2/orgauthorization/trustees** (1 change)
+
+* Operation delete was added. Summary: Delete Bulk Org Trustees
+
+**/api/v2/analytics/agentutilizations/aggregates/query** (2 changes)
 
 * Path was added
 * Operation POST was added
+
+**/api/v2/analytics/agentutilizations/aggregates/jobs** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/analytics/agentutilizations/aggregates/jobs/{jobId}** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation DELETE was added
+
+**/api/v2/analytics/agentutilizations/aggregates/jobs/{jobId}/results** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/backgroundassistant/token** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/billing/contracts/{contractId}/billingperiods/{billingPeriodId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/billing/contracts/{contractId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/billing/contracts** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/billing/contracts/invoices/{invoiceId}/document** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/billing/contracts/invoices/{invoiceId}/lines** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/billing/contracts/invoices** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/casemanagement/cases/{caseId}/description** (2 changes)
+
+* Path was added
+* Operation PATCH was added
+
+**/api/v2/casemanagement/cases/{caseId}/externalid** (2 changes)
+
+* Path was added
+* Operation PATCH was added
+
+**/api/v2/conversations/{conversationId}/assistant/copilotcontext** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/conversations/videos/{conversationId}/agentconference/communications/{communicationId}** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/conversations/videos/{conferenceId}/details** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/{integrationId}** (4 changes)
+
+* Path was added
+* Operation GET was added
 * Operation DELETE was added
 * Operation PATCH was added
 
-**/api/v2/guides/transcripts/discovery/{snapshotId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/guides/transcripts/discovery** (2 changes)
+**/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile** (2 changes)
 
 * Path was added
 * Operation POST was added
 
-**/api/v2/guides/transcripts/snapshots/{snapshotId}/generate** (3 changes)
+**/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/tokens/{tokenId}/accounts** (2 changes)
 
 * Path was added
 * Operation GET was added
+
+**/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/oauth/settings** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/tokens/{tokenId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/tokens** (2 changes)
+
+* Path was added
 * Operation POST was added
 
-**/api/v2/recording/snippets/settings** (3 changes)
+**/api/v2/integrations/botconnectors/{integrationId}/bots/{botId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/integrations/botconnectors/{integrationId}/bots/summaries** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/integrations/botconnectors/{integrationId}/bots** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/integrations/botconnectors/incoming/messages** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/integrations/botconnectors/outgoing/messages** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/intents/categories/similar** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/intents/customerintents/similar** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/journey/outcomes/attributions/jobs** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/journey/outcomes/attributions/jobs/{jobId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/journey/outcomes/attributions/jobs/{jobId}/results** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/license/infer/permissions** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/documentation/all/search** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/routing/sms/phonenumbers/alphanumeric** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/groups/dynamicsettings/preview** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/groups/{groupId}/dynamicsettings** (4 changes)
 
 * Path was added
 * Operation GET was added
 * Operation PUT was added
+* Operation DELETE was added
 
-**/api/v2/architect/capabilities** (2 changes)
+**/api/v2/search/settings** (3 changes)
 
 * Path was added
 * Operation GET was added
+* Operation PATCH was added
 
-**/api/v2/workforcemanagement/timeoffrequests/evaluate/jobs/{jobId}/status** (2 changes)
+**/api/v2/search/settings/contentsearch** (2 changes)
 
 * Path was added
 * Operation PATCH was added
 
-**/api/v2/workforcemanagement/timeoffrequests/evaluate/jobs/{jobId}** (2 changes)
+**/api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId}** (5 changes)
+
+* Path was added
+* Operation GET was added
+* Operation PUT was added
+* Operation DELETE was added
+* Operation PATCH was added
+
+**/api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId}/versions/{dataIngestionRuleVersion}** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/evaluate/jobs** (2 changes)
+**/api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId}/versions** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile** (2 changes)
 
 * Path was added
 * Operation POST was added
 
+**/api/v2/socialmedia/messages/{messageId}** (2 changes)
+
+* Path was added
+* Operation DELETE was added
+
+**/api/v2/speechandtextanalytics/reprocessing/jobs/{jobId}/interactions** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/speechandtextanalytics/reprocessing/jobs/{jobId}** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation DELETE was added
+
+**/api/v2/speechandtextanalytics/reprocessing/jobs** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation POST was added
+
+**/api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}/communications/{communicationId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
 **/api/v2/users/me/trustors** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/users/search/conversation/target** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/users/search/queuemembers/manage** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/architect/prompts/{promptId}/resources/{languageCode}/uploads** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/architect/systemprompts/{promptId}/resources/{languageCode}/uploads** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/workforcemanagement/agents/{agentId}/schedulingpreferences/query** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulingpreferences/settings** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation PATCH was added
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/{sessionId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/{sessionId}/snapshot/{snapshotId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/workforcemanagement/schedulingpreferences/query** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/workforcemanagement/schedulingpreferences** (2 changes)
+
+* Path was added
+* Operation PATCH was added
+
+**/api/v2/workforcemanagement/schedulingpreferences/settings** (2 changes)
 
 * Path was added
 * Operation GET was added
@@ -177,711 +350,576 @@ Platform API version: 11033
 * Path was added
 * Operation PUT was added
 
-**AuthzDefaultSearchResponse** (1 change)
+**/api/v2/learning/modules/{moduleId}/rule/migrate** (2 changes)
 
-* Model was added
-
-**AuthzDefaultSearchRequest** (1 change)
-
-* Model was added
-
-**TokenInfo** (1 change)
-
-* Optional property amr was added
-
-**Limit** (2 changes)
-
-* Enum value ai.inference was added to property namespace
-* Enum value video was added to property namespace
-
-**AgenticVirtualAgentBuiltinInputInstruction** (1 change)
-
-* Model was added
-
-**AgenticVirtualAgentTypeDefinition** (1 change)
-
-* Enum value McpError was added to property type
-
-**AgenticVirtualAgentAggregateDataContainer** (1 change)
-
-* Model was added
-
-**AgenticVirtualAgentAggregateQueryResponse** (1 change)
-
-* Model was added
-
-**AgenticVirtualAgentAggregateQueryClause** (1 change)
-
-* Model was added
-
-**AgenticVirtualAgentAggregateQueryFilter** (1 change)
-
-* Model was added
-
-**AgenticVirtualAgentAggregateQueryPredicate** (1 change)
-
-* Model was added
-
-**AgenticVirtualAgentAggregationQuery** (1 change)
-
-* Model was added
-
-**AgenticVirtualAgentAggregationSort** (1 change)
-
-* Model was added
-
-**AgenticVirtualAgentAggregationView** (1 change)
-
-* Model was added
-
-**AgenticVirtualAgentAsyncAggregationQuery** (1 change)
-
-* Model was added
-
-**AgenticVirtualAgentAsyncAggregateQueryResponse** (1 change)
-
-* Model was added
-
-**KpiAttributionAggregateDataContainer** (1 change)
-
-* Model was added
-
-**KpiAttributionAggregateQueryResponse** (1 change)
-
-* Model was added
-
-**KpiAttributionAggregateQueryClause** (1 change)
-
-* Model was added
-
-**KpiAttributionAggregateQueryFilter** (1 change)
-
-* Model was added
-
-**KpiAttributionAggregateQueryPredicate** (1 change)
-
-* Model was added
-
-**KpiAttributionAggregationQuery** (1 change)
-
-* Model was added
-
-**KpiAttributionAggregationSort** (1 change)
-
-* Model was added
-
-**KpiAttributionAggregationView** (1 change)
-
-* Model was added
-
-**KpiAttributionAsyncAggregationQuery** (1 change)
-
-* Model was added
-
-**KpiAttributionAsyncAggregateQueryResponse** (1 change)
-
-* Model was added
-
-**SummaryAggregateQueryPredicate** (1 change)
-
-* Enum value wrapupCodesEnabled was added to property dimension
-
-**SummaryAggregationQuery** (1 change)
-
-* Enum value wrapupCodesEnabled was added to property groupBy
-
-**SummaryAsyncAggregationQuery** (1 change)
-
-* Enum value wrapupCodesEnabled was added to property groupBy
-
-**AnomalyDetectionQueueAnalysis** (1 change)
-
-* Model was added
-
-**AnomalyDetectionQueueAnalysisResponse** (1 change)
-
-* Model was added
-
-**AnomalyDetectionTimeIntervalData** (1 change)
-
-* Model was added
-
-**AnomalyDetectionAvailableQueue** (1 change)
-
-* Model was added
-
-**AnomalyDetectionAvailableQueueListing** (1 change)
-
-* Model was added
-
-**AnomalyDetectionMonitoredQueue** (1 change)
-
-* Model was added
-
-**AnomalyDetectionMonitoredQueueListing** (1 change)
-
-* Model was added
-
-**AnomalyDetectionMonitoredQueuesUpdateRequest** (1 change)
-
-* Model was added
-
-**AnomalyDetectionMonitoringQueueOperation** (1 change)
-
-* Model was added
-
-**AnomalyDetectionSettingsResponse** (1 change)
-
-* Model was added
-
-**AnomalyDetectionSettingsRequest** (1 change)
-
-* Model was added
-
-**AnomalyConsensusAnalysis** (1 change)
-
-* Model was added
-
-**QueueAnomalyResponse** (1 change)
-
-* Model was added
-
-**QueueAnomalyUpdateRequest** (1 change)
-
-* Model was added
-
-**QueueAnomalyQueryListing** (1 change)
-
-* Model was added
-
-**AnomalyQueryClause** (1 change)
-
-* Model was added
-
-**AnomalyQueryFilters** (1 change)
-
-* Model was added
-
-**AnomalyQueryPredicate** (1 change)
-
-* Model was added
-
-**AnomalyQueryRequest** (1 change)
-
-* Model was added
-
-**AnomalySummary** (1 change)
-
-* Model was added
-
-**AnomalySummaryResponse** (1 change)
-
-* Model was added
-
-**AnomalySummaryRequest** (1 change)
-
-* Model was added
-
-**AnomalySummarySettings** (1 change)
-
-* Model was added
-
-**QueueAnomalyExport** (1 change)
-
-* Model was added
-
-**QueueAnomalyExportJob** (1 change)
-
-* Model was added
-
-**QueueAnomalyExportJobTemplate** (1 change)
-
-* Model was added
-
-**AnomalyFilterRequest** (1 change)
-
-* Model was added
-
-**DomainUserDivisionsResult** (1 change)
-
-* Model was added
-
-**DomainUserDivisionsResultListing** (1 change)
-
-* Model was added
-
-**CallbackMediaSettings** (2 changes)
-
-* Optional property enableAgentReservation was added
-* Optional property maxCallbackDelayHours was added
-
-**OperatingScheduleGroup** (1 change)
-
-* Model was added
-
-**VideoMediaSettings** (1 change)
-
-* Model was added
-
-**MeteredAssignmentByAgent** (3 changes)
-
-* Optional property percentage was added
-* Optional property minimum was added
-* Optional property agentConnectedTimeCriteria was added
-
-**ActivationTrigger** (2 changes)
-
-* Enum value ConversationTransfer was added to property triggerType
-* Enum value ConsultJoin was added to property triggerType
-
-**ChecklistActivationPayload** (2 changes)
-
-* Enum value ConversationTransfer was added to property activationTriggerType
-* Enum value ConsultJoin was added to property activationTriggerType
-
-**TransferRequest** (1 change)
-
-* Optional property agentIndicatedAddress was added
-
-**CreateCallRequest** (1 change)
-
-* Optional property agentIndicatedAddress was added
-
-**ConsultTransfer** (1 change)
-
-* Optional property agentIndicatedAddress was added
-
-**ConsultTransferToAddress** (1 change)
-
-* Optional property agentIndicatedAddress was added
-
-**ConsultTransferToAgent** (1 change)
-
-* Optional property agentIndicatedAddress was added
-
-**ConsultTransferToExternal** (1 change)
-
-* Optional property agentIndicatedAddress was added
-
-**ConsultTransferToExternalContact** (1 change)
-
-* Optional property agentIndicatedAddress was added
-
-**CreateCallbackResponse** (1 change)
-
-* Optional property scheduleEvaluationResult was added
-
-**PatchCallbackResponse** (1 change)
-
-* Optional property scheduleEvaluationResult was added
-
-**EmailMessage** (1 change)
-
-* Optional property overrideHeaders was added
-
-**PatchDraftRequest** (1 change)
-
-* Model was added
-
-**CreateDraftRequest** (1 change)
-
-* Model was added
-
-**FacebookAppCredentials** (1 change)
-
-* Optional property configurationId was added
-
-**WhatsAppIntegration** (2 changes)
+* Path was added
+* Operation POST was added
 
-* Optional property phoneNumberId was added
-* Optional property businessPortfolioId was added
+**AgentUtilizationAggregateDataContainer** (1 change)
 
-**WhatsAppEmbeddedSignupIntegrationRequest** (4 changes)
-
-* Optional property embeddedSignupTokenCode was added
-* Optional property whatsAppBusinessAccountId was added
-* Optional property phoneNumberId was added
-* Optional property businessPortfolioId was added
-
-**TransferToAddressRequest** (1 change)
-
-* Optional property agentIndicatedAddress was added
-
-**TransferToAgentRequest** (1 change)
-
-* Optional property agentIndicatedAddress was added
-
-**TransferToExternalRequest** (1 change)
-
-* Optional property agentIndicatedAddress was added
-
-**TransferToExternalContactRequest** (1 change)
-
-* Optional property agentIndicatedAddress was added
-
-**Suggestion** (1 change)
-
-* Enum value Sentiment was added to property triggerType
-
-**GetDiscoveryResponse** (1 change)
-
-* Model was added
-
-**RfcMetadata** (1 change)
-
-* Model was added
-
-**DiscoveryResponse** (1 change)
-
-* Model was added
-
-**DiscoveryRequest** (1 change)
-
-* Model was added
-
-**GenerateEntryResponse** (1 change)
-
-* Model was added
-
-**GenerateEntryRequest** (1 change)
-
-* Model was added
-
-**GetGenerationResponse** (1 change)
-
-* Model was added
-
-**TestExecutionOperationResult** (1 change)
-
-* Optional property durationMs was added
-
-**TestExecutionResult** (1 change)
-
-* Optional property durationMs was added
-
-**JourneyViewElementFilterPredicate** (1 change)
-
-* Optional property arrayOperator was added
-
-**ApprovalNamespace** (2 changes)
-
-* Enum value ai.inference was added to property namespace
-* Enum value video was added to property namespace
-
-**LimitChangeRequestDetails** (2 changes)
-
-* Enum value ai.inference was added to property namespace
-* Enum value video was added to property namespace
-
-**StatusChange** (2 changes)
-
-* Enum value ai.inference was added to property namespace
-* Enum value video was added to property namespace
-
-**Recording** (1 change)
-
-* Enum value Video was added to property mediaSubtype
-
-**OrphanRecording** (1 change)
-
-* Enum value Video was added to property mediaSubtype
-
-**RecordingMetadata** (1 change)
-
-* Enum value Video was added to property mediaSubtype
-
-**SnippetRecordingSettings** (1 change)
-
-* Model was added
-
-**GenericDataIngestionRuleResponse** (7 changes)
-
-* Optional property nonOwnedAccount was added
-* Optional property hashtags was added
-* Optional property integrationId was added
-* Optional property searchTerms was added
-* Optional property messageTypes was added
-* Optional property pageId was added
-* Optional property externalSource was added
-
-**TestTopicPhraseJobs** (2 changes)
-
-* Optional property processedTranscriptsCount was added
-* Optional property matchedTranscriptsCount was added
-
-**CapabilitiesIntentDetectionSettings** (1 change)
-
-* Model was added
-
-**CapabilitiesNluSettings** (1 change)
-
-* Model was added
-
-**CapabilitiesNluSupport** (1 change)
-
-* Model was added
-
-**CapabilitiesNluSupportedLanguage** (1 change)
-
-* Model was added
-
-**Capabilities** (1 change)
-
-* Model was added
-
-**CapabilitiesAction** (1 change)
-
-* Model was added
-
-**CapabilitiesActionLimitInfo** (1 change)
-
-* Model was added
-
-**CapabilitiesAvailability** (1 change)
-
-* Model was added
-
-**CapabilitiesCategoryInfo** (1 change)
-
-* Model was added
-
-**CapabilitiesCopilot** (1 change)
-
-* Model was added
-
-**CapabilitiesDataType** (1 change)
-
-* Model was added
-
-**CapabilitiesDataTypeCharacteristicModel** (1 change)
-
-* Model was added
-
-**CapabilitiesDataTypeCharacteristicsModel** (1 change)
-
-* Model was added
-
-**CapabilitiesDataTypeDirectionByObject** (1 change)
-
-* Model was added
-
-**CapabilitiesDataTypeFacetsLimit** (1 change)
-
-* Model was added
-
-**CapabilitiesDataTypeFacetsModel** (1 change)
-
-* Model was added
-
-**CapabilitiesDataTypeInputOutputInfo** (1 change)
-
-* Model was added
-
-**CapabilitiesDataTypeProperty** (1 change)
-
-* Model was added
-
-**CapabilitiesDependencyType** (1 change)
-
-* Model was added
-
-**CapabilitiesFeatureSupport** (1 change)
-
-* Model was added
-
-**CapabilitiesFlowComponent** (1 change)
-
-* Model was added
-
-**CapabilitiesFlowType** (1 change)
-
-* Model was added
-
-**CapabilitiesFlowTypeLanguageSupport** (1 change)
-
-* Model was added
-
-**CapabilitiesFlowTypeLimitInfo** (1 change)
-
-* Model was added
-
-**CapabilitiesFlowTypeUserVariableLimits** (1 change)
-
-* Model was added
-
-**CapabilitiesFlowTypesAvailability** (1 change)
-
-* Model was added
-
-**CapabilitiesFuncOpOverloadIdModel** (1 change)
-
-* Model was added
-
-**CapabilitiesFunction** (1 change)
-
-* Model was added
-
-**CapabilitiesGrammarsSupport** (1 change)
-
-* Model was added
-
-**CapabilitiesKnowledgeBase** (1 change)
-
-* Model was added
-
-**CapabilitiesLanguage** (1 change)
-
-* Model was added
-
-**CapabilitiesLanguageContextsModel** (1 change)
-
-* Model was added
-
-**CapabilitiesLanguageFeatures** (1 change)
-
-* Model was added
-
-**CapabilitiesLanguageTTS** (1 change)
-
-* Model was added
-
-**CapabilitiesLanguageTTSEngine** (1 change)
-
-* Model was added
-
-**CapabilitiesLanguageTTSEngineVoice** (1 change)
-
-* Model was added
-
-**CapabilitiesLimitCondition** (1 change)
-
-* Model was added
-
-**CapabilitiesLimitValue** (1 change)
-
-* Model was added
-
-**CapabilitiesNavigatorSupport** (1 change)
-
-* Model was added
-
-**CapabilitiesOrganization** (1 change)
-
-* Model was added
-
-**CapabilitiesSTTConfiguration** (1 change)
-
-* Model was added
-
-**CapabilitiesSTTEngine** (1 change)
-
-* Model was added
-
-**CapabilitiesSTTLanguageOverride** (1 change)
-
-* Model was added
-
-**CapabilitiesSTTSettings** (1 change)
-
-* Model was added
-
-**CapabilitiesTTSConfiguration** (1 change)
-
-* Model was added
-
-**CapabilitiesTTSEngine** (1 change)
-
-* Model was added
-
-**CapabilitiesTTSVoice** (1 change)
-
-* Model was added
-
-**CapabilitiesUnavailableReason** (1 change)
-
 * Model was added
 
-**CapabilitiesWorkitemEvent** (1 change)
+**AgentUtilizationAggregateQueryResponse** (1 change)
 
 * Model was added
 
-**CapabilitiesWorkitemsSupport** (1 change)
+**AgentUtilizationAggregateQueryClause** (1 change)
 
 * Model was added
-
-**Dependency** (1 change)
-
-* Enum value EXTERNALMCPTOOL was added to property type
-
-**DependencyObject** (1 change)
 
-* Enum value EXTERNALMCPTOOL was added to property type
+**AgentUtilizationAggregateQueryFilter** (1 change)
 
-**LocalizedLabels** (2 changes)
-
-* Enum value VideoRecordingConsentDisclaimer was added to property key
-* Enum value VideoRecordingConsentAcceptance was added to property key
-
-**VideoRecordingSettings** (1 change)
-
 * Model was added
 
-**VideoSettings** (1 change)
+**AgentUtilizationAggregateQueryPredicate** (1 change)
 
-* Optional property recording was added
-
-**EvaluateTimeOffJobReference** (1 change)
-
 * Model was added
 
-**EvaluateTimeOffJobResponse** (1 change)
+**AgentUtilizationAggregationQuery** (1 change)
 
 * Model was added
 
-**UpdateEvaluateTimeOffJobStatus** (1 change)
+**AgentUtilizationAggregationView** (1 change)
 
 * Model was added
 
-**EvaluateTimeOffResponse** (1 change)
+**AgentUtilizationAsyncAggregationQuery** (1 change)
 
 * Model was added
 
-**TimeOffRequestBulkEvaluateResult** (1 change)
+**AgentUtilizationAsyncAggregateQueryResponse** (1 change)
 
 * Model was added
 
-**TimeOffRequestBulkEvaluateTemplateItem** (1 change)
+**BillingAiSubItem** (1 change)
 
 * Model was added
 
-**EvaluateTimeOffAutoApproval** (1 change)
+**BillingCharge** (1 change)
 
 * Model was added
 
-**EvaluateTimeOffRequest** (1 change)
+**BillingContractPeriodDetail** (1 change)
 
 * Model was added
 
-**WorkitemsAttributeChangeExternalContactDivisionAccess** (1 change)
+**BillingProduct** (1 change)
 
 * Model was added
-
-**BillingProduct** (4 changes)
-
-* Optional property category was added
-* Optional property capability was added
-* Optional property platform was added
-* Optional property family was added
 
 **BillingContract** (1 change)
 
-* Optional property billingFrequency was added
+* Model was added
+
+**BillingContractPeriod** (1 change)
+
+* Model was added
+
+**BillingPlan** (1 change)
+
+* Model was added
+
+**BillingPlanItem** (1 change)
+
+* Model was added
+
+**BillingWallet** (1 change)
+
+* Model was added
+
+**Customer** (1 change)
+
+* Model was added
+
+**BillingContractListing** (1 change)
+
+* Model was added
 
 **BillingContractSummary** (1 change)
 
-* Optional property billingFrequency was added
+* Model was added
+
+**BillingInvoiceItem** (1 change)
+
+* Model was added
+
+**BillingInvoiceItemListing** (1 change)
+
+* Model was added
+
+**BillingInvoice** (1 change)
+
+* Model was added
+
+**BillingInvoiceListing** (1 change)
+
+* Model was added
+
+**InvoiceAddress** (1 change)
+
+* Model was added
+
+**CaseDescriptionUpdate** (1 change)
+
+* Model was added
+
+**CaseExternalIdUpdate** (1 change)
+
+* Model was added
 
 **StageUpdate** (1 change)
+
+* Model was added
+
+**CreateJoinVideoResponse** (1 change)
+
+* Model was added
+
+**CopilotContextEntity** (1 change)
+
+* Model was added
+
+**CopilotContextValueItem** (1 change)
+
+* Model was added
+
+**CopilotContextValues** (1 change)
+
+* Model was added
+
+**ParticipantInfo** (1 change)
+
+* Model was added
+
+**VideoConferenceDetails** (1 change)
+
+* Model was added
+
+**GoogleAuthTokenReference** (1 change)
+
+* Model was added
+
+**GoogleBusinessProfileAccountReference** (1 change)
+
+* Model was added
+
+**GoogleBusinessProfileOpenIntegration** (1 change)
+
+* Model was added
+
+**GoogleBusinessProfileOpenIntegrationUpdateRequest** (1 change)
+
+* Model was added
+
+**GoogleBusinessProfileOpenIntegrationRequest** (1 change)
+
+* Model was added
+
+**GoogleBusinessProfileAccount** (1 change)
+
+* Model was added
+
+**GoogleBusinessProfileAccountListing** (1 change)
+
+* Model was added
+
+**GoogleOAuthSettingsResponse** (1 change)
+
+* Model was added
+
+**GoogleAuthToken** (1 change)
+
+* Model was added
+
+**GoogleAuthTokenRequest** (1 change)
+
+* Model was added
+
+**Bot** (1 change)
+
+* Model was added
+
+**BotConnectorIntent** (1 change)
+
+* Model was added
+
+**BotEntity** (1 change)
+
+* Model was added
+
+**BotVersion** (1 change)
+
+* Model was added
+
+**BotConnectorSummary** (1 change)
+
+* Model was added
+
+**BotConnectorVersionSummary** (1 change)
+
+* Model was added
+
+**BotSummaryEntityListing** (1 change)
+
+* Model was added
+
+**BotListing** (1 change)
+
+* Model was added
+
+**IncomingMessageResponse** (1 change)
+
+* Model was added
+
+**IncomingMessageRequest** (1 change)
+
+* Model was added
+
+**InputMessage** (1 change)
+
+* Model was added
+
+**OutgoingMessageResponse** (1 change)
+
+* Model was added
+
+**BotEntityValue** (1 change)
+
+* Model was added
+
+**OutgoingMessageRequest** (1 change)
+
+* Model was added
+
+**ReplyMessage** (1 change)
+
+* Model was added
+
+**SimilarCategoriesResponse** (1 change)
+
+* Model was added
+
+**SimilarCategoryResult** (1 change)
+
+* Model was added
+
+**SimilarCustomerIntentResult** (1 change)
+
+* Model was added
+
+**SimilarCustomerIntentsResponse** (1 change)
+
+* Model was added
+
+**SimilarEntityRef** (1 change)
+
+* Model was added
+
+**SimilarCustomerIntentsRequest** (1 change)
+
+* Model was added
+
+**OutcomeAttributionAsyncResponse** (1 change)
+
+* Model was added
+
+**OutcomeAttributionListing** (1 change)
+
+* Model was added
+
+**OutcomeAttributionRequest** (1 change)
+
+* Model was added
+
+**Touchpoint** (1 change)
+
+* Model was added
+
+**OutcomeAttributionJobStateResponse** (1 change)
+
+* Model was added
+
+**OutcomeAttributionResponseListing** (1 change)
+
+* Model was added
+
+**OutcomeAttributionResultsResponse** (1 change)
+
+* Model was added
+
+**TouchpointResponse** (1 change)
+
+* Model was added
+
+**DocumentationV2SearchAggregation** (1 change)
+
+* Model was added
+
+**DocumentationV2SearchCriteria** (1 change)
+
+* Model was added
+
+**DocumentationV2SearchRequest** (1 change)
+
+* Model was added
+
+**SmsAlphanumericProvision** (1 change)
+
+* Model was added
+
+**DynamicGroupQueryPreview** (1 change)
+
+* Model was added
+
+**DynamicGroupLanguageSkillCondition** (1 change)
+
+* Model was added
+
+**DynamicGroupQuery** (1 change)
+
+* Model was added
+
+**DynamicGroupRoutingSkillCondition** (1 change)
+
+* Model was added
+
+**DynamicGroupSkillCondition** (1 change)
+
+* Model was added
+
+**DynamicGroupDefinition** (1 change)
+
+* Model was added
+
+**OrgSettings** (1 change)
+
+* Model was added
+
+**ContentSearchSetting** (1 change)
+
+* Model was added
+
+**GoogleBusinessProfileDataIngestionRuleResponse** (1 change)
+
+* Model was added
+
+**GoogleBusinessProfileDataIngestionRuleRequest** (1 change)
+
+* Model was added
+
+**GoogleBusinessProfileDataIngestionRuleVersionResponse** (1 change)
+
+* Model was added
+
+**GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing** (1 change)
+
+* Model was added
+
+**ReprocessInteractionsByJobIdResponse** (1 change)
+
+* Model was added
+
+**ReprocessJobResponse** (1 change)
+
+* Model was added
+
+**CreateReprocessJobRequest** (1 change)
+
+* Model was added
+
+**ReprocessJobEntityListingResponse** (1 change)
+
+* Model was added
+
+**MediaEndpointStatistics** (1 change)
+
+* Model was added
+
+**MediaIceSelectedCandidate** (1 change)
+
+* Model was added
+
+**MediaIceSelectedPair** (1 change)
+
+* Model was added
+
+**MediaIceStatistics** (1 change)
+
+* Model was added
+
+**MediaRtpStatistics** (1 change)
+
+* Model was added
+
+**MediaStatistics** (1 change)
+
+* Model was added
+
+**MediaStatisticsClientInfo** (1 change)
+
+* Model was added
+
+**MediaStatisticsTrunkInfo** (1 change)
+
+* Model was added
+
+**MediaStatisticsListing** (1 change)
+
+* Model was added
+
+**PromptAssetUpload** (1 change)
+
+* Model was added
+
+**AgentSchedulingPreference** (1 change)
+
+* Model was added
+
+**AgentSchedulingPreferenceListing** (1 change)
+
+* Model was added
+
+**QueryAgentSchedulingPreferencesRequest** (1 change)
+
+* Model was added
+
+**AgentSchedulingPreferencesTiebreaker** (1 change)
+
+* Model was added
+
+**BusinessUnitSchedulingPreferencesSettingsResponse** (1 change)
+
+* Model was added
+
+**UpdateBusinessUnitSchedulingPreferencesSettingsRequest** (1 change)
+
+* Model was added
+
+**ContinuousForecastGetSessionResponse** (1 change)
+
+* Model was added
+
+**AggregateHistoricalAvailability** (1 change)
+
+* Model was added
+
+**ComputedData** (1 change)
+
+* Model was added
+
+**ContinuousForecastSessionResponse** (1 change)
+
+* Model was added
+
+**ContinuousForecastTimeSeries** (1 change)
+
+* Model was added
+
+**ContinuousForecastWeeks** (1 change)
+
+* Model was added
+
+**Daily** (1 change)
+
+* Model was added
+
+**HistoricalData** (1 change)
+
+* Model was added
+
+**ModelData** (1 change)
+
+* Model was added
+
+**ModelMetaData** (1 change)
+
+* Model was added
+
+**ModelMetaDataResult** (1 change)
+
+* Model was added
+
+**Outlier** (1 change)
+
+* Model was added
+
+**OutlierData** (1 change)
+
+* Model was added
+
+**OutlierResultBody** (1 change)
+
+* Model was added
+
+**OutlierResultTemplate** (1 change)
+
+* Model was added
+
+**PlanningGroupModel** (1 change)
+
+* Model was added
+
+**QuarterHourly** (1 change)
+
+* Model was added
+
+**SessionFiles** (1 change)
+
+* Model was added
+
+**SessionInfo** (1 change)
+
+* Model was added
+
+**SessionMetaData** (1 change)
+
+* Model was added
+
+**SessionMetaDataResult** (1 change)
+
+* Model was added
+
+**SessionMetricData** (1 change)
+
+* Model was added
+
+**SessionPlanningGroups** (1 change)
+
+* Model was added
+
+**Snapshots** (1 change)
+
+* Model was added
+
+**Weekly** (1 change)
+
+* Model was added
+
+**ContinuousForecastSnapshotResponse** (1 change)
+
+* Model was added
+
+**SnapshotFiles** (1 change)
+
+* Model was added
+
+**SnapshotInfo** (1 change)
+
+* Model was added
+
+**SnapshotMetaData** (1 change)
+
+* Model was added
+
+**SnapshotMetaDataResult** (1 change)
+
+* Model was added
+
+**SnapshotMetricData** (1 change)
+
+* Model was added
+
+**UpdateAgentSchedulingPreferencesRequest** (1 change)
 
 * Model was added
 
@@ -889,15 +927,9 @@ Platform API version: 11033
 
 * Model was added
 
+**LearningModuleMigrateResponse** (1 change)
 
-# Point Changes (4 changes)
+* Model was added
 
-**GET /api/v2/billing/contracts** (2 changes)
 
-* Description was changed for parameter dateStart
-* Description was changed for parameter dateEnd
-
-**GET /api/v2/billing/contracts/invoices** (2 changes)
-
-* Description was changed for parameter dateStart
-* Description was changed for parameter dateEnd
+# Point Changes (0 changes)

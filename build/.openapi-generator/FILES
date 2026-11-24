@@ -561,6 +561,10 @@ docs/getAgenticVirtualagent-example.txt
 docs/getAgenticVirtualagent-example.txt
 docs/getAgenticVirtualagentJob-example.txt
 docs/getAgenticVirtualagentJob-example.txt
+docs/getAgenticVirtualagentVersion-example.txt
+docs/getAgenticVirtualagentVersion-example.txt
+docs/getAgenticVirtualagentVersionJob-example.txt
+docs/getAgenticVirtualagentVersionJob-example.txt
 docs/getAgenticVirtualagents-example.txt
 docs/getAgenticVirtualagents-example.txt
 docs/getAlertingAlert-example.txt
@@ -2213,6 +2217,8 @@ docs/headNotificationsChannel-example.txt
 docs/headTokensMe-example.txt
 docs/patchAgenticVirtualagent-example.txt
 docs/patchAgenticVirtualagent-example.txt
+docs/patchAgenticVirtualagentVersion-example.txt
+docs/patchAgenticVirtualagentVersion-example.txt
 docs/patchAlertingAlert-example.txt
 docs/patchAlertingAlertsAll-example.txt
 docs/patchAlertingAlertsBulk-example.txt
@@ -2493,6 +2499,8 @@ docs/patchWorkforcemanagementUsersWorkplanbidranksBulk-example.txt
 docs/patchWorkforcemanagementWorkplanbidPreferences-example.txt
 docs/postAgenticVirtualagentVersionJobs-example.txt
 docs/postAgenticVirtualagentVersionJobs-example.txt
+docs/postAgenticVirtualagentVersions-example.txt
+docs/postAgenticVirtualagentVersions-example.txt
 docs/postAgenticVirtualagents-example.txt
 docs/postAgenticVirtualagents-example.txt
 docs/postAlertingAlertsQuery-example.txt

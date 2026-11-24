@@ -849,7 +849,7 @@ class Configuration {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 267.0.0
+ * @version 267.1.0
  */
 class ApiClient {
 	/**
@@ -3073,7 +3073,7 @@ class AIStudioApi {
 	/**
 	 * AIStudio service.
 	 * @module purecloud-platform-client-v2/api/AIStudioApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -3232,6 +3232,81 @@ class AIStudioApi {
 			'/api/v2/agentic/virtualagents/{virtualAgentId}/jobs/{jobId}', 
 			'GET', 
 			{ 'virtualAgentId': virtualAgentId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get a virtual agent version.
+	 * 
+	 * @param {String} virtualAgentId Virtual Agent ID
+	 * @param {String} versionId Version ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getAgenticVirtualagentVersion(virtualAgentId, versionId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'virtualAgentId' is set
+		if (virtualAgentId === undefined || virtualAgentId === null || virtualAgentId === '') {
+			throw 'Missing the required parameter "virtualAgentId" when calling getAgenticVirtualagentVersion';
+		}
+		// verify the required parameter 'versionId' is set
+		if (versionId === undefined || versionId === null || versionId === '') {
+			throw 'Missing the required parameter "versionId" when calling getAgenticVirtualagentVersion';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/agentic/virtualagents/{virtualAgentId}/versions/{versionId}', 
+			'GET', 
+			{ 'virtualAgentId': virtualAgentId,'versionId': versionId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get the status of the publishing job for this virtual agent version.
+	 * 
+	 * @param {String} virtualAgentId Virtual Agent ID
+	 * @param {String} versionId Version ID
+	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getAgenticVirtualagentVersionJob(virtualAgentId, versionId, jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'virtualAgentId' is set
+		if (virtualAgentId === undefined || virtualAgentId === null || virtualAgentId === '') {
+			throw 'Missing the required parameter "virtualAgentId" when calling getAgenticVirtualagentVersionJob';
+		}
+		// verify the required parameter 'versionId' is set
+		if (versionId === undefined || versionId === null || versionId === '') {
+			throw 'Missing the required parameter "versionId" when calling getAgenticVirtualagentVersionJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getAgenticVirtualagentVersionJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/agentic/virtualagents/{virtualAgentId}/versions/{versionId}/jobs/{jobId}', 
+			'GET', 
+			{ 'virtualAgentId': virtualAgentId,'versionId': versionId,'jobId': jobId },
 			{  },
 			{  },
 			{  },
@@ -3639,6 +3714,47 @@ class AIStudioApi {
 	}
 
 	/**
+	 * Update a virtual agent version.
+	 * When validateOnly is true, the update is validated without saving the version.
+	 * @param {String} virtualAgentId Virtual Agent ID
+	 * @param {String} versionId Version ID
+	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.validateOnly Validate the update without saving the version. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	patchAgenticVirtualagentVersion(virtualAgentId, versionId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'virtualAgentId' is set
+		if (virtualAgentId === undefined || virtualAgentId === null || virtualAgentId === '') {
+			throw 'Missing the required parameter "virtualAgentId" when calling patchAgenticVirtualagentVersion';
+		}
+		// verify the required parameter 'versionId' is set
+		if (versionId === undefined || versionId === null || versionId === '') {
+			throw 'Missing the required parameter "versionId" when calling patchAgenticVirtualagentVersion';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchAgenticVirtualagentVersion';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/agentic/virtualagents/{virtualAgentId}/versions/{versionId}', 
+			'PATCH', 
+			{ 'virtualAgentId': virtualAgentId,'versionId': versionId },
+			{ 'validateOnly': opts['validateOnly'] },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Update a guide.
 	 * 
 	 * @param {String} guideId Guide ID
@@ -3743,6 +3859,42 @@ class AIStudioApi {
 			'POST', 
 			{ 'virtualAgentId': virtualAgentId,'versionId': versionId },
 			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Create a virtual agent version.
+	 * When validateOnly is true, the request is validated without creating a version.
+	 * @param {String} virtualAgentId Virtual Agent ID
+	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.validateOnly Validate the request without creating the version. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postAgenticVirtualagentVersions(virtualAgentId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'virtualAgentId' is set
+		if (virtualAgentId === undefined || virtualAgentId === null || virtualAgentId === '') {
+			throw 'Missing the required parameter "virtualAgentId" when calling postAgenticVirtualagentVersions';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAgenticVirtualagentVersions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/agentic/virtualagents/{virtualAgentId}/versions', 
+			'POST', 
+			{ 'virtualAgentId': virtualAgentId },
+			{ 'validateOnly': opts['validateOnly'] },
 			{  },
 			{  },
 			body, 
@@ -4150,7 +4302,7 @@ class AgentAssistantsApi {
 	/**
 	 * AgentAssistants service.
 	 * @module purecloud-platform-client-v2/api/AgentAssistantsApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -4955,7 +5107,7 @@ class AgentCopilotApi {
 	/**
 	 * AgentCopilot service.
 	 * @module purecloud-platform-client-v2/api/AgentCopilotApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -5067,7 +5219,7 @@ class AgentUIApi {
 	/**
 	 * AgentUI service.
 	 * @module purecloud-platform-client-v2/api/AgentUIApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -5218,7 +5370,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -5679,7 +5831,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -10194,7 +10346,7 @@ class AnomalyDetectionApi {
 	/**
 	 * AnomalyDetection service.
 	 * @module purecloud-platform-client-v2/api/AnomalyDetectionApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -10571,7 +10723,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -15554,7 +15706,7 @@ class AssistantCopilotVariationsApi {
 	/**
 	 * AssistantCopilotVariations service.
 	 * @module purecloud-platform-client-v2/api/AssistantCopilotVariationsApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -15750,7 +15902,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -15977,7 +16129,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -18034,7 +18186,7 @@ class BackgroundAssistantApi {
 	/**
 	 * BackgroundAssistant service.
 	 * @module purecloud-platform-client-v2/api/BackgroundAssistantApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -18108,7 +18260,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -18393,7 +18545,7 @@ class BusinessRulesApi {
 	/**
 	 * BusinessRules service.
 	 * @module purecloud-platform-client-v2/api/BusinessRulesApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -20023,7 +20175,7 @@ class CarrierServicesApi {
 	/**
 	 * CarrierServices service.
 	 * @module purecloud-platform-client-v2/api/CarrierServicesApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -20100,7 +20252,7 @@ class CaseManagementApi {
 	/**
 	 * CaseManagement service.
 	 * @module purecloud-platform-client-v2/api/CaseManagementApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -21956,7 +22108,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -23095,7 +23247,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -23809,7 +23961,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -25004,7 +25156,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -35839,7 +35991,7 @@ class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -35940,7 +36092,7 @@ class DataPrivacyApi {
 	/**
 	 * DataPrivacy service.
 	 * @module purecloud-platform-client-v2/api/DataPrivacyApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -36137,7 +36289,7 @@ class DependenciesApi {
 	/**
 	 * Dependencies service.
 	 * @module purecloud-platform-client-v2/api/DependenciesApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -36273,7 +36425,7 @@ class DownloadsApi {
 	/**
 	 * Downloads service.
 	 * @module purecloud-platform-client-v2/api/DownloadsApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -36327,7 +36479,7 @@ class EmailsApi {
 	/**
 	 * Emails service.
 	 * @module purecloud-platform-client-v2/api/EmailsApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -36475,7 +36627,7 @@ class EmployeeEngagementApi {
 	/**
 	 * EmployeeEngagement service.
 	 * @module purecloud-platform-client-v2/api/EmployeeEngagementApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -36679,7 +36831,7 @@ class EventsApi {
 	/**
 	 * Events service.
 	 * @module purecloud-platform-client-v2/api/EventsApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -36820,7 +36972,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -41336,7 +41488,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -41615,7 +41767,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -41849,7 +42001,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -44701,7 +44853,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -44845,7 +44997,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -44996,7 +45148,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -45612,7 +45764,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -46203,7 +46355,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -47254,7 +47406,7 @@ class InfrastructureAsCodeApi {
 	/**
 	 * InfrastructureAsCode service.
 	 * @module purecloud-platform-client-v2/api/InfrastructureAsCodeApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -47434,7 +47586,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -50375,7 +50527,7 @@ class IntentsApi {
 	/**
 	 * Intents service.
 	 * @module purecloud-platform-client-v2/api/IntentsApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -51001,7 +51153,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -53948,7 +54100,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -58558,7 +58710,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -59932,7 +60084,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -60191,7 +60343,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -61437,7 +61589,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -61735,7 +61887,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -62002,7 +62154,7 @@ class LogCaptureApi {
 	/**
 	 * LogCapture service.
 	 * @module purecloud-platform-client-v2/api/LogCaptureApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -62224,7 +62376,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -62642,7 +62794,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -62903,7 +63055,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -63322,7 +63474,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -63781,7 +63933,7 @@ class OperationalEventsApi {
 	/**
 	 * OperationalEvents service.
 	 * @module purecloud-platform-client-v2/api/OperationalEventsApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -63912,7 +64064,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -64473,7 +64625,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -66077,7 +66229,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -71697,7 +71849,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -72555,7 +72707,7 @@ class ProcessAutomationApi {
 	/**
 	 * ProcessAutomation service.
 	 * @module purecloud-platform-client-v2/api/ProcessAutomationApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -72976,7 +73128,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -75454,7 +75606,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -77357,7 +77509,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -78120,7 +78272,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -83678,7 +83830,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -84643,7 +84795,7 @@ class ScreenMonitoringApi {
 	/**
 	 * ScreenMonitoring service.
 	 * @module purecloud-platform-client-v2/api/ScreenMonitoringApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -85019,7 +85171,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -85528,7 +85680,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -86432,7 +86584,7 @@ class SettingsApi {
 	/**
 	 * Settings service.
 	 * @module purecloud-platform-client-v2/api/SettingsApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -86929,7 +87081,7 @@ class SocialMediaApi {
 	/**
 	 * SocialMedia service.
 	 * @module purecloud-platform-client-v2/api/SocialMediaApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -88914,7 +89066,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -91054,7 +91206,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -91168,7 +91320,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -91315,7 +91467,7 @@ class TaskManagementApi {
 	/**
 	 * TaskManagement service.
 	 * @module purecloud-platform-client-v2/api/TaskManagementApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -93847,7 +93999,7 @@ class TeamsApi {
 	/**
 	 * Teams service.
 	 * @module purecloud-platform-client-v2/api/TeamsApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -94190,7 +94342,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -94958,7 +95110,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -99125,7 +99277,7 @@ class TextbotsApi {
 	/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -99271,7 +99423,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -99449,7 +99601,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -99820,7 +99972,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -100205,7 +100357,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -100407,7 +100559,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -104733,7 +104885,7 @@ class UsersRulesApi {
 	/**
 	 * UsersRules service.
 	 * @module purecloud-platform-client-v2/api/UsersRulesApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -105050,7 +105202,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -105178,7 +105330,7 @@ class VirtualAgentsApi {
 	/**
 	 * VirtualAgents service.
 	 * @module purecloud-platform-client-v2/api/VirtualAgentsApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -105289,6 +105441,81 @@ class VirtualAgentsApi {
 	}
 
 	/**
+	 * Get a virtual agent version.
+	 * 
+	 * @param {String} virtualAgentId Virtual Agent ID
+	 * @param {String} versionId Version ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getAgenticVirtualagentVersion(virtualAgentId, versionId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'virtualAgentId' is set
+		if (virtualAgentId === undefined || virtualAgentId === null || virtualAgentId === '') {
+			throw 'Missing the required parameter "virtualAgentId" when calling getAgenticVirtualagentVersion';
+		}
+		// verify the required parameter 'versionId' is set
+		if (versionId === undefined || versionId === null || versionId === '') {
+			throw 'Missing the required parameter "versionId" when calling getAgenticVirtualagentVersion';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/agentic/virtualagents/{virtualAgentId}/versions/{versionId}', 
+			'GET', 
+			{ 'virtualAgentId': virtualAgentId,'versionId': versionId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get the status of the publishing job for this virtual agent version.
+	 * 
+	 * @param {String} virtualAgentId Virtual Agent ID
+	 * @param {String} versionId Version ID
+	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getAgenticVirtualagentVersionJob(virtualAgentId, versionId, jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'virtualAgentId' is set
+		if (virtualAgentId === undefined || virtualAgentId === null || virtualAgentId === '') {
+			throw 'Missing the required parameter "virtualAgentId" when calling getAgenticVirtualagentVersionJob';
+		}
+		// verify the required parameter 'versionId' is set
+		if (versionId === undefined || versionId === null || versionId === '') {
+			throw 'Missing the required parameter "versionId" when calling getAgenticVirtualagentVersionJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getAgenticVirtualagentVersionJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/agentic/virtualagents/{virtualAgentId}/versions/{versionId}/jobs/{jobId}', 
+			'GET', 
+			{ 'virtualAgentId': virtualAgentId,'versionId': versionId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Get all virtual agents.
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -105356,6 +105583,47 @@ class VirtualAgentsApi {
 	}
 
 	/**
+	 * Update a virtual agent version.
+	 * When validateOnly is true, the update is validated without saving the version.
+	 * @param {String} virtualAgentId Virtual Agent ID
+	 * @param {String} versionId Version ID
+	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.validateOnly Validate the update without saving the version. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	patchAgenticVirtualagentVersion(virtualAgentId, versionId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'virtualAgentId' is set
+		if (virtualAgentId === undefined || virtualAgentId === null || virtualAgentId === '') {
+			throw 'Missing the required parameter "virtualAgentId" when calling patchAgenticVirtualagentVersion';
+		}
+		// verify the required parameter 'versionId' is set
+		if (versionId === undefined || versionId === null || versionId === '') {
+			throw 'Missing the required parameter "versionId" when calling patchAgenticVirtualagentVersion';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchAgenticVirtualagentVersion';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/agentic/virtualagents/{virtualAgentId}/versions/{versionId}', 
+			'PATCH', 
+			{ 'virtualAgentId': virtualAgentId,'versionId': versionId },
+			{ 'validateOnly': opts['validateOnly'] },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Start the publishing of a virtual agent version.
 	 * 
 	 * @param {String} virtualAgentId Virtual Agent ID
@@ -105385,6 +105653,42 @@ class VirtualAgentsApi {
 			'POST', 
 			{ 'virtualAgentId': virtualAgentId,'versionId': versionId },
 			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Create a virtual agent version.
+	 * When validateOnly is true, the request is validated without creating a version.
+	 * @param {String} virtualAgentId Virtual Agent ID
+	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.validateOnly Validate the request without creating the version. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postAgenticVirtualagentVersions(virtualAgentId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'virtualAgentId' is set
+		if (virtualAgentId === undefined || virtualAgentId === null || virtualAgentId === '') {
+			throw 'Missing the required parameter "virtualAgentId" when calling postAgenticVirtualagentVersions';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAgenticVirtualagentVersions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/agentic/virtualagents/{virtualAgentId}/versions', 
+			'POST', 
+			{ 'virtualAgentId': virtualAgentId },
+			{ 'validateOnly': opts['validateOnly'] },
 			{  },
 			{  },
 			body, 
@@ -105431,7 +105735,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -106261,7 +106565,7 @@ class WebDeploymentsApi {
 	/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -106939,7 +107243,7 @@ class WebMessagingApi {
 	/**
 	 * WebMessaging service.
 	 * @module purecloud-platform-client-v2/api/WebMessagingApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -107102,7 +107406,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 267.0.0
+	 * @version 267.1.0
 	 */
 
 	/**
@@ -121255,7 +121559,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 267.0.0
+ * @version 267.1.0
  */
 class platformClient {
 	constructor() {
